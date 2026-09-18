@@ -103,49 +103,52 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
       );
     }
 
-    // Set initial card states:
-    // Card 1 starts at translateY(100%) and covers at 0-5%
-    // Card 2 at translateY(100%), covers at 28-33%
-    // Card 3 at translateY(100%), covers at 61-66%
-    if (cards[0]) gsap.set(cards[0], { yPercent: 100 });
-    if (cards[1]) gsap.set(cards[1], { yPercent: 100 });
-    if (cards[2]) gsap.set(cards[2], { yPercent: 100 });
+    // Set initial card states with 3D depth perspective
+    // Card 1 is active; Card 2 & 3 start below with slight scale reduction and origin at top
+    if (cards[0]) {
+      gsap.set(cards[0], { yPercent: 0, scale: 1, transformOrigin: 'center top' });
+    }
+    if (cards[1]) {
+      gsap.set(cards[1], { yPercent: 105, scale: 0.96, transformOrigin: 'center top' });
+    }
+    if (cards[2]) {
+      gsap.set(cards[2], { yPercent: 105, scale: 0.96, transformOrigin: 'center top' });
+    }
 
-    // Pinned scrub timeline
+    // Pinned scrub timeline with buttery-smooth 1s inertia
     const scrubTl = gsap.timeline({
       scrollTrigger: {
         trigger: pinContainer,
         start: 'top top',
-        end: '+=280%',
+        end: '+=240%',
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
-        scrub: 0.5,
+        scrub: 1, // 1s smooth inertia with Lenis
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Card 1 Counter gating: active between ~5% and 28%
-          if (progress >= 0.05 && progress < 0.28) {
+          // Card 1 Counter gating: active between 0% and 35%
+          if (progress >= 0.02 && progress < 0.40) {
             if (cardControllers[0] && !cardControllers[0].hasPlayed) {
               cardControllers[0].play();
             }
-          } else if (progress >= 0.28) {
-            // Scrolled past card 1 fast: resolve immediately
+          } else if (progress >= 0.40) {
             cardControllers[0]?.resolveImmediately();
           }
 
-          // Card 2 Counter gating: active between ~33% and 61%
-          if (progress >= 0.33 && progress < 0.61) {
+          // Card 2 Counter gating: active between 35% and 72%
+          if (progress >= 0.35 && progress < 0.72) {
             if (cardControllers[1] && !cardControllers[1].hasPlayed) {
               cardControllers[1].play();
             }
-          } else if (progress >= 0.61) {
+          } else if (progress >= 0.72) {
             cardControllers[1]?.resolveImmediately();
           }
 
-          // Card 3 Counter gating: active above ~66%
-          if (progress >= 0.66) {
+          // Card 3 Counter gating: active above 72%
+          if (progress >= 0.72) {
             if (cardControllers[2] && !cardControllers[2].hasPlayed) {
               cardControllers[2].play();
             }
@@ -155,35 +158,78 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
     });
 
     // Sub-timeline inside scrub:
-    // 0 -> 5%: Card 1 covers (duration 0.05 on normalized 0-1 scale)
-    if (cards[0]) {
-      scrubTl.to(cards[0], {
-        yPercent: 0,
-        ease: 'none',
-        duration: 0.05,
-      }, 0);
-    }
-
-    // 28% -> 33%: Card 2 covers Card 1
+    // Phase 1 (0.0 -> 0.35): Card 1 is in full view and counter counts up.
+    // Phase 2 (0.25 -> 0.55): Card 2 glides up smoothly (yPercent: 105 -> 0, scale: 0.96 -> 1)
+    // Concurrently, Card 1 scales down to 0.94, shifts up y: -12, and subtly dims
     if (cards[1]) {
-      scrubTl.to(cards[1], {
-        yPercent: 0,
-        ease: 'none',
-        duration: 0.05,
-      }, 0.28);
+      scrubTl.to(
+        cards[1],
+        {
+          yPercent: 0,
+          scale: 1,
+          ease: 'power1.inOut',
+          duration: 0.30,
+        },
+        0.20
+      );
+    }
+    if (cards[0]) {
+      scrubTl.to(
+        cards[0],
+        {
+          scale: 0.94,
+          y: -14,
+          filter: 'brightness(0.92)',
+          ease: 'power1.inOut',
+          duration: 0.30,
+        },
+        0.20
+      );
     }
 
-    // 61% -> 66%: Card 3 covers Card 2
+    // Phase 3 (0.55 -> 0.85): Card 3 glides up smoothly (yPercent: 105 -> 0, scale: 0.96 -> 1)
+    // Concurrently, Card 2 scales down to 0.94, shifts up y: -12, and subtly dims; Card 1 scales to 0.90
     if (cards[2]) {
-      scrubTl.to(cards[2], {
-        yPercent: 0,
-        ease: 'none',
-        duration: 0.05,
-      }, 0.61);
+      scrubTl.to(
+        cards[2],
+        {
+          yPercent: 0,
+          scale: 1,
+          ease: 'power1.inOut',
+          duration: 0.30,
+        },
+        0.55
+      );
+    }
+    if (cards[1]) {
+      scrubTl.to(
+        cards[1],
+        {
+          scale: 0.94,
+          y: -14,
+          filter: 'brightness(0.92)',
+          ease: 'power1.inOut',
+          duration: 0.30,
+        },
+        0.55
+      );
+    }
+    if (cards[0]) {
+      scrubTl.to(
+        cards[0],
+        {
+          scale: 0.89,
+          y: -24,
+          filter: 'brightness(0.85)',
+          ease: 'power1.inOut',
+          duration: 0.30,
+        },
+        0.55
+      );
     }
 
-    // 94% -> 100%: Hold and prepare to release
-    scrubTl.to({}, { duration: 0.06 }, 0.94);
+    // Phase 4 (0.85 -> 1.0): Graceful pause / hold before clean unpinning
+    scrubTl.to({}, { duration: 0.15 }, 0.85);
 
     return () => {
       scrubTl.kill();

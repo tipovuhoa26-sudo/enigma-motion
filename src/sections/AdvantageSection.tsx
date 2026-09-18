@@ -74,13 +74,13 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
     <section
       id="advantage"
       ref={pinSectionRef}
-      className="relative w-full min-h-screen px-6 md:px-12 lg:px-20 py-12 flex flex-col justify-start overflow-hidden bg-[#F8F8F6]"
+      className="relative w-full h-screen min-h-[700px] max-h-[960px] px-6 md:px-12 lg:px-20 pt-24 pb-8 flex flex-col justify-between overflow-hidden bg-[#F8F8F6] scroll-mt-20"
       data-advantage-pin
     >
       <span id="technology" className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none" aria-hidden="true" />
       {/* Pinned Header Block */}
-      <div className="w-full max-w-4xl mx-auto text-center mb-8 z-10" data-advantage-heading>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#17151A] leading-tight mb-6">
+      <div className="w-full max-w-4xl mx-auto text-center mb-6 z-10 shrink-0" data-advantage-heading>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#17151A] leading-tight mb-4">
           Advantage{' '}
           <span className="inline-flex items-center align-middle mx-1 px-3 py-1 bg-[#FAFFDE] border border-[#DFE2C8] rounded-full text-sm">
             <TrendingUp className="w-4 h-4 text-[#17151A]" />
@@ -106,11 +106,11 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
       </div>
 
       {/* Cards Stack Stage (Desktop: stacked & covered; Mobile: natural flow) */}
-      <div className="relative w-full max-w-5xl mx-auto flex-1 min-h-[460px] md:min-h-[520px]">
+      <div className="relative w-full max-w-5xl mx-auto flex-1 min-h-[460px] md:min-h-[480px]">
         {/* CARD 1 */}
         <div
           ref={card1Ref}
-          className="w-full md:absolute md:inset-0 rounded-3xl p-6 sm:p-10 md:p-12 mb-6 md:mb-0 shadow-lg border border-black/5 flex flex-col md:flex-row items-center justify-between gap-8 z-10"
+          className="w-full md:absolute md:inset-0 rounded-[32px] p-6 sm:p-10 md:p-12 mb-6 md:mb-0 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] border border-black/[0.06] flex flex-col md:flex-row items-center justify-between gap-8 z-10 will-change-transform transform-gpu"
           style={{ backgroundColor: advantages[0]?.bgColor ?? '#FAFFDE' }}
           data-advantage-card="1"
         >
@@ -126,18 +126,18 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] aspect-4/3 rounded-2xl overflow-hidden bg-white/40 shadow-inner">
+          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[0]?.image ?? '/assets/card-product-1.jpg'}
+              src={advantages[0]?.image ?? '/assets/advantage-card-1.jpg'}
               alt={advantages[0]?.title ?? 'Product'}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(min-width: 768px) 420px, 100vw"
               priority
             />
 
             {/* Metric Floating Widget */}
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5">
+            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5 z-10">
               <span ref={counter1Ref} className="text-2xl sm:text-3xl font-normal text-[#17151A] block tabular-nums" data-counter>
                 0%
               </span>
@@ -153,7 +153,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </div>
 
             {/* Subtext Pill */}
-            <div className="absolute bottom-4 left-4 bg-[#17151A] text-white text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-md">
+            <div className="absolute bottom-4 left-4 bg-[#17151A] text-white text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-md z-10">
               <Sparkles className="w-3.5 h-3.5 text-[#FAFFDE]" />
               <span>{advantages[0]?.metric.subtext}</span>
             </div>
@@ -163,7 +163,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
         {/* CARD 2 */}
         <div
           ref={card2Ref}
-          className="w-full md:absolute md:inset-0 rounded-3xl p-6 sm:p-10 md:p-12 mb-6 md:mb-0 shadow-lg border border-black/5 flex flex-col md:flex-row items-center justify-between gap-8 z-20"
+          className="w-full md:absolute md:inset-0 rounded-[32px] p-6 sm:p-10 md:p-12 mb-6 md:mb-0 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] border border-black/[0.06] flex flex-col md:flex-row items-center justify-between gap-8 z-20 will-change-transform transform-gpu"
           style={{ backgroundColor: advantages[1]?.bgColor ?? '#F5F3F6' }}
           data-advantage-card="2"
         >
@@ -179,17 +179,17 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] aspect-4/3 rounded-2xl overflow-hidden bg-white/40 shadow-inner">
+          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[1]?.image ?? '/assets/card-product-2.jpg'}
+              src={advantages[1]?.image ?? '/assets/advantage-card-2.jpg'}
               alt={advantages[1]?.title ?? 'Product'}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(min-width: 768px) 420px, 100vw"
             />
 
             {/* Ring Circular Widget */}
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5 flex items-center gap-3">
+            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5 flex items-center gap-3 z-10">
               <div className="relative w-14 h-14 flex items-center justify-center">
                 <svg className="w-full h-full -rotate-90" viewBox="0 0 60 60">
                   <circle cx="30" cy="30" r="26" stroke="#EAE7EC" strokeWidth="4" fill="none" />
@@ -217,7 +217,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
               </span>
             </div>
 
-            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5">
+            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5 z-10">
               <Zap className="w-3.5 h-3.5" />
               <span>{advantages[1]?.metric.subtext}</span>
             </div>
@@ -227,7 +227,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
         {/* CARD 3 */}
         <div
           ref={card3Ref}
-          className="w-full md:absolute md:inset-0 rounded-3xl p-6 sm:p-10 md:p-12 shadow-lg border border-black/5 flex flex-col md:flex-row items-center justify-between gap-8 z-30"
+          className="w-full md:absolute md:inset-0 rounded-[32px] p-6 sm:p-10 md:p-12 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.08)] border border-black/[0.06] flex flex-col md:flex-row items-center justify-between gap-8 z-30 will-change-transform transform-gpu"
           style={{ backgroundColor: advantages[2]?.bgColor ?? '#FAFFDE' }}
           data-advantage-card="3"
         >
@@ -243,17 +243,17 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] aspect-4/3 rounded-2xl overflow-hidden bg-white/40 shadow-inner">
+          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[2]?.image ?? '/assets/card-product-3.jpg'}
+              src={advantages[2]?.image ?? '/assets/advantage-card-3.jpg'}
               alt={advantages[2]?.title ?? 'Product'}
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(min-width: 768px) 420px, 100vw"
             />
 
             {/* Dark Widget with Sequential Dots */}
-            <div className="absolute top-4 left-4 bg-[#1E1C1E] text-white rounded-2xl p-4 shadow-xl flex flex-col gap-2 min-w-[130px]" data-widget-dark>
+            <div className="absolute top-4 left-4 bg-[#1E1C1E] text-white rounded-2xl p-4 shadow-xl flex flex-col gap-2 min-w-[130px] z-10" data-widget-dark>
               <div className="flex items-center justify-between text-xs text-white/70">
                 <span>Task Rate</span>
                 <span ref={counter3Ref} className="text-xl font-normal text-[#FAFFDE] tabular-nums" data-counter>
@@ -269,7 +269,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
               </div>
             </div>
 
-            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5">
+            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5 z-10">
               <ArrowUpRight className="w-3.5 h-3.5" />
               <span>{advantages[2]?.metric.subtext}</span>
             </div>

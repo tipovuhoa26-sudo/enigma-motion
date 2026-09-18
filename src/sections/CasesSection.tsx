@@ -73,26 +73,26 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
             <Link
               key={item.id}
               href={`/cases/${item.slug}`}
-              className="group shrink-0 w-[300px] sm:w-[340px] md:w-[380px] rounded-3xl overflow-hidden bg-white/95 border border-black/5 shadow-md flex flex-col justify-between p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-black/10 cursor-pointer max-lg:snap-start"
+              className="group shrink-0 w-[300px] sm:w-[340px] md:w-[380px] rounded-[28px] overflow-hidden bg-white/95 border border-black/[0.06] shadow-[0_12px_30px_-10px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.14)] hover:-translate-y-1.5 flex flex-col justify-between p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer max-lg:snap-start transform-gpu will-change-transform"
               data-case-card={index}
             >
               {/* Card Meta Top: Category Pill + Index */}
               <div className="flex items-center justify-between mb-2.5 px-0.5">
-                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A]">
+                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A] tracking-tight">
                   {item.category}
                 </span>
-                <span className="text-xs text-[#6E6E6E] font-mono">
+                <span className="text-xs text-[#6E6E6E] font-mono font-medium">
                   0{index + 1}
                 </span>
               </div>
 
               {/* Card Image Container with fixed aspect ratio */}
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-[#F5F3F6] my-1 shadow-inner">
+              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-[#F5F3F6] my-1 shadow-inner border border-black/[0.03]">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
                   sizes="(min-width: 1024px) 380px, 80vw"
                   priority={index < 4}
                 />
@@ -103,8 +103,8 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
                 <span className="text-sm font-medium text-[#17151A] group-hover:text-black transition-colors line-clamp-1">
                   {item.title}
                 </span>
-                <div className="w-6 h-6 rounded-full bg-[#F5F3F6] group-hover:bg-[#17151A] group-hover:text-white flex items-center justify-center transition-colors">
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                <div className="w-7 h-7 rounded-full bg-[#F5F3F6] group-hover:bg-[#17151A] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-105 shadow-2xs">
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                 </div>
               </div>
             </Link>

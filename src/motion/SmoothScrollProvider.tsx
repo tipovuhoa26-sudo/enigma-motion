@@ -91,10 +91,13 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     if (typeof window === 'undefined') return;
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Luxury exponential decay easing
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.9,
-      touchMultiplier: 1.2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
     lenisRef.current = lenis;
     setLenisInstance(lenis);
@@ -110,11 +113,6 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
 
-    try {
-      ScrollTrigger.normalizeScroll(true);
-    } catch {
-      // Ignore if unsupported in environment
-    }
 
     // Intercept clicks on all hash links sitewide
     const handleAnchorClick = (e: MouseEvent) => {

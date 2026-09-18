@@ -39,7 +39,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Increased Revenue',
     title: 'Cultivating Growth, Maximizing Revenue',
     description: 'Implementing our strategies has led to an average increase in revenue of 25% for our clients.',
-    image: '/assets/card-product-1.jpg',
+    image: '/assets/advantage-card-1.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 20,
@@ -55,7 +55,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Market Expansion',
     title: 'Scaling Global Footprint & Operations',
     description: 'Our clients expand into new territories 2.4x faster with intelligent automation and localized delivery.',
-    image: '/assets/card-product-2.jpg',
+    image: '/assets/advantage-card-2.jpg',
     bgColor: '#F5F3F6',
     metric: {
       value: 29,
@@ -72,7 +72,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Efficiency Unlocked',
     title: 'Precision Engineering, Zero Waste',
     description: 'Eliminating manual bottlenecks through end-to-end data pipeline synthesis and autonomous workflows.',
-    image: '/assets/card-product-3.jpg',
+    image: '/assets/advantage-card-3.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 78,
