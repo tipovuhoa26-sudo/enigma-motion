@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --motion-duration-xs: 150ms;
+  --motion-duration-sm: 300ms;
+  --motion-duration-md: 600ms;
+  --motion-duration-lg: 900ms;
+  --motion-duration-xl: 1400ms;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+
+  --color-surface-base: #F8F8F6;
+  --color-surface-pill: #F5F3F6;
+  --color-accent-lime-100: #FAFFDE;
+  --color-accent-lime-200: #DFE2C8;
+  --color-ink-900: #17151A;
+  --color-ink-800: #1E1C1E;
+  --color-text-muted: #6E6E6E;
+  --color-watermark: rgba(23, 21, 26, 0.08);
+}
+
+body {
+  background-color: #E6E6E4;
+  color: var(--color-ink-900);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Background outer container styling */
+.editorial-shell {
+  min-height: 100vh;
+  padding: clamp(8px, 1.5vw, 24px);
+  display: flex;
+  justify-content: center;
+}
+
+.editorial-card {
+  width: 100%;
+  max-width: 1340px;
+  background-color: var(--color-surface-base);
+  border-radius: clamp(16px, 2.5vw, 28px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: clip;
+}
+
+/* Sphere styling */
+.loader-sphere {
+  width: clamp(220px, 30vw, 380px);
+  height: clamp(220px, 30vw, 380px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #FFFFFF 0%, #ECEBE7 45%, #D4D2CD 80%, #B8B6B0 100%);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.12),
+    inset -12px -16px 28px rgba(0, 0, 0, 0.08),
+    inset 12px 16px 24px rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+/* Button micro-interactions */
+.btn-motion {
+  transition: transform var(--motion-duration-xs) var(--ease-standard), background-color var(--motion-duration-xs) var(--ease-standard);
+}
+.btn-motion:hover {
+  transform: scale(1.02);
+}
+.btn-motion:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion="reduced"] *,
+  html[data-motion="reduced"] *::before,
+  html[data-motion="reduced"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
