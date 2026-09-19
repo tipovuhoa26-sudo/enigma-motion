@@ -154,58 +154,10 @@ export const ORGANIZATION_LOGOS: OrganizationLogo[] = [
     brandBg: '#FDFBF0',
     description: 'Tự động hóa 80% khâu tương tác ban đầu với khách hàng tiềm năng dự án căn hộ cao cấp qua AI Agents.',
   },
-  // 10. Vietcombank
-  {
-    id: 'vietcombank',
-    name: 'Vietcombank',
-    shortName: 'VCB',
-    industryId: 'finance',
-    industryName: 'Ngân Hàng Thương Mại',
-    tier: 2,
-    logoUrl: '/logos/vietcombank.png',
-    brandColor: '#005C2B',
-    brandBg: '#EDF7F1',
-    description: 'Cán bộ quản lý & chuyên viên dữ liệu tham gia đào tạo rà soát hồ sơ tín dụng và bóc tách BCTC bằng AI.',
-  },
-  // 11. BIDV
-  {
-    id: 'bidv',
-    name: 'BIDV',
-    shortName: 'BIDV',
-    industryId: 'finance',
-    industryName: 'Ngân Hàng Thương Mại',
-    tier: 2,
-    logoUrl: '/logos/bidv.png',
-    brandColor: '#194B73',
-    brandBg: '#EFF5F9',
-    description: 'Cán bộ tín dụng tham gia đào tạo chuẩn hóa báo cáo thẩm định điều kiện cấp tín dụng doanh nghiệp.',
-  },
-  // 12. Prudential Vietnam
-  {
-    id: 'prudential',
-    name: 'Prudential Vietnam',
-    shortName: 'Prudential',
-    industryId: 'finance',
-    industryName: 'Bảo Hiểm Nhân Thọ',
-    tier: 2,
-    logoUrl: '/logos/prudential.png',
-    brandColor: '#ED1B2D',
-    brandBg: '#FDF1F2',
-    description: 'Mạng lưới tư vấn viên tham gia chương trình đào tạo AI tra cứu quyền lợi và cá nhân hóa kịch bản bảo hiểm.',
-  },
-  // 13. Dai-ichi Life Vietnam
-  {
-    id: 'dai-ichi',
-    name: 'Dai-ichi Life Vietnam',
-    shortName: 'Dai-ichi Life',
-    industryId: 'finance',
-    industryName: 'Bảo Hiểm Nhân Thọ',
-    tier: 2,
-    logoUrl: '/logos/dai_ichi_life.png',
-    brandColor: '#D4001F',
-    brandBg: '#FCEEF0',
-    description: 'Khóa đào tạo AI for Consultants giúp tư vấn viên tăng 40% tỷ lệ hẹn gặp khách hàng thành công.',
-  },
+  // 10-13. Vietcombank, BIDV, Prudential, Dai-ichi Life Vietnam:
+  // Gỡ tạm khỏi lưới logo công khai — nhóm ngân hàng/bảo hiểm cần xác nhận
+  // bằng văn bản trước khi dùng logo, chưa có xác nhận tại thời điểm này.
+  // Xem site-fix-plan/06_DANH_GIA_TOAN_DIEN_SAU_TICH_HOP_LOGO.md mục 5.
   // 14. Trung Sơn Pharma
   {
     id: 'trung-son',
@@ -596,19 +548,9 @@ export const ORGANIZATION_LOGOS: OrganizationLogo[] = [
     brandBg: '#EDF3F8',
     description: 'Đề án đào tạo nâng cao năng lực ứng dụng AI thực chiến cho cán bộ quản lý và khối tác nghiệp.',
   },
-  // 44. HOSE
-  {
-    id: 'hose',
-    name: 'Sở Giao Dịch Chứng Khoán TP.HCM (HOSE)',
-    shortName: 'HOSE',
-    industryId: 'finance',
-    industryName: 'Định Chế Tài Chính',
-    tier: 2,
-    logoUrl: '/logos/hose.png',
-    brandColor: '#005596',
-    brandBg: '#F0F5FA',
-    description: 'Cố vấn Nguyễn Tùng Chi từng giữ vị trí Kế toán trưởng & Thành viên Hội đồng Thẩm định Niêm yết suốt 12+ năm.',
-  },
+  // 44. HOSE (Sở GDCK TP.HCM): gỡ tạm — cơ quan bán nhà nước, cần xác nhận
+  // trước khi dùng logo dù chỉ để minh họa lý lịch cá nhân của cố vấn.
+  // Xem site-fix-plan/06_DANH_GIA_TOAN_DIEN_SAU_TICH_HOP_LOGO.md mục 5.
   // 45. Bamboo Capital
   {
     id: 'bamboo-capital',

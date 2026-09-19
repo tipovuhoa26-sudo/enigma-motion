@@ -51,7 +51,8 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     blockId: 'executive',
     blockName: 'Lãnh Đạo & Điều Hành C-Level',
     experienceYears: 24,
-    avatarUrl: '/assets/tung_chi_portrait.png',
+    // avatarUrl gỡ tạm — chưa có xác nhận từ chính chủ về việc dùng ảnh
+    // công khai. Xem site-fix-plan/06_DANH_GIA_TOAN_DIEN_SAU_TICH_HOP_LOGO.md.
     keyHighlights: [
       '24+ năm kinh nghiệm quản trị và tài chính cấp cao tại các định chế tài chính và tập đoàn năng lượng',
       'Nguyên Kế toán trưởng & Thành viên Hội đồng Thẩm định Niêm yết Sở Giao dịch Chứng khoán TP.HCM (HOSE) suốt 12+ năm',
