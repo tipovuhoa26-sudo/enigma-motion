@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { CaseStudy, CASES_DATA } from '@/content/data';
+import { CaseStudyVisual } from '@/components/visuals/CaseStudyVisual';
 import { createCasesGalleryTimeline } from '@/motion/timelines/casesGallery';
 import { ScrollTrigger } from '@/motion';
 
@@ -84,16 +84,9 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
                 </span>
               </div>
 
-              {/* Card Image Container with fixed aspect ratio */}
-              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-[#F5F3F6] my-1 shadow-inner border border-black/[0.03]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
-                  sizes="(min-width: 1024px) 380px, 80vw"
-                  priority={index < 4}
-                />
+              {/* Card Visual Container with bespoke code-drawn data graphics */}
+              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden my-1 shadow-inner border border-black/[0.05]">
+                <CaseStudyVisual slug={item.slug} compact />
               </div>
 
               {/* Card Footer: Title & Arrow */}

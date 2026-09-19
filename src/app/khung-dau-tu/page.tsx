@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   ArrowLeft,
   CheckCircle2,
@@ -16,6 +15,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { INVESTMENT_TIERS } from '@/content/investmentData';
+import { InvestmentVisual } from '@/components/visuals/InvestmentVisual';
 
 export default function InvestmentFrameworkPage() {
   // Calculator state
@@ -77,28 +77,8 @@ export default function InvestmentFrameworkPage() {
               Sunext không bán gói phần mềm chung chung. Chúng tôi thiết lập khung đầu tư theo từng nấc thang quy mô, gắn chặt với mục tiêu hoàn vốn (ROI) và khả năng giải phóng giờ công thực tế cho doanh nghiệp.
             </p>
 
-            {/* Strategic Meeting Image */}
-            <div className="relative w-full h-[280px] sm:h-[420px] rounded-3xl overflow-hidden bg-[#F5F3F6] mb-12 shadow-sm border border-black/5">
-              <Image
-                src="/assets/vietnam-strategy-meeting.jpg"
-                alt="Ban lãnh đạo thảo luận lộ trình đầu tư AI"
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white text-left flex items-end justify-between">
-                <div>
-                  <span className="text-xs font-mono uppercase text-[#FAFFDE] block mb-1">
-                    Enterprise AI Advisory Board
-                  </span>
-                  <p className="text-sm sm:text-base font-normal max-w-xl text-white/90">
-                    Lộ trình đầu tư theo Phương Pháp Luận Sunext: chia nhỏ rủi ro, nghiệm thu theo mốc và chuyển giao quyền làm chủ cho đội ngũ nội bộ.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {/* Value-Based Investment Horizon Visualizer */}
+            <InvestmentVisual className="mb-12" />
           </section>
 
           {/* 3 Value-Based Investment Pathways */}

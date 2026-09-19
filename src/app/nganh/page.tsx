@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   ArrowLeft,
   ChevronRight,
@@ -19,6 +18,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { INDUSTRIES_DATA } from '@/content/industryData';
+import { IndustryVisual } from '@/components/visuals/IndustryVisual';
 
 const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   retail: ShoppingBag,
@@ -76,21 +76,14 @@ export default function IndustryIndexPage() {
                 >
                   <div>
                     {/* Visual Asset Container */}
-                    <div className="relative w-full h-[220px] bg-[#F5F3F6] overflow-hidden">
-                      <Image
-                        src={ind.heroImage}
-                        alt={ind.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(min-width: 1024px) 33vw, 100vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                        <span className="text-xs font-mono uppercase tracking-wider bg-black/40 backdrop-blur-xs px-2.5 py-1 rounded-full border border-white/20">
+                    <div className="relative w-full h-[220px] overflow-hidden border-b border-black/5">
+                      <IndustryVisual slug={ind.slug} compact />
+                      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
+                        <span className="text-[10px] font-mono uppercase tracking-wider bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20">
                           {ind.englishName}
                         </span>
-                        <div className="w-8 h-8 rounded-full bg-white text-[#17151A] flex items-center justify-center shadow-xs">
-                          <Icon className="w-4 h-4" />
+                        <div className="w-7 h-7 rounded-full bg-white text-[#17151A] flex items-center justify-center shadow-xs">
+                          <Icon className="w-3.5 h-3.5" />
                         </div>
                       </div>
                     </div>

@@ -2,7 +2,6 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import {
   ArrowLeft,
@@ -24,6 +23,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { INDUSTRIES_DATA, IndustrySolution } from '@/content/industryData';
+import { IndustryVisual } from '@/components/visuals/IndustryVisual';
 
 const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   retail: ShoppingBag,
@@ -95,27 +95,9 @@ export default function IndustryDetailPage({ params }: PageProps) {
               {industry.heroSubheadline}
             </p>
 
-            {/* Authentic Hero Photography Container */}
-            <div className="relative w-full h-[320px] sm:h-[460px] rounded-3xl overflow-hidden bg-[#F5F3F6] mb-12 shadow-sm border border-black/5">
-              <Image
-                src={industry.heroImage}
-                alt={industry.name}
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white flex items-end justify-between">
-                <div>
-                  <span className="text-xs font-mono uppercase tracking-wider block text-[#FAFFDE] mb-1">
-                    Hiện trường thực tế tại Việt Nam
-                  </span>
-                  <p className="text-sm sm:text-base font-medium max-w-xl text-white/95">
-                    {industry.name} — Tối ưu hóa vận hành dựa trên công nghệ AI bản địa hóa.
-                  </p>
-                </div>
-              </div>
+            {/* Industry Data Telemetry Visual */}
+            <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden mb-12 shadow-sm border border-black/5">
+              <IndustryVisual slug={industry.slug} />
             </div>
 
             {/* Market Context Section */}

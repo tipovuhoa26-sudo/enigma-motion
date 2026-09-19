@@ -28,8 +28,16 @@ Giống Phương án A, nhưng mỗi case study có một visual particle/biểu
 
 **Tôi nghiêng về Phương án C** — vừa đúng ý "thay toàn bộ" của bạn, vừa giải quyết luôn lỗi "1 ảnh dùng cho 8 case" ở mục 2, vừa giữ được tính "mỗi hình đều chứng minh một điều gì đó" đúng nguyên tắc đã thống nhất từ đầu.
 
-## 4. Việc cần bạn xác nhận trước khi tôi lên chi tiết kỹ thuật
+## 4. Quyết định & Kết quả thực thi
 
-1. Chọn A / B / C ở mục 3.
-2. Logo 44 tổ chức (mục 1) — xác nhận không nằm trong phạm vi "thay toàn bộ", giữ nguyên vì là thương hiệu bên thứ ba?
-3. Ảnh chân dung CAIO — xác nhận giữ nguyên vì đã tự chốt là ảnh thật?
+1. **Chọn Phương án C (Đã chốt & Hoàn thành 100%):**
+   - Loại bỏ hoàn toàn 4 ảnh chụp lặp lại 28 lần (`vietnam-retail-store.jpg`, `vietnam-manufacturing-line.jpg`, `vietnam-b2b-office.jpg`, `vietnam-strategy-meeting.jpg`).
+   - Xây dựng hệ thống Code-Drawn Visual Engine độc bản (`src/components/visuals/`) trực tiếp từ số liệu thực tế của từng dự án/ngành:
+     - 8 visual telemetry cho 8 canonical case studies (`CaseStudyVisual.tsx`): Vietcap (-75% chu kỳ bóc tách BCTC), HR AI (-97% sàng lọc 72h -> 2h), Manufacturing Edge Vision (99.8% precision, 50ms sweep), Content Factory (+60% organic compounding), Vinhomes (mesh bán hàng 45s), Dentsu (-65% turnaround proposal), Phương Trường An (+200% video thực địa), FPTU (10.000+ người, 600 giảng viên Bậc 6).
+     - 3 visual nguyên lý vận hành cho Advantage cards (`AdvantageVisual.tsx`): Tương thích mượt mà với GSAP scroll triggers (`counterRef`, `ringRef`, `dotRefs`).
+     - 4 visual vi mạch dữ liệu ngành (`IndustryVisual.tsx`).
+     - 1 visual Value-Based Horizon cho trang Khung đầu tư (`InvestmentVisual.tsx`).
+     - Widget telemetry radar trong Hero (`HeroPreviewWidget.tsx`).
+2. **Logo 44 tổ chức (`logoData.ts`):** Giữ nguyên vẹn 100% theo đúng cam kết thương hiệu đối tác/bên thứ ba.
+3. **Ảnh chân dung CAIO (`vinh_hung_portrait.png`):** Giữ nguyên vẹn 100% tại `/doi-ngu` để đảm bảo tính xác thực nhân sự thực chiến.
+

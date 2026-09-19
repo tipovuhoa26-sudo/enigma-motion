@@ -2,12 +2,12 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp, Sparkles } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { CASE_STUDIES_DETAILS } from '@/content/data';
+import { CaseStudyVisual } from '@/components/visuals/CaseStudyVisual';
 
 const BEAT_PHASES = [
   { label: 'Bối Cảnh Bình Thường', role: 'Khởi Đầu · Luke Skywalker', tagColor: 'bg-neutral-100 text-neutral-700' },
@@ -69,16 +69,9 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
               {detail.title}
             </h1>
 
-            {/* Hero Image */}
-            <div className="relative w-full h-[320px] sm:h-[460px] rounded-3xl overflow-hidden bg-[#F5F3F6] mb-12 shadow-sm border border-black/5">
-              <Image
-                src={detail.image}
-                alt={detail.title}
-                fill
-                className="object-cover"
-                sizes="100vw"
-                priority
-              />
+            {/* Hero Visual Telemetry */}
+            <div className="relative w-full h-[320px] sm:h-[440px] rounded-3xl overflow-hidden mb-12 shadow-sm border border-black/5">
+              <CaseStudyVisual slug={detail.slug} />
             </div>
 
             {/* Main Content Grid: Narrative & Impact Metrics */}

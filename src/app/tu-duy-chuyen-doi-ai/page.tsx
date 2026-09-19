@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -23,6 +22,7 @@ import {
   PieChart,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
+import { CaseStudyVisual } from '@/components/visuals/CaseStudyVisual';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { PILLARS_DATA } from '@/content/aiTransformation';
@@ -374,15 +374,9 @@ export default function AiTransformationHubPage() {
                         {current.story}
                       </p>
 
-                      {/* Authentic Image Thumbnail */}
-                      <div className="relative w-full h-[180px] rounded-2xl overflow-hidden bg-[#F5F3F6] border border-black/5 mb-4">
-                        <Image
-                          src={current.image}
-                          alt={current.title}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 50vw, 100vw"
-                        />
+                      {/* Case Study Visual Telemetry */}
+                      <div className="relative w-full h-[190px] rounded-2xl overflow-hidden border border-black/5 mb-4 shadow-xs">
+                        <CaseStudyVisual slug={current.link.replace('/case-studies/', '')} compact />
                       </div>
                     </div>
 

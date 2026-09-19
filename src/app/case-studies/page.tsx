@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { CASES_DATA } from '@/content/data';
+import { CaseStudyVisual } from '@/components/visuals/CaseStudyVisual';
 
 export default function CaseStudiesIndexPage() {
   return (
@@ -61,14 +61,8 @@ export default function CaseStudiesIndexPage() {
                 </div>
 
                 <div>
-                  <div className="relative w-full h-[200px] sm:h-[220px] rounded-2xl overflow-hidden bg-[#F5F3F6] mb-4">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    />
+                  <div className="relative w-full h-[200px] sm:h-[220px] rounded-2xl overflow-hidden mb-4 border border-black/5 shadow-xs">
+                    <CaseStudyVisual slug={item.slug} compact />
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-black/5 text-xs text-[#17151A] font-medium">

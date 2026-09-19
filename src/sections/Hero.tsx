@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { CobeGlobe } from '@/components/CobeGlobe';
+import { HeroIndustryWidget, HeroCaseStudyIcon } from '@/components/visuals/HeroPreviewWidget';
 import { createHeroTimeline } from '@/motion/timelines/hero';
 
 interface HeroProps {
@@ -121,19 +121,8 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
               </div>
             </Link>
 
-            {/* Widget 2: Case study preview */}
-            <Link href="/nganh" className="relative w-20 h-20 rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-[#FAFFDE] group cursor-pointer">
-              <Image
-                src="/assets/vietnam-retail-store.jpg"
-                alt="Dự án theo ngành"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                sizes="80px"
-              />
-              <div className="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-[#17151A] text-white flex items-center justify-center">
-                <ArrowUpRight className="w-3 h-3" />
-              </div>
-            </Link>
+            {/* Widget 2: Industry preview */}
+            <HeroIndustryWidget />
           </div>
         </div>
 
@@ -182,9 +171,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
 
       {/* Bottom subtle interview link */}
       <div className="hidden sm:flex items-center gap-2 pt-6 text-xs text-[#6E6E6E]">
-        <div className="w-6 h-6 rounded-full overflow-hidden bg-black/10 relative">
-          <Image src="/assets/vietnam-b2b-office.jpg" alt="Case study preview" fill className="object-cover" />
-        </div>
+        <HeroCaseStudyIcon />
         <Link href="/nganh" className="hover:text-[#17151A] cursor-pointer transition-colors">
           Xem dự án theo ngành và kết quả thực tế
         </Link>

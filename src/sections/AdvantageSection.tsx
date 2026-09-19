@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, TrendingUp, Zap, Sparkles } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { AdvantageCard, ADVANTAGES_DATA } from '@/content/data';
+import { AdvantageVisual } from '@/components/visuals/AdvantageVisual';
 import { createAdvantageTimeline } from '@/motion/timelines/advantage';
 
 interface AdvantageProps {
@@ -122,37 +122,11 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
-            <Image
-              src={advantages[0]?.image ?? '/assets/vietnam-retail-store.jpg'}
-              alt={advantages[0]?.title ?? 'Product'}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              sizes="(min-width: 768px) 420px, 100vw"
-              priority
+          <div className="relative w-full md:w-[420px] h-[260px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden shadow-inner border border-black/5 shrink-0 group">
+            <AdvantageVisual 
+              cardIndex={0} 
+              counterRef={counter1Ref}
             />
-
-            {/* Metric Floating Widget */}
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5 z-10">
-              <span ref={counter1Ref} className="text-2xl sm:text-3xl font-normal text-[#17151A] block tabular-nums" data-counter>
-                0%
-              </span>
-              <div className="flex items-end gap-1 h-5 my-1.5">
-                <div className="w-1 h-2 bg-[#17151A] rounded-full" />
-                <div className="w-1 h-3.5 bg-[#17151A] rounded-full" />
-                <div className="w-1 h-5 bg-[#17151A] rounded-full" />
-                <div className="w-1 h-4 bg-[#17151A] rounded-full" />
-              </div>
-              <span className="text-[10px] text-[#6E6E6E] block font-medium uppercase tracking-wider">
-                {advantages[0]?.metric.label}
-              </span>
-            </div>
-
-            {/* Subtext Pill */}
-            <div className="absolute bottom-4 left-4 bg-[#17151A] text-white text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-md z-10">
-              <Sparkles className="w-3.5 h-3.5 text-[#FAFFDE]" />
-              <span>{advantages[0]?.metric.subtext}</span>
-            </div>
           </div>
         </div>
 
@@ -175,48 +149,12 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
-            <Image
-              src={advantages[1]?.image ?? '/assets/vietnam-manufacturing-line.jpg'}
-              alt={advantages[1]?.title ?? 'Product'}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              sizes="(min-width: 768px) 420px, 100vw"
+          <div className="relative w-full md:w-[420px] h-[260px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden shadow-inner border border-black/5 shrink-0 group">
+            <AdvantageVisual 
+              cardIndex={1} 
+              counterRef={counter2Ref}
+              ringRef={ring2Ref}
             />
-
-            {/* Ring Circular Widget */}
-            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-md border border-black/5 flex items-center gap-3 z-10">
-              <div className="relative w-14 h-14 flex items-center justify-center">
-                <svg className="w-full h-full -rotate-90" viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="26" stroke="#EAE7EC" strokeWidth="4" fill="none" />
-                  <circle
-                    ref={ring2Ref}
-                    cx="30"
-                    cy="30"
-                    r="26"
-                    stroke="#17151A"
-                    strokeWidth="4"
-                    fill="none"
-                    strokeDasharray={2 * Math.PI * 26}
-                    strokeDashoffset={2 * Math.PI * 26}
-                    strokeLinecap="round"
-                    className="transition-[stroke-dashoffset] duration-300"
-                    data-counter-ring
-                  />
-                </svg>
-                <span ref={counter2Ref} className="absolute text-sm font-semibold text-[#17151A] tabular-nums" data-counter>
-                  0%
-                </span>
-              </div>
-              <span className="text-xs text-[#6E6E6E] font-medium leading-tight">
-                Tốc Độ<br />Vận Hành
-              </span>
-            </div>
-
-            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5 z-10">
-              <Zap className="w-3.5 h-3.5" />
-              <span>{advantages[1]?.metric.subtext}</span>
-            </div>
           </div>
         </div>
 
@@ -239,36 +177,12 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             </p>
           </div>
 
-          <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
-            <Image
-              src={advantages[2]?.image ?? '/assets/vietnam-b2b-office.jpg'}
-              alt={advantages[2]?.title ?? 'Product'}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              sizes="(min-width: 768px) 420px, 100vw"
+          <div className="relative w-full md:w-[420px] h-[260px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden shadow-inner border border-black/5 shrink-0 group">
+            <AdvantageVisual 
+              cardIndex={2} 
+              counterRef={counter3Ref}
+              dotRefs={[dot1Ref, dot2Ref, dot3Ref]}
             />
-
-            {/* Dark Widget with Sequential Dots */}
-            <div className="absolute top-4 left-4 bg-[#1E1C1E] text-white rounded-2xl p-4 shadow-xl flex flex-col gap-2 min-w-[130px] z-10" data-widget-dark>
-              <div className="flex items-center justify-between text-xs text-white/70">
-                <span>Tiến Độ</span>
-                <span ref={counter3Ref} className="text-xl font-normal text-[#FAFFDE] tabular-nums" data-counter>
-                  0%
-                </span>
-              </div>
-
-              {/* 3-dot pagination step indicator */}
-              <div className="flex items-center gap-1.5 pt-1" data-dots>
-                <span ref={dot1Ref} className="w-2 h-2 rounded-full bg-[#FAFFDE] opacity-30 transition-opacity duration-200" />
-                <span ref={dot2Ref} className="w-2 h-2 rounded-full bg-[#FAFFDE] opacity-30 transition-opacity duration-200" />
-                <span ref={dot3Ref} className="w-2 h-2 rounded-full bg-[#FAFFDE] opacity-30 transition-opacity duration-200" />
-              </div>
-            </div>
-
-            <div className="absolute bottom-4 left-4 bg-white/90 text-[#17151A] text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-sm border border-black/5 z-10">
-              <ArrowUpRight className="w-3.5 h-3.5" />
-              <span>{advantages[2]?.metric.subtext}</span>
-            </div>
           </div>
         </div>
 
