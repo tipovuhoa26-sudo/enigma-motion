@@ -11,8 +11,7 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [val1, setVal1] = useState('0%');
-  const [val2, setVal2] = useState('0+');
-  const [val3, setVal3] = useState('0x');
+  const [val3, setVal3] = useState('0%');
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -21,30 +20,25 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
 
-          // Animate counter 1 (99.8%)
           const startTime = performance.now();
           const duration = 1400;
 
           const animate = (currentTime: number) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
             const ease = 1 - Math.pow(1 - progress, 3);
 
             const c1 = (ease * 99.8).toFixed(1);
-            const c2 = Math.round(ease * 140);
-            const c3 = (ease * 2.4).toFixed(1);
+            const c3 = Math.round(ease * -75);
 
             setVal1(`${c1}%`);
-            setVal2(`${c2}+`);
-            setVal3(`${c3}x`);
+            setVal3(`${c3}%`);
 
             if (progress < 1) {
               requestAnimationFrame(animate);
             } else {
               setVal1('99.8%');
-              setVal2('140+');
-              setVal3('2.4x');
+              setVal3('-75%');
             }
           };
 
@@ -58,7 +52,13 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
     return () => observer.disconnect();
   }, [hasAnimated]);
 
-  const displayValues = [val1, val2, val3];
+  const getDisplayValue = (index: number, fallback: string) => {
+    if (!hasAnimated) return fallback;
+    if (index === 0) return val1;
+    if (index === 1) return fallback;
+    if (index === 2) return val3;
+    return fallback;
+  };
 
   return (
     <section
@@ -85,7 +85,7 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
                 </span>
               )}
               <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#17151A] tabular-nums">
-                {hasAnimated ? displayValues[index] : item.value}
+                {getDisplayValue(index, item.value)}
               </span>
             </div>
             <span className="text-xs sm:text-sm text-[#6E6E6E] font-normal max-w-[220px] leading-relaxed">

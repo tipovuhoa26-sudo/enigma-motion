@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HelpCircle, User, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { CaseStudy, CASES_DATA } from '@/content/data';
 import { createCasesGalleryTimeline } from '@/motion/timelines/casesGallery';
@@ -53,10 +53,10 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
         <h2
           ref={watermarkRef}
           className="text-center font-extralight tracking-tighter text-[#17151A] uppercase opacity-0 will-change-[opacity]"
-          style={{ fontSize: 'clamp(3.5rem, 13vw, 9.5rem)', lineHeight: 0.85 }}
+          style={{ fontSize: 'clamp(3rem, 11vw, 8.5rem)', lineHeight: 0.85 }}
           data-cases-watermark
         >
-          OUR CASES
+          DỰ ÁN THỰC TẾ
         </h2>
       </div>
 
@@ -110,40 +110,25 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
         </div>
       </div>
 
-      {/* Bottom Bar: Scroll hint, All Works CTA, Help/User */}
+      {/* Bottom Bar: Scroll hint, All Works CTA */}
       <div className="w-full flex items-center justify-between pt-4 pb-2 z-20 text-xs text-[#6E6E6E]">
         <span className="hidden sm:inline-block font-normal">
-          Cuộn ngang để khám phá dự án
+          Kéo ngang để xem tiếp
         </span>
 
         {/* Center CTA */}
         <div className="mx-auto sm:mx-0">
           <Link href="/case-studies">
             <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium cursor-pointer" data-cases-cta>
-              <span>Tất Cả Dự Án Thực Tế</span>
+              <span>Xem tất cả dự án</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Button>
           </Link>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            aria-label="Help"
-            onClick={() => window.dispatchEvent(new CustomEvent('open-help'))}
-            className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 cursor-pointer text-[#6E6E6E] hover:text-[#17151A] transition-colors"
-          >
-            <HelpCircle className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            aria-label="Account"
-            onClick={() => window.dispatchEvent(new CustomEvent('open-account'))}
-            className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/5 cursor-pointer text-[#6E6E6E] hover:text-[#17151A] transition-colors"
-          >
-            <User className="w-4 h-4" />
-          </button>
-        </div>
+        <span className="hidden sm:inline-block text-[11px] text-[#8E8E8E]">
+          {cases.length} Dự án tiêu biểu
+        </span>
       </div>
     </section>
   );

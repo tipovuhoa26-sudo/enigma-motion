@@ -43,12 +43,12 @@ export function CtaFooter() {
         {/* Top Eyebrow Tag */}
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-black/5 text-xs font-medium text-[#17151A] shadow-2xs">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Bắt Đầu Lộ Trình Chuyển Đổi</span>
+          <span>Khởi Động</span>
         </span>
 
         {/* Main Headline */}
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#17151A] leading-[1.1]">
-          Khởi Động Lộ Trình<br />Chuyển Đổi AI Cho Doanh Nghiệp
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-tight">
+          Bắt Đầu Dự Án AI Của Bạn
         </h2>
 
         {/* Big circular contact button */}
@@ -60,30 +60,30 @@ export function CtaFooter() {
 
         {/* Explanatory Copy */}
         <p className="text-sm md:text-base text-[#6E6E6E] max-w-md leading-relaxed">
-          Đặt lịch 30 phút với chuyên gia Sunext, hoặc tự làm bài đo lường trước.
+          Trao đổi 30 phút cùng chuyên gia Sunext để xác định bài toán hoàn vốn nhanh nhất.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
           <a href="mailto:contact@sunext.vn">
             <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm cursor-pointer">
-              <span>Đặt Lịch Tư Vấn Chiến Lược</span>
+              <span>Đặt Lịch Tư Vấn</span>
               <ArrowUpRight className="w-4 h-4" />
             </Button>
           </a>
           <Link href="/danh-gia-san-sang-ai">
             <Button variant="outline" size="lg" className="rounded-full bg-white font-medium text-sm">
               <Mail className="w-4 h-4 mr-2" />
-              <span>Đo Lường Sẵn Sàng (5 Phút)</span>
+              <span>Đo Độ Sẵn Sàng (5 Phút)</span>
             </Button>
           </Link>
         </div>
 
         {/* Trust Badges bottom */}
         <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-xs text-[#6E6E6E] font-medium border-t border-black/5 w-full mt-4">
-          <span>Thời gian phản hồi: &lt; 2 giờ</span>
-          <span>Email: contact@sunext.vn</span>
-          <span>Văn phòng: TP. Hồ Chí Minh · Hà Nội</span>
+          <span>Phản hồi trong 2 giờ</span>
+          <span>contact@sunext.vn</span>
+          <span>TP. Hồ Chí Minh · Hà Nội</span>
         </div>
       </div>
     </section>

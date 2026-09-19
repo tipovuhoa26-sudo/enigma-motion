@@ -16,8 +16,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Sunext — Năng Lực Chuyển Đổi AI Toàn Trình (Sunext Method)',
-  description: 'Tư vấn chiến lược và hiện thực hóa chuyển đổi AI trên bài toán thật cho doanh nghiệp Việt Nam. Tái cấu trúc mô hình vận hành, tích hợp dữ liệu sống và nghiệm thu theo kết quả kinh doanh đo lường được.',
+  title: 'Sunext | Chuyển Đổi AI Doanh Nghiệp',
+  description: 'Tư vấn và triển khai chuyển đổi AI trên bài toán thật cho doanh nghiệp Việt Nam. Nghiệm thu theo kết quả vận hành và kinh doanh.',
 };
 
 export default function RootLayout({

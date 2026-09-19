@@ -37,15 +37,15 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
   {
     id: 'advantage-1',
     index: 1,
-    eyebrow: 'Mô Hình Vận Hành & Con Người',
-    title: '70% Thành Bại Ở Con Người, Không Phải Mua Tool',
-    description: 'Mua license AI cho cả trăm người mà không tái thiết kế quy trình chỉ tạo ra rác kỹ thuật số đắt đỏ. Sunext đào tạo nâng tầng năng lực đội ngũ và tối ưu luồng việc để AI giải phóng thời gian thực tế.',
+    eyebrow: 'Con người & Quy trình',
+    title: '70% Hiệu Quả Đến Từ Con Người, Không Phải Mua Tool',
+    description: 'Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.',
     image: '/assets/vietnam-retail-store.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 40,
       suffix: '%',
-      label: 'chi phí tuyển dụng thực tế',
+      label: 'chi phí tuyển dụng tiết kiệm',
       subtext: 'Chuỗi bán lẻ 500 nhân sự',
     },
     widgetType: 'bars',
@@ -53,9 +53,9 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
   {
     id: 'advantage-2',
     index: 2,
-    eyebrow: 'Kiến Trúc Dữ Liệu Sống',
-    title: 'Kết Nối Trực Tiếp Vào Lõi Vận Hành Doanh Nghiệp',
-    description: 'Không tạo thêm dashboard tĩnh thừa thãi để ngắm. Hệ thống AI tích hợp 2 chiều vào ERP, CRM, dây chuyền máy để tự động kích hoạt hành động và cảnh báo theo thời gian thực.',
+    eyebrow: 'Hạ tầng dữ liệu',
+    title: 'Kết Nối Trực Tiếp Vào Hệ Thống Sẵn Có',
+    description: 'Tích hợp hai chiều vào ERP, CRM và dây chuyền sản xuất. Hệ thống kích hoạt hành động theo thời gian thực, không phát sinh phần mềm phụ.',
     image: '/assets/vietnam-manufacturing-line.jpg',
     bgColor: '#F5F3F6',
     metric: {
@@ -69,9 +69,9 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
   {
     id: 'advantage-3',
     index: 3,
-    eyebrow: 'Nghiệm Thu Theo Kết Quả',
-    title: 'Đo Bằng Giờ Công Tiết Kiệm, Không Bán Giải Pháp Ảo',
-    description: 'Nói không với các dự án công nghệ kéo dài vô tận. Triển khai theo từng cột mốc đo lường được, nghiệm thu bằng hiệu quả P&L định lượng: rút ngắn thời gian xử lý, giảm tỷ lệ lỗi, tăng lead.',
+    eyebrow: 'Nghiệm thu dự án',
+    title: 'Nghiệm Thu Bằng Giờ Công Và P&L',
+    description: 'Triển khai theo từng cột mốc rõ ràng. Nghiệm thu bằng chỉ số định lượng: giảm giờ xử lý, hạ tỷ lệ lỗi và tăng sản lượng thực tế.',
     image: '/assets/vietnam-b2b-office.jpg',
     bgColor: '#FAFFDE',
     metric: {
@@ -87,7 +87,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
 export const CASES_DATA: CaseStudy[] = [
   {
     id: 'case-1',
-    title: 'Tối Ưu Tuyển Dụng & Sàng Lọc CV Chuỗi Bán Lẻ',
+    title: 'Tối Ưu Tuyển Dụng Chuỗi Bán Lẻ',
     category: 'Bán Lẻ & FMCG',
     image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
@@ -97,7 +97,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-2',
-    title: 'Hệ Thống AI Vision Kiểm Định Cơ Khí Chính Xác',
+    title: 'AI Vision Kiểm Định Cơ Khí',
     category: 'Sản Xuất & Chế Tạo',
     image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
@@ -107,7 +107,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-3',
-    title: 'Content Factory & Engine Tri Thức B2B',
+    title: 'Content Engine Doanh Nghiệp B2B',
     category: 'Dịch Vụ B2B',
     image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[290px] sm:w-[330px] md:w-[360px]',
@@ -117,7 +117,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-4',
-    title: 'Multi-Agent Đối Chiếu Báo Cáo Tài Chính Tự Động',
+    title: 'Bóc Tách Báo Cáo Tài Chính',
     category: 'Chứng Khoán & Đầu Tư',
     image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[340px] sm:w-[380px] md:w-[420px]',
@@ -127,7 +127,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-5',
-    title: 'AI Sales Enablement & Lead Reactivation Bất Động Sản',
+    title: 'AI Trợ Lý Bán Hàng Bất Động Sản',
     category: 'Bất Động Sản & Nhà Phố',
     image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
@@ -137,7 +137,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-6',
-    title: 'Chuẩn Hóa Quy Trình Pitch Deck Đấu Thầu Quốc Tế',
+    title: 'Tự Động Hóa Hồ Sơ Thầu Quốc Tế',
     category: 'Truyền Thông & Sáng Tạo',
     image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
@@ -147,7 +147,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-7',
-    title: 'Tự Động Hóa Sản Xuất Video Thực Địa Trên Di Động',
+    title: 'Sản Xuất Video Hiện Trường',
     category: 'Bất Động Sản & Nhà Phố',
     image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
@@ -157,7 +157,7 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-8',
-    title: 'Đào Tạo Giảng Viên Chuẩn Bậc 6 & AI Event Management',
+    title: 'Hệ Thống AI Agent Sự Kiện 10.000 Người',
     category: 'Giáo Dục & Công Nghệ',
     image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[330px] sm:w-[370px] md:w-[410px]',
@@ -170,15 +170,15 @@ export const CASES_DATA: CaseStudy[] = [
 export const STATS_DATA: StatItem[] = [
   {
     value: '99.8%',
-    label: 'Độ chính xác kiểm định tự động AI Vision',
+    label: 'Độ chính xác kiểm định cơ khí',
   },
   {
     value: '3 ngày → 2h',
-    label: 'Rút ngắn thời gian sàng lọc hồ sơ ứng viên',
+    label: 'Thời gian lọc hồ sơ ứng viên',
   },
   {
     value: '-75%',
-    label: 'Thời gian bóc tách dữ liệu báo cáo tài chính thô',
+    label: 'Thời gian bóc tách báo cáo tài chính',
   },
 ];
 

@@ -243,9 +243,7 @@ export function CobeGlobe() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
           </span>
-          <span className="font-semibold">40+ Dự Án AI Thực Tế</span>
-          <span className="text-[#8E8E8E] hidden sm:inline">•</span>
-          <span className="text-[11px] text-[#6E6E6E] hidden sm:inline">Dữ liệu định vị thật</span>
+          <span className="font-semibold">40+ Dự Án Thực Tế</span>
         </div>
       </div>
 
@@ -253,7 +251,7 @@ export function CobeGlobe() {
       <div className="absolute bottom-2 left-2 sm:left-4 z-20 flex items-center gap-2 pointer-events-none">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#17151A]/85 backdrop-blur-md text-white text-[11px] font-medium shadow-sm">
           <Compass className="w-3.5 h-3.5 text-[#FAFFDE] animate-spin-slow" />
-          <span>Kéo xoay 3D theo quán tính</span>
+          <span>Kéo để xoay 3D</span>
         </div>
       </div>
 

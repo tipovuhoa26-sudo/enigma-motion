@@ -79,26 +79,23 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
     >
       {/* Pinned Header Block */}
       <div className="w-full max-w-4xl mx-auto text-center mb-6 z-10 shrink-0" data-advantage-heading>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#17151A] leading-tight mb-4">
-          Lợi Thế Thực Chiến:{' '}
-          <span className="inline-flex items-center align-middle mx-1 px-3 py-1 bg-[#FAFFDE] border border-[#DFE2C8] rounded-full text-sm">
-            <TrendingUp className="w-4 h-4 text-[#17151A]" />
-          </span>{' '}
-          Chuyển Đổi Thực Chất,{' '}
-          <br className="hidden sm:inline" />
-          Đo Lường Bằng Kết Quả
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-[#17151A] leading-tight mb-3">
+          Ba Nguyên Tắc Tạo Ra Kết Quả
         </h2>
+        <p className="text-sm md:text-base text-[#6E6E6E] font-normal max-w-lg mx-auto mb-5">
+          Khác biệt giữa một dự án AI sinh lời và một khoản đầu tư lãng phí.
+        </p>
 
         {/* Secondary In-Flow CTA row */}
         <div className="flex flex-wrap items-center justify-center gap-3" data-advantage-cta>
           <Link href="/tu-duy-chuyen-doi-ai">
             <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium">
-              Khám Phá Sunext Method
+              Phương Pháp Sunext
             </Button>
           </Link>
           <Link href="/danh-gia-san-sang-ai">
             <Button variant="secondary" size="md" className="rounded-full border border-black/5 text-xs font-medium">
-              Đo Lường Sẵn Sàng (5 Phút)
+              Đo Độ Sẵn Sàng (5 Phút)
             </Button>
           </Link>
         </div>
@@ -212,7 +209,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
                 </span>
               </div>
               <span className="text-xs text-[#6E6E6E] font-medium leading-tight">
-                Operational<br />Velocity
+                Tốc Độ<br />Vận Hành
               </span>
             </div>
 
@@ -254,7 +251,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
             {/* Dark Widget with Sequential Dots */}
             <div className="absolute top-4 left-4 bg-[#1E1C1E] text-white rounded-2xl p-4 shadow-xl flex flex-col gap-2 min-w-[130px] z-10" data-widget-dark>
               <div className="flex items-center justify-between text-xs text-white/70">
-                <span>Task Rate</span>
+                <span>Tiến Độ</span>
                 <span ref={counter3Ref} className="text-xl font-normal text-[#FAFFDE] tabular-nums" data-counter>
                   0%
                 </span>

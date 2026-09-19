@@ -59,7 +59,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       {/* Top Tertiary Caption (Top Right) */}
       <div className="w-full flex justify-end mb-4 md:mb-0">
         <p className="text-right text-xs md:text-sm text-[#6E6E6E] max-w-[220px] leading-snug font-normal">
-          Chuyển đổi thực chất • Đo lường bằng kết quả kinh doanh
+          Tư vấn & Triển khai AI doanh nghiệp
         </p>
       </div>
 
@@ -72,26 +72,26 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-3 mb-6" data-hero-cta>
             <Link href="/tu-duy-chuyen-doi-ai">
               <Button variant="lime" size="md" className="rounded-full font-semibold shadow-xs cursor-pointer">
-                Phương Pháp Luận Sunext
+                Phương Pháp Sunext
               </Button>
             </Link>
             <Link href="/danh-gia-san-sang-ai">
               <Button variant="outline" size="md" className="rounded-full bg-white/40 backdrop-blur-xs font-medium cursor-pointer">
-                Đo Lường Sẵn Sàng (5 Phút)
+                Đo Độ Sẵn Sàng (5 Phút)
               </Button>
             </Link>
           </div>
 
           {/* H1 Headline: Pre-split lines for SEO & smooth blur entrance */}
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-light tracking-tight text-[#17151A] leading-[1.08] mb-10 max-w-[680px]"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-[3.25rem] font-light tracking-tight text-[#17151A] leading-[1.18] mb-8 max-w-[780px]"
             data-hero-headline
           >
-            <span ref={headlineLine1Ref} className="line block font-normal">
-              Chuyển Đổi AI Toàn Trình
+            <span ref={headlineLine1Ref} className="line block font-normal whitespace-nowrap">
+              Đưa AI Vào Vận Hành
             </span>
-            <span ref={headlineLine2Ref} className="line block font-light text-[#17151A]/85">
-              Do Kinh Doanh Dẫn Dắt
+            <span ref={headlineLine2Ref} className="line block font-light text-[#17151A]/85 whitespace-nowrap">
+              Đo Bằng Kết Quả Kinh Doanh
             </span>
           </h1>
 
@@ -106,7 +106,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-medium text-[#17151A] leading-tight">
-                  Dữ Liệu Sống &<br />Tri Thức Lõi
+                  Kiến Trúc<br />Dữ Liệu
                 </span>
                 <div className="w-6 h-6 rounded-full bg-[#17151A] text-white flex items-center justify-center group-hover:bg-black transition-colors">
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -125,7 +125,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             <Link href="/nganh" className="relative w-20 h-20 rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-[#FAFFDE] group cursor-pointer">
               <Image
                 src="/assets/vietnam-retail-store.jpg"
-                alt="Giải pháp ngành thực tế"
+                alt="Dự án theo ngành"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="80px"
@@ -155,7 +155,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             data-hero-widget-stat
           >
             <div className="flex items-center justify-between text-xs font-medium text-[#17151A]">
-              <span>Tối Ưu<br />Vận Hành</span>
+              <span>Hiệu Quả<br />Vận Hành</span>
               <div className="w-6 h-6 rounded-full bg-white/70 flex items-center justify-center">
                 <TrendingUp className="w-3.5 h-3.5 text-[#17151A]" />
               </div>
@@ -186,7 +186,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           <Image src="/assets/vietnam-b2b-office.jpg" alt="Case study preview" fill className="object-cover" />
         </div>
         <Link href="/nganh" className="hover:text-[#17151A] cursor-pointer transition-colors">
-          Xem các giải pháp theo ngành & nghiên cứu tình huống thực tế
+          Xem dự án theo ngành và kết quả thực tế
         </Link>
       </div>
     </section>
