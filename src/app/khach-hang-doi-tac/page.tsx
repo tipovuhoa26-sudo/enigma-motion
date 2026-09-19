@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -268,25 +269,24 @@ export default function ClientsNetworkPage() {
                   <div
                     key={org.id}
                     onClick={() => setSelectedOrg(org)}
-                    className="relative p-4 rounded-2xl bg-white border border-black/10 shadow-xs hover:border-black/25 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[120px] group cursor-pointer filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100"
+                    className="relative p-3.5 sm:p-4 rounded-2xl bg-white border border-black/10 shadow-xs hover:border-black/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[125px] group cursor-pointer filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
                   >
                     {/* Case Study Indicator Badge */}
                     {hasCase && (
-                      <span className="absolute top-2 right-2 text-[9px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded-full border border-emerald-200">
+                      <span className="absolute top-2 right-2 text-[9px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded-full border border-emerald-200 shadow-2xs">
                         Case
                       </span>
                     )}
 
-                    {/* Styled Brand Logo Mark */}
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center font-bold text-xs shadow-2xs mb-2 transition-transform duration-300 group-hover:scale-105 select-none"
-                      style={{
-                        backgroundColor: org.brandBg,
-                        color: org.brandColor,
-                        border: `1px solid ${org.brandColor}25`,
-                      }}
-                    >
-                      {org.textLogo.length > 5 ? org.textLogo.slice(0, 4) : org.textLogo}
+                    {/* Authentic Brand Logo Image */}
+                    <div className="w-full h-12 flex items-center justify-center mb-2 px-1 py-1">
+                      <Image
+                        src={org.logoUrl}
+                        alt={org.name}
+                        width={110}
+                        height={44}
+                        className="max-h-9 max-w-[92px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                      />
                     </div>
 
                     {/* Brand Name & Industry Label */}
@@ -333,15 +333,14 @@ export default function ClientsNetworkPage() {
 
                 {/* Organization Brand Header */}
                 <div className="flex items-center gap-4 mb-6 pr-10">
-                  <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-base shadow-xs shrink-0"
-                    style={{
-                      backgroundColor: selectedOrg.brandBg,
-                      color: selectedOrg.brandColor,
-                      border: `1px solid ${selectedOrg.brandColor}30`,
-                    }}
-                  >
-                    {selectedOrg.textLogo}
+                  <div className="w-16 h-16 rounded-2xl bg-[#FBFBFA] border border-black/10 p-2 flex items-center justify-center shadow-xs shrink-0">
+                    <Image
+                      src={selectedOrg.logoUrl}
+                      alt={selectedOrg.name}
+                      width={64}
+                      height={64}
+                      className="max-h-12 max-w-[56px] w-auto h-auto object-contain"
+                    />
                   </div>
                   <div>
                     <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-[#F5F3F6] text-[#6E6E6E] inline-block mb-1">

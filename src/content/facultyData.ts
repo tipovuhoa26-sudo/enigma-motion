@@ -10,6 +10,7 @@ export interface FacultyMember {
   organizations: string[];
   certifications?: string[];
   quote?: string;
+  avatarUrl?: string;
 }
 
 export const FACULTY_BLOCKS = [
@@ -31,6 +32,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     blockId: 'executive',
     blockName: 'Lãnh Đạo & Điều Hành C-Level',
     experienceYears: 10,
+    avatarUrl: '/assets/vinh_hung_portrait.png',
     keyHighlights: [
       'Tiên phong nghiên cứu và đào tạo ứng dụng AI thực chiến tại Việt Nam từ năm 2023',
       'Đã cấp chứng nhận ứng dụng AI cho hơn 600 giảng viên thuộc mạng lưới Train-the-Trainer chuẩn Bậc 6',
@@ -49,6 +51,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     blockId: 'executive',
     blockName: 'Lãnh Đạo & Điều Hành C-Level',
     experienceYears: 24,
+    avatarUrl: '/assets/tung_chi_portrait.png',
     keyHighlights: [
       '24+ năm kinh nghiệm quản trị và tài chính cấp cao tại các định chế tài chính và tập đoàn năng lượng',
       'Nguyên Kế toán trưởng & Thành viên Hội đồng Thẩm định Niêm yết Sở Giao dịch Chứng khoán TP.HCM (HOSE) suốt 12+ năm',

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -153,8 +154,14 @@ export default function TeamLeadershipPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
               {/* Profile Card Header */}
               <div className="lg:col-span-4 space-y-4">
-                <div className="w-24 h-24 rounded-2xl bg-[#17151A] text-white flex items-center justify-center font-serif text-3xl font-light tracking-wider shadow-sm">
-                  VH
+                <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl overflow-hidden bg-[#17151A] shadow-md border border-black/10 shrink-0">
+                  <Image
+                    src="/assets/vinh_hung_portrait.png"
+                    alt="Nguyễn Phước Vĩnh Hưng"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
 
                 <div>
@@ -280,11 +287,22 @@ export default function TeamLeadershipPage() {
                     <div className="space-y-4">
                       {/* Card Header: Avatar & Experience Tag */}
                       <div className="flex items-start justify-between gap-3">
-                        <div
-                          className={`w-12 h-12 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-lg font-light tracking-wider shadow-xs`}
-                        >
-                          {initials}
-                        </div>
+                        {member.avatarUrl ? (
+                          <div className="relative w-12 h-12 rounded-2xl overflow-hidden border border-black/10 shadow-xs shrink-0">
+                            <Image
+                              src={member.avatarUrl}
+                              alt={member.name}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <div
+                            className={`w-12 h-12 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-lg font-light tracking-wider shadow-xs shrink-0`}
+                          >
+                            {initials}
+                          </div>
+                        )}
                         <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 shrink-0">
                           {member.experienceYears}+ Năm KN
                         </span>
@@ -365,13 +383,24 @@ export default function TeamLeadershipPage() {
 
                 {/* Modal Header */}
                 <div className="flex items-start gap-4 mb-6 pr-10">
-                  <div
-                    className={`w-14 h-14 rounded-2xl ${
-                      BLOCK_COLORS[selectedFaculty.blockId]?.bg || 'bg-neutral-900'
-                    } text-white flex items-center justify-center font-serif text-xl font-light tracking-wider shrink-0 shadow-sm`}
-                  >
-                    {getInitials(selectedFaculty.name)}
-                  </div>
+                  {selectedFaculty.avatarUrl ? (
+                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-black/10 shadow-sm shrink-0">
+                      <Image
+                        src={selectedFaculty.avatarUrl}
+                        alt={selectedFaculty.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`w-14 h-14 rounded-2xl ${
+                        BLOCK_COLORS[selectedFaculty.blockId]?.bg || 'bg-neutral-900'
+                      } text-white flex items-center justify-center font-serif text-xl font-light tracking-wider shrink-0 shadow-sm`}
+                    >
+                      {getInitials(selectedFaculty.name)}
+                    </div>
+                  )}
                   <div>
                     <span
                       className={`text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full border inline-block mb-1.5 ${

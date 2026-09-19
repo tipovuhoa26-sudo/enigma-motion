@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" width="540" height="160">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g transform="translate(20, 20)">
+    <!-- Globe/Flight icon -->
+    <circle cx="55" cy="60" r="45" fill="none" stroke="#1E3A8A" stroke-width="6"/>
+    <ellipse cx="55" cy="60" rx="22" ry="45" fill="none" stroke="#2563EB" stroke-width="4" stroke-dasharray="6 3"/>
+    <line x1="10" y1="60" x2="100" y2="60" stroke="#1E3A8A" stroke-width="4"/>
+    <path d="M35,35 Q60,10 85,35" fill="none" stroke="#D97706" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Text -->
+    <text x="125" y="58" font-family="'Plus Jakarta Sans', 'Inter', 'Arial', sans-serif" font-size="42" font-weight="800" fill="#0F2C59" letter-spacing="2">NOVA GLOBAL</text>
+    <text x="127" y="96" font-family="'Plus Jakarta Sans', 'Inter', 'Arial', sans-serif" font-size="24" font-weight="700" fill="#D97706" letter-spacing="5">VISA CONSULTING</text>
+  </g>
+</svg>
