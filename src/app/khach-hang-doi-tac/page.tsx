@@ -7,16 +7,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   ShieldCheck,
-  Building2,
-  GraduationCap,
-  Briefcase,
-  ShoppingBag,
-  Tv,
-  Truck,
   Sparkles,
   X,
   ExternalLink,
-  Layers,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -35,108 +28,6 @@ export default function ClientsNetworkPage() {
     activeIndustry === 'all'
       ? ORGANIZATION_LOGOS
       : ORGANIZATION_LOGOS.filter((org) => org.industryId === activeIndustry);
-
-  const industryGroups = [
-    {
-      name: 'Tài Chính – Chứng Khoán – Bảo Hiểm',
-      icon: Briefcase,
-      desc: 'Mạng lưới nhân sự và cán bộ phân tích đã tham gia các chương trình đào tạo chuyên sâu về AI trong bóc tách dữ liệu tài chính & thẩm định.',
-      organizations: [
-        'Vietcap Securities (VCI)',
-        'Vietcombank',
-        'BIDV',
-        'Prudential Vietnam',
-        'Dai-ichi Life Vietnam',
-      ],
-      featuredCase: {
-        title: 'Vietcap Securities: Multi-Agent bóc tách BCTC (-75% thời gian)',
-        url: '/case-studies/vietcap-ai-multi-agent-nghien-cuu-thi-truong',
-      },
-    },
-    {
-      name: 'Bất Động Sản – Xây Dựng – Năng Lượng',
-      icon: Building2,
-      desc: 'Mạng lưới chuyên viên kinh doanh và phát triển dự án ứng dụng AI vào truyền thông thực địa, kịch bản tư vấn và lead reactivation.',
-      organizations: [
-        'Vinhomes (Vingroup)',
-        'Smartland Bất Động Sản',
-        'Phương Trường An Group',
-        'Thắng Lợi Group',
-        'Huỳnh Anh Group',
-        'PV Power',
-      ],
-      featuredCase: {
-        title: 'Vinhomes: AI Sales Enablement & Chăm sóc khách hàng',
-        url: '/case-studies/vinhomes-ai-sales-enablement',
-      },
-    },
-    {
-      name: 'Công Nghệ – Viễn Thông – Giáo Dục Đại Học',
-      icon: GraduationCap,
-      desc: 'Đào tạo giảng viên chuẩn Bậc 6, đưa AI vào giảng dạy đại học và ứng dụng AI Agents vào các sự kiện công nghệ quy mô lớn.',
-      organizations: [
-        'Đại học FPT (FPTU)',
-        'VNPT VinaPhone',
-        'FSI Digital',
-        'Droppii Commerce',
-        'Đại học Kinh tế - Tài chính TP.HCM (UEF)',
-        'Đại học Nguyễn Tất Thành (NTTU)',
-      ],
-      featuredCase: {
-        title: 'Đại Học FPT: Chuẩn Bậc 6 & AI Event Management (10.000+ người)',
-        url: '/case-studies/fptu-nang-bac-giang-vien-ai',
-      },
-    },
-    {
-      name: 'Truyền Thông – Quảng Cáo – Sáng Tạo',
-      icon: Tv,
-      desc: 'Chuẩn hóa quy trình AI phát triển proposal đấu thầu tài trợ quốc tế, tự động hóa dựng storyboard và tối ưu hóa duyệt ảnh hiện trường.',
-      organizations: [
-        'Dentsu Sports Vietnam & Creative',
-        'Đài Truyền Hình TP.HCM (HTV)',
-        'Trương Đoàn Marketing Group',
-      ],
-      featuredCase: {
-        title: 'Dentsu Sports: Rút ngắn 65% thời gian proposal đấu thầu',
-        url: '/case-studies/dentsu-ai-pitch-deck-automation',
-      },
-    },
-    {
-      name: 'FMCG – F&B – Dược Phẩm & Tiêu Dùng',
-      icon: ShoppingBag,
-      desc: 'Tư vấn và đào tạo ứng dụng AI vào tiếp thị đa kênh, quản trị tệp khách hàng CRM chuỗi và tự động hóa sáng tạo nội dung.',
-      organizations: [
-        'Mì Gấu Đỏ',
-        'Cháo Cây Thị',
-        'Yến Việt',
-        'Dr. Muối',
-        'Trung Sơn Pharma',
-        'Hoàng Đức Pharma',
-        'Agrilong',
-        'VAG International (Poêmy)',
-        'Big Family',
-        'Maison Vie',
-      ],
-      featuredCase: {
-        title: 'Bán lẻ & Chuỗi tiêu dùng: Tối ưu chi phí tuyển dụng (-40%)',
-        url: '/case-studies/toi-uu-chi-phi-tuyen-dung-hr-ai',
-      },
-    },
-    {
-      name: 'Thương Mại – Phân Phối – Logistics',
-      icon: Truck,
-      desc: 'Ứng dụng AI phân tích dữ liệu phân phối, quản trị chuỗi cung ứng và chăm sóc đối tác đại lý tự động.',
-      organizations: [
-        'VACS',
-        'Mitsubishi Motors',
-        'QH Distribution',
-        'PTEXIM Corp',
-        "Let's Go Taxi",
-        'JTB-TNT Travel',
-      ],
-      featuredCase: null,
-    },
-  ];
 
   return (
     <div className="editorial-shell">
@@ -388,76 +279,6 @@ export default function ClientsNetworkPage() {
               </div>
             </div>
           )}
-
-          {/* Lớp 2 — Danh Sách Nhóm Ngành Chi Tiết (Depth Layer: 6 Detailed Groups) */}
-          <section className="max-w-5xl mx-auto mb-16 space-y-8">
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-1.5">
-                <Layers className="w-4 h-4 text-emerald-700" />
-                <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-semibold">
-                  LỚP 2 · HỒ SƠ CHUYÊN SÂU THEO NGÀNH (DEPTH LAYER)
-                </span>
-              </div>
-              <h3 className="text-2xl font-light text-[#17151A]">
-                Phân Loại Mạng Lưới Dự Án Theo Lĩnh Vực Kinh Tế
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {industryGroups.map((group, idx) => {
-                const IconComponent = group.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs flex flex-col justify-between space-y-6"
-                  >
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#FAFFDE] border border-[#DFE2C8] flex items-center justify-center text-[#17151A]">
-                          <IconComponent className="w-4 h-4" />
-                        </div>
-                        <h3 className="text-base sm:text-lg font-medium text-[#17151A]">
-                          {group.name}
-                        </h3>
-                      </div>
-
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed">
-                        {group.desc}
-                      </p>
-
-                      <div className="pt-2 border-t border-black/5">
-                        <span className="text-[11px] uppercase tracking-wider text-neutral-400 font-semibold block mb-2">
-                          Học viên & Tổ chức tiêu biểu:
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {group.organizations.map((org, oIdx) => (
-                            <span
-                              key={oIdx}
-                              className="px-2.5 py-1 rounded-full bg-[#F8F8F6] border border-black/5 text-xs text-[#17151A] font-medium"
-                            >
-                              {org}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {group.featuredCase && (
-                      <div className="pt-4 border-t border-black/5">
-                        <Link
-                          href={group.featuredCase.url}
-                          className="text-xs text-emerald-800 hover:text-emerald-950 font-semibold inline-flex items-center gap-1 group"
-                        >
-                          <span className="group-hover:underline">{group.featuredCase.title}</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
 
           {/* Open Course Participants Note */}
           <section className="max-w-5xl mx-auto mb-12 p-6 sm:p-8 rounded-3xl bg-[#FBFBFA] border border-black/10">

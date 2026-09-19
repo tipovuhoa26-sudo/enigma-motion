@@ -48,8 +48,6 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
       className="relative w-full h-screen min-h-[640px] max-h-[880px] pt-20 pb-6 px-6 md:px-12 flex flex-col justify-between overflow-hidden bg-[#F8F8F6] scroll-mt-20"
       data-cases-pin
     >
-      <span id="service" className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none" aria-hidden="true" />
-
       {/* Giant Watermark Heading: Subtle background watermark */}
       <div className="absolute top-16 left-0 right-0 flex items-center justify-center pointer-events-none select-none z-0">
         <h2

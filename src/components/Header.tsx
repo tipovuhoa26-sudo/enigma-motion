@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Layers, LayoutGrid, Sparkles, Users } from 'lucide-react';
 import { Button } from './Button';
 
@@ -20,6 +21,7 @@ interface HeaderProps {
 }
 
 export function Header(_props: HeaderProps = {}) {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -43,21 +45,29 @@ export function Header(_props: HeaderProps = {}) {
           <div className="w-6 h-6 flex items-center justify-center transition-transform group-hover:scale-105">
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#17151A]" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16.5 3.5L7.5 7.5V16.5L16.5 20.5" />
+              <path d="M7.5 7.5L16.5 11.5V20.5" />
             </svg>
           </div>
           <span className="font-semibold text-lg tracking-tight text-[#17151A]">Sunext</span>
         </Link>
 
         <nav className="hidden md:flex items-center bg-[#F5F3F6] rounded-full p-1 border border-black/5 shadow-sm text-sm">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full font-medium text-[#6E6E6E] hover:text-[#17151A] hover:bg-black/5 transition-all duration-200"
-            >
-              <span>{item.label}</span>
-            </Link>
-          ))}
+          {NAV_ITEMS.map((item) => {
+            const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm transition-all duration-200 ${
+                  isActive
+                    ? 'bg-white text-[#17151A] font-semibold shadow-xs'
+                    : 'font-medium text-[#6E6E6E] hover:text-[#17151A] hover:bg-black/5'
+                }`}
+              >
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -83,14 +93,19 @@ export function Header(_props: HeaderProps = {}) {
           <div className="flex flex-col gap-1">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
+              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 p-3.5 rounded-2xl font-medium text-sm text-[#17151A] hover:bg-black/5 transition-colors"
+                  className={`flex items-center gap-3 p-3.5 rounded-2xl text-sm transition-colors ${
+                    isActive
+                      ? 'bg-[#FAFFDE] text-[#17151A] font-semibold'
+                      : 'font-medium text-[#17151A] hover:bg-black/5'
+                  }`}
                 >
-                  {Icon && <Icon className="w-4 h-4 text-[#6E6E6E]" />}
+                  {Icon && <Icon className={`w-4 h-4 ${isActive ? 'text-[#17151A]' : 'text-[#6E6E6E]'}`} />}
                   <span>{item.label}</span>
                 </Link>
               );

@@ -77,7 +77,6 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
       className="relative w-full h-screen min-h-[700px] max-h-[960px] px-6 md:px-12 lg:px-20 pt-24 pb-8 flex flex-col justify-between overflow-hidden bg-[#F8F8F6] scroll-mt-20"
       data-advantage-pin
     >
-      <span id="technology" className="absolute top-0 left-0 w-0 h-0 opacity-0 pointer-events-none" aria-hidden="true" />
       {/* Pinned Header Block */}
       <div className="w-full max-w-4xl mx-auto text-center mb-6 z-10 shrink-0" data-advantage-heading>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#17151A] leading-tight mb-4">

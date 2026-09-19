@@ -33,16 +33,16 @@ export function Footer() {
 
         {/* Quick Links Column */}
         <div className="md:col-span-2 flex flex-col gap-2.5">
-          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Giải Pháp</span>
-          <Link href="/#advantage" className="hover:text-[#17151A] transition-colors">
-            Lợi Thế Cốt Lõi
-          </Link>
-          <Link href="/#cases" className="hover:text-[#17151A] transition-colors">
-            Dự Án Tiêu Biểu
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Khám Phá</span>
+          <Link href="/tu-duy-chuyen-doi-ai" className="hover:text-[#17151A] transition-colors">
+            Phương Pháp Luận
           </Link>
           <Link href="/case-studies" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <span>Tất Cả Dự Án</span>
+            <span>Dự Án Thực Tế</span>
             <ArrowUpRight className="w-3 h-3" />
+          </Link>
+          <Link href="/nganh" className="hover:text-[#17151A] transition-colors">
+            Giải Pháp Theo Ngành
           </Link>
           <Link href="/doi-ngu" className="hover:text-[#17151A] transition-colors">
             Đội Ngũ Chuyên Gia
@@ -115,10 +115,10 @@ export function Footer() {
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
             <span>Bảo Mật Chuẩn Doanh Nghiệp • Cam Kết NDA</span>
           </div>
-          <div className="flex flex-col gap-1.5 pt-1 text-xs">
-            <Link href="/#privacy" className="hover:text-[#17151A] transition-colors">Chính Sách Bảo Mật Dữ Liệu</Link>
-            <Link href="/#terms" className="hover:text-[#17151A] transition-colors">Điều Khoản Triển Khai</Link>
-            <Link href="/#security" className="hover:text-[#17151A] transition-colors">Hạ Tầng Private AI</Link>
+          <div className="flex flex-col gap-1.5 pt-1 text-xs text-[#6E6E6E]">
+            <span className="leading-snug">• Ký kết thỏa thuận NDA bảo mật trước khi khảo sát</span>
+            <span className="leading-snug">• Dữ liệu doanh nghiệp không dùng để train mô hình công khai</span>
+            <span className="leading-snug">• Hỗ trợ triển khai Private AI & Local LLM Mesh</span>
           </div>
         </div>
       </div>
