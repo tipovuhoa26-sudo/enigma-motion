@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/Button';
+import { CobeGlobe } from '@/components/CobeGlobe';
 import { createHeroTimeline } from '@/motion/timelines/hero';
 
 interface HeroProps {
@@ -17,7 +18,6 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
   const headlineLine2Ref = useRef<HTMLSpanElement>(null);
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const exploreWidgetRef = useRef<HTMLAnchorElement>(null);
   const statCardRef = useRef<HTMLDivElement>(null);
   const statCounterRef = useRef<HTMLDivElement>(null);
@@ -41,37 +41,8 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       statCounterValue: statCounterRef.current,
     });
 
-    // Visibility gate for video (MOT-008: pause when offscreen or hidden)
-    const handleVisibility = () => {
-      if (document.hidden) {
-        videoRef.current?.pause();
-      } else {
-        videoRef.current?.play().catch(() => {});
-      }
-    };
-    document.addEventListener('visibilitychange', handleVisibility);
-
-    let observer: IntersectionObserver | null = null;
-    if (containerRef.current && videoRef.current) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              videoRef.current?.play().catch(() => {});
-            } else {
-              videoRef.current?.pause();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(containerRef.current);
-    }
-
     return () => {
       tl.kill();
-      document.removeEventListener('visibilitychange', handleVisibility);
-      observer?.disconnect();
     };
   }, [autoPlayIntro]);
 
@@ -150,11 +121,11 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
               </div>
             </Link>
 
-            {/* Widget 2: 3D Product thumbnail preview */}
+            {/* Widget 2: Case study preview */}
             <Link href="/nganh" className="relative w-20 h-20 rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-[#FAFFDE] group cursor-pointer">
               <Image
-                src="/assets/advantage-card-1.jpg"
-                alt="Giải pháp ngành"
+                src="/assets/vietnam-retail-store.jpg"
+                alt="Giải pháp ngành thực tế"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="80px"
@@ -166,24 +137,15 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           </div>
         </div>
 
-        {/* Right Column: Centerpiece 3D Ambient Visual + Stat Card */}
-        <div className="lg:col-span-5 relative flex items-center justify-center min-h-[340px] md:min-h-[460px]">
-          {/* Ambient Video Visual */}
+        {/* Right Column: Centerpiece 3D COBE Globe Visual + Stat Card */}
+        <div className="lg:col-span-5 relative flex items-center justify-center min-h-[360px] md:min-h-[480px]">
+          {/* Cobe 3D WebGL Globe */}
           <div
             ref={visualRef}
-            className="w-full max-w-[460px] aspect-square relative rounded-full overflow-hidden flex items-center justify-center [mask-image:radial-gradient(circle_at_center,black_62%,transparent_98%)]"
+            className="w-full max-w-[480px] aspect-square relative flex items-center justify-center"
             data-hero-visual
           >
-            <video
-              ref={videoRef}
-              src="/assets/hero-visual.mp4"
-              poster="/assets/hero-poster.jpg"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover mix-blend-multiply pointer-events-none select-none drop-shadow-md"
-            />
+            <CobeGlobe />
           </div>
 
           {/* Floating Stat Card Widget */}

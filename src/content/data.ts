@@ -40,7 +40,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Mô Hình Vận Hành & Con Người',
     title: '70% Thành Bại Ở Con Người, Không Phải Mua Tool',
     description: 'Mua license AI cho cả trăm người mà không tái thiết kế quy trình chỉ tạo ra rác kỹ thuật số đắt đỏ. Sunext đào tạo nâng tầng năng lực đội ngũ và tối ưu luồng việc để AI giải phóng thời gian thực tế.',
-    image: '/assets/advantage-card-1.jpg',
+    image: '/assets/vietnam-retail-store.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 40,
@@ -56,7 +56,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Kiến Trúc Dữ Liệu Sống',
     title: 'Kết Nối Trực Tiếp Vào Lõi Vận Hành Doanh Nghiệp',
     description: 'Không tạo thêm dashboard tĩnh thừa thãi để ngắm. Hệ thống AI tích hợp 2 chiều vào ERP, CRM, dây chuyền máy để tự động kích hoạt hành động và cảnh báo theo thời gian thực.',
-    image: '/assets/advantage-card-2.jpg',
+    image: '/assets/vietnam-manufacturing-line.jpg',
     bgColor: '#F5F3F6',
     metric: {
       value: 99,
@@ -72,7 +72,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Nghiệm Thu Theo Kết Quả',
     title: 'Đo Bằng Giờ Công Tiết Kiệm, Không Bán Giải Pháp Ảo',
     description: 'Nói không với các dự án công nghệ kéo dài vô tận. Triển khai theo từng cột mốc đo lường được, nghiệm thu bằng hiệu quả P&L định lượng: rút ngắn thời gian xử lý, giảm tỷ lệ lỗi, tăng lead.',
-    image: '/assets/advantage-card-3.jpg',
+    image: '/assets/vietnam-b2b-office.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 5,

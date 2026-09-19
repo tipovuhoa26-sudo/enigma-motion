@@ -127,7 +127,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
 
           <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[0]?.image ?? '/assets/advantage-card-1.jpg'}
+              src={advantages[0]?.image ?? '/assets/vietnam-retail-store.jpg'}
               alt={advantages[0]?.title ?? 'Product'}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -180,7 +180,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
 
           <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[1]?.image ?? '/assets/advantage-card-2.jpg'}
+              src={advantages[1]?.image ?? '/assets/vietnam-manufacturing-line.jpg'}
               alt={advantages[1]?.title ?? 'Product'}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -244,7 +244,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
 
           <div className="relative w-full md:w-[420px] h-[250px] sm:h-[280px] md:h-[320px] rounded-2xl overflow-hidden bg-white/40 shadow-inner border border-black/5 shrink-0 group">
             <Image
-              src={advantages[2]?.image ?? '/assets/advantage-card-3.jpg'}
+              src={advantages[2]?.image ?? '/assets/vietnam-b2b-office.jpg'}
               alt={advantages[2]?.title ?? 'Product'}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
