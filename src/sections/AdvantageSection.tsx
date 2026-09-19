@@ -93,7 +93,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
         <div className="flex flex-wrap items-center justify-center gap-3" data-advantage-cta>
           <Link href="/tu-duy-chuyen-doi-ai">
             <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium">
-              Khám Phá Khung Rewired
+              Khám Phá Sunext Method
             </Button>
           </Link>
           <Link href="/danh-gia-san-sang-ai">

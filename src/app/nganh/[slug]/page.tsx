@@ -84,7 +84,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                 <IconComponent className="w-3.5 h-3.5 text-[#17151A]" />
                 {industry.englishName.toUpperCase()}
               </span>
-              <span className="text-xs text-[#6E6E6E] font-medium">Khung Sunext Rewired</span>
+              <span className="text-xs text-[#6E6E6E] font-medium">Phương Pháp Luận Sunext</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">
@@ -213,7 +213,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
               <div className="flex items-center gap-2 mb-3">
                 <Layers className="w-4 h-4 text-[#17151A]" />
                 <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-semibold">
-                  Bộ Giải Pháp Chuyên Biệt Theo Khung Rewired
+                  Bộ Giải Pháp Theo Phương Pháp Luận Sunext
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A] mb-6">

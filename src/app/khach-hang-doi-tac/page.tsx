@@ -63,7 +63,7 @@ export default function ClientsNetworkPage() {
               Mạng Lưới 45+ Dự Án & Tổ Chức Đồng Hành Chuyển Đổi AI
             </h1>
             <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-3xl mb-8">
-              Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ thống phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận AI thực chiến trên khắp cả nước.
+              Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ thống phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận ứng dụng AI hiệu quả trên khắp cả nước.
             </p>
 
             {/* Metric Badges */}

@@ -143,7 +143,7 @@ export default function IndustryIndexPage() {
             })}
           </section>
 
-          {/* Connected with Sunext Rewired Banner */}
+          {/* Connected with Sunext Method Banner */}
           <section className="p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
             <div className="max-w-xl">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#FAFFDE] mb-4 border border-white/10">
@@ -151,15 +151,15 @@ export default function IndustryIndexPage() {
                 KHUNG NĂNG LỰC TOÀN TRÌNH
               </span>
               <h2 className="text-2xl sm:text-3xl font-light leading-snug mb-4">
-                Tất cả giải pháp ngành đều vận hành trên khung Sunext Rewired
+                Tất cả giải pháp ngành đều vận hành trên Phương Pháp Luận Sunext
               </h2>
               <p className="text-sm text-neutral-300 leading-relaxed mb-6">
-                Dù bạn thuộc ngành bán lẻ, sản xuất hay dịch vụ, việc áp dụng AI chỉ bền vững khi tổ chức đi qua đủ 6 trụ cột cốt lõi. Hãy kiểm tra xem ngành của bạn đang sẵn sàng tới đâu.
+                Dù bạn thuộc ngành bán lẻ, sản xuất hay dịch vụ, việc áp dụng AI chỉ bền vững khi tổ chức đi qua đủ 6 trụ cột năng lực. Hãy kiểm tra xem doanh nghiệp bạn đang sẵn sàng tới đâu.
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/tu-duy-chuyen-doi-ai">
                   <Button variant="lime" size="md" className="rounded-full text-xs font-semibold">
-                    Khám Phá Khung 6 Trụ Cột
+                    Khám Phá Sunext Method
                   </Button>
                 </Link>
                 <Link href="/danh-gia-san-sang-ai">
@@ -196,7 +196,7 @@ export default function IndustryIndexPage() {
               Không Thấy Ngành Của Bạn Ở Đây?
             </h2>
             <p className="text-sm text-[#6E6E6E] leading-relaxed mb-8">
-              Khung Sunext Rewired được thiết kế để tùy biến cho bất kỳ mô hình kinh doanh nào có quy trình lặp lại và khối lượng dữ liệu lớn. Hãy trao đổi trực tiếp với chuyên gia giải pháp của chúng tôi.
+              Phương Pháp Luận Sunext được thiết kế để tùy biến cho bất kỳ mô hình kinh doanh nào có quy trình lặp lại và khối lượng dữ liệu lớn. Hãy trao đổi trực tiếp với chuyên gia giải pháp của chúng tôi.
             </p>
             <Link href="/#contact">
               <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm gap-2">

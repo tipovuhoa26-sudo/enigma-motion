@@ -95,8 +95,8 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
   {
     id: 'enterprise',
     name: 'Gói 3: Enterprise AI Transformation',
-    badge: 'Toàn Diện Khung Rewired',
-    subtitle: 'Tái đấu nối toàn bộ tổ chức theo 6 Trụ cột Sunext Rewired với hạ tầng Private AI bảo mật cấp doanh nghiệp.',
+    badge: 'Toàn Diện Sunext Method',
+    subtitle: 'Tái thiết kế toàn bộ tổ chức theo Phương Pháp Luận Sunext với hạ tầng Private AI bảo mật cấp doanh nghiệp.',
     recommendedFor: 'Tập đoàn & Doanh nghiệp 200 - 1.000+ nhân sự cam kết xây dựng AI như lợi thế cạnh tranh cốt lõi dài hạn.',
     timeToValue: '4 – 6 tháng',
     scope: 'Toàn bộ doanh nghiệp đa phòng ban + Private LLM Infrastructure',

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Khung Đầu Tư & Ngân Sách Dự Án Chuyển Đổi AI | Sunext',
     description:
-      'Khung ngân sách tham khảo minh bạch theo quy mô: AI Pilot (4-6 tuần), Department OS (8-12 tuần), Enterprise Transformation theo khung Sunext Rewired.',
+      'Khung ngân sách tham khảo minh bạch theo quy mô: AI Pilot (4-6 tuần), Department OS (8-12 tuần), Enterprise Transformation theo Phương Pháp Luận Sunext.',
   },
 };
 

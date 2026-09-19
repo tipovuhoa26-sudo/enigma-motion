@@ -102,10 +102,10 @@ export default function AiTransformationHubPage() {
             <div className="flex items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
                 <Layers className="w-3 h-3 text-[#17151A]" />
-                SUNEXT REWIRED FRAMEWORK
+                SUNEXT METHOD
               </span>
               <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
-              <span className="text-xs text-[#6E6E6E] hidden sm:inline">Kế Thừa Tinh Hoa McKinsey & BCG X</span>
+              <span className="text-xs text-[#6E6E6E] hidden sm:inline">Khung Tham Chiếu 6 Trụ Cột McKinsey Rewired</span>
             </div>
           </div>
 
@@ -208,12 +208,12 @@ export default function AiTransformationHubPage() {
                 </div>
               </div>
 
-              {/* Reality Column (Sunext Rewired Concept) */}
+              {/* Reality Column (Sunext Method Concept) */}
               <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[#FAFFDE] border border-[#DFE2C8] flex flex-col justify-between">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/5 text-xs font-semibold text-[#17151A] mb-4">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
-                    <span>Bản chất: Khung Sunext Rewired</span>
+                    <span>Bản chất: Phương Pháp Luận Sunext (Tham Chiếu Rewired)</span>
                   </div>
                   <h2 className="text-xl sm:text-2xl font-normal text-[#17151A] mb-4">
                     Tái đấu nối lại toàn bộ doanh nghiệp, không chỉ lắp thêm một cái app

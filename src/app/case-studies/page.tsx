@@ -24,13 +24,13 @@ export default function CaseStudiesIndexPage() {
 
           <div className="max-w-3xl mb-12">
             <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-              DỰ ÁN THỰC CHIẾN ĐÃ TRIỂN KHAI
+              DỰ ÁN ĐÃ TRIỂN KHAI
             </span>
             <h1 className="text-4xl sm:text-5xl font-light tracking-tight text-[#17151A] leading-tight">
               Case Studies & Kết Quả Đo Lường Được
             </h1>
             <p className="text-base text-[#6E6E6E] mt-4 leading-relaxed">
-              Khám phá cách các doanh nghiệp Việt Nam giải quyết bài toán vận hành thật cùng Khung 6 Trụ Cột Sunext: giải phóng sức lao động, tự động hóa kiểm định cơ khí và nghiệm thu bằng hiệu quả P&L định lượng.
+              Khám phá cách các doanh nghiệp Việt Nam giải quyết bài toán vận hành thật cùng Phương Pháp Luận Sunext: giải phóng sức lao động, tự động hóa kiểm định cơ khí và nghiệm thu bằng hiệu quả P&L định lượng.
             </p>
           </div>
 

@@ -165,7 +165,7 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
                 {/* Pillars Involved */}
                 <div className="p-6 rounded-2xl bg-[#F8F8F6] border border-black/5">
                   <span className="text-xs font-semibold uppercase tracking-wider text-[#6E6E6E] block mb-3">
-                    Trụ Cột Áp Dụng Thuộc Khung Sunext Rewired:
+                    Trụ Cột Áp Dụng (Phương Pháp Luận Sunext):
                   </span>
                   <div className="flex flex-wrap gap-2">
                     {detail.pillarsInvolved.map((p) => (

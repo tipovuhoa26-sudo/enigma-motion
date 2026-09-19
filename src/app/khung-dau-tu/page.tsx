@@ -94,21 +94,21 @@ export default function InvestmentFrameworkPage() {
                     Enterprise AI Advisory Board
                   </span>
                   <p className="text-sm sm:text-base font-normal max-w-xl text-white/90">
-                    Lộ trình đầu tư theo phương pháp luận Sunext Rewired: chia nhỏ rủi ro, nghiệm thu theo mốc và chuyển giao quyền làm chủ cho đội ngũ nội bộ.
+                    Lộ trình đầu tư theo Phương Pháp Luận Sunext: chia nhỏ rủi ro, nghiệm thu theo mốc và chuyển giao quyền làm chủ cho đội ngũ nội bộ.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 3 Investment Tiers Grid */}
+          {/* 3 Value-Based Investment Pathways */}
           <section className="max-w-5xl mx-auto mb-20">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-                Three Distinct Pathways
+                Value-Based Investment Pathways
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A]">
-                3 Gói Đầu Tư Minh Bạch Theo Quy Mô Doanh Nghiệp
+                3 Lộ Trình Đầu Tư Định Lượng Theo Nhu Cầu Doanh Nghiệp
               </h2>
             </div>
 
@@ -126,12 +126,12 @@ export default function InvestmentFrameworkPage() {
                   >
                     {isPopular && (
                       <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#17151A] text-[#FAFFDE] text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
-                        {tier.badge}
+                        Lộ trình phổ biến nhất
                       </span>
                     )}
 
-                    <div>
-                      <div className="flex items-center justify-between mb-3">
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
                           {tier.badge}
                         </span>
@@ -141,60 +141,36 @@ export default function InvestmentFrameworkPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-semibold text-[#17151A] mb-2">{tier.name}</h3>
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-6">{tier.subtitle}</p>
+                      <h3 className="text-xl font-semibold text-[#17151A]">{tier.name}</h3>
+                      <p className="text-xs text-[#6E6E6E] leading-relaxed">{tier.subtitle}</p>
 
-                      <div className="p-3.5 rounded-2xl bg-[#F8F8F6] border border-black/5 mb-6 text-xs">
-                        <span className="text-[11px] text-[#6E6E6E] block mb-1 font-medium">Phù hợp với:</span>
+                      <div className="p-3.5 rounded-2xl bg-[#F8F8F6] border border-black/5 text-xs">
+                        <span className="text-[11px] text-[#6E6E6E] block mb-1 font-medium">Phù hợp:</span>
                         <span className="text-[#17151A] leading-relaxed block">{tier.recommendedFor}</span>
                       </div>
 
-                      {/* Deliverables List */}
-                      <div className="space-y-4 mb-6">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-[#17151A] block">
-                          Hạng mục triển khai:
+                      <div className="pt-2 border-t border-black/5 text-xs text-[#6E6E6E]">
+                        <span className="text-[11px] text-[#17151A] font-semibold uppercase tracking-wider block mb-1.5">
+                          Trọng tâm chuyển giao:
                         </span>
-                        {tier.deliverables.map((deliv, idx) => (
-                          <div key={idx} className="text-xs space-y-1.5">
-                            <span className="font-medium text-[#17151A] block">{deliv.category}</span>
-                            <ul className="space-y-1 pl-1 text-[#6E6E6E]">
-                              {deliv.items.map((item, itemIdx) => (
-                                <li key={itemIdx} className="flex items-start gap-2">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                        <p className="text-xs leading-relaxed text-[#17151A]">{tier.scope}</p>
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-black/5 space-y-4">
-                      {/* Measurable outcomes */}
-                      <div className="space-y-1.5 bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-100 text-xs text-emerald-950">
+                    <div className="pt-5 border-t border-black/5 mt-6">
+                      <div className="bg-emerald-50/80 p-3.5 rounded-2xl border border-emerald-100 text-xs text-emerald-950 space-y-1.5">
                         <span className="font-semibold block text-[11px] uppercase tracking-wider text-emerald-900">
-                          Chỉ số kỳ vọng đo lường:
+                          Chỉ số cam kết đo lường:
                         </span>
                         <ul className="space-y-1">
                           {tier.measurableOutcomes.map((out, outIdx) => (
                             <li key={outIdx} className="flex items-start gap-1.5">
                               <Sparkles className="w-3 h-3 text-emerald-700 shrink-0 mt-0.5" />
-                              <span>{out}</span>
+                              <span className="leading-snug">{out}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
-
-                      <Link href="/#contact" className="block">
-                        <Button
-                          variant={isPopular ? 'primary' : 'outline'}
-                          size="md"
-                          className="w-full rounded-full text-xs font-semibold"
-                        >
-                          Nhận Báo Giá Dự Toán Chi Tiết
-                        </Button>
-                      </Link>
                     </div>
                   </div>
                 );

@@ -69,13 +69,13 @@ export default function TeamLeadershipPage() {
   const credentials = [
     {
       metric: '10+ Năm',
-      label: 'Kinh nghiệm thực chiến AI & Tăng trưởng doanh nghiệp',
-      subtext: 'Trực tiếp chủ trì tư vấn và đứng lớp đào tạo cho hàng chục tập đoàn, định chế tài chính và trường đại học',
+      label: 'Kinh nghiệm ứng dụng AI & Tăng trưởng doanh nghiệp',
+      subtext: 'Chủ trì tư vấn và triển khai công nghệ số cho nhiều định chế hàng đầu',
     },
     {
-      metric: '600+ GV',
-      label: 'Giảng viên chuẩn Bậc 6 được cấp chứng nhận',
-      subtext: 'Thuộc mạng lưới Train The Trainer tại Đại học FPT và các cơ sở giáo dục đại học đối tác',
+      metric: '500K+',
+      label: 'Cộng đồng học tập AI ứng dụng',
+      subtext: 'Sáng lập và quản trị mạng lưới chia sẻ tri thức công nghệ lớn nhất',
     },
     {
       metric: '500.000+',
@@ -142,10 +142,10 @@ export default function TeamLeadershipPage() {
               LEADERSHIP & ADVISORY · BAN LÃNH ĐẠO & CỐ VẤN
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">
-              Đội Ngũ Chuyên Gia Thực Chiến Dẫn Dắt Quá Trình Chuyển Đổi AI
+              Đội Ngũ Chuyên Gia Dẫn Dắt Chuyển Đổi AI
             </h1>
             <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-3xl">
-              Chúng tôi không cử các chuyên viên lý thuyết đến doanh nghiệp của bạn. Mọi chương trình tư vấn chiến lược và chuyển giao công nghệ tại Sunext đều do đội ngũ cố vấn thực chiến trực tiếp chủ trì, bảo đảm tính khả thi kỹ thuật và hiệu quả P&L rõ ràng.
+              Chúng tôi không cử các chuyên viên lý thuyết đến doanh nghiệp của bạn. Mọi chương trình tư vấn chiến lược và chuyển giao công nghệ tại Sunext đều do đội ngũ cố vấn kỳ cựu trực tiếp chủ trì, bảo đảm tính khả thi kỹ thuật và hiệu quả P&L rõ ràng.
             </p>
           </section>
 
@@ -199,7 +199,7 @@ export default function TeamLeadershipPage() {
                     &ldquo;Mục tiêu của chuyển đổi AI không phải là tạo ra những bản demo hào nhoáng để báo cáo. Mục tiêu duy nhất là biến AI thành một người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, giúp doanh nghiệp tiết kiệm hàng nghìn giờ công cơ học và bảo vệ biên lợi nhuận.&rdquo;
                   </p>
                   <p className="text-[#6E6E6E]">
-                    Với hơn 10 năm thực chiến trong lĩnh vực công nghệ số, AI và tăng trưởng doanh nghiệp, Ông Nguyễn Phước Vĩnh Hưng đã trực tiếp chủ trì và đứng lớp đào tạo cho hàng loạt tổ chức, trường đại học và định chế tài chính hàng đầu tại Việt Nam.
+                    Với hơn 10 năm trực tiếp điều hành và triển khai trong lĩnh vực công nghệ số, AI và tăng trưởng doanh nghiệp, Ông Nguyễn Phước Vĩnh Hưng đã chủ trì các chương trình đào tạo cho hàng loạt tổ chức, trường đại học và định chế tài chính hàng đầu tại Việt Nam.
                   </p>
                   <p className="text-[#6E6E6E]">
                     Dưới sự dẫn dắt phương pháp luận của CAIO, Sunext kiên định với triết lý: <strong>Đo lường trước, đầu tư sau</strong>. Đội ngũ Sunext không chỉ xây dựng hệ thống kỹ thuật mà còn chuyển giao trọn vẹn năng lực tự chủ cho nhân sự nội bộ, đảm bảo hệ thống tiếp tục sống và phát triển sau khi dự án bàn giao.
@@ -507,7 +507,7 @@ export default function TeamLeadershipPage() {
           <section className="max-w-5xl mx-auto mb-16">
             <div className="mb-8">
               <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-semibold block mb-1">
-                PHƯƠNG PHÁP LUẬN THỰC CHIẾN
+                PHƯƠNG PHÁP LUẬN SUNEXT
               </span>
               <h3 className="text-2xl sm:text-3xl font-light text-[#17151A]">
                 3 Năng Lực Cốt Lõi Được Chuyển Giao Cho Khách Hàng

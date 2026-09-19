@@ -155,7 +155,7 @@ export default function AiMaturityAssessmentQuizPage() {
             <div className="text-center max-w-2xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-xs font-semibold text-[#17151A] mb-3">
                 <ClipboardCheck className="w-3.5 h-3.5 text-[#17151A]" />
-                <span>Khung tham chiếu 6 Trụ cột Sunext Rewired</span>
+                <span>Khung tham chiếu 6 Trụ cột Sunext Method</span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-tight">
                 Chẩn Đoán Mức Độ Sẵn Sàng Chuyển Đổi AI

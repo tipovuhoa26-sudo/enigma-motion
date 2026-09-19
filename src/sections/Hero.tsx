@@ -72,7 +72,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-3 mb-6" data-hero-cta>
             <Link href="/tu-duy-chuyen-doi-ai">
               <Button variant="lime" size="md" className="rounded-full font-semibold shadow-xs cursor-pointer">
-                Khung Sunext Rewired
+                Phương Pháp Luận Sunext
               </Button>
             </Link>
             <Link href="/danh-gia-san-sang-ai">

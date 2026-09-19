@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldCheck, ArrowUpRight, Globe, Share2 } from 'lucide-react';
+import { ShieldCheck, ArrowUpRight, Share2 } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -18,17 +18,8 @@ export function Footer() {
           </div>
 
           <p className="text-xs text-[#6E6E6E] max-w-sm leading-relaxed">
-            Tư vấn chiến lược và hiện thực hóa chuyển đổi AI thực chiến cho doanh nghiệp Việt Nam theo phương pháp luận toàn trình Sunext Rewired.
+            Tư vấn chiến lược và triển khai chuyển đổi AI cho doanh nghiệp Việt Nam.
           </p>
-
-          {/* Operational Status Pill */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-black/5 shadow-2xs w-fit mt-1">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-[11px] font-medium text-[#17151A]">Vận hành liên tục • Hỗ trợ 24/7</span>
-          </div>
         </div>
 
         {/* Quick Links Column */}
@@ -52,11 +43,11 @@ export function Footer() {
           </Link>
         </div>
 
-        {/* AI Transformation (Rewired) Column */}
+        {/* AI Transformation Column */}
         <div className="md:col-span-3 flex flex-col gap-2">
-          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Tư Duy AI (Rewired)</span>
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Phương Pháp Luận</span>
           <Link href="/tu-duy-chuyen-doi-ai" className="font-medium text-[#17151A] hover:underline flex items-center gap-1">
-            <span>Khung Sunext Rewired</span>
+            <span>Sunext Method (Chuẩn 6 Trụ Cột)</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/tu-duy-chuyen-doi-ai/chien-luoc-so" className="hover:text-[#17151A] transition-colors">
@@ -76,10 +67,6 @@ export function Footer() {
           </Link>
           <Link href="/tu-duy-chuyen-doi-ai/mo-rong-quy-mo" className="hover:text-[#17151A] transition-colors">
             06. Mở rộng & Governance
-          </Link>
-          <Link href="/danh-gia-san-sang-ai" className="text-emerald-800 font-medium hover:underline flex items-center gap-1 pt-0.5">
-            <span>Đo lường sẵn sàng (5 phút)</span>
-            <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>
 
@@ -127,16 +114,10 @@ export function Footer() {
       <div className="max-w-6xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <span>© {new Date().getFullYear()} Sunext Digital & AI Solutions. All rights reserved.</span>
 
-        <div className="flex items-center gap-4 text-[#6E6E6E]">
-          <span className="flex items-center gap-1">
-            <Globe className="w-3.5 h-3.5" />
-            <span>Hà Nội • TP. Hồ Chí Minh</span>
-          </span>
-          <Link href="/#contact" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <Share2 className="w-3.5 h-3.5" />
-            <span>Liên Hệ Tư Vấn</span>
-          </Link>
-        </div>
+        <Link href="/#contact" className="hover:text-[#17151A] transition-colors flex items-center gap-1 text-[#6E6E6E]">
+          <Share2 className="w-3.5 h-3.5" />
+          <span>Liên Hệ Tư Vấn</span>
+        </Link>
       </div>
     </footer>
   );

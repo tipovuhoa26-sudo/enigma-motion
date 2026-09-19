@@ -48,7 +48,7 @@ export function CtaFooter() {
 
         {/* Main Headline */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#17151A] leading-[1.1]">
-          Khởi Động Lộ Trình<br />Chuyển Đổi AI Thực Chiến
+          Khởi Động Lộ Trình<br />Chuyển Đổi AI Cho Doanh Nghiệp
         </h2>
 
         {/* Big circular contact button */}
@@ -60,7 +60,7 @@ export function CtaFooter() {
 
         {/* Explanatory Copy */}
         <p className="text-sm md:text-base text-[#6E6E6E] max-w-md leading-relaxed">
-          Sẵn sàng tối ưu hóa mô hình vận hành và tự động hóa quy trình với giải pháp đo lường được? Kết nối trực tiếp với đội ngũ chuyên gia tư vấn chiến lược của Sunext.
+          Đặt lịch 30 phút với chuyên gia Sunext, hoặc tự làm bài đo lường trước.
         </p>
 
         {/* CTAs */}
