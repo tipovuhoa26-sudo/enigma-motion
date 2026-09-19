@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -19,6 +20,8 @@ import {
   ClipboardCheck,
   Calendar,
   Layers,
+  Sparkles,
+  PieChart,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -32,6 +35,8 @@ export default function AiTransformationHubPage() {
     {
       title: 'Doanh nghiệp Bán lẻ 500 nhân sự',
       industry: 'Retail & Consumer Goods',
+      industrySlug: 'ban-le-tieu-dung',
+      image: '/assets/vietnam-retail-store.jpg',
       team: 'Đội HR 4 người · 500 nhân viên',
       story:
         'Từng mất 3 ngày lọc CV cho mỗi vị trí tuyển dụng thời vụ. Sau khi làm đúng Trụ cột 2 (đào tạo đội ngũ theo đúng tầng năng lực) và Trụ cột 4 (nền tảng công nghệ, Agent sàng lọc CV tự động tích hợp hệ thống ATS):',
@@ -46,6 +51,8 @@ export default function AiTransformationHubPage() {
     {
       title: 'Nhà máy Sản xuất 800 nhân sự',
       industry: 'Precision Manufacturing',
+      industrySlug: 'san-xuat-che-tao',
+      image: '/assets/vietnam-manufacturing-line.jpg',
       team: 'Chuyền sản xuất cơ khí chính xác · 800 nhân sự',
       story:
         'Tỷ lệ lỗi sản phẩm lọt ra thị trường gây tốn kém chi phí bảo hành. Sau khi làm đúng Trụ cột 4 và Trụ cột 5 (nền tảng công nghệ kết nối trực tiếp chuyền cơ khí + dữ liệu chuẩn hóa, Computer Vision Agent giám sát 24/7):',
@@ -60,6 +67,8 @@ export default function AiTransformationHubPage() {
     {
       title: 'Doanh nghiệp Dịch vụ B2B 200 nhân sự',
       industry: 'B2B Professional Services',
+      industrySlug: 'dich-vu-b2b',
+      image: '/assets/vietnam-b2b-office.jpg',
       team: 'Đội Marketing nội bộ · 200 nhân sự',
       story:
         'Đội marketing chỉ ra được 8-10 bài mỗi tháng, phụ thuộc hoàn toàn vào agency ngoài đắt đỏ. Sau khi làm đúng Trụ cột 2 và Trụ cột 3 (đào tạo Tầng 2 cho đội ngũ + tái cấu trúc quy trình sản xuất nội dung Content Factory):',
@@ -94,10 +103,10 @@ export default function AiTransformationHubPage() {
             <div className="flex items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
                 <Layers className="w-3 h-3 text-[#17151A]" />
-                KHUNG REWIRED · MCKINSEY
+                SUNEXT REWIRED™ FRAMEWORK
               </span>
               <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
-              <span className="text-xs text-[#6E6E6E] hidden sm:inline">6 Trụ Cột Tái Cấu Trúc Doanh Nghiệp</span>
+              <span className="text-xs text-[#6E6E6E] hidden sm:inline">Kế Thừa Tinh Hoa McKinsey & BCG X</span>
             </div>
           </div>
 
@@ -124,8 +133,52 @@ export default function AiTransformationHubPage() {
               <div className="pt-3 border-t border-black/10 flex items-center gap-3 text-xs text-[#6E6E6E]">
                 <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>
-                  McKinsey chỉ ra: Hơn 70% sáng kiến chuyển đổi số và AI thất bại không phải vì model kém hay thiếu tiền, mà vì <strong>mua công nghệ nhưng không tái cấu trúc tổ chức để dùng được nó</strong>.
+                  McKinsey & BCG X chỉ ra: Hơn 70% sáng kiến chuyển đổi số và AI thất bại không phải vì model kém hay thiếu tiền, mà vì <strong>mua công nghệ nhưng không tái cấu trúc tổ chức để dùng được nó</strong>.
                 </span>
+              </div>
+            </div>
+          </section>
+
+          {/* Section: Quy tắc 10-20-70 BCG X Callout */}
+          <section className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div className="md:col-span-4">
+              <div className="flex items-center gap-2 mb-2">
+                <PieChart className="w-4 h-4 text-emerald-800" />
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E6E]">
+                  Quy Tắc Kinh Điển BCG X
+                </span>
+              </div>
+              <h2 className="text-2xl font-light text-[#17151A]">
+                Công thức 10 — 20 — 70
+              </h2>
+              <p className="text-xs text-[#6E6E6E] mt-2 leading-relaxed">
+                Nghiên cứu của BCG X chứng minh: sự thành bại của một dự án AI được phân bổ chính xác theo 3 tỷ lệ này. Đa phần các công ty dồn 90% tiền vào 10% đầu tiên.
+              </p>
+            </div>
+
+            <div className="md:col-span-8 grid grid-cols-3 gap-3 text-center">
+              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5 flex flex-col justify-between">
+                <div>
+                  <span className="text-3xl font-light text-[#17151A] block">10%</span>
+                  <span className="text-xs font-semibold text-[#17151A] block mt-1">Thuật toán & Tool</span>
+                </div>
+                <span className="text-[10px] text-[#6E6E6E] mt-2 block">Mô hình AI chỉ là công cụ hỗ trợ</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5 flex flex-col justify-between">
+                <div>
+                  <span className="text-3xl font-light text-[#17151A] block">20%</span>
+                  <span className="text-xs font-semibold text-[#17151A] block mt-1">Hạ tầng Dữ liệu</span>
+                </div>
+                <span className="text-[10px] text-[#6E6E6E] mt-2 block">Độ sạch và kết nối hệ thống lõi</span>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] flex flex-col justify-between">
+                <div>
+                  <span className="text-3xl font-light text-emerald-900 block">70%</span>
+                  <span className="text-xs font-semibold text-emerald-900 block mt-1">Con người & Quy trình</span>
+                </div>
+                <span className="text-[10px] text-emerald-800 mt-2 block font-medium">Tái cấu trúc tổ chức & Năng lực</span>
               </div>
             </div>
           </section>
@@ -156,12 +209,12 @@ export default function AiTransformationHubPage() {
                 </div>
               </div>
 
-              {/* Reality Column (McKinsey Rewired Concept) */}
+              {/* Reality Column (Sunext Rewired Concept) */}
               <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[#FAFFDE] border border-[#DFE2C8] flex flex-col justify-between">
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/5 text-xs font-semibold text-[#17151A] mb-4">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
-                    <span>Bản chất: Khung Rewired của McKinsey</span>
+                    <span>Bản chất: Khung Sunext Rewired™</span>
                   </div>
                   <h2 className="text-xl sm:text-2xl font-normal text-[#17151A] mb-4">
                     Tái đấu nối lại toàn bộ doanh nghiệp, không chỉ lắp thêm một cái app
@@ -269,11 +322,11 @@ export default function AiTransformationHubPage() {
             </div>
           </section>
 
-          {/* Section: Bằng Chứng Thật - 3 Doanh Nghiệp Đã Làm Đúng */}
+          {/* Section: Bằng Chứng Thật - 3 Doanh Nghiệp Đã Làm Đúng (With Authentic Photography) */}
           <section className="mb-20 p-6 sm:p-10 rounded-3xl bg-[#F5F3F6] border border-black/5">
             <div className="max-w-3xl mb-8">
               <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-                Dữ Liệu Kiểm Chứng Thật
+                Dữ Liệu Kiểm Chứng Thật Tại Hiện Trường
               </span>
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight">
                 Đây không phải lý thuyết — đây là ba doanh nghiệp đã làm đúng
@@ -301,11 +354,11 @@ export default function AiTransformationHubPage() {
               ))}
             </div>
 
-            {/* Selected Case Card */}
+            {/* Selected Case Card with Real Visual Asset */}
             {(() => {
               const current = verifiedCases[selectedCase];
               return (
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-2 mb-3">
@@ -318,18 +371,37 @@ export default function AiTransformationHubPage() {
                         {current.title}
                       </h3>
                       <p className="text-xs font-medium text-[#6E6E6E] mb-4">{current.team}</p>
-                      <p className="text-sm text-[#6E6E6E] leading-relaxed">
+                      <p className="text-sm text-[#6E6E6E] leading-relaxed mb-6">
                         {current.story}
                       </p>
+
+                      {/* Authentic Image Thumbnail */}
+                      <div className="relative w-full h-[180px] rounded-2xl overflow-hidden bg-[#F5F3F6] border border-black/5 mb-4">
+                        <Image
+                          src={current.image}
+                          alt={current.title}
+                          fill
+                          className="object-cover"
+                          sizes="(min-width: 1024px) 50vw, 100vw"
+                        />
+                      </div>
                     </div>
 
-                    <div className="pt-6 mt-6 border-t border-black/5 flex items-center justify-between">
+                    <div className="pt-4 border-t border-black/5 flex flex-wrap items-center justify-between gap-3 text-xs">
                       <Link
                         href={current.link}
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#17151A] hover:underline"
+                        className="inline-flex items-center gap-1.5 font-medium text-[#17151A] hover:underline"
                       >
-                        <span>Xem chi tiết hồ sơ kỹ thuật case study</span>
+                        <span>Hồ sơ kỹ thuật Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+
+                      <Link
+                        href={`/nganh/${current.industrySlug}`}
+                        className="inline-flex items-center gap-1.5 font-medium text-emerald-800 hover:underline"
+                      >
+                        <span>Xem giải pháp theo ngành tương ứng</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
                   </div>
@@ -344,6 +416,10 @@ export default function AiTransformationHubPage() {
                         <span className="text-xs text-[#6E6E6E]">{m.label}</span>
                       </div>
                     ))}
+
+                    <div className="pt-2 border-t border-black/5 text-[11px] text-[#6E6E6E]">
+                      Cam kết bảo vệ dữ liệu với mô hình NDA-first & Private Architecture.
+                    </div>
                   </div>
                 </div>
               );
@@ -369,7 +445,11 @@ export default function AiTransformationHubPage() {
                     Làm Bài Đánh Giá 5 Phút Ngay
                   </Button>
                 </Link>
-                <span className="text-xs text-neutral-400">Không cần đăng ký phức tạp • Báo cáo tức thì</span>
+                <Link href="/khung-dau-tu">
+                  <Button variant="secondary" size="lg" className="rounded-full text-sm">
+                    Xem Khung Đầu Tư Tham Khảo
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -424,9 +504,9 @@ export default function AiTransformationHubPage() {
                   <span>Đặt Lịch Tư Vấn 1-on-1 với Chuyên Gia</span>
                 </Button>
               </Link>
-              <Link href="/danh-gia-san-sang-ai">
+              <Link href="/nganh">
                 <Button variant="secondary" size="lg" className="rounded-full text-sm">
-                  Tự Đo Lường Trước
+                  Xem Giải Pháp Theo Ngành
                 </Button>
               </Link>
             </div>

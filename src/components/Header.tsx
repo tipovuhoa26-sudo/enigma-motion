@@ -223,7 +223,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
 
           <Link
             href="/tu-duy-chuyen-doi-ai"
-            className={`flex items-center gap-2 px-4 py-1.5 rounded-full transition-all duration-200 font-medium cursor-pointer ${
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full transition-all duration-200 font-medium cursor-pointer ${
               activeSection === 'tu-duy-ai'
                 ? 'bg-[#FAFFDE] text-[#17151A] shadow-xs scale-100'
                 : 'text-[#6E6E6E] hover:text-[#17151A] hover:bg-black/5'
@@ -232,6 +232,19 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
           >
             <span>Tư duy AI</span>
             <Layers className="w-3.5 h-3.5 opacity-60" />
+          </Link>
+
+          <Link
+            href="/nganh"
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full transition-all duration-200 font-medium cursor-pointer ${
+              activeSection === 'nganh'
+                ? 'bg-[#FAFFDE] text-[#17151A] shadow-xs scale-100'
+                : 'text-[#6E6E6E] hover:text-[#17151A] hover:bg-black/5'
+            }`}
+            data-nav-item="nganh"
+          >
+            <span>Theo ngành</span>
+            <Sparkles className="w-3.5 h-3.5 opacity-60" />
           </Link>
         </nav>
 
@@ -345,6 +358,34 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               </div>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A]">
                 Rewired
+              </span>
+            </Link>
+
+            <Link
+              href="/nganh"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <Sparkles className="w-4 h-4" />
+                <span>Giải pháp theo ngành</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white border border-black/10 text-[#17151A]">
+                3 Ngành
+              </span>
+            </Link>
+
+            <Link
+              href="/khung-dau-tu"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <Zap className="w-4 h-4" />
+                <span>Khung Đầu Tư & ROI</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A]">
+                Minh Bạch
               </span>
             </Link>
 
