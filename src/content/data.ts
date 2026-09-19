@@ -117,33 +117,53 @@ export const CASES_DATA: CaseStudy[] = [
   },
   {
     id: 'case-4',
-    title: 'Dự Báo Ca Trực & Phân Bổ Nhân Sự Tuyển Dụng',
-    category: 'Bán Lẻ & FMCG',
-    image: '/assets/vietnam-retail-store.jpg',
+    title: 'Multi-Agent Đối Chiếu Báo Cáo Tài Chính Tự Động',
+    category: 'Chứng Khoán & Đầu Tư',
+    image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[340px] sm:w-[380px] md:w-[420px]',
     heightClass: 'h-[240px] sm:h-[270px] md:h-[300px]',
-    slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
-    summary: 'Tự động hóa luồng tiếp nhận và sàng lọc ứng viên ca kíp, giúp đội ngũ HR 4 người giải phóng 90% thời gian tác vụ lặp lại.',
+    slug: 'vietcap-ai-multi-agent-nghien-cuu-thi-truong',
+    summary: 'Vietcap Securities: Giảm 75% thời gian bóc tách BCTC, rút ngắn chu kỳ xuất bản báo cáo phân tích từ 2 ngày xuống 3 giờ.',
   },
   {
     id: 'case-5',
-    title: 'Giám Sát Kiểm Định Tự Động Chuyền Sản Xuất',
-    category: 'Sản Xuất & Chế Tạo',
-    image: '/assets/vietnam-manufacturing-line.jpg',
+    title: 'AI Sales Enablement & Lead Reactivation Bất Động Sản',
+    category: 'Bất Động Sản & Nhà Phố',
+    image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
     heightClass: 'h-[210px] sm:h-[240px] md:h-[270px]',
-    slug: 'ai-auditor-manufacturing',
-    summary: 'Camera công nghiệp kết hợp mô hình AI quét chi tiết thời gian thực < 50ms, vận hành 24/7 đồng nhất trên 6 dây chuyền.',
+    slug: 'vinhomes-ai-sales-enablement',
+    summary: 'Mạng lưới 500+ nhân sự kinh doanh: Tự động hóa sản xuất video thực địa, kịch bản tư vấn và trợ lý ảo thông tin dự án.',
   },
   {
     id: 'case-6',
-    title: 'Đóng Gói Tri Thức Chuyên Gia & Xuất Bản B2B',
-    category: 'Dịch Vụ B2B',
-    image: '/assets/vietnam-strategy-meeting.jpg',
+    title: 'Chuẩn Hóa Quy Trình Pitch Deck Đấu Thầu Quốc Tế',
+    category: 'Truyền Thông & Sáng Tạo',
+    image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
-    slug: 'content-factory-b2b-marketing',
-    summary: 'Chuyển hóa tài liệu kỹ thuật và kinh nghiệm chuyên gia thành bài phân tích chuyên sâu chuẩn Brand Voice, duy trì 50+ bài/tháng.',
+    slug: 'dentsu-ai-pitch-deck-automation',
+    summary: 'Dentsu Sports & Creative: Rút ngắn 65% thời gian phát triển proposal đấu thầu tài trợ và chiến dịch thương hiệu.',
+  },
+  {
+    id: 'case-7',
+    title: 'Tự Động Hóa Sản Xuất Video Thực Địa Trên Di Động',
+    category: 'Bất Động Sản & Nhà Phố',
+    image: '/assets/vietnam-manufacturing-line.jpg',
+    widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
+    heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
+    slug: 'phuong-truong-an-video-ai-hien-truong',
+    summary: 'Phương Trường An Group: Tăng 200% sản lượng video hiện trường do nhân sự tự quay dựng trực tiếp trên điện thoại.',
+  },
+  {
+    id: 'case-8',
+    title: 'Đào Tạo Giảng Viên Chuẩn Bậc 6 & AI Event Management',
+    category: 'Giáo Dục & Công Nghệ',
+    image: '/assets/vietnam-strategy-meeting.jpg',
+    widthClass: 'w-[330px] sm:w-[370px] md:w-[410px]',
+    heightClass: 'h-[230px] sm:h-[260px] md:h-[290px]',
+    slug: 'fptu-nang-bac-giang-vien-ai',
+    summary: 'Đại học FPT: Đào tạo nâng bậc giảng viên chuẩn Bậc 6 và điều phối hệ thống AI Agents phục vụ 10.000+ người tại Tech Fest.',
   },
 ];
 
@@ -157,8 +177,8 @@ export const STATS_DATA: StatItem[] = [
     label: 'Rút ngắn thời gian sàng lọc hồ sơ ứng viên',
   },
   {
-    value: 'x5',
-    label: 'Tăng tốc độ sản xuất tài liệu kỹ thuật & proposal',
+    value: '-75%',
+    label: 'Thời gian bóc tách dữ liệu báo cáo tài chính thô',
   },
 ];
 
@@ -280,6 +300,176 @@ const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
         value: '0đ',
         label: 'Chi phí ngân sách phát sinh cho quảng cáo',
         description: 'Tăng trưởng bền vững dựa trên tri thức nội bộ và uy tín chuyên gia',
+      },
+    ],
+  },
+  'vietcap-ai-multi-agent-nghien-cuu-thi-truong': {
+    slug: 'vietcap-ai-multi-agent-nghien-cuu-thi-truong',
+    title: 'Hệ Thống Multi-Agent Phân Tích & Đối Chiếu Báo Cáo Tài Chính Tự Động',
+    client: 'Vietcap Securities (VCI) — Khối Phân Tích & Nghiên Cứu',
+    category: 'Chứng Khoán & Đầu Tư',
+    scale: '30+ Chuyên viên Phân tích & Khối Nghiên cứu Khách hàng Tổ chức',
+    image: '/assets/vietnam-strategy-meeting.jpg',
+    challenge:
+      'Mỗi mùa công bố kết quả kinh doanh quý, hơn 30 chuyên viên phân tích cao cấp tại Vietcap Securities đối mặt với hàng trăm báo cáo tài chính dài từ 60 đến 120 trang mỗi bản. Họ phải mất trung bình 2 ngày làm việc thủ công cho mỗi doanh nghiệp chỉ để bóc tách từng con số trên bảng cân đối kế toán, lưu chuyển tiền tệ và thuyết minh phức tạp. Tác vụ gõ số cơ học gây áp lực nặng nề và tiềm ẩn nguy cơ sai lệch dữ liệu định giá trong các báo cáo khuyến nghị quan trọng gửi nhà đầu tư tổ chức.',
+    solution:
+      'Đội ngũ chuyên gia Sunext (dẫn dắt bởi CAIO Nguyễn Phước Vĩnh Hưng) thiết lập hệ thống AI Multi-Agent chuyên sâu cho khối phân tích: Agent tự động trích xuất và đối chiếu BCTC thô, Agent truy vấn Second Brain và Social Listening cập nhật thông tin ngành theo thời gian thực. Chuyên viên phân tích chuyển từ vai trò nhập liệu cơ học sang thẩm định các giả định mô hình tài chính và tối ưu hóa nhận định chiến lược, nâng cao chất lượng báo cáo đầu tư.',
+    pillarsInvolved: [
+      { name: 'Trụ cột 4: Nền Tảng Công Nghệ', slug: 'nen-tang-cong-nghe' },
+      { name: 'Trụ cột 5: Kiến Trúc Dữ Liệu', slug: 'kien-truc-du-lieu' },
+    ],
+    industry: { name: 'Dịch Vụ Doanh Nghiệp & B2B', slug: 'dich-vu-b2b' },
+    metrics: [
+      {
+        value: '-75%',
+        label: 'Thời gian bóc tách BCTC thô',
+        description: 'Giải phóng toàn bộ thời gian đối chiếu thủ công các chỉ số tài chính phức tạp',
+      },
+      {
+        value: '2 ngày → 3h',
+        label: 'Chu kỳ xuất bản Báo cáo Cập nhật Doanh nghiệp',
+        description: 'Tăng tốc độ phản ứng với diễn biến thị trường và kết quả kinh doanh quý',
+      },
+      {
+        value: '100%',
+        label: 'Loại bỏ hoàn toàn sai lệch số liệu cơ học',
+        description: 'Cơ chế đối soát hai chiều bảo đảm tính chuẩn xác của các biến số mô hình',
+      },
+    ],
+  },
+  'vinhomes-ai-sales-enablement': {
+    slug: 'vinhomes-ai-sales-enablement',
+    title: 'AI Sales Enablement & Tự Động Hóa Chăm Sóc Khách Hàng Bất Động Sản',
+    client: 'Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes)',
+    category: 'Bất Động Sản & Nhà Phố',
+    scale: '500+ Chuyên viên Kinh doanh BĐS',
+    image: '/assets/vietnam-retail-store.jpg',
+    challenge:
+      'Trong các chiến dịch mở bán dự án quy mô lớn, mạng lưới hơn 500 nhân sự kinh doanh bất động sản phải xử lý lượng yêu cầu thông tin khổng lồ từ khách hàng. Tuy nhiên, việc tra cứu giỏ hàng, cập nhật chính sách bán hàng và soạn kịch bản tư vấn thực địa theo từng phân khúc diễn ra thủ công và rời rạc. Tốc độ phản hồi chậm khiến tỷ lệ kích hoạt lại tệp khách hàng cũ (lead reactivation) sụt giảm, nhiều cơ hội giao dịch giá trị cao bị bỏ lỡ.',
+    solution:
+      'Chương trình đào tạo thực chiến kết hợp triển khai công cụ AI giúp đội ngũ kinh doanh tự sản xuất trang giới thiệu dự án chuyên nghiệp, dựng video tư vấn thực địa bằng AI và thiết lập trợ lý ảo giải đáp chính sách bán hàng 24/7 (với case study tiêu biểu tại dự án Vinhomes). Chuyên viên kinh doanh chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu tư vấn được cá nhân hóa sâu sắc.',
+    pillarsInvolved: [
+      { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
+      { name: 'Trụ cột 3: Mô Hình Vận Hành', slug: 'mo-hinh-van-hanh' },
+    ],
+    industry: { name: 'Bất Động Sản & Nhà Phố', slug: 'bat-dong-san' },
+    metrics: [
+      {
+        value: '500+',
+        label: 'Nhân sự kinh doanh làm chủ công cụ AI thực chiến',
+        description: 'Nâng cao năng lực tự sản xuất tài liệu và kịch bản chăm sóc khách hàng',
+      },
+      {
+        value: '< 5 phút',
+        label: 'Thời gian phản hồi thông tin dự án',
+        description: 'Tăng tốc độ tương tác tức thời khi khách hàng phát sinh nhu cầu tìm hiểu',
+      },
+      {
+        value: 'x3',
+        label: 'Tốc độ sản xuất video & trang giới thiệu dự án',
+        description: 'Tự động hóa truyền thông thực địa mà không phụ thuộc vào đội thiết kế trung tâm',
+      },
+    ],
+  },
+  'dentsu-ai-pitch-deck-automation': {
+    slug: 'dentsu-ai-pitch-deck-automation',
+    title: 'Quy Trình AI Chuẩn Hóa Proposal & Pitch Deck Đấu Thầu Quốc Tế',
+    client: 'Dentsu Sports Vietnam & Creative Agency',
+    category: 'Truyền Thông & Sáng Tạo',
+    scale: '25 Chuyên viên Chiến lược & Account Director',
+    image: '/assets/vietnam-b2b-office.jpg',
+    challenge:
+      'Các agency truyền thông quốc tế thường xuyên phải tham gia những đợt đấu thầu tài trợ thể thao và chiến dịch thương hiệu lớn với thời hạn gấp gáp. Đội ngũ 25 chuyên viên chiến lược và account phải mất hàng tuần phân tích insight người tiêu dùng, dựng storyline và thiết kế pitch deck hàng trăm trang. Áp lực thời gian kéo dài khiến nhân sự kiệt sức, làm hạn chế số lượng hồ sơ thầu mà công ty có thể tham gia mỗi quý.',
+    solution:
+      'Sunext đồng hành chuẩn hóa quy trình AI dựng storyline pitching, tổng hợp dữ liệu nghiên cứu thị trường thể thao và tự động hóa khung dàn trang theo brand guideline chuẩn mực. Chuyên viên chiến lược giải phóng thời gian khỏi các khâu soạn thảo cơ học để tập trung tối đa vào việc mài sắc ý tưởng lớn (Big Idea) và phản biện chiến lược, gia tăng đáng kể tỷ lệ chốt tài trợ.',
+    pillarsInvolved: [
+      { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
+      { name: 'Trụ cột 3: Mô Hình Vận Hành', slug: 'mo-hinh-van-hanh' },
+    ],
+    industry: { name: 'Dịch Vụ Doanh Nghiệp & B2B', slug: 'dich-vu-b2b' },
+    metrics: [
+      {
+        value: '-65%',
+        label: 'Thời gian phát triển proposal đấu thầu',
+        description: 'Rút ngắn chu kỳ từ khi nhận brief khách hàng đến bản pitch deck hoàn chỉnh',
+      },
+      {
+        value: '+35%',
+        label: 'Tốc độ phản hồi yêu cầu chiến dịch',
+        description: 'Phản ứng nhanh với các cơ hội tài trợ thể thao đột xuất',
+      },
+      {
+        value: 'x2',
+        label: 'Số lượng hồ sơ thầu chất lượng cao mỗi quý',
+        description: 'Gia tăng năng lực cạnh tranh và mở rộng doanh thu mà không cần tuyển thêm nhân sự',
+      },
+    ],
+  },
+  'phuong-truong-an-video-ai-hien-truong': {
+    slug: 'phuong-truong-an-video-ai-hien-truong',
+    title: 'Tự Động Hóa Sản Xuất Video Thực Địa Bất Động Sản Trên Thiết Bị Di Động',
+    client: 'Phương Trường An Group (Bất Động Sản Thương Mại & Đất Nền)',
+    category: 'Bất Động Sản & Nhà Phố',
+    scale: '~300 Nhân sự Kinh doanh & Marketing',
+    image: '/assets/vietnam-manufacturing-line.jpg',
+    challenge:
+      'Tại các dự án đất nền và bất động sản thương mại tại Bình Dương, khách hàng luôn đòi hỏi video cập nhật tiến độ hạ tầng và pháp lý thực tế liên tục. Tuy nhiên, đội ngũ marketing nội bộ chỉ vài người không thể đáp ứng khối lượng video cho gần 300 chuyên viên kinh doanh ngoài hiện trường. Chi phí thuê ngoài quay dựng đắt đỏ và thời gian chờ đợi sản phẩm mất cả tuần khiến thông tin bị nguội.',
+    solution:
+      'Chương trình đào tạo chuyên sâu giúp toàn bộ nhân viên kinh doanh làm chủ quy trình sản xuất video AI trọn gói ngay trên điện thoại: từ viết kịch bản dẫn nhập, tạo thuyết minh lồng tiếng AI đến dựng hiệu ứng và chèn thông số quy hoạch tự động. Nhân viên có thể hoàn thành và phát hành video thực địa sắc nét trong vòng 24 giờ sau khi khảo sát dự án.',
+    pillarsInvolved: [
+      { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
+      { name: 'Trụ cột 3: Mô Hình Vận Hành', slug: 'mo-hinh-van-hanh' },
+    ],
+    industry: { name: 'Bất Động Sản & Nhà Phố', slug: 'bat-dong-san' },
+    metrics: [
+      {
+        value: '+200%',
+        label: 'Sản lượng video hiện trường tự sản xuất',
+        description: 'Toàn bộ đội ngũ chủ động tạo nội dung đa kênh mà không chờ đợi phòng thiết kế',
+      },
+      {
+        value: '24h',
+        label: 'Chu kỳ xuất bản video tiến độ dự án',
+        description: 'Rút ngắn từ 7 ngày xuống trong ngày, nắm bắt kịp thời nhu cầu khách hàng',
+      },
+      {
+        value: '0đ',
+        label: 'Chi phí phát sinh thuê ngoài sản xuất video',
+        description: 'Tối ưu hóa triệt để ngân sách truyền thông dự án của doanh nghiệp',
+      },
+    ],
+  },
+  'fptu-nang-bac-giang-vien-ai': {
+    slug: 'fptu-nang-bac-giang-vien-ai',
+    title: 'Chương Trình Đào Tạo Chuẩn Bậc 6 & Ứng Dụng AI Agents Tại Đại Học FPT',
+    client: 'Đại Học FPT (FPTU) & Ngày Hội Công Nghệ Tech Fest',
+    category: 'Giáo Dục & Công Nghệ',
+    scale: 'Toàn bộ Giảng viên FPTU HCM & Hybrid HN + 10.000+ sinh viên & khách tham dự Tech Fest',
+    image: '/assets/vietnam-strategy-meeting.jpg',
+    challenge:
+      'Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ đột phá cho hàng chục nghìn lượt khách tham gia.',
+    solution:
+      'Triển khai chương trình đào tạo nâng bậc giảng viên chuẩn Bậc 6, đưa chuyên đề "Critical Thinking in the AI Era" vào chương trình đào tạo; song song tích hợp hệ thống MC ảo AI và các luồng AI Agents (n8n) tự động hóa điều phối sự kiện tại Tech Fest trong hai mùa liên tiếp. Chương trình được đông đảo cơ quan báo chí và truyền hình đưa tin ghi nhận tính tiên phong.',
+    pillarsInvolved: [
+      { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
+      { name: 'Trụ cột 4: Nền Tảng Công Nghệ', slug: 'nen-tang-cong-nghe' },
+    ],
+    industry: { name: 'Dịch Vụ Doanh Nghiệp & B2B', slug: 'dich-vu-b2b' },
+    metrics: [
+      {
+        value: '10.000+',
+        label: 'Lượt người tham gia trải nghiệm AI tại Tech Fest 2026',
+        description: 'Quy mô tương tác thực tế đã được các cơ quan báo chí xác nhận công khai',
+      },
+      {
+        value: '~60',
+        label: 'Doanh nghiệp công nghệ liên kết hệ sinh thái',
+        description: 'Kết nối hiệu quả giữa năng lực đào tạo và nhu cầu tuyển dụng thực tiễn',
+      },
+      {
+        value: '100%',
+        label: 'Giảng viên hoàn thành kiểm tra năng lực sư phạm AI',
+        description: 'Đáp ứng chuẩn mực nâng cấp giáo trình và phương pháp giảng dạy thời kỳ mới',
       },
     ],
   },

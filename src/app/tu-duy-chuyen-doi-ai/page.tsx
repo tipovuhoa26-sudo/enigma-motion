@@ -20,7 +20,6 @@ import {
   ClipboardCheck,
   Calendar,
   Layers,
-  Sparkles,
   PieChart,
 } from 'lucide-react';
 import { Header } from '@/components/Header';

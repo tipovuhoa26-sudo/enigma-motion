@@ -5,12 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowLeft,
-  ArrowUpRight,
   ChevronRight,
   Sparkles,
   ShoppingBag,
   Factory,
   Briefcase,
+  Building2,
   ShieldCheck,
   Calendar,
   Layers,
@@ -24,6 +24,7 @@ const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   retail: ShoppingBag,
   manufacturing: Factory,
   'b2b-services': Briefcase,
+  'real-estate': Building2,
 };
 
 export default function IndustryIndexPage() {

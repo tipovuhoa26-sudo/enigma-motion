@@ -8,20 +8,10 @@ import {
   ClipboardCheck,
   CheckCircle2,
   AlertTriangle,
-  Layers,
   ChevronRight,
   RefreshCw,
-  ShieldCheck,
   Zap,
-  Target,
-  Users,
-  Workflow,
-  Cpu,
-  Database,
-  TrendingUp,
-  Calendar,
   Send,
-  Building2,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -409,12 +399,19 @@ export default function AiMaturityAssessmentQuizPage() {
                       className="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2"
                     >
                       <input
+                        type="text"
+                        placeholder="Tên doanh nghiệp..."
+                        value={contactCompany}
+                        onChange={(e) => setContactCompany(e.target.value)}
+                        className="w-full sm:w-44 px-4 py-2.5 rounded-full bg-white border border-black/10 text-xs text-[#17151A] focus:outline-none focus:border-black"
+                      />
+                      <input
                         type="email"
                         required
-                        placeholder="Email doanh nghiệp của bạn..."
+                        placeholder="Email công việc..."
                         value={contactEmail}
                         onChange={(e) => setContactEmail(e.target.value)}
-                        className="w-full sm:w-64 px-4 py-2.5 rounded-full bg-white border border-black/10 text-xs text-[#17151A] focus:outline-none focus:border-black"
+                        className="w-full sm:w-56 px-4 py-2.5 rounded-full bg-white border border-black/10 text-xs text-[#17151A] focus:outline-none focus:border-black"
                       />
                       <Button type="submit" variant="primary" size="md" className="w-full sm:w-auto rounded-full text-xs shrink-0">
                         <Send className="w-3 h-3" />

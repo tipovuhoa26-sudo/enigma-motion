@@ -44,6 +44,12 @@ export function Footer() {
             <span>Tất Cả Dự Án</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
+          <Link href="/doi-ngu" className="hover:text-[#17151A] transition-colors">
+            Đội Ngũ Chuyên Gia
+          </Link>
+          <Link href="/khach-hang-doi-tac" className="hover:text-[#17151A] transition-colors">
+            Khách Hàng & Đối Tác
+          </Link>
         </div>
 
         {/* AI Transformation (Rewired) Column */}
@@ -92,6 +98,9 @@ export function Footer() {
           </Link>
           <Link href="/nganh/dich-vu-b2b" className="hover:text-[#17151A] transition-colors">
             Dịch vụ B2B
+          </Link>
+          <Link href="/nganh/bat-dong-san" className="hover:text-[#17151A] transition-colors">
+            Bất động sản & Nhà phố
           </Link>
           <Link href="/khung-dau-tu" className="text-emerald-800 font-medium hover:underline flex items-center gap-1 pt-1">
             <span>Khung Đầu Tư & ROI</span>

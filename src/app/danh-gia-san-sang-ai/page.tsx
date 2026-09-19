@@ -3,17 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  ArrowLeft,
   ArrowRight,
   ArrowUpRight,
   CheckCircle2,
   AlertCircle,
   Clock,
-  Target,
-  ShieldAlert,
-  Zap,
-  Layers,
-  ChevronRight,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -150,15 +144,15 @@ export default function AiReadinessEditorialIntroPage() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A]">
-                "Chưa cần đo, cứ bắt đầu làm rồi biết"
+                &ldquo;Chưa cần đo, cứ bắt đầu làm rồi biết&rdquo;
               </h2>
 
               <div className="space-y-4 text-base text-[#6E6E6E] leading-relaxed">
                 <p>
-                  Nghe có vẻ rất thực dụng: <em>"Làm rồi biết, đo lường màu mè chỉ làm chậm tiến độ."</em>
+                  Nghe có vẻ rất thực dụng: <em>&ldquo;Làm rồi biết, đo lường màu mè chỉ làm chậm tiến độ.&rdquo;</em>
                 </p>
                 <p>
-                  <strong>Vấn đề:</strong> nếu không đo trước, bạn không "biết" — bạn đoán. Và đoán trong bối cảnh AI năm 2026 rất tốn kém, vì công nghệ thay đổi nhanh, mỗi hướng đi sai đồng nghĩa với vài tháng và một khoản ngân sách không quay lại được.
+                  <strong>Vấn đề:</strong> nếu không đo trước, bạn không &ldquo;biết&rdquo; — bạn đoán. Và đoán trong bối cảnh AI năm 2026 rất tốn kém, vì công nghệ thay đổi nhanh, mỗi hướng đi sai đồng nghĩa với vài tháng và một khoản ngân sách không quay lại được.
                 </p>
                 <p>
                   Doanh nghiệp bạn có thể rất mạnh về công nghệ nhưng yếu về con người. Hoặc ngược lại — đội ngũ rất sẵn sàng học, nhưng dữ liệu đang là một mớ hỗn độn không ai dám tin. Không đo, bạn sẽ không biết mình đang rơi vào trường hợp nào — và sẽ đầu tư sai chỗ, đúng công thức thất bại mà hơn 70% doanh nghiệp chuyển đổi số đã gặp phải.
@@ -174,11 +168,11 @@ export default function AiReadinessEditorialIntroPage() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A]">
-                Không phải một câu hỏi chung chung "công ty bạn có sẵn sàng AI không"
+                Không phải một câu hỏi chung chung &ldquo;công ty bạn có sẵn sàng AI không&rdquo;
               </h2>
 
               <p className="text-base text-[#6E6E6E] leading-relaxed">
-                Câu hỏi <em>"công ty bạn có sẵn sàng AI không"</em> là một câu hỏi vô nghĩa — câu trả lời luôn là "vừa sẵn sàng vừa chưa", tùy khía cạnh nào. Sẵn sàng AI thật sự phải được đo trên sáu trục riêng biệt — đúng sáu trụ cột mà các dự án chuyển đổi AI thường gặp rào cản:
+                Câu hỏi <em>&ldquo;công ty bạn có sẵn sàng AI không&rdquo;</em> là một câu hỏi vô nghĩa — câu trả lời luôn là &ldquo;vừa sẵn sàng vừa chưa&rdquo;, tùy khía cạnh nào. Sẵn sàng AI thật sự phải được đo trên sáu trục riêng biệt — đúng sáu trụ cột mà các dự án chuyển đổi AI thường gặp rào cản:
               </p>
 
               <div className="space-y-4 my-6">
@@ -190,16 +184,16 @@ export default function AiReadinessEditorialIntroPage() {
                     <span className="text-xs font-mono font-bold text-neutral-400 shrink-0 mt-0.5">
                       {axis.num}
                     </span>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <h3 className="text-sm sm:text-base font-semibold text-[#17151A]">
+                    <div className="space-y-1 flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="text-sm font-semibold text-[#17151A]">
                           {axis.title}
-                        </h3>
+                        </h4>
                         <Link
                           href={axis.pillarUrl}
-                          className="text-[11px] text-[#6E6E6E] hover:text-[#17151A] flex items-center gap-0.5"
+                          className="text-[11px] text-[#6E6E6E] hover:text-[#17151A] inline-flex items-center gap-0.5"
                         >
-                          <span>Trụ cột chi tiết</span>
+                          <span>Xem trụ cột</span>
                           <ArrowUpRight className="w-3 h-3" />
                         </Link>
                       </div>
@@ -212,7 +206,7 @@ export default function AiReadinessEditorialIntroPage() {
               </div>
 
               <p className="text-base text-[#17151A] font-medium leading-relaxed">
-                Biết điểm số ở cả sáu trục, bạn biết chính xác nên bắt đầu từ đâu — không phải đoán, không phải nghe theo chỗ nào "đang hot".
+                Biết điểm số ở cả sáu trục, bạn biết chính xác nên bắt đầu từ đâu — không phải đoán, không phải nghe theo chỗ nào &ldquo;đang hot&rdquo;.
               </p>
             </div>
 
@@ -262,14 +256,14 @@ export default function AiReadinessEditorialIntroPage() {
                 </p>
                 <div className="p-5 rounded-2xl bg-[#F5F3F6] border border-black/5 space-y-3 text-xs sm:text-sm text-[#17151A]">
                   <p>
-                    <strong>Chuỗi bán lẻ 500 nhân sự</strong> biết trước đội HR cần đào tạo nền tảng trước khi nhận một con Agent — nên khi Agent ra đời, đội đã sẵn sàng dùng ngay, không mất thêm 3 tháng để "làm quen", rút ngắn thời gian lọc CV từ 3 ngày xuống 2 giờ và tiết kiệm 40% chi phí.
+                    <strong>Chuỗi bán lẻ 500 nhân sự</strong> biết trước đội HR cần đào tạo nền tảng trước khi nhận một con Agent — nên khi Agent ra đời, đội đã sẵn sàng dùng ngay, không mất thêm 3 tháng để &ldquo;làm quen&rdquo;, rút ngắn thời gian lọc CV từ 3 ngày xuống 2 giờ và tiết kiệm 40% chi phí.
                   </p>
                   <p>
                     <strong>Nhà máy cơ khí 800 công nhân</strong> biết trước dữ liệu chuyền sản xuất cần chuẩn hóa trước khi gắn Computer Vision — nên hệ thống chạy đúng ngay từ đầu, đạt độ chính xác 99.8% mà không phải sửa đi sửa lại.
                   </p>
                 </div>
                 <p className="font-medium text-[#17151A]">
-                  Không doanh nghiệp nào trong số đó "may mắn". Họ chỉ đo trước khi làm.
+                  Không doanh nghiệp nào trong số đó &ldquo;may mắn&rdquo;. Họ chỉ đo trước khi làm.
                 </p>
               </div>
             </div>

@@ -13,10 +13,10 @@ import {
   Sparkles,
   Command,
   Sliders,
-  Check,
   ShieldCheck,
   Zap,
   Layers,
+  Users,
 } from 'lucide-react';
 import { Button } from './Button';
 import { useLenis } from '@/motion/SmoothScrollProvider';
@@ -33,8 +33,16 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
   const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [isAccountOpen, setIsAccountOpen] = useState(false);
   const [reducedMotionActive, setReducedMotionActive] = useState(false);
-  const [userRole, setUserRole] = useState<'Enterprise' | 'Partner' | 'Guest'>('Enterprise');
   const headerRef = useRef<HTMLElement>(null);
+
+  // Initialize and synchronize reduced motion preference
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const current = document.documentElement.getAttribute('data-motion');
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setReducedMotionActive(current === 'reduced' || prefersReduced);
+    }
+  }, []);
 
   // Synchronize prop if passed
   useEffect(() => {
@@ -377,7 +385,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                 <span>Giải pháp theo ngành</span>
               </div>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white border border-black/10 text-[#17151A]">
-                3 Ngành
+                4 Ngành
               </span>
             </Link>
 
@@ -406,6 +414,34 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               </div>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800">
                 5 Phút
+              </span>
+            </Link>
+
+            <Link
+              href="/doi-ngu"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <Users className="w-4 h-4" />
+                <span>Đội ngũ chuyên gia & CAIO</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-white border border-black/10 text-[#17151A]">
+                Thực Chiến
+              </span>
+            </Link>
+
+            <Link
+              href="/khach-hang-doi-tac"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <LayoutGrid className="w-4 h-4" />
+                <span>Khách hàng & Mạng lưới</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A]">
+                Hệ Sinh Thái
               </span>
             </Link>
 

@@ -5,17 +5,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowLeft,
-  ArrowRight,
   CheckCircle2,
   Clock,
-  Layers,
   Sparkles,
   ShieldCheck,
-  Calendar,
   DollarSign,
   Calculator,
-  Send,
-  Zap,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -26,8 +21,6 @@ export default function InvestmentFrameworkPage() {
   // Calculator state
   const [teamSize, setTeamSize] = useState<'small' | 'medium' | 'large' | 'enterprise'>('medium');
   const [domain, setDomain] = useState<'hr' | 'marketing' | 'operations' | 'data'>('operations');
-  const [estimateRequested, setEstimateRequested] = useState(false);
-  const [calcEmail, setCalcEmail] = useState('');
 
   // Calculations
   const sizeMultipliers = {

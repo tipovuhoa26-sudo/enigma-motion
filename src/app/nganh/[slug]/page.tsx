@@ -14,12 +14,11 @@ import {
   Layers,
   Sparkles,
   ShieldCheck,
-  Calendar,
   ShoppingBag,
   Factory,
   Briefcase,
+  Building2,
   Clock,
-  Target,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -30,6 +29,7 @@ const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   retail: ShoppingBag,
   manufacturing: Factory,
   'b2b-services': Briefcase,
+  'real-estate': Building2,
 };
 
 interface PageProps {

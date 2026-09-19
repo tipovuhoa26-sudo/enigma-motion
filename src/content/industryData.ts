@@ -209,7 +209,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       metrics: [
         { value: 'x5', label: 'Tốc độ sản xuất tài liệu kỹ thuật & bài viết' },
         { value: '+60%', label: 'Tăng trưởng organic traffic sau 5 tháng' },
-        { value: '0đ', label: 'Ngân sách phát sinh thêm cho quảng cáo' },
+        { value: '-65%', label: 'Thời gian soạn thảo proposal đấu thầu (case Dentsu)' },
       ],
       caseUrl: '/case-studies/content-factory-b2b-marketing',
       image: '/assets/vietnam-b2b-office.jpg',
@@ -226,7 +226,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         name: 'Trợ Lý Soạn Thảo Proposal & Báo Giá Doanh Nghiệp',
         pillarId: 'nang-luc-doi-ngu',
         pillarName: 'Trụ cột 2: Năng lực đội ngũ',
-        description: 'Tự động trích xuất yêu cầu từ brief của khách hàng và đề xuất cấu trúc giải pháp, rút ngắn thời gian chuẩn bị proposal kỹ thuật.',
+        description: 'Tự động trích xuất yêu cầu từ brief của khách hàng và đề xuất cấu trúc giải pháp, rút ngắn 65% thời gian chuẩn bị proposal kỹ thuật.',
         deliverables: ['AI Proposal Assistant', 'Thư viện cấu trúc đề xuất chuẩn', 'Quy trình kiểm duyệt báo giá'],
       },
       {
@@ -241,6 +241,74 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       { phase: 'Giai đoạn 1 (Tuần 1-3)', duration: '3 tuần', objective: 'Xây dựng Brand Voice Profile và cấu hình Content Engine cho 3 chủ đề chuyên môn trọng điểm.' },
       { phase: 'Giai đoạn 2 (Tuần 4-7)', duration: '4 tuần', objective: 'Đào tạo đội ngũ vận hành, thiết lập luồng tự động hóa phê duyệt và kiểm tra chất lượng.' },
       { phase: 'Giai đoạn 3 (Tuần 8-12)', duration: '5 tuần', objective: 'Mở rộng sang soạn thảo Proposal và tích hợp Knowledge Base tra cứu nội bộ.' },
+    ],
+  },
+  {
+    id: 'real-estate',
+    slug: 'bat-dong-san',
+    name: 'Bất Động Sản & Nhà Phố',
+    englishName: 'Real Estate & PropTech',
+    heroHeadline: 'Tăng Tốc Kinh Doanh BĐS: Tự Động Hóa Chăm Sóc Khách Hàng & Video Thực Địa',
+    heroSubheadline: 'Giải phóng 80% thời gian tương tác thủ công ban đầu của môi giới. Nhân sự kinh doanh tự sản xuất video hiện trường và kịch bản tư vấn bằng AI ngay trên điện thoại di động.',
+    heroImage: '/assets/vietnam-retail-store.jpg',
+    marketContext: 'Trong bối cảnh thị trường bất động sản cạnh tranh khốc liệt, khách hàng đòi hỏi phản hồi thông tin giỏ hàng, bảng tính dòng tiền và video tiến độ hạ tầng trong vài phút. Nhưng phần lớn sàn giao dịch và đội ngũ môi giới vẫn hoạt động thủ công: tra cứu giỏ hàng qua tin nhắn rời rạc, chờ phòng marketing dựng từng video thực địa và bỏ quên 70% tệp khách hàng cũ. Đơn vị nào phản hồi chậm quá 15 phút, khách hàng sẽ chuyển sang đơn vị phân phối khác.',
+    challenges: [
+      {
+        title: 'Thực tế khó chịu: Quá tải tương tác ban đầu & phản hồi chậm',
+        description: 'Mỗi chiến dịch quảng cáo mang về hàng trăm lead, nhưng môi giới mất cả ngày để gọi điện sàng lọc, gửi thông tin cơ bản và đối chiếu nhu cầu.',
+        impact: 'Hơn 60% khách hàng tiềm năng mất kiên nhẫn khi phải chờ đợi thông tin dự án quá lâu.',
+      },
+      {
+        title: 'Lầm tưởng phổ biến: "Cần phòng media chuyên nghiệp mới quay được video dự án"',
+        description: 'Chờ đợi đội ngũ thiết kế và quay dựng trung tâm khiến chu kỳ ra video mất từ 5-7 ngày, chi phí thuê ngoài đắt đỏ và không bắt kịp nhịp sốt của dự án.',
+        impact: 'Nội dung quảng cáo nghèo nàn, nhân viên kinh doanh thiếu công cụ visual để thuyết phục khách hàng.',
+      },
+      {
+        title: 'Bản chất vấn đề: Bỏ quên tệp khách hàng cũ (Lead Reactivation)',
+        description: 'Hàng nghìn số điện thoại khách hàng quan tâm trước đây nằm im trong sổ tay môi giới mà không có kịch bản chăm sóc lại tự động theo biến động giá và hạ tầng.',
+        impact: 'Lãng phí toàn bộ chi phí quảng cáo đã chi trong quá khứ.',
+      },
+    ],
+    centralCaseStudy: {
+      title: 'AI Sales Enablement & Lead Reactivation Cho Mạng Lưới 500+ Môi Giới BĐS',
+      client: 'Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes)',
+      scale: '500+ Chuyên viên Kinh doanh BĐS · Hàng nghìn lead/tháng',
+      description: 'Sunext triển khai Trụ cột 2 (Đào tạo thực chiến tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.',
+      metrics: [
+        { value: '80%', label: 'Tự động hóa tương tác ban đầu với khách hàng' },
+        { value: '+200%', label: 'Sản lượng video thực địa do nhân viên tự sản xuất' },
+        { value: '< 5 phút', label: 'Thời gian phản hồi thông tin dự án & giỏ hàng' },
+      ],
+      caseUrl: '/case-studies/vinhomes-ai-sales-enablement',
+      image: '/assets/vietnam-retail-store.jpg',
+    },
+    solutions: [
+      {
+        name: 'AI Real Estate Video & Content Engine',
+        pillarId: 'nang-luc-doi-ngu',
+        pillarName: 'Trụ cột 2: Năng lực đội ngũ',
+        description: 'Quy trình sản xuất video thực địa, viết kịch bản dẫn và tạo giọng đọc thuyết minh AI chuyên nghiệp ngay trên điện thoại di động.',
+        deliverables: ['Mobile AI Video Workflow', 'Bộ template kịch bản dự án chuẩn', 'Khóa huấn luyện thực chiến tại hiện trường'],
+      },
+      {
+        name: 'Smart Lead Reactivation & Virtual Project Assistant',
+        pillarId: 'mo-hinh-van-hanh',
+        pillarName: 'Trụ cột 3: Mô hình vận hành',
+        description: 'Trợ lý ảo AI tự động tra cứu giỏ hàng, bảng tính vay ngân hàng và kích hoạt lại tệp khách hàng cũ theo sự kiện mở bán.',
+        deliverables: ['Trợ lý ảo tư vấn dự án 24/7', 'Kịch bản chăm sóc đa kênh Zalo/SMS', 'Dashboard quản lý tiến độ chuyển đổi lead'],
+      },
+      {
+        name: 'Private PropTech Knowledge Mesh & Giỏ Hàng Dự Án',
+        pillarId: 'kien-truc-du-lieu',
+        pillarName: 'Trụ cột 5: Kiến trúc dữ liệu',
+        description: 'Tập trung hóa toàn bộ pháp lý, quy hoạch, mặt bằng tầng và chính sách bán hàng vào một kho tri thức bảo mật truy vấn tức thì.',
+        deliverables: ['Kho dữ liệu dự án thời gian thực', 'API kết nối CRM bất động sản', 'Phân quyền truy cập chính sách giỏ hàng'],
+      },
+    ],
+    roadmap: [
+      { phase: 'Giai đoạn 1 (Tuần 1-3)', duration: '3 tuần', objective: 'Khảo sát tài liệu dự án, cấu hình Trợ lý ảo tra cứu giỏ hàng & đào tạo Tầng 1 cho 50 môi giới nòng cốt.' },
+      { phase: 'Giai đoạn 2 (Tuần 4-8)', duration: '5 tuần', objective: 'Chuẩn hóa quy trình sản xuất video thực địa trên di động và tích hợp kịch bản kích hoạt lại lead cũ.' },
+      { phase: 'Giai đoạn 3 (Tuần 9-12)', duration: '4 tuần', objective: 'Nhân rộng toàn bộ 500+ nhân sự kinh doanh, đo lường tỷ lệ chốt cọc và tối ưu chi phí quảng cáo.' },
     ],
   },
 ];

@@ -82,7 +82,7 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
                   {item.category}
                 </span>
                 <span className="text-xs text-[#6E6E6E] font-mono font-medium">
-                  0{index + 1}
+                  {index + 1 < 10 ? `0${index + 1}` : index + 1}
                 </span>
               </div>
 
