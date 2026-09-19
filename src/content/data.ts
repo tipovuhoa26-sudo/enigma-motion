@@ -207,7 +207,7 @@ export interface CaseStudyDetail {
   }[];
 }
 
-const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
+export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
   'toi-uu-chi-phi-tuyen-dung-hr-ai': {
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
     title: 'Tối Ưu Tuyển Dụng & Sàng Lọc CV Tự Động Cho Chuỗi Bán Lẻ',

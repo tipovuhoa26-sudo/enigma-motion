@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import createGlobe, { Marker, Arc } from 'cobe';
-import { Compass, Sparkles } from 'lucide-react';
+import { Compass } from 'lucide-react';
 
 /**
  * Tọa độ thực tế các trung tâm dự án & mạng lưới đào tạo chuyển đổi AI của Sunext
@@ -33,71 +33,20 @@ export const SUNEXT_HUBS = [
     location: [11.1667, 106.6667] as [number, number],
     size: 0.08,
     color: [0.05, 0.75, 0.38] as [number, number, number],
-    badge: 'KCN & Bất động sản',
-    description: 'Phương Trường An Group, Thắng Lợi Group, nhà máy cơ khí...',
-  },
-  {
-    id: 'dn',
-    name: 'Đà Nẵng',
-    location: [16.0544, 108.2022] as [number, number],
-    size: 0.07,
-    color: [0.05, 0.75, 0.38] as [number, number, number],
-    badge: 'Miền Trung',
-    description: 'Hệ thống đối tác công nghệ và đào tạo thực tế',
-  },
-  {
-    id: 'ct',
-    name: 'Cần Thơ',
-    location: [10.0452, 105.7469] as [number, number],
-    size: 0.07,
-    color: [0.05, 0.75, 0.38] as [number, number, number],
-    badge: 'ĐBSCL',
-    description: 'Đại học FPT Cần Thơ, Chuỗi bán lẻ tiêu dùng & Nông nghiệp',
-  },
-  {
-    id: 'hp',
-    name: 'Hải Phòng',
-    location: [20.8449, 106.6881] as [number, number],
-    size: 0.06,
-    color: [0.05, 0.75, 0.38] as [number, number, number],
-    badge: 'Bắc Bộ',
-    description: 'Dây chuyền cơ khí & Logistics phân phối',
-  },
-  {
-    id: 'tokyo',
-    name: 'Tokyo',
-    location: [35.6762, 139.6503] as [number, number],
-    size: 0.06,
-    color: [0.2, 0.5, 0.9] as [number, number, number], // Tech Blue
-    badge: 'Đối tác Nhật Bản',
-    description: 'JTB-TNT, Mitsubishi Network liên kết',
-  },
-  {
-    id: 'sg',
-    name: 'Singapore',
-    location: [1.3521, 103.8198] as [number, number],
-    size: 0.06,
-    color: [0.2, 0.5, 0.9] as [number, number, number],
-    badge: 'Regional Hub',
-    description: 'Cửa ngõ hạ tầng Cloud & Enterprise RAG',
+    badge: 'BĐS thương mại',
+    description: 'Phương Trường An Group — ~300 nhân sự kinh doanh, +200% sản lượng video hiện trường.',
   },
 ];
+// Đà Nẵng / Cần Thơ / Hải Phòng / Tokyo / Singapore đã bị gỡ khỏi danh sách —
+// không có trong bất kỳ dữ liệu dự án thật nào đã xác minh
+// (real-project-portfolio/01_DU_LIEU_DU_AN_THAT_DA_LOC.md lẫn hồ sơ gốc HPG).
+// Chỉ thêm lại khi có dự án thật + tọa độ thật xác nhận được.
 
 export const SUNEXT_ARCS: Arc[] = [
-  // Trục xương sống Bắc - Nam
+  // Trục xương sống Bắc - Nam: Hà Nội - TP.HCM
   { from: [21.0285, 105.8542], to: [10.8231, 106.6297], color: [0.05, 0.75, 0.38] },
   // TP.HCM - Bình Dương
   { from: [10.8231, 106.6297], to: [11.1667, 106.6667], color: [0.05, 0.75, 0.38] },
-  // TP.HCM - Cần Thơ
-  { from: [10.8231, 106.6297], to: [10.0452, 105.7469], color: [0.05, 0.75, 0.38] },
-  // Hà Nội - Hải Phòng
-  { from: [21.0285, 105.8542], to: [20.8449, 106.6881], color: [0.05, 0.75, 0.38] },
-  // Đà Nẵng - TP.HCM
-  { from: [16.0544, 108.2022], to: [10.8231, 106.6297], color: [0.05, 0.75, 0.38] },
-  // TP.HCM - Tokyo
-  { from: [10.8231, 106.6297], to: [35.6762, 139.6503], color: [0.2, 0.5, 0.9] },
-  // TP.HCM - Singapore
-  { from: [10.8231, 106.6297], to: [1.3521, 103.8198], color: [0.2, 0.5, 0.9] },
 ];
 
 export function CobeGlobe() {
