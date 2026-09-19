@@ -658,25 +658,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Tự phát',
+        level: 'Cấp độ 1 · Tự phát',
         label: 'Chưa có chiến lược cụ thể',
         description: 'Mỗi phòng ban hoặc cá nhân tự mày mò thử nghiệm các công cụ miễn phí, không có ngân sách hay định hướng chung.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Thử nghiệm rời rạc',
+        level: 'Cấp độ 2 · Thử nghiệm rời rạc',
         label: 'Có vài dự án thí điểm nhỏ',
         description: 'Đã đầu tư license cho một số nhóm (như Marketing, IT), nhưng chưa có mục tiêu kinh tế hoặc KPI đo lường định lượng.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Định hướng giá trị',
+        level: 'Cấp độ 3 · Định hướng giá trị',
         label: 'Có lộ trình use case rõ ràng',
         description: 'Đã xác định các miền nghiệp vụ trọng điểm cần chuyển đổi, có mục tiêu tiết kiệm chi phí hoặc tăng trưởng cụ thể.',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Tích hợp chiến lược cốt lõi',
+        level: 'Cấp độ 4 · Tích hợp chiến lược cốt lõi',
         label: 'AI là lợi thế cạnh tranh sống còn',
         description: 'Lộ trình AI gắn trực tiếp vào kế hoạch kinh doanh của Ban Giám Đốc, có Product Owner chịu trách nhiệm P&L cho từng sáng kiến.',
       },
@@ -691,25 +691,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Chưa phổ cập',
+        level: 'Cấp độ 1 · Chưa phổ cập',
         label: 'Phần lớn nhân viên chưa biết dùng AI hiệu quả',
         description: 'Chỉ biết hỏi những câu hỏi chung chung, kết quả nhận về không áp dụng được vào công việc hàng ngày.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Tự phát cá nhân',
+        level: 'Cấp độ 2 · Tự phát cá nhân',
         label: 'Một vài cá nhân tự học rất giỏi',
         description: 'Có một số nhân sự nổi trội tự mày mò, nhưng tri thức không được chuẩn hóa thành tài liệu hay đào tạo lại cho tập thể.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Đào tạo có cấu trúc',
+        level: 'Cấp độ 3 · Đào tạo có cấu trúc',
         label: 'Đã có chương trình đào tạo theo vai trò',
         description: 'Nhân viên nắm vững kỹ thuật prompt nghiệp vụ; có đội ngũ AI Champions đóng vai trò dẫn dắt tại các phòng ban.',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Tự chủ xây dựng giải pháp',
+        level: 'Cấp độ 4 · Tự chủ xây dựng giải pháp',
         label: 'Đội ngũ có khả năng tự cấu hình Agent',
         description: 'Nhân sự các phòng ban tự động hóa quy trình nội bộ, phối hợp nhịp nhàng với đội kỹ sư AI để phát triển giải pháp mới.',
       },
@@ -724,25 +724,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Thủ công & phân mảnh',
+        level: 'Cấp độ 1 · Thủ công & phân mảnh',
         label: 'Quy trình phụ thuộc hoàn toàn vào con người',
         description: 'Nhiều bước trung gian, luồng duyệt giấy tờ hoặc email chậm trễ, không có quy chuẩn vận hành (SOP) cập nhật.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Số hóa cơ bản',
+        level: 'Cấp độ 2 · Số hóa cơ bản',
         label: 'Đã có SOP nhưng chưa tối ưu cho AI',
         description: 'AI chỉ được dùng như công cụ gõ chữ nhanh hơn trong một quy trình cũ, chưa được thiết kế lại để cắt giảm bước thừa.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Tái thiết kế linh hoạt',
+        level: 'Cấp độ 3 · Tái thiết kế linh hoạt',
         label: 'Quy trình được tinh gọn cho AI',
         description: 'Đã loại bỏ các bước lặp lại vô nghĩa; phân định rõ ràng điểm nào AI xử lý tự động, điểm nào con người ký duyệt (Human-in-the-loop).',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Tự động hóa liên phòng ban',
+        level: 'Cấp độ 4 · Tự động hóa liên phòng ban',
         label: 'Vận hành dựa trên Agent thông minh',
         description: 'Các AI Agent tự động trao đổi dữ liệu và thực thi tác vụ xuyên suốt các bộ phận kinh doanh, vận hành và dịch vụ khách hàng.',
       },
@@ -757,25 +757,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Hoàn toàn tách biệt',
+        level: 'Cấp độ 1 · Hoàn toàn tách biệt',
         label: 'Dùng AI độc lập qua giao diện web ngoài',
         description: 'Nhân viên phải copy-paste dữ liệu qua lại giữa ERP, CRM, Excel và cửa sổ chat AI hoàn toàn bằng tay.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Tích hợp điểm (Point-to-point)',
+        level: 'Cấp độ 2 · Tích hợp điểm (Point-to-point)',
         label: 'Đã thử nghiệm kết nối API đơn lẻ',
         description: 'Có một số script hoặc webhook đơn giản do IT tự viết cho 1-2 tác vụ, nhưng chưa ổn định và khó mở rộng.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Tích hợp hệ thống lõi',
+        level: 'Cấp độ 3 · Tích hợp hệ thống lõi',
         label: 'AI kết nối trực tiếp với ERP/CRM/HRIS',
         description: 'Dữ liệu chảy tự động hai chiều; kết hợp AI với các công cụ RPA để thực hiện tác vụ lặp lại mà không cần người copy tay.',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Nền tảng hợp nhất chuẩn doanh nghiệp',
+        level: 'Cấp độ 4 · Nền tảng hợp nhất chuẩn doanh nghiệp',
         label: 'Hạ tầng Agentic Mesh mở rộng',
         description: 'Có Enterprise Gateway bảo mật, kiến trúc microservices và API an toàn, hỗ trợ triển khai nhanh use case mới chỉ trong vài ngày.',
       },
@@ -790,25 +790,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Rải rác & ô nhiễm',
+        level: 'Cấp độ 1 · Rải rác & ô nhiễm',
         label: 'Dữ liệu nằm trên hàng chục file Excel khác nhau',
         description: 'Không ai biết file nào là bản mới nhất; dữ liệu mâu thuẫn giữa các phòng ban, AI không có nguồn tin cậy để truy xuất.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Có cơ sở dữ liệu nhưng chưa chuẩn',
+        level: 'Cấp độ 2 · Có cơ sở dữ liệu nhưng chưa chuẩn',
         label: 'Đã có phần mềm nhưng dữ liệu chưa làm sạch',
         description: 'Dữ liệu trong phần mềm bị thiếu trường thông tin, trùng lặp nhiều; AI trả lời thiếu chính xác nếu tra cứu trực tiếp.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Nguồn dữ liệu thống nhất (Single Source)',
+        level: 'Cấp độ 3 · Nguồn dữ liệu thống nhất (Single Source)',
         label: 'Đã hợp nhất và có chính sách quản trị',
         description: 'Có Data Warehouse hoặc hệ thống lưu trữ tập trung; dữ liệu được phân quyền rõ ràng và làm sạch định kỳ cho AI đọc.',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Thời gian thực & sẵn sàng cho RAG',
+        level: 'Cấp độ 4 · Thời gian thực & sẵn sàng cho RAG',
         label: 'Kiến trúc dữ liệu hiện đại cho AI',
         description: 'Hệ thống Vector Database và Data Pipeline cập nhật theo thời gian thực; AI phản hồi với độ chính xác trên 99% không bị ảo giác.',
       },
@@ -823,25 +823,25 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     options: [
       {
         score: 1,
-        level: 'Tầng 1 · Không kiểm soát rủi ro',
+        level: 'Cấp độ 1 · Không kiểm soát rủi ro',
         label: 'Chưa có quy định bảo mật dữ liệu khi dùng AI',
         description: 'Nhân viên thoải mái đưa dữ liệu nội bộ, thông tin khách hàng lên các công cụ AI công cộng mà không có rào chắn bảo vệ.',
       },
       {
         score: 2,
-        level: 'Tầng 2 · Nhận thức bước đầu',
+        level: 'Cấp độ 2 · Nhận thức bước đầu',
         label: 'Có cảnh báo bảo mật nhưng chưa có cơ chế nhân rộng',
         description: 'Đã ban hành quy định cấm chia sẻ dữ liệu nhạy cảm, nhưng nếu có phòng ban làm AI hiệu quả thì cũng không ai nhân rộng sang nhóm khác.',
       },
       {
         score: 3,
-        level: 'Tầng 3 · Đo lường và quy trình nhân rộng',
+        level: 'Cấp độ 3 · Đo lường và quy trình nhân rộng',
         label: 'Theo dõi chỉ số hiệu quả định kỳ',
         description: 'Có dashboard đo lường ROI thật; có quy trình chia sẻ kinh nghiệm và chuyển giao use case giữa các phòng ban.',
       },
       {
         score: 4,
-        level: 'Tầng 4 · Quản trị toàn diện (Enterprise Governance)',
+        level: 'Cấp độ 4 · Quản trị toàn diện (Enterprise Governance)',
         label: 'Hệ thống Private AI và văn hóa đổi mới liên tục',
         description: 'Bảo mật tuyệt đối với Private Model / NDA-first; có hội đồng quản trị AI và cơ chế khen thưởng sáng kiến ứng dụng định kỳ.',
       },

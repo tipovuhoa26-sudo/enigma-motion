@@ -84,7 +84,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                 <IconComponent className="w-3.5 h-3.5 text-[#17151A]" />
                 {industry.englishName.toUpperCase()}
               </span>
-              <span className="text-xs text-[#6E6E6E] font-medium">Khung Sunext Rewired™</span>
+              <span className="text-xs text-[#6E6E6E] font-medium">Khung Sunext Rewired</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">

@@ -16,8 +16,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Enigma — AI Powered Tech Solutions',
-  description: 'Precision engineering, autonomous AI systems, and high-velocity digital transformation for enterprise.',
+  title: 'Sunext — Khung Năng Lực Chuyển Đổi AI Toàn Trình (Sunext Rewired)',
+  description: 'Tư vấn chiến lược và hiện thực hóa chuyển đổi AI thực chiến cho doanh nghiệp Việt Nam. Tái cấu trúc mô hình vận hành, tích hợp dữ liệu sống và nghiệm thu theo kết quả kinh doanh đo lường được.',
 };
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="vi" className={inter.variable}>
       <body className="font-sans min-h-screen bg-[#E6E6E4] text-[#17151A] antialiased">
         <SmoothScrollProvider>
           {children}

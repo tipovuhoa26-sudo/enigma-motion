@@ -18,7 +18,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const exploreWidgetRef = useRef<HTMLDivElement>(null);
+  const exploreWidgetRef = useRef<HTMLAnchorElement>(null);
   const statCardRef = useRef<HTMLDivElement>(null);
   const statCounterRef = useRef<HTMLDivElement>(null);
 
@@ -87,8 +87,8 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
 
       {/* Top Tertiary Caption (Top Right) */}
       <div className="w-full flex justify-end mb-4 md:mb-0">
-        <p className="text-right text-xs md:text-sm text-[#6E6E6E] max-w-[200px] leading-snug font-normal">
-          Advantages Delivered, Promises Kept: Your Ongoing Success.
+        <p className="text-right text-xs md:text-sm text-[#6E6E6E] max-w-[220px] leading-snug font-normal">
+          Chuyển đổi thực chất • Đo lường bằng kết quả kinh doanh
         </p>
       </div>
 
@@ -98,36 +98,17 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
         {/* Left Column: CTAs -> Headline -> Widgets */}
         <div className="lg:col-span-7 flex flex-col z-10">
           {/* CTAs */}
-          <div ref={ctaGroupRef} className="flex items-center gap-3 mb-6" data-hero-cta>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.querySelector('#contact') || document.querySelector('#schedule');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                window.history.pushState(null, '', '#contact');
-              }}
-            >
+          <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-3 mb-6" data-hero-cta>
+            <Link href="/tu-duy-chuyen-doi-ai">
               <Button variant="lime" size="md" className="rounded-full font-semibold shadow-xs cursor-pointer">
-                Get Started
+                Khung Sunext Rewired
               </Button>
-            </a>
-            <a
-              href="#advantage"
-              onClick={(e) => {
-                e.preventDefault();
-                const el = document.querySelector('#advantage') || document.querySelector('#technology');
-                if (el) {
-                  const target = el.closest('.pin-spacer') || el;
-                  target.scrollIntoView({ behavior: 'smooth' });
-                }
-                window.history.pushState(null, '', '#advantage');
-              }}
-            >
+            </Link>
+            <Link href="/danh-gia-san-sang-ai">
               <Button variant="outline" size="md" className="rounded-full bg-white/40 backdrop-blur-xs font-medium cursor-pointer">
-                Explore
+                Đo Lường Sẵn Sàng (5 Phút)
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* H1 Headline: Pre-split lines for SEO & smooth blur entrance */}
@@ -136,26 +117,27 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             data-hero-headline
           >
             <span ref={headlineLine1Ref} className="line block font-normal">
-              AI Powered Tech Solutions
+              Chuyển Đổi AI Toàn Trình
             </span>
             <span ref={headlineLine2Ref} className="line block font-light text-[#17151A]/85">
-              For Your Business
+              Do Kinh Doanh Dẫn Dắt
             </span>
           </h1>
 
           {/* Floating Bottom Widgets */}
           <div className="flex flex-wrap items-center gap-4 mt-2">
             {/* Widget 1: Explore Your Data */}
-            <div
+            <Link
+              href="/tu-duy-chuyen-doi-ai/kien-truc-du-lieu"
               ref={exploreWidgetRef}
-              className="bg-white/80 backdrop-blur-md rounded-2xl p-4 border border-black/5 shadow-sm flex flex-col gap-3 min-w-[150px] transition-transform hover:scale-[1.02]"
+              className="bg-white/80 backdrop-blur-md rounded-2xl p-4 border border-black/5 shadow-sm flex flex-col gap-3 min-w-[150px] transition-transform hover:scale-[1.02] group cursor-pointer"
               data-hero-widget-explore
             >
               <div className="flex items-center justify-between gap-3">
                 <span className="text-xs font-medium text-[#17151A] leading-tight">
-                  Explore<br />Your Data
+                  Dữ Liệu Sống &<br />Tri Thức Lõi
                 </span>
-                <div className="w-6 h-6 rounded-full bg-[#17151A] text-white flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-[#17151A] text-white flex items-center justify-center group-hover:bg-black transition-colors">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </div>
@@ -166,13 +148,13 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
                 <div className="w-1.5 h-6 bg-[#17151A] rounded-full" />
                 <div className="w-1.5 h-4 bg-[#17151A] rounded-full" />
               </div>
-            </div>
+            </Link>
 
             {/* Widget 2: 3D Product thumbnail preview */}
-            <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-[#FAFFDE] group cursor-pointer">
+            <Link href="/nganh" className="relative w-20 h-20 rounded-2xl overflow-hidden border border-black/5 shadow-sm bg-[#FAFFDE] group cursor-pointer">
               <Image
-                src="/assets/card-product-1.jpg"
-                alt="Product preview"
+                src="/assets/advantage-card-1.jpg"
+                alt="Giải pháp ngành"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
                 sizes="80px"
@@ -180,7 +162,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
               <div className="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-[#17151A] text-white flex items-center justify-center">
                 <ArrowUpRight className="w-3 h-3" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -211,7 +193,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             data-hero-widget-stat
           >
             <div className="flex items-center justify-between text-xs font-medium text-[#17151A]">
-              <span>Increased<br />Revenue</span>
+              <span>Tối Ưu<br />Vận Hành</span>
               <div className="w-6 h-6 rounded-full bg-white/70 flex items-center justify-center">
                 <TrendingUp className="w-3.5 h-3.5 text-[#17151A]" />
               </div>
@@ -227,8 +209,8 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
 
             {/* 3-dot pagination synced to Advantage section */}
             <div className="flex items-center gap-1.5 pt-1 border-t border-black/5 text-[10px] text-[#6E6E6E]">
-              <span className="w-5 h-5 rounded-full bg-white/80 flex items-center justify-center text-[#17151A]">01</span>
-              <span className="w-5 h-5 rounded-full bg-[#17151A] text-white flex items-center justify-center font-medium">02</span>
+              <span className="w-5 h-5 rounded-full bg-[#17151A] text-white flex items-center justify-center font-medium">01</span>
+              <span className="w-5 h-5 rounded-full bg-white/80 flex items-center justify-center text-[#17151A]">02</span>
               <span className="w-5 h-5 rounded-full bg-white/80 flex items-center justify-center text-[#17151A]">03</span>
             </div>
           </div>
@@ -239,9 +221,11 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       {/* Bottom subtle interview link */}
       <div className="hidden sm:flex items-center gap-2 pt-6 text-xs text-[#6E6E6E]">
         <div className="w-6 h-6 rounded-full overflow-hidden bg-black/10 relative">
-          <Image src="/assets/case-3.jpg" alt="Interview avatar" fill className="object-cover" />
+          <Image src="/assets/vietnam-b2b-office.jpg" alt="Case study preview" fill className="object-cover" />
         </div>
-        <span className="hover:text-[#17151A] cursor-pointer transition-colors">Read The Interview</span>
+        <Link href="/nganh" className="hover:text-[#17151A] cursor-pointer transition-colors">
+          Xem các giải pháp theo ngành & nghiên cứu tình huống thực tế
+        </Link>
       </div>
     </section>
   );

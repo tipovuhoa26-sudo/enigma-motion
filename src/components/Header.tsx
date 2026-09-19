@@ -129,12 +129,18 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
 
   const toggleReducedMotion = () => {
     const current = document.documentElement.getAttribute('data-motion');
-    if (current === 'reduced') {
-      document.documentElement.removeAttribute('data-motion');
-      setReducedMotionActive(false);
-    } else {
+    const isNowReduced = current !== 'reduced';
+    if (isNowReduced) {
       document.documentElement.setAttribute('data-motion', 'reduced');
       setReducedMotionActive(true);
+    } else {
+      document.documentElement.setAttribute('data-motion', 'full');
+      setReducedMotionActive(false);
+    }
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(
+        new CustomEvent('motion-preference-changed', { detail: { reduced: isNowReduced } })
+      );
     }
   };
 
@@ -160,7 +166,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
             handleNavClick('#top', 'home');
           }}
           className="flex items-center gap-2.5 group cursor-pointer text-left focus:outline-none"
-          aria-label="Enigma Home"
+          aria-label="Sunext Home"
         >
           <div className="w-6 h-6 flex items-center justify-center transition-transform group-hover:scale-105">
             <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#17151A]" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -168,9 +174,9 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
             </svg>
           </div>
           <span className="font-semibold text-lg tracking-tight text-[#17151A] flex items-center" data-header-wordmark>
-            <span className="inline-block">En</span>
-            <span className="inline-block">ig</span>
-            <span className="inline-block">ma</span>
+            <span className="inline-block">Su</span>
+            <span className="inline-block">ne</span>
+            <span className="inline-block">xt</span>
           </span>
         </button>
 
@@ -459,8 +465,8 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                   <HelpCircle className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg leading-tight">Enigma Guide & Controls</h3>
-                  <p className="text-xs text-[#6E6E6E]">Navigation shortcuts & motion preferences</p>
+                  <h3 className="font-semibold text-lg leading-tight">Sunext — Điều Hướng & Tùy Chọn</h3>
+                  <p className="text-xs text-[#6E6E6E]">Phím tắt điều hướng & tùy chọn hiển thị</p>
                 </div>
               </div>
               <button
@@ -476,23 +482,23 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               <div>
                 <h4 className="font-medium text-xs uppercase tracking-wider text-[#6E6E6E] mb-2.5 flex items-center gap-2">
                   <Command className="w-3.5 h-3.5" />
-                  Keyboard Shortcuts
+                  Phím Tắt Điều Hướng
                 </h4>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="p-2.5 rounded-xl bg-[#F5F3F6] flex items-center justify-between">
-                    <span className="text-[#6E6E6E]">Jump to Home</span>
+                    <span className="text-[#6E6E6E]">Về Trang Chủ</span>
                     <kbd className="px-2 py-0.5 rounded bg-white font-mono text-[10px] shadow-2xs border">H</kbd>
                   </div>
                   <div className="p-2.5 rounded-xl bg-[#F5F3F6] flex items-center justify-between">
-                    <span className="text-[#6E6E6E]">Jump to Technology</span>
+                    <span className="text-[#6E6E6E]">Lợi Thế Cốt Lõi</span>
                     <kbd className="px-2 py-0.5 rounded bg-white font-mono text-[10px] shadow-2xs border">T</kbd>
                   </div>
                   <div className="p-2.5 rounded-xl bg-[#F5F3F6] flex items-center justify-between">
-                    <span className="text-[#6E6E6E]">Jump to Service</span>
+                    <span className="text-[#6E6E6E]">Dự Án Thực Tế</span>
                     <kbd className="px-2 py-0.5 rounded bg-white font-mono text-[10px] shadow-2xs border">S</kbd>
                   </div>
                   <div className="p-2.5 rounded-xl bg-[#F5F3F6] flex items-center justify-between">
-                    <span className="text-[#6E6E6E]">Jump to Contact</span>
+                    <span className="text-[#6E6E6E]">Liên Hệ Tư Vấn</span>
                     <kbd className="px-2 py-0.5 rounded bg-white font-mono text-[10px] shadow-2xs border">C</kbd>
                   </div>
                 </div>
@@ -501,12 +507,12 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               <div>
                 <h4 className="font-medium text-xs uppercase tracking-wider text-[#6E6E6E] mb-2.5 flex items-center gap-2">
                   <Sliders className="w-3.5 h-3.5" />
-                  Motion & Accessibility
+                  Tùy Chọn Chuyển Động (Reduced Motion)
                 </h4>
                 <div className="p-3.5 rounded-2xl bg-[#F5F3F6] flex items-center justify-between">
                   <div>
-                    <span className="font-medium block text-xs">Reduced Motion</span>
-                    <span className="text-[11px] text-[#6E6E6E]">Disables GSAP pinned scrub & ribbon spins</span>
+                    <span className="font-medium block text-xs">Giảm Chuyển Động</span>
+                    <span className="text-[11px] text-[#6E6E6E]">Tắt hiệu ứng pin/scrub & hoạt họa nặng khi cuộn</span>
                   </div>
                   <button
                     type="button"
@@ -517,7 +523,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                         : 'bg-white border border-black/10 text-[#17151A]'
                     }`}
                   >
-                    {reducedMotionActive ? 'Enabled' : 'Disabled'}
+                    {reducedMotionActive ? 'Đang Bật' : 'Đang Tắt'}
                   </button>
                 </div>
               </div>
@@ -525,23 +531,23 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               <div>
                 <h4 className="font-medium text-xs uppercase tracking-wider text-[#6E6E6E] mb-2.5 flex items-center gap-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  Technical Architecture
+                  Kiến Trúc Kỹ Thuật
                 </h4>
                 <p className="text-xs text-[#6E6E6E] leading-relaxed bg-[#F8F8F6] p-3 rounded-2xl border border-black/5">
-                  Built with Next.js 14 App Router, Lenis Smooth Scroll, GSAP matchMedia ScrollTrigger, and full responsive layout.
+                  Hệ thống chuyển đổi số & AI toàn trình Sunext Rewired được xây dựng với hiệu năng cao, điều hướng mượt mà và tối ưu hóa khả năng truy cập.
                 </p>
               </div>
             </div>
 
             <div className="pt-4 border-t border-black/5 flex items-center justify-between">
-              <span className="text-xs text-[#6E6E6E]">Direct line: hello@enigma.tech</span>
+              <span className="text-xs text-[#6E6E6E]">Hỗ trợ: contact@sunext.vn</span>
               <Button
                 variant="primary"
                 size="sm"
                 onClick={() => setIsHelpOpen(false)}
                 className="rounded-full text-xs"
               >
-                Close
+                Đóng
               </Button>
             </div>
           </div>
@@ -564,8 +570,8 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                   <User className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg leading-tight">Enigma Client Portal</h3>
-                  <p className="text-xs text-[#6E6E6E]">Active enterprise workspace demo</p>
+                  <h3 className="font-semibold text-lg leading-tight">Cổng Thông Tin Doanh Nghiệp</h3>
+                  <p className="text-xs text-[#6E6E6E]">Kết nối tư vấn chiến lược AI cùng Sunext</p>
                 </div>
               </div>
               <button
@@ -581,54 +587,39 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               <div className="p-4 rounded-2xl bg-[#F5F3F6] flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#17151A] text-white flex items-center justify-center font-medium text-sm">
-                    EN
+                    SN
                   </div>
                   <div>
-                    <span className="font-medium block text-sm">Enigma Enterprise Partner</span>
-                    <span className="text-xs text-[#6E6E6E]">client-demo@enigma.tech</span>
+                    <span className="font-medium block text-sm">Sunext Advisory Hub</span>
+                    <span className="text-xs text-[#6E6E6E]">contact@sunext.vn</span>
                   </div>
                 </div>
                 <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] font-medium text-[#17151A]">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  Verified
+                  Chuyên Gia Trực Tiếp
                 </span>
               </div>
 
-              <div>
-                <label className="font-medium text-xs uppercase tracking-wider text-[#6E6E6E] mb-2 block">
-                  Select Workspace View
-                </label>
-                <div className="grid grid-cols-3 gap-2">
-                  {(['Enterprise', 'Partner', 'Guest'] as const).map(role => (
-                    <button
-                      key={role}
-                      type="button"
-                      onClick={() => setUserRole(role)}
-                      className={`py-2 px-3 rounded-xl text-xs font-medium border text-center transition-all cursor-pointer ${
-                        userRole === role
-                          ? 'bg-[#17151A] text-white border-[#17151A]'
-                          : 'bg-white border-black/10 text-[#6E6E6E] hover:text-[#17151A]'
-                      }`}
-                    >
-                      {role}
-                    </button>
-                  ))}
-                </div>
+              <div className="space-y-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#17151A] block">
+                  Liên Hệ & Khảo Sát Doanh Nghiệp
+                </span>
+                <p className="text-xs text-[#6E6E6E] leading-relaxed">
+                  Để nhận tư vấn 1-on-1 từ chuyên gia kiến trúc giải pháp hoặc lên lịch khảo sát quy trình tại doanh nghiệp, vui lòng để lại thông tin hoặc liên hệ qua kênh trực tiếp.
+                </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-1">
+              <div className="grid grid-cols-2 gap-3 pt-1 text-xs">
                 <div className="p-3 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                  <span className="text-[11px] text-[#6E6E6E] block mb-1">Active Pipeline</span>
-                  <span className="text-sm font-medium text-[#17151A] flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-amber-500" />
-                    3 Models Live
+                  <span className="text-[11px] text-[#6E6E6E] block mb-1">Văn phòng TP.HCM</span>
+                  <span className="text-xs font-medium text-[#17151A] block">
+                    Thảo Điền & Quận 1
                   </span>
                 </div>
                 <div className="p-3 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                  <span className="text-[11px] text-[#6E6E6E] block mb-1">API SLA Status</span>
-                  <span className="text-sm font-medium text-[#17151A] flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    99.99% Uptime
+                  <span className="text-[11px] text-[#6E6E6E] block mb-1">Văn phòng Hà Nội</span>
+                  <span className="text-xs font-medium text-[#17151A] block">
+                    Cầu Giấy & Hoàn Kiếm
                   </span>
                 </div>
               </div>
@@ -643,7 +634,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                 }}
                 className="text-xs text-[#17151A] font-medium hover:underline cursor-pointer"
               >
-                Request Custom SSO
+                Đặt Lịch Khảo Sát Kỹ Thuật
               </button>
               <Button
                 variant="primary"
@@ -651,7 +642,7 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
                 onClick={() => setIsAccountOpen(false)}
                 className="rounded-full text-xs"
               >
-                Done
+                Hoàn Tất
               </Button>
             </div>
           </div>

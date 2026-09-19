@@ -179,7 +179,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         {
           scale: 0.94,
           y: -14,
-          filter: 'brightness(0.92)',
+          opacity: 0.93,
           ease: 'power1.inOut',
           duration: 0.30,
         },
@@ -188,7 +188,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
     }
 
     // Phase 3 (0.55 -> 0.85): Card 3 glides up smoothly (yPercent: 105 -> 0, scale: 0.96 -> 1)
-    // Concurrently, Card 2 scales down to 0.94, shifts up y: -12, and subtly dims; Card 1 scales to 0.90
+    // Concurrently, Card 2 scales down to 0.94, shifts up y: -12, and subtly dims; Card 1 scales to 0.89
     if (cards[2]) {
       scrubTl.to(
         cards[2],
@@ -207,7 +207,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         {
           scale: 0.94,
           y: -14,
-          filter: 'brightness(0.92)',
+          opacity: 0.93,
           ease: 'power1.inOut',
           duration: 0.30,
         },
@@ -220,7 +220,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         {
           scale: 0.89,
           y: -24,
-          filter: 'brightness(0.85)',
+          opacity: 0.86,
           ease: 'power1.inOut',
           duration: 0.30,
         },

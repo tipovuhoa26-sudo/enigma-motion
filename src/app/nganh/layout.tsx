@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Giải Pháp Chuyển Đổi AI Theo Ngành Kinh Tế | Sunext Enigma',
+  title: 'Giải Pháp Chuyển Đổi AI Theo Ngành Kinh Tế | Sunext',
   description:
-    'Bộ giải pháp AI chuyên biệt theo đặc thù ngành tại Việt Nam: Bán lẻ & Hàng tiêu dùng, Sản xuất cơ khí chính xác, và Dịch vụ doanh nghiệp B2B.',
+    'Bộ giải pháp AI chuyên biệt cho Bán lẻ & FMCG, Sản xuất & Chế tạo, Dịch vụ B2B theo phương pháp luận Sunext Rewired.',
   openGraph: {
-    title: 'Giải Pháp Chuyển Đổi AI Theo Ngành Kinh Tế | Sunext Enigma',
+    title: 'Giải Pháp Chuyển Đổi AI Theo Ngành Kinh Tế | Sunext',
     description:
-      'Bộ giải pháp AI chuyên biệt theo đặc thù ngành tại Việt Nam: Bán lẻ & Hàng tiêu dùng, Sản xuất cơ khí chính xác, và Dịch vụ doanh nghiệp B2B.',
+      'Bộ giải pháp AI chuyên biệt cho Bán lẻ & FMCG, Sản xuất & Chế tạo, Dịch vụ B2B theo phương pháp luận Sunext Rewired.',
   },
 };
 

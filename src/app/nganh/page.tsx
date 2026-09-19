@@ -150,7 +150,7 @@ export default function IndustryIndexPage() {
                 KHUNG NĂNG LỰC TOÀN TRÌNH
               </span>
               <h2 className="text-2xl sm:text-3xl font-light leading-snug mb-4">
-                Tất cả giải pháp ngành đều vận hành trên khung Sunext Rewired™
+                Tất cả giải pháp ngành đều vận hành trên khung Sunext Rewired
               </h2>
               <p className="text-sm text-neutral-300 leading-relaxed mb-6">
                 Dù bạn thuộc ngành bán lẻ, sản xuất hay dịch vụ, việc áp dụng AI chỉ bền vững khi tổ chức đi qua đủ 6 trụ cột cốt lõi. Hãy kiểm tra xem ngành của bạn đang sẵn sàng tới đâu.
@@ -172,7 +172,7 @@ export default function IndustryIndexPage() {
             <div className="flex flex-col gap-3 p-6 rounded-2xl bg-white/5 border border-white/10 text-xs text-neutral-300 w-full md:w-auto shrink-0">
               <span className="font-semibold text-white flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Tiêu Chuẩn Cam Kết Thực Thi:</span>
+                <span>Tiêu Chuẩn Thực Thi Dự Án:</span>
               </span>
               <div className="flex items-center gap-2">
                 <span className="text-[#FAFFDE]">✓</span>
@@ -195,7 +195,7 @@ export default function IndustryIndexPage() {
               Không Thấy Ngành Của Bạn Ở Đây?
             </h2>
             <p className="text-sm text-[#6E6E6E] leading-relaxed mb-8">
-              Khung Sunext Rewired™ được thiết kế để tùy biến cho bất kỳ mô hình kinh doanh nào có quy trình lặp lại và khối lượng dữ liệu lớn. Hãy trao đổi trực tiếp với chuyên gia giải pháp của chúng tôi.
+              Khung Sunext Rewired được thiết kế để tùy biến cho bất kỳ mô hình kinh doanh nào có quy trình lặp lại và khối lượng dữ liệu lớn. Hãy trao đổi trực tiếp với chuyên gia giải pháp của chúng tôi.
             </p>
             <Link href="/#contact">
               <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm gap-2">

@@ -23,7 +23,7 @@ export function Preloader({ onLoaded, onExitStart }: PreloaderProps) {
     if (typeof window === 'undefined') return;
 
     // Check if session has already seen loader (per PRD MOT-001)
-    const hasSeenLoader = sessionStorage.getItem('enigma_loader_seen');
+    const hasSeenLoader = sessionStorage.getItem('sunext_loader_seen');
     if (hasSeenLoader === 'true') {
       if (rootRef.current) rootRef.current.style.display = 'none';
       onLoaded?.();
@@ -50,7 +50,7 @@ export function Preloader({ onLoaded, onExitStart }: PreloaderProps) {
       },
       onComplete: () => {
         try {
-          sessionStorage.setItem('enigma_loader_seen', 'true');
+          sessionStorage.setItem('sunext_loader_seen', 'true');
         } catch {
           // ignore storage quota/privacy errors
         }
@@ -79,12 +79,12 @@ export function Preloader({ onLoaded, onExitStart }: PreloaderProps) {
             <path d="M16.5 3.5L7.5 7.5V16.5L16.5 20.5" />
           </svg>
         </div>
-        <span className="font-semibold text-lg text-[#17151A]">Enigma</span>
+        <span className="font-semibold text-lg text-[#17151A]">Sunext</span>
       </div>
 
       <div className="absolute top-6 right-10 opacity-0 pointer-events-none">
         <span className="px-5 py-2.5 rounded-full bg-[#17151A] text-white text-sm font-medium">
-          Contact Us
+          Liên Hệ
         </span>
       </div>
 
@@ -99,9 +99,9 @@ export function Preloader({ onLoaded, onExitStart }: PreloaderProps) {
             className="text-4xl md:text-5xl font-light tracking-tight text-[#17151A] select-none flex items-center"
             data-loader-wordmark
           >
-            <span ref={chunk1Ref} className="inline-block transition-transform">En</span>
-            <span ref={chunk2Ref} className="inline-block transition-transform">ig</span>
-            <span ref={chunk3Ref} className="inline-block transition-transform">ma</span>
+            <span ref={chunk1Ref} className="inline-block transition-transform">Su</span>
+            <span ref={chunk2Ref} className="inline-block transition-transform">ne</span>
+            <span ref={chunk3Ref} className="inline-block transition-transform">xt</span>
           </div>
         </div>
 

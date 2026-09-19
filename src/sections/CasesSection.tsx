@@ -115,14 +115,14 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
       {/* Bottom Bar: Scroll hint, All Works CTA, Help/User */}
       <div className="w-full flex items-center justify-between pt-4 pb-2 z-20 text-xs text-[#6E6E6E]">
         <span className="hidden sm:inline-block font-normal">
-          Scroll to explore
+          Cuộn ngang để khám phá dự án
         </span>
 
         {/* Center CTA */}
         <div className="mx-auto sm:mx-0">
           <Link href="/cases">
             <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium cursor-pointer" data-cases-cta>
-              <span>All Works</span>
+              <span>Tất Cả Dự Án Thực Tế</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Button>
           </Link>

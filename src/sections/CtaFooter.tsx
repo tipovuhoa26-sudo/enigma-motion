@@ -43,16 +43,16 @@ export function CtaFooter() {
         {/* Top Eyebrow Tag */}
         <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-black/5 text-xs font-medium text-[#17151A] shadow-2xs">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-          <span>Start Your Transformation</span>
+          <span>Bắt Đầu Lộ Trình Chuyển Đổi</span>
         </span>
 
         {/* Main Headline */}
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-[#17151A] leading-[1.1]">
-          Let&apos;s Get<br />In Touch
+          Khởi Động Lộ Trình<br />Chuyển Đổi AI Thực Chiến
         </h2>
 
         {/* Big circular contact button */}
-        <Link href="mailto:hello@enigma.tech" className="group cursor-pointer my-2" aria-label="Email Enigma">
+        <Link href="mailto:contact@sunext.vn" className="group cursor-pointer my-2" aria-label="Gửi email cho Sunext">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white shadow-lg border border-black/5 flex items-center justify-center text-[#17151A] group-hover:scale-110 group-hover:bg-[#FAFFDE] group-hover:border-[#DFE2C8] transition-all duration-300">
             <PhoneCall className="w-7 h-7 sm:w-9 sm:h-9 group-hover:rotate-12 transition-transform" />
           </div>
@@ -60,34 +60,30 @@ export function CtaFooter() {
 
         {/* Explanatory Copy */}
         <p className="text-sm md:text-base text-[#6E6E6E] max-w-md leading-relaxed">
-          Ready to scale your business with autonomous intelligence? Speak directly with our founding engineering lead today.
+          Sẵn sàng tối ưu hóa mô hình vận hành và tự động hóa quy trình với giải pháp đo lường được? Kết nối trực tiếp với đội ngũ chuyên gia tư vấn chiến lược của Sunext.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap items-center justify-center gap-3 mt-2">
-          <a href="mailto:hello@enigma.tech">
+          <a href="mailto:contact@sunext.vn">
             <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm cursor-pointer">
-              <span>Schedule Consultation</span>
+              <span>Đặt Lịch Tư Vấn Chiến Lược</span>
               <ArrowUpRight className="w-4 h-4" />
             </Button>
           </a>
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent('open-account'))}
-            className="cursor-pointer"
-          >
+          <Link href="/danh-gia-san-sang-ai">
             <Button variant="outline" size="lg" className="rounded-full bg-white font-medium text-sm">
               <Mail className="w-4 h-4 mr-2" />
-              <span>Client Portal Demo</span>
+              <span>Đo Lường Sẵn Sàng (5 Phút)</span>
             </Button>
-          </button>
+          </Link>
         </div>
 
         {/* Trust Badges bottom */}
         <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-xs text-[#6E6E6E] font-medium border-t border-black/5 w-full mt-4">
-          <span>Average response: &lt; 2 hours</span>
-          <span>Direct: hello@enigma.tech</span>
-          <span>Offices: San Francisco · Tokyo · Zurich</span>
+          <span>Thời gian phản hồi: &lt; 2 giờ</span>
+          <span>Email: contact@sunext.vn</span>
+          <span>Văn phòng: TP. Hồ Chí Minh · Hà Nội</span>
         </div>
       </div>
     </section>

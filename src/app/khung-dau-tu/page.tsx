@@ -81,7 +81,7 @@ export default function InvestmentFrameworkPage() {
               Khung Đầu Tư & Ngân Sách Tham Khảo Cho Dự Án Chuyển Đổi AI
             </h1>
             <p className="text-base sm:text-lg text-[#6E6E6E] leading-relaxed max-w-2xl mx-auto mb-8">
-              Sunext không bán gói phần mềm chung chung. Chúng tôi thiết lập khung đầu tư theo từng nấc thang quy mô, gắn chặt với chỉ số hoàn vốn (ROI) và cam kết giải phóng giờ công thực tế cho doanh nghiệp.
+              Sunext không bán gói phần mềm chung chung. Chúng tôi thiết lập khung đầu tư theo từng nấc thang quy mô, gắn chặt với mục tiêu hoàn vốn (ROI) và khả năng giải phóng giờ công thực tế cho doanh nghiệp.
             </p>
 
             {/* Strategic Meeting Image */}
@@ -98,81 +98,78 @@ export default function InvestmentFrameworkPage() {
               <div className="absolute bottom-6 left-6 right-6 text-white text-left flex items-end justify-between">
                 <div>
                   <span className="text-xs font-mono uppercase text-[#FAFFDE] block mb-1">
-                    Chiến lược đầu tư có trách nhiệm
+                    Enterprise AI Advisory Board
                   </span>
-                  <p className="text-sm sm:text-base font-medium text-white/95">
-                    Mỗi đồng ngân sách chi ra đều phải chứng minh được giá trị P&L tương ứng trên báo cáo tài chính.
+                  <p className="text-sm sm:text-base font-normal max-w-xl text-white/90">
+                    Lộ trình đầu tư theo phương pháp luận Sunext Rewired: chia nhỏ rủi ro, nghiệm thu theo mốc và chuyển giao quyền làm chủ cho đội ngũ nội bộ.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* 3 Transparent Investment Tiers */}
-          <section className="mb-20">
+          {/* 3 Investment Tiers Grid */}
+          <section className="max-w-5xl mx-auto mb-20">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-semibold block mb-2">
-                3 Nấc Thang Đầu Tư
+              <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
+                Three Distinct Pathways
               </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#17151A]">
-                Lựa chọn mức độ triển khai phù hợp với giai đoạn
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A]">
+                3 Gói Đầu Tư Minh Bạch Theo Quy Mô Doanh Nghiệp
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {INVESTMENT_TIERS.map((tier, idx) => {
-                const isFeatured = idx === 1;
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {INVESTMENT_TIERS.map((tier) => {
+                const isPopular = tier.id === 'department';
                 return (
                   <div
                     key={tier.id}
-                    className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all ${
-                      isFeatured
-                        ? 'bg-[#FAFFDE] border-2 border-[#DFE2C8] shadow-md relative'
-                        : 'bg-white border border-black/10 shadow-xs'
+                    className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                      isPopular
+                        ? 'bg-white border-2 border-[#17151A] shadow-lg ring-4 ring-black/5 -translate-y-1'
+                        : 'bg-white/80 border border-black/10 shadow-xs hover:shadow-md'
                     }`}
                   >
+                    {isPopular && (
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#17151A] text-[#FAFFDE] text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+                        {tier.badge}
+                      </span>
+                    )}
+
                     <div>
-                      {/* Badge */}
-                      <div className="flex items-center justify-between gap-2 mb-4">
-                        <span
-                          className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                            isFeatured
-                              ? 'bg-[#17151A] text-white'
-                              : 'bg-[#F5F3F6] text-[#17151A] border border-black/5'
-                          }`}
-                        >
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
                           {tier.badge}
                         </span>
-                        <div className="flex items-center gap-1.5 text-xs text-[#6E6E6E]">
+                        <span className="text-xs text-[#6E6E6E] flex items-center gap-1 font-mono">
                           <Clock className="w-3.5 h-3.5" />
-                          <span>{tier.timeToValue}</span>
-                        </div>
-                      </div>
-
-                      <h3 className="text-xl font-semibold text-[#17151A] mb-2">
-                        {tier.name}
-                      </h3>
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-6">
-                        {tier.subtitle}
-                      </p>
-
-                      {/* Scope & Audience */}
-                      <div className="p-3.5 rounded-2xl bg-white/70 border border-black/5 mb-6 text-xs space-y-1.5">
-                        <span className="font-semibold text-[#17151A] block">Phù hợp:</span>
-                        <p className="text-[#6E6E6E] leading-relaxed">{tier.recommendedFor}</p>
-                      </div>
-
-                      {/* Deliverables */}
-                      <div className="space-y-4 mb-6">
-                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#17151A] block">
-                          Hạng mục triển khai chính:
+                          {tier.timeToValue}
                         </span>
-                        {tier.deliverables.map((cat, cIdx) => (
-                          <div key={cIdx} className="space-y-1 text-xs">
-                            <span className="font-medium text-[#17151A]">{cat.category}</span>
-                            <ul className="space-y-1 text-[#6E6E6E] pl-2 border-l border-black/10">
-                              {cat.items.map((item, iIdx) => (
-                                <li key={iIdx} className="line-clamp-2">• {item}</li>
+                      </div>
+
+                      <h3 className="text-xl font-semibold text-[#17151A] mb-2">{tier.name}</h3>
+                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-6">{tier.subtitle}</p>
+
+                      <div className="p-3.5 rounded-2xl bg-[#F8F8F6] border border-black/5 mb-6 text-xs">
+                        <span className="text-[11px] text-[#6E6E6E] block mb-1 font-medium">Phù hợp với:</span>
+                        <span className="text-[#17151A] leading-relaxed block">{tier.recommendedFor}</span>
+                      </div>
+
+                      {/* Deliverables List */}
+                      <div className="space-y-4 mb-6">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-[#17151A] block">
+                          Hạng mục triển khai:
+                        </span>
+                        {tier.deliverables.map((deliv, idx) => (
+                          <div key={idx} className="text-xs space-y-1.5">
+                            <span className="font-medium text-[#17151A] block">{deliv.category}</span>
+                            <ul className="space-y-1 pl-1 text-[#6E6E6E]">
+                              {deliv.items.map((item, itemIdx) => (
+                                <li key={itemIdx} className="flex items-start gap-2">
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                                  <span>{item}</span>
+                                </li>
                               ))}
                             </ul>
                           </div>
@@ -180,23 +177,25 @@ export default function InvestmentFrameworkPage() {
                       </div>
                     </div>
 
-                    {/* Measurable Outcomes & Action */}
-                    <div className="pt-6 border-t border-black/10">
-                      <div className="space-y-1.5 mb-6">
-                        <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-800 block">
-                          Cam kết kết quả đo được:
+                    <div className="pt-6 border-t border-black/5 space-y-4">
+                      {/* Measurable outcomes */}
+                      <div className="space-y-1.5 bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-100 text-xs text-emerald-950">
+                        <span className="font-semibold block text-[11px] uppercase tracking-wider text-emerald-900">
+                          Chỉ số kỳ vọng đo lường:
                         </span>
-                        {tier.measurableOutcomes.map((out, oIdx) => (
-                          <div key={oIdx} className="flex items-start gap-2 text-xs text-[#17151A]">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>{out}</span>
-                          </div>
-                        ))}
+                        <ul className="space-y-1">
+                          {tier.measurableOutcomes.map((out, outIdx) => (
+                            <li key={outIdx} className="flex items-start gap-1.5">
+                              <Sparkles className="w-3 h-3 text-emerald-700 shrink-0 mt-0.5" />
+                              <span>{out}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
 
-                      <Link href="/#contact" className="w-full">
+                      <Link href="/#contact" className="block">
                         <Button
-                          variant={isFeatured ? 'primary' : 'outline'}
+                          variant={isPopular ? 'primary' : 'outline'}
                           size="md"
                           className="w-full rounded-full text-xs font-semibold"
                         >
@@ -332,7 +331,7 @@ export default function InvestmentFrameworkPage() {
             <div className="flex items-center gap-2 mb-3">
               <ShieldCheck className="w-4 h-4 text-emerald-700" />
               <span className="text-xs uppercase tracking-wider text-[#17151A] font-semibold">
-                Nguyên Tắc Cam Kết Tài Chính (Milestone-based Billing)
+                Nguyên Tắc Hợp Tác & Thanh Toán Theo Cột Mốc (Milestone-Based Billing)
               </span>
             </div>
             <h3 className="text-xl font-normal text-[#17151A] mb-4">
@@ -352,7 +351,7 @@ export default function InvestmentFrameworkPage() {
               </div>
               <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
                 <span className="font-semibold block text-[#17151A] mb-1">Cột mốc 3: Đo lường ROI & Chuyển giao</span>
-                <span className="text-[#6E6E6E]">Hệ thống đạt đúng các chỉ số SLA và tiết kiệm chi phí cam kết trên thực tế.</span>
+                <span className="text-[#6E6E6E]">Hệ thống đạt đúng các chỉ số SLA và mục tiêu tiết kiệm thời gian, chi phí đã thống nhất trong đề án.</span>
               </div>
             </div>
           </section>

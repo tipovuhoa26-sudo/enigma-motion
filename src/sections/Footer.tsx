@@ -14,11 +14,11 @@ export function Footer() {
                 <path d="M16.5 3.5L7.5 7.5V16.5L16.5 20.5" />
               </svg>
             </div>
-            <span className="font-semibold text-lg tracking-tight text-[#17151A]">Enigma Sunext</span>
+            <span className="font-semibold text-lg tracking-tight text-[#17151A]">Sunext</span>
           </div>
 
           <p className="text-xs text-[#6E6E6E] max-w-sm leading-relaxed">
-            Pioneering autonomous intelligence, precision AI engineering, and organizational transformation for category leaders.
+            Tư vấn chiến lược và hiện thực hóa chuyển đổi AI thực chiến cho doanh nghiệp Việt Nam theo phương pháp luận toàn trình Sunext Rewired.
           </p>
 
           {/* Operational Status Pill */}
@@ -27,25 +27,21 @@ export function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
             </span>
-            <span className="text-[11px] font-medium text-[#17151A]">Systems Operational • 99.99%</span>
+            <span className="text-[11px] font-medium text-[#17151A]">Vận hành liên tục • Hỗ trợ 24/7</span>
           </div>
         </div>
 
         {/* Quick Links Column */}
         <div className="md:col-span-2 flex flex-col gap-2.5">
-          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Solutions</span>
-          <Link href="/#technology" className="hover:text-[#17151A] transition-colors">
-            Autonomous Core
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Giải Pháp</span>
+          <Link href="/#advantage" className="hover:text-[#17151A] transition-colors">
+            Lợi Thế Cốt Lõi
           </Link>
-          <Link href="/#service" className="hover:text-[#17151A] transition-colors">
-            Featured Portfolio
+          <Link href="/#cases" className="hover:text-[#17151A] transition-colors">
+            Dự Án Tiêu Biểu
           </Link>
           <Link href="/cases" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <span>Case Studies</span>
-            <ArrowUpRight className="w-3 h-3" />
-          </Link>
-          <Link href="/prototype" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <span>Prototype Lab</span>
+            <span>Tất Cả Dự Án</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>
@@ -54,7 +50,7 @@ export function Footer() {
         <div className="md:col-span-3 flex flex-col gap-2">
           <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Tư Duy AI (Rewired)</span>
           <Link href="/tu-duy-chuyen-doi-ai" className="font-medium text-[#17151A] hover:underline flex items-center gap-1">
-            <span>Khung Sunext Rewired™</span>
+            <span>Khung Sunext Rewired</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/tu-duy-chuyen-doi-ai/chien-luoc-so" className="hover:text-[#17151A] transition-colors">
@@ -105,31 +101,31 @@ export function Footer() {
 
         {/* Legal & Security Column */}
         <div className="md:col-span-2 flex flex-col gap-3">
-          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Trust & Security</span>
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Bảo Mật & Pháp Lý</span>
           <div className="flex items-center gap-2 text-[11px] text-[#17151A] bg-white p-2.5 rounded-xl border border-black/5">
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span>SOC2 Type II • NDA-First</span>
+            <span>Bảo Mật Chuẩn Doanh Nghiệp • Cam Kết NDA</span>
           </div>
           <div className="flex flex-col gap-1.5 pt-1 text-xs">
-            <Link href="/#privacy" className="hover:text-[#17151A] transition-colors">Privacy Policy</Link>
-            <Link href="/#terms" className="hover:text-[#17151A] transition-colors">Terms of Service</Link>
-            <Link href="/#security" className="hover:text-[#17151A] transition-colors">Security Model</Link>
+            <Link href="/#privacy" className="hover:text-[#17151A] transition-colors">Chính Sách Bảo Mật Dữ Liệu</Link>
+            <Link href="/#terms" className="hover:text-[#17151A] transition-colors">Điều Khoản Triển Khai</Link>
+            <Link href="/#security" className="hover:text-[#17151A] transition-colors">Hạ Tầng Private AI</Link>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="max-w-6xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span>© {new Date().getFullYear()} Enigma Solutions, Inc. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Sunext Digital & AI Solutions. All rights reserved.</span>
 
         <div className="flex items-center gap-4 text-[#6E6E6E]">
-          <Link href="#network" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
+          <span className="flex items-center gap-1">
             <Globe className="w-3.5 h-3.5" />
-            <span>Global Edge</span>
-          </Link>
-          <Link href="#share" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
+            <span>Hà Nội • TP. Hồ Chí Minh</span>
+          </span>
+          <Link href="/#contact" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
             <Share2 className="w-3.5 h-3.5" />
-            <span>Developer Network</span>
+            <span>Liên Hệ Tư Vấn</span>
           </Link>
         </div>
       </div>

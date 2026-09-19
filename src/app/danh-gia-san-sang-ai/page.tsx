@@ -72,8 +72,8 @@ export default function AiReadinessAssessmentPage() {
 
   // Determine maturity level
   let maturityTier = {
-    title: 'Giai đoạn 1: Khởi Phát & Tự Phát (Ad-hoc)',
-    badge: 'Tầng 1 / 4 · Khởi Phát',
+    title: 'Cấp độ 1: Khởi Phát & Tự Phát (Ad-hoc)',
+    badge: 'Cấp độ 1 / 4 · Khởi Phát',
     color: 'text-amber-700 bg-amber-50 border-amber-200',
     summary:
       'Doanh nghiệp của bạn đang có những nỗ lực cá nhân tự phát, nhưng chưa có chiến lược thống nhất. Nguy cơ lãng phí ngân sách bản quyền và rò rỉ dữ liệu là rất cao nếu không sớm định hình lộ trình.',
@@ -84,8 +84,8 @@ export default function AiReadinessAssessmentPage() {
 
   if (percentageScore >= 75) {
     maturityTier = {
-      title: 'Giai đoạn 4: Doanh Nghiệp Tự Chủ AI (AI-Native Enterprise)',
-      badge: 'Tầng 4 / 4 · Tự Chủ',
+      title: 'Cấp độ 4: Doanh Nghiệp Tự Chủ AI (AI-Native Enterprise)',
+      badge: 'Cấp độ 4 / 4 · Tự Chủ',
       color: 'text-emerald-700 bg-emerald-50 border-emerald-200',
       summary:
         'Hệ thống AI đã hòa quyện chặt chẽ vào hoạt động cốt lõi, dữ liệu sạch và quản trị rủi ro vững chắc. Lợi thế cạnh tranh của bạn đang vượt trội so với thị trường.',
@@ -95,8 +95,8 @@ export default function AiReadinessAssessmentPage() {
     };
   } else if (percentageScore >= 50) {
     maturityTier = {
-      title: 'Giai đoạn 3: Chuẩn Hóa & Mở Rộng Hệ Thống (Systematic)',
-      badge: 'Tầng 3 / 4 · Chuẩn Hóa',
+      title: 'Cấp độ 3: Chuẩn Hóa & Mở Rộng Hệ Thống (Systematic)',
+      badge: 'Cấp độ 3 / 4 · Chuẩn Hóa',
       color: 'text-blue-700 bg-blue-50 border-blue-200',
       summary:
         'Doanh nghiệp đã vượt qua giai đoạn thử nghiệm mò mẫm. Bạn đã có use case thành công và đội ngũ sẵn sàng, nhưng hạ tầng dữ liệu và khả năng nhân rộng đang là rào cản tiếp theo.',
@@ -106,8 +106,8 @@ export default function AiReadinessAssessmentPage() {
     };
   } else if (percentageScore >= 30) {
     maturityTier = {
-      title: 'Giai đoạn 2: Thử Nghiệm Rời Rạc (Experimentation)',
-      badge: 'Tầng 2 / 4 · Thử Nghiệm',
+      title: 'Cấp độ 2: Thử Nghiệm Rời Rạc (Experimentation)',
+      badge: 'Cấp độ 2 / 4 · Thử Nghiệm',
       color: 'text-orange-700 bg-orange-50 border-orange-200',
       summary:
         'Có một vài điểm sáng cục bộ (như phòng Marketing hoặc IT), nhưng các phòng ban khác vẫn làm theo cách cũ. Thiếu kết nối hệ thống khiến nhân viên vẫn phải copy-paste thủ công.',
@@ -171,7 +171,7 @@ export default function AiReadinessAssessmentPage() {
                 <ClipboardCheck className="w-3.5 h-3.5 text-[#17151A]" />
                 AI MATURITY ASSESSMENT · 5 PHÚT
               </span>
-              <span className="text-xs text-[#6E6E6E]">Chuẩn khung McKinsey Rewired</span>
+              <span className="text-xs text-[#6E6E6E]">Khung tham chiếu 6 Trụ cột Sunext Rewired</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">

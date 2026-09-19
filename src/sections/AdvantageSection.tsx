@@ -81,25 +81,25 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
       {/* Pinned Header Block */}
       <div className="w-full max-w-4xl mx-auto text-center mb-6 z-10 shrink-0" data-advantage-heading>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-[#17151A] leading-tight mb-4">
-          Advantage{' '}
+          Lợi Thế Thực Chiến:{' '}
           <span className="inline-flex items-center align-middle mx-1 px-3 py-1 bg-[#FAFFDE] border border-[#DFE2C8] rounded-full text-sm">
             <TrendingUp className="w-4 h-4 text-[#17151A]" />
           </span>{' '}
-          Is Our Promise:{' '}
+          Chuyển Đổi Thực Chất,{' '}
           <br className="hidden sm:inline" />
-          Fueling Your Success
+          Đo Lường Bằng Kết Quả
         </h2>
 
         {/* Secondary In-Flow CTA row */}
-        <div className="flex items-center justify-center gap-3" data-advantage-cta>
-          <Link href="#contact">
-            <Button variant="primary" size="md" className="rounded-full shadow-sm">
-              Get Started
+        <div className="flex flex-wrap items-center justify-center gap-3" data-advantage-cta>
+          <Link href="/tu-duy-chuyen-doi-ai">
+            <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium">
+              Khám Phá Khung Rewired
             </Button>
           </Link>
-          <Link href="#contact">
-            <Button variant="secondary" size="md" className="rounded-full border border-black/5">
-              Contact Us
+          <Link href="/danh-gia-san-sang-ai">
+            <Button variant="secondary" size="md" className="rounded-full border border-black/5 text-xs font-medium">
+              Đo Lường Sẵn Sàng (5 Phút)
             </Button>
           </Link>
         </div>

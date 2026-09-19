@@ -49,9 +49,9 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
       },
     ],
     measurableOutcomes: [
-      'Giảm ≥ 60% thời gian xử lý thủ công cho use case mục tiêu',
-      'Đội ngũ nòng cốt làm chủ công cụ và tự vận hành 100%',
-      'Hoàn vốn đầu tư (Payback Period) dự kiến trong 2-3 tháng',
+      'Mục tiêu: Rút ngắn thời gian xử lý thủ công cho use case trọng điểm (như case study lọc CV từ 3 ngày xuống 2 giờ)',
+      'Đội ngũ nòng cốt làm chủ công cụ và tự vận hành độc lập sau bàn giao',
+      'Tạo tiền đề vững chắc và kiểm chứng hiệu quả thực tế trước khi mở rộng ngân sách',
     ],
   },
   {
@@ -87,16 +87,16 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
       },
     ],
     measurableOutcomes: [
-      'Tăng gấp 2.5x - 4x năng suất tổng thể của phòng ban',
+      'Tăng tốc năng suất các khâu sản xuất nội dung / tài liệu chuyên môn (đạt x5 ở case study B2B)',
       'Loại bỏ hoàn toàn thao tác copy-paste dữ liệu giữa các phần mềm rời rạc',
-      'Giảm thiểu tối đa phụ thuộc vào dịch vụ thuê ngoài đắt đỏ',
+      'Giảm thiểu tối đa sự phụ thuộc vào các dịch vụ thuê ngoài đắt đỏ',
     ],
   },
   {
     id: 'enterprise',
     name: 'Gói 3: Enterprise AI Transformation',
     badge: 'Toàn Diện Khung Rewired',
-    subtitle: 'Tái đấu nối toàn bộ tổ chức theo 6 Trụ cột Sunext Rewired™ với hạ tầng Private AI bảo mật cấp doanh nghiệp.',
+    subtitle: 'Tái đấu nối toàn bộ tổ chức theo 6 Trụ cột Sunext Rewired với hạ tầng Private AI bảo mật cấp doanh nghiệp.',
     recommendedFor: 'Tập đoàn & Doanh nghiệp 200 - 1.000+ nhân sự cam kết xây dựng AI như lợi thế cạnh tranh cốt lõi dài hạn.',
     timeToValue: '4 – 6 tháng',
     scope: 'Toàn bộ doanh nghiệp đa phòng ban + Private LLM Infrastructure',
@@ -106,7 +106,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
         category: '1. Chiến lược Số & Hội đồng Quản trị AI (Governance)',
         items: [
           'Xây dựng lộ trình tổng thể xếp hạng ưu tiên theo giá trị P&L từng quý',
-          'Ban hành bộ khung chính sách bảo mật dữ liệu (Data Security Policy & NDA-first)',
+          'Ban hành bộ khung chính sách bảo mật dữ liệu (Data Security Policy & Cam kết NDA)',
         ],
       },
       {
@@ -121,14 +121,14 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
         items: [
           'Phổ cập AI cho toàn bộ cán bộ công nhân viên (Tầng 1)',
           'Đào tạo nâng cao cho nhóm Kỹ sư & Quản đốc ca (Tầng 4 & 5: Computer Vision, Automation Pipeline)',
-          'Chuyển giao 100% mã nguồn và quyền sở hữu trí tuệ hệ thống',
+          'Chính sách sở hữu: Doanh nghiệp nắm giữ toàn bộ mã nguồn tùy biến và dữ liệu huấn luyện theo thỏa thuận hợp đồng',
         ],
       },
     ],
     measurableOutcomes: [
-      'Tiết kiệm 30% - 40% chi phí vận hành biến đổi toàn doanh nghiệp',
-      'Bảo vệ 100% tài sản trí tuệ và bí mật kinh doanh không bị rò rỉ',
-      'Định hình vị thế dẫn đầu thị trường về tốc độ phản ứng và chất lượng dịch vụ',
+      'Chuẩn hóa mô hình vận hành và kiến trúc dữ liệu dùng chung, xóa bỏ lãng phí công cụ rời rạc',
+      'Bảo vệ 100% dữ liệu và bí mật kinh doanh với hạ tầng Private AI an toàn',
+      'Xây dựng năng lực AI nội tại trở thành lợi thế cạnh tranh dài hạn',
     ],
   },
 ];
