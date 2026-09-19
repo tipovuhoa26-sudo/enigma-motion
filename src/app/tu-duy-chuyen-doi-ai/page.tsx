@@ -46,7 +46,7 @@ export default function AiTransformationHubPage() {
         { value: '+25%', label: 'Ứng viên vào phỏng vấn' },
       ],
       tag: 'Trụ cột 2 & 4',
-      link: '/cases/enterprise-rag-data-mesh',
+      link: '/case-studies/toi-uu-chi-phi-tuyen-dung-hr-ai',
     },
     {
       title: 'Nhà máy Sản xuất 800 nhân sự',
@@ -62,7 +62,7 @@ export default function AiTransformationHubPage() {
         { value: '24/7', label: 'Giám sát không gián đoạn' },
       ],
       tag: 'Trụ cột 4 & 5',
-      link: '/cases/autonomous-agentic-pipeline',
+      link: '/case-studies/ai-auditor-manufacturing',
     },
     {
       title: 'Doanh nghiệp Dịch vụ B2B 200 nhân sự',
@@ -78,7 +78,7 @@ export default function AiTransformationHubPage() {
         { value: '0đ', label: 'Chi phí phát sinh thêm ngân sách' },
       ],
       tag: 'Trụ cột 2 & 3',
-      link: '/cases/multimodal-vision-system',
+      link: '/case-studies/content-factory-b2b-marketing',
     },
   ];
 

@@ -93,7 +93,7 @@ export const CASES_DATA: CaseStudy[] = [
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
-    summary: 'Chuỗi 45 cửa hàng: Rút ngắn thời gian lọc CV từ 3 ngày xuống 2 giờ, tiết kiệm 40% chi phí tuyển dụng.',
+    summary: 'Chuỗi bán lẻ 500 nhân sự: Rút ngắn thời gian lọc CV từ 3 ngày xuống 2 giờ, tiết kiệm 40% chi phí tuyển dụng thực tế.',
   },
   {
     id: 'case-2',
@@ -102,8 +102,8 @@ export const CASES_DATA: CaseStudy[] = [
     image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
     heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
-    slug: 'ai-vision-kiem-dinh-san-xuat',
-    summary: 'Nhà máy 800 công nhân: Đạt 99.8% độ chính xác kiểm định bề mặt, giảm tỷ lệ hàng lỗi xuống 1.5%.',
+    slug: 'ai-auditor-manufacturing',
+    summary: 'Nhà máy 800 công nhân: Đạt 99.8% độ chính xác kiểm định bề mặt, tỷ lệ lỗi sau kiểm định còn 1.5%.',
   },
   {
     id: 'case-3',
@@ -112,38 +112,38 @@ export const CASES_DATA: CaseStudy[] = [
     image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[290px] sm:w-[330px] md:w-[360px]',
     heightClass: 'h-[190px] sm:h-[220px] md:h-[250px]',
-    slug: 'content-factory-b2b-knowledge',
-    summary: 'Công ty tư vấn 200 nhân sự: Tăng tốc x5 sản xuất tài liệu chuyên môn, tăng 60% organic lead B2B.',
+    slug: 'content-factory-b2b-marketing',
+    summary: 'Doanh nghiệp dịch vụ 200 nhân sự: Tăng tốc x5 sản xuất tài liệu chuyên môn, tăng 60% organic traffic sau 5 tháng.',
   },
   {
     id: 'case-4',
-    title: 'Dự Báo Ca Trực & Phân Bổ Nhân Sự Điểm Bán',
+    title: 'Dự Báo Ca Trực & Phân Bổ Nhân Sự Tuyển Dụng',
     category: 'Bán Lẻ & FMCG',
     image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[340px] sm:w-[380px] md:w-[420px]',
     heightClass: 'h-[240px] sm:h-[270px] md:h-[300px]',
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
-    summary: 'Tự động điều phối nhân sự theo lưu lượng khách thực tế tại từng cửa hàng, tối ưu chi phí ca kíp.',
+    summary: 'Tự động hóa luồng tiếp nhận và sàng lọc ứng viên ca kíp, giúp đội ngũ HR 4 người giải phóng 90% thời gian tác vụ lặp lại.',
   },
   {
     id: 'case-5',
-    title: 'Bảo Trì Dự Đoán & Giảm Thiểu Dừng Máy CNC',
+    title: 'Giám Sát Kiểm Định Tự Động Chuyền Sản Xuất',
     category: 'Sản Xuất & Chế Tạo',
     image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
     heightClass: 'h-[210px] sm:h-[240px] md:h-[270px]',
-    slug: 'ai-vision-kiem-dinh-san-xuat',
-    summary: 'Giám sát rung động và nhiệt độ máy tự động, phát hiện hỏng hóc sớm trước khi xảy ra dừng chuyền.',
+    slug: 'ai-auditor-manufacturing',
+    summary: 'Camera công nghiệp kết hợp mô hình AI quét chi tiết thời gian thực < 50ms, vận hành 24/7 đồng nhất trên 6 dây chuyền.',
   },
   {
     id: 'case-6',
-    title: 'Copilot Tra Cứu Tri Thức Chuyên Gia Doanh Nghiệp',
+    title: 'Đóng Gói Tri Thức Chuyên Gia & Xuất Bản B2B',
     category: 'Dịch Vụ B2B',
     image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
-    slug: 'content-factory-b2b-knowledge',
-    summary: 'Rút ngắn thời gian tra cứu hồ sơ và quy chuẩn kỹ thuật từ 45 phút xuống 30 giây cho đội ngũ chuyên gia.',
+    slug: 'content-factory-b2b-marketing',
+    summary: 'Chuyển hóa tài liệu kỹ thuật và kinh nghiệm chuyên gia thành bài phân tích chuyên sâu chuẩn Brand Voice, duy trì 50+ bài/tháng.',
   },
 ];
 
@@ -180,18 +180,18 @@ export interface CaseStudyDetail {
   }[];
 }
 
-export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
+const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
   'toi-uu-chi-phi-tuyen-dung-hr-ai': {
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
     title: 'Tối Ưu Tuyển Dụng & Sàng Lọc CV Tự Động Cho Chuỗi Bán Lẻ',
     client: 'Chuỗi Bán Lẻ Thời Trang & Hàng Tiêu Dùng',
     category: 'Bán Lẻ & FMCG',
-    scale: '500 nhân sự · Đội HR 4 người · 45 điểm bán',
+    scale: '500 nhân sự · Đội HR 4 người · Tuyển 60-80 vị trí/quý',
     image: '/assets/vietnam-retail-store.jpg',
     challenge:
-      'Mỗi đợt tuyển dụng mở rộng hoặc cao điểm lễ tết, đội HR 4 người phải tiếp nhận hơn 800 CV đổ về. Họ mất từ 3 đến 4 ngày làm việc thủ công chỉ để mở từng file, kiểm tra tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Tốc độ chậm trễ khiến ứng viên tốt bỏ sang đối thủ, đồng thời các cửa hàng trưởng liên tục phàn nàn vì thiếu nhân viên bán hàng giờ cao điểm.',
+      'Mỗi quý mở rộng, chuỗi bán lẻ 500 nhân sự cần tuyển từ 60 đến 80 vị trí mới. Nhưng cả bộ phận Nhân sự chỉ có vỏn vẹn 4 người. Họ mất trung bình 3 ngày làm việc thủ công cho mỗi vị trí chỉ để mở từng file hồ sơ, đối chiếu tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Khối lượng tác vụ lặp lại đè nặng khiến cả đội gần như phải dừng mọi hoạt động phát triển nhân sự khác trong mùa cao điểm.',
     solution:
-      'Sunext triển khai Trụ cột 2 (Đào tạo Tầng 1 và 2 cho đội ngũ HR) kết hợp Trụ cột 4 (Tích hợp AI Resume Screener trực tiếp vào hệ thống ATS). Hệ thống tự động trích xuất thông tin, chấm điểm mức độ phù hợp ca kíp và tự động gửi tin nhắn hẹn lịch phỏng vấn. Đội HR chuyển từ đọc thủ công sang vai trò phỏng vấn chuyên sâu và đánh giá văn hóa.',
+      'Bước chuyển hóa không bắt đầu bằng việc mua công cụ. Đội ngũ HR trước tiên được đào tạo để hiểu rõ năng lực AI (Tầng 1) và áp dụng trực tiếp vào quy trình tuyển dụng nội bộ (Tầng 2). Sau khi quy trình được chuẩn hóa, AI Resume Screener mới được tích hợp thẳng vào hệ thống ATS quen thuộc của công ty. Hệ thống tự động trích xuất thông tin, chấm điểm tiêu chí và hỗ trợ tiếp nhận ứng viên 24/7. Đội HR bốn người lấy lại thời gian để tập trung vào việc mà máy không làm thay được: phỏng vấn chuyên sâu và thu hút ứng viên tốt nhất.',
     pillarsInvolved: [
       { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
       { name: 'Trụ cột 4: Nền Tảng Công Nghệ', slug: 'nen-tang-cong-nghe' },
@@ -201,31 +201,31 @@ export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
       {
         value: '-40%',
         label: 'Chi phí tuyển dụng thực tế',
-        description: 'Tiết kiệm ngân sách đăng tin tuyển dụng và nguồn lực vận hành',
+        description: 'Tiết kiệm ngân sách đăng tin tuyển dụng và tối ưu nguồn lực vận hành',
       },
       {
         value: '3 ngày → 2h',
         label: 'Thời gian sàng lọc hồ sơ',
-        description: 'Rút ngắn thời gian từ lúc ứng viên nộp hồ sơ đến khi chốt danh sách phỏng vấn',
+        description: 'Rút ngắn thời gian từ lúc ứng viên nộp hồ sơ đến khi hoàn tất danh sách phỏng vấn',
       },
       {
         value: '+25%',
-        label: 'Tỷ lệ ứng viên đạt yêu cầu',
-        description: 'Ứng viên được chọn lọc chuẩn xác theo tiêu chí ca trực của từng cửa hàng',
+        label: 'Tỷ lệ ứng viên đạt yêu cầu vào phỏng vấn',
+        description: 'Hồ sơ được chọn lọc chuẩn xác theo tiêu chí ca trực của từng điểm bán',
       },
     ],
   },
-  'ai-vision-kiem-dinh-san-xuat': {
-    slug: 'ai-vision-kiem-dinh-san-xuat',
+  'ai-auditor-manufacturing': {
+    slug: 'ai-auditor-manufacturing',
     title: 'Hệ Thống Thị Giác Máy Tính AI Vision Kiểm Định Cơ Khí Chính Xác',
     client: 'Nhà Máy Chế Tạo Cơ Khí Phụ Tùng Xuất Khẩu',
     category: 'Sản Xuất Cơ Khí & Chế Tạo',
     scale: '800 công nhân · 6 dây chuyền sản xuất liên tục',
     image: '/assets/vietnam-manufacturing-line.jpg',
     challenge:
-      'Công nhân kiểm định chất lượng (QA/QC) phải soi từng chi tiết cơ khí dưới ánh đèn công suất lớn suốt ca 8 tiếng. Sau 4 tiếng liên tục, mắt bắt đầu mỏi cơ học và việc bỏ sót các vết nứt vi mô, xước bề mặt hay sai lệch kích thước nhỏ là không thể tránh khỏi. Lỗi lọt tới tay khách hàng gây nguy cơ đền bù hợp đồng gia công quốc tế.',
+      'Trên 6 dây chuyền sản xuất cơ khí chính xác, công nhân kiểm định chất lượng (QA/QC) phải soi từng chi tiết dưới ánh đèn công suất lớn suốt ca 8 tiếng. Sau 4 tiếng liên tục, hiện tượng mỏi mắt cơ học khiến việc phát hiện các vết nứt vi mô, vết xước bề mặt hay sai lệch kích thước nhỏ trở nên thiếu ổn định. Rủi ro sản phẩm lỗi lọt ra ngoài thị trường đe dọa trực tiếp đến các hợp đồng gia công quốc tế khắt khe.',
     solution:
-      'Sunext kết hợp Trụ cột 4 (Engineering Camera AI công nghiệp tại từng chuyền) và Trụ cột 5 (Kiến trúc dữ liệu hình ảnh thời gian thực). Hệ thống quét từng linh kiện đang chuyển động với tốc độ < 50ms, phát hiện sai sót tức thì, kích hoạt cơ cấu gạt phế phẩm tự động và cảnh báo lên màn hình quản đốc.',
+      'Đội ngũ kỹ thuật nhà máy được trang bị giải pháp thị giác máy tính AI Vision trực tiếp tại chuyền kết hợp kiến trúc dữ liệu hình ảnh thời gian thực. Camera công nghiệp tốc độ cao quét từng linh kiện đang chuyển động với tốc độ < 50ms, nhận diện sai sót tức thời, kích hoạt cơ cấu gạt phế phẩm tự động và cảnh báo tức thì lên màn hình điều hành của quản đốc ca. Công nhân QA chuyển từ việc soi từng chi tiết bằng mắt sang giám sát hệ thống và phân tích nguyên nhân gốc rễ.',
     pillarsInvolved: [
       { name: 'Trụ cột 4: Nền Tảng Công Nghệ', slug: 'nen-tang-cong-nghe' },
       { name: 'Trụ cột 5: Kiến Trúc Dữ Liệu', slug: 'kien-truc-du-lieu' },
@@ -235,7 +235,7 @@ export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
       {
         value: '99.8%',
         label: 'Độ chính xác kiểm định tự động',
-        description: 'Nhận diện vết xước, nứt vi mô và sai lệch kích thước tức thời',
+        description: 'Nhận diện vết xước, nứt vi mô và sai lệch kích thước tức thời trong thời gian thực',
       },
       {
         value: '1.5%',
@@ -249,17 +249,17 @@ export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
       },
     ],
   },
-  'content-factory-b2b-knowledge': {
-    slug: 'content-factory-b2b-knowledge',
+  'content-factory-b2b-marketing': {
+    slug: 'content-factory-b2b-marketing',
     title: 'B2B Content Factory & Engine Đóng Gói Tri Thức Chuyên Gia',
     client: 'Công Ty Tư Vấn Giải Pháp & Dịch Vụ Doanh Nghiệp',
     category: 'Dịch Vụ Doanh Nghiệp & B2B',
     scale: '200 nhân sự · Đội Marketing 4 người',
     image: '/assets/vietnam-b2b-office.jpg',
     challenge:
-      'Tài sản quý nhất của doanh nghiệp tư vấn là kinh nghiệm thực chiến của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng. Đội marketing thuê ngoài agency chỉ viết được những bài viết nông cạn, thiếu tính thuyết phục kỹ thuật. Hoạt động marketing hữu cơ (organic) bị tê liệt, công ty phụ thuộc hoàn toàn vào quan hệ cá nhân hoặc quảng cáo đắt đỏ.',
+      'Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm thực chiến của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.',
     solution:
-      'Sunext tái thiết kế quy trình sản xuất tri thức (Trụ cột 3) và triển khai Custom GPT chuẩn Brand Voice (Trụ cột 2). Chuyên gia chỉ cần ghi âm chia sẻ ngắn hoặc cung cấp tài liệu kỹ thuật, AI Engine tự động cấu trúc thành bài viết chuyên sâu chuẩn văn phong công ty. Đội ngũ chỉ cần duyệt và bấm xuất bản đa kênh.',
+      'Đội ngũ marketing nội bộ được nâng tầng năng lực (Tầng 2) và tái thiết kế quy trình sản xuất nội dung theo mô hình Content Factory. Chuyên gia chỉ cần ghi âm chia sẻ ngắn hoặc cung cấp tài liệu kỹ thuật thô, AI Engine tự động cấu trúc thành bài phân tích chuyên sâu chuẩn Brand Voice của công ty. Đội ngũ marketing giữ vai trò biên tập, kiểm duyệt chất lượng và xuất bản đa kênh với chu kỳ nhanh gấp 5 lần mà không phát sinh thêm chi phí.',
     pillarsInvolved: [
       { name: 'Trụ cột 2: Năng Lực Đội Ngũ', slug: 'nang-luc-doi-ngu' },
       { name: 'Trụ cột 3: Mô Hình Vận Hành', slug: 'mo-hinh-van-hanh' },
@@ -273,16 +273,26 @@ export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
       },
       {
         value: '+60%',
-        label: 'Tăng trưởng organic lead B2B',
-        description: 'Khách hàng doanh nghiệp chủ động liên hệ sau 5 tháng xuất bản nhất quán',
+        label: 'Tăng trưởng lưu lượng truy cập tự nhiên (Organic traffic)',
+        description: 'Đạt được sau 5 tháng xuất bản nội dung chuyên môn đều đặn và nhất quán',
       },
       {
         value: '0đ',
-        label: 'Chi phí quảng cáo phát sinh',
-        description: 'Tăng trưởng bền vững dựa trên tri thức nội bộ và uy tín thương hiệu',
+        label: 'Chi phí ngân sách phát sinh cho quảng cáo',
+        description: 'Tăng trưởng bền vững dựa trên tri thức nội bộ và uy tín chuyên gia',
       },
     ],
   },
+};
+
+// Aliases for backward compatibility and zero 404s
+export const CASE_STUDIES_DETAILS: Record<string, CaseStudyDetail> = {
+  ...CANONICAL_CASE_STUDIES,
+  'ai-vision-kiem-dinh-san-xuat': CANONICAL_CASE_STUDIES['ai-auditor-manufacturing'],
+  'content-factory-b2b-knowledge': CANONICAL_CASE_STUDIES['content-factory-b2b-marketing'],
+  'enterprise-rag-data-mesh': CANONICAL_CASE_STUDIES['toi-uu-chi-phi-tuyen-dung-hr-ai'],
+  'autonomous-agentic-pipeline': CANONICAL_CASE_STUDIES['ai-auditor-manufacturing'],
+  'multimodal-vision-system': CANONICAL_CASE_STUDIES['content-factory-b2b-marketing'],
 };
 
 

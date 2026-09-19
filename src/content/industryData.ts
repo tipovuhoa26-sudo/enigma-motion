@@ -68,14 +68,14 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     centralCaseStudy: {
       title: 'Hệ Thống Tuyển Dụng Thông Minh Cho Chuỗi Bán Lẻ 500 Nhân Sự',
       client: 'Chuỗi Bán Lẻ Thời Trang & Tiêu Dùng',
-      scale: '500 nhân viên · Đội HR 4 người · 45 cửa hàng',
+      scale: '500 nhân sự · Đội HR 4 người · Tuyển 60-80 vị trí/quý',
       description: 'Sunext triển khai Trụ cột 2 (Đào tạo Tầng 1→2 cho đội HR) và Trụ cột 4 (Agent sàng lọc CV tích hợp trực tiếp vào hệ thống ATS). Hệ thống tự động trích xuất kỹ năng, chấm điểm hồ sơ theo tiêu chí chuẩn và lên lịch phỏng vấn tự động.',
       metrics: [
         { value: '-40%', label: 'Chi phí tuyển dụng thực tế' },
         { value: '3 ngày → 2h', label: 'Thời gian sàng lọc hồ sơ ứng viên' },
         { value: '+25%', label: 'Tỷ lệ ứng viên đạt yêu cầu vào phỏng vấn' },
       ],
-      caseUrl: '/cases/toi-uu-chi-phi-tuyen-dung-hr-ai',
+      caseUrl: '/case-studies/toi-uu-chi-phi-tuyen-dung-hr-ai',
       image: '/assets/vietnam-retail-store.jpg',
     },
     solutions: [
@@ -143,7 +143,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         { value: '1.5%', label: 'Tỷ lệ sản phẩm lỗi sau kiểm định' },
         { value: '24/7', label: 'Vận hành giám sát liên tục không gián đoạn' },
       ],
-      caseUrl: '/cases/ai-vision-kiem-dinh-san-xuat',
+      caseUrl: '/case-studies/ai-auditor-manufacturing',
       image: '/assets/vietnam-manufacturing-line.jpg',
     },
     solutions: [
@@ -181,7 +181,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     name: 'Dịch Vụ Doanh Nghiệp & B2B',
     englishName: 'B2B Professional Services',
     heroHeadline: 'Đóng Gói Tri Thức Chuyên Gia: Tăng Tốc x5 Sản Xuất Tài Liệu & Content B2B',
-    heroSubheadline: 'Không còn cảnh chuyên gia phải ngồi gõ từng proposal hay marketing bế tắc vì thiếu bài viết kỹ thuật. Tăng trưởng organic lead B2B bền vững với Content Factory chuẩn brand voice.',
+    heroSubheadline: 'Không còn cảnh chuyên gia phải ngồi gõ từng proposal hay marketing bế tắc vì thiếu bài viết kỹ thuật. Tăng trưởng organic traffic B2B bền vững với Content Factory chuẩn brand voice.',
     heroImage: '/assets/vietnam-b2b-office.jpg',
     marketContext: 'Trong các công ty tư vấn, luật, tài chính hay công nghệ B2B, tài sản quý giá nhất là tri thức của các chuyên gia đầu ngành. Nhưng các chuyên gia này luôn bận rộn với dự án của khách hàng. Kết quả là hồ sơ đề xuất (proposal) mất hàng tuần mới soạn xong, còn kênh marketing nội dung thì chết đứng vì không ai có thời gian viết bài phân tích chuyên sâu.',
     challenges: [
@@ -193,7 +193,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       {
         title: 'Lầm tưởng phổ biến: "Thuê agency bên ngoài viết bài chuyên môn"',
         description: 'Agency bên ngoài chỉ viết được những bài chung chung, thiếu chiều sâu kỹ thuật cần thiết để thuyết phục khách hàng doanh nghiệp khó tính.',
-        impact: 'Tốn kém ngân sách thuê ngoài nhưng không tạo ra organic lead B2B chất lượng.',
+        impact: 'Tốn kém ngân sách thuê ngoài nhưng không tạo ra organic traffic B2B chất lượng.',
       },
       {
         title: 'Bản chất vấn đề: Chưa có hệ thống đóng gói và tái sử dụng tri thức',
@@ -208,10 +208,10 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       description: 'Sunext thực hiện Trụ cột 2 (Đào tạo Tầng 2 cho đội ngũ) và Trụ cột 3 (Tái cấu trúc quy trình xuất bản). Đóng gói Custom GPT chuẩn brand voice và kho tri thức chuyên sâu, tự động hóa luồng kiểm duyệt nội dung.',
       metrics: [
         { value: 'x5', label: 'Tốc độ sản xuất tài liệu kỹ thuật & bài viết' },
-        { value: '+60%', label: 'Tăng trưởng organic lead B2B sau 5 tháng' },
+        { value: '+60%', label: 'Tăng trưởng organic traffic sau 5 tháng' },
         { value: '0đ', label: 'Ngân sách phát sinh thêm cho quảng cáo' },
       ],
-      caseUrl: '/cases/content-factory-b2b-knowledge',
+      caseUrl: '/case-studies/content-factory-b2b-marketing',
       image: '/assets/vietnam-b2b-office.jpg',
     },
     solutions: [

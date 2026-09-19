@@ -40,7 +40,7 @@ export function Footer() {
           <Link href="/#cases" className="hover:text-[#17151A] transition-colors">
             Dự Án Tiêu Biểu
           </Link>
-          <Link href="/cases" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
+          <Link href="/case-studies" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
             <span>Tất Cả Dự Án</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>

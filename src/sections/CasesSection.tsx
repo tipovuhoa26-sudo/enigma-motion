@@ -72,7 +72,7 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
           {cases.map((item, index) => (
             <Link
               key={item.id}
-              href={`/cases/${item.slug}`}
+              href={`/case-studies/${item.slug}`}
               className="group shrink-0 w-[300px] sm:w-[340px] md:w-[380px] rounded-[28px] overflow-hidden bg-white/95 border border-black/[0.06] shadow-[0_12px_30px_-10px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.14)] hover:-translate-y-1.5 flex flex-col justify-between p-4 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer max-lg:snap-start transform-gpu will-change-transform"
               data-case-card={index}
             >
@@ -120,7 +120,7 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
 
         {/* Center CTA */}
         <div className="mx-auto sm:mx-0">
-          <Link href="/cases">
+          <Link href="/case-studies">
             <Button variant="primary" size="md" className="rounded-full shadow-sm text-xs font-medium cursor-pointer" data-cases-cta>
               <span>Tất Cả Dự Án Thực Tế</span>
               <ArrowRight className="w-3.5 h-3.5" />
