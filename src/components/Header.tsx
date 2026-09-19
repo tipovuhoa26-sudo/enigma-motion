@@ -16,6 +16,7 @@ import {
   Check,
   ShieldCheck,
   Zap,
+  Layers,
 } from 'lucide-react';
 import { Button } from './Button';
 import { useLenis } from '@/motion/SmoothScrollProvider';
@@ -119,6 +120,10 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
   const handleNavClick = (target: string, key: string) => {
     setActiveSection(key);
     setIsMobileMenuOpen(false);
+    if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+      window.location.href = `/${target}`;
+      return;
+    }
     scrollTo(target);
   };
 
@@ -147,7 +152,13 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
         {/* Logo */}
         <button
           type="button"
-          onClick={() => handleNavClick('#top', 'home')}
+          onClick={() => {
+            if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+              window.location.href = '/';
+              return;
+            }
+            handleNavClick('#top', 'home');
+          }}
           className="flex items-center gap-2.5 group cursor-pointer text-left focus:outline-none"
           aria-label="Enigma Home"
         >
@@ -209,6 +220,19 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
             <span>Service</span>
             <LayoutGrid className="w-3.5 h-3.5 opacity-60" />
           </button>
+
+          <Link
+            href="/tu-duy-chuyen-doi-ai"
+            className={`flex items-center gap-2 px-4 py-1.5 rounded-full transition-all duration-200 font-medium cursor-pointer ${
+              activeSection === 'tu-duy-ai'
+                ? 'bg-[#FAFFDE] text-[#17151A] shadow-xs scale-100'
+                : 'text-[#6E6E6E] hover:text-[#17151A] hover:bg-black/5'
+            }`}
+            data-nav-item="tu-duy-ai"
+          >
+            <span>Tư duy AI</span>
+            <Layers className="w-3.5 h-3.5 opacity-60" />
+          </Link>
         </nav>
 
         {/* Right Actions */}
@@ -309,6 +333,34 @@ export function Header({ activeSection: propActiveSection }: HeaderProps) {
               </div>
               {activeSection === 'service' && <span className="w-2 h-2 rounded-full bg-[#17151A]" />}
             </button>
+
+            <Link
+              href="/tu-duy-chuyen-doi-ai"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <Layers className="w-4 h-4" />
+                <span>Tư duy Chuyển đổi AI</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[#17151A]">
+                Rewired
+              </span>
+            </Link>
+
+            <Link
+              href="/danh-gia-san-sang-ai"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-between p-3.5 rounded-2xl font-medium text-sm transition-colors text-[#6E6E6E] hover:bg-black/5"
+            >
+              <div className="flex items-center gap-3">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Đo lường Sẵn sàng AI</span>
+              </div>
+              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800">
+                5 Phút
+              </span>
+            </Link>
 
             <div className="pt-3 mt-2 border-t border-black/5 flex flex-col gap-3">
               <button

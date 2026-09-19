@@ -32,35 +32,66 @@ export function Footer() {
         </div>
 
         {/* Quick Links Column */}
-        <div className="md:col-span-3 flex flex-col gap-3">
+        <div className="md:col-span-2 flex flex-col gap-3">
           <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Solutions</span>
-          <Link href="#technology" className="hover:text-[#17151A] transition-colors">
+          <Link href="/#technology" className="hover:text-[#17151A] transition-colors">
             Autonomous Core AI
           </Link>
-          <Link href="#service" className="hover:text-[#17151A] transition-colors">
-            Featured Portfolio Cases
+          <Link href="/#service" className="hover:text-[#17151A] transition-colors">
+            Featured Portfolio
           </Link>
           <Link href="/cases" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <span>Case Study Directory</span>
+            <span>Case Studies</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/prototype" className="hover:text-[#17151A] transition-colors flex items-center gap-1">
-            <span>Motion Prototype Lab</span>
+            <span>Prototype Lab</span>
+            <ArrowUpRight className="w-3 h-3" />
+          </Link>
+        </div>
+
+        {/* AI Transformation (Rewired) Column */}
+        <div className="md:col-span-3 flex flex-col gap-2">
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Tư Duy AI (Rewired)</span>
+          <Link href="/tu-duy-chuyen-doi-ai" className="font-medium text-[#17151A] hover:underline flex items-center gap-1">
+            <span>Tổng quan 6 Trụ cột</span>
+            <ArrowUpRight className="w-3 h-3" />
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/chien-luoc-so" className="hover:text-[#17151A] transition-colors">
+            01. Chiến lược số
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/nang-luc-doi-ngu" className="hover:text-[#17151A] transition-colors">
+            02. Nhân tài nội bộ
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/mo-hinh-van-hanh" className="hover:text-[#17151A] transition-colors">
+            03. Mô hình vận hành
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/nen-tang-cong-nghe" className="hover:text-[#17151A] transition-colors">
+            04. Nền tảng công nghệ
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/kien-truc-du-lieu" className="hover:text-[#17151A] transition-colors">
+            05. Kiến trúc dữ liệu
+          </Link>
+          <Link href="/tu-duy-chuyen-doi-ai/mo-rong-quy-mo" className="hover:text-[#17151A] transition-colors">
+            06. Mở rộng & Governance
+          </Link>
+          <Link href="/danh-gia-san-sang-ai" className="text-emerald-800 font-medium hover:underline flex items-center gap-1 pt-1">
+            <span>Đo lường sẵn sàng (5 phút)</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>
 
         {/* Legal & Security Column */}
-        <div className="md:col-span-4 flex flex-col gap-3">
-          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Trust & Compliance</span>
-          <div className="flex items-center gap-2 text-[11px] text-[#17151A] bg-white p-3 rounded-2xl border border-black/5">
+        <div className="md:col-span-2 flex flex-col gap-3">
+          <span className="font-semibold text-xs text-[#17151A] uppercase tracking-wider">Trust & Security</span>
+          <div className="flex items-center gap-2 text-[11px] text-[#17151A] bg-white p-2.5 rounded-xl border border-black/5">
             <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span>SOC2 Type II Certified • GDPR & HIPAA Compliant</span>
+            <span>SOC2 Type II • NDA-First</span>
           </div>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 pt-1 text-xs">
-            <Link href="#privacy" className="hover:text-[#17151A] transition-colors">Privacy Policy</Link>
-            <Link href="#terms" className="hover:text-[#17151A] transition-colors">Terms of Service</Link>
-            <Link href="#security" className="hover:text-[#17151A] transition-colors">Security Architecture</Link>
+          <div className="flex flex-col gap-2 pt-1 text-xs">
+            <Link href="/#privacy" className="hover:text-[#17151A] transition-colors">Privacy Policy</Link>
+            <Link href="/#terms" className="hover:text-[#17151A] transition-colors">Terms of Service</Link>
+            <Link href="/#security" className="hover:text-[#17151A] transition-colors">Security Model</Link>
           </div>
         </div>
       </div>
