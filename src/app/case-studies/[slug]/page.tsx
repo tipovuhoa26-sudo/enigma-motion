@@ -3,11 +3,20 @@
 import React, { use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp, Sparkles } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { CASE_STUDIES_DETAILS } from '@/content/data';
+
+const BEAT_PHASES = [
+  { label: 'Bối Cảnh Bình Thường', role: 'Khởi Đầu · Luke Skywalker', tagColor: 'bg-neutral-100 text-neutral-700' },
+  { label: 'Biến Cố & Nút Thắt', role: 'Thách Thức · Điểm Nghẽn P&L', tagColor: 'bg-rose-50 text-rose-700' },
+  { label: 'Bản Chất Vấn Đề', role: 'Gốc Rễ · Cạm Bẫy Kỹ Thuật', tagColor: 'bg-amber-50 text-amber-800' },
+  { label: 'Bước Ngoặt Đồng Hành', role: 'Đồng Hành · Gặp Người Dẫn Đường', tagColor: 'bg-blue-50 text-blue-700' },
+  { label: 'Vũ Khí Giải Pháp', role: 'Kiến Trúc · Multi-Agent & SOP', tagColor: 'bg-purple-50 text-purple-700' },
+  { label: 'Trạng Thái Mới & P&L', role: 'Chuyển Hóa · Hiệu Quả Đo Được', tagColor: 'bg-emerald-50 text-emerald-800' },
+];
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -95,6 +104,63 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
                     {detail.solution}
                   </p>
                 </div>
+
+                {/* 6-Beat Transformation Story per Write Moving Stories */}
+                {detail.storyBeats && detail.storyBeats.length > 0 && (
+                  <div className="pt-6 border-t border-black/10">
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <Sparkles className="w-4 h-4 text-emerald-700" />
+                        <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-semibold">
+                          PHƯƠNG PHÁP LUẬN WRITE MOVING STORIES
+                        </span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">
+                        Hành Trình Chuyển Hóa 6 Nhịp
+                      </h3>
+                      <p className="text-xs text-[#6E6E6E] mt-1">
+                        Từ điểm nghẽn thực tế đến năng lực tự chủ và biên lợi nhuận đo lường được
+                      </p>
+                    </div>
+
+                    <div className="relative pl-6 sm:pl-8 space-y-6 before:absolute before:left-3 sm:before:left-4 before:top-3 before:bottom-3 before:w-px before:bg-black/10">
+                      {detail.storyBeats.map((beat) => {
+                        const phase = BEAT_PHASES[beat.beatNumber - 1] || {
+                          label: `Nhịp ${beat.beatNumber}`,
+                          role: 'Chuyển hóa',
+                          tagColor: 'bg-neutral-100 text-neutral-700',
+                        };
+                        return (
+                          <div key={beat.beatNumber} className="relative group">
+                            {/* Number dot */}
+                            <div className="absolute -left-6 sm:-left-8 top-1 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white border-2 border-[#17151A] text-[10px] sm:text-[11px] font-bold text-[#17151A] flex items-center justify-center shadow-xs">
+                              0{beat.beatNumber}
+                            </div>
+
+                            <div className="p-5 rounded-2xl bg-white border border-black/10 shadow-xs group-hover:border-black/25 transition-all">
+                              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span className={`text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${phase.tagColor}`}>
+                                  {phase.role}
+                                </span>
+                                <span className="text-[11px] text-[#6E6E6E] font-medium">
+                                  Nhịp 0{beat.beatNumber} / 06
+                                </span>
+                              </div>
+
+                              <h4 className="text-base font-medium text-[#17151A] mb-2 leading-snug">
+                                {beat.beatTitle}
+                              </h4>
+
+                              <p className="text-xs sm:text-sm text-[#6E6E6E] leading-relaxed">
+                                {beat.narrative}
+                              </p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
 
                 {/* Pillars Involved */}
                 <div className="p-6 rounded-2xl bg-[#F8F8F6] border border-black/5">

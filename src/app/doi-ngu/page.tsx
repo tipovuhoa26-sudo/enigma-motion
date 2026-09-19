@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -9,12 +9,41 @@ import {
   BookOpen,
   Layers,
   Cpu,
+  X,
+  Building2,
+  Award,
+  Sparkles,
+  Quote,
+  GraduationCap,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
+import { FACULTY_MEMBERS, FACULTY_BLOCKS, FacultyMember } from '@/content/facultyData';
+
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  const first = parts[parts.length - 2]?.[0] || parts[0][0];
+  const last = parts[parts.length - 1][0];
+  return (first + last).toUpperCase();
+}
+
+const BLOCK_COLORS: Record<string, { bg: string; text: string; badge: string }> = {
+  executive: { bg: 'bg-neutral-900', text: 'text-white', badge: 'bg-neutral-100 text-neutral-800 border-neutral-200' },
+  marketing: { bg: 'bg-purple-900', text: 'text-white', badge: 'bg-purple-50 text-purple-800 border-purple-200' },
+  finance: { bg: 'bg-emerald-900', text: 'text-white', badge: 'bg-emerald-50 text-emerald-800 border-emerald-200' },
+  hr: { bg: 'bg-blue-900', text: 'text-white', badge: 'bg-blue-50 text-blue-800 border-blue-200' },
+  operations: { bg: 'bg-amber-900', text: 'text-white', badge: 'bg-amber-50 text-amber-800 border-amber-200' },
+};
 
 export default function TeamLeadershipPage() {
+  const [activeBlock, setActiveBlock] = useState<string>('all');
+  const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
+
+  const filteredFaculty = activeBlock === 'all'
+    ? FACULTY_MEMBERS
+    : FACULTY_MEMBERS.filter((m) => m.blockId === activeBlock);
   const coreCompetencies = [
     {
       num: '01',
@@ -189,6 +218,261 @@ export default function TeamLeadershipPage() {
               </div>
             </div>
           </section>
+
+          {/* Section: 11 Faculty Members across 5 Blocks (Progressive Disclosure) */}
+          <section className="max-w-5xl mx-auto mb-16">
+            <div className="mb-8">
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-4 h-4 text-emerald-700" />
+                <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-semibold">
+                  MẠNG LƯỚI 11 CHUYÊN GIA ĐA LĨNH VỰC · FACULTY NETWORK
+                </span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight mb-3">
+                Đội Ngũ Cố Vấn & Giảng Viên Thực Chiến Đa Ngành
+              </h3>
+              <p className="text-sm text-[#6E6E6E] leading-relaxed max-w-3xl font-light">
+                Sunext không phải một cá nhân dạy công cụ AI chung chung. Chúng tôi xây dựng mạng lưới 11 chuyên gia kỳ cựu từng giữ trọng trách điều hành cấp cao tại các tổ chức như HOSE, Golden Gate Group, Carlsberg, Lotte, Central Retail... trực tiếp chuyển giao phương pháp luận AI vào đúng bài toán chuyên môn sâu.
+              </p>
+            </div>
+
+            {/* Filter Tabs by 5 Blocks */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+              {FACULTY_BLOCKS.map((block) => {
+                const isActive = activeBlock === block.id;
+                const count = block.id === 'all'
+                  ? FACULTY_MEMBERS.length
+                  : FACULTY_MEMBERS.filter((m) => m.blockId === block.id).length;
+                return (
+                  <button
+                    key={block.id}
+                    onClick={() => setActiveBlock(block.id)}
+                    className={`shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2 cursor-pointer ${
+                      isActive
+                        ? 'bg-[#17151A] text-white shadow-xs'
+                        : 'bg-white border border-black/10 text-[#6E6E6E] hover:border-black/25 hover:text-[#17151A]'
+                    }`}
+                  >
+                    <span>{block.name}</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                        isActive ? 'bg-white/20 text-white' : 'bg-black/5 text-[#6E6E6E]'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Browse Layer: Faculty Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredFaculty.map((member) => {
+                const blockStyle = BLOCK_COLORS[member.blockId] || BLOCK_COLORS.executive;
+                const initials = getInitials(member.name);
+                return (
+                  <div
+                    key={member.id}
+                    onClick={() => setSelectedFaculty(member)}
+                    className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs hover:border-black/25 hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                  >
+                    <div className="space-y-4">
+                      {/* Card Header: Avatar & Experience Tag */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div
+                          className={`w-12 h-12 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-lg font-light tracking-wider shadow-xs`}
+                        >
+                          {initials}
+                        </div>
+                        <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 shrink-0">
+                          {member.experienceYears}+ Năm KN
+                        </span>
+                      </div>
+
+                      {/* Name & Title */}
+                      <div>
+                        <span
+                          className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full border inline-block mb-1.5 ${blockStyle.badge}`}
+                        >
+                          {member.blockName}
+                        </span>
+                        <h4 className="text-base font-medium text-[#17151A] group-hover:text-neutral-700 transition-colors">
+                          {member.name}
+                        </h4>
+                        <p className="text-xs text-[#6E6E6E] font-medium mt-0.5">
+                          {member.title}
+                        </p>
+                        <p className="text-[11px] text-[#8E8E8E] mt-1 leading-snug">
+                          {member.roleInSunext}
+                        </p>
+                      </div>
+
+                      {/* Organizations pill list */}
+                      <div className="pt-2 border-t border-black/5">
+                        <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold block mb-1.5">
+                          Từng đồng hành / Công tác:
+                        </span>
+                        <div className="flex flex-wrap gap-1">
+                          {member.organizations.slice(0, 3).map((org, oIdx) => (
+                            <span
+                              key={oIdx}
+                              className="text-[10px] px-2 py-0.5 rounded-md bg-[#F8F8F6] border border-black/5 text-[#17151A] font-medium"
+                            >
+                              {org}
+                            </span>
+                          ))}
+                          {member.organizations.length > 3 && (
+                            <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-[#F8F8F6] text-neutral-400">
+                              +{member.organizations.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card Footer: Trigger CTA */}
+                    <div className="mt-5 pt-3 border-t border-black/5 flex items-center justify-between text-xs font-semibold text-[#17151A] group-hover:text-emerald-800 transition-colors">
+                      <span>Xem Hồ Sơ Chi Tiết</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Depth Layer: Interactive Modal for Faculty Profile */}
+          {selectedFaculty && (
+            <div
+              role="dialog"
+              aria-modal="true"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
+              onClick={() => setSelectedFaculty(null)}
+            >
+              <div
+                className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-black/10 animate-in zoom-in-95 duration-200"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedFaculty(null)}
+                  className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F5F3F6] hover:bg-black/10 text-[#17151A] flex items-center justify-center transition-colors cursor-pointer"
+                  aria-label="Đóng hồ sơ"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                {/* Modal Header */}
+                <div className="flex items-start gap-4 mb-6 pr-10">
+                  <div
+                    className={`w-14 h-14 rounded-2xl ${
+                      BLOCK_COLORS[selectedFaculty.blockId]?.bg || 'bg-neutral-900'
+                    } text-white flex items-center justify-center font-serif text-xl font-light tracking-wider shrink-0 shadow-sm`}
+                  >
+                    {getInitials(selectedFaculty.name)}
+                  </div>
+                  <div>
+                    <span
+                      className={`text-[10px] uppercase tracking-wider font-semibold px-2.5 py-0.5 rounded-full border inline-block mb-1.5 ${
+                        BLOCK_COLORS[selectedFaculty.blockId]?.badge || 'bg-neutral-100 text-neutral-800'
+                      }`}
+                    >
+                      {selectedFaculty.blockName} · {selectedFaculty.experienceYears}+ Năm Kinh Nghiệm
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-normal text-[#17151A]">
+                      {selectedFaculty.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-[#6E6E6E] mt-0.5">
+                      {selectedFaculty.title}
+                    </p>
+                    <p className="text-xs text-emerald-800 font-semibold mt-1">
+                      {selectedFaculty.roleInSunext}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quote Box if available */}
+                {selectedFaculty.quote && (
+                  <div className="mb-6 p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] flex items-start gap-3">
+                    <Quote className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                    <p className="text-xs sm:text-sm text-[#17151A] italic leading-relaxed">
+                      &ldquo;{selectedFaculty.quote}&rdquo;
+                    </p>
+                  </div>
+                )}
+
+                {/* Highlights Section */}
+                <div className="mb-6 space-y-3">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6E6E6E] flex items-center gap-2">
+                    <Award className="w-3.5 h-3.5 text-neutral-700" />
+                    <span>Điểm Nhấn Sự Nghiệp & Thực Chiến</span>
+                  </h4>
+                  <div className="space-y-2">
+                    {selectedFaculty.keyHighlights.map((hl, idx) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#17151A] leading-relaxed">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                        <span>{hl}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Organizations Section */}
+                <div className="mb-6 pt-4 border-t border-black/10">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6E6E6E] flex items-center gap-2 mb-2.5">
+                    <Building2 className="w-3.5 h-3.5 text-neutral-700" />
+                    <span>Tổ Chức, Tập Đoàn & Dự Án Từng Đồng Hành</span>
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedFaculty.organizations.map((org, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1 rounded-full bg-[#F8F8F6] border border-black/10 text-xs text-[#17151A] font-medium"
+                      >
+                        {org}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Certifications Section if available */}
+                {selectedFaculty.certifications && selectedFaculty.certifications.length > 0 && (
+                  <div className="mb-6 pt-4 border-t border-black/10">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6E6E6E] flex items-center gap-2 mb-2.5">
+                      <GraduationCap className="w-3.5 h-3.5 text-neutral-700" />
+                      <span>Bằng Cấp & Chứng Chỉ Chuyên Môn</span>
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedFaculty.certifications.map((cert, idx) => (
+                        <span
+                          key={idx}
+                          className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 font-medium"
+                        >
+                          {cert}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* PII scrubbing & Ethical Notice */}
+                <div className="pt-4 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p className="text-[11px] text-[#8E8E8E] leading-relaxed">
+                    * Thông tin chuyên môn đã được chuẩn hóa công khai, bảo mật tuyệt đối thông tin cá nhân (100% PII-free).
+                  </p>
+                  <Button
+                    variant="primary"
+                    size="sm"
+                    className="rounded-full text-xs font-semibold shrink-0"
+                    onClick={() => setSelectedFaculty(null)}
+                  >
+                    Đóng Hồ Sơ
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Section: 3 Core Competencies */}
           <section className="max-w-5xl mx-auto mb-16">
