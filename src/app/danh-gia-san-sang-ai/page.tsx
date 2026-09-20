@@ -77,7 +77,7 @@ export default function AiReadinessEditorialIntroPage() {
               href="/ai-maturity-assessment"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-800 hover:text-emerald-950 transition-colors"
             >
-              <span>Vào thẳng bài test 5 phút</span>
+              <span>Vào thẳng bài chẩn đoán 12 câu hỏi</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -118,19 +118,19 @@ export default function AiReadinessEditorialIntroPage() {
               <div className="space-y-2 text-center sm:text-left">
                 <span className="text-[11px] uppercase tracking-wider text-[#FAFFDE] font-semibold flex items-center gap-1.5 justify-center sm:justify-start">
                   <Clock className="w-3.5 h-3.5" />
-                  Bài kiểm tra trắc nghiệm 5 phút
+                  Bài chẩn đoán trắc nghiệm 12 câu hỏi
                 </span>
                 <h3 className="text-xl sm:text-2xl font-light">
                   Bạn muốn biết doanh nghiệp mình đang ở đâu?
                 </h3>
                 <p className="text-xs text-neutral-300">
-                  Hoàn thành 6 câu hỏi chẩn đoán để nhận ngay điểm số 6 trục và ưu tiên đầu tư.
+                  Hoàn thành 12 câu hỏi chẩn đoán để nhận ngay điểm số 6 trục và ưu tiên đầu tư.
                 </p>
               </div>
 
               <Link href="/ai-maturity-assessment" className="shrink-0">
                 <Button variant="lime" size="md" className="rounded-full text-xs font-semibold px-6 py-3">
-                  <span>Làm Bài Test 5 Phút Miễn Phí</span>
+                  <span>Làm Bài Chẩn Đoán 12 Câu Hỏi</span>
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
@@ -218,7 +218,7 @@ export default function AiReadinessEditorialIntroPage() {
 
               <div className="space-y-4 text-base text-[#6E6E6E] leading-relaxed">
                 <p>
-                  Không cần một dự án đánh giá kéo dài nhiều tuần với tư vấn viên ngồi phỏng vấn từng phòng ban. Bài đánh giá mức độ sẵn sàng AI của Sunext được thiết kế dựa trên kinh nghiệm triển khai thực tế qua nhiều ngành, mất khoảng <strong>5 phút</strong>, câu hỏi dạng lựa chọn mức độ trưởng thành, không đòi hỏi kiến thức kỹ thuật sâu — phù hợp cho cả lãnh đạo lẫn quản lý cấp trung.
+                  Không cần một dự án đánh giá kéo dài nhiều tuần với tư vấn viên ngồi phỏng vấn từng phòng ban. Bài đánh giá mức độ sẵn sàng AI của Sunext được thiết kế dựa trên kinh nghiệm triển khai thực tế qua nhiều ngành, mất khoảng <strong>10–15 phút</strong>, câu hỏi dạng lựa chọn mức độ trưởng thành qua 12 chỉ báo thực tế — phù hợp cho cả lãnh đạo lẫn quản lý cấp trung.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
@@ -275,17 +275,17 @@ export default function AiReadinessEditorialIntroPage() {
                   BƯỚC TIẾP THEO
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-light">
-                  Dành 5 phút. Biết chính xác doanh nghiệp bạn đang mạnh ở đâu, yếu ở đâu.
+                  Biết chính xác doanh nghiệp bạn đang mạnh ở đâu, yếu ở đâu qua 12 chỉ báo thực tế.
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300">
-                  Đánh giá miễn phí trên 6 trụ cột quyết định một sáng kiến AI thành hay bại.
+                  Đánh giá miễn phí trên 6 trụ cột quyết định một sáng kiến AI thành hay bại (thang 12–48 điểm).
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <Link href="/ai-maturity-assessment">
                   <Button variant="lime" size="lg" className="rounded-full text-xs font-semibold px-8 py-3.5">
-                    <span>Làm bài đánh giá mức độ sẵn sàng AI (5 phút)</span>
+                    <span>Làm bài chẩn đoán mức độ sẵn sàng AI (12 câu hỏi)</span>
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

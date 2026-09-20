@@ -35,7 +35,6 @@ export default function AiTransformationHubPage() {
       title: 'Doanh nghiệp Bán lẻ 500 nhân sự',
       industry: 'Retail & Consumer Goods',
       industrySlug: 'ban-le-tieu-dung',
-      image: '/assets/vietnam-retail-store.jpg',
       team: 'Đội HR 4 người · 500 nhân viên',
       story:
         'Từng mất 3 ngày lọc CV cho mỗi vị trí tuyển dụng thời vụ. Sau khi làm đúng Trụ cột 2 (đào tạo đội ngũ theo đúng tầng năng lực) và Trụ cột 4 (nền tảng công nghệ, Agent sàng lọc CV tự động tích hợp hệ thống ATS):',
@@ -51,7 +50,6 @@ export default function AiTransformationHubPage() {
       title: 'Nhà máy Sản xuất 800 nhân sự',
       industry: 'Precision Manufacturing',
       industrySlug: 'san-xuat-che-tao',
-      image: '/assets/vietnam-manufacturing-line.jpg',
       team: 'Chuyền sản xuất cơ khí chính xác · 800 nhân sự',
       story:
         'Tỷ lệ lỗi sản phẩm lọt ra thị trường gây tốn kém chi phí bảo hành. Sau khi làm đúng Trụ cột 4 và Trụ cột 5 (nền tảng công nghệ kết nối trực tiếp chuyền cơ khí + dữ liệu chuẩn hóa, Computer Vision Agent giám sát 24/7):',
@@ -67,7 +65,6 @@ export default function AiTransformationHubPage() {
       title: 'Doanh nghiệp Dịch vụ B2B 200 nhân sự',
       industry: 'B2B Professional Services',
       industrySlug: 'dich-vu-b2b',
-      image: '/assets/vietnam-b2b-office.jpg',
       team: 'Đội Marketing nội bộ · 200 nhân sự',
       story:
         'Đội marketing chỉ ra được 8-10 bài mỗi tháng, phụ thuộc hoàn toàn vào agency ngoài đắt đỏ. Sau khi làm đúng Trụ cột 2 và Trụ cột 3 (đào tạo Tầng 2 cho đội ngũ + tái cấu trúc quy trình sản xuất nội dung Content Factory):',
@@ -255,7 +252,7 @@ export default function AiTransformationHubPage() {
                   <Link href="/danh-gia-san-sang-ai">
                     <Button variant="primary" size="sm" className="rounded-full text-xs gap-1.5">
                       <ClipboardCheck className="w-3.5 h-3.5" />
-                      <span>Đo lường trong 5 phút</span>
+                      <span>Đo lường với 12 câu hỏi</span>
                     </Button>
                   </Link>
                 </div>
@@ -430,12 +427,12 @@ export default function AiTransformationHubPage() {
                 Bạn đang ở đâu trong sáu trụ cột này?
               </h2>
               <p className="text-sm text-neutral-300 leading-relaxed mb-6">
-                Đoán không phải là chiến lược. Đo lường mới là chiến lược. Dành 5 phút làm bài trắc nghiệm 6 trục để nhận ngay báo cáo chẩn đoán điểm nghẽn và bản đồ lộ trình ưu tiên cho doanh nghiệp bạn.
+                Đoán không phải là chiến lược. Đo lường mới là chiến lược. Dành 10–15 phút làm bài chẩn đoán 12 câu hỏi để nhận ngay báo cáo định vị điểm nghẽn và bản đồ lộ trình ưu tiên cho doanh nghiệp bạn.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <Link href="/danh-gia-san-sang-ai">
+                <Link href="/ai-maturity-assessment">
                   <Button variant="lime" size="lg" className="rounded-full text-sm font-semibold">
-                    Làm Bài Đánh Giá 5 Phút Ngay
+                    Làm Bài Chẩn Đoán 12 Câu
                   </Button>
                 </Link>
                 <Link href="/khung-dau-tu">

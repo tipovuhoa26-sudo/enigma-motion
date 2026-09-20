@@ -34,14 +34,14 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     experienceYears: 10,
     avatarUrl: '/assets/vinh_hung_portrait.png',
     keyHighlights: [
-      'Tiên phong nghiên cứu và đào tạo ứng dụng AI thực chiến tại Việt Nam từ năm 2023',
+      'Tiên phong nghiên cứu và đào tạo ứng dụng AI tại Việt Nam từ năm 2023',
       'Đã cấp chứng nhận ứng dụng AI cho hơn 600 giảng viên thuộc mạng lưới Train-the-Trainer chuẩn Bậc 6',
-      'Sáng lập và quản trị cộng đồng học tập, chia sẻ kiến thức AI thực chiến với hơn 500.000 thành viên (2026)',
+      'Sáng lập và quản trị cộng đồng học tập, chia sẻ kiến thức ứng dụng AI với hơn 500.000 thành viên (2026)',
       'Trực tiếp chủ trì tư vấn chiến lược chuyển đổi AI cho Đại học FPT, Vinhomes, Vietcap Securities, Dentsu Sports Vietnam, HTV...',
     ],
     organizations: ['Đại học FPT', 'Vinhomes', 'Vietcap Securities', 'Dentsu Sports Vietnam', 'HTV', 'VNPT VinaPhone'],
     certifications: ['Lead AI Trainer Certificate', 'AI Strategy & Enterprise Transformation'],
-    quote: 'Mục tiêu duy nhất của chuyển đổi AI là biến công nghệ thành người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, bảo vệ biên lợi nhuận cho doanh nghiệp.',
+    quote: 'Mục tiêu cốt lõi của chuyển đổi AI là biến công nghệ thành người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, bảo vệ biên lợi nhuận cho doanh nghiệp.',
   },
   {
     id: 'nguyen-tung-chi',
@@ -224,7 +224,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     ],
     organizations: ['Tập đoàn Giáo dục Nguyễn Hoàng', 'Hải Sản Hoàng Gia', 'S&S Group'],
     certifications: ['CPTD (ATD USA)', 'SHRM-SCP (SHRM USA)'],
-    quote: 'Công nghệ chỉ thành công khi con người đón nhận nó. Đào tạo nâng tầm năng lực đội ngũ là chìa khóa duy nhất để chuyển đổi số không bị đào thải giữa đường.',
+    quote: 'Công nghệ chỉ thành công khi con người đón nhận nó. Đào tạo nâng tầm năng lực đội ngũ là chìa khóa cốt lõi để chuyển đổi số không bị đào thải giữa đường.',
   },
   {
     id: 'nguyen-thi-nhung',

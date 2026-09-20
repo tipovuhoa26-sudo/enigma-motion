@@ -238,7 +238,7 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
               <div className="flex flex-wrap items-center gap-3 shrink-0">
                 <Link href="/ai-maturity-assessment">
                   <Button variant="lime" size="md" className="rounded-full text-xs font-semibold">
-                    Đo Lường Sẵn Sàng 5 Phút
+                    Đo Lường Sẵn Sàng (12 Câu)
                   </Button>
                 </Link>
                 <Link href="/#contact">

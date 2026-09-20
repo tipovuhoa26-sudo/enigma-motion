@@ -95,7 +95,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
           </Link>
           <Link href="/danh-gia-san-sang-ai">
             <Button variant="secondary" size="md" className="rounded-full border border-black/5 text-xs font-medium">
-              Đo Độ Sẵn Sàng (5 Phút)
+              Đo Độ Sẵn Sàng (12 Câu)
             </Button>
           </Link>
         </div>

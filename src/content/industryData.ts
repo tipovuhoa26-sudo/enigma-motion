@@ -1,3 +1,5 @@
+import { HEALTHCARE_CLINICAL_BOUNDARY_NOTICE, FINANCE_COMPLIANCE_NOTICE } from './legalSecurityData';
+
 export interface IndustrySolution {
   id: string;
   slug: string;
@@ -5,8 +7,12 @@ export interface IndustrySolution {
   englishName: string;
   heroHeadline: string;
   heroSubheadline: string;
-  heroImage: string;
+  heroImage?: string;
   marketContext: string;
+  criticalNotice?: {
+    title: string;
+    body: string;
+  };
   challenges: {
     title: string;
     description: string;
@@ -22,7 +28,7 @@ export interface IndustrySolution {
       label: string;
     }[];
     caseUrl: string;
-    image: string;
+    image?: string;
   };
   solutions: {
     name: string;
@@ -46,7 +52,6 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Retail & Consumer Goods',
     heroHeadline: 'Tối Ưu Vận Hành Bán Lẻ: Cắt Giảm Chi Phí Tuyển Dụng & Sàng Lọc CV Tự Động',
     heroSubheadline: 'Giải quyết triệt để nút thắt tuyển dụng nhân sự chuỗi: rút ngắn thời gian lọc hồ sơ từ 3 ngày xuống 2 giờ, tiết kiệm 40% chi phí tuyển dụng thực tế.',
-    heroImage: '/assets/vietnam-retail-store.jpg',
     marketContext: 'Bạn mở rộng chuỗi cửa hàng, tuyển dụng liên tục nhưng đội HR 4 người luôn kiệt sức vì hàng trăm CV đổ về mỗi đợt. Phần lớn thời gian của họ trôi qua vào việc đọc hồ sơ rác, gọi điện xác nhận ca kíp và đặt lịch hẹn. Đây không phải bài toán thiếu người — đây là bài toán quy trình thủ công đang tiêu tốn ngân sách tuyển dụng mỗi tháng.',
     challenges: [
       {
@@ -76,7 +81,6 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         { value: '+25%', label: 'Tỷ lệ ứng viên đạt yêu cầu vào phỏng vấn' },
       ],
       caseUrl: '/case-studies/toi-uu-chi-phi-tuyen-dung-hr-ai',
-      image: '/assets/vietnam-retail-store.jpg',
     },
     solutions: [
       {
@@ -114,8 +118,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Manufacturing & Industrial',
     heroHeadline: 'Kiểm Soát Lỗi Tự Động: Đạt Độ Chính Xác 99.8% Bằng Thị Giác Máy Tính',
     heroSubheadline: 'Loại bỏ hoàn toàn sự phụ thuộc vào kiểm tra thủ công bằng mắt thường. Camera AI giám sát chuyền sản xuất 24/7, hạ tỷ lệ lỗi xuống 1.5%.',
-    heroImage: '/assets/vietnam-manufacturing-line.jpg',
-    marketContext: 'Trong nhà máy cơ khí chính xác, công nhân kiểm định (QA/QC) phải soi hàng nghìn linh kiện mỗi ngày dưới ánh đèn chói. Sau 4 tiếng liên tục, mắt bắt đầu mỏi và sai sót xảy ra. Một vết nứt vi mô bị bỏ sót lọt ra thị trường có thể hủy hoại cả hợp đồng xuất khẩu. Tự động hóa bằng thị giác AI là cách duy nhất để kiểm soát chất lượng đồng nhất 100% chi tiết.',
+    marketContext: 'Trong nhà máy cơ khí chính xác, công nhân kiểm định (QA/QC) phải soi hàng nghìn linh kiện mỗi ngày dưới ánh đèn chói. Sau 4 tiếng liên tục, mắt bắt đầu mỏi và sai sót xảy ra. Một vết nứt vi mô bị bỏ sót lọt ra thị trường có thể hủy hoại cả hợp đồng xuất khẩu. Tự động hóa bằng thị giác AI là giải pháp tối ưu để kiểm soát chất lượng đồng nhất 100% chi tiết.',
     challenges: [
       {
         title: 'Thực tế khó chịu: Mỏi mắt và sai sót trong kiểm định thủ công',
@@ -144,7 +147,6 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         { value: '24/7', label: 'Vận hành giám sát liên tục không gián đoạn' },
       ],
       caseUrl: '/case-studies/ai-auditor-manufacturing',
-      image: '/assets/vietnam-manufacturing-line.jpg',
     },
     solutions: [
       {
@@ -182,12 +184,11 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'B2B Professional Services',
     heroHeadline: 'Đóng Gói Tri Thức Chuyên Gia: Tăng Tốc x5 Sản Xuất Tài Liệu & Content B2B',
     heroSubheadline: 'Không còn cảnh chuyên gia phải ngồi gõ từng proposal hay marketing bế tắc vì thiếu bài viết kỹ thuật. Tăng trưởng organic traffic B2B bền vững với Content Factory chuẩn brand voice.',
-    heroImage: '/assets/vietnam-b2b-office.jpg',
     marketContext: 'Trong các công ty tư vấn, luật, tài chính hay công nghệ B2B, tài sản quý giá nhất là tri thức của các chuyên gia đầu ngành. Nhưng các chuyên gia này luôn bận rộn với dự án của khách hàng. Kết quả là hồ sơ đề xuất (proposal) mất hàng tuần mới soạn xong, còn kênh marketing nội dung thì chết đứng vì không ai có thời gian viết bài phân tích chuyên sâu.',
     challenges: [
       {
         title: 'Thực tế khó chịu: Tri thức nằm trong đầu một vài cá nhân',
-        description: 'Khi nhân sự kỳ cựu bận hoặc nghỉ việc, toàn bộ quy chuẩn kỹ thuật và kinh nghiệm thực chiến bị gián đoạn, nhân sự mới mất nhiều thời gian để nắm bắt.',
+        description: 'Khi nhân sự kỳ cựu bận hoặc nghỉ việc, toàn bộ quy chuẩn kỹ thuật và kinh nghiệm thực tế bị gián đoạn, nhân sự mới mất nhiều thời gian để nắm bắt.',
         impact: 'Chất lượng tư vấn không đồng đều, phụ thuộc hoàn toàn vào một vài cá nhân chủ chốt.',
       },
       {
@@ -212,7 +213,6 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         { value: '-65%', label: 'Thời gian soạn thảo proposal đấu thầu (case Dentsu)' },
       ],
       caseUrl: '/case-studies/content-factory-b2b-marketing',
-      image: '/assets/vietnam-b2b-office.jpg',
     },
     solutions: [
       {
@@ -250,7 +250,6 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Real Estate & PropTech',
     heroHeadline: 'Tăng Tốc Kinh Doanh BĐS: Tự Động Hóa Chăm Sóc Khách Hàng & Video Thực Địa',
     heroSubheadline: 'Giải phóng 80% thời gian tương tác thủ công ban đầu của môi giới. Nhân sự kinh doanh tự sản xuất video hiện trường và kịch bản tư vấn bằng AI ngay trên điện thoại di động.',
-    heroImage: '/assets/vietnam-retail-store.jpg',
     marketContext: 'Trong bối cảnh thị trường bất động sản cạnh tranh khốc liệt, khách hàng đòi hỏi phản hồi thông tin giỏ hàng, bảng tính dòng tiền và video tiến độ hạ tầng trong vài phút. Nhưng phần lớn sàn giao dịch và đội ngũ môi giới vẫn hoạt động thủ công: tra cứu giỏ hàng qua tin nhắn rời rạc, chờ phòng marketing dựng từng video thực địa và bỏ quên 70% tệp khách hàng cũ. Đơn vị nào phản hồi chậm quá 15 phút, khách hàng sẽ chuyển sang đơn vị phân phối khác.',
     challenges: [
       {
@@ -273,14 +272,13 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       title: 'AI Sales Enablement & Lead Reactivation Cho Mạng Lưới 500+ Môi Giới BĐS',
       client: 'Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes)',
       scale: '500+ Chuyên viên Kinh doanh BĐS · Hàng nghìn lead/tháng',
-      description: 'Sunext triển khai Trụ cột 2 (Đào tạo thực chiến tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.',
+      description: 'Sunext triển khai Trụ cột 2 (Đào tạo năng lực tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.',
       metrics: [
         { value: '80%', label: 'Tự động hóa tương tác ban đầu với khách hàng' },
         { value: '+200%', label: 'Sản lượng video thực địa do nhân viên tự sản xuất' },
         { value: '< 5 phút', label: 'Thời gian phản hồi thông tin dự án & giỏ hàng' },
       ],
       caseUrl: '/case-studies/vinhomes-ai-sales-enablement',
-      image: '/assets/vietnam-retail-store.jpg',
     },
     solutions: [
       {
@@ -288,7 +286,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
         pillarId: 'nang-luc-doi-ngu',
         pillarName: 'Trụ cột 2: Năng lực đội ngũ',
         description: 'Quy trình sản xuất video thực địa, viết kịch bản dẫn và tạo giọng đọc thuyết minh AI chuyên nghiệp ngay trên điện thoại di động.',
-        deliverables: ['Mobile AI Video Workflow', 'Bộ template kịch bản dự án chuẩn', 'Khóa huấn luyện thực chiến tại hiện trường'],
+        deliverables: ['Mobile AI Video Workflow', 'Bộ template kịch bản dự án chuẩn', 'Khóa huấn luyện trực tiếp tại hiện trường'],
       },
       {
         name: 'Smart Lead Reactivation & Virtual Project Assistant',
@@ -309,6 +307,140 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       { phase: 'Giai đoạn 1 (Tuần 1-3)', duration: '3 tuần', objective: 'Khảo sát tài liệu dự án, cấu hình Trợ lý ảo tra cứu giỏ hàng & đào tạo Tầng 1 cho 50 môi giới nòng cốt.' },
       { phase: 'Giai đoạn 2 (Tuần 4-8)', duration: '5 tuần', objective: 'Chuẩn hóa quy trình sản xuất video thực địa trên di động và tích hợp kịch bản kích hoạt lại lead cũ.' },
       { phase: 'Giai đoạn 3 (Tuần 9-12)', duration: '4 tuần', objective: 'Nhân rộng toàn bộ 500+ nhân sự kinh doanh, đo lường tỷ lệ chốt cọc và tối ưu chi phí quảng cáo.' },
+    ],
+  },
+  {
+    id: 'finance',
+    slug: 'tai-chinh-dau-tu',
+    name: 'Tài Chính, Chứng Khoán & Quản Lý Quỹ',
+    englishName: 'Finance, Securities & Asset Management',
+    heroHeadline: 'Tự Động Hóa Bóc Tách BCTC & Đối Soát Logic Số Liệu Hai Chiều',
+    heroSubheadline: 'Bóc tách báo cáo tài chính PDF scan phức tạp, đối soát logic hai chiều giữa Bảng cân đối và Lưu chuyển tiền tệ với 100% truy vết số trang nguồn gốc (Source Traceability).',
+    marketContext: 'Chi phí cơ hội và rủi ro sai sót số liệu trong các báo cáo định giá tài sản là vấn đề sống còn. Hàng chục chuyên viên phân tích phải dành 2–3 ngày làm việc cơ học cho mỗi doanh nghiệp chỉ để gõ lại số liệu từ PDF vào Excel. Rủi ro gõ sai một con số trên thuyết minh nợ vay hoặc dòng tiền có thể làm sai lệch mô hình định giá (DCF/PE), ảnh hưởng trực tiếp đến uy tín khuyến nghị đầu tư gửi khách hàng tổ chức. Yêu cầu bắt buộc của ngành là Source Traceability (truy vết số trang gốc), Audit Logging (nhật ký kiểm toán) và Cổng kiểm soát rủi ro No-Go khi số liệu mâu thuẫn.',
+    criticalNotice: FINANCE_COMPLIANCE_NOTICE,
+    challenges: [
+      {
+        title: 'Thực tế khó chịu: 2–3 ngày nhập liệu cơ học cho mỗi mã cổ phiếu',
+        description: 'Chuyên viên phân tích tài chính cấp cao mất phần lớn thời gian chỉ để bóc tách số liệu từ các file PDF báo cáo tài chính scan mờ, thuyết minh phức tạp.',
+        impact: 'Chậm nhịp ra quyết định đầu tư và khuyến nghị thị trường trong mùa cao điểm báo cáo quý.',
+      },
+      {
+        title: 'Lầm tưởng phổ biến: "Cứ dùng OCR thông thường là đọc được số liệu"',
+        description: 'OCR cơ bản thường xuyên nhận diện nhầm dấu phẩy/chấm, nhảy dòng bảng biểu và bỏ sót các ghi chú thuyết minh nhạy cảm ở chân trang.',
+        impact: 'Sai lệch mô hình định giá dòng tiền, phát sinh rủi ro tuân thủ nghiêm trọng.',
+      },
+      {
+        title: 'Bản chất vấn đề: Thiếu cơ chế đối soát logic & truy vết nguồn gốc (Source Traceability)',
+        description: 'Các công cụ AI phổ thông tạo ra ảo giác số liệu mà không có cơ chế gắn số trang, số dòng đối chiếu và bẫy kiểm tra cân đối kế toán.',
+        impact: 'Không thể vượt qua quy trình kiểm soát rủi ro (Risk Due Diligence) của các định chế tài chính.',
+      },
+    ],
+    centralCaseStudy: {
+      title: 'Kiến Trúc Thử Nghiệm AI Multi-Agent Bóc Tách BCTC Thô Có Truy Vết Nguồn',
+      client: 'Khối Nghiên Cứu — Vietcap Securities (VCI)',
+      scale: '30+ Chuyên viên phân tích · Hàng trăm doanh nghiệp niêm yết',
+      description: 'Thiết kế kiến trúc thử nghiệm AI Multi-Agent bóc tách BCTC thô, tích hợp cơ chế đối soát logic hai chiều giữa Bảng cân đối và Lưu chuyển tiền tệ kết hợp truy vết số trang trích xuất nguồn (Source Traceability).',
+      metrics: [
+        { value: '-75%', label: 'Thời gian bóc tách BCTC thô phòng lab' },
+        { value: '2 ngày → 3h', label: 'Chu kỳ xuất bản bản thảo báo cáo' },
+        { value: '100%', label: 'Dòng số liệu gắn nhãn số trang gốc' },
+      ],
+      caseUrl: '/case-studies/vietcap-ai-multi-agent-nghien-cuu-thi-truong',
+    },
+    solutions: [
+      {
+        name: 'Multi-Agent Financial Statement Extractor',
+        pillarId: 'nen-tang-cong-nghe',
+        pillarName: 'Trụ cột 4: Nền tảng công nghệ',
+        description: 'Cụm Agent chuyên bóc tách cấu trúc BCTC PDF scan phức tạp, tự động nhận diện thuyết minh và gắn thẻ nguồn gốc số liệu (Source Traceability).',
+        deliverables: ['Custom Financial Extraction Agent', 'Engine trích xuất bảng biểu PDF scan', 'Audit log lưu vết 100% phép biến đổi số liệu'],
+      },
+      {
+        name: 'Investment Second Brain & Research Assistant',
+        pillarId: 'kien-truc-du-lieu',
+        pillarName: 'Trụ cột 5: Kiến trúc dữ liệu',
+        description: 'Kho tri thức số hóa tập hợp báo cáo ngành, biên bản ĐHCĐ và dữ liệu vĩ mô; hỗ trợ chuyên viên tra cứu nhanh các chỉ số quá khứ trong 30 giây.',
+        deliverables: ['Dedicated Financial RAG Tenant', 'Semantic Search trên tài liệu ĐHCĐ', 'Trích dẫn đối chiếu văn bản nguồn'],
+      },
+      {
+        name: 'Financial Audit Gate & Anomaly Detection',
+        pillarId: 'governance-van-hanh',
+        pillarName: 'Trụ cột 6: Quản trị & Vận hành',
+        description: 'Cổng kiểm soát rủi ro tự động đối chiếu logic kế toán giữa các bảng báo cáo; tự động kích hoạt trạng thái No-Go khi có sai số.',
+        deliverables: ['Rule-engine kiểm tra cân đối kế toán', 'Cảnh báo rủi ro số liệu tự động', 'Quy trình Human-in-the-loop duyệt báo cáo'],
+      },
+    ],
+    roadmap: [
+      { phase: 'Giai đoạn 1 (Tuần 1-2)', duration: '2 tuần', objective: 'Khảo sát cấu trúc tài liệu PDF scan mẫu, thiết lập ranh giới an toàn Tier 3A và ký kết DPA.' },
+      { phase: 'Giai đoạn 2 (Tuần 3-6)', duration: '4 tuần', objective: 'Xây dựng pipeline Multi-Agent bóc tách bảng cân đối/lưu chuyển tiền tệ và tích hợp cơ chế đối soát.' },
+      { phase: 'Giai đoạn 3 (Tuần 7-10)', duration: '4 tuần', objective: 'Chạy thử nghiệm Controlled Run trên 50 mã cổ phiếu mẫu, đo lường độ chính xác và đào tạo Tầng 2-3 cho đội ngũ phân tích.' },
+    ],
+  },
+  {
+    id: 'healthcare',
+    slug: 'y-te-suc-khoe',
+    name: 'Y Tế, Bệnh Viện & Chăm Sóc Sức Khỏe',
+    englishName: 'Healthcare & Hospital Administration',
+    heroHeadline: 'Số Hóa Thủ Tục Hành Chính Y Tế & Hỗ Trợ Tra Cứu Phác Đồ Dưới Quyền Bác Sĩ',
+    heroSubheadline: 'Giải tỏa 30-40% áp lực thủ tục giấy tờ hành chính cho y bác sĩ và điều dưỡng. Trợ lý ảo phân luồng tiếp đón 24/7 và tra cứu phác đồ với nguyên tắc Non-negotiable Clinical Boundary tuyệt đối.',
+    marketContext: 'Gánh nặng thủ tục giấy tờ đè nặng lên thời gian thăm khám trực tiếp của y bác sĩ. Bác sĩ và điều dưỡng mất từ 30% đến 40% thời lượng làm việc chỉ để gõ biên bản khám, nhập thông tin bảo hiểm và tra cứu lịch sử bệnh án phân tán. Tình trạng này gây ùn ứ tại các quầy tiếp đón và giảm chất lượng tương tác giữa bác sĩ với người bệnh. Ứng dụng AI trong y tế đòi hỏi sự chuẩn mực tuyệt đối về ranh giới lâm sàng và bảo mật dữ liệu sức khỏe cá nhân.',
+    criticalNotice: HEALTHCARE_CLINICAL_BOUNDARY_NOTICE,
+    challenges: [
+      {
+        title: 'Thực tế khó chịu: 30-40% giờ công của y bác sĩ dành cho nhập liệu hành chính',
+        description: 'Bác sĩ và điều dưỡng bị quá tải bởi việc ghi chép biên bản khám bệnh, tóm tắt bệnh án và tra cứu lịch sử khám phân tán trên nhiều phần mềm.',
+        impact: 'Ùn ứ tại quầy tiếp đón, rút ngắn thời gian tư vấn trực tiếp và lắng nghe người bệnh.',
+      },
+      {
+        title: 'Lầm tưởng nguy hiểm: "Để AI tự động chẩn đoán và gợi ý toa thuốc"',
+        description: 'Ảo giác và dung sai của AI trong lâm sàng là rủi ro không thể chấp nhận đối với an toàn tính mạng bệnh nhân và trách nhiệm pháp lý bệnh viện.',
+        impact: 'Nguy cơ tai biến y khoa và vi phạm nghiêm trọng quy chuẩn hành nghề y.',
+      },
+      {
+        title: 'Bản chất vấn đề: Cần giải phóng khâu hành chính và tra cứu, bảo toàn quyền chỉ định của Bác sĩ',
+        description: 'Cần phân định ranh giới nghiêm ngặt: AI chỉ làm nhiệm vụ tiếp đón hành chính và tìm kiếm ngữ nghĩa văn bản phác đồ; bác sĩ giữ 100% quyền quyết định chuyên môn.',
+        impact: 'Bảo vệ an toàn bệnh nhân, tuân thủ pháp luật và nâng cao năng suất phục vụ.',
+      },
+    ],
+    centralCaseStudy: {
+      title: 'Đề Án Chuyển Đổi Số Tiếp Đón & Quản Trị Dữ Liệu Bệnh Viện (An Sinh / Trung Sơn Pharma)',
+      client: 'Hệ Thống Y Tế & Chăm Sóc Sức Khỏe Tư Nhân',
+      scale: 'Chuỗi cơ sở y tế · Hàng nghìn lượt tiếp đón/ngày',
+      description: 'Tái cấu trúc quy trình tiếp đón người bệnh ban đầu, triển khai Chatbot AI hỗ trợ đăng ký lịch hẹn hành chính 24/7 và tự động hóa tổng hợp ghi chú hành chính của điều dưỡng, tuân thủ nghiêm ngặt ranh giới phi lâm sàng.',
+      metrics: [
+        { value: '-50%', label: 'Thời gian chờ đợi tại quầy tiếp đón' },
+        { value: '-30%', label: 'Giờ công hành chính điều dưỡng ca trực' },
+        { value: '+5-7 phút', label: 'Thời gian bác sĩ lắng nghe người bệnh' },
+      ],
+      caseUrl: '',
+    },
+    solutions: [
+      {
+        name: 'Trợ Lý Tiếp Đón & Đặt Hẹn Hành Chính 24/7',
+        pillarId: 'mo-hinh-van-hanh',
+        pillarName: 'Trụ cột 3: Mô hình vận hành',
+        description: 'Tiếp nhận thông tin hành chính sơ bộ qua Zalo/Website, hướng dẫn chuẩn bị giấy tờ/BHYT và phân luồng khung giờ khám, giảm ùn ứ tại sảnh tiếp đón.',
+        deliverables: ['Chatbot tiếp đón hành chính 24/7', 'Hệ thống điều phối lịch khám đa kênh', 'Phân luồng thông tin phòng ban'],
+      },
+      {
+        name: 'Chuẩn Hóa Hồ Sơ & Số Hóa Ghi Chú Phi Lâm Sàng',
+        pillarId: 'workflow-automation',
+        pillarName: 'Trụ cột 2: Quy trình tự động',
+        description: 'Tự động trích xuất và số hóa các chứng từ, kết quả xét nghiệm định dạng văn bản phi cấu trúc thành bản tổng hợp hồ sơ hành chính phục vụ bác sĩ đối soát nhanh.',
+        deliverables: ['Pipeline xử lý văn bản hành chính y tế', 'Mẫu tóm tắt bệnh án phi lâm sàng', 'Tích hợp bảo mật dữ liệu Nghị định 13'],
+      },
+      {
+        name: 'Tra Cứu Tài Liệu Y Khoa & Phác Đồ Bộ Y Tế Đã Phê Duyệt',
+        pillarId: 'kien-truc-du-lieu',
+        pillarName: 'Trụ cột 5: Kiến trúc dữ liệu',
+        description: 'Hỗ trợ y bác sĩ tra cứu nhanh tài liệu hướng dẫn điều trị của Bộ Y tế đã được Hội đồng Y khoa thẩm định nạp sẵn vào kho dữ liệu; AI chỉ trích dẫn nguyên văn văn bản nguồn.',
+        deliverables: ['Hệ thống Medical Reference RAG', 'Kho dữ liệu phác đồ Bộ Y tế chuẩn hóa', 'Chốt chặn Doctor-in-the-loop bắt buộc'],
+      },
+    ],
+    roadmap: [
+      { phase: 'Giai đoạn 1 (Tuần 1-3)', duration: '3 tuần', objective: 'Thẩm định an toàn dữ liệu bệnh nhân, ký kết DPA và thiết lập hạ tầng bảo mật Tier 2 Dedicated Tenant.' },
+      { phase: 'Giai đoạn 2 (Tuần 4-8)', duration: '5 tuần', objective: 'Triển khai Trợ lý tiếp đón hành chính 24/7 và kiểm thử quy trình điều phối người bệnh tại sảnh.' },
+      { phase: 'Giai đoạn 3 (Tuần 9-12)', duration: '4 tuần', objective: 'Xây dựng kho tra cứu phác đồ tham khảo cho bác sĩ và tổ chức sát hạch Tầng 1-2 cho nhân viên y tế.' },
     ],
   },
 ];

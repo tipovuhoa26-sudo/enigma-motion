@@ -13,6 +13,8 @@ import {
   ShieldCheck,
   Calendar,
   Layers,
+  TrendingUp,
+  Activity,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -25,6 +27,8 @@ const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   manufacturing: Factory,
   'b2b-services': Briefcase,
   'real-estate': Building2,
+  finance: TrendingUp,
+  healthcare: Activity,
 };
 
 export default function IndustryIndexPage() {
@@ -157,7 +161,7 @@ export default function IndustryIndexPage() {
                 </Link>
                 <Link href="/danh-gia-san-sang-ai">
                   <Button variant="secondary" size="md" className="rounded-full text-xs">
-                    Đo Lường Sẵn Sàng 5 Phút
+                    Đo Lường Sẵn Sàng (12 Câu)
                   </Button>
                 </Link>
               </div>

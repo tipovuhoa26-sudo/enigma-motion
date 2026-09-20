@@ -18,6 +18,8 @@ import {
   Briefcase,
   Building2,
   Clock,
+  TrendingUp,
+  Activity,
 } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -30,6 +32,8 @@ const INDUSTRY_ICONS: Record<string, React.ElementType> = {
   manufacturing: Factory,
   'b2b-services': Briefcase,
   'real-estate': Building2,
+  finance: TrendingUp,
+  healthcare: Activity,
 };
 
 interface PageProps {
@@ -110,6 +114,21 @@ export default function IndustryDetailPage({ params }: PageProps) {
               </p>
             </div>
 
+            {/* Critical Boundary / Compliance Notice if present */}
+            {industry.criticalNotice && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-amber-500/10 border border-amber-500/30 text-[#17151A] mb-12">
+                <div className="flex items-center gap-2 mb-3">
+                  <ShieldCheck className="w-5 h-5 text-amber-800 shrink-0" />
+                  <h3 className="text-sm sm:text-base font-semibold text-amber-950 uppercase tracking-wide">
+                    {industry.criticalNotice.title}
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-sm text-amber-950/85 leading-relaxed font-normal">
+                  {industry.criticalNotice.body}
+                </p>
+              </div>
+            )}
+
             {/* Section 1: 3 Điểm Nghẽn Ngành */}
             <div className="mb-16">
               <div className="flex items-center gap-2 mb-3">
@@ -119,28 +138,25 @@ export default function IndustryDetailPage({ params }: PageProps) {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A] mb-6">
-                Những nút thắt khiến biên lợi nhuận bị bào mòn
+                Những thách thức khiến doanh nghiệp {industry.name} trì hoãn hoặc lãng phí ngân sách
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {industry.challenges.map((ch, idx) => (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {industry.challenges.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-white border border-black/10 shadow-2xs flex flex-col justify-between"
+                    className="p-6 rounded-2xl bg-white border border-black/10 shadow-2xs flex flex-col justify-between"
                   >
                     <div>
-                      <span className="w-6 h-6 rounded-full bg-rose-100 text-rose-800 text-xs font-mono flex items-center justify-center mb-3">
-                        0{idx + 1}
-                      </span>
-                      <h3 className="font-semibold text-sm text-[#17151A] mb-2 leading-snug">
-                        {ch.title}
-                      </h3>
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-4">
-                        {ch.description}
-                      </p>
+                      <div className="w-6 h-6 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold flex items-center justify-center mb-4">
+                        {idx + 1}
+                      </div>
+                      <h3 className="text-base font-semibold text-[#17151A] mb-2">{item.title}</h3>
+                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-4">{item.description}</p>
                     </div>
-                    <div className="p-3 rounded-xl bg-rose-50/70 border border-rose-200 text-[11px] text-rose-900 leading-snug">
-                      <strong>Hậu quả: </strong>{ch.impact}
+                    <div className="pt-4 border-t border-black/5 text-[11px] text-[#17151A]/80 font-medium">
+                      <span className="text-amber-700 font-semibold block mb-0.5">Tác động thực tế:</span>
+                      {item.impact}
                     </div>
                   </div>
                 ))}
@@ -167,13 +183,19 @@ export default function IndustryDetailPage({ params }: PageProps) {
                   <p className="text-sm text-[#17151A]/80 leading-relaxed mb-6">
                     {industry.centralCaseStudy.description}
                   </p>
-                  <Link
-                    href={industry.centralCaseStudy.caseUrl}
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-[#17151A] hover:underline"
-                  >
-                    <span>Xem toàn bộ hồ sơ kỹ thuật case study</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
+                  {industry.centralCaseStudy.caseUrl ? (
+                    <Link
+                      href={industry.centralCaseStudy.caseUrl}
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#17151A] hover:underline"
+                    >
+                      <span>Xem toàn bộ hồ sơ kỹ thuật case study</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  ) : (
+                    <div className="inline-flex items-center gap-1.5 text-xs text-[#6E6E6E] italic">
+                      <span>Dự án triển khai nội bộ · Bảo vệ thông tin theo thỏa thuận NDA</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="lg:col-span-5 bg-white/80 rounded-2xl p-6 border border-black/5 flex flex-col justify-around gap-4 shadow-2xs">
@@ -250,7 +272,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                 </span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-light text-white mb-4">
-                Từ khảo sát đến bàn giao toàn diện
+                Từ khảo sát đến bàn giao hoàn chỉnh
               </h2>
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-8">
                 Quy trình thực thi có cấu trúc chặt chẽ, chia nhỏ rủi ro thành các cột mốc kiểm thử định lượng.

@@ -103,9 +103,15 @@ export function Footer() {
             <span>Bảo Mật Chuẩn Doanh Nghiệp • Cam Kết NDA</span>
           </div>
           <div className="flex flex-col gap-1.5 pt-1 text-xs text-[#6E6E6E]">
-            <span className="leading-snug">• Ký kết thỏa thuận NDA bảo mật trước khi khảo sát</span>
-            <span className="leading-snug">• Dữ liệu doanh nghiệp không dùng để train mô hình công khai</span>
-            <span className="leading-snug">• Hỗ trợ triển khai Private AI & Local LLM Mesh</span>
+            <Link href="/phap-ly-bao-mat#ip" className="hover:text-[#17151A] transition-colors leading-snug">
+              • Phân định quyền sở hữu trí tuệ 100%
+            </Link>
+            <Link href="/phap-ly-bao-mat#dpa" className="hover:text-[#17151A] transition-colors leading-snug">
+              • Thỏa thuận DPA & 4 tầng an toàn dữ liệu
+            </Link>
+            <Link href="/phap-ly-bao-mat#sla" className="hover:text-[#17151A] transition-colors leading-snug">
+              • Chính sách bảo hành & Cam kết SLA
+            </Link>
           </div>
         </div>
       </div>

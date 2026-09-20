@@ -79,7 +79,7 @@ export default function TeamLeadershipPage() {
     },
     {
       metric: '500.000+',
-      label: 'Cộng đồng theo dõi & học tập AI thực chiến',
+      label: 'Cộng đồng theo dõi & ứng dụng AI trong thực tế',
       subtext: 'Mạng lưới chuyên gia, quản lý và nhân sự ứng dụng AI trong công việc hàng ngày (cập nhật 2026)',
     },
   ];
@@ -196,7 +196,7 @@ export default function TeamLeadershipPage() {
               <div className="lg:col-span-8 space-y-6">
                 <div className="space-y-4 text-sm text-[#17151A] leading-relaxed">
                   <p className="text-base font-medium text-[#17151A]">
-                    &ldquo;Mục tiêu của chuyển đổi AI không phải là tạo ra những bản demo hào nhoáng để báo cáo. Mục tiêu duy nhất là biến AI thành một người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, giúp doanh nghiệp tiết kiệm hàng nghìn giờ công cơ học và bảo vệ biên lợi nhuận.&rdquo;
+                    &ldquo;Mục tiêu của chuyển đổi AI không phải là tạo ra những bản demo hào nhoáng để báo cáo. Mục tiêu cốt lõi là biến AI thành một người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, giúp doanh nghiệp tiết kiệm hàng nghìn giờ công cơ học và bảo vệ biên lợi nhuận.&rdquo;
                   </p>
                   <p className="text-[#6E6E6E]">
                     Với hơn 10 năm trực tiếp điều hành và triển khai trong lĩnh vực công nghệ số, AI và tăng trưởng doanh nghiệp, Ông Nguyễn Phước Vĩnh Hưng đã chủ trì các chương trình đào tạo cho hàng loạt tổ chức, trường đại học và định chế tài chính hàng đầu tại Việt Nam.
@@ -232,14 +232,14 @@ export default function TeamLeadershipPage() {
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-emerald-700" />
                 <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-semibold">
-                  MẠNG LƯỚI 11 CHUYÊN GIA ĐA LĨNH VỰC · FACULTY NETWORK
+                  MẠNG LƯỚI 12 CHUYÊN GIA ĐA LĨNH VỰC · FACULTY NETWORK
                 </span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight mb-3">
                 Đội Ngũ Cố Vấn & Giảng Viên Thực Chiến Đa Ngành
               </h3>
               <p className="text-sm text-[#6E6E6E] leading-relaxed max-w-3xl font-light">
-                Sunext không phải một cá nhân dạy công cụ AI chung chung. Chúng tôi xây dựng mạng lưới 11 chuyên gia kỳ cựu từng giữ trọng trách điều hành cấp cao tại các tổ chức như HOSE, Golden Gate Group, Carlsberg, Lotte, Central Retail... trực tiếp chuyển giao phương pháp luận AI vào đúng bài toán chuyên môn sâu.
+                Sunext không phải một cá nhân dạy công cụ AI chung chung. Chúng tôi xây dựng mạng lưới 12 chuyên gia kỳ cựu từng giữ trọng trách điều hành cấp cao tại các tổ chức như HOSE, Golden Gate Group, Carlsberg, Lotte, Central Retail... trực tiếp chuyển giao phương pháp luận AI vào đúng bài toán chuyên môn sâu.
               </p>
             </div>
 
@@ -610,7 +610,7 @@ export default function TeamLeadershipPage() {
               </Link>
               <Link href="/danh-gia-san-sang-ai">
                 <Button variant="secondary" size="lg" className="rounded-full text-xs font-semibold px-6 border-white/20 text-white hover:bg-white/10">
-                  <span>Làm Bài Test Đo Lường 5 Phút</span>
+                  <span>Làm Bài Chẩn Đoán 12 Câu</span>
                 </Button>
               </Link>
             </div>

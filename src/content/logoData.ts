@@ -208,7 +208,7 @@ export const ORGANIZATION_LOGOS: OrganizationLogo[] = [
     logoUrl: '/logos/uef.png',
     brandColor: '#C8102E',
     brandBg: '#FCF0F2',
-    description: 'Tổ chức các chuyên đề AI thực chiến và đào tạo kỹ năng ứng dụng công nghệ cho sinh viên & giảng viên.',
+    description: 'Tổ chức các chuyên đề ứng dụng AI trong thực tế và đào tạo kỹ năng ứng dụng công nghệ cho sinh viên & giảng viên.',
   },
   // 18. NTTU
   {
@@ -520,7 +520,7 @@ export const ORGANIZATION_LOGOS: OrganizationLogo[] = [
     logoUrl: '/logos/lazada.png',
     brandColor: '#0F146D',
     brandBg: '#EFF0F8',
-    description: 'Học viên tham gia các khóa đào tạo AI Marketing & ứng dụng Prompt Engineering thực chiến.',
+    description: 'Học viên tham gia các khóa đào tạo AI Marketing & ứng dụng Prompt Engineering theo nghiệp vụ.',
   },
   // 42. Tiki
   {
@@ -546,7 +546,7 @@ export const ORGANIZATION_LOGOS: OrganizationLogo[] = [
     logoUrl: '/logos/hoa_phat.png',
     brandColor: '#003A70',
     brandBg: '#EDF3F8',
-    description: 'Đề án đào tạo nâng cao năng lực ứng dụng AI thực chiến cho cán bộ quản lý và khối tác nghiệp.',
+    description: 'Đề án đào tạo nâng cao năng lực ứng dụng AI vào công việc cho cán bộ quản lý và khối tác nghiệp.',
   },
   // 44. HOSE (Sở GDCK TP.HCM): gỡ tạm — cơ quan bán nhà nước, cần xác nhận
   // trước khi dùng logo dù chỉ để minh họa lý lịch cá nhân của cố vấn.

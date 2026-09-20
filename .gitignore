@@ -39,3 +39,7 @@ next-env.d.ts
 .codegraph/daemon.log
 .codegraph/daemon.pid
 .codegraph/codegraph.sock*
+
+# Local assistant locks & cache
+.claude/
+

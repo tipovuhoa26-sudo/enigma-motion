@@ -98,7 +98,7 @@ function HrRecruitmentVisual({ compact, className }: { compact?: boolean; classN
               <Zap className="w-3 h-3 text-emerald-400" /> AI Resume Screener (Tự Động)
             </span>
             <span className="text-emerald-300 font-bold bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30">
-              2 Giờ (-97% Thời gian)
+              2 Giờ (3 Ngày → 2 Giờ)
             </span>
           </div>
           <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/10 relative">
@@ -352,12 +352,12 @@ function VinhomesSalesMeshVisual({ compact, className }: { compact?: boolean; cl
         <div className="grid grid-cols-2 gap-2 text-xs font-mono">
           <div className="bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20 flex flex-col justify-between">
             <span className="text-[10px] text-zinc-400">TỰ ĐỘNG TẠO VIDEO DỰ ÁN</span>
-            <span className="text-sm text-amber-300 font-bold mt-1">45s / Video Thực Địa</span>
+            <span className="text-sm text-amber-300 font-bold mt-1">x3 Lần / Sản Xuất Video</span>
             <span className="text-[9px] text-emerald-400 mt-0.5">Tự động gắn Brand Voice & Hotline</span>
           </div>
           <div className="bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20 flex flex-col justify-between">
             <span className="text-[10px] text-zinc-400">KÍCH HOẠT LEAD CŨ</span>
-            <span className="text-sm text-emerald-400 font-bold mt-1">+35% Phản Hồi</span>
+            <span className="text-sm text-emerald-400 font-bold mt-1">&lt;5 Phút Phản Hồi</span>
             <span className="text-[9px] text-zinc-400 mt-0.5">Cá nhân hóa kịch bản theo giỏ hàng</span>
           </div>
         </div>
@@ -422,12 +422,12 @@ function DentsuPitchDeckVisual({ compact, className }: { compact?: boolean; clas
           <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">-65%</span>
         </div>
         <div className="bg-teal-950/30 p-2 rounded-xl border border-teal-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Tốc Độ Đấu Thầu</span>
-          <span className="text-base sm:text-lg font-bold text-[#A3E635] font-mono">x3 Tốc Độ</span>
+          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Phản Hồi Chiến Dịch</span>
+          <span className="text-base sm:text-lg font-bold text-[#A3E635] font-mono">+35%</span>
         </div>
         <div className="bg-teal-950/30 p-2 rounded-xl border border-teal-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Chuẩn Brand Deck</span>
-          <span className="text-base sm:text-lg font-bold text-teal-300 font-mono">100% Đồng Nhất</span>
+          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Số Lượng Thầu/Quý</span>
+          <span className="text-base sm:text-lg font-bold text-teal-300 font-mono">x2 Lần</span>
         </div>
       </div>
     </div>

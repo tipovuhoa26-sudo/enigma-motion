@@ -77,7 +77,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             </Link>
             <Link href="/danh-gia-san-sang-ai">
               <Button variant="outline" size="md" className="rounded-full bg-white/40 backdrop-blur-xs font-medium cursor-pointer">
-                Đo Độ Sẵn Sàng (5 Phút)
+                Đo Độ Sẵn Sàng (12 Câu)
               </Button>
             </Link>
           </div>

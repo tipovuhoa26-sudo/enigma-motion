@@ -30,8 +30,13 @@ export function IndustryVisual({ slug, className = '', compact = false }: Indust
       return <ManufacturingIndustryVisual compact={compact} className={className} />;
     case 'dich-vu-b2b':
       return <B2bIndustryVisual compact={compact} className={className} />;
+    case 'bat-dong-san':
     case 'bat-dong-san-nha-pho':
       return <RealEstateIndustryVisual compact={compact} className={className} />;
+    case 'tai-chinh-dau-tu':
+      return <FinanceIndustryVisual compact={compact} className={className} />;
+    case 'y-te-suc-khoe':
+      return <HealthcareIndustryVisual compact={compact} className={className} />;
     default:
       return <RetailIndustryVisual compact={compact} className={className} />;
   }
@@ -256,3 +261,114 @@ function RealEstateIndustryVisual({ compact, className }: { compact?: boolean; c
     </div>
   );
 }
+
+// 5. Tài chính, Chứng khoán & Quản lý quỹ (Finance & Investment)
+function FinanceIndustryVisual({ compact, className }: { compact?: boolean; className?: string }) {
+  return (
+    <div className={`relative w-full h-full min-h-[220px] bg-[#0A1214] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(#14b8a612_1px,transparent_1px)] bg-[size:16px_16px]" />
+      <div className="absolute top-0 right-1/4 w-60 h-60 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Header */}
+      <div className="relative z-10 flex items-center justify-between border-b border-teal-500/20 pb-3">
+        <div className="flex items-center gap-2">
+          <TrendingUp className="w-3.5 h-3.5 text-teal-400" />
+          <span className="text-[11px] font-mono tracking-wider text-teal-300 uppercase font-semibold">
+            FINANCE & SECURITIES · FINANCIAL TELEMETRY
+          </span>
+        </div>
+        <span className="text-[10px] font-mono text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-500/30">
+          SOURCE TRACEABILITY 100%
+        </span>
+      </div>
+
+      {/* Telemetry Graphic */}
+      <div className="relative z-10 my-auto py-2">
+        <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+          <div className="bg-teal-950/20 p-2.5 rounded-xl border border-teal-500/20">
+            <span className="text-[10px] text-zinc-400 block">MULTI-AGENT BCTC EXTRACTOR</span>
+            <span className="text-base text-teal-300 font-bold mt-1 block">2 Ngày ➔ 3 Giờ</span>
+            <span className="text-[9px] text-emerald-400 block">-75% Thời gian bóc tách PDF</span>
+          </div>
+          <div className="bg-teal-950/20 p-2.5 rounded-xl border border-teal-500/20">
+            <span className="text-[10px] text-zinc-400 block">FINANCIAL AUDIT GATE</span>
+            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">Zero Anomaly</span>
+            <span className="text-[9px] text-zinc-400 block">Đối soát cân đối & dòng tiền</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom KPIs */}
+      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-teal-500/20 text-center font-mono">
+        <div className="bg-teal-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Thời Gian Xử Lý</span>
+          <span className="text-sm sm:text-base font-bold text-emerald-400">-75%</span>
+        </div>
+        <div className="bg-teal-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Số Trang Nguồn</span>
+          <span className="text-sm sm:text-base font-bold text-teal-300">100% Trace</span>
+        </div>
+        <div className="bg-teal-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Kiểm Toán Dữ Liệu</span>
+          <span className="text-sm sm:text-base font-bold text-[#A3E635]">Audit Log</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// 6. Y tế, Bệnh viện & Chăm sóc sức khỏe (Healthcare)
+function HealthcareIndustryVisual({ compact, className }: { compact?: boolean; className?: string }) {
+  return (
+    <div className={`relative w-full h-full min-h-[220px] bg-[#0E1513] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
+      <div className="absolute inset-0 bg-[radial-gradient(#10b98112_1px,transparent_1px)] bg-[size:16px_16px]" />
+      <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Header */}
+      <div className="relative z-10 flex items-center justify-between border-b border-emerald-500/20 pb-3">
+        <div className="flex items-center gap-2">
+          <Activity className="w-3.5 h-3.5 text-emerald-400" />
+          <span className="text-[11px] font-mono tracking-wider text-emerald-300 uppercase font-semibold">
+            HEALTHCARE & HOSPITALS · ADMINISTRATIVE TRIAGE
+          </span>
+        </div>
+        <span className="text-[10px] font-mono text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+          NON-CLINICAL BOUNDARY
+        </span>
+      </div>
+
+      {/* Telemetry Graphic */}
+      <div className="relative z-10 my-auto py-2">
+        <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+          <div className="bg-emerald-950/20 p-2.5 rounded-xl border border-emerald-500/20">
+            <span className="text-[10px] text-zinc-400 block">TIẾP ĐÓN & ĐIỀU PHỐI 24/7</span>
+            <span className="text-base text-emerald-300 font-bold mt-1 block">-50% Chờ Đợi</span>
+            <span className="text-[9px] text-emerald-400 block">Phân luồng hành chính tự động</span>
+          </div>
+          <div className="bg-emerald-950/20 p-2.5 rounded-xl border border-emerald-500/20">
+            <span className="text-[10px] text-zinc-400 block">TRA CỨU PHÁC ĐỒ BỘ Y TẾ</span>
+            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">Doctor-in-the-loop</span>
+            <span className="text-[9px] text-zinc-400 block">Tham khảo văn bản nguồn</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom KPIs */}
+      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-emerald-500/20 text-center font-mono">
+        <div className="bg-emerald-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Thời Gian Chờ</span>
+          <span className="text-sm sm:text-base font-bold text-emerald-400">-50%</span>
+        </div>
+        <div className="bg-emerald-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Hành Chính ĐD</span>
+          <span className="text-sm sm:text-base font-bold text-emerald-300">-30% Giờ</span>
+        </div>
+        <div className="bg-emerald-950/30 p-2 rounded-xl">
+          <span className="text-[9px] text-zinc-400 uppercase block">Khám Trực Tiếp</span>
+          <span className="text-sm sm:text-base font-bold text-white">+5-7 Phút</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+

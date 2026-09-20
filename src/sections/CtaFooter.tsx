@@ -74,7 +74,7 @@ export function CtaFooter() {
           <Link href="/danh-gia-san-sang-ai">
             <Button variant="outline" size="lg" className="rounded-full bg-white font-medium text-sm">
               <Mail className="w-4 h-4 mr-2" />
-              <span>Đo Độ Sẵn Sàng (5 Phút)</span>
+              <span>Đo Độ Sẵn Sàng (12 Câu)</span>
             </Button>
           </Link>
         </div>

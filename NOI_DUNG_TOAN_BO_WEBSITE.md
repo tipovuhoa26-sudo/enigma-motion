@@ -1,6 +1,6 @@
 # TỔNG QUAN TOÀN BỘ NỘI DUNG WEBSITE SUNEXT
 > **Tài liệu kiểm kê & Lưu trữ nội dung toàn diện (Single Source of Content Truth)**
-> *Thời gian xuất file: 19:22:41 19/9/2026 | Đơn vị: Sunext Digital & AI Solutions*
+> *Thời gian xuất file: 12:34:51 20/9/2026 | Đơn vị: Sunext Digital & AI Solutions*
 
 ---
 
@@ -82,21 +82,21 @@
   - **Nội dung diễn giải**: Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.
   - **Chỉ số chứng minh**: **40%** (chi phí tuyển dụng tiết kiệm)
   - **Quy mô dự án**: *Chuỗi bán lẻ 500 nhân sự*
-  - **Ảnh minh họa**: `/assets/vietnam-retail-store.jpg`
+  - **Ảnh minh họa**: `undefined`
 
   #### Thẻ 02: Kết Nối Trực Tiếp Vào Hệ Thống Sẵn Có
   - **Chủ đề (Eyebrow)**: `Hạ tầng dữ liệu`
   - **Nội dung diễn giải**: Tích hợp hai chiều vào ERP, CRM và dây chuyền sản xuất. Hệ thống kích hoạt hành động theo thời gian thực, không phát sinh phần mềm phụ.
   - **Chỉ số chứng minh**: **99%** (độ chính xác kiểm định tự động)
   - **Quy mô dự án**: *Nhà máy cơ khí chính xác*
-  - **Ảnh minh họa**: `/assets/vietnam-manufacturing-line.jpg`
+  - **Ảnh minh họa**: `undefined`
 
   #### Thẻ 03: Nghiệm Thu Bằng Giờ Công Và P&L
   - **Chủ đề (Eyebrow)**: `Nghiệm thu dự án`
   - **Nội dung diễn giải**: Triển khai theo từng cột mốc rõ ràng. Nghiệm thu bằng chỉ số định lượng: giảm giờ xử lý, hạ tỷ lệ lỗi và tăng sản lượng thực tế.
   - **Chỉ số chứng minh**: **x5** (tốc độ sản xuất tài liệu kỹ thuật)
   - **Quy mô dự án**: *Doanh nghiệp B2B 200 nhân sự*
-  - **Ảnh minh họa**: `/assets/vietnam-b2b-office.jpg`
+  - **Ảnh minh họa**: `undefined`
 
 ### 2.4. Thống Kê Định Lượng (Stats Strip)
 - **99.8%**: Độ chính xác kiểm định cơ khí
@@ -179,7 +179,7 @@ Các điểm nhấn triển khai:
 - **Tagline**: *Vì sao mua ChatGPT cho cả công ty vẫn không ai dùng sau ba tháng*
 - **Tham chiếu Rewired**: `Talent Bench & Capabilities` | Trục đo lường: `Con người & năng lực đội ngũ`
 - **Gói dịch vụ Sunext phụ trách**: **Đào tạo & xây năng lực AI (Tầng 1 → Tầng 5)** (`Giai đoạn 2 · Enablement`)
-  > Chương trình đào tạo theo thang 5 tầng thực chiến: Foundation → Marketing AI → Agentics Automations → Pipeline Engineering → Custom Vision/LLM.
+  > Chương trình đào tạo theo thang 5 tầng năng lực: Foundation → Marketing AI → Agentics Automations → Pipeline Engineering → Custom Vision/LLM.
 
 #### Bối cảnh thực tế tại doanh nghiệp:
 > Bạn mua gói ChatGPT Team cho 50 người.
@@ -213,7 +213,7 @@ Các điểm nhấn triển khai:
   - Chỉ số: **3 ngày → 2h** (Thời gian xử lý CV) · **-40%** (Chi phí tuyển dụng) · **+25%** (Tỷ lệ ứng viên đạt yêu cầu)
   - Liên kết case study: `/case-studies/toi-uu-chi-phi-tuyen-dung-hr-ai/`
 - **Khách hàng**: Doanh nghiệp Dịch vụ B2B 200 nhân sự (B2B Professional Services - Quy mô 200 nhân sự)
-  - Câu chuyện: Đội ngũ marketing nội bộ 4 người trực tiếp làm chủ quy trình đóng gói tri thức (Tầng 2), biến kinh nghiệm thực chiến của các chuyên gia thành bài viết chuyên sâu chuẩn Brand Voice mà không phụ thuộc agency ngoài.
+  - Câu chuyện: Đội ngũ marketing nội bộ 4 người trực tiếp làm chủ quy trình đóng gói tri thức (Tầng 2), biến kinh nghiệm chuyên sâu của các chuyên gia thành bài viết chuyên sâu chuẩn Brand Voice mà không phụ thuộc agency ngoài.
   - Chỉ số: **x5** (Sản lượng content (50+ bài/tháng)) · **+60%** (Organic traffic sau 5 tháng) · **0đ** (Chi phí ngân sách phát sinh thêm)
   - Liên kết case study: `/case-studies/content-factory-b2b-marketing/`
 
@@ -278,7 +278,7 @@ Các điểm nhấn triển khai:
 > Một nền tảng công nghệ đúng nghĩa cho AI phải cắm trực tiếp vào hệ thống hiện tại, vận hành như một thành phần tự nhiên của hạ tầng doanh nghiệp.
 
 - **Tích hợp trực tiếp với hệ thống cốt lõi**: Kết nối SAP, Oracle, Microsoft Dynamics, Salesforce hay custom ERP nội bộ. AI đọc dữ liệu thật và ghi kết quả trực tiếp về nơi công việc diễn ra.
-- **Kết hợp AI với RPA (Robotic Process Automation)**: Tự động hóa toàn diện các tác vụ lặp lại xuyên phòng ban: đối chiếu chứng từ, trích xuất hóa đơn, cảnh báo rủi ro.
+- **Kết hợp AI với RPA (Robotic Process Automation)**: Tự động hóa các tác vụ lặp lại xuyên phòng ban: đối chiếu chứng từ, trích xuất hóa đơn, cảnh báo rủi ro.
 - **Kiến trúc bảo mật cấp doanh nghiệp**: Triển khai mô hình Private LLM hoặc Enterprise Gateway với mã hóa đầu cuối, tuân thủ nghiêm ngặt chính sách bảo mật nội bộ.
 
 #### Giải pháp của Sunext: "Cách Sunext giải trụ cột này"
@@ -378,7 +378,7 @@ Các điểm nhấn triển khai:
 - Dashboard giám sát chỉ số ứng dụng (Adoption Rate) và ROI thời gian thực.
 - Chương trình cố vấn Change Management giúp nhân sự hòa nhập tự nhiên với AI.
 - Bộ khung quản trị rủi ro, chính sách bảo mật và tiêu chuẩn kiểm thử tự động.
-- Lộ trình nhân rộng từ 1 use case sang hệ sinh thái đa tác vụ toàn diện.
+- Lộ trình nhân rộng từ 1 use case sang hệ sinh thái đa tác vụ.
 
 #### Dẫn chứng dự án thực tế:
 - **Khách hàng**: Doanh nghiệp Dịch vụ B2B 200 nhân sự (B2B Professional Services - Quy mô 200 nhân sự)
@@ -400,7 +400,7 @@ Các điểm nhấn triển khai:
 > Mỗi quý mở rộng, chuỗi bán lẻ 500 nhân sự cần tuyển từ 60 đến 80 vị trí mới. Nhưng cả bộ phận Nhân sự chỉ có vỏn vẹn 4 người. Họ mất trung bình 3 ngày làm việc thủ công cho mỗi vị trí chỉ để mở từng file hồ sơ, đối chiếu tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Khối lượng tác vụ lặp lại đè nặng khiến cả đội gần như phải dừng mọi hoạt động phát triển nhân sự khác trong mùa cao điểm.
 
 #### Giải pháp thực thi (The Solution):
-> Bước chuyển hóa không bắt đầu bằng việc mua công cụ. Đội ngũ HR trước tiên được đào tạo để hiểu rõ năng lực AI (Tầng 1) và áp dụng trực tiếp vào quy trình tuyển dụng nội bộ (Tầng 2). Sau khi quy trình được chuẩn hóa, AI Resume Screener mới được tích hợp thẳng vào hệ thống ATS quen thuộc của công ty. Hệ thống tự động trích xuất thông tin, chấm điểm tiêu chí và hỗ trợ tiếp nhận ứng viên 24/7. Đội HR bốn người lấy lại thời gian để tập trung vào việc mà máy không làm thay được: phỏng vấn chuyên sâu và thu hút ứng viên tốt nhất.
+> Bước chuyển hóa không bắt đầu bằng việc mua công cụ. Đội ngũ HR trước tiên được đào tạo để hiểu rõ năng lực AI (Tầng 1) và áp dụng trực tiếp vào quy trình tuyển dụng nội bộ (Tầng 2). Sau khi quy trình được chuẩn hóa, AI Resume Screener mới được tích hợp thẳng vào hệ thống ATS quen thuộc của công ty. Hệ thống tự động trích xuất thông tin, chấm điểm tiêu chí và hỗ trợ tiếp nhận ứng viên 24/7. Đội HR bốn người lấy lại thời gian để tập trung vào việc mà máy không làm thay được: phỏng vấn chuyên sâu và thu hút ứng viên phù hợp nhất.
 
 #### Chuyện kể 6 nhịp (The 6-Beat Storytelling):
 ##### Nhịp 1: Bối Cảnh Bình Thường: 60 Đến 80 Vị Trí Mỗi Quý, Vỏn Vẹn 4 Người
@@ -481,14 +481,14 @@ Hệ thống đạt độ chính xác kiểm định 99.8%, đưa tỷ lệ sả
 - **Ngành**: Dịch Vụ Doanh Nghiệp & B2B | **Quy mô**: 200 nhân sự · Đội Marketing 4 người
 
 #### Thách thức ban đầu (The Challenge):
-> Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm thực chiến của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.
+> Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm chuyên sâu của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.
 
 #### Giải pháp thực thi (The Solution):
 > Đội ngũ marketing nội bộ được nâng tầng năng lực (Tầng 2) và tái thiết kế quy trình sản xuất nội dung theo mô hình Content Factory. Chuyên gia chỉ cần ghi âm chia sẻ ngắn hoặc cung cấp tài liệu kỹ thuật thô, AI Engine tự động cấu trúc thành bài phân tích chuyên sâu chuẩn Brand Voice của công ty. Đội ngũ marketing giữ vai trò biên tập, kiểm duyệt chất lượng và xuất bản đa kênh với chu kỳ nhanh gấp 5 lần mà không phát sinh thêm chi phí.
 
 #### Chuyện kể 6 nhịp (The 6-Beat Storytelling):
 ##### Nhịp 1: Bối Cảnh Bình Thường: 200 Nhân Sự & Kho Tri Thức Nằm Trong Đầu Chuyên Gia
-Công ty tư vấn doanh nghiệp 200 nhân sự sở hữu đội ngũ chuyên gia dày dạn kinh nghiệm thực chiến. Nhưng mọi tri thức quý giá đều nằm rải rác trong sổ tay cá nhân và các báo cáo dự án cũ, không thể chuyển hóa thành tài liệu tiếp thị cho khách hàng mới.
+Công ty tư vấn doanh nghiệp 200 nhân sự sở hữu đội ngũ chuyên gia dày dạn kinh nghiệm chuyên môn. Nhưng mọi tri thức quý giá đều nằm rải rác trong sổ tay cá nhân và các báo cáo dự án cũ, không thể chuyển hóa thành tài liệu tiếp thị cho khách hàng mới.
 
 ##### Nhịp 2: Biến Cố & Nút Thắt: Chuyên Gia Bận Dự Án, Agency Bên Ngoài Viết Nông
 Đội ngũ marketing 4 người bế tắc: chuyên gia không có thời gian viết bài phân tích chuyên sâu, còn khi thuê agency bên ngoài thì chỉ nhận lại những bài viết bề nổi thiếu thuật ngữ kỹ thuật, không thể thuyết phục các giám đốc điều hành khó tính.
@@ -568,7 +568,7 @@ Thời gian bóc tách BCTC giảm 75%, chu kỳ hoàn thành Báo cáo Cập nh
 > Trong các chiến dịch mở bán dự án quy mô lớn, mạng lưới hơn 500 nhân sự kinh doanh bất động sản phải xử lý lượng yêu cầu thông tin khổng lồ từ khách hàng. Tuy nhiên, việc tra cứu giỏ hàng, cập nhật chính sách bán hàng và soạn kịch bản tư vấn thực địa theo từng phân khúc diễn ra thủ công và rời rạc. Tốc độ phản hồi chậm khiến tỷ lệ kích hoạt lại tệp khách hàng cũ (lead reactivation) sụt giảm, nhiều cơ hội giao dịch giá trị cao bị bỏ lỡ.
 
 #### Giải pháp thực thi (The Solution):
-> Chương trình đào tạo thực chiến kết hợp triển khai công cụ AI giúp đội ngũ kinh doanh tự sản xuất trang giới thiệu dự án chuyên nghiệp, dựng video tư vấn thực địa bằng AI và thiết lập trợ lý ảo giải đáp chính sách bán hàng 24/7 (với case study tiêu biểu tại dự án Vinhomes). Chuyên viên kinh doanh chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu tư vấn được cá nhân hóa sâu sắc.
+> Chương trình đào tạo kết hợp triển khai công cụ AI giúp đội ngũ kinh doanh tự sản xuất trang giới thiệu dự án chuyên nghiệp, dựng video tư vấn thực địa bằng AI và thiết lập trợ lý ảo giải đáp chính sách bán hàng 24/7 (với case study tiêu biểu tại dự án Vinhomes). Chuyên viên kinh doanh chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu tư vấn được cá nhân hóa sâu sắc.
 
 #### Chuyện kể 6 nhịp (The 6-Beat Storytelling):
 ##### Nhịp 1: Bối Cảnh Bình Thường: 500+ Chuyên Viên Đua Tranh Từng Giao Dịch Dự Án Lớn
@@ -592,7 +592,7 @@ Tốc độ phản hồi khách hàng rút xuống dưới 5 phút, sản lượ
 #### Bộ chỉ số đo lường hiệu quả (Metrics):
 | Chỉ số | Tên định lượng | Diễn giải chi tiết |
 |---|---|---|
-| **500+** | Nhân sự kinh doanh làm chủ công cụ AI thực chiến | Nâng cao năng lực tự sản xuất tài liệu và kịch bản chăm sóc khách hàng |
+| **500+** | Nhân sự kinh doanh làm chủ công cụ AI trong công việc | Nâng cao năng lực tự sản xuất tài liệu và kịch bản chăm sóc khách hàng |
 | **< 5 phút** | Thời gian phản hồi thông tin dự án | Tăng tốc độ tương tác tức thời khi khách hàng phát sinh nhu cầu tìm hiểu |
 | **x3** | Tốc độ sản xuất video & trang giới thiệu dự án | Tự động hóa truyền thông thực địa mà không phụ thuộc vào đội thiết kế trung tâm |
 
@@ -665,7 +665,7 @@ Phòng truyền thông nội bộ chỉ có vài người, không thể theo ch�
 Môi giới có mặt hàng ngày tại công trường nhưng không biết cách quay góc nào cho đẹp, ngại nói trước ống kính và không biết sử dụng các phần mềm dựng phim máy tính nặng nề.
 
 ##### Nhịp 4: Bước Ngoặt Đồng Hành: Chuyển Giao Quy Trình Sản Xuất Video AI Tinh Gọn
-Sunext thiết kế khóa huấn luyện thực chiến tại hiện trường: Đơn giản hóa toàn bộ khâu làm video thành quy trình 4 bước thực hiện hoàn toàn trên chiếc điện thoại thông minh cá nhân.
+Sunext thiết kế khóa huấn luyện trực tiếp tại hiện trường: Đơn giản hóa toàn bộ khâu làm video thành quy trình 4 bước thực hiện hoàn toàn trên chiếc điện thoại thông minh cá nhân.
 
 ##### Nhịp 5: Vũ Khí Giải Pháp: Viết Script Bằng AI, Giọng Đọc Chuyên Nghiệp & Dựng Tự Động
 Nhân viên chỉ cần quay các đoạn clip ngắn 5 giây thực địa. AI hỗ trợ viết kịch bản dẫn nhập thu hút, tạo giọng đọc thuyết minh trầm ấm chuẩn phát thanh viên và tự động cắt ghép, chèn chữ quy hoạch trong 15 phút.
@@ -691,7 +691,7 @@ Sản lượng video thực địa do chính môi giới tự sản xuất tăng
 - **Ngành**: Giáo Dục & Công Nghệ | **Quy mô**: Toàn bộ Giảng viên FPTU HCM & Hybrid HN + 10.000+ sinh viên & khách tham dự Tech Fest
 
 #### Thách thức ban đầu (The Challenge):
-> Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ đột phá cho hàng chục nghìn lượt khách tham gia.
+> Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ hiện đại cho hàng chục nghìn lượt khách tham gia.
 
 #### Giải pháp thực thi (The Solution):
 > Triển khai chương trình đào tạo nâng bậc giảng viên chuẩn Bậc 6, đưa chuyên đề "Critical Thinking in the AI Era" vào chương trình đào tạo; song song tích hợp hệ thống MC ảo AI và các luồng AI Agents (n8n) tự động hóa điều phối sự kiện tại Tech Fest trong hai mùa liên tiếp. Chương trình được đông đảo cơ quan báo chí và truyền hình đưa tin ghi nhận tính tiên phong.
@@ -790,7 +790,7 @@ Deliverables bàn giao:
 - **Thông điệp chính**: Loại bỏ hoàn toàn sự phụ thuộc vào kiểm tra thủ công bằng mắt thường. Camera AI giám sát chuyền sản xuất 24/7, hạ tỷ lệ lỗi xuống 1.5%.
 
 #### Bối cảnh thị trường:
-> Trong nhà máy cơ khí chính xác, công nhân kiểm định (QA/QC) phải soi hàng nghìn linh kiện mỗi ngày dưới ánh đèn chói. Sau 4 tiếng liên tục, mắt bắt đầu mỏi và sai sót xảy ra. Một vết nứt vi mô bị bỏ sót lọt ra thị trường có thể hủy hoại cả hợp đồng xuất khẩu. Tự động hóa bằng thị giác AI là cách duy nhất để kiểm soát chất lượng đồng nhất 100% chi tiết.
+> Trong nhà máy cơ khí chính xác, công nhân kiểm định (QA/QC) phải soi hàng nghìn linh kiện mỗi ngày dưới ánh đèn chói. Sau 4 tiếng liên tục, mắt bắt đầu mỏi và sai sót xảy ra. Một vết nứt vi mô bị bỏ sót lọt ra thị trường có thể hủy hoại cả hợp đồng xuất khẩu. Tự động hóa bằng thị giác AI là giải pháp tối ưu để kiểm soát chất lượng đồng nhất 100% chi tiết.
 
 #### 3 Thách thức vận hành cốt lõi:
 - **Thách thức 1: Thực tế khó chịu: Mỏi mắt và sai sót trong kiểm định thủ công**
@@ -850,7 +850,7 @@ Deliverables bàn giao:
 
 #### 3 Thách thức vận hành cốt lõi:
 - **Thách thức 1: Thực tế khó chịu: Tri thức nằm trong đầu một vài cá nhân**
-  - Thực trạng: Khi nhân sự kỳ cựu bận hoặc nghỉ việc, toàn bộ quy chuẩn kỹ thuật và kinh nghiệm thực chiến bị gián đoạn, nhân sự mới mất nhiều thời gian để nắm bắt.
+  - Thực trạng: Khi nhân sự kỳ cựu bận hoặc nghỉ việc, toàn bộ quy chuẩn kỹ thuật và kinh nghiệm thực tế bị gián đoạn, nhân sự mới mất nhiều thời gian để nắm bắt.
   - Tác động kinh tế: *Chất lượng tư vấn không đồng đều, phụ thuộc hoàn toàn vào một vài cá nhân chủ chốt.*
 - **Thách thức 2: Lầm tưởng phổ biến: "Thuê agency bên ngoài viết bài chuyên môn"**
   - Thực trạng: Agency bên ngoài chỉ viết được những bài chung chung, thiếu chiều sâu kỹ thuật cần thiết để thuyết phục khách hàng doanh nghiệp khó tính.
@@ -918,7 +918,7 @@ Deliverables bàn giao:
 #### Case study trọng điểm trong ngành:
 - **Tên dự án**: AI Sales Enablement & Lead Reactivation Cho Mạng Lưới 500+ Môi Giới BĐS
 - **Đơn vị**: Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes) (500+ Chuyên viên Kinh doanh BĐS · Hàng nghìn lead/tháng)
-- **Tóm tắt**: Sunext triển khai Trụ cột 2 (Đào tạo thực chiến tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.
+- **Tóm tắt**: Sunext triển khai Trụ cột 2 (Đào tạo năng lực tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.
 - **Chỉ số đạt được**: **80%** Tự động hóa tương tác ban đầu với khách hàng · **+200%** Sản lượng video thực địa do nhân viên tự sản xuất · **< 5 phút** Thời gian phản hồi thông tin dự án & giỏ hàng
 - **Đường dẫn**: `/case-studies/vinhomes-ai-sales-enablement`
 
@@ -928,7 +928,7 @@ Quy trình sản xuất video thực địa, viết kịch bản dẫn và tạo
 Deliverables bàn giao:
 - Mobile AI Video Workflow
 - Bộ template kịch bản dự án chuẩn
-- Khóa huấn luyện thực chiến tại hiện trường
+- Khóa huấn luyện trực tiếp tại hiện trường
 
 ##### Smart Lead Reactivation & Virtual Project Assistant (Gắn với trụ cột: Trụ cột 3: Mô hình vận hành)
 Trợ lý ảo AI tự động tra cứu giỏ hàng, bảng tính vay ngân hàng và kích hoạt lại tệp khách hàng cũ theo sự kiện mở bán.
@@ -950,6 +950,118 @@ Deliverables bàn giao:
 | **Giai đoạn 1 (Tuần 1-3)** | 3 tuần | Khảo sát tài liệu dự án, cấu hình Trợ lý ảo tra cứu giỏ hàng & đào tạo Tầng 1 cho 50 môi giới nòng cốt. |
 | **Giai đoạn 2 (Tuần 4-8)** | 5 tuần | Chuẩn hóa quy trình sản xuất video thực địa trên di động và tích hợp kịch bản kích hoạt lại lead cũ. |
 | **Giai đoạn 3 (Tuần 9-12)** | 4 tuần | Nhân rộng toàn bộ 500+ nhân sự kinh doanh, đo lường tỷ lệ chốt cọc và tối ưu chi phí quảng cáo. |
+
+---
+
+### Ngành: Tài Chính, Chứng Khoán & Quản Lý Quỹ (`/tai-chinh-dau-tu`)
+- **Tiêu đề Hero**: Tự Động Hóa Bóc Tách BCTC & Đối Soát Logic Số Liệu Hai Chiều
+- **Thông điệp chính**: Bóc tách báo cáo tài chính PDF scan phức tạp, đối soát logic hai chiều giữa Bảng cân đối và Lưu chuyển tiền tệ với 100% truy vết số trang nguồn gốc (Source Traceability).
+
+#### Bối cảnh thị trường:
+> Chi phí cơ hội và rủi ro sai sót số liệu trong các báo cáo định giá tài sản là vấn đề sống còn. Hàng chục chuyên viên phân tích phải dành 2–3 ngày làm việc cơ học cho mỗi doanh nghiệp chỉ để gõ lại số liệu từ PDF vào Excel. Rủi ro gõ sai một con số trên thuyết minh nợ vay hoặc dòng tiền có thể làm sai lệch mô hình định giá (DCF/PE), ảnh hưởng trực tiếp đến uy tín khuyến nghị đầu tư gửi khách hàng tổ chức. Yêu cầu bắt buộc của ngành là Source Traceability (truy vết số trang gốc), Audit Logging (nhật ký kiểm toán) và Cổng kiểm soát rủi ro No-Go khi số liệu mâu thuẫn.
+
+#### 3 Thách thức vận hành cốt lõi:
+- **Thách thức 1: Thực tế khó chịu: 2–3 ngày nhập liệu cơ học cho mỗi mã cổ phiếu**
+  - Thực trạng: Chuyên viên phân tích tài chính cấp cao mất phần lớn thời gian chỉ để bóc tách số liệu từ các file PDF báo cáo tài chính scan mờ, thuyết minh phức tạp.
+  - Tác động kinh tế: *Chậm nhịp ra quyết định đầu tư và khuyến nghị thị trường trong mùa cao điểm báo cáo quý.*
+- **Thách thức 2: Lầm tưởng phổ biến: "Cứ dùng OCR thông thường là đọc được số liệu"**
+  - Thực trạng: OCR cơ bản thường xuyên nhận diện nhầm dấu phẩy/chấm, nhảy dòng bảng biểu và bỏ sót các ghi chú thuyết minh nhạy cảm ở chân trang.
+  - Tác động kinh tế: *Sai lệch mô hình định giá dòng tiền, phát sinh rủi ro tuân thủ nghiêm trọng.*
+- **Thách thức 3: Bản chất vấn đề: Thiếu cơ chế đối soát logic & truy vết nguồn gốc (Source Traceability)**
+  - Thực trạng: Các công cụ AI phổ thông tạo ra ảo giác số liệu mà không có cơ chế gắn số trang, số dòng đối chiếu và bẫy kiểm tra cân đối kế toán.
+  - Tác động kinh tế: *Không thể vượt qua quy trình kiểm soát rủi ro (Risk Due Diligence) của các định chế tài chính.*
+
+#### Case study trọng điểm trong ngành:
+- **Tên dự án**: Kiến Trúc Thử Nghiệm AI Multi-Agent Bóc Tách BCTC Thô Có Truy Vết Nguồn
+- **Đơn vị**: Khối Nghiên Cứu — Vietcap Securities (VCI) (30+ Chuyên viên phân tích · Hàng trăm doanh nghiệp niêm yết)
+- **Tóm tắt**: Thiết kế kiến trúc thử nghiệm AI Multi-Agent bóc tách BCTC thô, tích hợp cơ chế đối soát logic hai chiều giữa Bảng cân đối và Lưu chuyển tiền tệ kết hợp truy vết số trang trích xuất nguồn (Source Traceability).
+- **Chỉ số đạt được**: **-75%** Thời gian bóc tách BCTC thô phòng lab · **2 ngày → 3h** Chu kỳ xuất bản bản thảo báo cáo · **100%** Dòng số liệu gắn nhãn số trang gốc
+- **Đường dẫn**: `/case-studies/vietcap-ai-multi-agent-nghien-cuu-thi-truong`
+
+#### 3 Giải pháp Sunext đóng gói cho ngành:
+##### Multi-Agent Financial Statement Extractor (Gắn với trụ cột: Trụ cột 4: Nền tảng công nghệ)
+Cụm Agent chuyên bóc tách cấu trúc BCTC PDF scan phức tạp, tự động nhận diện thuyết minh và gắn thẻ nguồn gốc số liệu (Source Traceability).
+Deliverables bàn giao:
+- Custom Financial Extraction Agent
+- Engine trích xuất bảng biểu PDF scan
+- Audit log lưu vết 100% phép biến đổi số liệu
+
+##### Investment Second Brain & Research Assistant (Gắn với trụ cột: Trụ cột 5: Kiến trúc dữ liệu)
+Kho tri thức số hóa tập hợp báo cáo ngành, biên bản ĐHCĐ và dữ liệu vĩ mô; hỗ trợ chuyên viên tra cứu nhanh các chỉ số quá khứ trong 30 giây.
+Deliverables bàn giao:
+- Dedicated Financial RAG Tenant
+- Semantic Search trên tài liệu ĐHCĐ
+- Trích dẫn đối chiếu văn bản nguồn
+
+##### Financial Audit Gate & Anomaly Detection (Gắn với trụ cột: Trụ cột 6: Quản trị & Vận hành)
+Cổng kiểm soát rủi ro tự động đối chiếu logic kế toán giữa các bảng báo cáo; tự động kích hoạt trạng thái No-Go khi có sai số.
+Deliverables bàn giao:
+- Rule-engine kiểm tra cân đối kế toán
+- Cảnh báo rủi ro số liệu tự động
+- Quy trình Human-in-the-loop duyệt báo cáo
+
+#### Lộ trình chuyển đổi 3 giai đoạn:
+| Giai đoạn | Thời gian | Mục tiêu trọng tâm |
+|---|---|---|
+| **Giai đoạn 1 (Tuần 1-2)** | 2 tuần | Khảo sát cấu trúc tài liệu PDF scan mẫu, thiết lập ranh giới an toàn Tier 3A và ký kết DPA. |
+| **Giai đoạn 2 (Tuần 3-6)** | 4 tuần | Xây dựng pipeline Multi-Agent bóc tách bảng cân đối/lưu chuyển tiền tệ và tích hợp cơ chế đối soát. |
+| **Giai đoạn 3 (Tuần 7-10)** | 4 tuần | Chạy thử nghiệm Controlled Run trên 50 mã cổ phiếu mẫu, đo lường độ chính xác và đào tạo Tầng 2-3 cho đội ngũ phân tích. |
+
+---
+
+### Ngành: Y Tế, Bệnh Viện & Chăm Sóc Sức Khỏe (`/y-te-suc-khoe`)
+- **Tiêu đề Hero**: Số Hóa Thủ Tục Hành Chính Y Tế & Hỗ Trợ Tra Cứu Phác Đồ Dưới Quyền Bác Sĩ
+- **Thông điệp chính**: Giải tỏa 30-40% áp lực thủ tục giấy tờ hành chính cho y bác sĩ và điều dưỡng. Trợ lý ảo phân luồng tiếp đón 24/7 và tra cứu phác đồ với nguyên tắc Non-negotiable Clinical Boundary tuyệt đối.
+
+#### Bối cảnh thị trường:
+> Gánh nặng thủ tục giấy tờ đè nặng lên thời gian thăm khám trực tiếp của y bác sĩ. Bác sĩ và điều dưỡng mất từ 30% đến 40% thời lượng làm việc chỉ để gõ biên bản khám, nhập thông tin bảo hiểm và tra cứu lịch sử bệnh án phân tán. Tình trạng này gây ùn ứ tại các quầy tiếp đón và giảm chất lượng tương tác giữa bác sĩ với người bệnh. Ứng dụng AI trong y tế đòi hỏi sự chuẩn mực tuyệt đối về ranh giới lâm sàng và bảo mật dữ liệu sức khỏe cá nhân.
+
+#### 3 Thách thức vận hành cốt lõi:
+- **Thách thức 1: Thực tế khó chịu: 30-40% giờ công của y bác sĩ dành cho nhập liệu hành chính**
+  - Thực trạng: Bác sĩ và điều dưỡng bị quá tải bởi việc ghi chép biên bản khám bệnh, tóm tắt bệnh án và tra cứu lịch sử khám phân tán trên nhiều phần mềm.
+  - Tác động kinh tế: *Ùn ứ tại quầy tiếp đón, rút ngắn thời gian tư vấn trực tiếp và lắng nghe người bệnh.*
+- **Thách thức 2: Lầm tưởng nguy hiểm: "Để AI tự động chẩn đoán và gợi ý toa thuốc"**
+  - Thực trạng: Ảo giác và dung sai của AI trong lâm sàng là rủi ro không thể chấp nhận đối với an toàn tính mạng bệnh nhân và trách nhiệm pháp lý bệnh viện.
+  - Tác động kinh tế: *Nguy cơ tai biến y khoa và vi phạm nghiêm trọng quy chuẩn hành nghề y.*
+- **Thách thức 3: Bản chất vấn đề: Cần giải phóng khâu hành chính và tra cứu, bảo toàn quyền chỉ định của Bác sĩ**
+  - Thực trạng: Cần phân định ranh giới nghiêm ngặt: AI chỉ làm nhiệm vụ tiếp đón hành chính và tìm kiếm ngữ nghĩa văn bản phác đồ; bác sĩ giữ 100% quyền quyết định chuyên môn.
+  - Tác động kinh tế: *Bảo vệ an toàn bệnh nhân, tuân thủ pháp luật và nâng cao năng suất phục vụ.*
+
+#### Case study trọng điểm trong ngành:
+- **Tên dự án**: Đề Án Chuyển Đổi Số Tiếp Đón & Quản Trị Dữ Liệu Bệnh Viện (An Sinh / Trung Sơn Pharma)
+- **Đơn vị**: Hệ Thống Y Tế & Chăm Sóc Sức Khỏe Tư Nhân (Chuỗi cơ sở y tế · Hàng nghìn lượt tiếp đón/ngày)
+- **Tóm tắt**: Tái cấu trúc quy trình tiếp đón người bệnh ban đầu, triển khai Chatbot AI hỗ trợ đăng ký lịch hẹn hành chính 24/7 và tự động hóa tổng hợp ghi chú hành chính của điều dưỡng, tuân thủ nghiêm ngặt ranh giới phi lâm sàng.
+- **Chỉ số đạt được**: **-50%** Thời gian chờ đợi tại quầy tiếp đón · **-30%** Giờ công hành chính điều dưỡng ca trực · **+5-7 phút** Thời gian bác sĩ lắng nghe người bệnh
+- **Đường dẫn**: ``
+
+#### 3 Giải pháp Sunext đóng gói cho ngành:
+##### Trợ Lý Tiếp Đón & Đặt Hẹn Hành Chính 24/7 (Gắn với trụ cột: Trụ cột 3: Mô hình vận hành)
+Tiếp nhận thông tin hành chính sơ bộ qua Zalo/Website, hướng dẫn chuẩn bị giấy tờ/BHYT và phân luồng khung giờ khám, giảm ùn ứ tại sảnh tiếp đón.
+Deliverables bàn giao:
+- Chatbot tiếp đón hành chính 24/7
+- Hệ thống điều phối lịch khám đa kênh
+- Phân luồng thông tin phòng ban
+
+##### Chuẩn Hóa Hồ Sơ & Số Hóa Ghi Chú Phi Lâm Sàng (Gắn với trụ cột: Trụ cột 2: Quy trình tự động)
+Tự động trích xuất và số hóa các chứng từ, kết quả xét nghiệm định dạng văn bản phi cấu trúc thành bản tổng hợp hồ sơ hành chính phục vụ bác sĩ đối soát nhanh.
+Deliverables bàn giao:
+- Pipeline xử lý văn bản hành chính y tế
+- Mẫu tóm tắt bệnh án phi lâm sàng
+- Tích hợp bảo mật dữ liệu Nghị định 13
+
+##### Tra Cứu Tài Liệu Y Khoa & Phác Đồ Bộ Y Tế Đã Phê Duyệt (Gắn với trụ cột: Trụ cột 5: Kiến trúc dữ liệu)
+Hỗ trợ y bác sĩ tra cứu nhanh tài liệu hướng dẫn điều trị của Bộ Y tế đã được Hội đồng Y khoa thẩm định nạp sẵn vào kho dữ liệu; AI chỉ trích dẫn nguyên văn văn bản nguồn.
+Deliverables bàn giao:
+- Hệ thống Medical Reference RAG
+- Kho dữ liệu phác đồ Bộ Y tế chuẩn hóa
+- Chốt chặn Doctor-in-the-loop bắt buộc
+
+#### Lộ trình chuyển đổi 3 giai đoạn:
+| Giai đoạn | Thời gian | Mục tiêu trọng tâm |
+|---|---|---|
+| **Giai đoạn 1 (Tuần 1-3)** | 3 tuần | Thẩm định an toàn dữ liệu bệnh nhân, ký kết DPA và thiết lập hạ tầng bảo mật Tier 2 Dedicated Tenant. |
+| **Giai đoạn 2 (Tuần 4-8)** | 5 tuần | Triển khai Trợ lý tiếp đón hành chính 24/7 và kiểm thử quy trình điều phối người bệnh tại sảnh. |
+| **Giai đoạn 3 (Tuần 9-12)** | 4 tuần | Xây dựng kho tra cứu phác đồ tham khảo cho bác sĩ và tổ chức sát hạch Tầng 1-2 cho nhân viên y tế. |
 
 ---
 
@@ -983,7 +1095,7 @@ Deliverables bàn giao:
 ---
 
 ### Gói 2: Department AI Operating System (`Phổ Biến Nhất`)
-- **Định vị**: Thiết lập hệ điều hành AI toàn diện cho 1 phòng ban mũi nhọn (Marketing, Sales, HR, hoặc Vận hành).
+- **Định vị**: Thiết lập hệ điều hành AI chuẩn hóa cho 1 phòng ban mũi nhọn (Marketing, Sales, HR, hoặc Vận hành).
 - **Phù hợp nhất cho**: Doanh nghiệp 50 - 300 nhân sự muốn giải phóng sức lao động của một bộ phận then chốt và tạo đòn bẩy tăng trưởng 3x-5x.
 - **Thời gian sinh giá trị (Time to Value)**: **8 – 12 tuần**
 - **Phạm vi triển khai (Scope)**: Toàn bộ quy trình của 1 phòng ban + tích hợp 2-3 AI Agents vào hệ thống hiện tại
@@ -1011,25 +1123,27 @@ Deliverables bàn giao:
 - **Định vị**: Tái thiết kế toàn bộ tổ chức theo Phương Pháp Luận Sunext với hạ tầng Private AI bảo mật cấp doanh nghiệp.
 - **Phù hợp nhất cho**: Tập đoàn & Doanh nghiệp 200 - 1.000+ nhân sự cam kết xây dựng AI như lợi thế cạnh tranh cốt lõi dài hạn.
 - **Thời gian sinh giá trị (Time to Value)**: **4 – 6 tháng**
-- **Phạm vi triển khai (Scope)**: Toàn bộ doanh nghiệp đa phòng ban + Private LLM Infrastructure
-- **Cấp độ hỗ trợ**: Ban cố vấn chiến lược cấp C-level + Đội kỹ sư túc trực On-site/Dedicated
+- **Phạm vi triển khai (Scope)**: Toàn bộ doanh nghiệp đa phòng ban kết hợp hạ tầng Private AI chuyên biệt
+- **Cấp độ hỗ trợ**: Đội ngũ kỹ sư chuyên trách On-site / Standby + Ban Cố Vấn CAIO chỉ đạo
 
 #### Các hạng mục bàn giao (Deliverables):
-- **1. Chiến lược Số & Hội đồng Quản trị AI (Governance)**:
-  - Xây dựng lộ trình tổng thể xếp hạng ưu tiên theo giá trị P&L từng quý
-  - Ban hành bộ khung chính sách bảo mật dữ liệu (Data Security Policy & Cam kết NDA)
-- **2. Kiến trúc Dữ liệu & Private Model Mesh**:
-  - Thiết lập Enterprise Vector Database & Single Source of Truth cho toàn công ty
-  - Triển khai cụm mô hình AI On-premise hoặc Private Cloud (Dữ liệu không bao giờ rời khỏi hệ thống)
-- **3. Chuyển giao Năng lực Toàn diện (Tầng 1 ➔ 5)**:
-  - Phổ cập AI cho toàn bộ cán bộ công nhân viên (Tầng 1)
-  - Đào tạo nâng cao cho nhóm Kỹ sư & Quản đốc ca (Tầng 4 & 5: Computer Vision, Automation Pipeline)
-  - Chính sách sở hữu: Doanh nghiệp nắm giữ toàn bộ mã nguồn tùy biến và dữ liệu huấn luyện theo thỏa thuận hợp đồng
+- **1. Chiến lược & Lộ trình Chuyển đổi (Strategy)**:
+  - Thiết kế kiến trúc AI tổng thể phù hợp với tầm nhìn kinh doanh 3-5 năm
+  - Xây dựng lộ trình phân kỳ đầu tư (phân bổ ngân sách theo từng quý)
+  - Định vị các use case tạo lợi thế cạnh tranh cốt lõi (Moat)
+- **2. Nền tảng Công nghệ & Dữ liệu Doanh nghiệp (Platform & Data)**:
+  - Thiết lập hạ tầng Private Cloud hoặc On-premise đảm bảo bảo mật tuyệt đối
+  - Xây dựng Enterprise Data Mesh kết nối dữ liệu từ tất cả phòng ban
+  - Triển khai hệ thống giám sát hiệu năng mô hình (LLMOps) và cảnh báo sai lệch
+- **3. Chuyển giao Năng lực & Trung tâm AI CoE (People & Governance)**:
+  - Đào tạo phân tầng theo vai trò cho toàn bộ cán bộ nhân viên theo Thang 5 Tầng
+  - Thiết lập Trung tâm Xuất sắc về AI (AI Center of Excellence - CoE) nội bộ
+  - Ban hành bộ quy chuẩn đạo đức AI, an toàn dữ liệu và phân quyền trách nhiệm
 
 #### Cam kết nghiệm thu theo kết quả định lượng:
-- Chuẩn hóa mô hình vận hành và kiến trúc dữ liệu dùng chung, xóa bỏ lãng phí công cụ rời rạc
-- Bảo vệ 100% dữ liệu và bí mật kinh doanh với hạ tầng Private AI an toàn
-- Xây dựng năng lực AI nội tại trở thành lợi thế cạnh tranh dài hạn
+- Xây dựng năng lực AI tự chủ hoàn toàn cho doanh nghiệp, không phụ thuộc bên ngoài
+- Bảo vệ 100% tài sản trí tuệ và dữ liệu mật của công ty
+- Định hình lại mô hình kinh doanh và tạo khoảng cách cạnh tranh vượt trội trên thị trường
 
 ---
 
@@ -1041,13 +1155,13 @@ Deliverables bàn giao:
 - **Vai trò tại Sunext**: Trưởng Ban Cố Vấn Chiến Lược & Chuyển Đổi AI Toàn Trình
 - **Số năm kinh nghiệm**: 10+ năm
 - **Cột mốc & Thành tựu tiêu biểu**:
-  - Tiên phong nghiên cứu và đào tạo ứng dụng AI thực chiến tại Việt Nam từ năm 2023
+  - Tiên phong nghiên cứu và đào tạo ứng dụng AI tại Việt Nam từ năm 2023
   - Đã cấp chứng nhận ứng dụng AI cho hơn 600 giảng viên thuộc mạng lưới Train-the-Trainer chuẩn Bậc 6
-  - Sáng lập và quản trị cộng đồng học tập, chia sẻ kiến thức AI thực chiến với hơn 500.000 thành viên (2026)
+  - Sáng lập và quản trị cộng đồng học tập, chia sẻ kiến thức ứng dụng AI với hơn 500.000 thành viên (2026)
   - Trực tiếp chủ trì tư vấn chiến lược chuyển đổi AI cho Đại học FPT, Vinhomes, Vietcap Securities, Dentsu Sports Vietnam, HTV...
 - **Tổ chức từng đảm nhiệm**: Đại học FPT · Vinhomes · Vietcap Securities · Dentsu Sports Vietnam · HTV · VNPT VinaPhone
 - **Chứng nhận & Bằng cấp**: Lead AI Trainer Certificate · AI Strategy & Enterprise Transformation
-- *Tuyên ngôn cố vấn*: "Mục tiêu duy nhất của chuyển đổi AI là biến công nghệ thành người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, bảo vệ biên lợi nhuận cho doanh nghiệp."
+- *Tuyên ngôn cố vấn*: "Mục tiêu cốt lõi của chuyển đổi AI là biến công nghệ thành người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, bảo vệ biên lợi nhuận cho doanh nghiệp."
 
 #### Nguyễn Tùng Chi — CSO Sunext AI & Finance × AI Architect
 - **Vai trò tại Sunext**: Giám Đốc Chiến Lược & Kiến Trúc Sư Tài Chính AI
@@ -1158,7 +1272,7 @@ Deliverables bàn giao:
   - Tiên phong thiết kế khung năng lực AI cho khối nhân sự và quy trình tuyển dụng Human-in-the-loop
 - **Tổ chức từng đảm nhiệm**: Tập đoàn Giáo dục Nguyễn Hoàng · Hải Sản Hoàng Gia · S&S Group
 - **Chứng nhận & Bằng cấp**: CPTD (ATD USA) · SHRM-SCP (SHRM USA)
-- *Tuyên ngôn cố vấn*: "Công nghệ chỉ thành công khi con người đón nhận nó. Đào tạo nâng tầm năng lực đội ngũ là chìa khóa duy nhất để chuyển đổi số không bị đào thải giữa đường."
+- *Tuyên ngôn cố vấn*: "Công nghệ chỉ thành công khi con người đón nhận nó. Đào tạo nâng tầm năng lực đội ngũ là chìa khóa cốt lõi để chuyển đổi số không bị đào thải giữa đường."
 
 #### Nguyễn Thị Nhung — Senior Retail HR Director & Talent Acquisition Expert
 - **Vai trò tại Sunext**: Chuyên Gia Quản Trị Nhân Sự Chuỗi Bán Lẻ
@@ -1204,7 +1318,7 @@ Deliverables bàn giao:
 | 10 | **Trung Sơn Pharma (Trung Sơn)** | Chuỗi Bán Lẻ Dược Phẩm | Tier 1 (Case Study) | Tư vấn thiết kế hệ thống Omnichannel Marketing & CRM chuỗi nhà thuốc từ giai đoạn mở rộng mạng lưới. |
 | 11 | **FSI Digital (FSI)** | Chuyển Đổi Số & Dữ Liệu | Tier 2 (Mạng lưới) | Nhân sự tham gia chương trình đào tạo AI trong số hóa dữ liệu và xử lý văn bản phi cấu trúc. |
 | 12 | **Droppii Commerce (Droppii)** | Thương Mại Điện Tử Tư Vấn | Tier 2 (Mạng lưới) | Đào tạo AI ứng dụng trong tự động hóa kịch bản tư vấn và sáng tạo nội dung livestream thương mại. |
-| 13 | **Đại học Kinh tế - Tài chính TP.HCM (UEF) (UEF)** | Giáo Dục Đại Học | Tier 2 (Mạng lưới) | Tổ chức các chuyên đề AI thực chiến và đào tạo kỹ năng ứng dụng công nghệ cho sinh viên & giảng viên. |
+| 13 | **Đại học Kinh tế - Tài chính TP.HCM (UEF) (UEF)** | Giáo Dục Đại Học | Tier 2 (Mạng lưới) | Tổ chức các chuyên đề ứng dụng AI trong thực tế và đào tạo kỹ năng ứng dụng công nghệ cho sinh viên & giảng viên. |
 | 14 | **Đại học Nguyễn Tất Thành (NTTU) (NTTU)** | Giáo Dục Đại Học | Tier 2 (Mạng lưới) | Hợp tác chuyển giao kiến thức AI thực hành và xây dựng kỹ năng công nghệ chuẩn bị cho thị trường lao động. |
 | 15 | **Thắng Lợi Group (Thắng Lợi)** | Bất Động Sản | Tier 2 (Mạng lưới) | Chuyên viên kinh doanh tham gia đào tạo AI sáng tạo nội dung dự án và chăm sóc khách hàng tự động. |
 | 16 | **Huỳnh Anh Group (Huỳnh Anh)** | Bất Động Sản | Tier 2 (Mạng lưới) | Đào tạo ứng dụng AI trong quản lý leads và tự động hóa quy trình phân phối sản phẩm bất động sản. |
@@ -1228,9 +1342,9 @@ Deliverables bàn giao:
 | 34 | **Carlsberg Group (Carlsberg)** | Đồ Uống & Tiêu Dùng | Tier 2 (Mạng lưới) | Học viên và cố vấn tham gia chia sẻ phương pháp luận AI trong quản trị thương hiệu đồ uống toàn cầu. |
 | 35 | **Con Cưng (Con Cưng)** | Bán Lẻ Mẹ & Bé | Tier 2 (Mạng lưới) | Đào tạo ứng dụng AI trong chăm sóc khách hàng đa kênh và tối ưu hóa vận hành bán lẻ chuỗi. |
 | 36 | **Shopee (Shopee)** | Sàn TMĐT Đa Kênh | Tier 2 (Mạng lưới) | Học viên tham gia đào tạo AI trong sáng tạo nội dung sản phẩm, livestream và tối ưu hóa chuyển đổi. |
-| 37 | **Lazada Vietnam (Lazada)** | Sàn TMĐT Quốc Tế | Tier 2 (Mạng lưới) | Học viên tham gia các khóa đào tạo AI Marketing & ứng dụng Prompt Engineering thực chiến. |
+| 37 | **Lazada Vietnam (Lazada)** | Sàn TMĐT Quốc Tế | Tier 2 (Mạng lưới) | Học viên tham gia các khóa đào tạo AI Marketing & ứng dụng Prompt Engineering theo nghiệp vụ. |
 | 38 | **Tiki (Tiki)** | Thương Mại Điện Tử | Tier 2 (Mạng lưới) | Học viên tham gia đào tạo ứng dụng AI trong phân tích dữ liệu mua sắm và chăm sóc khách hàng. |
-| 39 | **Tập đoàn Hòa Phát (Hòa Phát)** | Thép & Công Nghiệp Nặng | Tier 2 (Mạng lưới) | Đề án đào tạo nâng cao năng lực ứng dụng AI thực chiến cho cán bộ quản lý và khối tác nghiệp. |
+| 39 | **Tập đoàn Hòa Phát (Hòa Phát)** | Thép & Công Nghiệp Nặng | Tier 2 (Mạng lưới) | Đề án đào tạo nâng cao năng lực ứng dụng AI vào công việc cho cán bộ quản lý và khối tác nghiệp. |
 | 40 | **Bamboo Capital Group (Bamboo Capital)** | Tập Đoàn Đa Ngành | Tier 2 (Mạng lưới) | Cố vấn tài chính Sunext nguyên Giám đốc Tài chính (CFO) Aurai Wind Energy (cụm dự án điện gió 550MW). |
 | 41 | **VinaCapital Group (VinaCapital)** | Quản Lý Quỹ Đầu Tư | Tier 2 (Mạng lưới) | Chuyên gia tài chính Sunext (Lê Thị Cẩm Vân) từng giữ trọng trách quản trị tại các doanh nghiệp có vốn góp VinaCapital. |
 | 42 | **Talentnet Corporation (Talentnet)** | Tư Vấn Nhân Sự & Lãnh Đạo | Tier 2 (Mạng lưới) | Hợp tác đào tạo và chia sẻ phương pháp luận AI trong nâng cao năng suất quản trị nguồn nhân lực. |
@@ -1243,65 +1357,125 @@ Deliverables bàn giao:
 ## 9. KHUNG CHẨN ĐOÁN SẴN SÀNG AI (12 CÂU HỎI - `/danh-gia-san-sang-ai`)
 > **Bộ công cụ chẩn đoán mức độ trưởng thành số của doanh nghiệp qua 6 trục năng lực.**
 
-### Câu 1: Doanh nghiệp của bạn đang xác định ưu tiên đầu tư cho AI như thế nào? (Trục: `Chiến lược & tầm nhìn AI` - Trụ cột 1)
-*Lưu ý khảo sát*: Trục 1: Chiến lược số do bài toán kinh doanh dẫn dắt (Trụ cột 1)
+### Câu 1: Doanh nghiệp của bạn đang xác định ưu tiên đầu tư cho AI như thế nào? (Trục: `Chiến lược số do bài toán kinh doanh dẫn dắt` - Trụ cột 1)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá mức độ gắn kết giữa sáng kiến AI với bài toán P&L và giá trị kinh tế thực tế.
 
 | Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
 |---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Chưa có chiến lược cụ thể | Mỗi phòng ban hoặc cá nhân tự mày mò thử nghiệm các công cụ miễn phí, không có ngân sách hay định hướng chung. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Có vài dự án thí điểm nhỏ | Đã đầu tư license cho một số nhóm (như Marketing, IT), nhưng chưa gắn với mục tiêu P&L hay bài toán kinh tế cụ thể. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Có lộ trình use case rõ ràng | Đã xác định các miền nghiệp vụ trọng điểm cần chuyển đổi, xếp hạng ưu tiên theo giá trị tài chính tạo ra cho từng phòng ban. | +3đ |
-| **Cấp độ 4 · Tự Chủ** | AI là lợi thế cạnh tranh sống còn | Lộ trình AI gắn trực tiếp vào kế hoạch kinh doanh của Ban Giám Đốc, có Product Owner chịu trách nhiệm P&L cho từng sáng kiến. | +4đ |
+| **Cấp độ 1 · Khởi Phát** | Chưa có chiến lược cụ thể | Mỗi phòng ban hoặc cá nhân tự mày mò thử nghiệm công cụ miễn phí, không có định hướng chung. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Có vài dự án thí điểm nhỏ | Đã mua license cho một số nhóm (Marketing, IT), nhưng chưa gắn với mục tiêu P&L cụ thể. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Lộ trình use case rõ ràng | Đã xác định các miền nghiệp vụ trọng điểm, xếp hạng ưu tiên theo giá trị tài chính và ROI. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | AI là đòn bẩy chiến lược gắn với P&L | Lộ trình AI gắn trực tiếp vào kế hoạch kinh doanh, có Product Owner chịu trách nhiệm P&L từng sáng kiến. | +4đ |
 
-### Câu 2: Dữ liệu và hạ tầng phần mềm hiện tại đã sẵn sàng kết nối cho AI ở mức độ nào? (Trục: `Dữ liệu & hệ thống công nghệ` - Trụ cột 4)
-*Lưu ý khảo sát*: Trục 2: Dữ liệu sạch, kết nối API hai chiều & hạ tầng Private AI (Trụ cột 4 & 5)
-
-| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
-|---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Dữ liệu phân mảnh, phần mềm tách biệt | Dữ liệu nằm rải rác trên file Excel cá nhân; nhân viên phải copy-paste dữ liệu qua lại giữa các phần mềm hoàn toàn bằng tay. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Có cơ sở dữ liệu nhưng chưa làm sạch | Đã có phần mềm và thử nghiệm một số script API đơn lẻ, nhưng dữ liệu chưa được làm sạch nên AI trả lời thiếu chính xác. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Dữ liệu hợp nhất, AI kết nối hệ thống lõi | Có Single Source of Truth; AI kết nối trực tiếp với ERP/CRM/ATS qua API hai chiều, hạn chế tối đa thao tác thủ công. | +3đ |
-| **Cấp độ 4 · Tự Chủ** | Hạ tầng Agentic Mesh & Private AI | Kiến trúc Vector Database và Data Pipeline cập nhật thời gian thực; triển khai mô hình Private AI đảm bảo dữ liệu không bị rò rỉ. | +4đ |
-
-### Câu 3: Quy trình làm việc hiện tại đã sẵn sàng cho sự tham gia của AI ở mức độ nào? (Trục: `Quy trình & cách vận hành` - Trụ cột 3)
-*Lưu ý khảo sát*: Trục 3: Agile Operating Model & luồng phối hợp Human-in-the-loop (Trụ cột 3)
+### Câu 2: Cam kết của Ban Lãnh Đạo cấp cao và ngân sách dành cho AI ra sao? (Trục: `Chiến lược số do bài toán kinh doanh dẫn dắt` - Trụ cột 1)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá sự ủng hộ của C-level và tính sẵn sàng về nguồn lực tài chính.
 
 | Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
 |---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Quy trình thủ công & phân mảnh | Nhiều bước trung gian, luồng duyệt giấy tờ hoặc email chậm trễ, không có quy chuẩn vận hành (SOP) cập nhật. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Đã có SOP nhưng chưa tối ưu cho AI | AI chỉ được dùng như công cụ gõ chữ nhanh hơn trong một quy trình cũ, chưa được thiết kế lại để cắt giảm bước thừa. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Quy trình được tinh gọn cho AI | Đã loại bỏ các bước lặp lại; phân định rõ ràng điểm nào AI xử lý tự động, điểm nào con người ký duyệt (Human-in-the-loop). | +3đ |
-| **Cấp độ 4 · Tự Chủ** | Vận hành dựa trên Agent thông minh | Các AI Agent tự động trao đổi dữ liệu và thực thi tác vụ xuyên suốt các bộ phận kinh doanh, vận hành và dịch vụ khách hàng. | +4đ |
+| **Cấp độ 1 · Khởi Phát** | Chưa có ngân sách chính thức | Ban lãnh đạo quan tâm qua loa, chi phí AI do từng nhân viên tự trả hoặc trích từ quỹ nhỏ lẻ. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Ngân sách ad-hoc theo sự vụ | Lãnh đạo cấp kinh phí thử nghiệm ngắn hạn (vài chục triệu) cho một vài tool, chưa có kế hoạch năm. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Ngân sách chuyên trách phòng ban | Có hạn mức đầu tư AI rõ ràng trong kế hoạch năm, Ban Giám Đốc họp đánh giá tiến độ theo quý. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Cam kết chiến lược từ HĐQT | AI được phân bổ ngân sách như tài sản dài hạn, Ban Điều Hành trực tiếp chỉ đạo ủy ban AI. | +4đ |
 
-### Câu 4: Mức độ hiểu biết và kỹ năng ứng dụng AI của đội ngũ nhân sự hiện tại ra sao? (Trục: `Con người & năng lực đội ngũ` - Trụ cột 2)
-*Lưu ý khảo sát*: Trục 4: Thang năng lực 5 tầng & văn hóa học tập liên tục (Trụ cột 2)
-
-| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
-|---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Phần lớn nhân viên chưa biết dùng AI hiệu quả | Chỉ biết hỏi những câu hỏi chung chung, kết quả nhận về không áp dụng được vào công việc hàng ngày. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Một vài cá nhân tự học rất giỏi | Có một số nhân sự nổi trội tự mày mò, nhưng tri thức không được chuẩn hóa thành tài liệu hay đào tạo lại cho tập thể. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Đã có chương trình đào tạo theo vai trò | Nhân viên nắm vững kỹ thuật prompt nghiệp vụ (Tầng 1 & 2); có đội ngũ AI Champions đóng vai trò dẫn dắt tại các phòng ban. | +3đ |
-| **Cấp độ 4 · Tự Chủ** | Đội ngũ có khả năng tự chủ vận hành Agent | Nhân sự các phòng ban tự động hóa quy trình nội bộ, phối hợp nhịp nhàng với đội kỹ thuật để liên tục tối ưu giải pháp. | +4đ |
-
-### Câu 5: Doanh nghiệp đang kiểm soát rủi ro bảo mật dữ liệu và pháp lý khi dùng AI như thế nào? (Trục: `Bảo mật, rủi ro & governance` - Trụ cột 6)
-*Lưu ý khảo sát*: Trục 5: Bảo vệ bí mật kinh doanh, cam kết NDA & Enterprise Governance (Trụ cột 6)
+### Câu 3: Mức độ hiểu biết và kỹ năng ứng dụng AI của đội ngũ nhân sự hiện tại ra sao? (Trục: `Năng lực đội ngũ & nhân tài nội bộ` - Trụ cột 2)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá mặt bằng năng lực AI Literacy và kỹ thuật prompt nghiệp vụ của nhân viên.
 
 | Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
 |---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Chưa có quy định bảo mật khi dùng AI | Nhân viên thoải mái đưa dữ liệu nội bộ, thông tin khách hàng lên các công cụ AI công cộng mà không có rào chắn bảo vệ. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Có cảnh báo nhưng chưa có chính sách kỹ thuật | Đã ban hành quy định cấm chia sẻ dữ liệu nhạy cảm, nhưng chưa có rào chắn kiểm soát kỹ thuật hay giải pháp bảo vệ luồng dữ liệu. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Chính sách bảo mật & Gateway kiểm soát | Ban hành quy chế dữ liệu rõ ràng, cam kết NDA nghiêm ngặt và triển khai Enterprise Gateway bảo vệ luồng thông tin ra vào. | +3đ |
-| **Cấp độ 4 · Tự Chủ** | Quản trị toàn diện với Private AI | Hạ tầng Private Model an toàn tuyệt đối, dữ liệu không bao giờ rời khỏi hệ thống; có hội đồng quản trị AI định kỳ kiểm toán rủi ro. | +4đ |
+| **Cấp độ 1 · Khởi Phát** | Phần lớn nhân viên chưa biết dùng | Chỉ biết hỏi chatbot những câu vu vơ, kết quả chung chung không áp dụng được vào công việc. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Một vài cá nhân tự học rất giỏi | Một số cá nhân tự mày mò làm rất nhanh, nhưng kỹ năng không được đóng gói hay chia sẻ lại. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Đào tạo theo vai trò nghiệp vụ | Nhân sự được đào tạo bài bản kỹ thuật Prompting theo nghiệp vụ (Tầng 1 & 2), áp dụng đều đặn mỗi tuần. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Tự làm chủ và thiết kế luồng tác vụ | Nhân sự các phòng ban tự cấu hình prompt theo nghiệp vụ, phối hợp với trợ lý AI như đồng nghiệp thường nhật (Tầng 3). | +4đ |
 
-### Câu 6: Doanh nghiệp có cơ chế nào để đo lường ROI và nhân rộng thành công sang các phòng ban khác? (Trục: `Quản trị thay đổi & mở rộng sáng kiến` - Trụ cột 6)
-*Lưu ý khảo sát*: Trục 6: Quản trị thay đổi (Change Management), đo lường P&L và nhân rộng (Trụ cột 6)
+### Câu 4: Doanh nghiệp đã xây dựng được mạng lưới AI Champions nội bộ chưa? (Trục: `Năng lực đội ngũ & nhân tài nội bộ` - Trụ cột 2)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá cơ chế duy trì động lực học tập và chuyển giao tri thức liên tục.
 
 | Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
 |---|---|---|---|
-| **Cấp độ 1 · Khởi Phát** | Chưa đo lường, không có cơ chế nhân rộng | Các thử nghiệm dừng lại ở cấp cá nhân hoặc dự án thí điểm đơn lẻ, không ai theo dõi chỉ số ROI thực tế hay kế hoạch mở rộng. | +1đ |
-| **Cấp độ 2 · Thử Nghiệm** | Có use case thành công nhưng thiếu quy trình nhân bản | Một bộ phận làm AI rất tốt nhưng kết quả không được đóng gói để chuyển giao sang các phòng ban khác trong doanh nghiệp. | +2đ |
-| **Cấp độ 3 · Chuẩn Hóa** | Theo dõi ROI định lượng và có quy trình nhân rộng | Có dashboard theo dõi giờ công và chi phí tiết kiệm; có quy trình chia sẻ kinh nghiệm và chuyển giao use case giữa các phòng ban. | +3đ |
-| **Cấp độ 4 · Tự Chủ** | Văn hóa đổi mới liên tục & mở rộng hệ sinh thái | Có cơ chế khen thưởng sáng kiến ứng dụng AI định kỳ, hỗ trợ đào tạo nhân sự mới liên tục để nhân rộng thành công toàn diện. | +4đ |
+| **Cấp độ 1 · Khởi Phát** | Chưa có người phụ trách nòng cốt | Khi gặp trục trặc kỹ thuật hoặc cần prompt mới, nhân viên không biết hỏi ai ngoài việc tự tìm trên mạng. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Phụ thuộc vào phòng IT | Mọi thắc mắc dồn về IT khiến phòng công nghệ quá tải, trong khi IT không nắm rõ nghiệp vụ kinh doanh. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Có AI Champions tại từng phòng ban | Mỗi bộ phận có 1–2 nhân sự nòng cốt hiểu nghiệp vụ, trực tiếp hỗ trợ đồng nghiệp và cập nhật thư viện prompt. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Trung tâm Xuất sắc (AI CoE) | Nhóm chuyên trách liên phòng ban liên tục nghiên cứu công nghệ mới, tổ chức đào tạo và kiểm toán năng lực. | +4đ |
+
+### Câu 5: Quy trình làm việc hiện tại đã được thiết kế lại cho AI ở mức độ nào? (Trục: `Mô hình vận hành & quy trình linh hoạt` - Trụ cột 3)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá việc tái cấu trúc luồng công việc theo nguyên tắc Human-in-the-loop.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Quy trình thủ công & phân mảnh | Nhiều bước trung gian, luồng duyệt chậm trễ, không có quy chuẩn vận hành (SOP) cập nhật. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Ép AI vào quy trình cũ cồng kềnh | AI chỉ dùng để gõ chữ nhanh hơn trong quy trình cũ, chưa cắt giảm bước trung gian thừa thãi. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Quy trình Human-in-the-loop | Phân định rành mạch: khâu nào AI xử lý tự động, khâu nào con người kiểm duyệt và phê duyệt cuối cùng. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Vận hành dựa trên cụm Agent | Các Agentic Workflow tự động kích hoạt tác vụ xuyên suốt các bộ phận kinh doanh và vận hành. | +4đ |
+
+### Câu 6: Doanh nghiệp lưu trữ và tái sử dụng tri thức nội bộ (Knowledge Base) như thế nào? (Trục: `Mô hình vận hành & quy trình linh hoạt` - Trụ cột 3)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá khả năng chuyển đổi tài liệu thô và kinh nghiệm cá nhân thành tài sản số.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Tri thức nằm trong đầu cá nhân | Báo cáo và quy chế lưu rải rác trên máy tính cá nhân; nhân sự mới vào phải hỏi từng người. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Lưu trữ trên Google Drive rời rạc | Có thư mục dùng chung nhưng không phân loại, cấu trúc lộn xộn, tìm kiếm lại rất mất thời gian. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Kho tri thức số hóa có cấu trúc | Tri thức được chuẩn hóa thành tài liệu SOP, phân loại bài bản và nạp vào Custom GPT / Vector Store nội bộ. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Enterprise Knowledge Mesh thời gian thực | Hệ thống tri thức toàn công ty đồng bộ liên tục, AI tra cứu có nguồn dẫn chiếu chính xác trong 30 giây. | +4đ |
+
+### Câu 7: Khả năng kết nối hệ thống hiện tại (ERP, CRM, ATS...) qua API ở mức độ nào? (Trục: `Nền tảng công nghệ & tích hợp hệ thống` - Trụ cột 4)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá tính sẵn sàng kỹ thuật để chuyển từ chat rời rạc sang tự động hóa luồng dữ liệu.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Các phần mềm cô lập, thiếu kết nối | Nhân viên xuất Excel từ phần mềm này rồi copy-paste thủ công sang phần mềm khác; không có API. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Có một vài webhook / script đơn lẻ | Thử nghiệm kết nối cơ bản (Zapier, Make hoặc script đơn lẻ), hoạt động chập chờn và chưa có chuẩn bảo mật. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Tích hợp API hai chiều ổn định | Hệ thống CRM/ATS/ERP đã mở cổng API chuẩn; AI Agent có thể đọc và ghi dữ liệu có phân quyền kiểm soát. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Microservices & Agentic Gateway | Hạ tầng API Gateway mạnh mẽ, điều phối hàng chục luồng Agent thời gian thực với cơ chế giám sát tải ổn định. | +4đ |
+
+### Câu 8: Doanh nghiệp đang triển khai giải pháp AI ở cấp độ kỹ thuật nào? (Trục: `Nền tảng công nghệ & tích hợp hệ thống` - Trụ cột 4)
+*Lưu ý khảo sát*: Mục tiêu: Phân định mức độ can thiệp kỹ thuật theo 4 Cấp Độ Triển Khai Sunext.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Dùng phiên bản web miễn phí | Chủ yếu dùng ChatGPT / Claude miễn phí trên trình duyệt cá nhân, không có tài khoản doanh nghiệp. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Mua license thương mại & Copilots | Trang bị tài khoản Pro/Team, bước đầu cấu hình Custom GPTs hoặc Prompt Templates cho một số tác vụ. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Xây dựng Custom AI Agent chuyên biệt | Triển khai AI Agent riêng nạp cơ sở tri thức nội bộ (như AI Resume Screener, Virtual Project Assistant). | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Deep Integration: Edge AI / Private LLM | Tích hợp sâu mô hình cục bộ (On-premise LLM, Computer Vision tại chuyền máy, MES/Core Banking). | +4đ |
+
+### Câu 9: Độ sạch và tính sẵn sàng của dữ liệu nội bộ doanh nghiệp đạt mức nào? (Trục: `Kiến trúc dữ liệu & bảo mật doanh nghiệp` - Trụ cột 5)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá chất lượng dữ liệu đầu vào để AI trả lời chuẩn xác, không bị ảo giác.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Dữ liệu rác, trùng lặp và phân tán | Dữ liệu khách hàng và sản phẩm bị sai lệch nhiều; không ai chịu trách nhiệm dọn dẹp và chuẩn hóa. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Đang số hóa nhưng chưa có quy chuẩn | Bắt đầu gom dữ liệu về các file tập trung nhưng định dạng lộn xộn, AI đọc dữ liệu thường xuyên đưa kết quả sai. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Có nguồn dữ liệu chuẩn (Single Source) | Dữ liệu nghiệp vụ trọng điểm được làm sạch, định dạng chuẩn hóa và kiểm tra định kỳ trước khi đưa vào kho vector. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Data Pipeline tự động hóa liên tục | Đường ống dẫn dữ liệu tự động làm sạch, gắn nhãn và cập nhật liên tục vào hệ thống phân tích thời gian thực. | +4đ |
+
+### Câu 10: Doanh nghiệp kiểm soát rủi ro bảo mật dữ liệu và bí mật kinh doanh khi dùng AI ra sao? (Trục: `Kiến trúc dữ liệu & bảo mật doanh nghiệp` - Trụ cột 5)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá rào chắn an toàn thông tin và phương án triển khai bảo vệ dữ liệu nhạy cảm.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Thả nổi bảo mật, chưa có quy chế | Nhân viên tải báo cáo tài chính, hợp đồng và dữ liệu khách hàng lên các website AI công cộng mà không biết rủi ro. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Cảnh báo bằng văn bản miệng | Ban hành thông báo cấm đưa dữ liệu nhạy cảm lên mạng, nhưng không có biện pháp kỹ thuật giám sát hay ngăn chặn. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Chính sách dữ liệu & Enterprise Gateway | Ký kết cam kết NDA, áp dụng điều khoản cấm dùng dữ liệu huấn luyện mô hình bên ngoài; có rào chắn chặn rò rỉ dữ liệu. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Private Cloud VPC hoặc On-premise | Dữ liệu nhạy cảm được xử lý trong phạm vi hạ tầng kiểm soát nội bộ; mô hình Private AI cách ly an toàn. | +4đ |
+
+### Câu 11: Doanh nghiệp có cơ chế nào để đo lường ROI và tác động tài chính của AI? (Trục: `Quản trị thay đổi, đo lường P&L & mở rộng` - Trụ cột 6)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá tính kỷ luật trong việc theo dõi hiệu quả kinh tế.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Không đo lường bất kỳ chỉ số nào | Mọi người cảm thấy làm nhanh hơn nhưng không ai biết tiết kiệm được bao nhiêu giờ công hay bao nhiêu tiền cụ thể. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Báo cáo cảm tính sau từng buổi học | Đánh giá qua khảo sát độ hài lòng của học viên sau khóa học, chưa đối soát với hiệu suất làm việc thực tế sau 3 tháng. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Bảng theo dõi ROI định lượng use case | Có dashboard đo lường: số giờ làm việc tiết kiệm, chi phí tuyển dụng giảm, tốc độ sản xuất tăng trưởng từng tháng. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Tác động trực tiếp lên P&L toàn công ty | Chỉ số ứng dụng AI và ROI được kiểm toán định kỳ, gắn trực tiếp vào KPI và biên lợi nhuận của từng đơn vị kinh doanh. | +4đ |
+
+### Câu 12: Kế hoạch quản trị thay đổi (Change Management) và nhân rộng sang các phòng ban khác ra sao? (Trục: `Quản trị thay đổi, đo lường P&L & mở rộng` - Trụ cột 6)
+*Lưu ý khảo sát*: Mục tiêu: Đánh giá khả năng biến một điểm sáng thành năng lực của toàn bộ tổ chức.
+
+| Cấp độ | Tên nhãn | Mô tả thực tế tại doanh nghiệp | Điểm |
+|---|---|---|---|
+| **Cấp độ 1 · Khởi Phát** | Phân mảnh, không có cơ chế nhân rộng | Một phòng ban thử nghiệm xong là dừng lại; các phòng ban khác không hề biết hoặc không quan tâm. | +1đ |
+| **Cấp độ 2 · Thử Nghiệm** | Trông chờ "tự nhiên lan tỏa" | Quản lý kỳ vọng các phòng ban tự học hỏi lẫn nhau, nhưng không ai giao KPI và không có quy trình bàn giao chính thức. | +2đ |
+| **Cấp độ 3 · Chuẩn Hóa** | Quy trình đóng gói & chuyển giao bài bản | Khi 1 use case thành công, Sunext cùng ban điều hành đóng gói SOP thành tiêu chuẩn và chuyển giao sang phòng ban kế tiếp. | +3đ |
+| **Cấp độ 4 · Tự Chủ** | Đổi mới quy trình liên tục | Toàn bộ tổ chức xem việc cải tiến quy trình bằng AI là thói quen làm việc thường nhật; có cơ chế ghi nhận và nhân bản sáng kiến định kỳ. | +4đ |
 
 ---
 

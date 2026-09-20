@@ -26,6 +26,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { PILLARS_DATA, PillarData } from '@/content/aiTransformation';
+import { COMPETENCY_TIERS } from '@/content/governanceData';
 
 const ICONS_MAP: Record<number, React.ElementType> = {
   1: Target,
@@ -194,6 +195,80 @@ export default function PillarDetailPage({ params }: PageProps) {
                 </div>
               )}
             </div>
+
+            {/* Pillar 2 Special Section: 5 Tầng Năng Lực Con Người */}
+            {pillar.number === 2 && (
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs mb-12">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold">
+                    <Users className="w-3.5 h-3.5" />
+                    <span>Chuẩn Đầu Ra Thang 5 Tầng Năng Lực Con Người</span>
+                  </div>
+                  <span className="text-xs font-mono text-[#6E6E6E]">5-Tier Competency Rubric & Gate 4 Pass Mark</span>
+                </div>
+
+                <h2 className="text-2xl font-normal text-[#17151A] mb-3">
+                  Thang 5 Tầng Năng Lực & Tiêu Chí Nghiệm Thu Gate 4
+                </h2>
+                <p className="text-xs sm:text-sm text-[#6E6E6E] leading-relaxed mb-6">
+                  Sunext phân định chuẩn đầu ra rõ ràng cho từng vai trò trong tổ chức: từ phổ cập toàn dân (Tầng 1) đến kỹ sư làm chủ mô hình cục bộ và Trung tâm Xuất sắc (Tầng 5). Mỗi tầng đều có tiêu chuẩn kiểm tra độc lập (Pass Mark) và điều kiện nghiệm thu hệ thống (System Adoption Prerequisite).
+                </p>
+
+                <div className="space-y-4">
+                  {COMPETENCY_TIERS.map((tier) => (
+                    <div
+                      key={tier.id}
+                      className="p-5 rounded-2xl bg-[#FBFBFA] border border-black/5 hover:border-black/15 transition-colors"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="w-7 h-7 rounded-full bg-[#17151A] text-white text-xs font-mono font-bold flex items-center justify-center">
+                            0{tier.tierNumber}
+                          </span>
+                          <h3 className="font-semibold text-sm sm:text-base text-[#17151A]">
+                            Tầng {tier.tierNumber}: {tier.name}
+                          </h3>
+                        </div>
+                        <span className="text-xs px-2.5 py-1 rounded-md bg-black/5 font-medium text-[#17151A]">
+                          {tier.targetRole}
+                        </span>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                        <div className="space-y-2">
+                          <div>
+                            <span className="font-semibold text-[#17151A] block mb-0.5">Năng lực tự chủ:</span>
+                            <p className="text-[#6E6E6E] leading-relaxed">{tier.autonomousCapability}</p>
+                          </div>
+                          <div>
+                            <span className="font-semibold text-[#17151A] block mb-0.5">Sản phẩm bàn giao:</span>
+                            <ul className="space-y-0.5 text-[#6E6E6E]">
+                              {tier.deliverables.map((del, dIdx) => (
+                                <li key={dIdx} className="flex items-start gap-1.5">
+                                  <span className="text-[#17151A] font-bold">•</span>
+                                  <span>{del}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2 p-3.5 rounded-xl bg-white border border-black/5">
+                          <div>
+                            <span className="font-semibold text-blue-900 block mb-0.5">Ranh giới phân quyền & an toàn:</span>
+                            <p className="text-neutral-600 leading-relaxed text-[11px]">{tier.governanceBoundary}</p>
+                          </div>
+                          <div className="pt-2 border-t border-black/5">
+                            <span className="font-semibold text-emerald-900 block mb-0.5">Tiêu chuẩn Pass Mark cá nhân:</span>
+                            <p className="text-neutral-700 leading-relaxed text-[11px]">{tier.individualPassMark}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Section 3: Bằng Chứng Thực Tế */}
             {pillar.evidence && pillar.evidence.length > 0 && (

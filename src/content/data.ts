@@ -4,7 +4,7 @@ export interface AdvantageCard {
   eyebrow: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
   bgColor: string;
   isDark?: boolean;
   metric: {
@@ -21,7 +21,7 @@ export interface CaseStudy {
   id: string;
   title: string;
   category: string;
-  image: string;
+  image?: string;
   widthClass: string;
   heightClass: string;
   slug: string;
@@ -40,7 +40,6 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Con người & Quy trình',
     title: '70% Hiệu Quả Đến Từ Con Người, Không Phải Mua Tool',
     description: 'Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.',
-    image: '/assets/vietnam-retail-store.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 40,
@@ -56,7 +55,6 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Hạ tầng dữ liệu',
     title: 'Kết Nối Trực Tiếp Vào Hệ Thống Sẵn Có',
     description: 'Tích hợp hai chiều vào ERP, CRM và dây chuyền sản xuất. Hệ thống kích hoạt hành động theo thời gian thực, không phát sinh phần mềm phụ.',
-    image: '/assets/vietnam-manufacturing-line.jpg',
     bgColor: '#F5F3F6',
     metric: {
       value: 99,
@@ -72,7 +70,6 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Nghiệm thu dự án',
     title: 'Nghiệm Thu Bằng Giờ Công Và P&L',
     description: 'Triển khai theo từng cột mốc rõ ràng. Nghiệm thu bằng chỉ số định lượng: giảm giờ xử lý, hạ tỷ lệ lỗi và tăng sản lượng thực tế.',
-    image: '/assets/vietnam-b2b-office.jpg',
     bgColor: '#FAFFDE',
     metric: {
       value: 5,
@@ -89,7 +86,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-1',
     title: 'Tối Ưu Tuyển Dụng Chuỗi Bán Lẻ',
     category: 'Bán Lẻ & FMCG',
-    image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
@@ -99,7 +95,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-2',
     title: 'AI Vision Kiểm Định Cơ Khí',
     category: 'Sản Xuất & Chế Tạo',
-    image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
     heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
     slug: 'ai-auditor-manufacturing',
@@ -109,7 +104,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-3',
     title: 'Content Engine Doanh Nghiệp B2B',
     category: 'Dịch Vụ B2B',
-    image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[290px] sm:w-[330px] md:w-[360px]',
     heightClass: 'h-[190px] sm:h-[220px] md:h-[250px]',
     slug: 'content-factory-b2b-marketing',
@@ -119,7 +113,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-4',
     title: 'Bóc Tách Báo Cáo Tài Chính',
     category: 'Chứng Khoán & Đầu Tư',
-    image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[340px] sm:w-[380px] md:w-[420px]',
     heightClass: 'h-[240px] sm:h-[270px] md:h-[300px]',
     slug: 'vietcap-ai-multi-agent-nghien-cuu-thi-truong',
@@ -129,7 +122,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-5',
     title: 'AI Trợ Lý Bán Hàng Bất Động Sản',
     category: 'Bất Động Sản & Nhà Phố',
-    image: '/assets/vietnam-retail-store.jpg',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
     heightClass: 'h-[210px] sm:h-[240px] md:h-[270px]',
     slug: 'vinhomes-ai-sales-enablement',
@@ -139,7 +131,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-6',
     title: 'Tự Động Hóa Hồ Sơ Thầu Quốc Tế',
     category: 'Truyền Thông & Sáng Tạo',
-    image: '/assets/vietnam-b2b-office.jpg',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
     slug: 'dentsu-ai-pitch-deck-automation',
@@ -149,7 +140,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-7',
     title: 'Sản Xuất Video Hiện Trường',
     category: 'Bất Động Sản & Nhà Phố',
-    image: '/assets/vietnam-manufacturing-line.jpg',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
     heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
     slug: 'phuong-truong-an-video-ai-hien-truong',
@@ -159,7 +149,6 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-8',
     title: 'Hệ Thống AI Agent Sự Kiện 10.000 Người',
     category: 'Giáo Dục & Công Nghệ',
-    image: '/assets/vietnam-strategy-meeting.jpg',
     widthClass: 'w-[330px] sm:w-[370px] md:w-[410px]',
     heightClass: 'h-[230px] sm:h-[260px] md:h-[290px]',
     slug: 'fptu-nang-bac-giang-vien-ai',
@@ -194,7 +183,7 @@ export interface CaseStudyDetail {
   client: string;
   category: string;
   scale: string;
-  image: string;
+  image?: string;
   challenge: string;
   solution: string;
   storyBeats: CaseStoryBeat[];
@@ -214,11 +203,10 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Chuỗi Bán Lẻ Thời Trang & Hàng Tiêu Dùng',
     category: 'Bán Lẻ & FMCG',
     scale: '500 nhân sự · Đội HR 4 người · Tuyển 60-80 vị trí/quý',
-    image: '/assets/vietnam-retail-store.jpg',
     challenge:
       'Mỗi quý mở rộng, chuỗi bán lẻ 500 nhân sự cần tuyển từ 60 đến 80 vị trí mới. Nhưng cả bộ phận Nhân sự chỉ có vỏn vẹn 4 người. Họ mất trung bình 3 ngày làm việc thủ công cho mỗi vị trí chỉ để mở từng file hồ sơ, đối chiếu tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Khối lượng tác vụ lặp lại đè nặng khiến cả đội gần như phải dừng mọi hoạt động phát triển nhân sự khác trong mùa cao điểm.',
     solution:
-      'Bước chuyển hóa không bắt đầu bằng việc mua công cụ. Đội ngũ HR trước tiên được đào tạo để hiểu rõ năng lực AI (Tầng 1) và áp dụng trực tiếp vào quy trình tuyển dụng nội bộ (Tầng 2). Sau khi quy trình được chuẩn hóa, AI Resume Screener mới được tích hợp thẳng vào hệ thống ATS quen thuộc của công ty. Hệ thống tự động trích xuất thông tin, chấm điểm tiêu chí và hỗ trợ tiếp nhận ứng viên 24/7. Đội HR bốn người lấy lại thời gian để tập trung vào việc mà máy không làm thay được: phỏng vấn chuyên sâu và thu hút ứng viên tốt nhất.',
+      'Bước chuyển hóa không bắt đầu bằng việc mua công cụ. Đội ngũ HR trước tiên được đào tạo để hiểu rõ năng lực AI (Tầng 1) và áp dụng trực tiếp vào quy trình tuyển dụng nội bộ (Tầng 2). Sau khi quy trình được chuẩn hóa, AI Resume Screener mới được tích hợp thẳng vào hệ thống ATS quen thuộc của công ty. Hệ thống tự động trích xuất thông tin, chấm điểm tiêu chí và hỗ trợ tiếp nhận ứng viên 24/7. Đội HR bốn người lấy lại thời gian để tập trung vào việc mà máy không làm thay được: phỏng vấn chuyên sâu và thu hút ứng viên phù hợp nhất.',
     storyBeats: [
       {
         beatNumber: 1,
@@ -280,7 +268,6 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Nhà Máy Chế Tạo Cơ Khí Phụ Tùng Xuất Khẩu',
     category: 'Sản Xuất Cơ Khí & Chế Tạo',
     scale: '800 công nhân · 6 dây chuyền sản xuất liên tục',
-    image: '/assets/vietnam-manufacturing-line.jpg',
     challenge:
       'Trên 6 dây chuyền sản xuất cơ khí chính xác, công nhân kiểm định chất lượng (QA/QC) phải soi từng chi tiết dưới ánh đèn công suất lớn suốt ca 8 tiếng. Sau 4 tiếng liên tục, hiện tượng mỏi mắt cơ học khiến việc phát hiện các vết nứt vi mô, vết xước bề mặt hay sai lệch kích thước nhỏ trở nên thiếu ổn định. Rủi ro sản phẩm lỗi lọt ra ngoài thị trường đe dọa trực tiếp đến các hợp đồng gia công quốc tế khắt khe.',
     solution:
@@ -346,16 +333,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Công Ty Tư Vấn Giải Pháp & Dịch Vụ Doanh Nghiệp',
     category: 'Dịch Vụ Doanh Nghiệp & B2B',
     scale: '200 nhân sự · Đội Marketing 4 người',
-    image: '/assets/vietnam-b2b-office.jpg',
     challenge:
-      'Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm thực chiến của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.',
+      'Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm chuyên sâu của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.',
     solution:
       'Đội ngũ marketing nội bộ được nâng tầng năng lực (Tầng 2) và tái thiết kế quy trình sản xuất nội dung theo mô hình Content Factory. Chuyên gia chỉ cần ghi âm chia sẻ ngắn hoặc cung cấp tài liệu kỹ thuật thô, AI Engine tự động cấu trúc thành bài phân tích chuyên sâu chuẩn Brand Voice của công ty. Đội ngũ marketing giữ vai trò biên tập, kiểm duyệt chất lượng và xuất bản đa kênh với chu kỳ nhanh gấp 5 lần mà không phát sinh thêm chi phí.',
     storyBeats: [
       {
         beatNumber: 1,
         beatTitle: 'Bối Cảnh Bình Thường: 200 Nhân Sự & Kho Tri Thức Nằm Trong Đầu Chuyên Gia',
-        narrative: 'Công ty tư vấn doanh nghiệp 200 nhân sự sở hữu đội ngũ chuyên gia dày dạn kinh nghiệm thực chiến. Nhưng mọi tri thức quý giá đều nằm rải rác trong sổ tay cá nhân và các báo cáo dự án cũ, không thể chuyển hóa thành tài liệu tiếp thị cho khách hàng mới.',
+        narrative: 'Công ty tư vấn doanh nghiệp 200 nhân sự sở hữu đội ngũ chuyên gia dày dạn kinh nghiệm chuyên môn. Nhưng mọi tri thức quý giá đều nằm rải rác trong sổ tay cá nhân và các báo cáo dự án cũ, không thể chuyển hóa thành tài liệu tiếp thị cho khách hàng mới.',
       },
       {
         beatNumber: 2,
@@ -412,7 +398,6 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Vietcap Securities (VCI) — Khối Phân Tích & Nghiên Cứu',
     category: 'Chứng Khoán & Đầu Tư',
     scale: '30+ Chuyên viên Phân tích & Khối Nghiên cứu Khách hàng Tổ chức',
-    image: '/assets/vietnam-strategy-meeting.jpg',
     challenge:
       'Mỗi mùa công bố kết quả kinh doanh quý, hơn 30 chuyên viên phân tích cao cấp tại Vietcap Securities đối mặt với hàng trăm báo cáo tài chính dài từ 60 đến 120 trang mỗi bản. Họ phải mất trung bình 2 ngày làm việc thủ công cho mỗi doanh nghiệp chỉ để bóc tách từng con số trên bảng cân đối kế toán, lưu chuyển tiền tệ và thuyết minh phức tạp. Tác vụ gõ số cơ học gây áp lực nặng nề và tiềm ẩn nguy cơ sai lệch dữ liệu định giá trong các báo cáo khuyến nghị quan trọng gửi nhà đầu tư tổ chức.',
     solution:
@@ -478,11 +463,10 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes)',
     category: 'Bất Động Sản & Nhà Phố',
     scale: '500+ Chuyên viên Kinh doanh BĐS',
-    image: '/assets/vietnam-retail-store.jpg',
     challenge:
       'Trong các chiến dịch mở bán dự án quy mô lớn, mạng lưới hơn 500 nhân sự kinh doanh bất động sản phải xử lý lượng yêu cầu thông tin khổng lồ từ khách hàng. Tuy nhiên, việc tra cứu giỏ hàng, cập nhật chính sách bán hàng và soạn kịch bản tư vấn thực địa theo từng phân khúc diễn ra thủ công và rời rạc. Tốc độ phản hồi chậm khiến tỷ lệ kích hoạt lại tệp khách hàng cũ (lead reactivation) sụt giảm, nhiều cơ hội giao dịch giá trị cao bị bỏ lỡ.',
     solution:
-      'Chương trình đào tạo thực chiến kết hợp triển khai công cụ AI giúp đội ngũ kinh doanh tự sản xuất trang giới thiệu dự án chuyên nghiệp, dựng video tư vấn thực địa bằng AI và thiết lập trợ lý ảo giải đáp chính sách bán hàng 24/7 (với case study tiêu biểu tại dự án Vinhomes). Chuyên viên kinh doanh chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu tư vấn được cá nhân hóa sâu sắc.',
+      'Chương trình đào tạo kết hợp triển khai công cụ AI giúp đội ngũ kinh doanh tự sản xuất trang giới thiệu dự án chuyên nghiệp, dựng video tư vấn thực địa bằng AI và thiết lập trợ lý ảo giải đáp chính sách bán hàng 24/7 (với case study tiêu biểu tại dự án Vinhomes). Chuyên viên kinh doanh chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu tư vấn được cá nhân hóa sâu sắc.',
     storyBeats: [
       {
         beatNumber: 1,
@@ -523,7 +507,7 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     metrics: [
       {
         value: '500+',
-        label: 'Nhân sự kinh doanh làm chủ công cụ AI thực chiến',
+        label: 'Nhân sự kinh doanh làm chủ công cụ AI trong công việc',
         description: 'Nâng cao năng lực tự sản xuất tài liệu và kịch bản chăm sóc khách hàng',
       },
       {
@@ -544,7 +528,6 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Dentsu Sports Vietnam & Creative Agency',
     category: 'Truyền Thông & Sáng Tạo',
     scale: '25 Chuyên viên Chiến lược & Account Director',
-    image: '/assets/vietnam-b2b-office.jpg',
     challenge:
       'Các agency truyền thông quốc tế thường xuyên phải tham gia những đợt đấu thầu tài trợ thể thao và chiến dịch thương hiệu lớn với thời hạn gấp gáp. Đội ngũ 25 chuyên viên chiến lược và account phải mất hàng tuần phân tích insight người tiêu dùng, dựng storyline và thiết kế pitch deck hàng trăm trang. Áp lực thời gian kéo dài khiến nhân sự kiệt sức, làm hạn chế số lượng hồ sơ thầu mà công ty có thể tham gia mỗi quý.',
     solution:
@@ -610,7 +593,6 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Phương Trường An Group (Bất Động Sản Thương Mại & Đất Nền)',
     category: 'Bất Động Sản & Nhà Phố',
     scale: '~300 Nhân sự Kinh doanh & Marketing',
-    image: '/assets/vietnam-manufacturing-line.jpg',
     challenge:
       'Tại các dự án đất nền và bất động sản thương mại tại Bình Dương, khách hàng luôn đòi hỏi video cập nhật tiến độ hạ tầng và pháp lý thực tế liên tục. Tuy nhiên, đội ngũ marketing nội bộ chỉ vài người không thể đáp ứng khối lượng video cho gần 300 chuyên viên kinh doanh ngoài hiện trường. Chi phí thuê ngoài quay dựng đắt đỏ và thời gian chờ đợi sản phẩm mất cả tuần khiến thông tin bị nguội.',
     solution:
@@ -634,7 +616,7 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
       {
         beatNumber: 4,
         beatTitle: 'Bước Ngoặt Đồng Hành: Chuyển Giao Quy Trình Sản Xuất Video AI Tinh Gọn',
-        narrative: 'Sunext thiết kế khóa huấn luyện thực chiến tại hiện trường: Đơn giản hóa toàn bộ khâu làm video thành quy trình 4 bước thực hiện hoàn toàn trên chiếc điện thoại thông minh cá nhân.',
+        narrative: 'Sunext thiết kế khóa huấn luyện trực tiếp tại hiện trường: Đơn giản hóa toàn bộ khâu làm video thành quy trình 4 bước thực hiện hoàn toàn trên chiếc điện thoại thông minh cá nhân.',
       },
       {
         beatNumber: 5,
@@ -676,9 +658,8 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Đại Học FPT (FPTU) & Ngày Hội Công Nghệ Tech Fest',
     category: 'Giáo Dục & Công Nghệ',
     scale: 'Toàn bộ Giảng viên FPTU HCM & Hybrid HN + 10.000+ sinh viên & khách tham dự Tech Fest',
-    image: '/assets/vietnam-strategy-meeting.jpg',
     challenge:
-      'Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ đột phá cho hàng chục nghìn lượt khách tham gia.',
+      'Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ hiện đại cho hàng chục nghìn lượt khách tham gia.',
     solution:
       'Triển khai chương trình đào tạo nâng bậc giảng viên chuẩn Bậc 6, đưa chuyên đề "Critical Thinking in the AI Era" vào chương trình đào tạo; song song tích hợp hệ thống MC ảo AI và các luồng AI Agents (n8n) tự động hóa điều phối sự kiện tại Tech Fest trong hai mùa liên tiếp. Chương trình được đông đảo cơ quan báo chí và truyền hình đưa tin ghi nhận tính tiên phong.',
     storyBeats: [
