@@ -47,22 +47,31 @@ export function AiTransformationNetwork() {
             <circle cx="2" cy="2" r="1" fill="#E8E8E8" />
           </pattern>
 
-          {/* Pulse Glow for Center */}
-          <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#6B21A8" stopOpacity="0.18" />
+          {/* Sun Solar Glow */}
+          <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.32" />
+            <stop offset="55%" stopColor="#FB923C" stopOpacity="0.12" />
             <stop offset="100%" stopColor="#6B21A8" stopOpacity="0" />
           </radialGradient>
 
-          {/* Core Gradient */}
-          <linearGradient id="core-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#1E1A24" />
-            <stop offset="100%" stopColor="#111111" />
+          {/* Sun Core Radial Gradient */}
+          <radialGradient id="sun-core-grad" cx="38%" cy="36%" r="64%">
+            <stop offset="0%" stopColor="#FFF7ED" />
+            <stop offset="25%" stopColor="#FB923C" />
+            <stop offset="70%" stopColor="#F97316" />
+            <stop offset="100%" stopColor="#EA580C" />
+          </radialGradient>
+
+          {/* Sun Rim Highlight */}
+          <linearGradient id="sun-rim-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
+            <stop offset="100%" stopColor="#C2410C" stopOpacity="0.25" />
           </linearGradient>
 
           {/* Active Line Gradient */}
           <linearGradient id="active-line-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#6B21A8" />
-            <stop offset="100%" stopColor="#F97316" />
+            <stop offset="0%" stopColor="#F97316" />
+            <stop offset="100%" stopColor="#6B21A8" />
           </linearGradient>
         </defs>
 
@@ -75,7 +84,7 @@ export function AiTransformationNetwork() {
         <circle cx={cx} cy={cy} r="250" stroke="#F0EFEA" strokeWidth="0.8" />
 
         {/* Center Aura */}
-        <circle cx={cx} cy={cy} r="84" fill="url(#center-glow)" />
+        <circle cx={cx} cy={cy} r="96" fill="url(#sun-glow)" />
 
         {/* Primitive 3 & 4: Connecting Lines & Data Rays from Center to Nodes */}
         {NODES.map((node) => {
@@ -201,37 +210,92 @@ export function AiTransformationNetwork() {
           );
         })}
 
-        {/* Central Core: SUNEXT AI CORE */}
-        <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer">
-          {/* Animated Halo */}
-          <circle cx="0" cy="0" r="54" fill="none" stroke="#6B21A8" strokeWidth="1" strokeDasharray="6 4" opacity="0.6">
+        {/* Central Core: MẶT TRỜI SUNEXT (Technological Sun Center) */}
+        <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer group">
+          {/* Rotating Solar Corona Rings */}
+          <circle cx="0" cy="0" r="58" fill="none" stroke="#F97316" strokeWidth="1" strokeDasharray="3 7" opacity="0.6">
             <animateTransform
               attributeName="transform"
               type="rotate"
               from="0"
               to="360"
-              dur="30s"
+              dur="40s"
+              repeatCount="indefinite"
+            />
+          </circle>
+          <circle cx="0" cy="0" r="48" fill="none" stroke="#FB923C" strokeWidth="1.2" strokeDasharray="5 5" opacity="0.5">
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="360"
+              to="0"
+              dur="28s"
               repeatCount="indefinite"
             />
           </circle>
 
-          {/* Core Body */}
-          <circle cx="0" cy="0" r="44" fill="url(#core-grad)" filter="drop-shadow(0 8px 24px rgba(107,33,168,0.20))" />
-          <circle cx="0" cy="0" r="44" fill="none" stroke="#8B5CF6" strokeWidth="1.5" opacity="0.4" />
+          {/* 16 Radiant Solar Rays (Tia Nắng Mặt Trời) */}
+          {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5].map((angle, idx) => {
+            const isMajor = idx % 2 === 0;
+            const innerR = 38;
+            const outerR = isMajor ? 52 : 45;
+            const rad = (angle * Math.PI) / 180;
+            const x1 = innerR * Math.cos(rad);
+            const y1 = innerR * Math.sin(rad);
+            const x2 = outerR * Math.cos(rad);
+            const y2 = outerR * Math.sin(rad);
 
-          {/* Central Logo Symbol */}
-          <g transform="translate(-10, -22)">
-            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-[#FAF8FC]" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16.5 3.5L7.5 7.5V16.5L16.5 20.5" stroke="#FAF8FC" />
-              <path d="M7.5 7.5L16.5 11.5V20.5" stroke="#F97316" />
-            </svg>
-          </g>
+            return (
+              <line
+                key={`solar-ray-${angle}`}
+                x1={x1}
+                y1={y1}
+                x2={x2}
+                y2={y2}
+                stroke={isMajor ? '#F97316' : '#FB923C'}
+                strokeWidth={isMajor ? 2 : 1.2}
+                strokeLinecap="round"
+                opacity={isMajor ? 0.85 : 0.55}
+              />
+            );
+          })}
 
-          <text x="0" y="8" fill="#FFFFFF" fontSize="10.5" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle" letterSpacing="0.08em">
-            SUNEXT AI
-          </text>
-          <text x="0" y="21" fill="#D8B4FE" fontSize="7.5" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle" letterSpacing="0.05em">
-            TRANSFORMATION
+          {/* Sun Disc Core (Mặt Trời Chính) */}
+          <circle
+            cx="0"
+            cy="0"
+            r="36"
+            fill="url(#sun-core-grad)"
+            filter="drop-shadow(0 6px 20px rgba(234,88,12,0.35))"
+            className="transition-transform duration-300 group-hover:scale-105"
+          />
+          {/* Inner Solar Rim Light */}
+          <circle cx="0" cy="0" r="36" fill="none" stroke="url(#sun-rim-grad)" strokeWidth="1.5" />
+
+          {/* Central Solar Geometry (Lõi Hạt Nhân Mặt Trời) */}
+          <circle cx="0" cy="0" r="14" fill="#FFFFFF" fillOpacity="0.22" stroke="#FFFFFF" strokeWidth="1.2" />
+          <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
+
+          {/* 4 Cardinal Solar Flares */}
+          <path
+            d="M0 -22 L3 -16 L-3 -16 Z M0 22 L3 16 L-3 16 Z M-22 0 L-16 3 L-16 -3 Z M22 0 L16 3 L16 -3 Z"
+            fill="#FFFFFF"
+            opacity="0.9"
+          />
+
+          {/* Sunext Brand Text */}
+          <text
+            x="0"
+            y="26"
+            fill="#FFFFFF"
+            fontSize="7"
+            fontFamily="system-ui, sans-serif"
+            fontWeight="800"
+            textAnchor="middle"
+            letterSpacing="0.14em"
+            filter="drop-shadow(0 1px 2px rgba(0,0,0,0.3))"
+          >
+            SUNEXT
           </text>
         </g>
       </svg>
