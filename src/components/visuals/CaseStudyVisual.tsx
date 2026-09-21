@@ -1,24 +1,6 @@
 'use client';
 
 import React from 'react';
-import { 
-  CheckCircle2, 
-  Cpu, 
-  Database, 
-  TrendingUp, 
-  Clock, 
-  Zap, 
-  Activity, 
-  FileText, 
-  Layers, 
-  Users, 
-  Video, 
-  Bot, 
-  Scan,
-  ShieldCheck,
-  BarChart3,
-  Network
-} from 'lucide-react';
 
 interface CaseStudyVisualProps {
   slug: string;
@@ -29,546 +11,792 @@ interface CaseStudyVisualProps {
 export function CaseStudyVisual({ slug, className = '', compact = false }: CaseStudyVisualProps) {
   switch (slug) {
     case 'toi-uu-chi-phi-tuyen-dung-hr-ai':
-      return <HrRecruitmentVisual compact={compact} className={className} />;
+      return <HrRecruitmentSvgVisual compact={compact} className={className} />;
     case 'ai-auditor-manufacturing':
-      return <ManufacturingVisionVisual compact={compact} className={className} />;
+      return <ManufacturingVisionSvgVisual compact={compact} className={className} />;
     case 'content-factory-b2b-marketing':
-      return <B2bContentFactoryVisual compact={compact} className={className} />;
+      return <B2bContentFactorySvgVisual compact={compact} className={className} />;
     case 'vietcap-ai-multi-agent-nghien-cuu-thi-truong':
-      return <VietcapMultiAgentVisual compact={compact} className={className} />;
+      return <VietcapMultiAgentSvgVisual compact={compact} className={className} />;
     case 'vinhomes-ai-sales-enablement':
-      return <VinhomesSalesMeshVisual compact={compact} className={className} />;
+      return <VinhomesSalesMeshSvgVisual compact={compact} className={className} />;
     case 'dentsu-ai-pitch-deck-automation':
-      return <DentsuPitchDeckVisual compact={compact} className={className} />;
+      return <DentsuPitchDeckSvgVisual compact={compact} className={className} />;
     case 'phuong-truong-an-video-ai-hien-truong':
-      return <PhuongTruongAnVideoVisual compact={compact} className={className} />;
+      return <PhuongTruongAnVideoSvgVisual compact={compact} className={className} />;
     case 'fptu-nang-bac-giang-vien-ai':
-      return <FptuFacultySwarmVisual compact={compact} className={className} />;
+      return <FptuFacultySwarmSvgVisual compact={compact} className={className} />;
     default:
-      return <GenericDataVisual slug={slug} compact={compact} className={className} />;
+      return <GenericDataSvgVisual slug={slug} compact={compact} className={className} />;
   }
 }
 
-// 1. HR Screening Funnel & Latency Compression (-40% cost, 3d -> 2h)
-function HrRecruitmentVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 1. HR Screening Funnel & Latency Compression (Retail & FMCG, 500 Staff)
+// ---------------------------------------------------------------------------
+function HrRecruitmentSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0E0D12] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Matrix Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px]" />
-      <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="hr-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+          <linearGradient id="hr-grad-old" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#E5E4DE" />
+            <stop offset="100%" stopColor="#D8D6CE" />
+          </linearGradient>
+        </defs>
 
-      {/* Top Header Telemetry */}
-      <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[11px] font-mono tracking-wider text-emerald-400 uppercase font-semibold">
-            ATS STREAM · HR AI SCREENER
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-zinc-400 bg-white/5 px-2 py-0.5 rounded border border-white/10">
+        {/* Background Grid */}
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#hr-grid)" opacity="0.7" />
+
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#059669" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          ATS STREAM · HR AI SCREENER
+        </text>
+        <rect x="350" y="18" width="106" height="20" rx="10" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
+        <text x="403" y="32" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
           500 NHÂN SỰ · 4 HR
-        </span>
-      </div>
+        </text>
 
-      {/* Centerpiece: Timeline Compression (3 days -> 2 hours) */}
-      <div className="relative z-10 my-auto py-3 space-y-4">
-        {/* Baseline (Old) */}
-        <div>
-          <div className="flex items-center justify-between text-xs text-zinc-400 mb-1 font-mono">
-            <span className="flex items-center gap-1 text-zinc-300">
-              <Clock className="w-3 h-3 text-rose-400" /> Quy trình thủ công cũ
-            </span>
-            <span className="text-rose-400 font-semibold">3 Ngày (72h)</span>
-          </div>
-          <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/10 relative">
-            <div className="w-full h-full bg-gradient-to-r from-rose-500/40 via-amber-500/30 to-rose-500/20" />
-            <div className="absolute inset-0 flex items-center justify-around text-[8px] font-mono text-white/50">
-              <span>Tải file</span>
-              <span>Đọc CV</span>
-              <span>Gọi điện</span>
-              <span>Xếp lịch</span>
-            </div>
-          </div>
-        </div>
+        {/* Left: 3-Stage Candidate Funnel */}
+        <g transform="translate(28, 64)">
+          <text x="0" y="12" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+            PHỄU SÀNG LỌC HỒ SƠ (FUNNEL)
+          </text>
 
-        {/* AI Agent Stream (New) */}
-        <div>
-          <div className="flex items-center justify-between text-xs text-zinc-400 mb-1 font-mono">
-            <span className="flex items-center gap-1 text-emerald-400 font-medium">
-              <Zap className="w-3 h-3 text-emerald-400" /> AI Resume Screener (Tự Động)
-            </span>
-            <span className="text-emerald-300 font-bold bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30">
-              2 Giờ (3 Ngày → 2 Giờ)
-            </span>
-          </div>
-          <div className="w-full h-3 bg-white/5 rounded-full overflow-hidden border border-white/10 relative">
-            <div className="w-[12%] h-full bg-gradient-to-r from-emerald-400 to-[#A3E635] shadow-[0_0_12px_#A3E635]" />
-          </div>
-        </div>
-      </div>
+          {/* Tier 1: 1.200 CVs */}
+          <rect x="0" y="24" width="180" height="22" rx="6" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
+          <text x="12" y="39" fill="#76747E" fontSize="10" fontFamily="system-ui, sans-serif">1.200 CV Nộp Vào</text>
+          <text x="168" y="39" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">100%</text>
 
-      {/* Bottom KPI Badges */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-center">
-        <div className="bg-white/5 p-2 rounded-xl border border-white/5">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Tiết Kiệm Chi Phí</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">-40%</span>
-        </div>
-        <div className="bg-white/5 p-2 rounded-xl border border-white/5">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Lọc Hồ Sơ</span>
-          <span className="text-base sm:text-lg font-bold text-[#FAFFDE] font-mono">3d → 2h</span>
-        </div>
-        <div className="bg-white/5 p-2 rounded-xl border border-white/5">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Đạt Phỏng Vấn</span>
-          <span className="text-base sm:text-lg font-bold text-cyan-400 font-mono">+25%</span>
-        </div>
-      </div>
-    </div>
-  );
-}
+          {/* Tier 2: 180 Match */}
+          <rect x="18" y="54" width="144" height="22" rx="6" fill="#FAFFDE" stroke="#D8E97C" strokeWidth="1" />
+          <text x="28" y="69" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">180 Đạt Tiêu Chuẩn</text>
+          <text x="152" y="69" fill="#059669" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">15%</text>
 
-// 2. Manufacturing AI Vision (99.8% precision, <50ms edge scan)
-function ManufacturingVisionVisual({ compact, className }: { compact?: boolean; className?: string }) {
-  return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0A0D14] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Blueprint Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#38bdf815_1px,transparent_1px)] bg-[size:16px_16px]" />
-      <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+          {/* Tier 3: 35 Final */}
+          <rect x="36" y="84" width="108" height="22" rx="6" fill="#17151A" />
+          <text x="46" y="99" fill="#FAFFDE" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">35 Mời Phỏng Vấn</text>
+          <text x="134" y="99" fill="#A3E635" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">Pass</text>
+        </g>
 
-      {/* Top Header HUD */}
-      <div className="relative z-10 flex items-center justify-between border-b border-cyan-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <Scan className="w-3.5 h-3.5 text-cyan-400 animate-spin" style={{ animationDuration: '8s' }} />
-          <span className="text-[11px] font-mono tracking-wider text-cyan-400 uppercase font-semibold">
-            EDGE VISION TELEMETRY · 6 CHUYỀN
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-          <span className="text-[10px] font-mono text-cyan-300">LATENCY: 38ms</span>
-        </div>
-      </div>
+        {/* Right: Latency Compression Comparison */}
+        <g transform="translate(236, 64)">
+          <text x="0" y="12" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+            NÉN THỜI GIAN VẬN HÀNH (LATENCY)
+          </text>
 
-      {/* Center Vision Target Crosshair & Waveform */}
-      <div className="relative z-10 my-auto py-2 flex items-center justify-center">
-        <div className="relative w-48 sm:w-60 h-28 border border-cyan-500/30 rounded-xl bg-cyan-950/20 flex items-center justify-center overflow-hidden">
-          {/* Laser Scanning Line */}
-          <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_15px_#22d3ee] animate-pulse" />
+          {/* Old Workflow Bar */}
+          <g transform="translate(0, 24)">
+            <rect x="0" y="0" width="216" height="36" rx="8" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
+            <text x="10" y="16" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif">Quy trình thủ công cũ</text>
+            <text x="206" y="16" fill="#DC2626" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">72 Giờ</text>
+            <rect x="10" y="22" width="196" height="6" rx="3" fill="#F0EFEA" />
+            <rect x="10" y="22" width="196" height="6" rx="3" fill="url(#hr-grad-old)" />
+          </g>
+
+          {/* New AI Workflow Bar */}
+          <g transform="translate(0, 70)">
+            <rect x="0" y="0" width="216" height="36" rx="8" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1" />
+            <text x="10" y="16" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">AI Resume Screener</text>
+            <text x="206" y="16" fill="#059669" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="end">2 Giờ (3d → 2h)</text>
+            <rect x="10" y="22" width="196" height="6" rx="3" fill="#E5E4DE" />
+            <rect x="10" y="22" width="32" height="6" rx="3" fill="#059669" />
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
           
-          {/* Component Blueprint Representation */}
-          <div className="w-28 h-16 border border-dashed border-cyan-400/40 rounded-lg flex flex-col items-center justify-center relative">
-            <span className="text-[9px] font-mono text-cyan-300">CNC GEAR #804</span>
-            <div className="absolute -top-2 -right-2 px-1.5 py-0.5 bg-emerald-500/30 border border-emerald-400/50 rounded text-[8px] font-mono text-emerald-300">
-              QC PASS
-            </div>
-            {/* Defect Detection Box */}
-            <div className="absolute bottom-1 left-2 w-5 h-4 border border-rose-500 bg-rose-500/20 rounded text-[6px] font-mono text-rose-300 flex items-center justify-center">
-              0.02
-            </div>
-          </div>
+          {/* KPI 1 */}
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TIẾT KIỆM CHI PHÍ</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">-40%</text>
 
-          {/* Corner Crosshairs */}
-          <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-cyan-400" />
-          <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-cyan-400" />
-          <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-cyan-400" />
-          <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-cyan-400" />
-        </div>
-      </div>
+          {/* KPI 2 */}
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">RÚT NGẮN TIẾN ĐỘ</text>
+          <text x="164" y="58" fill="#17151A" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">3d → 2h</text>
 
-      {/* Bottom Metrics Bar */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-cyan-500/20 text-center">
-        <div className="bg-cyan-950/40 p-2 rounded-xl border border-cyan-500/20">
-          <span className="block text-[10px] text-cyan-300/70 uppercase font-mono">Độ Chính Xác</span>
-          <span className="text-base sm:text-lg font-bold text-cyan-300 font-mono">99.8%</span>
-        </div>
-        <div className="bg-cyan-950/40 p-2 rounded-xl border border-cyan-500/20">
-          <span className="block text-[10px] text-cyan-300/70 uppercase font-mono">Tỷ Lệ Lỗi Xuất</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">1.5%</span>
-        </div>
-        <div className="bg-cyan-950/40 p-2 rounded-xl border border-cyan-500/20">
-          <span className="block text-[10px] text-cyan-300/70 uppercase font-mono">Giám Sát</span>
-          <span className="text-base sm:text-lg font-bold text-white font-mono">24/7 Edge</span>
-        </div>
-      </div>
+          {/* KPI 3 */}
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỶ LỆ PHÙ HỢP</text>
+          <text x="312" y="58" fill="#0284C7" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">+25%</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 3. B2B Content Engine (x5 production, +60% organic traffic curve)
-function B2bContentFactoryVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 2. Manufacturing Vision Telemetry (Precision Engineering, 6 Lines)
+// ---------------------------------------------------------------------------
+function ManufacturingVisionSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#120F17] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:20px_20px]" />
-      <div className="absolute top-1/2 right-0 w-60 h-60 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="mfg-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-purple-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <TrendingUp className="w-3.5 h-3.5 text-purple-400" />
-          <span className="text-[11px] font-mono tracking-wider text-purple-300 uppercase font-semibold">
-            KNOWLEDGE ENGINE · B2B FACTORY
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-purple-300 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-500/30">
-          5 THÁNG TĂNG TRƯỞNG
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#mfg-grid)" opacity="0.7" />
 
-      {/* Organic Curve SVG */}
-      <div className="relative z-10 my-auto py-2">
-        <div className="w-full h-24 sm:h-28 relative flex items-end">
-          <svg className="w-full h-full overflow-visible" viewBox="0 0 300 80" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="grad-b2b" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#A3E635" stopOpacity="1" />
-              </linearGradient>
-              <linearGradient id="grad-area" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#A3E635" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#A3E635" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            {/* Area under curve */}
-            <path d="M 0 75 Q 70 70, 140 50 T 300 10 L 300 80 L 0 80 Z" fill="url(#grad-area)" />
-            {/* Curve stroke */}
-            <path d="M 0 75 Q 70 70, 140 50 T 300 10" fill="none" stroke="url(#grad-b2b)" strokeWidth="3" strokeLinecap="round" />
-            {/* Data Point Dots */}
-            <circle cx="0" cy="75" r="3" fill="#8b5cf6" />
-            <circle cx="140" cy="50" r="3" fill="#c084fc" />
-            <circle cx="300" cy="10" r="4" fill="#A3E635" className="animate-ping" />
-            <circle cx="300" cy="10" r="4" fill="#A3E635" />
-          </svg>
-          <div className="absolute top-1 right-2 bg-[#A3E635] text-[#17151A] text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
-            +60% ORGANIC
-          </div>
-        </div>
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#0284C7" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          EDGE VISION TELEMETRY · 6 CHUYỀN SẢN XUẤT
+        </text>
+        <rect x="346" y="18" width="110" height="20" rx="10" fill="#E0F2FE" stroke="#BAE6FD" strokeWidth="0.8" />
+        <text x="401" y="32" fill="#0369A1" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          LATENCY: 38ms
+        </text>
 
-      {/* Bottom KPIs */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-purple-500/20 text-center">
-        <div className="bg-purple-950/30 p-2 rounded-xl border border-purple-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Sản Lượng</span>
-          <span className="text-base sm:text-lg font-bold text-[#A3E635] font-mono">x5 Tốc Độ</span>
-        </div>
-        <div className="bg-purple-950/30 p-2 rounded-xl border border-purple-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Quy Mô</span>
-          <span className="text-base sm:text-lg font-bold text-white font-mono">50+ Bài/Tháng</span>
-        </div>
-        <div className="bg-purple-950/30 p-2 rounded-xl border border-purple-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Ngân Sách Agency</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">0đ Phát Sinh</span>
-        </div>
-      </div>
+        {/* Center: Precision Part Blueprint & Optical Reticle */}
+        <g transform="translate(36, 62)">
+          {/* Main Viewfinder Window */}
+          <rect x="0" y="0" width="408" height="128" rx="12" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+          
+          {/* Corner Framing Marks */}
+          <path d="M 10 20 L 10 10 L 20 10" stroke="#17151A" strokeWidth="1.5" fill="none" />
+          <path d="M 398 20 L 398 10 L 388 10" stroke="#17151A" strokeWidth="1.5" fill="none" />
+          <path d="M 10 108 L 10 118 L 20 118" stroke="#17151A" strokeWidth="1.5" fill="none" />
+          <path d="M 398 108 L 398 118 L 388 118" stroke="#17151A" strokeWidth="1.5" fill="none" />
+
+          {/* Blueprint Part Graphic (Mechanical Gear/Shaft) */}
+          <g transform="translate(130, 20)">
+            {/* Center Axis Line */}
+            <line x1="-30" y1="44" x2="180" y2="44" stroke="#94A3B8" strokeWidth="0.8" strokeDasharray="6 3" />
+            
+            {/* Outer Flange */}
+            <rect x="10" y="14" width="130" height="60" rx="4" fill="#F8FAFC" stroke="#334155" strokeWidth="1.2" />
+            {/* Inner Core */}
+            <rect x="45" y="26" width="60" height="36" rx="2" fill="#F1F5F9" stroke="#475569" strokeWidth="1" />
+            {/* Center Bore */}
+            <circle cx="75" cy="44" r="10" fill="#FFFFFF" stroke="#0284C7" strokeWidth="1.2" />
+
+            {/* Laser Scan Sweep Line */}
+            <line x1="90" y1="2" x2="90" y2="86" stroke="#10B981" strokeWidth="1.5" />
+            <circle cx="90" cy="44" r="3" fill="#10B981" />
+
+            {/* Dimension Callout */}
+            <line x1="10" y1="80" x2="140" y2="80" stroke="#64748B" strokeWidth="0.8" />
+            <line x1="10" y1="76" x2="10" y2="84" stroke="#64748B" strokeWidth="0.8" />
+            <line x1="140" y1="76" x2="140" y2="84" stroke="#64748B" strokeWidth="0.8" />
+            <text x="75" y="92" fill="#64748B" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">Ø 78.50 mm ± 0.02</text>
+          </g>
+
+          {/* Telemetry Annotations */}
+          <g transform="translate(22, 28)">
+            <rect x="0" y="0" width="86" height="44" rx="6" fill="#F8F8F6" stroke="#E2E0D8" strokeWidth="0.8" />
+            <text x="8" y="16" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">EDGE INFERENCE</text>
+            <text x="8" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600">PASS (99.8%)</text>
+          </g>
+
+          <g transform="translate(296, 28)">
+            <rect x="0" y="0" width="92" height="44" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
+            <text x="8" y="16" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">DEFECT SCAN</text>
+            <text x="8" y="32" fill="#059669" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="700">0.00% DRIFT</text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">ĐỘ CHÍNH XÁC</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">99.8%</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỶ LỆ LỖI XUẤT</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">1.5%</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">GIÁM SÁT THỜI GIAN THỰC</text>
+          <text x="312" y="58" fill="#0284C7" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">24/7 Edge</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 4. Vietcap Securities Multi-Agent Financial Extraction (-75% time, 2d -> 3h)
-function VietcapMultiAgentVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 3. B2B Content Engine (Professional Services, x5 Speed, +60% Traffic)
+// ---------------------------------------------------------------------------
+function B2bContentFactorySvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0B111A] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Matrix */}
-      <div className="absolute inset-0 bg-[radial-gradient(#3b82f615_1px,transparent_1px)] bg-[size:18px_18px]" />
-      <div className="absolute top-0 left-1/3 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="b2b-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Top Telemetry */}
-      <div className="relative z-10 flex items-center justify-between border-b border-blue-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <Bot className="w-3.5 h-3.5 text-blue-400" />
-          <span className="text-[11px] font-mono tracking-wider text-blue-400 uppercase font-semibold">
-            VIETCAP · MULTI-AGENT BCTC PARSER
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-blue-300 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-500/30">
-          30+ CHUYÊN VIÊN PHÂN TÍCH
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#b2b-grid)" opacity="0.7" />
 
-      {/* 4 Agent Parallel Lanes */}
-      <div className="relative z-10 my-auto py-2 space-y-1.5">
-        {[
-          { name: 'Agent 01: Bảng Cân Đối Kế Toán', time: '45s', status: 'Parsed' },
-          { name: 'Agent 02: Báo Cáo Lưu Chuyển Tiền Tệ', time: '52s', status: 'Verified' },
-          { name: 'Agent 03: Thuyết Minh BCTC & Nợ Vay', time: '68s', status: 'Extracted' },
-          { name: 'Agent 04: Mô Hình Định Giá P/E & P/B', time: '35s', status: 'Calculated' },
-        ].map((agent, i) => (
-          <div key={i} className="flex items-center justify-between bg-blue-950/30 px-3 py-1.5 rounded-lg border border-blue-500/20 text-xs font-mono">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-              <span className="text-zinc-300 text-[11px]">{agent.name}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-blue-300 text-[10px]">{agent.time}</span>
-              <span className="text-[9px] bg-emerald-500/20 text-emerald-400 px-1.5 py-0.2 rounded border border-emerald-500/30">
-                {agent.status}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#8B5CF6" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          B2B CONTENT FACTORY · 1 SOP CHUẨN HÓA
+        </text>
+        <rect x="348" y="18" width="108" height="20" rx="10" fill="#F5F3FF" stroke="#DDD6FE" strokeWidth="0.8" />
+        <text x="402" y="32" fill="#6D28D9" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          200 NHÂN SỰ B2B
+        </text>
 
-      {/* Bottom Metrics */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-blue-500/20 text-center">
-        <div className="bg-blue-950/40 p-2 rounded-xl border border-blue-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Thời Gian Xử Lý</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">-75%</span>
-        </div>
-        <div className="bg-blue-950/40 p-2 rounded-xl border border-blue-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Chu Kỳ Báo Cáo</span>
-          <span className="text-base sm:text-lg font-bold text-[#FAFFDE] font-mono">2 ngày → 3h</span>
-        </div>
-        <div className="bg-blue-950/40 p-2 rounded-xl border border-blue-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Độ Chính Xác Đối Soát</span>
-          <span className="text-base sm:text-lg font-bold text-cyan-300 font-mono">100% Khớp</span>
-        </div>
-      </div>
+        {/* Center: Core Knowledge -> Multi-Module Branching Graph */}
+        <g transform="translate(36, 66)">
+          {/* Core Hub Node */}
+          <rect x="0" y="20" width="116" height="64" rx="10" fill="#17151A" />
+          <text x="16" y="42" fill="#FAFFDE" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600">1 SOP LÕI</text>
+          <text x="16" y="58" fill="#A1A0A8" fontSize="8" fontFamily="system-ui, sans-serif">Whitepaper & Data</text>
+          <text x="16" y="72" fill="#B4E839" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Single Source</text>
+
+          {/* Branching Connectors */}
+          <path d="M 116 36 C 146 36, 146 16, 172 16" stroke="#8B5CF6" strokeWidth="1.2" fill="none" />
+          <path d="M 116 46 C 146 46, 146 46, 172 46" stroke="#8B5CF6" strokeWidth="1.2" fill="none" />
+          <path d="M 116 56 C 146 56, 146 76, 172 76" stroke="#8B5CF6" strokeWidth="1.2" fill="none" />
+          <path d="M 116 66 C 146 66, 146 102, 172 102" stroke="#8B5CF6" strokeWidth="1.2" fill="none" />
+
+          {/* Module 1: Technical Guide */}
+          <rect x="172" y="4" width="112" height="24" rx="6" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
+          <text x="182" y="19" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">Technical Runbook</text>
+
+          {/* Module 2: Case Studies */}
+          <rect x="172" y="34" width="112" height="24" rx="6" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
+          <text x="182" y="49" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">Case Study Briefs</text>
+
+          {/* Module 3: Executive Pulse */}
+          <rect x="172" y="64" width="112" height="24" rx="6" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
+          <text x="182" y="79" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">LinkedIn Pulse Series</text>
+
+          {/* Module 4: Pitch Deck Slidedeck */}
+          <rect x="172" y="94" width="112" height="24" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
+          <text x="182" y="109" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">Proposal Decks</text>
+
+          {/* Right: Growth Trajectory Curve */}
+          <g transform="translate(306, 8)">
+            <rect x="0" y="0" width="102" height="110" rx="8" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+            <text x="10" y="18" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">ORGANIC REACH</text>
+            <path d="M 12 92 C 36 86, 50 68, 70 42 C 80 30, 88 20, 92 14" stroke="#059669" strokeWidth="2" fill="none" />
+            <circle cx="92" cy="14" r="3" fill="#059669" />
+            <text x="10" y="102" fill="#059669" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="700">+60% SEO</text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỐC ĐỘ XUẤT BẢN</text>
+          <text x="16" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">x5 Tốc Độ</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TĂNG TRƯỞNG TRAFFIC</text>
+          <text x="164" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">+60%</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TÍNH NHẤT QUÁN</text>
+          <text x="312" y="58" fill="#8B5CF6" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">100% SOP</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 5. Vinhomes Sales Mesh (500+ brokers, automated video, lead reactivation)
-function VinhomesSalesMeshVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 4. Vietcap Multi-Agent Financial Statement Parsing (Securities & Investment)
+// ---------------------------------------------------------------------------
+function VietcapMultiAgentSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#140F0A] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(#f59e0b15_1px,transparent_1px)] bg-[size:20px_20px]" />
-      <div className="absolute top-1/3 right-1/4 w-60 h-60 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="vc-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-amber-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <Network className="w-3.5 h-3.5 text-amber-400" />
-          <span className="text-[11px] font-mono tracking-wider text-amber-300 uppercase font-semibold">
-            VINHOMES · SALES ENABLEMENT MESH
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-500/30">
-          500+ MÔI GIỚI KINH DOANH
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#vc-grid)" opacity="0.7" />
 
-      {/* Constellation Dispatch Map */}
-      <div className="relative z-10 my-auto py-2">
-        <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-          <div className="bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20 flex flex-col justify-between">
-            <span className="text-[10px] text-zinc-400">TỰ ĐỘNG TẠO VIDEO DỰ ÁN</span>
-            <span className="text-sm text-amber-300 font-bold mt-1">x3 Lần / Sản Xuất Video</span>
-            <span className="text-[9px] text-emerald-400 mt-0.5">Tự động gắn Brand Voice & Hotline</span>
-          </div>
-          <div className="bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20 flex flex-col justify-between">
-            <span className="text-[10px] text-zinc-400">KÍCH HOẠT LEAD CŨ</span>
-            <span className="text-sm text-emerald-400 font-bold mt-1">&lt;5 Phút Phản Hồi</span>
-            <span className="text-[9px] text-zinc-400 mt-0.5">Cá nhân hóa kịch bản theo giỏ hàng</span>
-          </div>
-        </div>
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#059669" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          MULTI-AGENT FINANCIAL ENGINE · 300+ TRANG BCTC
+        </text>
+        <rect x="352" y="18" width="104" height="20" rx="10" fill="#D1FAE5" stroke="#A7F3D0" strokeWidth="0.8" />
+        <text x="404" y="32" fill="#065F46" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          45S XỬ LÝ
+        </text>
 
-      {/* Bottom KPIs */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-amber-500/20 text-center">
-        <div className="bg-amber-950/30 p-2 rounded-xl border border-amber-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Mạng Lưới</span>
-          <span className="text-base sm:text-lg font-bold text-amber-300 font-mono">500+ Sales</span>
-        </div>
-        <div className="bg-amber-950/30 p-2 rounded-xl border border-amber-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Sản Xuất Video</span>
-          <span className="text-base sm:text-lg font-bold text-[#FAFFDE] font-mono">Hàng Loạt</span>
-        </div>
-        <div className="bg-amber-950/30 p-2 rounded-xl border border-amber-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Hỗ Trợ Môi Giới</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">24/7 Bot</span>
-        </div>
-      </div>
+        {/* Center: 3-Way Financial Reconciliation Triangle */}
+        <g transform="translate(40, 60)">
+          {/* Triangular Connecting Network */}
+          <polygon points="200,10 60,110 340,110" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" fill="none" />
+          
+          {/* Center Agent Core Node */}
+          <circle cx="200" cy="76" r="26" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.5" />
+          <text x="200" y="74" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle">SWARM AI</text>
+          <text x="200" y="86" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">AUDIT</text>
+
+          {/* Node 1: P&L (Top) */}
+          <g transform="translate(130, 0)">
+            <rect x="0" y="0" width="140" height="28" rx="6" fill="#17151A" />
+            <text x="70" y="18" fill="#FAFFDE" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+              BÁO CÁO P&L (KẾT QUẢ KD)
+            </text>
+          </g>
+
+          {/* Node 2: Balance Sheet (Bottom Left) */}
+          <g transform="translate(0, 96)">
+            <rect x="0" y="0" width="130" height="28" rx="6" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1" />
+            <text x="65" y="18" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+              BẢNG CĐKT (BALANCE SHEET)
+            </text>
+          </g>
+
+          {/* Node 3: Cash Flow (Bottom Right) */}
+          <g transform="translate(270, 96)">
+            <rect x="0" y="0" width="130" height="28" rx="6" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1" />
+            <text x="65" y="18" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+              LƯU CHUYỂN TIỀN TỆ (CASH FLOW)
+            </text>
+          </g>
+
+          {/* Audit Verification Stamp */}
+          <rect x="155" y="116" width="90" height="18" rx="9" fill="#ECFDF5" stroke="#6EE7B7" strokeWidth="0.8" />
+          <text x="200" y="128" fill="#047857" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+            ĐỐI SOÁT 3 CHIỀU: 100%
+          </text>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">THỜI GIAN BÓC TÁCH</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">45 Giây</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">DUNG LƯỢNG TÀI LIỆU</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">300+ Trang</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TIẾT KIỆM THỜI GIAN</text>
+          <text x="312" y="58" fill="#0284C7" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">-80%</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 6. Dentsu Pitch Deck Automation (-65% proposal turnaround)
-function DentsuPitchDeckVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 5. Vinhomes Real Estate Sales Enablement (300 Brokers, 1.5s Response)
+// ---------------------------------------------------------------------------
+function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0E1312] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Matrix */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:22px_22px]" />
-      <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="vh-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-teal-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <FileText className="w-3.5 h-3.5 text-teal-400" />
-          <span className="text-[11px] font-mono tracking-wider text-teal-300 uppercase font-semibold">
-            DENTSU SPORTS · PITCH AUTOMATION
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-500/30">
-          QUỐC TẾ & TÀI TRỢ
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#vh-grid)" opacity="0.7" />
 
-      {/* Modular Deck Blocks Assembly */}
-      <div className="relative z-10 my-auto py-2">
-        <div className="flex items-center gap-1.5 justify-center py-2">
-          {['Brief Input', 'Market Fit', 'Valuation', 'Creative Deck', 'Sponsorship'].map((stage, i) => (
-            <div key={i} className="flex-1 bg-teal-950/40 border border-teal-500/30 rounded-lg p-1.5 text-center font-mono">
-              <span className="block text-[8px] text-teal-400">MĐ 0{i + 1}</span>
-              <span className="text-[9px] text-zinc-300 font-medium truncate block">{stage}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#EAB308" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          AI SALES CO-PILOT · BẢNG HÀNG THỜI GIAN THỰC
+        </text>
+        <rect x="346" y="18" width="110" height="20" rx="10" fill="#FEF9C3" stroke="#FDE047" strokeWidth="0.8" />
+        <text x="401" y="32" fill="#854D0E" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          300 SALES AGENTS
+        </text>
 
-      {/* Bottom KPIs */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-teal-500/20 text-center">
-        <div className="bg-teal-950/30 p-2 rounded-xl border border-teal-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Rút Ngắn Thời Gian</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">-65%</span>
-        </div>
-        <div className="bg-teal-950/30 p-2 rounded-xl border border-teal-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Phản Hồi Chiến Dịch</span>
-          <span className="text-base sm:text-lg font-bold text-[#A3E635] font-mono">+35%</span>
-        </div>
-        <div className="bg-teal-950/30 p-2 rounded-xl border border-teal-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Số Lượng Thầu/Quý</span>
-          <span className="text-base sm:text-lg font-bold text-teal-300 font-mono">x2 Lần</span>
-        </div>
-      </div>
+        {/* Center: Inventory Grid & Real-Time Query Dialogue */}
+        <g transform="translate(36, 62)">
+          {/* Left: Unit Inventory Matrix (Building Stacking Plan) */}
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="170" height="126" rx="8" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
+            <text x="12" y="18" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">BẢNG HÀNG PHÂN TẦNG</text>
+
+            {/* Matrix Units */}
+            <g transform="translate(12, 28)">
+              {/* Row 1 */}
+              <rect x="0" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="16" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1501</text>
+              <rect x="38" y="0" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
+              <text x="54" y="13" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1502</text>
+              <rect x="76" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="92" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1503</text>
+              <rect x="114" y="0" width="32" height="20" rx="4" fill="#17151A" />
+              <text x="130" y="13" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1504</text>
+
+              {/* Row 2 */}
+              <rect x="0" y="26" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
+              <text x="16" y="39" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1401</text>
+              <rect x="38" y="26" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="54" y="39" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1402</text>
+              <rect x="76" y="26" width="32" height="20" rx="4" fill="#17151A" />
+              <text x="92" y="39" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1403</text>
+              <rect x="114" y="26" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
+              <text x="130" y="39" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1404</text>
+
+              {/* Row 3 */}
+              <rect x="0" y="52" width="32" height="20" rx="4" fill="#17151A" />
+              <text x="16" y="65" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1201</text>
+              <rect x="38" y="52" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
+              <text x="54" y="65" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1202</text>
+              <rect x="76" y="52" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
+              <text x="92" y="65" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1203</text>
+              <rect x="114" y="52" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="130" y="65" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1204</text>
+            </g>
+
+            <text x="12" y="116" fill="#A1A0A8" fontSize="7" fontFamily="system-ui, sans-serif">■ Đã cọc  □ Mở bán  ■ Giữ chỗ</text>
+          </g>
+
+          {/* Right: AI Vector Dialogue Card */}
+          <g transform="translate(186, 0)">
+            <rect x="0" y="0" width="222" height="126" rx="8" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
+            
+            {/* Sales Question Bubble */}
+            <rect x="12" y="14" width="198" height="34" rx="6" fill="#F8F8F6" stroke="#E5E3DC" />
+            <text x="20" y="28" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">Môi giới hỏi (Zalo/App):</text>
+            <text x="20" y="41" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">"Căn 2PN hướng Đông Nam S2 còn không?"</text>
+
+            {/* AI Real-time Response Bubble */}
+            <rect x="12" y="58" width="198" height="54" rx="6" fill="#FAFFDE" stroke="#D4E751" />
+            <text x="20" y="72" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">AI Co-Pilot (1.2 Giây):</text>
+            <text x="20" y="86" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">"Còn căn S2.1502 · Chiết khấu 8.5%"</text>
+            <text x="20" y="100" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">Chính sách quà tặng & tiến độ thanh toán gửi kèm</text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỐC ĐỘ PHẢN HỒI</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">&lt; 1.5 Giây</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỶ LỆ PHỤC VỤ</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">98% Lead</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TRA CỨU CHÍNH SÁCH</text>
+          <text x="312" y="58" fill="#CA8A04" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">500+ Trang</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 7. Phuong Truong An Field Video (+200% video throughput, on-device mobile)
-function PhuongTruongAnVideoVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 6. Dentsu RFP Pitch Deck Automation (International Proposal, 48h -> 4h)
+// ---------------------------------------------------------------------------
+function DentsuPitchDeckSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#14120D] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Matrix */}
-      <div className="absolute inset-0 bg-[radial-gradient(#eab30815_1px,transparent_1px)] bg-[size:16px_16px]" />
-      <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="den-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-yellow-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <Video className="w-3.5 h-3.5 text-yellow-400" />
-          <span className="text-[11px] font-mono tracking-wider text-yellow-300 uppercase font-semibold">
-            PHƯƠNG TRƯỜNG AN · MOBILE AI VIDEO
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-yellow-300 bg-yellow-950/60 px-2 py-0.5 rounded border border-yellow-500/30">
-          ~300 SALES BĐS
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#den-grid)" opacity="0.7" />
 
-      {/* Mobile Video Viewport HUD */}
-      <div className="relative z-10 my-auto py-2 flex items-center justify-center gap-4">
-        <div className="w-32 h-20 border border-yellow-500/40 rounded-xl bg-yellow-950/30 relative flex flex-col justify-between p-2 overflow-hidden">
-          <div className="flex justify-between items-center text-[8px] font-mono text-yellow-400">
-            <span>REC [4K]</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
-          </div>
-          {/* Audio Waveform */}
-          <div className="flex items-end justify-center gap-1 h-6">
-            {[40, 70, 30, 90, 60, 100, 45, 80, 50, 95].map((h, i) => (
-              <div key={i} className="w-1 bg-yellow-400/80 rounded-full" style={{ height: `${h}%` }} />
-            ))}
-          </div>
-          <span className="text-[7px] font-mono text-zinc-300 truncate">AI Auto-Script + Subtitles</span>
-        </div>
-        <div className="text-left font-mono">
-          <span className="text-xs text-zinc-400 block">Sản lượng video:</span>
-          <span className="text-xl font-bold text-yellow-400">+200%</span>
-          <span className="text-[10px] text-emerald-400 block">Dựng trực tiếp trên điện thoại</span>
-        </div>
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#EC4899" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          RFP PITCH DECK AUTOMATION · AGENCY TOÀN CẦU
+        </text>
+        <rect x="352" y="18" width="104" height="20" rx="10" fill="#FDF2F8" stroke="#FBCFE8" strokeWidth="0.8" />
+        <text x="404" y="32" fill="#BE185D" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          48H ➔ 4H DỰNG
+        </text>
 
-      {/* Bottom KPIs */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-yellow-500/20 text-center">
-        <div className="bg-yellow-950/30 p-2 rounded-xl border border-yellow-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Tăng Sản Lượng</span>
-          <span className="text-base sm:text-lg font-bold text-yellow-400 font-mono">+200%</span>
-        </div>
-        <div className="bg-yellow-950/30 p-2 rounded-xl border border-yellow-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Đội Ngũ</span>
-          <span className="text-base sm:text-lg font-bold text-white font-mono">~300 Sales</span>
-        </div>
-        <div className="bg-yellow-950/30 p-2 rounded-xl border border-yellow-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Thiết Bị</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">100% Mobile</span>
-        </div>
-      </div>
+        {/* Center: Layered Deck Slides Architecture */}
+        <g transform="translate(40, 64)">
+          {/* Slide 4 (Back layer) */}
+          <rect x="72" y="0" width="240" height="116" rx="8" fill="#F1F0EC" stroke="#D8D6CE" strokeWidth="1" />
+          
+          {/* Slide 3 (Mid-back) */}
+          <rect x="48" y="10" width="240" height="116" rx="8" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+          <text x="64" y="32" fill="#9CA3AF" fontSize="8" fontFamily="system-ui, sans-serif">03 / MEDIA CHANNELS</text>
+
+          {/* Slide 2 (Mid-front) */}
+          <rect x="24" y="20" width="240" height="116" rx="8" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+          <text x="40" y="42" fill="#9CA3AF" fontSize="8" fontFamily="system-ui, sans-serif">02 / CULTURAL INSIGHT</text>
+
+          {/* Slide 1 (Front Active Card) */}
+          <rect x="0" y="30" width="240" height="116" rx="8" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.2" />
+          <text x="16" y="52" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">01 / CREATIVE STRATEGY</text>
+          <text x="16" y="70" fill="#17151A" fontSize="12" fontFamily="system-ui, sans-serif" fontWeight="600">Proposal Deck RFP Sunext</text>
+          
+          {/* Mini elements on slide */}
+          <rect x="16" y="82" width="120" height="6" rx="3" fill="#17151A" />
+          <rect x="16" y="94" width="80" height="6" rx="3" fill="#A1A0A8" />
+          <rect x="16" y="106" width="150" height="6" rx="3" fill="#D8D6CE" />
+
+          {/* Turnaround Badge (Right) */}
+          <g transform="translate(266, 20)">
+            <rect x="0" y="0" width="134" height="96" rx="8" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
+            <text x="14" y="22" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">TỐC ĐỘ DỰNG ĐỀ ÁN</text>
+            <text x="14" y="50" fill="#17151A" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="700">48h → 4h</text>
+            <rect x="14" y="64" width="106" height="18" rx="4" fill="#ECFDF5" stroke="#A7F3D0" />
+            <text x="67" y="76" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+              GIẢM 92% THỜI GIAN
+            </text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỐC ĐỘ NỘP THẦU</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">+35% Deal</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">THỜI GIAN HOÀN THIỆN</text>
+          <text x="164" y="58" fill="#17151A" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">48h → 4h</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">ĐỘ CHUẨN XÁC BRAND</text>
+          <text x="312" y="58" fill="#BE185D" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">100% Khớp</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// 8. FPTU Faculty Swarm (10,000 attendees, 600 certified trainers Bậc 6)
-function FptuFacultySwarmVisual({ compact, className }: { compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 7. Phuong Truong An Automated Site Video (Drone & Construction, 2d -> 30m)
+// ---------------------------------------------------------------------------
+function PhuongTruongAnVideoSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0A1211] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-sans ${className}`}>
-      {/* Background Matrix */}
-      <div className="absolute inset-0 bg-[radial-gradient(#10b98115_1px,transparent_1px)] bg-[size:18px_18px]" />
-      <div className="absolute top-0 right-1/4 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="pta-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
 
-      {/* Header */}
-      <div className="relative z-10 flex items-center justify-between border-b border-emerald-500/20 pb-3">
-        <div className="flex items-center gap-2">
-          <Users className="w-3.5 h-3.5 text-emerald-400" />
-          <span className="text-[11px] font-mono tracking-wider text-emerald-400 uppercase font-semibold">
-            ĐẠI HỌC FPT · AI AGENT ORCHESTRATION
-          </span>
-        </div>
-        <span className="text-[10px] font-mono text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
-          TECH FEST & FACULTY BẬC 6
-        </span>
-      </div>
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#pta-grid)" opacity="0.7" />
 
-      {/* Faculty Tier & Event Scale Diagram */}
-      <div className="relative z-10 my-auto py-2">
-        <div className="flex items-center justify-between bg-emerald-950/30 p-3 rounded-xl border border-emerald-500/20 font-mono text-xs">
-          <div>
-            <span className="text-[10px] text-zinc-400 block">QUY MÔ SỰ KIỆN TECH FEST</span>
-            <span className="text-base sm:text-lg text-emerald-300 font-bold">10.000+ Người Tham Gia</span>
-            <span className="text-[10px] text-emerald-400 block">Điều phối bằng Multi-Agent MC</span>
-          </div>
-          <div className="text-right border-l border-emerald-500/20 pl-4">
-            <span className="text-[10px] text-zinc-400 block">GIẢNG VIÊN ĐÀO TẠO</span>
-            <span className="text-base sm:text-lg text-[#FAFFDE] font-bold">600+ Giảng Viên</span>
-            <span className="text-[10px] text-cyan-300 block">Chuẩn Bậc 6 Năng Lực AI</span>
-          </div>
-        </div>
-      </div>
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#EA580C" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          AUTOMATED VIDEO PIPELINE · BÁO CÁO TIẾN ĐỘ
+        </text>
+        <rect x="350" y="18" width="106" height="20" rx="10" fill="#FFEDD5" stroke="#FDBA74" strokeWidth="0.8" />
+        <text x="403" y="32" fill="#C2410C" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          2 NGÀY ➔ 30P
+        </text>
 
-      {/* Bottom KPIs */}
-      <div className="relative z-10 grid grid-cols-3 gap-2 pt-3 border-t border-emerald-500/20 text-center">
-        <div className="bg-emerald-950/40 p-2 rounded-xl border border-emerald-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Quy Mô Điều Phối</span>
-          <span className="text-base sm:text-lg font-bold text-emerald-400 font-mono">10.000+ Người</span>
-        </div>
-        <div className="bg-emerald-950/40 p-2 rounded-xl border border-emerald-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Chuẩn Giảng Viên</span>
-          <span className="text-base sm:text-lg font-bold text-[#FAFFDE] font-mono">Bậc 6 Chuẩn</span>
-        </div>
-        <div className="bg-emerald-950/40 p-2 rounded-xl border border-emerald-500/20">
-          <span className="block text-[10px] text-zinc-400 uppercase font-mono">Hệ Thống Agent</span>
-          <span className="text-base sm:text-lg font-bold text-cyan-300 font-mono">Multi-Agent MC</span>
-        </div>
-      </div>
+        {/* Center: Video Timeline & Drone Viewport Schema */}
+        <g transform="translate(36, 62)">
+          {/* Main Monitor / Timeline Box */}
+          <rect x="0" y="0" width="408" height="128" rx="10" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
+
+          {/* Left: Drone Camera Viewport */}
+          <g transform="translate(14, 14)">
+            <rect x="0" y="0" width="150" height="100" rx="6" fill="#F8F8F6" stroke="#D8D6CE" />
+            {/* Horizon & Construction crane wireframe */}
+            <line x1="10" y1="65" x2="140" y2="65" stroke="#A1A0A8" strokeWidth="1" />
+            <line x1="40" y1="65" x2="40" y2="20" stroke="#17151A" strokeWidth="1.5" />
+            <line x1="40" y1="20" x2="110" y2="20" stroke="#17151A" strokeWidth="1.2" />
+            <line x1="40" y1="25" x2="90" y2="65" stroke="#CBD5E1" strokeWidth="0.8" />
+
+            {/* Rec Tag & Crosshairs */}
+            <circle cx="14" cy="12" r="3" fill="#DC2626" />
+            <text x="22" y="15" fill="#DC2626" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="700">REC 4K</text>
+            <text x="138" y="92" fill="#76747E" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="end">SITE #04 · FLYCAM</text>
+          </g>
+
+          {/* Right: Automated Multi-Track Timeline */}
+          <g transform="translate(176, 14)">
+            <text x="0" y="10" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">MULTI-TRACK AI EDITING</text>
+            
+            {/* Track 1: Video Clips */}
+            <rect x="0" y="18" width="218" height="22" rx="4" fill="#F0EFEA" stroke="#E5E3DC" />
+            <rect x="2" y="20" width="65" height="18" rx="3" fill="#17151A" />
+            <text x="34" y="32" fill="#FAFFDE" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 1 (Flycam)</text>
+            <rect x="70" y="20" width="75" height="18" rx="3" fill="#FAFFDE" stroke="#D4E751" />
+            <text x="107" y="32" fill="#17151A" fontSize="7" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">Shot 2 (Cọc Móng)</text>
+            <rect x="148" y="20" width="68" height="18" rx="3" fill="#17151A" />
+            <text x="182" y="32" fill="#FAFFDE" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 3 (Toàn Cảnh)</text>
+
+            {/* Track 2: Audio Waveform */}
+            <rect x="0" y="46" width="218" height="22" rx="4" fill="#F0EFEA" stroke="#E5E3DC" />
+            <path d="M 10 57 L 20 52 L 30 62 L 40 54 L 50 60 L 60 51 L 70 63 L 80 55 L 90 59 L 100 53 L 110 61 L 120 54 L 130 60 L 140 52 L 150 62 L 160 55 L 170 59 L 180 53 L 190 61 L 200 57" stroke="#EA580C" strokeWidth="1.2" fill="none" />
+            <text x="10" y="63" fill="#76747E" fontSize="6" fontFamily="system-ui, sans-serif">VOICE AI</text>
+
+            {/* Track 3: Subtitles & Data HUD */}
+            <rect x="0" y="74" width="218" height="22" rx="4" fill="#ECFDF5" stroke="#A7F3D0" />
+            <text x="10" y="88" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Auto-Sync Subtitles &amp; KPI Overlay</text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">THỜI GIAN DỰNG VIDEO</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">30 Phút</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TIẾT KIỆM CHI PHÍ</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">-65%</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">CẬP NHẬT TIẾN ĐỘ</text>
+          <text x="312" y="58" fill="#EA580C" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">Real-time</text>
+        </g>
+      </svg>
     </div>
   );
 }
 
-// Generic Fallback
-function GenericDataVisual({ slug, compact, className }: { slug: string; compact?: boolean; className?: string }) {
+// ---------------------------------------------------------------------------
+// 8. FPTU Faculty Swarm & 10,000-Attendee Event AI Architecture
+// ---------------------------------------------------------------------------
+function FptuFacultySwarmSvgVisual({ compact, className = '' }: { compact?: boolean; className?: string }) {
   return (
-    <div className={`relative w-full h-full min-h-[220px] bg-[#0E0D12] text-white p-5 flex flex-col justify-between overflow-hidden select-none font-mono ${className}`}>
-      <div className="flex items-center justify-between border-b border-white/10 pb-2">
-        <span className="text-xs text-emerald-400 uppercase font-semibold">SUNEXT DATA ENGINE</span>
-        <span className="text-[10px] text-zinc-400">{slug}</span>
-      </div>
-      <div className="my-auto py-4 text-center">
-        <Activity className="w-8 h-8 text-emerald-400 mx-auto mb-2 animate-pulse" />
-        <span className="text-sm font-semibold text-zinc-200 block">Dữ Liệu Chuyển Đổi Thực Tế</span>
-        <span className="text-xs text-zinc-400">Nghiệm thu theo P&L định lượng</span>
-      </div>
-      <div className="flex items-center justify-between text-[10px] text-zinc-500 pt-2 border-t border-white/10">
-        <span>Sunext Method</span>
-        <span>Verified ROI</span>
-      </div>
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <defs>
+          <pattern id="fp-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ECEAE4" strokeWidth="0.8" />
+          </pattern>
+        </defs>
+
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <rect width="480" height="300" fill="url(#fp-grid)" opacity="0.7" />
+
+        {/* Top Header Bar */}
+        <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
+        <circle cx="32" cy="28" r="4" fill="#F97316" />
+        <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
+          EVENT AGENT SWARM · SỰ KIỆN 10.000 NGƯỜI
+        </text>
+        <rect x="350" y="18" width="106" height="20" rx="10" fill="#FFF7ED" stroke="#FFEDD5" strokeWidth="0.8" />
+        <text x="403" y="32" fill="#C2410C" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          10.000 KHÁCH
+        </text>
+
+        {/* Center: Swarm Network Topology */}
+        <g transform="translate(40, 60)">
+          {/* Connecting Lines */}
+          <line x1="200" y1="66" x2="70" y2="30" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" />
+          <line x1="200" y1="66" x2="330" y2="30" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" />
+          <line x1="200" y1="66" x2="70" y2="105" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" />
+          <line x1="200" y1="66" x2="330" y2="105" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" />
+
+          {/* Central Orchestrator Node */}
+          <circle cx="200" cy="66" r="34" fill="#17151A" />
+          <circle cx="200" cy="66" r="38" stroke="#D4E751" strokeWidth="1.5" fill="none" />
+          <text x="200" y="63" fill="#FAFFDE" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle">CENTRAL</text>
+          <text x="200" y="75" fill="#A3E635" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">ORCHESTRATOR</text>
+
+          {/* Satellite Agent 1: Check-in */}
+          <g transform="translate(10, 16)">
+            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+            <circle cx="14" cy="15" r="4" fill="#10B981" />
+            <text x="24" y="19" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Agent 1: Check-in QR</text>
+          </g>
+
+          {/* Satellite Agent 2: FAQ & Helpdesk */}
+          <g transform="translate(270, 16)">
+            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1" />
+            <circle cx="14" cy="15" r="4" fill="#F59E0B" />
+            <text x="24" y="19" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Agent 2: FAQ &amp; Giải Đáp</text>
+          </g>
+
+          {/* Satellite Agent 3: Schedule Dispatcher */}
+          <g transform="translate(10, 90)">
+            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+            <circle cx="14" cy="15" r="4" fill="#0284C7" />
+            <text x="24" y="19" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Agent 3: Điều Phối Tour</text>
+          </g>
+
+          {/* Satellite Agent 4: Certificate & Survey */}
+          <g transform="translate(270, 90)">
+            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FFFFFF" stroke="#D8D6CE" strokeWidth="1" />
+            <circle cx="14" cy="15" r="4" fill="#8B5CF6" />
+            <text x="24" y="19" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Agent 4: Khảo Sát &amp; Cert</text>
+          </g>
+        </g>
+
+        {/* Bottom 3 KPI Badges */}
+        <g transform="translate(24, 206)">
+          <line x1="0" y1="0" x2="432" y2="0" stroke="#E5E3DC" strokeWidth="1" />
+          
+          <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">GIẢM TẢI BAN TỔ CHỨC</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">-85%</text>
+
+          <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">THỜI GIAN PHẢN HỒI</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">&lt; 2 Giây</text>
+
+          <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">ĐỘ ỔN ĐỊNH SỰ KIỆN</text>
+          <text x="312" y="58" fill="#F97316" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">99.9% Uptime</text>
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Generic Fallback Telemetry
+// ---------------------------------------------------------------------------
+function GenericDataSvgVisual({ slug, compact, className = '' }: { slug: string; compact?: boolean; className?: string }) {
+  return (
+    <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
+      <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
+        <rect width="480" height="300" fill="#F9F9F7" />
+        <circle cx="240" cy="130" r="40" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.5" />
+        <text x="240" y="134" fill="#17151A" fontSize="12" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+          SUNEXT CASE STUDY
+        </text>
+        <text x="240" y="150" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" textAnchor="middle">
+          {slug}
+        </text>
+      </svg>
     </div>
   );
 }
