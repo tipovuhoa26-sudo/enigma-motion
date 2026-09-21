@@ -14,27 +14,24 @@ export default function HomePage() {
   const [heroReady, setHeroReady] = useState(false);
 
   return (
-    <div className="editorial-shell">
+    <div className="w-full min-h-screen flex flex-col bg-white">
       {/* Preloader Component (Overlay, gates initial entrance) */}
       <Preloader
         onExitStart={() => setHeroReady(true)}
         onLoaded={() => setHeroReady(true)}
       />
 
-      {/* Main Editorial Card Container */}
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header />
+      <Header />
 
-        <main className="flex-1 flex flex-col">
-          <Hero autoPlayIntro={heroReady} />
-          <AdvantageSection />
-          <StatsStrip />
-          <CasesSection />
-          <CtaFooter />
-        </main>
+      <main className="flex-1 flex flex-col w-full">
+        <Hero autoPlayIntro={heroReady} />
+        <AdvantageSection />
+        <StatsStrip />
+        <CasesSection />
+        <CtaFooter />
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

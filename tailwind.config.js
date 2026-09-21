@@ -11,9 +11,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        brand: {
+          purple: '#6B21A8',
+          'purple-accent': '#8B5CF6',
+          orange: '#F97316',
+          'orange-hover': '#EA580C',
+        },
+        canvas: {
+          primary: '#FFFFFF',
+          secondary: '#F7F7F8',
+          dark: '#111111',
+          'subtle-purple': '#FAF8FC',
+        },
         surface: {
-          base: '#F8F8F6',
-          pill: '#F5F3F6',
+          base: '#FFFFFF',
+          pill: '#F7F7F8',
         },
         accent: {
           lime: {
@@ -22,16 +34,16 @@ module.exports = {
           },
         },
         ink: {
-          900: '#17151A',
-          800: '#1E1C1E',
+          900: '#111111',
+          800: '#1C1C1E',
         },
-        muted: '#6E6E6E',
+        muted: '#626262',
       },
       borderRadius: {
-        sm: '12px',
-        md: '16px',
-        lg: '24px',
-        xl: '28px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '24px',
         full: '9999px',
       },
       fontFamily: {

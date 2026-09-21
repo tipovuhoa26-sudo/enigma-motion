@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* Motion & Easing */
   --motion-duration-xs: 150ms;
   --motion-duration-sm: 300ms;
   --motion-duration-md: 600ms;
@@ -15,12 +16,14 @@
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --radius-sm: 12px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 28px;
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 
+  /* Spacing */
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -29,19 +32,45 @@
   --space-8: 64px;
   --space-12: 96px;
 
-  --color-surface-base: #F8F8F6;
-  --color-surface-pill: #F5F3F6;
+  /* Cloudflare-Style Enterprise Palette */
+  /* Canvas */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F7F8;
+  --bg-dark: #111111;
+  --bg-subtle-purple: #FAF8FC;
+
+  /* Typography */
+  --text-primary: #111111;
+  --text-secondary: #626262;
+  --text-muted: #8E8E8E;
+
+  /* Structural Borders */
+  --border-light: #E8E8E8;
+  --border-medium: #D5D5D5;
+  --border-hover: rgba(107, 33, 168, 0.28);
+
+  /* Sunext Brand Identity: Purple (Tech/Network) & Orange (Action/Energy) */
+  --brand-purple: #6B21A8;
+  --brand-purple-accent: #8B5CF6;
+  --brand-purple-glow: rgba(107, 33, 168, 0.12);
+  --brand-orange: #F97316;
+  --brand-orange-hover: #EA580C;
+  --brand-orange-soft: rgba(249, 115, 22, 0.10);
+
+  /* Backward Compatibility Tokens */
+  --color-surface-base: #FFFFFF;
+  --color-surface-pill: #F7F7F8;
   --color-accent-lime-100: #FAFFDE;
   --color-accent-lime-200: #DFE2C8;
-  --color-ink-900: #17151A;
-  --color-ink-800: #1E1C1E;
-  --color-text-muted: #6E6E6E;
-  --color-watermark: rgba(23, 21, 26, 0.08);
+  --color-ink-900: #111111;
+  --color-ink-800: #1C1C1E;
+  --color-text-muted: #626262;
+  --color-watermark: rgba(17, 17, 17, 0.04);
 }
 
 body {
-  background: radial-gradient(circle at 50% 10%, #ECEAE5 0%, #DFDCD6 100%);
-  color: var(--color-ink-900);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -50,46 +79,51 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Background outer container styling */
+/* Full-bleed Container & Enterprise Section Grids */
 .editorial-shell {
   min-height: 100vh;
-  padding: clamp(8px, 1.5vw, 24px);
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  background-color: var(--bg-primary);
 }
 
 .editorial-card {
   width: 100%;
-  max-width: 1340px;
-  background-color: var(--color-surface-base);
-  border-radius: clamp(16px, 2.5vw, 28px);
-  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0,0,0,0.12);
   position: relative;
-  overflow: clip;
+  background-color: var(--bg-primary);
 }
 
-/* Sphere styling */
-.loader-sphere {
-  width: clamp(220px, 30vw, 380px);
-  height: clamp(220px, 30vw, 380px);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #FFFFFF 0%, #ECEBE7 45%, #D4D2CD 80%, #B8B6B0 100%);
-  box-shadow: 
-    0 24px 48px -12px rgba(0, 0, 0, 0.12),
-    inset -12px -16px 28px rgba(0, 0, 0, 0.08),
-    inset 12px 16px 24px rgba(255, 255, 255, 0.9);
-  position: relative;
+/* Enterprise Floating Card */
+.enterprise-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: transform 250ms var(--ease-enter), border-color 250ms var(--ease-enter), box-shadow 250ms var(--ease-enter);
+}
+.enterprise-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 24px -4px rgba(107, 33, 168, 0.08);
 }
 
 /* Button micro-interactions */
 .btn-motion {
-  transition: transform var(--motion-duration-xs) var(--ease-standard), background-color var(--motion-duration-xs) var(--ease-standard);
+  transition: transform var(--motion-duration-xs) var(--ease-standard), background-color var(--motion-duration-xs) var(--ease-standard), box-shadow var(--motion-duration-xs) var(--ease-standard);
 }
 .btn-motion:hover {
-  transform: scale(1.02);
+  transform: translateY(-1px);
 }
 .btn-motion:active {
-  transform: scale(0.98);
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Cloudflare-style Subtle Ambient Gradient */
+.hero-ambient-gradient {
+  background: radial-gradient(circle at 75% 30%, rgba(107, 33, 168, 0.05), transparent 40%),
+              radial-gradient(circle at 20% 70%, rgba(249, 115, 22, 0.03), transparent 35%),
+              #FFFFFF;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" className={inter.variable}>
-      <body className="font-sans min-h-screen bg-[#E6E6E4] text-[#17151A] antialiased">
+      <body className="font-sans min-h-screen bg-white text-[#111111] antialiased">
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

@@ -63,36 +63,44 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
   return (
     <section
       ref={containerRef}
-      className="w-full py-16 px-6 md:px-12 lg:px-20 border-y border-black/5 bg-[#F8F8F6] my-8"
+      className="w-full py-16 md:py-20 px-6 md:px-12 lg:px-20 border-y border-[#E8E8E8] bg-[#F7F7F8]"
       data-stats-strip
     >
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center">
-        {stats.map((item, index) => (
-          <div
-            key={item.label}
-            className={`flex flex-col items-center justify-center px-4 md:border-r md:border-black/5 md:last:border-r-0 transition-all duration-700 ease-out ${
-              hasAnimated
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-6'
-            }`}
-            style={{ transitionDelay: `${index * 120}ms` }}
-          >
-            <div className="flex items-center gap-2 mb-2">
-              {index === 0 && (
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+      <div className="max-w-[1280px] mx-auto">
+        <div className="text-center mb-8">
+          <span className="text-[11px] uppercase tracking-wider text-[#6B21A8] bg-[#FAF8FC] px-3 py-1 rounded-full border border-[#E8E8E8] font-semibold">
+            BẰNG CHỨNG HIỆU QUẢ ĐỊNH LƯỢNG
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center divide-y md:divide-y-0 md:divide-x divide-[#E8E8E8]">
+          {stats.map((item, index) => (
+            <div
+              key={item.label}
+              className={`flex flex-col items-center justify-center px-6 py-4 md:py-0 transition-all duration-700 ease-out ${
+                hasAnimated
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: `${index * 120}ms` }}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                {index === 0 && (
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#059669] opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#059669]" />
+                  </span>
+                )}
+                <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#111111] tabular-nums">
+                  {getDisplayValue(index, item.value)}
                 </span>
-              )}
-              <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#17151A] tabular-nums">
-                {getDisplayValue(index, item.value)}
+              </div>
+              <span className="text-sm text-[#626262] font-normal max-w-[240px] leading-relaxed">
+                {item.label}
               </span>
             </div>
-            <span className="text-xs sm:text-sm text-[#6E6E6E] font-normal max-w-[220px] leading-relaxed">
-              {item.label}
-            </span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
