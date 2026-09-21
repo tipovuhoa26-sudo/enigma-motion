@@ -14,6 +14,9 @@ export interface AdvantageCard {
     label: string;
     subtext?: string;
   };
+  pillars?: { title: string; desc: string }[];
+  benchmarks?: { label: string; value: string }[];
+  commitment?: string;
 }
 
 export interface CaseStudy {
@@ -25,6 +28,8 @@ export interface CaseStudy {
   heightClass: string;
   slug: string;
   summary?: string;
+  client?: string;
+  metrics?: { label: string; value: string }[];
 }
 
 export interface StatItem {
@@ -38,42 +43,102 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     index: 1,
     eyebrow: 'Con người & Quy trình',
     title: '70% Hiệu Quả Đến Từ Con Người, Không Phải Mua Tool',
-    description: 'Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.',
+    description: 'Trang bị công cụ đắt tiền mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu tiên.',
     bgColor: '#FAFFDE',
     metric: {
       value: 70,
       suffix: '%',
-      label: 'chi phí tuyển dụng tiết kiệm',
+      label: 'chi phí tuyển dụng tiết kiệm thực tế',
       subtext: 'Chuỗi bán lẻ 500 nhân sự',
     },
+    pillars: [
+      {
+        title: 'Đào tạo theo vai trò thực tế (Role-based)',
+        desc: 'Thiết kế bài toán riêng cho từng phòng ban (Sales, HR, Vận hành), không dạy lý thuyết chung chung.',
+      },
+      {
+        title: 'Tối ưu SOP trước khi tự động hóa',
+        desc: 'Cắt tỉa thao tác thừa trong quy trình hiện hữu trước khi chuyển giao cho AI Agents.',
+      },
+      {
+        title: 'Bàn giao 100% quyền tự vận hành',
+        desc: 'Đội ngũ tự tinh chỉnh prompt và workflow mà không bị phụ thuộc vào agency bên ngoài.',
+      },
+    ],
+    benchmarks: [
+      { label: 'Thời gian thích ứng', value: '2 tuần đầu tiên' },
+      { label: 'Mức độ tự vận hành', value: '92% đội ngũ' },
+      { label: 'Cơ chế nghiệm thu', value: 'Đo bằng giờ công giảm' },
+    ],
+    commitment: 'Nghiệm thu theo năng lực tự chủ của đội ngũ',
   },
   {
     id: 'advantage-2',
     index: 2,
-    eyebrow: 'Hạ tầng dữ liệu',
+    eyebrow: 'Hạ tầng dữ liệu & Tích hợp',
     title: 'Kết Nối Trực Tiếp Vào Hệ Thống Sẵn Có',
-    description: 'Tích hợp hai chiều vào ERP, CRM và dây chuyền sản xuất. Hệ thống kích hoạt hành động theo thời gian thực, không phát sinh phần mềm phụ.',
+    description: 'Không bắt doanh nghiệp phải mua thêm nền tảng phụ hay thay đổi hạ tầng đang ổn định. Hệ thống kết nối hai chiều vào ERP, CRM và Database sẵn có qua API bảo mật.',
     bgColor: '#F5F3F6',
     metric: {
       value: 99,
       suffix: '%',
       label: 'độ chính xác kiểm định tự động',
-      subtext: 'Nhà máy cơ khí chính xác',
+      subtext: 'Nhà máy cơ khí chính xác 800 công nhân',
     },
+    pillars: [
+      {
+        title: 'Tích hợp API hai chiều không gián đoạn',
+        desc: 'Cắm thẳng vào SAP, Odoo, HubSpot, KiotViet mà không cần dừng vận hành hệ thống.',
+      },
+      {
+        title: 'Triển khai On-premise & Private Cloud',
+        desc: 'Dữ liệu kinh doanh nhạy cảm không rời khỏi môi trường kiểm soát của doanh nghiệp.',
+      },
+      {
+        title: 'Bảo mật tiêu chuẩn quốc tế',
+        desc: 'Ký cam kết NDA bảo mật tuyệt đối, tuân thủ nguyên tắc cách ly dữ liệu doanh nghiệp.',
+      },
+    ],
+    benchmarks: [
+      { label: 'Thời gian kết nối', value: '< 14 ngày làm việc' },
+      { label: 'Độ trễ phản hồi API', value: '< 120 mili-giây' },
+      { label: 'Bảo mật dữ liệu', value: 'Cam kết NDA & Cô lập' },
+    ],
+    commitment: 'Bảo toàn nguyên vẹn hạ tầng CNTT sẵn có',
   },
   {
     id: 'advantage-3',
     index: 3,
-    eyebrow: 'Nghiệm thu dự án',
-    title: 'Nghiệm Thu Bằng Giờ Công Và P&L',
-    description: 'Triển khai theo từng cột mốc rõ ràng. Nghiệm thu bằng chỉ số định lượng: giảm giờ xử lý, hạ tỷ lệ lỗi và tăng sản lượng thực tế.',
+    eyebrow: 'Nghiệm thu định lượng',
+    title: 'Nghiệm Thu Bằng Giờ Công Và P&L Thực Tế',
+    description: 'Sunext từ chối nghiệm thu bằng slide trình diễn. Mọi dự án chuyển đổi AI được chia nhỏ theo 4 cửa ải kiểm soát (Gate 1-4) với chỉ số P&L và giờ công thực tế làm căn cứ thanh toán.',
     bgColor: '#FAFFDE',
     metric: {
       value: 5,
       prefix: 'x',
-      label: 'tốc độ sản xuất tài liệu kỹ thuật',
-      subtext: 'Doanh nghiệp B2B 200 nhân sự',
+      label: 'tốc độ sản xuất tài liệu chuyên môn',
+      subtext: 'Doanh nghiệp dịch vụ B2B 200 nhân sự',
     },
+    pillars: [
+      {
+        title: 'Quy trình 4 cửa ải kiểm soát (Gate 1-4)',
+        desc: 'Xác định bài toán ➔ Thử nghiệm PoC ➔ Tích hợp hệ thống ➔ Nghiệm thu số liệu.',
+      },
+      {
+        title: 'Dừng dự án sớm nếu không đạt ROI',
+        desc: 'Nếu bài toán không chứng minh được hiệu quả ở Gate 1, dự án dừng ngay để tránh lãng phí.',
+      },
+      {
+        title: 'Nghiệm thu bằng số liệu thực tế',
+        desc: 'Đo lường trực tiếp bằng giờ công giảm bớt, tỷ lệ lỗi hạ thấp và doanh thu tạo thêm.',
+      },
+    ],
+    benchmarks: [
+      { label: 'Quy trình kiểm soát', value: '4 Cửa ải Gate 1-4' },
+      { label: 'Chu kỳ đo lường', value: 'Báo cáo hàng tuần' },
+      { label: 'Rủi ro đầu tư', value: 'Không nghiệm thu bằng slide' },
+    ],
+    commitment: 'Cam kết đồng hành & chuyển giao 100%',
   },
 ];
 
@@ -82,73 +147,113 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-1',
     title: 'Tối Ưu Tuyển Dụng Chuỗi Bán Lẻ',
     category: 'Bán Lẻ & FMCG',
+    client: 'Chuỗi Bán Lẻ 500 Nhân Sự',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
     slug: 'toi-uu-chi-phi-tuyen-dung-hr-ai',
-    summary: 'Chuỗi bán lẻ 500 nhân sự: Rút ngắn thời gian lọc CV từ 3 ngày xuống 2 giờ, tiết kiệm 40% chi phí tuyển dụng thực tế.',
+    summary: 'Tự động hóa toàn bộ quy trình sàng lọc CV và xếp lịch phỏng vấn, cắt giảm 80% thời gian xử lý thủ công của phòng nhân sự.',
+    metrics: [
+      { value: '3 Ngày ➔ 2 Giờ', label: 'Thời gian lọc CV' },
+      { value: '-40%', label: 'Chi phí tuyển dụng' },
+    ],
   },
   {
     id: 'case-2',
     title: 'AI Vision Kiểm Định Cơ Khí',
     category: 'Sản Xuất & Chế Tạo',
+    client: 'Nhà Máy Cơ Khí Chính Xác',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
     heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
     slug: 'ai-auditor-manufacturing',
-    summary: 'Nhà máy 800 công nhân: Đạt 99.8% độ chính xác kiểm định bề mặt, tỷ lệ lỗi sau kiểm định còn 1.5%.',
+    summary: 'Ứng dụng thị giác máy tính phát hiện khuyết tật bề mặt kim loại trên dây chuyền sản xuất liên tục 800 công nhân.',
+    metrics: [
+      { value: '99.8%', label: 'Độ chính xác kiểm định' },
+      { value: '1.5%', label: 'Tỷ lệ lỗi sau kiểm định' },
+    ],
   },
   {
     id: 'case-3',
     title: 'Content Engine Doanh Nghiệp B2B',
     category: 'Dịch Vụ B2B',
+    client: 'Doanh Nghiệp Dịch Vụ 200 Nhân Sự',
     widthClass: 'w-[290px] sm:w-[330px] md:w-[360px]',
     heightClass: 'h-[190px] sm:h-[220px] md:h-[250px]',
     slug: 'content-factory-b2b-marketing',
-    summary: 'Doanh nghiệp dịch vụ 200 nhân sự: Tăng tốc x5 sản xuất tài liệu chuyên môn, tăng 60% organic traffic sau 5 tháng.',
+    summary: 'Xây dựng nhà máy nội dung chuyên môn từ tài liệu kỹ thuật nội bộ, tăng tốc độ xuất bản và kéo khách hàng B2B tự nhiên.',
+    metrics: [
+      { value: 'x5 Lần', label: 'Tốc độ xuất bản SOP' },
+      { value: '+60%', label: 'Tăng trưởng Organic Traffic' },
+    ],
   },
   {
     id: 'case-4',
     title: 'Bóc Tách Báo Cáo Tài Chính',
     category: 'Chứng Khoán & Đầu Tư',
+    client: 'Vietcap Securities',
     widthClass: 'w-[340px] sm:w-[380px] md:w-[420px]',
     heightClass: 'h-[240px] sm:h-[270px] md:h-[300px]',
     slug: 'vietcap-ai-multi-agent-nghien-cuu-thi-truong',
-    summary: 'Vietcap Securities: Giảm 75% thời gian bóc tách BCTC, rút ngắn chu kỳ xuất bản báo cáo phân tích từ 2 ngày xuống 3 giờ.',
+    summary: 'Đội ngũ Multi-Agents tự động thu thập, đối soát 3 báo cáo tài chính và tổng hợp dữ liệu vĩ mô phục vụ chuyên viên phân tích.',
+    metrics: [
+      { value: '-75%', label: 'Thời gian bóc tách BCTC' },
+      { value: '2 Ngày ➔ 3 Giờ', label: 'Chu kỳ xuất bản báo cáo' },
+    ],
   },
   {
     id: 'case-5',
     title: 'AI Trợ Lý Bán Hàng Bất Động Sản',
     category: 'Bất Động Sản & Nhà Phố',
+    client: 'Vinhomes / CenGroup',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
     heightClass: 'h-[210px] sm:h-[240px] md:h-[270px]',
     slug: 'vinhomes-ai-sales-enablement',
-    summary: 'Mạng lưới 500+ nhân sự kinh doanh: Tự động hóa sản xuất video thực địa, kịch bản tư vấn và trợ lý ảo thông tin dự án.',
+    summary: 'Hệ thống AI Co-Pilot hỗ trợ nhân viên kinh doanh tra cứu bảng hàng thời gian thực, tự động tạo kịch bản tư vấn và video thực địa.',
+    metrics: [
+      { value: '< 1.5 Giây', label: 'Thời gian tra bảng hàng' },
+      { value: '98%', label: 'Tỷ lệ phục vụ Lead' },
+    ],
   },
   {
     id: 'case-6',
     title: 'Tự Động Hóa Hồ Sơ Thầu Quốc Tế',
     category: 'Truyền Thông & Sáng Tạo',
+    client: 'Dentsu Sports & Creative',
     widthClass: 'w-[300px] sm:w-[340px] md:w-[380px]',
     heightClass: 'h-[200px] sm:h-[230px] md:h-[260px]',
     slug: 'dentsu-ai-pitch-deck-automation',
-    summary: 'Dentsu Sports & Creative: Rút ngắn 65% thời gian phát triển proposal đấu thầu tài trợ và chiến dịch thương hiệu.',
+    summary: 'Tự động hóa luồng phát triển proposal đấu thầu tài trợ và chiến dịch thương hiệu theo chuẩn nhận diện và ngân sách quốc tế.',
+    metrics: [
+      { value: '-65%', label: 'Thời gian hoàn thiện thầu' },
+      { value: '24 Giờ', label: 'Tốc độ phản hồi RFP' },
+    ],
   },
   {
     id: 'case-7',
     title: 'Sản Xuất Video Hiện Trường',
     category: 'Bất Động Sản & Nhà Phố',
+    client: 'Phương Trường An Group',
     widthClass: 'w-[320px] sm:w-[360px] md:w-[400px]',
     heightClass: 'h-[220px] sm:h-[250px] md:h-[280px]',
     slug: 'phuong-truong-an-video-ai-hien-truong',
-    summary: 'Phương Trường An Group: Tăng 200% sản lượng video hiện trường do nhân sự tự quay dựng trực tiếp trên điện thoại.',
+    summary: 'Quy trình AI hóa cho phép nhân sự hiện trường tự quay dựng video tiến độ dự án bằng smartphone với độ hoàn thiện chuẩn studio.',
+    metrics: [
+      { value: '+200%', label: 'Sản lượng video thực tế' },
+      { value: '100%', label: 'Tự chủ quay dựng trên mobile' },
+    ],
   },
   {
     id: 'case-8',
     title: 'Hệ Thống AI Agent Sự Kiện 10.000 Người',
     category: 'Giáo Dục & Công Nghệ',
+    client: 'Đại Học FPT',
     widthClass: 'w-[330px] sm:w-[370px] md:w-[410px]',
     heightClass: 'h-[230px] sm:h-[260px] md:h-[290px]',
     slug: 'fptu-nang-bac-giang-vien-ai',
-    summary: 'Đại học FPT: Đào tạo nâng bậc giảng viên chuẩn Bậc 6 và điều phối hệ thống AI Agents phục vụ 10.000+ người tại Tech Fest.',
+    summary: 'Đào tạo nâng bậc giảng viên chuẩn Bậc 6 và điều phối hệ thống AI Agents phục vụ 10.000+ sinh viên và khách mời tại Tech Fest.',
+    metrics: [
+      { value: '10.000+', label: 'Quy mô người tham gia' },
+      { value: 'Chuẩn Bậc 6', label: 'Nâng bậc năng lực AI' },
+    ],
   },
 ];
 
