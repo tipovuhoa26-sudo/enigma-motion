@@ -159,6 +159,7 @@ export default function TeamLeadershipPage() {
                     src="/assets/vinh_hung_portrait.png"
                     alt="Nguyễn Phước Vĩnh Hưng"
                     fill
+                    sizes="(max-width: 640px) 112px, 128px"
                     className="object-cover"
                     priority
                   />
