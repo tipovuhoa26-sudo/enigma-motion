@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 interface NetworkNode {
   id: string;
@@ -26,12 +26,31 @@ const NODES: NetworkNode[] = [
 
 export function AiTransformationNetwork() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const relX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const relY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+    setMouseOffset({ x: relX * 5, y: relY * 5 });
+  };
+
+  const handleMouseLeave = () => {
+    setMouseOffset({ x: 0, y: 0 });
+  };
 
   const cx = 270;
   const cy = 270;
 
   return (
-    <div className="relative w-full max-w-[560px] aspect-square flex items-center justify-center select-none font-sans">
+    <div
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative w-full max-w-[560px] aspect-square flex items-center justify-center select-none font-sans"
+    >
       {/* Background Soft Glow */}
       <div className="absolute inset-0 bg-radial from-purple-500/[0.04] via-transparent to-transparent rounded-full pointer-events-none" />
 
@@ -39,6 +58,10 @@ export function AiTransformationNetwork() {
         viewBox="0 0 540 540"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        style={{
+          transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
+          transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        }}
         className="w-full h-full block overflow-visible"
       >
         <defs>
@@ -87,7 +110,7 @@ export function AiTransformationNetwork() {
         <circle cx={cx} cy={cy} r="96" fill="url(#sun-glow)" />
 
         {/* Primitive 3 & 4: Connecting Lines & Data Rays from Center to Nodes */}
-        {NODES.map((node) => {
+        {NODES.map((node, idx) => {
           const rad = (node.angle * Math.PI) / 180;
           const x = cx + node.distance * Math.cos(rad);
           const y = cy + node.distance * Math.sin(rad);
@@ -95,7 +118,7 @@ export function AiTransformationNetwork() {
 
           return (
             <g key={`line-${node.id}`}>
-              {/* Static Hairline Connector */}
+              {/* Static Hairline Connector with slow breathing */}
               <line
                 x1={cx}
                 y1={cy}
@@ -104,7 +127,8 @@ export function AiTransformationNetwork() {
                 stroke={isNodeActive ? 'url(#active-line-grad)' : '#E5E3DC'}
                 strokeWidth={isNodeActive ? 2 : 1}
                 strokeDasharray={isNodeActive ? 'none' : '4 3'}
-                className="transition-colors duration-300"
+                style={{ animationDelay: `${idx * 1.2}s` }}
+                className={`transition-colors duration-300 ${!isNodeActive ? 'animate-line-breathe' : ''}`}
               />
 
               {/* Data Flow Pulse Traveling Particle */}
@@ -112,7 +136,7 @@ export function AiTransformationNetwork() {
                 cx={cx + (node.distance * 0.55) * Math.cos(rad)}
                 cy={cy + (node.distance * 0.55) * Math.sin(rad)}
                 r={isNodeActive ? 3.5 : 2}
-                fill={isNodeActive ? '#F97316' : '#6B21A8'}
+                fill={isNodeActive ? '#F97316' : '#581C87'}
                 className="animate-pulse"
               />
             </g>
@@ -143,8 +167,8 @@ export function AiTransformationNetwork() {
           );
         })}
 
-        {/* 8 Satellite Nodes */}
-        {NODES.map((node) => {
+        {/* 8 Satellite Nodes with Subtle Organic Breathing */}
+        {NODES.map((node, idx) => {
           const rad = (node.angle * Math.PI) / 180;
           const x = cx + node.distance * Math.cos(rad);
           const y = cy + node.distance * Math.sin(rad);
@@ -158,53 +182,55 @@ export function AiTransformationNetwork() {
               onMouseLeave={() => setActiveNode(null)}
               className="cursor-pointer group"
             >
-              {/* Outer Hover Ring */}
-              <circle
-                cx="0"
-                cy="0"
-                r={isNodeActive ? 28 : 22}
-                fill="#FFFFFF"
-                stroke={isNodeActive ? '#6B21A8' : '#E8E8E8'}
-                strokeWidth={isNodeActive ? 2 : 1}
-                filter="drop-shadow(0 2px 6px rgba(0,0,0,0.04))"
-                className="transition-all duration-300"
-              />
-
-              {/* Inner Node Core */}
-              <circle
-                cx="0"
-                cy="0"
-                r={isNodeActive ? 7 : 5}
-                fill={isNodeActive ? '#F97316' : '#6B21A8'}
-                className="transition-all duration-300"
-              />
-
-              {/* Node Label Card (Floating) */}
-              <g
-                transform={`translate(${x > cx ? 28 : -28}, ${y > cy ? 12 : -12})`}
-                className="transition-transform duration-200"
-              >
-                <rect
-                  x={x > cx ? 0 : -100}
-                  y="-12"
-                  width="100"
-                  height="26"
-                  rx="6"
-                  fill={isNodeActive ? '#FAF8FC' : '#FFFFFF'}
-                  stroke={isNodeActive ? '#6B21A8' : '#E8E8E8'}
-                  strokeWidth={isNodeActive ? 1 : 0.8}
-                  filter="drop-shadow(0 2px 4px rgba(0,0,0,0.02))"
+              <g className="animate-node-breathe" style={{ animationDelay: `${idx * 1.5}s` }}>
+                {/* Outer Hover Ring */}
+                <circle
+                  cx="0"
+                  cy="0"
+                  r={isNodeActive ? 28 : 22}
+                  fill="#FFFFFF"
+                  stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
+                  strokeWidth={isNodeActive ? 2 : 1}
+                  filter="drop-shadow(0 2px 6px rgba(0,0,0,0.04))"
+                  className="transition-all duration-300"
                 />
-                <text
-                  x={x > cx ? 8 : -92}
-                  y="4"
-                  fill={isNodeActive ? '#6B21A8' : '#111111'}
-                  fontSize="9.5"
-                  fontFamily="system-ui, sans-serif"
-                  fontWeight={isNodeActive ? '700' : '600'}
+
+                {/* Inner Node Core */}
+                <circle
+                  cx="0"
+                  cy="0"
+                  r={isNodeActive ? 7 : 5}
+                  fill={isNodeActive ? '#F97316' : '#581C87'}
+                  className="transition-all duration-300"
+                />
+
+                {/* Node Label Card (Floating) */}
+                <g
+                  transform={`translate(${x > cx ? 28 : -28}, ${y > cy ? 12 : -12})`}
+                  className="transition-transform duration-200"
                 >
-                  {node.name}
-                </text>
+                  <rect
+                    x={x > cx ? 0 : -100}
+                    y="-12"
+                    width="100"
+                    height="26"
+                    rx="6"
+                    fill={isNodeActive ? '#FAF8FC' : '#FFFFFF'}
+                    stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
+                    strokeWidth={1}
+                    filter="drop-shadow(0 2px 4px rgba(0,0,0,0.02))"
+                  />
+                  <text
+                    x={x > cx ? 8 : -92}
+                    y="4"
+                    fill={isNodeActive ? '#581C87' : '#111111'}
+                    fontSize="9.5"
+                    fontFamily="system-ui, sans-serif"
+                    fontWeight={isNodeActive ? '700' : '600'}
+                  >
+                    {node.name}
+                  </text>
+                </g>
               </g>
             </g>
           );
@@ -212,6 +238,7 @@ export function AiTransformationNetwork() {
 
         {/* Central Core: MẶT TRỜI SUNEXT (Technological Sun Center) */}
         <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer group">
+          <g className="animate-sun-breathe">
           {/* Rotating Solar Corona Rings */}
           <circle cx="0" cy="0" r="58" fill="none" stroke="#F97316" strokeWidth="1" strokeDasharray="3 7" opacity="0.6">
             <animateTransform
@@ -276,21 +303,15 @@ export function AiTransformationNetwork() {
           <circle cx="0" cy="0" r="14" fill="#FFFFFF" fillOpacity="0.22" stroke="#FFFFFF" strokeWidth="1.2" />
           <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
 
-          {/* 4 Cardinal Solar Flares */}
-          <path
-            d="M0 -22 L3 -16 L-3 -16 Z M0 22 L3 16 L-3 16 Z M-22 0 L-16 3 L-16 -3 Z M22 0 L16 3 L16 -3 Z"
-            fill="#FFFFFF"
-            opacity="0.9"
-          />
+            {/* 4 Cardinal Solar Flares */}
+            <path
+              d="M0 -22 L3 -16 L-3 -16 Z M0 22 L3 16 L-3 16 Z M-22 0 L-16 3 L-16 -3 Z M22 0 L16 3 L16 -3 Z"
+              fill="#FFFFFF"
+              opacity="0.9"
+            />
+          </g>
         </g>
       </svg>
-
-      {/* Floating Bottom Telemetry Pill */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/95 border border-[#E8E8E8] shadow-sm flex items-center gap-2 text-xs font-medium text-[#111111] whitespace-nowrap">
-        <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
-        <span className="font-semibold text-[#6B21A8]">AI Network:</span>
-        <span className="text-[#626262]">8 Nhóm Bài Toán Nghiệp Vụ · 40+ Dự Án</span>
-      </div>
     </div>
   );
 }

@@ -23,38 +23,30 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
   return (
     <section
       id="cases"
-      className="relative w-full py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white scroll-mt-20 border-b border-[#E8E8E8] overflow-hidden"
+      className="relative w-full py-24 sm:py-28 px-6 md:px-12 lg:px-20 bg-white scroll-mt-20 border-b border-[#E7E7E5] overflow-hidden"
       data-cases-section
     >
-      {/* Background oversized watermark text */}
-      <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[130px] sm:text-[190px] lg:text-[250px] font-black text-black/[0.02] tracking-tighter z-0 uppercase"
-        aria-hidden="true"
-      >
-        RESULTS
-      </div>
-
       <div className="max-w-[1280px] mx-auto relative z-10">
         {/* Section Header: Sentence Case */}
-        <div className="text-center mb-12 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8FC] border border-[#E8E8E8] text-xs font-medium text-[#6B21A8] mb-3 shadow-2xs">
-            <span>Thực tiễn triển khai</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#111111] leading-tight mb-3">
-            Dự án thực tế & <span className="font-normal">kết quả đo lường</span>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
+            Thực tiễn triển khai
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
+            Dự án thực tế & <span className="font-normal text-[#0A0A0A]">kết quả đo lường</span>
           </h2>
-          <p className="text-sm md:text-base text-[#626262] font-normal max-w-xl mx-auto leading-relaxed">
+          <p className="text-base text-[#515151] font-normal max-w-xl mx-auto leading-relaxed">
             100% dự án được nghiệm thu định lượng bằng P&L và thời gian thực tế tại doanh nghiệp Việt Nam.
           </p>
         </div>
 
         {/* Editorial Layout: 1 Full-Width Flagship Case Top + 3-Column Supporting Cases Bottom */}
-        <div className="space-y-6 mb-12">
+        <div className="space-y-6 mb-16">
           
           {/* TOP: Full-Width Flagship Case Card */}
           <Link
             href={`/case-studies/${featuredCase.slug}`}
-            className="group block rounded-2xl bg-[#FAFAFA] border border-[#E8E8E8] p-8 sm:p-10 lg:p-12 hover:border-[#6B21A8]/40 hover:shadow-[0_20px_50px_-16px_rgba(107,33,168,0.08)] hover:-translate-y-1 transition-all duration-300"
+            className="group block rounded-2xl bg-[#F9F9F8] border border-[#E7E7E5] p-8 sm:p-10 lg:p-12 hover:border-[#581C87]/40 hover:shadow-[0_16px_40px_-16px_rgba(88,28,135,0.06)] hover:-translate-y-0.5 transition-all duration-300"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Column: Client & Narrative (7 cols) */}
@@ -189,14 +181,14 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
         </div>
 
         {/* Bottom Centered CTA */}
-        <div className="text-center pt-2">
+        <div className="text-center pt-4">
           <Link href="/case-studies">
-            <Button variant="orange" size="lg" className="rounded-full shadow-sm text-xs sm:text-sm font-medium cursor-pointer">
+            <Button variant="orange" size="lg" className="rounded-xl shadow-sm font-medium cursor-pointer">
               <span>Xem toàn bộ 8+ dự án thực tế</span>
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
-          <div className="mt-3 text-xs text-[#8E8E8E]">
+          <div className="mt-4 text-xs text-[#747474]">
             Cam kết bảo mật dữ liệu tuyệt đối theo thỏa thuận NDA doanh nghiệp
           </div>
         </div>

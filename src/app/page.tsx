@@ -3,6 +3,7 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/sections/Hero';
+import { AiControlRoomSection } from '@/sections/AiControlRoomSection';
 import { ClientTrustStrip } from '@/components/ClientTrustStrip';
 import { StatsStrip } from '@/sections/StatsStrip';
 import { SunextAiSystemBento } from '@/components/SunextAiSystemBento';
@@ -18,6 +19,7 @@ export default function HomePage() {
 
       <main className="flex-1 flex flex-col w-full">
         <Hero autoPlayIntro={true} />
+        <AiControlRoomSection />
         <ClientTrustStrip />
         <StatsStrip />
         <SunextAiSystemBento />

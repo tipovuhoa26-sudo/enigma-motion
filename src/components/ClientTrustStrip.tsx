@@ -33,7 +33,7 @@ export function ClientTrustStrip() {
           {TRUSTED_LOGOS.map((logo, idx) => (
             <div
               key={`logo-1-${idx}`}
-              className="relative shrink-0 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-10 px-2"
+              className="relative shrink-0 flex items-center justify-center grayscale opacity-45 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-10 px-2"
               title={logo.name}
             >
               <Image
@@ -50,7 +50,7 @@ export function ClientTrustStrip() {
           {TRUSTED_LOGOS.map((logo, idx) => (
             <div
               key={`logo-2-${idx}`}
-              className="relative shrink-0 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-10 px-2"
+              className="relative shrink-0 flex items-center justify-center grayscale opacity-45 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer h-10 px-2"
               title={logo.name}
             >
               <Image

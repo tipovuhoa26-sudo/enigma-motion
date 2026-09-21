@@ -18,7 +18,6 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
   const headlineLine2Ref = useRef<HTMLSpanElement>(null);
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
-  const dashboardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!autoPlayIntro) return;
@@ -32,22 +31,10 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       ctas,
       headlineLines,
       visual: visualRef.current,
-      controlRoomDashboard: dashboardRef.current,
     });
-
-    const leftCol = containerRef.current?.querySelector('[data-hero-left]') as HTMLElement | null;
-    const scrollTriggerInstance = containerRef.current
-      ? setupHeroScrollChoreography({
-          container: containerRef.current,
-          headline: leftCol,
-          visual: visualRef.current,
-          dashboard: dashboardRef.current,
-        })
-      : null;
 
     return () => {
       tl.kill();
-      scrollTriggerInstance?.kill();
     };
   }, [autoPlayIntro]);
 
@@ -55,75 +42,50 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
     <section
       ref={containerRef}
       id="home"
-      className="relative w-full min-h-[calc(100vh-80px)] px-6 md:px-12 lg:px-20 pt-8 pb-16 flex flex-col justify-center overflow-hidden hero-ambient-gradient"
+      className="relative w-full min-h-[calc(100vh-80px)] px-6 md:px-12 lg:px-20 py-12 lg:py-16 flex flex-col justify-center overflow-hidden bg-white hero-ambient-gradient"
       data-motion="hero"
     >
-      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 my-auto">
+      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10 my-auto">
         
-        {/* Left Column: Eyebrow -> Huge H1 -> Lead -> CTAs -> Proofs */}
+        {/* Left Column: 1 Bold Proposition + 1 Paragraph + 2 Clean CTAs */}
         <div data-hero-left className="lg:col-span-7 flex flex-col justify-center">
           
-          {/* Eyebrow / Announcement Pill */}
-          <div className="mb-6 flex items-center">
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FAF8FC] border border-[#E8E8E8] text-xs font-medium text-[#111111] shadow-2xs hover:border-[#6B21A8]/30 transition-colors">
-              <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
-              <span className="font-semibold text-[#6B21A8]">Sunext AI Enterprise:</span>
-              <span className="text-[#626262]">Tư vấn & triển khai thực chiến</span>
-            </div>
-          </div>
-
-          {/* Huge H1 Headline (SIZE, WEIGHT, SPACE, CONTRAST) */}
+          {/* Huge Editorial H1 (64-80px) */}
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl xl:text-[4.25rem] font-light tracking-tight text-[#111111] leading-[1.08] mb-6 max-w-[760px]"
+            className="text-5xl sm:text-6xl md:text-7xl xl:text-[5.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.04] mb-7 max-w-[760px]"
             data-hero-headline
           >
-            <span ref={headlineLine1Ref} className="line block font-normal text-[#111111]">
+            <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A]">
               Đưa AI vào vận hành.
             </span>
-            <span ref={headlineLine2Ref} className="line block font-light text-[#111111]">
+            <span ref={headlineLine2Ref} className="line block font-light text-[#0A0A0A]">
               Đo bằng kết quả <span className="text-[#F97316] font-normal">kinh doanh.</span>
             </span>
           </h1>
 
-          {/* Lead Copy: 18-20px, high hierarchy */}
-          <p className="text-base sm:text-lg md:text-xl text-[#626262] max-w-[620px] leading-relaxed mb-8 font-normal">
-            Chuyển đổi AI thực chất do bài toán kinh doanh dẫn dắt. Không bán tool đại trà, chúng tôi tái cấu trúc quy trình, làm chủ luồng việc và nghiệm thu theo P&L định lượng.
+          {/* Editorial Lead Copy: 18-20px, #515151 */}
+          <p className="text-lg sm:text-xl text-[#515151] max-w-[620px] leading-relaxed mb-10 font-normal">
+            Chuyển đổi AI thực chất do bài toán kinh doanh dẫn dắt. Không bán tool đại trà, Sunext tái cấu trúc quy trình, trao quyền đội ngũ và nghiệm thu theo P&L định lượng.
           </p>
 
-          {/* CTAs: Orange Primary + Clean Outline Secondary */}
-          <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-3.5 mb-8" data-hero-cta>
+          {/* Primary Orange CTA + Clean Outline Secondary */}
+          <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-4" data-hero-cta>
             <Link href="/#contact">
-              <Button variant="orange" size="lg" className="rounded-full font-medium shadow-sm cursor-pointer">
+              <Button variant="orange" size="lg" className="rounded-xl font-medium shadow-sm hover:shadow-md cursor-pointer">
                 <span>Đặt Lịch Tư Vấn Chiến Lược</span>
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
 
             <Link href="/danh-gia-san-sang-ai">
-              <Button variant="outline" size="lg" className="rounded-full font-medium cursor-pointer">
+              <Button variant="outline" size="lg" className="rounded-xl font-medium cursor-pointer">
                 <span>Đo Độ Sẵn Sàng (12 Câu)</span>
               </Button>
             </Link>
           </div>
-
-          {/* Light Enterprise Trust Rail (Single Focal Point Principle) */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-5 border-t border-[#E8E8E8] text-xs sm:text-[13px] text-[#666666]">
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#059669] font-bold">✓</span>
-              <span>Kiểm soát 4 cửa ải Gate 1–4</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#6B21A8] font-bold">✓</span>
-              <span>Cô lập dữ liệu & cam kết NDA</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[#F97316] font-bold">✓</span>
-              <span>Doanh nghiệp sở hữu & tự vận hành giải pháp</span>
-            </div>
-          </div>
         </div>
 
-        {/* Right Column: AI Transformation Network Visual */}
+        {/* Right Column: 1 Signature AI Transformation Network Visual */}
         <div
           ref={visualRef}
           className="lg:col-span-5 relative flex items-center justify-center min-h-[380px] md:min-h-[500px]"
@@ -132,11 +94,6 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           <AiTransformationNetwork />
         </div>
 
-      </div>
-
-      {/* Layer 03: Product / AI Transformation Control Room Dashboard */}
-      <div ref={dashboardRef} className="max-w-[1280px] w-full mx-auto mt-12 lg:mt-16 relative z-20">
-        <AiControlRoomDashboard />
       </div>
     </section>
   );
