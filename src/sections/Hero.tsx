@@ -104,7 +104,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="text-[#F97316] font-bold">✓</span>
-              <span>Bàn giao 100% mã nguồn & quy trình</span>
+              <span>Doanh nghiệp sở hữu & tự vận hành giải pháp</span>
             </div>
           </div>
         </div>

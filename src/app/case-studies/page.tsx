@@ -16,18 +16,21 @@ export default function CaseStudiesIndexPage() {
 
         <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
           <div className="flex items-center gap-2 mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 text-xs text-[#6E6E6E] hover:text-[#17151A] transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              <span>Quay lại Trang Chủ</span>
-            </Link>
+            <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
+              <Link href="/" className="hover:text-[#111111] transition-colors">
+                Trang chủ
+              </Link>
+              <span>/</span>
+              <span className="text-[#111111] font-medium">Dự án thực tế</span>
+            </nav>
           </div>
 
           <div className="max-w-3xl mb-12">
             <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-              DỰ ÁN ĐÃ TRIỂN KHAI
+              Dự án đã triển khai
             </span>
             <h1 className="text-4xl sm:text-5xl font-light tracking-tight text-[#17151A] leading-tight">
-              Case Studies & Kết Quả Đo Lường Được
+              Case studies & kết quả đo lường được
             </h1>
             <p className="text-base text-[#6E6E6E] mt-4 leading-relaxed">
               Khám phá cách các doanh nghiệp Việt Nam giải quyết bài toán vận hành thật cùng Phương Pháp Luận Sunext: giải phóng sức lao động, tự động hóa kiểm định cơ khí và nghiệm thu bằng hiệu quả P&L định lượng.

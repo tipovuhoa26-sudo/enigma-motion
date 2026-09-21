@@ -44,13 +44,13 @@ export default function LegalSecurityPage() {
         <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
           {/* Top Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-xs text-[#6E6E6E] hover:text-[#17151A] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Quay lại Trang Chủ</span>
-            </Link>
+            <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
+              <Link href="/" className="hover:text-[#111111] transition-colors">
+                Trang chủ
+              </Link>
+              <span>/</span>
+              <span className="text-[#111111] font-medium">Pháp lý & Bảo mật</span>
+            </nav>
 
             <div className="flex items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">

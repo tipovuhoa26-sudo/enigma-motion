@@ -18,8 +18,8 @@ export default function HomePage() {
       <main className="flex-1 flex flex-col w-full">
         <Hero autoPlayIntro={true} />
         <ClientTrustStrip />
-        <AdvantageSection />
         <StatsStrip />
+        <AdvantageSection />
         <CasesSection />
         <CtaFooter />
       </main>

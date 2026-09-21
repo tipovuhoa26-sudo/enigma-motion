@@ -16,7 +16,7 @@ interface NetworkNode {
 const NODES: NetworkNode[] = [
   { id: 'strategy', name: 'Chiến Lược', subtitle: 'Strategy & ROI', angle: -90, distance: 185, category: 'strategy', tag: 'Cửa ải Gate 1-4', metric: 'P&L Direct' },
   { id: 'data', name: 'Dữ Liệu Lõi', subtitle: 'Data Architecture', angle: -45, distance: 195, category: 'execution', tag: 'Vector DB & Mesh', metric: 'Clean Data' },
-  { id: 'people', name: 'Con Người', subtitle: 'People & Culture', angle: 0, distance: 185, category: 'strategy', tag: 'Làm chủ công cụ', metric: '70% Hiệu quả' },
+  { id: 'people', name: 'Con Người', subtitle: 'People & Culture', angle: 0, distance: 185, category: 'strategy', tag: 'Làm chủ công cụ', metric: '70% Nỗ lực (BCG)' },
   { id: 'process', name: 'Quy Trình', subtitle: 'Process & SOP', angle: 45, distance: 195, category: 'execution', tag: 'Chuẩn hóa luồng', metric: '100% Đồng bộ' },
   { id: 'agents', name: 'Multi-Agents', subtitle: 'Autonomous Agents', angle: 90, distance: 185, category: 'execution', tag: 'Swarm Execution', metric: 'Real-time' },
   { id: 'automation', name: 'Tự Động Hóa', subtitle: 'Automation & API', angle: 135, distance: 195, category: 'execution', tag: 'n8n & Pipelines', metric: '3d ➔ 2h' },
@@ -304,7 +304,7 @@ export function AiTransformationNetwork() {
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-white/95 border border-[#E8E8E8] shadow-sm flex items-center gap-2 text-xs font-medium text-[#111111] whitespace-nowrap">
         <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
         <span className="font-semibold text-[#6B21A8]">AI Network:</span>
-        <span className="text-[#626262]">8 Trụ Cột Nghiệp Vụ · 40+ Dự Án</span>
+        <span className="text-[#626262]">8 Nhóm Bài Toán Nghiệp Vụ · 40+ Dự Án</span>
       </div>
     </div>
   );

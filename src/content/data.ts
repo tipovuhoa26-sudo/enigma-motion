@@ -35,6 +35,7 @@ export interface CaseStudy {
 export interface StatItem {
   value: string;
   label: string;
+  subtext?: string;
 }
 
 export const ADVANTAGES_DATA: AdvantageCard[] = [
@@ -42,14 +43,14 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     id: 'advantage-1',
     index: 1,
     eyebrow: 'Con người & Quy trình',
-    title: '70% Hiệu Quả Đến Từ Con Người, Không Phải Mua Tool',
-    description: 'Trang bị công cụ đắt tiền mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu tiên.',
+    title: '70% Nỗ Lực Chuyển Đổi Nằm Ở Con Người & Quy Trình',
+    description: 'Theo chuẩn BCG: 70% nỗ lực chuyển đổi quyết định bởi con người và quy trình (SOP), 20% bởi hạ tầng dữ liệu và chỉ 10% bởi thuật toán AI. Sunext đồng hành chuẩn hóa quy trình và đào tạo đội ngũ làm chủ luồng việc mới.',
     bgColor: '#FAFFDE',
     metric: {
       value: 70,
       suffix: '%',
-      label: 'chi phí tuyển dụng tiết kiệm thực tế',
-      subtext: 'Chuỗi bán lẻ 500 nhân sự',
+      label: 'nỗ lực chuyển đổi tập trung vào con người & SOP',
+      subtext: 'Chuẩn phân bổ 70-20-10 của BCG',
     },
     pillars: [
       {
@@ -61,7 +62,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
         desc: 'Cắt tỉa thao tác thừa trong quy trình hiện hữu trước khi chuyển giao cho AI Agents.',
       },
       {
-        title: 'Bàn giao 100% quyền tự vận hành',
+        title: 'Bàn giao quyền tự vận hành giải pháp',
         desc: 'Đội ngũ tự tinh chỉnh prompt và workflow mà không bị phụ thuộc vào agency bên ngoài.',
       },
     ],
@@ -261,14 +262,17 @@ export const STATS_DATA: StatItem[] = [
   {
     value: '99.8%',
     label: 'Độ chính xác kiểm định cơ khí',
+    subtext: 'Defect Detection Precision · Nhà máy 800 công nhân',
   },
   {
     value: '3 ngày → 2h',
     label: 'Thời gian lọc hồ sơ ứng viên',
+    subtext: 'Automated CV Screening · Chuỗi bán lẻ 500 nhân sự',
   },
   {
     value: '-75%',
     label: 'Thời gian bóc tách báo cáo tài chính',
+    subtext: 'Financial Extraction Engine · Vietcap Securities',
   },
 ];
 

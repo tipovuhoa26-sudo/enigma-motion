@@ -146,6 +146,39 @@ export function SunextTransformationGraph({ activeStep }: TransformationGraphPro
             className="transition-all duration-300"
           />
 
+          {/* Gate Badges on Path Flows */}
+          {/* Gate 1 Badge */}
+          <g transform="translate(195, 90)">
+            <rect x="-18" y="-9" width="36" height="18" rx="4" fill={activeStep >= 0 ? '#FAF8FC' : '#FFFFFF'} stroke={activeStep >= 0 ? '#6B21A8' : '#D1D1D6'} strokeWidth="1" />
+            <text x="0" y="3.5" fill={activeStep >= 0 ? '#6B21A8' : '#8E8E8E'} fontSize="8.5" fontWeight="600" textAnchor="middle" fontFamily="system-ui, sans-serif">
+              G1
+            </text>
+          </g>
+
+          {/* Gate 2 Badge */}
+          <g transform="translate(250, 95)">
+            <rect x="-18" y="-9" width="36" height="18" rx="4" fill={activeStep >= 1 ? '#FAF8FC' : '#FFFFFF'} stroke={activeStep >= 1 ? '#6B21A8' : '#D1D1D6'} strokeWidth="1" />
+            <text x="0" y="3.5" fill={activeStep >= 1 ? '#6B21A8' : '#8E8E8E'} fontSize="8.5" fontWeight="600" textAnchor="middle" fontFamily="system-ui, sans-serif">
+              G2
+            </text>
+          </g>
+
+          {/* Gate 3 Badge */}
+          <g transform="translate(305, 90)">
+            <rect x="-18" y="-9" width="36" height="18" rx="4" fill={activeStep >= 1 ? '#FAF8FC' : '#FFFFFF'} stroke={activeStep >= 1 ? '#6B21A8' : '#D1D1D6'} strokeWidth="1" />
+            <text x="0" y="3.5" fill={activeStep >= 1 ? '#6B21A8' : '#8E8E8E'} fontSize="8.5" fontWeight="600" textAnchor="middle" fontFamily="system-ui, sans-serif">
+              G3
+            </text>
+          </g>
+
+          {/* Gate 4 Badge */}
+          <g transform="translate(250, 225)">
+            <rect x="-20" y="-9" width="40" height="18" rx="4" fill={activeStep === 2 ? '#FFF7ED' : '#FFFFFF'} stroke={activeStep === 2 ? '#F97316' : '#D1D1D6'} strokeWidth="1" />
+            <text x="0" y="3.5" fill={activeStep === 2 ? '#F97316' : '#8E8E8E'} fontSize="8.5" fontWeight="700" textAnchor="middle" fontFamily="system-ui, sans-serif">
+              G4
+            </text>
+          </g>
+
           {/* TOP ANCHOR: BÀI TOÁN KINH DOANH */}
           <g transform="translate(250, 45)">
             <rect x="-105" y="-18" width="210" height="36" rx="8" fill="#FFFFFF" stroke="#E8E8E8" strokeWidth="1" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
@@ -240,9 +273,9 @@ export function SunextTransformationGraph({ activeStep }: TransformationGraphPro
             </text>
             <text x="-90" y="12" fill="#626262" fontSize="8.5" fontFamily="system-ui, sans-serif">
               {activeStep === 0
-                ? 'Tiết kiệm 70% chi phí tuyển dụng'
+                ? '70% Nỗ lực vào Con người & SOP (BCG Framework)'
                 : activeStep === 1
-                ? 'Độ chính xác 99.8% · Không đổi phần mềm'
+                ? 'Độ chính xác 99.8% · Không đổi phần mềm sẵn có'
                 : 'Nghiệm thu P&L · Tăng tốc x5 tài liệu'}
             </text>
           </g>

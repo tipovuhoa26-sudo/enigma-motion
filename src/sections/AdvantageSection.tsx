@@ -82,7 +82,7 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
       {/* Pinned Header Block: Sentence Case */}
       <div className="w-full max-w-4xl mx-auto text-center mb-4 z-10 shrink-0" data-advantage-heading>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E8E8E8] text-xs font-medium text-[#6B21A8] mb-2 shadow-2xs">
-          <span>Hệ thống phương pháp luận</span>
+          <span>Triết lý thực thi</span>
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-[#111111] leading-tight mb-2">
           3 nguyên tắc tạo ra <span className="font-normal">kết quả</span>
@@ -162,10 +162,10 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
                   <span
                     ref={counterRefs[idx]}
                     className="text-3xl sm:text-4xl font-light tracking-tight text-[#111111] leading-none tabular-nums"
-                    aria-label={`${item.metric.prefix ?? ''}${item.metric.value}${item.metric.suffix ?? '%'}`}
+                    aria-label={`${item.metric.prefix ?? ''}${item.metric.value}${item.metric.suffix ?? ''}`}
                     data-counter
                   >
-                    {item.metric.prefix ?? ''}{item.metric.value}{item.metric.suffix ?? '%'}
+                    {item.metric.prefix ?? ''}{item.metric.value}{item.metric.suffix ?? ''}
                   </span>
                   <div className="text-xs text-[#626262] leading-tight">
                     <span className="font-medium text-[#111111] block">{item.metric.label}</span>

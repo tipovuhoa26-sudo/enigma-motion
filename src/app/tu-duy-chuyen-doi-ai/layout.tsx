@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Vì sao 70% doanh nghiệp chuyển đổi AI thất bại — Khung Rewired McKinsey',
+  title: 'Phương Pháp Luận Chuyển Đổi AI Doanh Nghiệp — Sunext Method',
   description:
-    '70% dự án AI thất bại không phải vì công nghệ dở. McKinsey chỉ ra 6 lý do thật. Đây là 6 lý do đó — và cách Sunext giải từng cái.',
+    'Vì sao phần lớn chương trình chuyển đổi không đạt kỳ vọng nếu thiếu tái cấu trúc con người & quy trình. Khung 6 trụ cột đánh giá năng lực AI doanh nghiệp.',
   openGraph: {
-    title: 'Vì sao 70% doanh nghiệp chuyển đổi AI thất bại — Khung Rewired McKinsey',
+    title: 'Phương Pháp Luận Chuyển Đổi AI Doanh Nghiệp — Sunext Method',
     description:
-      '70% dự án AI thất bại không phải vì công nghệ dở. McKinsey chỉ ra 6 lý do thật. Đây là 6 lý do đó — và cách Sunext giải từng cái.',
+      'Vì sao phần lớn chương trình chuyển đổi không đạt kỳ vọng nếu thiếu tái cấu trúc con người & quy trình. Khung 6 trụ cột đánh giá năng lực AI doanh nghiệp.',
   },
 };
 

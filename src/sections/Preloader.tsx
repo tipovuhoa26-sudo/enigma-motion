@@ -69,6 +69,7 @@ export function Preloader({ onLoaded, onExitStart }: PreloaderProps) {
   return (
     <div
       ref={rootRef}
+      aria-hidden="true"
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#F8F8F6] will-change-[filter,opacity]"
       data-loader-root
     >

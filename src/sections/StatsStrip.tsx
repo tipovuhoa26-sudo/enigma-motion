@@ -10,8 +10,8 @@ interface StatsStripProps {
 export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [val1, setVal1] = useState('0%');
-  const [val3, setVal3] = useState('0%');
+  const [val1, setVal1] = useState(stats[0]?.value ?? '99.8%');
+  const [val3, setVal3] = useState(stats[2]?.value ?? '-75%');
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -21,15 +21,15 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
           setHasAnimated(true);
 
           const startTime = performance.now();
-          const duration = 1400;
+          const duration = 1200;
 
           const animate = (currentTime: number) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const ease = 1 - Math.pow(1 - progress, 3);
 
-            const c1 = (ease * 99.8).toFixed(1);
-            const c3 = Math.round(ease * -75);
+            const c1 = (85 + ease * 14.8).toFixed(1);
+            const c3 = Math.round(-30 - ease * 45);
 
             setVal1(`${c1}%`);
             setVal3(`${c3}%`);
@@ -53,7 +53,6 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
   }, [hasAnimated]);
 
   const getDisplayValue = (index: number, fallback: string) => {
-    if (!hasAnimated) return fallback;
     if (index === 0) return val1;
     if (index === 1) return fallback;
     if (index === 2) return val3;
@@ -63,7 +62,7 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
   return (
     <section
       ref={containerRef}
-      className="w-full py-16 md:py-24 px-6 md:px-12 lg:px-20 border-y border-[#E8E8E8] bg-[#F7F7F8]"
+      className="w-full py-16 md:py-20 px-6 md:px-12 lg:px-20 border-y border-[#E8E8E8] bg-[#F7F7F8]"
       data-stats-strip
     >
       <div className="max-w-[1280px] mx-auto">
@@ -79,7 +78,7 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
               key={item.label}
               className="flex flex-col items-center justify-center px-6 py-6 md:py-2 transition-all duration-700 ease-out"
             >
-              <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex items-center gap-2.5 mb-2">
                 {index === 0 && (
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#059669] opacity-75" />
@@ -93,11 +92,22 @@ export function StatsStrip({ stats = STATS_DATA }: StatsStripProps) {
                   {getDisplayValue(index, item.value)}
                 </span>
               </div>
-              <span className="text-sm sm:text-base text-[#626262] font-normal max-w-[260px] leading-relaxed">
+              <span className="text-sm sm:text-base font-medium text-[#111111] max-w-[280px] leading-snug mb-1">
                 {item.label}
               </span>
+              {item.subtext && (
+                <span className="text-xs text-[#8E8E8E] font-normal max-w-[260px] leading-relaxed">
+                  {item.subtext}
+                </span>
+              )}
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-[#E8E8E8]/60 text-center">
+          <p className="text-xs text-[#8E8E8E]">
+            * Chỉ số được đo lường trực tiếp trên môi trường vận hành thực tế (Production Workloads) · Biên bản nghiệm thu có xác nhận của khách hàng
+          </p>
         </div>
       </div>
     </section>

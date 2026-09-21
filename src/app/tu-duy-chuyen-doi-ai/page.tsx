@@ -88,13 +88,13 @@ export default function AiTransformationHubPage() {
         <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
           {/* Top Breadcrumb & Tag */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-black/5">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-xs text-[#6E6E6E] hover:text-[#17151A] transition-colors"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Quay lại Trang Chủ</span>
-            </Link>
+            <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
+              <Link href="/" className="hover:text-[#111111] transition-colors">
+                Trang chủ
+              </Link>
+              <span>/</span>
+              <span className="text-[#111111] font-medium">Phương pháp luận</span>
+            </nav>
 
             <div className="flex items-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
@@ -102,7 +102,7 @@ export default function AiTransformationHubPage() {
                 SUNEXT METHOD
               </span>
               <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
-              <span className="text-xs text-[#6E6E6E] hidden sm:inline">Khung Tham Chiếu 6 Trụ Cột McKinsey Rewired</span>
+              <span className="text-xs text-[#6E6E6E] hidden sm:inline">Khung Tham Chiếu 6 Trụ Cột Đánh Giá Năng Lực AI</span>
             </div>
           </div>
 
@@ -112,7 +112,7 @@ export default function AiTransformationHubPage() {
               Tư Duy Chuyển Đổi AI · Báo Cáo Chiến Lược
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-light tracking-tight text-[#17151A] leading-[1.18] mb-8">
-              Vì sao <span className="font-normal underline decoration-black/20 underline-offset-8">70% doanh nghiệp</span> chuyển đổi AI thất bại — dù đã mua đủ công cụ
+              Vì sao <span className="font-normal underline decoration-black/20 underline-offset-8">phần lớn chương trình chuyển đổi</span> không đạt mục tiêu — và AI cũng không phải ngoại lệ
             </h1>
 
             {/* Pain Point Lead In (Sam Ovens style) */}
@@ -129,26 +129,26 @@ export default function AiTransformationHubPage() {
               <div className="pt-3 border-t border-black/10 flex items-center gap-3 text-xs text-[#6E6E6E]">
                 <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>
-                  McKinsey & BCG X chỉ ra: Hơn 70% sáng kiến chuyển đổi số và AI thất bại không phải vì model kém hay thiếu tiền, mà vì <strong>mua công nghệ nhưng không tái cấu trúc tổ chức để dùng được nó</strong>.
+                  Khảo sát thực tế chỉ ra: Phần lớn sáng kiến chuyển đổi số và AI thất bại không phải vì mô hình AI kém hay thiếu kinh phí, mà vì <strong>đầu tư công nghệ nhưng không tái cấu trúc tổ chức và chuẩn hóa quy trình để vận hành nó</strong>.
                 </span>
               </div>
             </div>
           </section>
 
-          {/* Section: Quy tắc 10-20-70 BCG X Callout */}
+          {/* Section: Quy tắc 10-20-70 BCG Callout */}
           <section className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             <div className="md:col-span-4">
               <div className="flex items-center gap-2 mb-2">
                 <PieChart className="w-4 h-4 text-emerald-800" />
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E6E]">
-                  Quy Tắc Kinh Điển BCG X
+                  Khung Phân Bổ Nỗ Lực BCG
                 </span>
               </div>
               <h2 className="text-2xl font-light text-[#17151A]">
                 Công thức 10 — 20 — 70
               </h2>
               <p className="text-xs text-[#6E6E6E] mt-2 leading-relaxed">
-                Nghiên cứu của BCG X chứng minh: sự thành bại của một dự án AI được phân bổ chính xác theo 3 tỷ lệ này. Đa phần các công ty dồn 90% tiền vào 10% đầu tiên.
+                Khung phân bổ nỗ lực chuyển đổi của BCG: 70% nỗ lực và sự tập trung cần dành cho con người & quy trình (SOP), 20% cho nền tảng dữ liệu & công nghệ, và 10% cho thuật toán AI. Đa phần doanh nghiệp đầu tư sai lệch khi dồn toàn bộ ngân sách vào 10% công cụ.
               </p>
             </div>
 
