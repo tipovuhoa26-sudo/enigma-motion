@@ -1,6 +1,6 @@
 'use client';
 
-import { gsap, duration, ease, stagger } from '../index';
+import { gsap, ScrollTrigger, duration, ease, stagger } from '../index';
 import { isReducedMotion } from '../utils/reducedMotion';
 import { createCounter } from './counter';
 
@@ -13,6 +13,7 @@ export interface HeroElements {
   exploreWidget?: HTMLElement | null;
   statCard?: HTMLElement | null;
   statCounterValue?: HTMLElement | null;
+  controlRoomDashboard?: HTMLElement | null;
   onComplete?: () => void;
 }
 
@@ -26,6 +27,7 @@ export function createHeroTimeline(elements: HeroElements): gsap.core.Timeline {
     exploreWidget,
     statCard,
     statCounterValue,
+    controlRoomDashboard,
     onComplete,
   } = elements;
 
@@ -140,5 +142,83 @@ export function createHeroTimeline(elements: HeroElements): gsap.core.Timeline {
     }, 0.6);
   }
 
+  // Layer 3: AI Transformation Control Room dashboard reveal (+250ms)
+  if (controlRoomDashboard) {
+    gsap.set(controlRoomDashboard, {
+      opacity: 0,
+      y: 40,
+      scale: 0.94,
+      transformPerspective: 1200,
+      rotateX: 4,
+    });
+
+    tl.to(
+      controlRoomDashboard,
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+      },
+      0.5
+    );
+  }
+
   return tl;
 }
+
+export interface HeroScrollChoreographyParams {
+  container: HTMLElement;
+  headline?: HTMLElement | null;
+  visual?: HTMLElement | null;
+  dashboard?: HTMLElement | null;
+}
+
+export function setupHeroScrollChoreography({
+  container,
+  headline,
+  visual,
+  dashboard,
+}: HeroScrollChoreographyParams): ScrollTrigger | null {
+  if (isReducedMotion()) return null;
+
+  return ScrollTrigger.create({
+    trigger: container,
+    start: 'top top',
+    end: 'bottom top',
+    scrub: 0.5,
+    onUpdate: (self) => {
+      const p = self.progress; // 0 -> 1 as user scrolls past hero
+      // Layer 01: Headline & lead subtly yield stage (y -36px, opacity 1 -> 0.35)
+      if (headline) {
+        gsap.to(headline, {
+          y: -36 * p,
+          opacity: 1 - 0.65 * p,
+          duration: 0.1,
+          overwrite: 'auto',
+        });
+      }
+      // Layer 02: Transformation Graph expands slightly into focus (scale 1.0 -> 1.04, y -24px)
+      if (visual) {
+        gsap.to(visual, {
+          y: -24 * p,
+          scale: 1 + 0.04 * p,
+          duration: 0.1,
+          overwrite: 'auto',
+        });
+      }
+      // Layer 03: Control Room Dashboard rises and settles as hero centerpiece
+      if (dashboard) {
+        gsap.to(dashboard, {
+          y: -48 * p,
+          scale: 1 + 0.02 * p,
+          duration: 0.1,
+          overwrite: 'auto',
+        });
+      }
+    },
+  });
+}
+

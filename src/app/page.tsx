@@ -4,8 +4,9 @@ import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/sections/Hero';
 import { ClientTrustStrip } from '@/components/ClientTrustStrip';
-import { AdvantageSection } from '@/sections/AdvantageSection';
 import { StatsStrip } from '@/sections/StatsStrip';
+import { SunextAiSystemBento } from '@/components/SunextAiSystemBento';
+import { AdvantageSection } from '@/sections/AdvantageSection';
 import { CasesSection } from '@/sections/CasesSection';
 import { CtaFooter } from '@/sections/CtaFooter';
 import { Footer } from '@/sections/Footer';
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Hero autoPlayIntro={true} />
         <ClientTrustStrip />
         <StatsStrip />
+        <SunextAiSystemBento />
         <AdvantageSection />
         <CasesSection />
         <CtaFooter />

@@ -23,10 +23,18 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
   return (
     <section
       id="cases"
-      className="relative w-full py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white scroll-mt-20 border-b border-[#E8E8E8]"
+      className="relative w-full py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white scroll-mt-20 border-b border-[#E8E8E8] overflow-hidden"
       data-cases-section
     >
-      <div className="max-w-[1280px] mx-auto">
+      {/* Background oversized watermark text */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[130px] sm:text-[190px] lg:text-[250px] font-black text-black/[0.02] tracking-tighter z-0 uppercase"
+        aria-hidden="true"
+      >
+        RESULTS
+      </div>
+
+      <div className="max-w-[1280px] mx-auto relative z-10">
         {/* Section Header: Sentence Case */}
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF8FC] border border-[#E8E8E8] text-xs font-medium text-[#6B21A8] mb-3 shadow-2xs">
@@ -84,17 +92,48 @@ export function CasesSection({ cases = CASES_DATA }: CasesProps) {
                 </div>
               </div>
 
-              {/* Right Column: Massive Proof Numbers & CTA (5 cols) */}
+              {/* Right Column: Massive Proof Numbers & Animated Financial Workflow (5 cols) */}
               <div className="lg:col-span-5 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#E8E8E8] pt-6 lg:pt-0 lg:pl-10 space-y-6">
-                <div className="grid grid-cols-2 gap-6">
-                  {featuredCase.metrics?.map((m, mIdx) => (
-                    <div key={mIdx} className="space-y-1">
-                      <div className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#111111] leading-none tabular-nums">
-                        {m.value}
-                      </div>
-                      <div className="text-xs text-[#626262] font-normal leading-snug">{m.label}</div>
+                {/* Visual Workflow Transition: 2 Ngày -> 3 Giờ */}
+                <div className="p-4 rounded-xl bg-white border border-[#E8E8E8] group-hover:border-[#6B21A8]/30 transition-colors">
+                  <div className="text-[11px] font-mono text-[#888888] uppercase tracking-wider mb-2 flex items-center justify-between">
+                    <span>Chu kỳ xuất bản báo cáo</span>
+                    <span className="text-[#F97316] font-bold">-75% Thời Gian</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="text-center">
+                      <div className="text-xs font-mono text-[#888888]">Thủ công</div>
+                      <div className="text-lg sm:text-xl font-medium text-[#666666] line-through">2 Ngày</div>
                     </div>
-                  ))}
+                    
+                    {/* Animated connector line */}
+                    <div className="flex-1 flex items-center px-2">
+                      <div className="w-full h-0.5 bg-[#E8E8E8] relative overflow-hidden rounded-full">
+                        <div className="absolute inset-y-0 left-0 w-1/2 bg-[#6B21A8] animate-pulse" />
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#6B21A8] shrink-0 -ml-1" />
+                    </div>
+
+                    <div className="text-center">
+                      <div className="text-xs font-mono text-[#059669] font-semibold">AI Multi-Agent</div>
+                      <div className="text-xl sm:text-2xl font-bold text-[#111111]">3 Giờ</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pt-1">
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-light tracking-tight text-[#111111] leading-none tabular-nums">
+                      -75%
+                    </div>
+                    <div className="text-xs text-[#626262] font-normal leading-snug mt-1">Thời gian bóc tách BCTC</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl font-light tracking-tight text-[#059669] leading-none tabular-nums">
+                      100%
+                    </div>
+                    <div className="text-xs text-[#626262] font-normal leading-snug mt-1">Khớp số liệu kiểm toán</div>
+                  </div>
                 </div>
 
                 <div className="pt-4 border-t border-[#E8E8E8]/60 flex items-center justify-between">

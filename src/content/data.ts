@@ -81,7 +81,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     description: 'Không bắt doanh nghiệp phải mua thêm nền tảng phụ hay thay đổi hạ tầng đang ổn định. Hệ thống kết nối hai chiều vào ERP, CRM và Database sẵn có qua API bảo mật.',
     bgColor: '#F5F3F6',
     metric: {
-      value: 99,
+      value: 99.8,
       suffix: '%',
       label: 'độ chính xác kiểm định tự động',
       subtext: 'Nhà máy cơ khí chính xác 800 công nhân',
@@ -116,7 +116,8 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     bgColor: '#FAFFDE',
     metric: {
       value: 5,
-      prefix: 'x',
+      prefix: '',
+      suffix: '×',
       label: 'tốc độ sản xuất tài liệu chuyên môn',
       subtext: 'Doanh nghiệp dịch vụ B2B 200 nhân sự',
     },

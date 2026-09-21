@@ -51,15 +51,15 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
         },
         {
           element: counter2Ref.current,
-          to: advantages[1]?.metric.value ?? 99,
+          to: advantages[1]?.metric.value ?? 99.8,
           prefix: advantages[1]?.metric.prefix ?? '',
           suffix: advantages[1]?.metric.suffix ?? '%',
         },
         {
           element: counter3Ref.current,
           to: advantages[2]?.metric.value ?? 5,
-          prefix: advantages[2]?.metric.prefix ?? 'x',
-          suffix: advantages[2]?.metric.suffix ?? '',
+          prefix: advantages[2]?.metric.prefix ?? '',
+          suffix: advantages[2]?.metric.suffix ?? '×',
         },
       ],
     });
@@ -79,6 +79,14 @@ export function AdvantageSection({ advantages = ADVANTAGES_DATA }: AdvantageProp
       className="relative w-full h-screen min-h-[760px] max-h-[1020px] px-6 md:px-12 lg:px-16 pt-20 pb-8 flex flex-col justify-between overflow-hidden bg-[#F7F7F8] scroll-mt-20 border-y border-[#E8E8E8]"
       data-advantage-pin
     >
+      {/* Background oversized watermark text */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[130px] sm:text-[190px] lg:text-[250px] font-black text-black/[0.025] tracking-tighter z-0 uppercase"
+        aria-hidden="true"
+      >
+        TRANSFORMATION
+      </div>
+
       {/* Pinned Header Block: Sentence Case */}
       <div className="w-full max-w-4xl mx-auto text-center mb-4 z-10 shrink-0" data-advantage-heading>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E8E8E8] text-xs font-medium text-[#6B21A8] mb-2 shadow-2xs">

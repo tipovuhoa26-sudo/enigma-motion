@@ -42,7 +42,8 @@ export function createCounter(options: CounterOptions): CounterController {
 
   const updateDisplay = (val: number) => {
     if (element) {
-      element.textContent = `${prefix}${Math.round(val)}${suffix}`;
+      const numStr = to % 1 !== 0 ? val.toFixed(1) : Math.round(val).toString();
+      element.textContent = `${prefix}${numStr}${suffix}`;
     }
 
     // Ring update if present

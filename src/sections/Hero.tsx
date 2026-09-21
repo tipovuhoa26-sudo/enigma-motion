@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { AiTransformationNetwork } from '@/components/visuals/AiTransformationNetwork';
-import { createHeroTimeline } from '@/motion/timelines/hero';
+import { AiControlRoomDashboard } from '@/components/visuals/AiControlRoomDashboard';
+import { createHeroTimeline, setupHeroScrollChoreography } from '@/motion/timelines/hero';
 
 interface HeroProps {
   autoPlayIntro?: boolean;
@@ -17,6 +18,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
   const headlineLine2Ref = useRef<HTMLSpanElement>(null);
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
+  const dashboardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!autoPlayIntro) return;
@@ -30,10 +32,22 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       ctas,
       headlineLines,
       visual: visualRef.current,
+      controlRoomDashboard: dashboardRef.current,
     });
+
+    const leftCol = containerRef.current?.querySelector('[data-hero-left]') as HTMLElement | null;
+    const scrollTriggerInstance = containerRef.current
+      ? setupHeroScrollChoreography({
+          container: containerRef.current,
+          headline: leftCol,
+          visual: visualRef.current,
+          dashboard: dashboardRef.current,
+        })
+      : null;
 
     return () => {
       tl.kill();
+      scrollTriggerInstance?.kill();
     };
   }, [autoPlayIntro]);
 
@@ -47,7 +61,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 my-auto">
         
         {/* Left Column: Eyebrow -> Huge H1 -> Lead -> CTAs -> Proofs */}
-        <div className="lg:col-span-7 flex flex-col justify-center">
+        <div data-hero-left className="lg:col-span-7 flex flex-col justify-center">
           
           {/* Eyebrow / Announcement Pill */}
           <div className="mb-6 flex items-center">
@@ -118,6 +132,11 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           <AiTransformationNetwork />
         </div>
 
+      </div>
+
+      {/* Layer 03: Product / AI Transformation Control Room Dashboard */}
+      <div ref={dashboardRef} className="max-w-[1280px] w-full mx-auto mt-12 lg:mt-16 relative z-20">
+        <AiControlRoomDashboard />
       </div>
     </section>
   );
