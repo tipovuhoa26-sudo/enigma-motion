@@ -260,17 +260,17 @@ export default function AiTransformationHubPage() {
             </div>
           </section>
 
-          {/* Section: Sáu Cửa Ải Mọi Doanh Nghiệp Phải Qua */}
+          {/* Section: 6 Cửa Ải Mọi Doanh Nghiệp Phải Qua */}
           <section className="mb-20">
             <div className="max-w-3xl mb-10">
               <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
                 Chi Tiết 6 Trụ Cột Tổ Chức
               </span>
               <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight">
-                Sáu cửa ải mọi doanh nghiệp phải qua
+                6 cửa ải mọi doanh nghiệp phải qua
               </h2>
               <p className="text-sm text-[#6E6E6E] mt-3 leading-relaxed">
-                Đây không phải lý thuyết hàn lâm. Đây là sáu chỗ cụ thể mà các dự án AI thường chết trong im lặng — không ai báo cáo lên sếp là &ldquo;dự án đã chết&rdquo;, nó chỉ lặng lẽ không ai dùng nữa.
+                Đây không phải lý thuyết hàn lâm. Đây là 6 điểm nghẽn cụ thể mà các dự án AI thường chết trong im lặng — không ai báo cáo lên sếp là &ldquo;dự án đã chết&rdquo;, nó chỉ lặng lẽ không ai dùng nữa.
               </p>
             </div>
 

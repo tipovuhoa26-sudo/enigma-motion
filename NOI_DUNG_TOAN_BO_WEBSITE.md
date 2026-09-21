@@ -1,6 +1,6 @@
 # TỔNG QUAN TOÀN BỘ NỘI DUNG WEBSITE SUNEXT
 > **Tài liệu kiểm kê & Lưu trữ nội dung toàn diện (Single Source of Content Truth)**
-> *Thời gian xuất file: 12:34:51 20/9/2026 | Đơn vị: Sunext Digital & AI Solutions*
+> *Thời gian xuất file: 08:36:19 21/9/2026 | Đơn vị: Sunext Digital & AI Solutions*
 
 ---
 
@@ -80,7 +80,7 @@
   #### Thẻ 01: 70% Hiệu Quả Đến Từ Con Người, Không Phải Mua Tool
   - **Chủ đề (Eyebrow)**: `Con người & Quy trình`
   - **Nội dung diễn giải**: Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.
-  - **Chỉ số chứng minh**: **40%** (chi phí tuyển dụng tiết kiệm)
+  - **Chỉ số chứng minh**: **70%** (chi phí tuyển dụng tiết kiệm)
   - **Quy mô dự án**: *Chuỗi bán lẻ 500 nhân sự*
   - **Ảnh minh họa**: `undefined`
 

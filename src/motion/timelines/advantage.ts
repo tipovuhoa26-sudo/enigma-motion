@@ -10,9 +10,8 @@ export interface AdvantageElements {
   counters: {
     element: HTMLElement | null;
     to: number;
-    ringElement?: SVGCircleElement | null;
-    ringCircumference?: number;
-    dotsElements?: HTMLElement[] | null;
+    prefix?: string;
+    suffix?: string;
   }[];
   headingBlock?: HTMLElement | null;
   ctas?: HTMLElement[];
@@ -39,13 +38,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         gsap.set(card, { y: 0, opacity: 1, clearProps: 'transform' });
       });
       counters.forEach((c) => {
-        if (c.element) c.element.textContent = `${c.to}%`;
-        if (c.ringElement && c.ringCircumference) {
-          c.ringElement.style.strokeDashoffset = `${c.ringCircumference * (1 - c.to / 100)}`;
-        }
-        if (c.dotsElements) {
-          c.dotsElements.forEach(d => { d.style.opacity = '1'; });
-        }
+        if (c.element) c.element.textContent = `${c.prefix ?? ''}${c.to}${c.suffix ?? ''}`;
       });
       return;
     }
@@ -57,10 +50,8 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         from: 0,
         to: c.to,
         duration: 1.1,
-        suffix: '%',
-        ringElement: c.ringElement,
-        ringCircumference: c.ringCircumference,
-        dotsElements: c.dotsElements,
+        prefix: c.prefix ?? '',
+        suffix: c.suffix ?? '',
       });
     });
 
@@ -252,10 +243,8 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
           from: 0,
           to: c.to,
           duration: 1.0,
-          suffix: '%',
-          ringElement: c.ringElement,
-          ringCircumference: c.ringCircumference,
-          dotsElements: c.dotsElements,
+          prefix: c.prefix ?? '',
+          suffix: c.suffix ?? '',
         });
 
         const observer = new IntersectionObserver((entries) => {

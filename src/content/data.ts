@@ -14,7 +14,6 @@ export interface AdvantageCard {
     label: string;
     subtext?: string;
   };
-  widgetType: 'bars' | 'ring' | 'dots';
 }
 
 export interface CaseStudy {
@@ -42,12 +41,11 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     description: 'Trang bị công cụ mà không đổi quy trình sẽ không tạo ra kết quả. Sunext đào tạo đội ngũ làm chủ luồng việc mới để giải phóng giờ công ngay từ tháng đầu.',
     bgColor: '#FAFFDE',
     metric: {
-      value: 40,
+      value: 70,
       suffix: '%',
       label: 'chi phí tuyển dụng tiết kiệm',
       subtext: 'Chuỗi bán lẻ 500 nhân sự',
     },
-    widgetType: 'bars',
   },
   {
     id: 'advantage-2',
@@ -62,7 +60,6 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
       label: 'độ chính xác kiểm định tự động',
       subtext: 'Nhà máy cơ khí chính xác',
     },
-    widgetType: 'ring',
   },
   {
     id: 'advantage-3',
@@ -77,7 +74,6 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
       label: 'tốc độ sản xuất tài liệu kỹ thuật',
       subtext: 'Doanh nghiệp B2B 200 nhân sự',
     },
-    widgetType: 'dots',
   },
 ];
 
