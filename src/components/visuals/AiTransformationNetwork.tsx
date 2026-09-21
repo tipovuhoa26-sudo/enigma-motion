@@ -282,21 +282,6 @@ export function AiTransformationNetwork() {
             fill="#FFFFFF"
             opacity="0.9"
           />
-
-          {/* Sunext Brand Text */}
-          <text
-            x="0"
-            y="26"
-            fill="#FFFFFF"
-            fontSize="7"
-            fontFamily="system-ui, sans-serif"
-            fontWeight="800"
-            textAnchor="middle"
-            letterSpacing="0.14em"
-            filter="drop-shadow(0 1px 2px rgba(0,0,0,0.3))"
-          >
-            SUNEXT
-          </text>
         </g>
       </svg>
 
