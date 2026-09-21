@@ -25,30 +25,30 @@ export function Footer() {
 
         {/* Quick Links Column */}
         <div className="md:col-span-2 flex flex-col gap-2.5">
-          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Khám Phá</span>
+          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Khám phá</span>
           <Link href="/tu-duy-chuyen-doi-ai" className="hover:text-[#6B21A8] transition-colors">
-            Phương Pháp Luận
+            Phương pháp luận
           </Link>
           <Link href="/case-studies" className="hover:text-[#6B21A8] transition-colors flex items-center gap-1">
-            <span>Dự Án Thực Tế</span>
+            <span>Dự án thực tế</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/nganh" className="hover:text-[#6B21A8] transition-colors">
-            Giải Pháp Theo Ngành
+            Giải pháp theo ngành
           </Link>
           <Link href="/doi-ngu" className="hover:text-[#6B21A8] transition-colors">
-            Đội Ngũ Chuyên Gia
+            Đội ngũ chuyên gia
           </Link>
           <Link href="/khach-hang-doi-tac" className="hover:text-[#6B21A8] transition-colors">
-            Khách Hàng &amp; Đối Tác
+            Khách hàng &amp; đối tác
           </Link>
         </div>
 
         {/* AI Transformation Column */}
         <div className="md:col-span-3 flex flex-col gap-2">
-          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Phương Pháp Luận</span>
+          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Phương pháp luận</span>
           <Link href="/tu-duy-chuyen-doi-ai" className="font-medium text-[#111111] hover:text-[#6B21A8] flex items-center gap-1">
-            <span>Sunext Method (Chuẩn 6 Trụ Cột)</span>
+            <span>Sunext Method (Chuẩn 6 trụ cột)</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/tu-duy-chuyen-doi-ai/chien-luoc-so" className="hover:text-[#6B21A8] transition-colors">
@@ -73,40 +73,40 @@ export function Footer() {
 
         {/* Industry Solutions & Investment Column */}
         <div className="md:col-span-2 flex flex-col gap-2">
-          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Theo Ngành &amp; Đầu Tư</span>
+          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Theo ngành &amp; đầu tư</span>
           <Link href="/nganh" className="font-medium text-[#111111] hover:text-[#6B21A8] flex items-center gap-1">
             <span>Tất cả ngành</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
           <Link href="/nganh/ban-le-tieu-dung" className="hover:text-[#6B21A8] transition-colors">
-            Bán lẻ &amp; Tiêu dùng
+            Bán lẻ &amp; tiêu dùng
           </Link>
           <Link href="/nganh/san-xuat-che-tao" className="hover:text-[#6B21A8] transition-colors">
-            Sản xuất &amp; Chế tạo
+            Sản xuất &amp; chế tạo
           </Link>
           <Link href="/nganh/dich-vu-b2b" className="hover:text-[#6B21A8] transition-colors">
             Dịch vụ B2B
           </Link>
           <Link href="/nganh/bat-dong-san" className="hover:text-[#6B21A8] transition-colors">
-            Bất động sản &amp; Nhà phố
+            Bất động sản &amp; nhà phố
           </Link>
           <Link href="/khung-dau-tu" className="text-[#059669] font-medium hover:underline flex items-center gap-1 pt-1">
-            <span>Khung Đầu Tư &amp; ROI</span>
+            <span>Khung đầu tư &amp; ROI</span>
             <ArrowUpRight className="w-3 h-3" />
           </Link>
         </div>
 
         {/* Legal & Security Column */}
         <div className="md:col-span-2 flex flex-col gap-3">
-          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Bảo Mật &amp; Pháp Lý</span>
+          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Bảo mật &amp; pháp lý</span>
           <div className="flex items-center gap-2 text-[11px] text-[#111111] bg-[#FAF8FC] p-2.5 rounded-xl border border-[#E8E8E8]">
             <ShieldCheck className="w-4 h-4 text-[#059669] shrink-0" />
             <span className="font-medium">Bảo Mật Chuẩn Doanh Nghiệp</span>
           </div>
           <div className="flex flex-col gap-1.5 pt-1 text-xs text-[#626262]">
-            <span className="leading-snug">• Ký kết NDA trước khi khảo sát</span>
-            <span className="leading-snug">• Dữ liệu không train mô hình chung</span>
-            <span className="leading-snug">• Private AI &amp; Local Mesh</span>
+            <span className="leading-snug">• Ký kết thỏa thuận bảo mật NDA</span>
+            <span className="leading-snug">• Cách ly dữ liệu &amp; Private VPC / On-premise</span>
+            <span className="leading-snug">• Kiến trúc triển khai tùy biến theo chính sách an toàn từng doanh nghiệp</span>
           </div>
         </div>
       </div>

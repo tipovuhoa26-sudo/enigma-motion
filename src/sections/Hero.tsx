@@ -54,7 +54,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#FAF8FC] border border-[#E8E8E8] text-xs font-medium text-[#111111] shadow-2xs hover:border-[#6B21A8]/30 transition-colors">
               <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
               <span className="font-semibold text-[#6B21A8]">Sunext AI Enterprise:</span>
-              <span className="text-[#626262]">Tư vấn & Triển khai thực chiến</span>
+              <span className="text-[#626262]">Tư vấn & triển khai thực chiến</span>
             </div>
           </div>
 
@@ -64,10 +64,10 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             data-hero-headline
           >
             <span ref={headlineLine1Ref} className="line block font-normal text-[#111111]">
-              Đưa AI Vào Vận Hành
+              Đưa AI vào vận hành.
             </span>
             <span ref={headlineLine2Ref} className="line block font-light text-[#111111]">
-              Đo Bằng Kết Quả <span className="text-[#F97316] font-normal">Kinh Doanh</span>
+              Đo bằng kết quả <span className="text-[#F97316] font-normal">kinh doanh.</span>
             </span>
           </h1>
 
@@ -92,19 +92,19 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             </Link>
           </div>
 
-          {/* Trust Badges Strip (3 key governance pillars) */}
-          <div className="flex flex-wrap items-center gap-6 pt-4 border-t border-[#E8E8E8] text-xs text-[#626262]">
+          {/* Light Enterprise Trust Rail (Single Focal Point Principle) */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-5 border-t border-[#E8E8E8] text-xs sm:text-[13px] text-[#666666]">
             <div className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#059669]" />
-              <span>Nghiệm thu 4 Cửa Ải Gate 1-4</span>
+              <span className="text-[#059669] font-bold">✓</span>
+              <span>Kiểm soát 4 cửa ải Gate 1–4</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#6B21A8]" />
-              <span>Cam kết NDA & Dữ liệu cô lập</span>
+              <span className="text-[#6B21A8] font-bold">✓</span>
+              <span>Cô lập dữ liệu & cam kết NDA</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#F97316]" />
-              <span>Bàn giao 100% Mã nguồn mở</span>
+              <span className="text-[#F97316] font-bold">✓</span>
+              <span>Bàn giao 100% mã nguồn & quy trình</span>
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@ export interface AdvantageElements {
   }[];
   headingBlock?: HTMLElement | null;
   ctas?: HTMLElement[];
+  onStepChange?: (step: number) => void;
 }
 
 export function createAdvantageTimeline(elements: AdvantageElements) {
@@ -24,6 +25,7 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
     counters,
     headingBlock,
     ctas = [],
+    onStepChange,
   } = elements;
 
   if (!pinContainer) return { kill: () => {} };
@@ -119,6 +121,8 @@ export function createAdvantageTimeline(elements: AdvantageElements) {
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           const progress = self.progress;
+          const step = progress < 0.35 ? 0 : progress < 0.72 ? 1 : 2;
+          onStepChange?.(step);
 
           // Card 1 Counter gating: active between 0% and 35%
           if (progress >= 0.02 && progress < 0.40) {

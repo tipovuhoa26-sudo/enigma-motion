@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* Motion & Easing */
-  --motion-duration-xs: 150ms;
-  --motion-duration-sm: 300ms;
-  --motion-duration-md: 600ms;
-  --motion-duration-lg: 900ms;
-  --motion-duration-xl: 1400ms;
-
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Motion Tokens (Standardized per Lead Review) */
+  --motion-fast: 160ms;
+  --motion-ui: 260ms;
+  --motion-enter: 600ms;
+  --motion-story: 900ms;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -110,7 +108,7 @@ body {
 
 /* Button micro-interactions */
 .btn-motion {
-  transition: transform var(--motion-duration-xs) var(--ease-standard), background-color var(--motion-duration-xs) var(--ease-standard), box-shadow var(--motion-duration-xs) var(--ease-standard);
+  transition: transform var(--motion-fast) var(--ease-standard), background-color var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard);
 }
 .btn-motion:hover {
   transform: translateY(-1px);
@@ -126,13 +124,31 @@ body {
               #FFFFFF;
 }
 
+/* Marquee Slow Ambient Loop */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html[data-motion="reduced"] *,
-  html[data-motion="reduced"] *::before,
-  html[data-motion="reduced"] *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .animate-marquee-slow {
+    animation: none !important;
   }
 }
