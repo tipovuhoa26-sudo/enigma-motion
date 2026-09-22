@@ -57,82 +57,67 @@ export function StatsStrip() {
       data-stats-strip
     >
       <div className="max-w-[1280px] mx-auto">
-        {/* Large Editorial Headline */}
-        <div className="max-w-2xl mb-16 sm:mb-20">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#F97316] font-semibold mb-3 block">
-            Bằng chứng định lượng
-          </span>
+        {/* 1 Headline + 1 Support Line */}
+        <div className="mb-16 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight">
-            Hiệu quả đo lường trực tiếp trên <span className="font-normal text-[#0A0A0A]">P&L thực tế</span>
+            Nghiệm thu bằng <span className="font-normal text-[#0A0A0A]">kết quả định lượng.</span>
           </h2>
+          <p className="text-base text-[#515151] mt-3 font-normal max-w-xl">
+            Mọi bài toán đều đo lường trực tiếp trên P&L thực tế.
+          </p>
         </div>
 
-        {/* 3 Standalone Metrics - No Cards, No Heavy Boxes, Whitespace as Component */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        {/* 3 Standalone Metrics - Monumental Numbers, No Cards, Whitespace */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 items-start">
           
-          {/* Metric 01: 99.8% Standalone */}
+          {/* Metric 01: 99.8% */}
           <div className="flex flex-col">
-            <div className="flex items-baseline gap-2 mb-3">
-              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums leading-none">
+            <div className="flex items-baseline gap-2 mb-2 leading-none">
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums">
                 {metric1}
               </span>
-              <span className="w-3 h-3 rounded-full bg-[#059669] shrink-0 mb-2" title="Đã kiểm định thực tế" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#059669] shrink-0 mb-3" />
             </div>
-            <h3 className="text-lg sm:text-xl font-medium text-[#0A0A0A] mb-2 leading-snug">
-              Độ chính xác kiểm định tự động
-            </h3>
-            <p className="text-sm sm:text-base text-[#515151] leading-relaxed">
-              Dây chuyền sản xuất cơ khí 800 công nhân. Thay thế hoàn toàn khâu kiểm đếm thủ công.
-            </p>
+            <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
+              Độ chính xác dữ liệu
+            </div>
+            <div className="text-xs font-mono text-[#747474] mt-1">
+              Kiểm định tự động 100%
+            </div>
           </div>
 
-          {/* Metric 02: 3 Ngày ➔ 2 Giờ Morph */}
+          {/* Metric 02: 500+ Môi Giới BĐS Được Đào Tạo AI (Case Vinhomes Green Paradise) */}
           <div className="flex flex-col">
-            <div className="flex items-baseline gap-3 mb-3 leading-none">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#747474] line-through tabular-nums">
-                3d
+            <div className="flex items-baseline gap-2 mb-2 leading-none">
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums whitespace-nowrap">
+                500+
               </span>
-              <span className="text-3xl sm:text-4xl text-[#F97316] font-light">➔</span>
-              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums">
-                2h
-              </span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F97316] shrink-0 mb-3" />
             </div>
-            <h3 className="text-lg sm:text-xl font-medium text-[#0A0A0A] mb-2 leading-snug">
-              Chu kỳ xuất bản báo cáo phân tích
-            </h3>
-            <p className="text-sm sm:text-base text-[#515151] leading-relaxed">
-              Vietcap Securities. Tự động hóa bóc tách 3 báo cáo tài chính và dữ liệu vĩ mô.
-            </p>
+            <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
+              Môi giới BĐS được đào tạo AI
+            </div>
+            <div className="text-xs font-mono text-[#747474] mt-1">
+              Vinhomes Green Paradise · Chatbot & Media AI
+            </div>
           </div>
 
-          {/* Metric 03: -75% with Data Line Motion */}
+          {/* Metric 03: < 5 Phút (Phản hồi & Tạo Landing Page từ 24h) */}
           <div className="flex flex-col">
-            <div className="flex items-baseline gap-2 mb-3">
-              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums leading-none">
-                -75%
+            <div className="flex items-baseline gap-2.5 mb-2 leading-none">
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-tighter text-[#0A0A0A] tabular-nums whitespace-nowrap">
+                &lt; 5m
+              </span>
+              <span className="text-xs font-mono font-medium px-2 py-0.5 rounded bg-orange-50 text-[#EA580C] border border-[#FED7AA] whitespace-nowrap mb-2">
+                TỪ 24H
               </span>
             </div>
-            
-            {/* Animated Data Line Explanation: 100 -> 25 */}
-            <div className="w-full max-w-[280px] mb-3">
-              <div className="w-full h-1 bg-[#E7E7E5] rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-[#581C87] transition-all duration-300 rounded-full"
-                  style={{ width: `${lineProgress}%` }}
-                />
-              </div>
-              <div className="flex justify-between text-[11px] font-mono text-[#747474] mt-1">
-                <span>100% chi phí cũ</span>
-                <span className="text-[#581C87] font-semibold">25% chi phí mới</span>
-              </div>
+            <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
+              Phản hồi & sinh trang dự án
             </div>
-
-            <h3 className="text-lg sm:text-xl font-medium text-[#0A0A0A] mb-2 leading-snug">
-              Thời gian xử lý dữ liệu và bóc tách BCTC
-            </h3>
-            <p className="text-sm sm:text-base text-[#515151] leading-relaxed">
-              Doanh nghiệp cắt giảm thời gian chờ đợi và nâng cao năng suất nhân sự cấp cao.
-            </p>
+            <div className="text-xs font-mono text-[#059669] mt-1 font-medium">
+              Chatbot 24/7 · Tốc độ Media x3
+            </div>
           </div>
 
         </div>

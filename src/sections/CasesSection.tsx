@@ -1,197 +1,135 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/Button';
-import { CaseStudy, CASES_DATA } from '@/content/data';
+import { CaseVinhomesSolarMesh } from '@/components/visuals/CaseVinhomesSolarMesh';
+import { CaseBidvSolarMesh } from '@/components/visuals/CaseBidvSolarMesh';
 
-interface CasesProps {
-  cases?: CaseStudy[];
-}
-
-export function CasesSection({ cases = CASES_DATA }: CasesProps) {
-  // Flagship featured case (Vietcap Securities)
-  const featuredCase = cases.find((c) => c.slug === 'vietcap-ai-multi-agent-nghien-cuu-thi-truong') || cases[3];
-  // 3 supporting diverse cases (Manufacturing, Retail, Real Estate)
-  const supportingCases = [
-    cases.find((c) => c.slug === 'ai-auditor-manufacturing') || cases[1],
-    cases.find((c) => c.slug === 'toi-uu-chi-phi-tuyen-dung-hr-ai') || cases[0],
-    cases.find((c) => c.slug === 'vinhomes-ai-sales-enablement') || cases[4],
-  ];
+export function CasesSection() {
+  const [activeCase, setActiveCase] = useState<'vinhomes' | 'bidv'>('vinhomes');
 
   return (
     <section
       id="cases"
-      className="relative w-full py-24 sm:py-28 px-6 md:px-12 lg:px-20 bg-white scroll-mt-20 border-b border-[#E7E7E5] overflow-hidden"
-      data-cases-section
+      className="relative w-full py-24 sm:py-36 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] scroll-mt-20 border-b border-[#E7E7E5] overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto relative z-10">
-        {/* Section Header: Sentence Case */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
-            Thực tiễn triển khai
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
-            Dự án thực tế & <span className="font-normal text-[#0A0A0A]">kết quả đo lường</span>
-          </h2>
-          <p className="text-base text-[#515151] font-normal max-w-xl mx-auto leading-relaxed">
-            100% dự án được nghiệm thu định lượng bằng P&L và thời gian thực tế tại doanh nghiệp Việt Nam.
+      <div className="max-w-[1280px] mx-auto">
+        
+        {/* 1 Headline + 1 Support Line */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
+              {activeCase === 'vinhomes'
+                ? 'Dự án thực tế · Hệ Sinh Thái Sales Enablement'
+                : 'Dự án thực tế · Thẩm Định Tín Dụng AI'}
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight">
+              {activeCase === 'vinhomes' ? (
+                <>
+                  Case Vinhomes Green Paradise:{' '}
+                  <span className="font-normal text-[#0A0A0A] sm:whitespace-nowrap">
+                    500+ Môi Giới Tự Chủ AI.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Case Ngân Hàng BIDV:{' '}
+                  <span className="font-normal text-[#0A0A0A] sm:whitespace-nowrap">
+                    Rà Soát Tín Dụng AI.
+                  </span>
+                </>
+              )}
+            </h2>
+          </div>
+
+          <p className="text-base text-[#515151] max-w-[440px] leading-relaxed font-normal">
+            {activeCase === 'vinhomes'
+              ? 'Đào tạo thực chiến gần 500 môi giới BĐS, thiết lập hệ thống Chatbot AI 24/7, tự sinh Landing Page phân khu và Media AI truyền thông thần tốc.'
+              : 'Đào tạo 45 cán bộ tín dụng & quản lý chi nhánh, chuẩn hóa quy trình AI rà soát điều kiện vay, bóc tách BCTC và lập tờ trình thẩm định tự động.'}
           </p>
         </div>
 
-        {/* Editorial Layout: 1 Full-Width Flagship Case Top + 3-Column Supporting Cases Bottom */}
-        <div className="space-y-6 mb-16">
-          
-          {/* TOP: Full-Width Flagship Case Card */}
-          <Link
-            href={`/case-studies/${featuredCase.slug}`}
-            className="group block rounded-2xl bg-[#F9F9F8] border border-[#E7E7E5] p-8 sm:p-10 lg:p-12 hover:border-[#581C87]/40 hover:shadow-[0_16px_40px_-16px_rgba(88,28,135,0.06)] hover:-translate-y-0.5 transition-all duration-300"
+        {/* Interactive Case Switcher Bar */}
+        <div className="flex items-center gap-3 mb-6">
+          <button
+            type="button"
+            onClick={() => setActiveCase('vinhomes')}
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              activeCase === 'vinhomes'
+                ? 'bg-[#581C87] text-white shadow-xs'
+                : 'bg-white text-[#515151] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
+            }`}
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Column: Client & Narrative (7 cols) */}
-              <div className="lg:col-span-7">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-white border border-[#E8E8E8] text-[#6B21A8]">
-                    Dự án tiêu biểu · {featuredCase.category}
-                  </span>
-                  <span className="text-xs font-mono text-[#8E8E8E] uppercase tracking-wider">Flagship Case</span>
-                </div>
+            <span className={`w-2 h-2 rounded-full ${activeCase === 'vinhomes' ? 'bg-[#F97316]' : 'bg-[#9CA3AF]'}`} />
+            <span>01 · VINHOMES GREEN PARADISE (500+ MÔI GIỚI BĐS)</span>
+          </button>
 
-                <div className="text-xs font-semibold text-[#6B21A8] uppercase tracking-wider mb-2">
-                  {featuredCase.client}
-                </div>
+          <button
+            type="button"
+            onClick={() => setActiveCase('bidv')}
+            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-2 ${
+              activeCase === 'bidv'
+                ? 'bg-[#006850] text-white shadow-xs'
+                : 'bg-white text-[#515151] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
+            }`}
+          >
+            <span className={`w-2 h-2 rounded-full ${activeCase === 'bidv' ? 'bg-[#F97316]' : 'bg-[#9CA3AF]'}`} />
+            <span>02 · NGÂN HÀNG BIDV (RÀ SOÁT TÍN DỤNG AI)</span>
+          </button>
+        </div>
 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-[#111111] group-hover:text-[#6B21A8] transition-colors leading-tight mb-4">
-                  {featuredCase.title}
-                </h3>
-
-                <p className="text-sm sm:text-base text-[#626262] leading-relaxed mb-6 max-w-2xl">
-                  {featuredCase.summary}
-                </p>
-
-                {/* Architecture & Capability Pills */}
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 rounded-md bg-white border border-[#E8E8E8] text-xs font-medium text-[#111111]">
-                    Multi-Agent Financial Engine
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-white border border-[#E8E8E8] text-xs font-medium text-[#111111]">
-                    Đối soát 3 báo cáo tài chính
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-white border border-[#E8E8E8] text-xs font-medium text-[#111111]">
-                    Bảo mật chuẩn tài chính
-                  </span>
-                </div>
-              </div>
-
-              {/* Right Column: Massive Proof Numbers & Animated Financial Workflow (5 cols) */}
-              <div className="lg:col-span-5 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#E8E8E8] pt-6 lg:pt-0 lg:pl-10 space-y-6">
-                {/* Visual Workflow Transition: 2 Ngày -> 3 Giờ */}
-                <div className="p-4 rounded-xl bg-white border border-[#E8E8E8] group-hover:border-[#6B21A8]/30 transition-colors">
-                  <div className="text-[11px] font-mono text-[#888888] uppercase tracking-wider mb-2 flex items-center justify-between">
-                    <span>Chu kỳ xuất bản báo cáo</span>
-                    <span className="text-[#F97316] font-bold">-75% Thời Gian</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="text-center">
-                      <div className="text-xs font-mono text-[#888888]">Thủ công</div>
-                      <div className="text-lg sm:text-xl font-medium text-[#666666] line-through">2 Ngày</div>
-                    </div>
-                    
-                    {/* Animated connector line */}
-                    <div className="flex-1 flex items-center px-2">
-                      <div className="w-full h-0.5 bg-[#E8E8E8] relative overflow-hidden rounded-full">
-                        <div className="absolute inset-y-0 left-0 w-1/2 bg-[#6B21A8] animate-pulse" />
-                      </div>
-                      <ArrowRight className="w-4 h-4 text-[#6B21A8] shrink-0 -ml-1" />
-                    </div>
-
-                    <div className="text-center">
-                      <div className="text-xs font-mono text-[#059669] font-semibold">AI Multi-Agent</div>
-                      <div className="text-xl sm:text-2xl font-bold text-[#111111]">3 Giờ</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 pt-1">
-                  <div>
-                    <div className="text-3xl sm:text-4xl font-light tracking-tight text-[#111111] leading-none tabular-nums">
-                      -75%
-                    </div>
-                    <div className="text-xs text-[#626262] font-normal leading-snug mt-1">Thời gian bóc tách BCTC</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl sm:text-4xl font-light tracking-tight text-[#059669] leading-none tabular-nums">
-                      100%
-                    </div>
-                    <div className="text-xs text-[#626262] font-normal leading-snug mt-1">Khớp số liệu kiểm toán</div>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-[#E8E8E8]/60 flex items-center justify-between">
-                  <span className="text-xs text-[#8E8E8E]">Nghiệm thu thực tế theo chu kỳ tài chính</span>
-                  <div className="inline-flex items-center gap-2 text-xs font-medium text-[#111111] group-hover:text-[#F97316] transition-colors">
-                    <span>Xem hồ sơ chi tiết</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </div>
-                </div>
-              </div>
+        {/* 1 Main Visual: The Solar Time-Warp & Ecosystem Engine */}
+        <div className="w-full rounded-2xl bg-white border border-[#E7E7E5] p-6 sm:p-10 mb-12 shadow-xs">
+          
+          {/* Header Tag */}
+          <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-[#E7E7E5] mb-8">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#581C87] font-semibold">
+              <span className={`w-2 h-2 rounded-full ${activeCase === 'bidv' ? 'bg-[#006850]' : 'bg-[#581C87]'}`} />
+              <span className={activeCase === 'bidv' ? 'text-[#006850]' : 'text-[#581C87]'}>
+                {activeCase === 'vinhomes'
+                  ? 'VINHOMES GREEN PARADISE · 500+ MÔI GIỚI BĐS LÀM CHỦ AI'
+                  : 'NGÂN HÀNG BIDV · 45 CÁN BỘ TÍN DỤNG LÀM CHỦ AI'}
+              </span>
             </div>
-          </Link>
 
-          {/* BOTTOM: 3 Supporting Curated Cases in 3 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {supportingCases.map((item, idx) => (
-              <Link
-                key={item.id}
-                href={`/case-studies/${item.slug}`}
-                className="group rounded-2xl bg-white border border-[#E8E8E8] p-6 sm:p-7 flex flex-col justify-between hover:border-[#6B21A8]/40 hover:shadow-sm hover:-translate-y-1 transition-all duration-300"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-semibold text-[#6B21A8]">
-                      {item.category}
-                    </span>
-                    <span className="text-xs font-mono text-[#8E8E8E]">0{idx + 2}</span>
-                  </div>
-
-                  <h4 className="text-lg sm:text-xl font-normal text-[#111111] group-hover:text-[#6B21A8] transition-colors leading-snug mb-2.5">
-                    {item.title}
-                  </h4>
-
-                  <p className="text-xs sm:text-sm text-[#626262] line-clamp-3 leading-relaxed mb-6">
-                    {item.summary}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-[#F0EFEA] flex items-center justify-between">
-                  <div className="flex flex-col gap-0.5">
-                    {item.metrics?.slice(0, 2).map((m, mIdx) => (
-                      <span key={mIdx} className="text-xs font-medium text-[#111111]">
-                        {m.value} <span className="text-[10.5px] text-[#888888] font-normal">({m.label})</span>
-                      </span>
-                    ))}
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-[#8E8E8E] group-hover:text-[#F97316] group-hover:translate-x-1 transition-all shrink-0 ml-2" />
-                </div>
-              </Link>
-            ))}
+            <Link
+              href={
+                activeCase === 'vinhomes'
+                  ? '/case-studies/vinhomes-ai-sales-enablement'
+                  : '/case-studies'
+              }
+              className="text-xs font-mono text-[#581C87] hover:underline flex items-center gap-1 font-medium"
+            >
+              <span>Xem hồ sơ chi tiết</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
+
+          {/* Living SVG Drawing */}
+          {activeCase === 'vinhomes' ? <CaseVinhomesSolarMesh /> : <CaseBidvSolarMesh />}
 
         </div>
 
-        {/* Bottom Centered CTA */}
-        <div className="text-center pt-4">
-          <Link href="/case-studies">
-            <Button variant="orange" size="lg" className="rounded-xl shadow-sm font-medium cursor-pointer">
-              <span>Xem toàn bộ 8+ dự án thực tế</span>
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </Link>
-          <div className="mt-4 text-xs text-[#747474]">
-            Cam kết bảo mật dữ liệu tuyệt đối theo thỏa thuận NDA doanh nghiệp
+        {/* 1 Clear Proof Metric */}
+        <div className="flex items-baseline gap-4 pt-2">
+          <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums whitespace-nowrap">
+            {activeCase === 'vinhomes' ? '500+' : '30m'}
+          </span>
+          <div className="flex flex-col">
+            <span className="text-base font-medium text-[#0A0A0A]">
+              {activeCase === 'vinhomes'
+                ? 'Môi giới BĐS được đào tạo & làm chủ AI'
+                : 'Rút ngắn thời gian rà soát hồ sơ vay (Gốc: 2 ngày)'}
+            </span>
+            <span className="text-xs font-mono text-[#747474]">
+              {activeCase === 'vinhomes'
+                ? 'Phản hồi khách hàng < 5 phút · Tự tạo Landing Page & Media AI tốc độ x3'
+                : '45 Cán bộ tín dụng · 100% Khớp mẫu biểu tờ trình & checklist điều kiện cấp tín dụng'}
+            </span>
           </div>
         </div>
+
       </div>
     </section>
   );

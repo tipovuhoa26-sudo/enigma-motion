@@ -14,15 +14,39 @@ interface NetworkNode {
 }
 
 const NODES: NetworkNode[] = [
-  { id: 'strategy', name: 'Chiến Lược', subtitle: 'Strategy & ROI', angle: -90, distance: 185, category: 'strategy', tag: 'Cửa ải Gate 1-4', metric: 'P&L Direct' },
-  { id: 'data', name: 'Dữ Liệu Lõi', subtitle: 'Data Architecture', angle: -45, distance: 195, category: 'execution', tag: 'Vector DB & Mesh', metric: 'Clean Data' },
-  { id: 'people', name: 'Con Người', subtitle: 'People & Culture', angle: 0, distance: 185, category: 'strategy', tag: 'Làm chủ công cụ', metric: '70% Nỗ lực (BCG)' },
-  { id: 'process', name: 'Quy Trình', subtitle: 'Process & SOP', angle: 45, distance: 195, category: 'execution', tag: 'Chuẩn hóa luồng', metric: '100% Đồng bộ' },
-  { id: 'agents', name: 'Multi-Agents', subtitle: 'Autonomous Agents', angle: 90, distance: 185, category: 'execution', tag: 'Swarm Execution', metric: 'Real-time' },
-  { id: 'automation', name: 'Tự Động Hóa', subtitle: 'Automation & API', angle: 135, distance: 195, category: 'execution', tag: 'n8n & Pipelines', metric: '3d ➔ 2h' },
-  { id: 'knowledge', name: 'Tri Thức', subtitle: 'Knowledge Base', angle: 180, distance: 185, category: 'strategy', tag: 'RAG & Runbook', metric: 'Single Truth' },
-  { id: 'governance', name: 'Quản Trị', subtitle: 'Security & Safety', angle: 225, distance: 195, category: 'governance', tag: 'NDA & On-premise', metric: 'Zero Leak' },
+  { id: 'strategy', name: 'Chiến Lược', subtitle: 'Strategy & ROI', angle: -90, distance: 178, category: 'strategy', tag: 'Cửa ải Gate 1-4', metric: 'P&L Direct' },
+  { id: 'data', name: 'Dữ Liệu Lõi', subtitle: 'Data Architecture', angle: -45, distance: 182, category: 'execution', tag: 'Vector DB & Mesh', metric: 'Clean Data' },
+  { id: 'people', name: 'Con Người', subtitle: 'People & Culture', angle: 0, distance: 176, category: 'strategy', tag: 'Làm chủ công cụ', metric: '70% Nỗ lực (BCG)' },
+  { id: 'process', name: 'Quy Trình', subtitle: 'Process & SOP', angle: 45, distance: 182, category: 'execution', tag: 'Chuẩn hóa luồng', metric: '100% Đồng bộ' },
+  { id: 'agents', name: 'Multi-Agents', subtitle: 'Autonomous Agents', angle: 90, distance: 178, category: 'execution', tag: 'Swarm Execution', metric: 'Real-time' },
+  { id: 'automation', name: 'Tự Động Hóa', subtitle: 'Automation & API', angle: 135, distance: 182, category: 'execution', tag: 'n8n & Pipelines', metric: '3d ➔ 2h' },
+  { id: 'knowledge', name: 'Tri Thức', subtitle: 'Knowledge Base', angle: 180, distance: 176, category: 'strategy', tag: 'RAG & Runbook', metric: 'Single Truth' },
+  { id: 'governance', name: 'Quản Trị', subtitle: 'Security & Safety', angle: 225, distance: 182, category: 'governance', tag: 'NDA & On-premise', metric: 'Zero Leak' },
 ];
+
+function getNodeLabelConfig(id: string) {
+  switch (id) {
+    case 'strategy':
+      return { lx: -40, ly: -34, w: 80, h: 24, tx: 0, ty: -19, anchor: 'middle' as const };
+    case 'agents':
+      return { lx: -42, ly: 14, w: 84, h: 24, tx: 0, ty: 29, anchor: 'middle' as const };
+    case 'people':
+      return { lx: 14, ly: -12, w: 72, h: 24, tx: 50, ty: 4, anchor: 'middle' as const };
+    case 'data':
+      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
+    case 'process':
+      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
+    case 'knowledge':
+      // Placed inwards towards center to prevent any protrusion into the left column
+      return { lx: 14, ly: -12, w: 72, h: 24, tx: 50, ty: 4, anchor: 'middle' as const };
+    case 'governance':
+      return { lx: -38, ly: -34, w: 76, h: 24, tx: 0, ty: -19, anchor: 'middle' as const };
+    case 'automation':
+      return { lx: -42, ly: 14, w: 84, h: 24, tx: 0, ty: 29, anchor: 'middle' as const };
+    default:
+      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
+  }
+}
 
 export function AiTransformationNetwork() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
@@ -49,7 +73,7 @@ export function AiTransformationNetwork() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[560px] aspect-square flex items-center justify-center select-none font-sans"
+      className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[460px] xl:max-w-[500px] 2xl:max-w-[520px] aspect-square flex items-center justify-center select-none font-sans"
     >
       {/* Background Soft Glow */}
       <div className="absolute inset-0 bg-radial from-purple-500/[0.04] via-transparent to-transparent rounded-full pointer-events-none" />
@@ -204,33 +228,37 @@ export function AiTransformationNetwork() {
                   className="transition-all duration-300"
                 />
 
-                {/* Node Label Card (Floating) */}
-                <g
-                  transform={`translate(${x > cx ? 28 : -28}, ${y > cy ? 12 : -12})`}
-                  className="transition-transform duration-200"
-                >
-                  <rect
-                    x={x > cx ? 0 : -100}
-                    y="-12"
-                    width="100"
-                    height="26"
-                    rx="6"
-                    fill={isNodeActive ? '#FAF8FC' : '#FFFFFF'}
-                    stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
-                    strokeWidth={1}
-                    filter="drop-shadow(0 2px 4px rgba(0,0,0,0.02))"
-                  />
-                  <text
-                    x={x > cx ? 8 : -92}
-                    y="4"
-                    fill={isNodeActive ? '#581C87' : '#111111'}
-                    fontSize="9.5"
-                    fontFamily="system-ui, sans-serif"
-                    fontWeight={isNodeActive ? '700' : '600'}
-                  >
-                    {node.name}
-                  </text>
-                </g>
+                {/* Node Label Card (Floating & Self-Contained) */}
+                {(() => {
+                  const cfg = getNodeLabelConfig(node.id);
+                  return (
+                    <g className="transition-transform duration-200">
+                      <rect
+                        x={cfg.lx}
+                        y={cfg.ly}
+                        width={cfg.w}
+                        height={cfg.h}
+                        rx="6"
+                        fill={isNodeActive ? '#FAF8FC' : '#FFFFFF'}
+                        stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
+                        strokeWidth={1}
+                        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.02))"
+                      />
+                      <text
+                        x={cfg.tx}
+                        y={cfg.ty}
+                        textAnchor={cfg.anchor}
+                        dominantBaseline="central"
+                        fill={isNodeActive ? '#581C87' : '#111111'}
+                        fontSize="9"
+                        fontFamily="system-ui, sans-serif"
+                        fontWeight={isNodeActive ? '700' : '600'}
+                      >
+                        {node.name}
+                      </text>
+                    </g>
+                  );
+                })()}
               </g>
             </g>
           );

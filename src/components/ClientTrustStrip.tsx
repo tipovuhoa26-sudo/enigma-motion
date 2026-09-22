@@ -8,7 +8,7 @@ const TRUSTED_LOGOS = [
   { name: 'Đại học FPT', src: '/logos/fptu.png', width: 110, height: 34 },
   { name: 'Dentsu Sports & Creative', src: '/logos/dentsu.png', width: 110, height: 32 },
   { name: 'VNPT VinaPhone', src: '/logos/vnpt_vinaphone.png', width: 120, height: 36 },
-  { name: 'Vietcap Securities', src: '/logos/vietcap.png', width: 115, height: 34 },
+  { name: 'Ngân hàng BIDV', src: '/logos/bidv.png', width: 105, height: 34 },
   { name: 'Đài Truyền Hình HTV', src: '/logos/htv.png', width: 95, height: 32 },
   { name: 'Tập đoàn Hòa Phát', src: '/logos/hoa_phat.png', width: 110, height: 32 },
   { name: 'Phương Trường An Group', src: '/logos/phuong_truong_an.png', width: 130, height: 36 },
@@ -19,10 +19,10 @@ const TRUSTED_LOGOS = [
 
 export function ClientTrustStrip() {
   return (
-    <section className="w-full py-10 border-y border-[#E8E8E8] bg-[#FAFAFA] overflow-hidden">
+    <section className="w-full py-12 border-b border-[#E7E7E5] bg-white overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 mb-5 text-center">
-        <span className="text-[11px] font-mono tracking-widest text-[#888888] uppercase select-none">
-          ĐỒNG HÀNH CHUYỂN ĐỔI AI CÙNG CÁC ĐỘI NGŨ DẪN ĐẦU TẠI VIỆT NAM
+        <span className="text-xs font-mono tracking-wider text-[#747474] uppercase select-none font-medium">
+          40+ DOANH NGHIỆP DẪN ĐẦU ĐÃ TRIỂN KHAI THỰC TẾ
         </span>
       </div>
 

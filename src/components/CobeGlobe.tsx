@@ -16,7 +16,7 @@ export const SUNEXT_HUBS = [
     size: 0.12,
     color: [0.05, 0.75, 0.38] as [number, number, number], // Vibrant Emerald
     badge: 'Trụ sở chính & 25+ Dự án',
-    description: 'Vinhomes, Vietcap, Dentsu Sports, HTV, FPTU HCM, Trung Sơn Pharma...',
+    description: 'Vinhomes, BIDV, Dentsu Sports, HTV, FPTU HCM, Trung Sơn Pharma...',
   },
   {
     id: 'hn',
