@@ -24,18 +24,18 @@ const STEPS: StepData[] = [
   {
     num: '02',
     pillLabel: '02 Dữ liệu',
-    title: 'Dữ liệu phải kết nối được.',
+    title: 'Dữ liệu phải kết nối.',
     copy: 'Kết nối ERP, CRM và Database vào AI trong ranh giới cô lập tuyệt đối, zero rò rỉ.',
     proofNum: '100%',
     proofLabel: 'On-Premise / Private VPC',
   },
   {
     num: '03',
-    pillLabel: '03 KPI & P&L',
-    title: 'KPI phải có trước AI.',
+    pillLabel: '03 KPI',
+    title: 'KPI trước AI.',
     copy: 'Mọi mô hình AI đều quy đổi ra P&L định lượng và nghiệm thu theo kết quả kinh doanh thật.',
     proofNum: '< 4 tháng',
-    proofLabel: 'Thời gian thu hồi vốn',
+    proofLabel: 'Thu hồi vốn định lượng',
   },
 ];
 
@@ -43,10 +43,9 @@ export function MethodStorytellingSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState<number>(0);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
-  const isClickScrolling = useRef<boolean>(false);
 
   const handleScroll = useCallback(() => {
-    if (isClickScrolling.current || !containerRef.current) return;
+    if (!containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
     const windowHeight = window.innerHeight;
@@ -73,41 +72,19 @@ export function MethodStorytellingSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  const scrollToStep = (index: number) => {
-    if (!containerRef.current) return;
-    isClickScrolling.current = true;
-    setActiveStep(index);
-
-    const stepFraction = index === 0 ? 0.05 : index === 1 ? 0.50 : 0.95;
-    setScrollProgress(stepFraction);
-
-    const rect = containerRef.current.getBoundingClientRect();
-    const totalScrollable = rect.height - window.innerHeight;
-    const targetScrollY = window.scrollY + rect.top + (totalScrollable * stepFraction);
-
-    window.scrollTo({
-      top: targetScrollY,
-      behavior: 'smooth',
-    });
-
-    setTimeout(() => {
-      isClickScrolling.current = false;
-    }, 650);
-  };
-
   return (
     <section
       ref={containerRef}
       id="method"
-      className="relative h-[250vh] sm:h-[270vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
+      className="relative h-[240vh] sm:h-[260vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
     >
-      {/* Sticky Pinned Screen Viewport */}
+      {/* Sticky Pinned Screen Viewport - Pure Scroll-Driven Morph, Zero Carousel Chrome */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 lg:px-20 py-8 sm:py-12">
         <div className="max-w-[1280px] w-full mx-auto flex-1 flex flex-col justify-between">
           
-          {/* Top Progress & Step Switcher Bar */}
+          {/* Top Progress Track */}
           <div className="w-full pb-4 border-b border-[#E7E7E5] relative">
-            {/* Ambient Real-time Gradient Scrub Bar */}
+            {/* Ambient Gradient Scrub Bar */}
             <div
               className="absolute -bottom-[1px] left-0 h-[2px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-150 ease-out"
               style={{ width: `${(scrollProgress * 100).toFixed(1)}%` }}
@@ -116,32 +93,30 @@ export function MethodStorytellingSection() {
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#581C87]">
-                  PHƯƠNG PHÁP SUNEXT
+                  PHƯƠNG PHÁP
                 </span>
                 <span className="text-[#A3A3A3] text-xs">/</span>
-                <span className="text-xs font-mono text-[#747474] hidden sm:inline">
-                  3 Nguyên Tắc Vận Hành
+                <span className="text-xs font-mono text-[#747474]">
+                  3 Bước Vận Hành
                 </span>
               </div>
 
-              {/* Minimal Interactive Step Pills */}
-              <div className="flex items-center gap-1.5 sm:gap-2">
+              {/* Status Step Indicator (Read-only, synchronized with scroll) */}
+              <div className="flex items-center gap-2">
                 {STEPS.map((step, idx) => {
                   const isActive = activeStep === idx;
                   return (
-                    <button
+                    <div
                       key={step.num}
-                      type="button"
-                      onClick={() => scrollToStep(idx)}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                      className={`px-2.5 py-1 rounded text-xs font-mono transition-all duration-200 flex items-center gap-1.5 ${
                         isActive
-                          ? 'bg-[#0A0A0A] text-white shadow-xs'
-                          : 'bg-white text-[#747474] border border-[#E7E7E5] hover:bg-[#F3F4F6] hover:text-[#0A0A0A]'
+                          ? 'bg-[#0A0A0A] text-white font-medium'
+                          : 'text-[#747474]'
                       }`}
                     >
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0" />}
                       <span>{step.pillLabel}</span>
-                    </button>
+                    </div>
                   );
                 })}
               </div>
@@ -149,9 +124,9 @@ export function MethodStorytellingSection() {
           </div>
 
           {/* Main Content & Living Visual Flow */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-6">
             
-            {/* Left Column: Lean Confident Narrative (70% copy reduction) */}
+            {/* Left Column: Lean Confident Narrative */}
             <div className="lg:col-span-5 relative min-h-[220px] sm:min-h-[260px] flex flex-col justify-center">
               {STEPS.map((step, idx) => {
                 const isCurrent = activeStep === idx;
@@ -166,10 +141,10 @@ export function MethodStorytellingSection() {
                   >
                     <div>
                       <div className="text-xs font-mono font-semibold text-[#581C87] uppercase tracking-wider mb-2">
-                        NGUYÊN TẮC {step.num}
+                        BƯỚC {step.num}
                       </div>
 
-                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
+                      <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
                         {step.title}
                       </h2>
 
@@ -193,37 +168,19 @@ export function MethodStorytellingSection() {
             </div>
 
             {/* Right Column: Evolving System Visual */}
-            <div className="lg:col-span-7 w-full bg-white rounded-2xl border border-[#E7E7E5] p-2 sm:p-4 flex items-center justify-center relative overflow-hidden shadow-xs">
+            <div className="lg:col-span-7 w-full bg-white rounded-2xl border border-[#E7E7E5] p-3 sm:p-5 flex items-center justify-center relative overflow-hidden shadow-xs">
               <MethodSolarCanvas activeStep={activeStep} />
             </div>
 
           </div>
 
-          {/* Bottom Hint */}
+          {/* Minimal Bottom Scroll Status Hint */}
           <div className="flex items-center justify-between pt-4 border-t border-[#E7E7E5] text-xs font-mono text-[#747474]">
             <div className="flex items-center gap-2">
               <span className="inline-block w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
-              <span>Cuộn để xem tiếp · 0{activeStep + 1}/03</span>
+              <span>Cuộn chuột để xem chuyển tiếp hệ thống</span>
             </div>
-            
-            <div className="flex items-center gap-1.5">
-              <button
-                type="button"
-                onClick={() => scrollToStep(Math.max(0, activeStep - 1))}
-                disabled={activeStep === 0}
-                className="px-2.5 py-1 rounded-md border border-[#E7E7E5] bg-white hover:bg-[#F4F4F3] disabled:opacity-30 disabled:pointer-events-none cursor-pointer text-[11px]"
-              >
-                ← Trước
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollToStep(Math.min(2, activeStep + 1))}
-                disabled={activeStep === 2}
-                className="px-2.5 py-1 rounded-md border border-[#E7E7E5] bg-white hover:bg-[#F4F4F3] disabled:opacity-30 disabled:pointer-events-none cursor-pointer text-[11px]"
-              >
-                Tiếp →
-              </button>
-            </div>
+            <span>0{activeStep + 1} / 03</span>
           </div>
 
         </div>

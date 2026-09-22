@@ -4,7 +4,6 @@ import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/sections/Hero';
 import { StatsStrip } from '@/sections/StatsStrip';
-import { ClientTrustStrip } from '@/components/ClientTrustStrip';
 import { MethodStorytellingSection } from '@/sections/MethodStorytellingSection';
 import { FourGatesProgressSection } from '@/sections/FourGatesProgressSection';
 import { CasesSection } from '@/sections/CasesSection';
@@ -20,20 +19,19 @@ export default function HomePage() {
         {/* 01. HERO: Statement + Living Sun System (Nodes reveal on interaction) */}
         <Hero autoPlayIntro={true} />
 
-        {/* 02. PROOF: 3 Numbers Born From System + Customer Logos */}
+        {/* 02. PROOF: Kết quả được đo (3 Connected Metrics + Integrated Client Logos) */}
         <StatsStrip />
-        <ClientTrustStrip />
 
-        {/* 03. HOW IT WORKS: 3 Principles, One Sticky Evolving Visual */}
+        {/* 03. METHOD: 3 Scroll States (Process ➔ Data ➔ KPI) */}
         <MethodStorytellingSection />
 
-        {/* 04. DELIVERY: G1 ➔ G2 ➔ G3 ➔ G4 One Progression Line + 3 Capabilities */}
+        {/* 04. DELIVERY: G1 ➔ G2 ➔ G3 ➔ G4 One Progression Beam + 3 Capabilities */}
         <FourGatesProgressSection />
 
-        {/* 05. PROOF IN THE REAL WORLD: 1 Flagship Case (Before ➔ After) */}
+        {/* 05. CASE: 1 Real World Transformation (Vinhomes Before ➔ After) */}
         <CasesSection />
 
-        {/* 06. CTA: Return to Sun Visual · One Statement · One Action */}
+        {/* 06. CTA: Pure Horizon Sun · One Statement · One Action */}
         <CtaFooter />
       </main>
 
