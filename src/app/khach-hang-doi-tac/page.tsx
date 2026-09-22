@@ -30,11 +30,10 @@ export default function ClientsNetworkPage() {
       : ORGANIZATION_LOGOS.filter((org) => org.industryId === activeIndustry);
 
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="service" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="service" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Top Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
             <div className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -381,13 +380,13 @@ export default function ClientsNetworkPage() {
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <Link href="/#contact">
-                <Button variant="lime" size="lg" className="rounded-full text-xs font-semibold px-8">
+                <Button variant="orange" size="lg" className="rounded-xl text-xs font-semibold px-8 shadow-sm">
                   <span>Liên Hệ Tư Vấn Đào Tạo</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Button>
               </Link>
               <Link href="/tu-duy-chuyen-doi-ai">
-                <Button variant="secondary" size="lg" className="rounded-full text-xs font-semibold px-6 border-white/20 text-white hover:bg-white/10">
+                <Button variant="outline" size="lg" className="rounded-xl text-xs font-semibold px-6 border-white/20 text-white hover:bg-white/10">
                   <span>Tìm Hiểu Khung 6 Trụ Cột</span>
                 </Button>
               </Link>
@@ -396,7 +395,6 @@ export default function ClientsNetworkPage() {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }

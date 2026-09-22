@@ -203,6 +203,18 @@ const SEMANTIC_EDGES: SemanticEdge[] = [
   { id: 'e-retail-tech', source: 'retail', target: 'tech', bridgeLabel: 'POS Data Bus', x1: 610, y1: 335, x2: 520, y2: 165 },
 ];
 
+// Level 4: Subtle Cross-Domain Knowledge Chords (Organic Obsidian Network Mesh)
+const CROSS_CHORDS = [
+  { id: 'c-bank-retail', x1: 200, y1: 165, x2: 610, y2: 335 },
+  { id: 'c-hr-tech', x1: 110, y1: 335, x2: 520, y2: 165 },
+  { id: 'c-mfg-gov', x1: 140, y1: 505, x2: 490, y2: 635 },
+  { id: 'c-re-sales', x1: 230, y1: 635, x2: 580, y2: 505 },
+  { id: 'c-bank-gov', x1: 200, y1: 165, x2: 490, y2: 635 },
+  { id: 'c-tech-sales', x1: 520, y1: 165, x2: 580, y2: 505 },
+  { id: 'c-hr-gov', x1: 110, y1: 335, x2: 490, y2: 635 },
+  { id: 'c-mfg-tech', x1: 140, y1: 505, x2: 520, y2: 165 },
+];
+
 export function AiTransformationNetwork() {
   const [hoveredDomain, setHoveredDomain] = useState<string | null>(null);
   const [activeCycleIndex, setActiveCycleIndex] = useState<number>(0);
@@ -318,50 +330,23 @@ export function AiTransformationNetwork() {
         <circle cx={SUNEXT_INDEX.cx} cy={SUNEXT_INDEX.cy} r="130" fill="url(#sunext-core-aura)" />
 
         {/* ==================================================================== */}
-        {/* LEVEL 1 — DIRECT SPOKES: ALL 8 DOMAINS VISIBLY CONVERGE INTO SUNEXT  */}
-        {/* (Default opacity ~0.10-0.12 so MOC star topology is clear even idle) */}
+        {/* LEVEL 4 — SUBTLE CROSS-DOMAIN KNOWLEDGE CHORDS (Internal Mesh)       */}
+        {/* (Faint organic lines connecting domains across the knowledge network) */}
         {/* ==================================================================== */}
-        {DOMAINS.map((domain) => {
-          const isDomainActive = domain.id === activeDomainId;
-          const isOtherDimmed = activeDomainId !== null && !isDomainActive;
-
-          return (
-            <g key={`hub-spoke-${domain.id}`}>
-              {/* Primary Spoke Line directly to Central Sunext Index (5-10% idle, 3-5% dimmed, 100% active) */}
-              <line
-                x1={domain.cx}
-                y1={domain.cy}
-                x2={SUNEXT_INDEX.cx}
-                y2={SUNEXT_INDEX.cy}
-                stroke={isDomainActive ? 'url(#hub-spoke-inward)' : '#7000FF'}
-                strokeWidth={isDomainActive ? 2.6 : 1.0}
-                strokeDasharray={isDomainActive ? 'none' : '3 4'}
-                opacity={isDomainActive ? 1 : isOtherDimmed ? 0.04 : 0.10}
-                className="transition-all duration-400"
-              />
-
-              {/* Inward Moving Purple Pulse: Deep Domain -> Sunext Core */}
-              {isDomainActive && (
-                <circle r="4.5" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
-                  <animate
-                    attributeName="cx"
-                    from={domain.cx}
-                    to={SUNEXT_INDEX.cx}
-                    dur="1.7s"
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="cy"
-                    from={domain.cy}
-                    to={SUNEXT_INDEX.cy}
-                    dur="1.7s"
-                    repeatCount="indefinite"
-                  />
-                </circle>
-              )}
-            </g>
-          );
-        })}
+        {CROSS_CHORDS.map((chord) => (
+          <line
+            key={chord.id}
+            x1={chord.x1}
+            y1={chord.y1}
+            x2={chord.x2}
+            y2={chord.y2}
+            stroke="#8B5CF6"
+            strokeWidth="0.8"
+            strokeDasharray="3 5"
+            opacity={activeDomainId ? 0.12 : 0.18}
+            className="transition-opacity duration-400"
+          />
+        ))}
 
         {/* ==================================================================== */}
         {/* LEVEL 3 — PERIMETER CROSS-DOMAIN MESH (Subtle Secondary Inter-links) */}
@@ -372,16 +357,16 @@ export function AiTransformationNetwork() {
 
           return (
             <g key={edge.id}>
-              {/* Mesh Line */}
+              {/* Mesh Line connecting adjacent domain nodes */}
               <line
                 x1={edge.x1}
                 y1={edge.y1}
                 x2={edge.x2}
                 y2={edge.y2}
-                stroke={isEdgeActive ? 'url(#semantic-pulse-gradient)' : '#6B21A8'}
-                strokeWidth={isEdgeActive ? 1.8 : 0.8}
-                strokeDasharray={isEdgeActive ? 'none' : '3 5'}
-                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.05 : 0.12}
+                stroke={isEdgeActive ? 'url(#semantic-pulse-gradient)' : '#8B5CF6'}
+                strokeWidth={isEdgeActive ? 2.0 : 1.0}
+                strokeDasharray={isEdgeActive ? 'none' : '3 4'}
+                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.18 : 0.26}
                 className="transition-all duration-400"
               />
 
@@ -400,6 +385,52 @@ export function AiTransformationNetwork() {
                     from={edge.y1}
                     to={edge.y2}
                     dur="2.4s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              )}
+            </g>
+          );
+        })}
+
+        {/* ==================================================================== */}
+        {/* LEVEL 1 — DIRECT SPOKES: ALL 8 DOMAINS VISIBLY CONVERGE INTO SUNEXT  */}
+        {/* (Crisp faint purple lines connecting all domains into Sunext MOC Core) */}
+        {/* ==================================================================== */}
+        {DOMAINS.map((domain) => {
+          const isDomainActive = domain.id === activeDomainId;
+          const isOtherDimmed = activeDomainId !== null && !isDomainActive;
+
+          return (
+            <g key={`hub-spoke-${domain.id}`}>
+              {/* Primary Spoke Line directly to Central Sunext Index */}
+              <line
+                x1={domain.cx}
+                y1={domain.cy}
+                x2={SUNEXT_INDEX.cx}
+                y2={SUNEXT_INDEX.cy}
+                stroke={isDomainActive ? 'url(#hub-spoke-inward)' : '#7000FF'}
+                strokeWidth={isDomainActive ? 2.6 : 1.2}
+                strokeDasharray={isDomainActive ? 'none' : '4 4'}
+                opacity={isDomainActive ? 1.0 : isOtherDimmed ? 0.20 : 0.28}
+                className="transition-all duration-400"
+              />
+
+              {/* Inward Moving Purple Pulse: Deep Domain -> Sunext Core */}
+              {isDomainActive && (
+                <circle r="4.5" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
+                  <animate
+                    attributeName="cx"
+                    from={domain.cx}
+                    to={SUNEXT_INDEX.cx}
+                    dur="1.7s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="cy"
+                    from={domain.cy}
+                    to={SUNEXT_INDEX.cy}
+                    dur="1.7s"
                     repeatCount="indefinite"
                   />
                 </circle>

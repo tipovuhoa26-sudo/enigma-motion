@@ -60,11 +60,10 @@ export default function InvestmentFrameworkPage() {
   };
 
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="service" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="service" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
             <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -822,7 +821,7 @@ export default function InvestmentFrameworkPage() {
                 * Số liệu ước tính dựa trên benchmark thực tế. Khảo sát Scoping 1 tuần để chốt ngân sách và dung sai chính xác.
               </span>
               <Link href="/#contact">
-                <Button variant="primary" size="md" className="rounded-full text-xs font-semibold">
+                <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold shadow-sm">
                   Đặt Lịch Khảo Sát Kỹ Thuật Chi Tiết
                 </Button>
               </Link>
@@ -831,7 +830,6 @@ export default function InvestmentFrameworkPage() {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }

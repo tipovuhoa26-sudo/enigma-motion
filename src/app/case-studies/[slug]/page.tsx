@@ -27,11 +27,10 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
   const detail = CASE_STUDIES_DETAILS[slug] || CASE_STUDIES_DETAILS['toi-uu-chi-phi-tuyen-dung-hr-ai'];
 
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="service" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="service" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Top Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
             <div className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -236,13 +235,13 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
               </div>
 
               <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <Link href="/ai-maturity-assessment">
-                  <Button variant="lime" size="md" className="rounded-full text-xs font-semibold">
+                <Link href="/danh-gia-san-sang-ai">
+                  <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold shadow-sm">
                     Đo Lường Sẵn Sàng (12 Câu)
                   </Button>
                 </Link>
                 <Link href="/#contact">
-                  <Button variant="secondary" size="md" className="rounded-full text-xs">
+                  <Button variant="outline" size="md" className="rounded-xl text-xs bg-white/80 hover:bg-white border-[#D5D3CC]">
                     Đặt Lịch Khảo Sát
                   </Button>
                 </Link>
@@ -252,7 +251,6 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }

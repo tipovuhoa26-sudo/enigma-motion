@@ -199,11 +199,10 @@ export default function TeamLeadershipPage() {
   ];
 
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="technology" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="technology" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Top Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
             <div className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -776,13 +775,13 @@ export default function TeamLeadershipPage() {
 
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <Link href="/#contact">
-                <Button variant="lime" size="lg" className="rounded-full text-xs font-semibold px-8">
+                <Button variant="orange" size="lg" className="rounded-xl text-xs font-semibold px-8 shadow-sm">
                   <span>Đặt Lịch Trao Đổi Chiến Lược</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Button>
               </Link>
               <Link href="/danh-gia-san-sang-ai">
-                <Button variant="secondary" size="lg" className="rounded-full text-xs font-semibold px-6 border-white/20 text-white hover:bg-white/10">
+                <Button variant="outline" size="lg" className="rounded-xl text-xs font-semibold px-6 bg-white/10 hover:bg-white/20 border-white/20 text-white">
                   <span>Làm Bài Chẩn Đoán 12 Câu</span>
                 </Button>
               </Link>
@@ -791,7 +790,6 @@ export default function TeamLeadershipPage() {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }

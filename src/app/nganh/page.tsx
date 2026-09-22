@@ -34,11 +34,10 @@ const INDUSTRY_ICONS: Record<string, React.ElementType> = {
 
 export default function IndustryIndexPage() {
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="service" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="service" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Top Breadcrumb */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-black/5">
             <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -270,7 +269,7 @@ export default function IndustryIndexPage() {
               Phương Pháp Luận Sunext được thiết kế để tùy biến cho bất kỳ mô hình kinh doanh nào có quy trình lặp lại và khối lượng dữ liệu lớn. Hãy trao đổi trực tiếp với chuyên gia giải pháp của chúng tôi.
             </p>
             <Link href="/#contact">
-              <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm gap-2">
+              <Button variant="orange" size="lg" className="rounded-xl shadow-sm text-sm gap-2">
                 <Calendar className="w-4 h-4" />
                 <span>Đặt Lịch Tư Vấn Cho Ngành Của Bạn</span>
               </Button>
@@ -279,7 +278,6 @@ export default function IndustryIndexPage() {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }

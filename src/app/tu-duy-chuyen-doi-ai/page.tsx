@@ -83,11 +83,10 @@ export default function AiTransformationHubPage() {
   const pillarIcons = [Target, Users, Workflow, Cpu, Database, TrendingUp];
 
   return (
-    <div className="editorial-shell">
-      <div className="editorial-card min-h-screen flex flex-col justify-between">
-        <Header activeSection="service" />
+    <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
+      <Header activeSection="service" />
 
-        <main className="px-6 md:px-12 lg:px-20 py-12 flex-1">
+      <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
           {/* Top Breadcrumb & Tag */}
           <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-black/5">
             <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
@@ -512,13 +511,13 @@ export default function AiTransformationHubPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/#contact">
-                <Button variant="primary" size="lg" className="rounded-full shadow-sm text-sm gap-2">
+                <Button variant="orange" size="lg" className="rounded-xl shadow-sm text-sm gap-2">
                   <Calendar className="w-4 h-4" />
                   <span>Đặt Lịch Tư Vấn 1-on-1 với Chuyên Gia</span>
                 </Button>
               </Link>
               <Link href="/nganh">
-                <Button variant="secondary" size="lg" className="rounded-full text-sm">
+                <Button variant="outline" size="lg" className="rounded-xl text-sm bg-white/80 hover:bg-white border-[#D5D3CC]">
                   Xem Giải Pháp Theo Ngành
                 </Button>
               </Link>
@@ -527,7 +526,6 @@ export default function AiTransformationHubPage() {
         </main>
 
         <Footer />
-      </div>
     </div>
   );
 }
