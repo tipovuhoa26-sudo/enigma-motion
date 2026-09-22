@@ -50,7 +50,7 @@ export function FourGatesProgressSection() {
     <section
       ref={containerRef}
       id="delivery"
-      className="relative w-full py-28 sm:py-36 px-6 md:px-12 lg:px-20 bg-white border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full py-24 sm:py-32 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden"
     >
       {/* Background Subtle Flattened Orbit Connecting with Atmosphere */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40">
@@ -67,11 +67,8 @@ export function FourGatesProgressSection() {
       <div className="max-w-[1280px] mx-auto relative z-10">
         
         {/* Section Headline: Confident Editorial Title (Zero paragraph clutter) */}
-        <div className="mb-20 sm:mb-28 text-left">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
-            Lộ Trình Triển Khai
-          </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
+        <div className="mb-12 sm:mb-14 text-left">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
             Kiểm soát trước khi mở rộng.
           </h2>
         </div>

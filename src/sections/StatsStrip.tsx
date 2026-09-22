@@ -67,7 +67,7 @@ export function StatsStrip() {
     <section
       ref={containerRef}
       id="proof"
-      className="relative w-full pt-28 sm:pt-36 pb-20 sm:pb-28 px-6 md:px-12 lg:px-20 border-b border-[#E7E7E5] scroll-mt-20 overflow-hidden"
+      className="relative w-full pt-24 sm:pt-32 pb-20 sm:pb-28 px-6 md:px-12 border-b border-[#E7E7E5] scroll-mt-20 overflow-hidden"
       style={{
         background: `
           radial-gradient(circle at 50% 25%, rgba(249, 115, 22, 0.08) 0%, rgba(105, 64, 190, 0.03) 40%, transparent 70%),
@@ -94,23 +94,20 @@ export function StatsStrip() {
         </svg>
       </div>
 
-      <div className="max-w-[1280px] mx-auto relative z-10">
+      <div className="max-w-[1280px] w-full mx-auto relative z-10">
         
-        {/* Confident Heading: 52-64px scale */}
-        <div className="mb-14 sm:mb-20">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
-            Hạ Tầng Vận Hành Thực Tế
-          </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
+        {/* Confident Section H2 (Zero clutter, matches typographic grid) */}
+        <div className="mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
             Kết quả được đo.
           </h2>
         </div>
 
-        {/* Unified Operational Metrics: 99.8% ────── <5m ────── −75% (Zero Card Chrome) */}
+        {/* Unified Operational Metrics: Fixed Grid Rows for Exact Optical Baseline */}
         <div className="relative mb-20 sm:mb-24">
           
           {/* Continuous Left-to-Right Connecting Beam with Traveling Light Pulse */}
-          <div className="hidden md:block absolute top-[68px] lg:top-[76px] left-[4%] right-[4%] h-[1.5px] pointer-events-none z-0">
+          <div className="hidden md:block absolute top-[66px] lg:top-[70px] left-[4%] right-[4%] h-[1.5px] pointer-events-none z-0">
             <div className="w-full h-full bg-[#E5E3DC]" />
             {/* Active Glow Pulse Moving Left -> Right (Quality -> Speed -> Efficiency) */}
             <div className="absolute top-1/2 -translate-y-1/2 h-[3px] w-28 bg-gradient-to-r from-transparent via-[#F97316] to-transparent rounded-full blur-[1px] animate-pulse-travel" />
@@ -120,27 +117,32 @@ export function StatsStrip() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative z-10">
             
             {/* Metric 01: 99.8% (Quality / Accuracy) */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2 mb-3">
+            <div className="grid grid-rows-[24px_84px_28px_44px] gap-y-1.5">
+              {/* Row 1: Category Tag */}
+              <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#581C87]" />
                 <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold">
                   Accuracy · Chất lượng
                 </span>
               </div>
-              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#0A0A0A] leading-none mb-4 tabular-nums">
+              {/* Row 2: Value */}
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-light tracking-tighter text-[#0A0A0A] leading-none flex items-baseline tabular-nums">
                 {accuracyVal}%
               </div>
-              <div className="text-base font-medium text-[#0A0A0A] mb-1">
+              {/* Row 3: Title */}
+              <div className="text-base font-medium text-[#0A0A0A] flex items-center">
                 Độ chính xác kiểm định
               </div>
+              {/* Row 4: Description */}
               <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
                 Kiểm chứng trên mẫu 2,000–5,000 bản ghi dữ liệu thực tế.
               </p>
             </div>
 
             {/* Metric 02: <5m (Speed / Response) */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2 mb-3">
+            <div className="grid grid-rows-[24px_84px_28px_44px] gap-y-1.5">
+              {/* Row 1: Category Tag */}
+              <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
                 <span className="text-xs font-mono uppercase tracking-wider text-[#7000FF] font-semibold">
                   Response · Tốc độ
@@ -149,35 +151,42 @@ export function StatsStrip() {
                   TỪ 24H
                 </span>
               </div>
-              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#0A0A0A] leading-none mb-4 tabular-nums whitespace-nowrap">
+              {/* Row 2: Value */}
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-light tracking-tighter text-[#0A0A0A] leading-none flex items-baseline tabular-nums whitespace-nowrap">
                 {showFastResponse ? (
                   <span className="animate-in fade-in duration-300">&lt; 5m</span>
                 ) : (
                   <span className="text-[#A3A3A3] line-through decoration-red-400">24h</span>
                 )}
               </div>
-              <div className="text-base font-medium text-[#0A0A0A] mb-1">
+              {/* Row 3: Title */}
+              <div className="text-base font-medium text-[#0A0A0A] flex items-center">
                 Thời gian phản hồi nghiệp vụ
               </div>
+              {/* Row 4: Description */}
               <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
                 Tra cứu thông tin, dự toán tài chính và sinh tài liệu tức thì.
               </p>
             </div>
 
             {/* Metric 03: −75% (Efficiency / Processing) */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2 mb-3">
+            <div className="grid grid-rows-[24px_84px_28px_44px] gap-y-1.5">
+              {/* Row 1: Category Tag */}
+              <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#F97316]" />
                 <span className="text-xs font-mono uppercase tracking-wider text-[#EA580C] font-semibold">
                   Processing · Hiệu quả
                 </span>
               </div>
-              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#EA580C] leading-none mb-4 tabular-nums">
+              {/* Row 2: Value */}
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] font-light tracking-tighter text-[#EA580C] leading-none flex items-baseline tabular-nums">
                 −75%
               </div>
-              <div className="text-base font-medium text-[#0A0A0A] mb-1">
+              {/* Row 3: Title */}
+              <div className="text-base font-medium text-[#0A0A0A] flex items-center">
                 Thời gian xử lý chu kỳ
               </div>
+              {/* Row 4: Description */}
               <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
                 Rút ngắn thời gian xử lý chu kỳ từ 3 ngày xuống 2 giờ làm việc.
               </p>

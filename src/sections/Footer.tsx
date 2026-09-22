@@ -4,7 +4,7 @@ import { ShieldCheck, ArrowUpRight, Share2 } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="w-full pt-16 pb-12 px-6 md:px-12 border-t border-[#E8E8E8] bg-white text-xs text-[#626262]">
+    <footer className="w-full pt-24 sm:pt-32 pb-16 px-6 md:px-12 border-t border-[#E8E8E8] bg-white text-xs text-[#626262]">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#E8E8E8]">
         {/* Brand Column */}
         <div className="md:col-span-3 flex flex-col gap-4">

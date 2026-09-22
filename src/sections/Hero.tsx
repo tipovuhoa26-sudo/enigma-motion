@@ -15,6 +15,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const headlineLine1Ref = useRef<HTMLSpanElement>(null);
   const headlineLine2Ref = useRef<HTMLSpanElement>(null);
+  const headlineLine3Ref = useRef<HTMLSpanElement>(null);
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const visualRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +24,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
 
     const navBar = document.querySelector('header') as HTMLElement | null;
     const ctas = ctaGroupRef.current ? Array.from(ctaGroupRef.current.children) as HTMLElement[] : [];
-    const headlineLines = [headlineLine1Ref.current, headlineLine2Ref.current].filter((el): el is HTMLSpanElement => el !== null);
+    const headlineLines = [headlineLine1Ref.current, headlineLine2Ref.current, headlineLine3Ref.current].filter((el): el is HTMLSpanElement => el !== null);
 
     const tl = createHeroTimeline({
       navBar,
@@ -41,25 +42,27 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
     <section
       ref={containerRef}
       id="home"
-      className="relative w-full min-h-[calc(100vh-80px)] px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
+      className="relative w-full min-h-[calc(100vh-80px)] px-6 md:px-12 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
       data-motion="hero"
     >
-      <div className="max-w-[1360px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10 my-auto">
+      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10 my-auto">
         
         {/* Left Column: 1 Bold Statement + 1 Focused Lead Sentence + 2 Clean CTAs */}
-        <div data-hero-left className="lg:col-span-6 flex flex-col justify-center max-w-[680px]">
+        <div data-hero-left className="lg:col-span-6 flex flex-col justify-center max-w-[620px]">
           
-          {/* Huge Editorial H1 (Scaled up +12%, confident Cloudflare-grade hierarchy) */}
+          {/* Display XL Editorial H1 (Optically Balanced 3-Line Cadence) */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.75rem] 2xl:text-[4.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12] mb-6"
+            className="text-4xl sm:text-5xl lg:text-[4.15rem] xl:text-[4.65rem] font-light tracking-tight text-[#0A0A0A] leading-[1.04] mb-6"
             data-hero-headline
           >
-            <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A] md:whitespace-nowrap">
-              <span className="inline-block">Đưa AI</span> <span className="inline-block">vào vận hành.</span>
+            <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A] whitespace-nowrap">
+              Đưa AI vào vận hành.
             </span>
-            <span ref={headlineLine2Ref} className="line block font-light text-[#0A0A0A] md:whitespace-nowrap mt-1">
-              <span className="inline-block">Đo bằng kết quả</span>{' '}
-              <span className="inline-block text-[#F97316] font-normal">kinh doanh.</span>
+            <span ref={headlineLine2Ref} className="line block font-light text-[#0A0A0A] whitespace-nowrap mt-1 sm:mt-2">
+              Đo bằng kết quả
+            </span>
+            <span ref={headlineLine3Ref} className="line block font-normal text-[#F97316] whitespace-nowrap mt-1 sm:mt-2">
+              kinh doanh.
             </span>
           </h1>
 

@@ -79,7 +79,7 @@ export function MethodStorytellingSection() {
       className="relative h-[240vh] sm:h-[260vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
     >
       {/* Sticky Pinned Screen Viewport - Pure Scroll-Driven Morph, Zero Carousel Chrome */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 lg:px-20 py-8 sm:py-12">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 py-8 sm:py-12">
         <div className="max-w-[1280px] w-full mx-auto flex-1 flex flex-col justify-between">
           
           {/* Top Progress Track */}
@@ -92,8 +92,8 @@ export function MethodStorytellingSection() {
 
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#581C87]">
-                  PHƯƠNG PHÁP
+                <span className="text-xs font-mono font-medium text-[#747474]">
+                  Phương pháp
                 </span>
                 <span className="text-[#A3A3A3] text-xs">/</span>
                 <span className="text-xs font-mono text-[#747474]">
@@ -127,7 +127,7 @@ export function MethodStorytellingSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-6">
             
             {/* Left Column: Lean Confident Narrative */}
-            <div className="lg:col-span-5 relative min-h-[220px] sm:min-h-[260px] flex flex-col justify-center">
+            <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[320px] flex flex-col justify-center">
               {STEPS.map((step, idx) => {
                 const isCurrent = activeStep === idx;
                 return (
@@ -140,11 +140,11 @@ export function MethodStorytellingSection() {
                     }`}
                   >
                     <div>
-                      <div className="text-xs font-mono font-semibold text-[#581C87] uppercase tracking-wider mb-2">
-                        BƯỚC {step.num}
+                      <div className="text-xs font-mono font-medium text-[#747474] mb-2 tracking-normal">
+                        Bước {step.num}
                       </div>
 
-                      <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
+                      <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08] mb-4">
                         {step.title}
                       </h2>
 

@@ -64,6 +64,12 @@
   --color-ink-800: #1C1C1E;
   --color-text-muted: #626262;
   --color-watermark: rgba(17, 17, 17, 0.04);
+
+  /* Cloudflare-Grade Typographic Grid & Baseline Tokens */
+  --container-width: 1280px;
+  --line-display: 1.04;
+  --line-heading: 1.08;
+  --line-body: 1.55;
 }
 
 body {

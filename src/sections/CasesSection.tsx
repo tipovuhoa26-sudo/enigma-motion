@@ -8,7 +8,7 @@ export function CasesSection() {
   return (
     <section
       id="cases"
-      className="relative w-full py-28 sm:py-36 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full py-24 sm:py-32 px-6 md:px-12 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
     >
       {/* Background Soft Atmospheric Ambient Glow */}
       <div 
@@ -22,72 +22,53 @@ export function CasesSection() {
       <div className="max-w-[1280px] mx-auto relative z-10">
         
         {/* Confident Heading */}
-        <div className="mb-16 sm:mb-24">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
-            Hiệu Quả Thực Tế
-          </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
+        <div className="mb-14 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
             Đo lường trên kết quả vận hành.
           </h2>
         </div>
 
-        {/* Scene Layout: Left Before ➔ After Narrative | Right Living Workflow Morph */}
+        {/* Scene Layout: Left 3-Tier Narrative | Right Living Workflow Morph */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: VINHOMES · 24 GIỜ ➔ < 5 PHÚT · 500+ MÔI GIỚI */}
+          {/* Left Column: 3 Clean Levels (Vinhomes | 24 giờ → < 5 phút | 500+ Môi giới) */}
           <div className="lg:col-span-6 flex flex-col justify-center">
             
+            {/* Level 1: Client Context */}
             <div className="flex items-center gap-2 mb-6">
               <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#581C87]">
-                VINHOMES GREEN PARADISE
+              <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#747474]">
+                Vinhomes Green Paradise
               </span>
             </div>
 
-            {/* Before ➔ After Vertical Flow */}
-            <div className="space-y-4 mb-8">
-              <div>
-                <span className="text-xs font-mono text-[#747474] uppercase tracking-wider block mb-1">
-                  Trước khi có AI (Before)
-                </span>
-                <div className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] line-through decoration-red-400/60 tabular-nums">
-                  24 GIỜ
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 pl-2 py-1 text-[#F97316]">
-                <ArrowDown className="w-5 h-5 animate-bounce" />
-                <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#EA580C]">
-                  Sunext AI Enablement
-                </span>
-              </div>
-
-              <div>
-                <span className="text-xs font-mono text-[#EA580C] uppercase tracking-wider block mb-1">
-                  Sau khi triển khai (After)
-                </span>
-                <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-[#EA580C] tracking-tight tabular-nums">
-                  &lt; 5 PHÚT
-                </div>
-              </div>
+            {/* Level 2: Core Transformation Metric (24 giờ → < 5 phút) */}
+            <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap mb-8">
+              <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] tabular-nums">
+                24 giờ
+              </span>
+              <span className="text-2xl sm:text-3xl text-[#747474] font-light">→</span>
+              <span className="text-5xl sm:text-6xl lg:text-7xl font-light text-[#EA580C] tracking-tight tabular-nums">
+                &lt; 5 phút
+              </span>
             </div>
 
-            {/* 1 Dominant Proof Metric */}
+            {/* Level 3: Scale & Operational Proof */}
             <div className="pt-6 border-t border-[#E7E7E5] flex items-baseline gap-4 mb-8">
-              <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
+              <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
                 500+
               </span>
               <div>
                 <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
                   Môi giới làm chủ AI
                 </div>
-                <div className="text-xs text-[#747474] font-normal mt-0.5">
-                  Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
+                <div className="text-xs sm:text-sm text-[#747474] font-normal mt-0.5">
+                  Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
                 </div>
               </div>
             </div>
 
-            {/* Optional Clean Link */}
+            {/* Clean Enterprise Link */}
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 text-sm font-medium text-[#0A0A0A] hover:text-[#F97316] transition-colors group cursor-pointer"

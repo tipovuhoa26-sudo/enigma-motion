@@ -33,13 +33,13 @@ export function Header(_props: HeaderProps = {}) {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 h-[72px] flex items-center ${
+        className={`sticky top-0 z-40 w-full transition-all duration-300 h-[72px] flex items-center px-6 md:px-12 ${
           isScrolled
             ? 'bg-white/95 backdrop-blur-md border-b border-[#E7E7E5] shadow-xs'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
-        <div className="max-w-[1280px] w-full mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="max-w-[1280px] w-full mx-auto flex items-center justify-between">
           {/* Brand Logo with Purple Tech Accent */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="Sunext — Trang chủ">
             <div className="w-8.5 h-8.5 rounded-lg bg-[#FAF8FC] border border-[#E7E7E5] flex items-center justify-center transition-transform group-hover:scale-105 group-hover:border-[#581C87]/40">
