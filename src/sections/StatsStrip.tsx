@@ -70,16 +70,15 @@ export function StatsStrip() {
       className="relative w-full pt-28 sm:pt-36 pb-20 sm:pb-28 px-6 md:px-12 lg:px-20 border-b border-[#E7E7E5] scroll-mt-20 overflow-hidden"
       style={{
         background: `
-          radial-gradient(ellipse 60% 50% at 85% -10%, rgba(242, 120, 35, 0.08) 0%, transparent 65%),
-          radial-gradient(ellipse 40% 40% at 10% 80%, rgba(105, 64, 190, 0.04) 0%, transparent 70%),
+          radial-gradient(circle at 50% 25%, rgba(249, 115, 22, 0.08) 0%, rgba(105, 64, 190, 0.03) 40%, transparent 70%),
           #F8F8F6
         `,
       }}
       data-stats-strip
     >
-      {/* Background Persistent Orbital System Arc (Linking back to Sun) */}
+      {/* Background Persistent Orbital System Arc (Connecting back to Sun system) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg viewBox="0 0 1440 450" fill="none" className="w-full h-full opacity-60">
+        <svg viewBox="0 0 1440 450" fill="none" className="w-full h-full opacity-50">
           <path
             d="M -60 120 C 320 40, 980 40, 1500 120"
             stroke="#E2E0D8"
@@ -97,93 +96,91 @@ export function StatsStrip() {
 
       <div className="max-w-[1280px] mx-auto relative z-10">
         
-        {/* Confident Heading: Exactly "Kết quả được đo." */}
-        <div className="mb-14 sm:mb-18">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-2 block">
+        {/* Confident Heading: 52-64px scale */}
+        <div className="mb-14 sm:mb-20">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
             Hạ Tầng Vận Hành Thực Tế
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
             Kết quả được đo.
           </h2>
         </div>
 
-        {/* Unified Operational Metrics Flow: 99.8% (Quality) ➔ 24h➔<5m (Speed) ➔ −75% (Efficiency) */}
+        {/* Unified Operational Metrics: 99.8% ────── <5m ────── −75% (Zero Card Chrome) */}
         <div className="relative mb-20 sm:mb-24">
           
-          {/* Connecting System Flow Beam */}
-          <div className="hidden lg:block absolute top-[52px] left-[15%] right-[15%] h-[1.5px] bg-[#E5E3DC] z-0">
-            <div
-              className="h-full bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-1000 ease-out"
-              style={{ width: hasAnimated ? '100%' : '0%' }}
-            />
+          {/* Continuous Left-to-Right Connecting Beam with Traveling Light Pulse */}
+          <div className="hidden md:block absolute top-[68px] lg:top-[76px] left-[4%] right-[4%] h-[1.5px] pointer-events-none z-0">
+            <div className="w-full h-full bg-[#E5E3DC]" />
+            {/* Active Glow Pulse Moving Left -> Right (Quality -> Speed -> Efficiency) */}
+            <div className="absolute top-1/2 -translate-y-1/2 h-[3px] w-28 bg-gradient-to-r from-transparent via-[#F97316] to-transparent rounded-full blur-[1px] animate-pulse-travel" />
+            <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#F97316] shadow-[0_0_8px_#F97316] animate-pulse-travel" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative z-10">
             
-            {/* Metric 01: 99.8% (Quality) */}
-            <div className="flex flex-col bg-white/70 backdrop-blur-xs p-6 rounded-2xl border border-[#E7E7E5]/70 shadow-xs">
+            {/* Metric 01: 99.8% (Quality / Accuracy) */}
+            <div className="flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#581C87]" />
-                <span className="text-xs font-mono text-[#747474] uppercase tracking-wider">
-                  Chất Lượng Dữ Liệu
+                <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold">
+                  Accuracy · Chất lượng
                 </span>
               </div>
-              <div className="text-5xl sm:text-6xl lg:text-[4.75rem] font-light tracking-tighter text-[#0A0A0A] leading-none mb-3 tabular-nums">
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#0A0A0A] leading-none mb-4 tabular-nums">
                 {accuracyVal}%
               </div>
-              <div className="text-sm font-medium text-[#0A0A0A]">
+              <div className="text-base font-medium text-[#0A0A0A] mb-1">
                 Độ chính xác kiểm định
               </div>
-              <div className="text-xs text-[#747474] mt-1 font-normal">
+              <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
                 Kiểm chứng trên mẫu 2,000–5,000 bản ghi dữ liệu thực tế.
-              </div>
+              </p>
             </div>
 
-            {/* Metric 02: 24h ➔ <5m (Speed) */}
-            <div className="flex flex-col bg-white/70 backdrop-blur-xs p-6 rounded-2xl border border-[#E7E7E5]/70 shadow-xs">
+            {/* Metric 02: <5m (Speed / Response) */}
+            <div className="flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
-                <span className="text-xs font-mono text-[#747474] uppercase tracking-wider">
-                  Tốc Độ Phản Hồi
+                <span className="text-xs font-mono uppercase tracking-wider text-[#7000FF] font-semibold">
+                  Response · Tốc độ
                 </span>
-              </div>
-              <div className="flex items-baseline gap-2 mb-3 leading-none">
-                <div className="text-5xl sm:text-6xl lg:text-[4.75rem] font-light tracking-tighter text-[#0A0A0A] leading-none tabular-nums whitespace-nowrap">
-                  {showFastResponse ? (
-                    <span className="animate-in fade-in duration-300">&lt; 5m</span>
-                  ) : (
-                    <span className="text-[#A3A3A3] line-through decoration-red-400">24h</span>
-                  )}
-                </div>
-                <span className="text-xs font-mono text-[#EA580C] font-semibold bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
+                <span className="text-[10px] font-mono text-[#EA580C] bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200 ml-1">
                   TỪ 24H
                 </span>
               </div>
-              <div className="text-sm font-medium text-[#0A0A0A]">
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#0A0A0A] leading-none mb-4 tabular-nums whitespace-nowrap">
+                {showFastResponse ? (
+                  <span className="animate-in fade-in duration-300">&lt; 5m</span>
+                ) : (
+                  <span className="text-[#A3A3A3] line-through decoration-red-400">24h</span>
+                )}
+              </div>
+              <div className="text-base font-medium text-[#0A0A0A] mb-1">
                 Thời gian phản hồi nghiệp vụ
               </div>
-              <div className="text-xs text-[#747474] mt-1 font-normal">
+              <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
                 Tra cứu thông tin, dự toán tài chính và sinh tài liệu tức thì.
-              </div>
+              </p>
             </div>
 
-            {/* Metric 03: −75% (Efficiency) */}
-            <div className="flex flex-col bg-white/70 backdrop-blur-xs p-6 rounded-2xl border border-[#FDBA74]/50 shadow-xs">
+            {/* Metric 03: −75% (Efficiency / Processing) */}
+            <div className="flex flex-col">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-                <span className="text-xs font-mono text-[#EA580C] uppercase tracking-wider font-semibold">
-                  Hiệu Suất P&L
+                <span className="text-xs font-mono uppercase tracking-wider text-[#EA580C] font-semibold">
+                  Processing · Hiệu quả
                 </span>
               </div>
-              <div className="text-5xl sm:text-6xl lg:text-[4.75rem] font-light tracking-tighter text-[#EA580C] leading-none mb-3 tabular-nums">
+              <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-light tracking-tighter text-[#EA580C] leading-none mb-4 tabular-nums">
                 −75%
               </div>
-              <div className="text-sm font-medium text-[#0A0A0A]">
+              <div className="text-base font-medium text-[#0A0A0A] mb-1">
                 Thời gian xử lý chu kỳ
               </div>
-              <div className="text-xs text-[#747474] mt-1 font-normal">
-                Rút ngắn thời gian từ 3 ngày xuống 2 giờ làm việc.
-              </div>
+              <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
+                Rút ngắn thời gian xử lý chu kỳ từ 3 ngày xuống 2 giờ làm việc.
+              </p>
             </div>
 
           </div>

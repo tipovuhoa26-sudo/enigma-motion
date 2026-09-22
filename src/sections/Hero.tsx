@@ -44,14 +44,14 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       className="relative w-full min-h-[calc(100vh-80px)] px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
       data-motion="hero"
     >
-      <div className="max-w-[1360px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 items-center relative z-10 my-auto">
+      <div className="max-w-[1360px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10 my-auto">
         
         {/* Left Column: 1 Bold Statement + 1 Focused Lead Sentence + 2 Clean CTAs */}
-        <div data-hero-left className="lg:col-span-7 flex flex-col justify-center max-w-[720px]">
+        <div data-hero-left className="lg:col-span-6 flex flex-col justify-center max-w-[680px]">
           
-          {/* Huge Editorial H1 (Zero collision, Gold ratio font sizing) */}
+          {/* Huge Editorial H1 (Scaled up +12%, confident Cloudflare-grade hierarchy) */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.25rem] 2xl:text-[3.65rem] font-light tracking-tight text-[#0A0A0A] leading-[1.14] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.15rem] xl:text-[3.75rem] 2xl:text-[4.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12] mb-6"
             data-hero-headline
           >
             <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A] md:whitespace-nowrap">
@@ -64,7 +64,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           </h1>
 
           {/* Focused Lead Sentence (≤ 18 words, sharp & enterprise) */}
-          <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[580px] leading-relaxed mb-9 font-normal">
+          <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[560px] leading-relaxed mb-9 font-normal">
             Sunext chuẩn hóa quy trình, trao quyền đội ngũ và triển khai AI nghiệm thu theo P&L định lượng.
           </p>
 
@@ -86,10 +86,10 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           </div>
         </div>
 
-        {/* Right Column: Living Atmospheric Sun & Orbit System */}
+        {/* Right Column: Living Atmospheric Sun & Orbit System (50-60% Viewport Presence) */}
         <div
           ref={visualRef}
-          className="lg:col-span-5 relative flex items-center justify-center lg:justify-end min-h-[380px] md:min-h-[460px] lg:min-h-[500px]"
+          className="lg:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[440px] md:min-h-[520px] lg:min-h-[600px] xl:min-h-[660px] overflow-visible"
           data-hero-visual
         >
           <AiTransformationNetwork />

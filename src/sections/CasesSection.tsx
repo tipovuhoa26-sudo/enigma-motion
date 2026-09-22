@@ -1,236 +1,162 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
+import React from 'react';
+import Link from 'next/link';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 
 export function CasesSection() {
-  const [activeCase, setActiveCase] = useState<'vinhomes' | 'bidv'>('vinhomes');
-
   return (
     <section
       id="cases"
-      className="relative w-full py-20 sm:py-28 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full py-28 sm:py-36 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto">
-        
-        {/* Section Header (≤ 7 words) */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-2 block">
-              Hiệu Quả Thực Tế · Before ➔ After
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#0A0A0A] leading-tight">
-              Đo lường trên <span className="font-normal text-[#0A0A0A]">kết quả vận hành.</span>
-            </h2>
-          </div>
+      {/* Background Soft Atmospheric Ambient Glow */}
+      <div 
+        className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[540px] h-[540px] rounded-full pointer-events-none -z-0 opacity-45"
+        style={{
+          background: 'radial-gradient(circle, rgba(249,115,22,0.08) 0%, rgba(105,64,190,0.03) 45%, transparent 70%)',
+          filter: 'blur(50px)',
+        }}
+      />
 
-          {/* Minimal Case Switcher */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setActiveCase('vinhomes')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
-                activeCase === 'vinhomes'
-                  ? 'bg-[#0A0A0A] text-white shadow-xs'
-                  : 'bg-white text-[#747474] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
-              }`}
-            >
-              01 · Vinhomes Green Paradise
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveCase('bidv')}
-              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
-                activeCase === 'bidv'
-                  ? 'bg-[#0A0A0A] text-white shadow-xs'
-                  : 'bg-white text-[#747474] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
-              }`}
-            >
-              02 · Ngân Hàng BIDV
-            </button>
-          </div>
+      <div className="max-w-[1280px] mx-auto relative z-10">
+        
+        {/* Confident Heading */}
+        <div className="mb-16 sm:mb-24">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
+            Hiệu Quả Thực Tế
+          </span>
+          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
+            Đo lường trên kết quả vận hành.
+          </h2>
         </div>
 
-        {/* ==================================================================== */}
-        {/* 1 FLAGSHIP CASE: BEFORE ➔ AFTER WITH 1 MONUMENTAL METRIC */}
-        {/* ==================================================================== */}
-        {activeCase === 'vinhomes' ? (
-          <div className="w-full bg-white rounded-2xl border border-[#E7E7E5] p-6 sm:p-10 shadow-xs">
+        {/* Scene Layout: Left Before ➔ After Narrative | Right Living Workflow Morph */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Column: VINHOMES · 24 GIỜ ➔ < 5 PHÚT · 500+ MÔI GIỚI */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
             
-            {/* Case Title & Scope */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E7E7E5] mb-8">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#F97316]" />
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#581C87]">
+                VINHOMES GREEN PARADISE
+              </span>
+            </div>
+
+            {/* Before ➔ After Vertical Flow */}
+            <div className="space-y-4 mb-8">
               <div>
-                <span className="text-xs font-mono text-[#581C87] font-semibold block mb-1">
-                  CASE VINHOMES GREEN PARADISE
+                <span className="text-xs font-mono text-[#747474] uppercase tracking-wider block mb-1">
+                  Trước khi có AI (Before)
                 </span>
-                <h3 className="text-xl sm:text-2xl font-light text-[#0A0A0A]">
-                  500+ Môi Giới BĐS Làm Chủ AI
-                </h3>
-              </div>
-              <div className="text-xs font-mono text-[#747474] bg-[#F8F8F6] px-3 py-1.5 rounded-lg border border-[#E7E7E5] self-start sm:self-auto">
-                Bất động sản · Sales Enablement
-              </div>
-            </div>
-
-            {/* Before ➔ After Side-by-Side Comparison */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
-              
-              {/* BEFORE (Muted Gray / Friction) */}
-              <div className="p-6 rounded-xl bg-[#FAF8F6] border border-[#EBE8E1] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#747474] uppercase mb-4">
-                    <Clock className="w-3.5 h-3.5 text-[#747474]" />
-                    <span>TRƯỚC KHI CÓ AI (BEFORE)</span>
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-light text-[#747474] tracking-tight mb-4">
-                    24 giờ
-                  </div>
-                  <ul className="space-y-3 text-xs sm:text-sm text-[#747474]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-red-400 font-bold mt-0.5">✕</span>
-                      <span>Tra cứu giỏ hàng phân tán và tính lịch trả góp thủ công bằng Excel.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-red-400 font-bold mt-0.5">✕</span>
-                      <span>Chờ đợi đội ngũ thiết kế media dự án, mất cơ hội chốt khách nóng.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-red-400 font-bold mt-0.5">✕</span>
-                      <span>Quên chăm sóc khách hàng cũ, tỷ lệ kích hoạt lại dưới 15%.</span>
-                    </li>
-                  </ul>
+                <div className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] line-through decoration-red-400/60 tabular-nums">
+                  24 GIỜ
                 </div>
               </div>
 
-              {/* AFTER (Sunext Orange / High Efficiency) */}
-              <div className="p-6 rounded-xl bg-[#FFFDF9] border border-[#FDBA74]/60 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#EA580C] uppercase mb-4">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#EA580C]" />
-                    <span>SAU KHI TRIỂN KHAI SUNEXT (AFTER)</span>
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-light text-[#EA580C] tracking-tight mb-4">
-                    &lt; 5 phút
-                  </div>
-                  <ul className="space-y-3 text-xs sm:text-sm text-[#0A0A0A]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
-                      <span>Chatbot AI 24/7 tra cứu giỏ hàng và dự toán vay trong 30 giây.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
-                      <span>Tự sinh Landing page phân khu và kịch bản video AI trong 2 phút.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
-                      <span>Hệ thống tự động kích hoạt lại 70% khách cũ, gấp đôi tỷ lệ hẹn thực địa.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-
-            {/* 1 Big Quantifiable Metric */}
-            <div className="pt-6 border-t border-[#E7E7E5] flex flex-wrap items-baseline justify-between gap-4">
-              <div className="flex items-baseline gap-4">
-                <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
-                  500+
+              <div className="flex items-center gap-3 pl-2 py-1 text-[#F97316]">
+                <ArrowDown className="w-5 h-5 animate-bounce" />
+                <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#EA580C]">
+                  Sunext AI Enablement
                 </span>
-                <div className="text-sm font-medium text-[#0A0A0A]">
-                  Môi giới BĐS làm chủ công cụ AI
+              </div>
+
+              <div>
+                <span className="text-xs font-mono text-[#EA580C] uppercase tracking-wider block mb-1">
+                  Sau khi triển khai (After)
+                </span>
+                <div className="text-5xl sm:text-6xl lg:text-7xl font-light text-[#EA580C] tracking-tight tabular-nums">
+                  &lt; 5 PHÚT
                 </div>
               </div>
-              <div className="text-xs font-mono text-[#059669] font-semibold">
-                Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp tăng 100%
+            </div>
+
+            {/* 1 Dominant Proof Metric */}
+            <div className="pt-6 border-t border-[#E7E7E5] flex items-baseline gap-4 mb-8">
+              <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
+                500+
+              </span>
+              <div>
+                <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
+                  Môi giới làm chủ AI
+                </div>
+                <div className="text-xs text-[#747474] font-normal mt-0.5">
+                  Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
+                </div>
               </div>
             </div>
+
+            {/* Optional Clean Link */}
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#0A0A0A] hover:text-[#F97316] transition-colors group cursor-pointer"
+            >
+              <span>Xem phân tích kiến trúc triển khai</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
 
           </div>
-        ) : (
-          <div className="w-full bg-white rounded-2xl border border-[#E7E7E5] p-6 sm:p-10 shadow-xs">
-            
-            {/* BIDV Case */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E7E7E5] mb-8">
-              <div>
-                <span className="text-xs font-mono text-[#006850] font-semibold block mb-1">
-                  CASE NGÂN HÀNG BIDV
-                </span>
-                <h3 className="text-xl sm:text-2xl font-light text-[#0A0A0A]">
-                  Rà Soát Điều Kiện Tín Dụng AI
-                </h3>
-              </div>
-              <div className="text-xs font-mono text-[#747474] bg-[#F8F8F6] px-3 py-1.5 rounded-lg border border-[#E7E7E5] self-start sm:self-auto">
-                Tài chính Ngân hàng · Rà soát tín dụng
-              </div>
-            </div>
 
-            {/* Before ➔ After */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
+          {/* Right Column: Animated Operational Flow (LEAD ➔ AI ➔ RESPONSE) */}
+          <div className="lg:col-span-6 w-full flex items-center justify-center select-none">
+            <div className="w-full max-w-[520px] p-6 sm:p-8 rounded-2xl bg-white border border-[#E7E7E5] shadow-xs relative overflow-hidden">
               
-              <div className="p-6 rounded-xl bg-[#FAF8F6] border border-[#EBE8E1] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#747474] uppercase mb-4">
-                    <Clock className="w-3.5 h-3.5 text-[#747474]" />
-                    <span>TRƯỚC KHI CÓ AI (BEFORE)</span>
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-light text-[#747474] tracking-tight mb-4">
-                    2 ngày
-                  </div>
-                  <ul className="space-y-3 text-xs sm:text-sm text-[#747474]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-red-400 font-bold mt-0.5">✕</span>
-                      <span>Đọc hàng trăm trang hồ sơ pháp lý và sao kê tài chính phân tán.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-red-400 font-bold mt-0.5">✕</span>
-                      <span>Tính toán chỉ số D/E, DSCR thủ công, dễ sai sót và mất thời gian.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="p-6 rounded-xl bg-[#F0FDF4] border border-[#86EFAC]/60 flex flex-col justify-between shadow-xs">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#006850] uppercase mb-4">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#006850]" />
-                    <span>SAU KHI TRIỂN KHAI SUNEXT (AFTER)</span>
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-light text-[#006850] tracking-tight mb-4">
-                    30 phút
-                  </div>
-                  <ul className="space-y-3 text-xs sm:text-sm text-[#0A0A0A]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
-                      <span>Bóc tách BCTC & sao kê tự động trong 60 giây.</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
-                      <span>Đối chiếu 100% checklist điều kiện cấp tín dụng và sinh tờ trình chuẩn.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-
-            {/* 1 Big Metric */}
-            <div className="pt-6 border-t border-[#E7E7E5] flex flex-wrap items-baseline justify-between gap-4">
-              <div className="flex items-baseline gap-4">
-                <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
-                  45
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E7E7E5] text-xs font-mono text-[#747474]">
+                <span>LUỒNG XỬ LÝ THỰC TẾ</span>
+                <span className="text-[#059669] font-semibold flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-pulse" />
+                  Live System
                 </span>
-                <div className="text-sm font-medium text-[#0A0A0A]">
-                  Cán bộ tín dụng & quản lý chi nhánh làm chủ quy trình
-                </div>
               </div>
-              <div className="text-xs font-mono text-[#006850] font-semibold">
-                Nghiệm thu: 100% Khớp mẫu biểu tờ trình thẩm định
-              </div>
-            </div>
 
+              {/* Vertical Flow Diagram */}
+              <div className="space-y-4 relative">
+                
+                {/* Connecting Vertical Laser Line */}
+                <div className="absolute top-6 bottom-6 left-6 w-[2px] bg-[#E7E7E5] -z-0">
+                  <div className="w-full h-1/2 bg-gradient-to-b from-[#581C87] to-[#F97316] animate-pulse" />
+                </div>
+
+                {/* Step 1: LEAD */}
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#F5F3FF] border border-[#DDD6FE] text-[#581C87] font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                    01
+                  </div>
+                  <div className="flex-1 p-3.5 rounded-xl bg-[#F9F9F8] border border-[#E7E7E5]">
+                    <div className="text-xs font-mono font-bold text-[#581C87] uppercase">LEAD INPUT</div>
+                    <div className="text-sm font-medium text-[#0A0A0A]">Khách quan tâm phân khu & dự toán vay</div>
+                  </div>
+                </div>
+
+                {/* Step 2: AI ENGINE */}
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#FFF7ED] border border-[#FDBA74] text-[#EA580C] font-mono font-bold text-xs flex items-center justify-center shrink-0 shadow-sm shadow-orange-500/10">
+                    AI
+                  </div>
+                  <div className="flex-1 p-3.5 rounded-xl bg-orange-50/50 border border-orange-200/80">
+                    <div className="text-xs font-mono font-bold text-[#EA580C] uppercase">SUNEXT AI CO-WORKER</div>
+                    <div className="text-sm font-medium text-[#0A0A0A]">Tra cứu giỏ hàng ERP & tính bảng trả góp (30 giây)</div>
+                  </div>
+                </div>
+
+                {/* Step 3: RESPONSE */}
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#059669] font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                    ✓
+                  </div>
+                  <div className="flex-1 p-3.5 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0]">
+                    <div className="text-xs font-mono font-bold text-[#059669] uppercase">RESPONSE OUTPUT</div>
+                    <div className="text-sm font-medium text-[#0A0A0A]">Gửi báo giá & kịch bản tư vấn hoàn chỉnh (&lt; 5m)</div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
-        )}
+
+        </div>
 
       </div>
     </section>

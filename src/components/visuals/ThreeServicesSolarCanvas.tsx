@@ -391,9 +391,9 @@ export function ThreeServicesSolarCanvas({ activePillar, onSelectPillar }: Three
       {/* 3 Dedicated Solar Pillar Buttons (Below Drawing) */}
       <div className="grid grid-cols-3 gap-2 sm:gap-4 w-full max-w-[760px] mt-6 bg-[#F9F9F8] p-1.5 rounded-2xl border border-[#E7E7E5]">
         {[
-          { id: 1, tag: '01 · ĐÀO TẠO', name: 'Lăng Kính SOP Nhân Sự', standard: '100% Tự chủ quy trình' },
-          { id: 2, tag: '02 · TƯ VẤN', name: 'La Bàn Radar ROI', standard: 'Payback < 4 tháng' },
-          { id: 3, tag: '03 · TRIỂN KHAI', name: 'Chòm Sao Multi-Agent', standard: '100% Bàn giao mã nguồn' },
+          { id: 1, tag: '01 · ĐÀO TẠO', name: 'Đào Tạo Tự Chủ', standard: '100% Tự chủ quy trình' },
+          { id: 2, tag: '02 · TƯ VẤN', name: 'Tư Vấn P&L', standard: 'Payback < 4 tháng' },
+          { id: 3, tag: '03 · TRIỂN KHAI', name: 'Triển Khai Multi-Agent', standard: '100% Bàn giao mã nguồn' },
         ].map((p) => (
           <button
             key={p.id}

@@ -144,7 +144,7 @@ export function MethodStorytellingSection() {
                         BƯỚC {step.num}
                       </div>
 
-                      <h2 className="text-3xl sm:text-4xl lg:text-[2.65rem] font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
+                      <h2 className="text-3xl sm:text-4xl lg:text-[3.15rem] font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
                         {step.title}
                       </h2>
 
@@ -155,7 +155,7 @@ export function MethodStorytellingSection() {
 
                     {/* Metric Display */}
                     <div className="pt-5 border-t border-[#E7E7E5] flex items-baseline gap-4">
-                      <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
+                      <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
                         {step.proofNum}
                       </span>
                       <div className="text-xs sm:text-sm font-medium text-[#747474]">
@@ -167,8 +167,8 @@ export function MethodStorytellingSection() {
               })}
             </div>
 
-            {/* Right Column: Evolving System Visual */}
-            <div className="lg:col-span-7 w-full bg-white rounded-2xl border border-[#E7E7E5] p-3 sm:p-5 flex items-center justify-center relative overflow-hidden shadow-xs">
+            {/* Right Column: Evolving System Visual (Lives Directly on Section Canvas, Zero Card Chrome) */}
+            <div className="lg:col-span-7 w-full flex items-center justify-center relative overflow-visible">
               <MethodSolarCanvas activeStep={activeStep} />
             </div>
 

@@ -1,201 +1,162 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface Gate {
   id: string;
   name: string;
   sub: string;
-  action: string;
-  metric: string;
+  isOutcome?: boolean;
 }
 
 const GATES: Gate[] = [
-  {
-    id: 'G1',
-    name: 'DISCOVER',
-    sub: 'Tọa độ bài toán',
-    action: 'Khảo sát hiện trạng & xác thực bài toán có ROI định lượng trước khi lập trình.',
-    metric: 'Payback < 4 tháng',
-  },
-  {
-    id: 'G2',
-    name: 'PILOT',
-    sub: 'Kiểm chứng PoC',
-    action: 'Kiểm chứng trên mẫu 2,000–5,000 bản ghi dữ liệu thực tế của doanh nghiệp.',
-    metric: 'Độ chính xác > 99%',
-  },
-  {
-    id: 'G3',
-    name: 'DEPLOY',
-    sub: 'Ranh giới Private VPC',
-    action: 'Kết nối trực tiếp vào ERP/CRM trong ranh giới cô lập, bảo mật tuyệt đối.',
-    metric: 'Zero-Leak VPC',
-  },
-  {
-    id: 'G4',
-    name: 'SCALE',
-    sub: 'Doanh nghiệp tự vận hành',
-    action: 'Bàn giao 100% mã nguồn, quy trình SOP và chuyển giao toàn quyền đội ngũ.',
-    metric: '100% Client Operated',
-  },
-];
-
-const CAPABILITIES = [
-  {
-    title: 'Tư vấn',
-    tagline: 'Tìm đúng bài toán có ROI.',
-    desc: 'Định lượng giá trị kinh tế và khả năng thu hồi vốn trước khi đầu tư.',
-  },
-  {
-    title: 'Đào tạo',
-    tagline: 'Đội ngũ tự chủ với AI.',
-    desc: 'Huấn luyện thực chiến theo vai trò nghiệp vụ, không dạy lý thuyết đại trà.',
-  },
-  {
-    title: 'Triển khai',
-    tagline: 'Đưa AI vào hệ thống thật.',
-    desc: 'Tích hợp sâu vào ERP/CRM hiện hữu với SLA và cam kết bảo mật cao nhất.',
-  },
+  { id: 'G1', name: 'DISCOVER', sub: 'Tọa độ bài toán' },
+  { id: 'G2', name: 'PILOT', sub: 'Kiểm chứng PoC' },
+  { id: 'G3', name: 'DEPLOY', sub: 'Private VPC' },
+  { id: 'G4', name: 'SCALE', sub: 'Client operated', isOutcome: true },
 ];
 
 export function FourGatesProgressSection() {
-  const [activeGateIndex, setActiveGateIndex] = useState<number>(3); // Default to G4 (Outcome)
-  const currentGate = GATES[activeGateIndex];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState<number>(3); // All 4 illuminated by default
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Play progression animation sequence: 0 -> 1 -> 2 -> 3
+          setActiveStep(0);
+          const t1 = setTimeout(() => setActiveStep(1), 500);
+          const t2 = setTimeout(() => setActiveStep(2), 1000);
+          const t3 = setTimeout(() => setActiveStep(3), 1500);
+
+          return () => {
+            clearTimeout(t1);
+            clearTimeout(t2);
+            clearTimeout(t3);
+          };
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
+      ref={containerRef}
       id="delivery"
-      className="relative w-full py-20 sm:py-28 px-6 md:px-12 lg:px-20 bg-white border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full py-28 sm:py-36 px-6 md:px-12 lg:px-20 bg-white border-b border-[#E7E7E5] overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto">
-        
-        {/* Section Headline (≤ 7 words) */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-2 block">
-              Kiểm Soát Rủi Ro · Lộ Trình Triển Khai
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#0A0A0A] leading-tight">
-              Kiểm soát qua <span className="font-normal text-[#0A0A0A]">4 chốt chặn.</span>
-            </h2>
-          </div>
+      {/* Background Subtle Flattened Orbit Connecting with Atmosphere */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40">
+        <svg viewBox="0 0 1440 320" fill="none" className="w-full h-full">
+          <path
+            d="M -100 160 C 350 240, 1090 240, 1540 160"
+            stroke="#E7E5DF"
+            strokeWidth="0.8"
+            strokeDasharray="4 8"
+          />
+        </svg>
+      </div>
 
-          <p className="text-base text-[#515151] max-w-[420px] leading-relaxed font-normal">
-            Mọi bài toán đều thẩm định qua 4 cửa ải trước khi bàn giao quyền tự vận hành cho doanh nghiệp.
-          </p>
+      <div className="max-w-[1280px] mx-auto relative z-10">
+        
+        {/* Section Headline: Confident Editorial Title (Zero paragraph clutter) */}
+        <div className="mb-20 sm:mb-28 text-left">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
+            Lộ Trình Triển Khai
+          </span>
+          <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-light tracking-tight text-[#0A0A0A] leading-tight">
+            Kiểm soát trước khi mở rộng.
+          </h2>
         </div>
 
         {/* ==================================================================== */}
-        {/* THE SINGLE PROGRESSION BEAM: ○────────○────────○────────● G4 IS ORANGE */}
+        {/* THE SINGLE PROGRESSION BEAM: DISCOVER ──── PILOT ──── DEPLOY ──── SCALE */}
         {/* ==================================================================== */}
-        <div className="w-full bg-[#F9F9F8] rounded-2xl border border-[#E7E7E5] p-6 sm:p-10 mb-12 shadow-xs">
+        <div className="relative w-full py-10 my-4 select-none">
           
-          {/* Progression Line Visualization */}
-          <div className="relative w-full my-6">
-            {/* Background Track */}
-            <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 h-[2px] bg-[#E7E7E5]" />
+          {/* Base Background Track Hairline */}
+          <div className="absolute top-[48px] sm:top-[56px] left-[5%] right-[5%] h-[2px] bg-[#E7E5DF] z-0" />
 
-            {/* Illuminated Active Line */}
-            <div
-              className="absolute top-1/2 left-0 -translate-y-1/2 h-[2.5px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-500"
-              style={{ width: `${(activeGateIndex / 3) * 100}%` }}
-            />
+          {/* Illuminated Progressive Beam */}
+          <div
+            className="absolute top-[48px] sm:top-[56px] left-[5%] h-[2.5px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-700 ease-out z-0"
+            style={{ width: `${(activeStep / 3) * 90}%` }}
+          />
 
-            {/* 4 Interactive Nodes */}
-            <div className="relative flex items-center justify-between z-10">
-              {GATES.map((gate, idx) => {
-                const isActive = activeGateIndex === idx;
-                const isPassed = activeGateIndex >= idx;
-                const isFinal = idx === 3;
+          {/* 4 Pure Nodes */}
+          <div className="relative flex items-center justify-between z-10">
+            {GATES.map((gate, idx) => {
+              const isPassed = activeStep >= idx;
+              const isCurrent = activeStep === idx;
+              const isScale = gate.isOutcome;
 
-                return (
-                  <button
-                    key={gate.id}
-                    type="button"
-                    onClick={() => setActiveGateIndex(idx)}
-                    className="flex flex-col items-center group cursor-pointer focus:outline-none"
-                  >
-                    {/* Circle Node */}
+              return (
+                <div
+                  key={gate.id}
+                  onClick={() => setActiveStep(idx)}
+                  className="flex flex-col items-center group cursor-pointer"
+                >
+                  {/* Outer Glowing Halo for Final Scale Node */}
+                  <div className="relative flex items-center justify-center">
+                    {isScale && isPassed && (
+                      <div className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-500/15 animate-ping opacity-60 pointer-events-none" />
+                    )}
+
+                    {/* Node Circle */}
                     <div
-                      className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center font-mono text-xs font-bold transition-all duration-300 ${
-                        isFinal && isPassed
-                          ? 'bg-[#F97316] text-white shadow-md shadow-orange-500/20 scale-110'
+                      className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center font-mono text-xs sm:text-sm font-bold transition-all duration-500 ${
+                        isScale && isPassed
+                          ? 'bg-[#F97316] text-white shadow-xl shadow-orange-500/30 scale-110 ring-4 ring-orange-100'
                           : isPassed
-                          ? 'bg-[#581C87] text-white'
-                          : 'bg-white text-[#747474] border border-[#E7E7E5] group-hover:border-[#581C87]'
+                          ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/15'
+                          : 'bg-white text-[#747474] border-2 border-[#E7E5DF]'
                       }`}
                     >
-                      {gate.id}
+                      {isPassed ? (
+                        <span>●</span>
+                      ) : (
+                        <span>○</span>
+                      )}
                     </div>
+                  </div>
 
-                    {/* Node Text Below */}
-                    <div className="mt-3 text-center">
-                      <div className={`text-xs font-mono font-semibold transition-colors ${
-                        isActive ? (isFinal ? 'text-[#F97316]' : 'text-[#0A0A0A]') : 'text-[#747474]'
-                      }`}>
-                        {gate.name}
-                      </div>
-                      <div className="text-[11px] text-[#A3A3A3] hidden sm:block">
+                  {/* Stage Label */}
+                  <div className="mt-5 text-center flex flex-col items-center">
+                    <span
+                      className={`text-xs sm:text-sm font-mono font-bold tracking-wider transition-colors ${
+                        isScale && isPassed
+                          ? 'text-[#EA580C]'
+                          : isPassed
+                          ? 'text-[#0A0A0A]'
+                          : 'text-[#A3A3A3]'
+                      }`}
+                    >
+                      {gate.name}
+                    </span>
+
+                    {/* Clean Subtitle or Outcome Callout */}
+                    {isScale ? (
+                      <span className="text-xs sm:text-sm font-mono font-bold text-[#EA580C] mt-1.5 px-2.5 py-0.5 rounded-full bg-orange-50 border border-orange-200/80 animate-in fade-in duration-300">
+                        Client operated.
+                      </span>
+                    ) : (
+                      <span className="text-xs text-[#747474] font-normal mt-1 hidden sm:block">
                         {gate.sub}
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {/* Active Gate Readout Card */}
-          <div className="mt-8 pt-6 border-t border-[#E7E7E5] flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold ${
-                activeGateIndex === 3
-                  ? 'bg-[#FFF7ED] text-[#F97316] border border-[#F97316]'
-                  : 'bg-[#FAF8FC] text-[#581C87] border border-[#581C87]/30'
-              }`}>
-                CHỐT CHẶN {currentGate.id}
-              </span>
-              <span className="text-sm sm:text-base font-normal text-[#515151]">
-                {currentGate.action}
-              </span>
-            </div>
-
-            <div className="text-xs font-mono text-[#747474] shrink-0">
-              Tiêu chuẩn: <span className="font-bold text-[#0A0A0A]">{currentGate.metric}</span>
-            </div>
-          </div>
-
-        </div>
-
-        {/* ==================================================================== */}
-        {/* 3 NĂNG LỰC ĐỒNG HÀNH (Lean 3-Column Integration, No Metaphor Clutter) */}
-        {/* ==================================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 mb-10">
-          {CAPABILITIES.map((cap) => (
-            <div key={cap.title} className="p-5 rounded-xl bg-white border border-[#E7E7E5]">
-              <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#581C87] mb-1">
-                {cap.title}
-              </div>
-              <div className="text-base font-medium text-[#0A0A0A] mb-2">
-                {cap.tagline}
-              </div>
-              <p className="text-xs text-[#747474] leading-relaxed">
-                {cap.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* 1 Proof Metric */}
-        <div className="flex items-baseline gap-4 pt-4 border-t border-[#E7E7E5]">
-          <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
-            100%
-          </span>
-          <div>
-            <div className="text-base font-medium text-[#0A0A0A]">Bàn giao mã nguồn & SOP</div>
-            <div className="text-xs font-mono text-[#747474]">Zero vendor lock-in · Doanh nghiệp tự vận hành bền vững</div>
-          </div>
         </div>
 
       </div>

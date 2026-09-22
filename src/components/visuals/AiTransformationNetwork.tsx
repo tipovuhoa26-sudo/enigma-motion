@@ -11,13 +11,13 @@ interface NetworkNode {
 }
 
 const NODES: NetworkNode[] = [
-  { id: 'strategy', name: 'Chiến Lược & P&L', angle: -90, distance: 180, metric: 'ROI Focus' },
-  { id: 'data', name: 'Dữ Liệu & RAG', angle: -45, distance: 184, metric: 'Private VPC' },
-  { id: 'people', name: 'Đội Ngũ Tự Chủ', angle: 0, distance: 178, metric: 'Enablement' },
-  { id: 'process', name: 'Quy Trình & SOP', angle: 45, distance: 184, metric: '−67% Time' },
-  { id: 'agents', name: 'Multi-Agents', angle: 90, distance: 180, metric: 'Autonomous' },
-  { id: 'automation', name: 'Tự Động Hóa', angle: 135, distance: 184, metric: 'Real-time' },
-  { id: 'governance', name: 'An Toàn & Bảo Mật', angle: 225, distance: 184, metric: 'Zero Leak' },
+  { id: 'strategy', name: 'Chiến Lược & P&L', angle: -90, distance: 245, metric: 'ROI Focus' },
+  { id: 'data', name: 'Dữ Liệu & RAG', angle: -45, distance: 250, metric: 'Private VPC' },
+  { id: 'people', name: 'Đội Ngũ Tự Chủ', angle: 0, distance: 240, metric: 'Enablement' },
+  { id: 'process', name: 'Quy Trình & SOP', angle: 45, distance: 250, metric: '−67% Time' },
+  { id: 'agents', name: 'Multi-Agents', angle: 90, distance: 245, metric: 'Autonomous' },
+  { id: 'automation', name: 'Tự Động Hóa', angle: 135, distance: 250, metric: 'Real-time' },
+  { id: 'governance', name: 'An Toàn & Bảo Mật', angle: 225, distance: 250, metric: 'Zero Leak' },
 ];
 
 export function AiTransformationNetwork() {
@@ -26,12 +26,12 @@ export function AiTransformationNetwork() {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Ultra-slow ambient sequence: gently illuminates one node every 4.5 seconds if not hovered
+  // Ultra-slow ambient sequence: sweeps one node every 5s if not hovered
   useEffect(() => {
     if (activeNode !== null) return;
     const interval = setInterval(() => {
       setAutoIndex((prev) => (prev + 1) % NODES.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(interval);
   }, [activeNode]);
 
@@ -42,7 +42,7 @@ export function AiTransformationNetwork() {
     const rect = containerRef.current.getBoundingClientRect();
     const relX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
     const relY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
-    setMouseOffset({ x: relX * 6, y: relY * 6 });
+    setMouseOffset({ x: relX * 8, y: relY * 8 });
   };
 
   const handleMouseLeave = () => {
@@ -50,37 +50,38 @@ export function AiTransformationNetwork() {
     setActiveNode(null);
   };
 
-  const cx = 270;
-  const cy = 270;
+  // Center coordinate in scaled 720x720 viewBox
+  const cx = 360;
+  const cy = 360;
 
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-[540px] xl:max-w-[580px] aspect-square flex items-center justify-center select-none font-sans"
+      className="relative w-full max-w-[620px] sm:max-w-[700px] lg:max-w-[780px] xl:max-w-[880px] 2xl:max-w-[960px] aspect-square flex items-center justify-center select-none font-sans overflow-visible -mr-6 lg:-mr-16 xl:-mr-24"
     >
-      {/* 1. Atmospheric Diffuse Halo extending 600-800px behind the Sun (Cloudflare-grade) */}
+      {/* 1. MONUMENTAL ATMOSPHERIC HALO (800-1100px Bleeding to right edge) */}
       <div 
-        className="absolute w-[640px] h-[640px] rounded-full pointer-events-none -z-10 animate-sun-halo"
+        className="absolute w-[800px] h-[800px] lg:w-[1050px] lg:h-[1050px] rounded-full pointer-events-none -z-10 animate-sun-halo"
         style={{
-          background: 'radial-gradient(circle, rgba(255,247,232,0.6) 0%, rgba(255,191,117,0.3) 18%, rgba(239,124,44,0.14) 38%, rgba(239,124,44,0.04) 58%, transparent 72%)',
-          filter: 'blur(50px)',
-          transform: 'scale(1.3)',
+          background: 'radial-gradient(circle, rgba(255,247,232,0.7) 0%, rgba(255,191,117,0.36) 18%, rgba(239,124,44,0.16) 40%, rgba(239,124,44,0.04) 62%, transparent 75%)',
+          filter: 'blur(65px)',
+          transform: 'scale(1.25)',
         }}
       />
 
-      {/* Secondary Soft Purple Atmosphere Layer */}
+      {/* Secondary Soft Violet/Purple Atmospheric Ring */}
       <div 
-        className="absolute w-[500px] h-[500px] rounded-full pointer-events-none -z-10"
+        className="absolute w-[700px] h-[700px] lg:w-[880px] lg:h-[880px] rounded-full pointer-events-none -z-10"
         style={{
-          background: 'radial-gradient(circle, rgba(105,64,190,0.07) 0%, rgba(105,64,190,0.02) 45%, transparent 70%)',
-          filter: 'blur(40px)',
+          background: 'radial-gradient(circle, rgba(105,64,190,0.08) 0%, rgba(105,64,190,0.02) 50%, transparent 72%)',
+          filter: 'blur(55px)',
         }}
       />
 
       <svg
-        viewBox="0 0 540 540"
+        viewBox="0 0 720 720"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{
@@ -91,7 +92,7 @@ export function AiTransformationNetwork() {
       >
         <defs>
           {/* Subtle Sun Core Radial Gradient */}
-          <radialGradient id="cf-sun-core" cx="42%" cy="38%" r="62%">
+          <radialGradient id="cf-sun-core-lg" cx="42%" cy="38%" r="62%">
             <stop offset="0%" stopColor="#FFF7ED" />
             <stop offset="20%" stopColor="#FFBF75" />
             <stop offset="50%" stopColor="#F97316" />
@@ -99,28 +100,28 @@ export function AiTransformationNetwork() {
           </radialGradient>
 
           {/* Active Ray Gradient */}
-          <linearGradient id="cf-ray-active" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#F97316" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#581C87" stopOpacity="0.3" />
+          <linearGradient id="cf-ray-active-lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="#581C87" stopOpacity="0.25" />
           </linearGradient>
 
-          {/* Ambient Glow */}
-          <radialGradient id="cf-sun-aura" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#F97316" stopOpacity="0.25" />
-            <stop offset="60%" stopColor="#FB923C" stopOpacity="0.08" />
+          {/* Ambient Sun Aura */}
+          <radialGradient id="cf-sun-aura-lg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.28" />
+            <stop offset="60%" stopColor="#FB923C" stopOpacity="0.09" />
             <stop offset="100%" stopColor="#6B21A8" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        {/* 2. Concentric Faint Orbital Lines (Fade gently into background) */}
-        <circle cx={cx} cy={cy} r="110" stroke="#E6E4DF" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.75" />
-        <circle cx={cx} cy={cy} r="182" stroke="#E1DFDA" strokeWidth="0.8" strokeDasharray="4 6" opacity="0.65" />
-        <circle cx={cx} cy={cy} r="248" stroke="#ECEAE5" strokeWidth="0.6" strokeDasharray="2 6" opacity="0.45" />
+        {/* 2. Concentric Grand Orbital Lines (Fade gently into atmospheric background) */}
+        <circle cx={cx} cy={cy} r="145" stroke="#E6E4DF" strokeWidth="0.8" strokeDasharray="3 5" opacity="0.75" />
+        <circle cx={cx} cy={cy} r="245" stroke="#E1DFDA" strokeWidth="0.8" strokeDasharray="4 7" opacity="0.65" />
+        <circle cx={cx} cy={cy} r="335" stroke="#ECEAE5" strokeWidth="0.6" strokeDasharray="3 8" opacity="0.45" />
 
         {/* Sun Outer Aura */}
-        <circle cx={cx} cy={cy} r="110" fill="url(#cf-sun-aura)" />
+        <circle cx={cx} cy={cy} r="150" fill="url(#cf-sun-aura-lg)" />
 
-        {/* 3. Subtle Hairline Connectors to Nodes */}
+        {/* 3. Connecting Rays from Center to Nodes */}
         {NODES.map((node) => {
           const rad = (node.angle * Math.PI) / 180;
           const x = cx + node.distance * Math.cos(rad);
@@ -134,10 +135,10 @@ export function AiTransformationNetwork() {
                 y1={cy}
                 x2={x}
                 y2={y}
-                stroke={isHighlighted ? 'url(#cf-ray-active)' : '#E7E5E0'}
-                strokeWidth={isHighlighted ? 1.5 : 0.8}
-                strokeDasharray={isHighlighted ? 'none' : '3 4'}
-                opacity={isHighlighted ? 0.9 : 0.4}
+                stroke={isHighlighted ? 'url(#cf-ray-active-lg)' : '#E7E5E0'}
+                strokeWidth={isHighlighted ? 1.8 : 0.8}
+                strokeDasharray={isHighlighted ? 'none' : '3 5'}
+                opacity={isHighlighted ? 0.95 : 0.4}
                 className="transition-all duration-500"
               />
 
@@ -146,7 +147,7 @@ export function AiTransformationNetwork() {
                 <circle
                   cx={cx + node.distance * 0.52 * Math.cos(rad)}
                   cy={cy + node.distance * 0.52 * Math.sin(rad)}
-                  r="2.5"
+                  r="3.5"
                   fill="#F97316"
                   className="animate-pulse"
                 />
@@ -186,8 +187,7 @@ export function AiTransformationNetwork() {
           const y = cy + node.distance * Math.sin(rad);
           const isHighlighted = currentHighlightedId === node.id;
 
-          // Label placement calculation: offset away from center
-          const labelDist = 26;
+          const labelDist = 32;
           const lx = Math.cos(rad) * labelDist;
           const ly = Math.sin(rad) * labelDist;
           const textAnchor = Math.cos(rad) > 0.3 ? 'start' : Math.cos(rad) < -0.3 ? 'end' : 'middle';
@@ -200,14 +200,14 @@ export function AiTransformationNetwork() {
               onMouseLeave={() => setActiveNode(null)}
               className="cursor-pointer"
             >
-              {/* Node Outer Halo (Gentle hover expansion) */}
+              {/* Outer Ring */}
               <circle
                 cx="0"
                 cy="0"
-                r={isHighlighted ? 16 : 8}
+                r={isHighlighted ? 20 : 10}
                 fill={isHighlighted ? '#FFFFFF' : 'transparent'}
                 stroke={isHighlighted ? '#F97316' : '#D5D3CC'}
-                strokeWidth={isHighlighted ? 1.5 : 0.8}
+                strokeWidth={isHighlighted ? 1.8 : 0.8}
                 opacity={isHighlighted ? 1 : 0.6}
                 className="transition-all duration-300"
               />
@@ -216,32 +216,31 @@ export function AiTransformationNetwork() {
               <circle
                 cx="0"
                 cy="0"
-                r={isHighlighted ? 5 : 3.5}
+                r={isHighlighted ? 6.5 : 4.5}
                 fill={isHighlighted ? '#F97316' : '#581C87'}
                 className="transition-all duration-300"
               />
 
-              {/* Single Reveal Label: ONLY VISIBLE WHEN THIS NODE IS HIGHLIGHTED */}
+              {/* Single Reveal Label: ONLY VISIBLE WHEN HIGHLIGHTED */}
               {isHighlighted && (
                 <g className="transition-all duration-300 ease-out" style={{ transform: `translate(${lx}px, ${ly}px)` }}>
-                  {/* Subtle Background Pill for high readability */}
                   <rect
-                    x={textAnchor === 'start' ? -6 : textAnchor === 'end' ? -98 : -52}
-                    y="-11"
-                    width="104"
-                    height="22"
-                    rx="5"
+                    x={textAnchor === 'start' ? -6 : textAnchor === 'end' ? -108 : -56}
+                    y="-13"
+                    width="114"
+                    height="26"
+                    rx="6"
                     fill="#0A0A0A"
-                    opacity="0.92"
-                    filter="drop-shadow(0 2px 8px rgba(0,0,0,0.12))"
+                    opacity="0.94"
+                    filter="drop-shadow(0 3px 10px rgba(0,0,0,0.15))"
                   />
                   <text
-                    x={textAnchor === 'start' ? 4 : textAnchor === 'end' ? -4 : 0}
+                    x={textAnchor === 'start' ? 5 : textAnchor === 'end' ? -5 : 0}
                     y="0"
                     textAnchor={textAnchor}
                     dominantBaseline="central"
                     fill="#FFFFFF"
-                    fontSize="9.5"
+                    fontSize="10"
                     fontFamily="system-ui, sans-serif"
                     fontWeight="500"
                     letterSpacing="0.01em"
@@ -254,12 +253,11 @@ export function AiTransformationNetwork() {
           );
         })}
 
-        {/* 5. Central Living Sun: Core (~90px) + Rotating Subtle Corona */}
+        {/* 5. Central Living Sun: Core (~100px) + Rotating Subtle Corona */}
         <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer">
-          {/* Slow Ambient Breathing Container */}
           <g className="animate-sun-breathe">
             {/* Outer Slow Rotating Ray Rings */}
-            <circle cx="0" cy="0" r="56" fill="none" stroke="#F97316" strokeWidth="0.8" strokeDasharray="3 8" opacity="0.45">
+            <circle cx="0" cy="0" r="74" fill="none" stroke="#F97316" strokeWidth="0.8" strokeDasharray="4 10" opacity="0.45">
               <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -270,7 +268,7 @@ export function AiTransformationNetwork() {
               />
             </circle>
 
-            <circle cx="0" cy="0" r="46" fill="none" stroke="#FB923C" strokeWidth="1" strokeDasharray="4 6" opacity="0.4">
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#FB923C" strokeWidth="1" strokeDasharray="5 7" opacity="0.4">
               <animateTransform
                 attributeName="transform"
                 type="rotate"
@@ -281,22 +279,22 @@ export function AiTransformationNetwork() {
               />
             </circle>
 
-            {/* Radiant Sun Disc Core */}
+            {/* Radiant Sun Disc Core (100px diameter) */}
             <circle
               cx="0"
               cy="0"
-              r="38"
-              fill="url(#cf-sun-core)"
-              filter="drop-shadow(0 4px 18px rgba(239,124,44,0.32))"
+              r="50"
+              fill="url(#cf-sun-core-lg)"
+              filter="drop-shadow(0 6px 24px rgba(239,124,44,0.36))"
               className="transition-transform duration-500 hover:scale-105"
             />
 
             {/* Inner Highlight Ring */}
-            <circle cx="0" cy="0" r="38" fill="none" stroke="#FFFFFF" strokeWidth="1.2" strokeOpacity="0.75" />
+            <circle cx="0" cy="0" r="50" fill="none" stroke="#FFFFFF" strokeWidth="1.4" strokeOpacity="0.75" />
 
             {/* Central Nucleus */}
-            <circle cx="0" cy="0" r="13" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
-            <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
+            <circle cx="0" cy="0" r="16" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
+            <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
           </g>
         </g>
       </svg>
