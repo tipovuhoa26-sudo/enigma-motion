@@ -96,16 +96,16 @@ export function CasesSection() {
               </span>
             </div>
 
-            {/* Level 3: Scale & Operational Proof */}
-            <div className="pt-6 border-t border-[#E7E7E5] flex items-baseline gap-4 mb-8">
-              <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
+            {/* Level 3: Scale & Operational Proof (Vertically Centered Optical Alignment) */}
+            <div className="pt-6 border-t border-[#E7E7E5] flex items-center gap-5 sm:gap-6 mb-8">
+              <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
                 500+
               </span>
-              <div>
-                <div className="text-base sm:text-lg font-medium text-[#0A0A0A]">
+              <div className="flex flex-col justify-center">
+                <div className="text-base sm:text-lg font-medium text-[#0A0A0A] leading-snug">
                   Môi giới làm chủ AI
                 </div>
-                <div className="text-xs sm:text-sm text-[#747474] font-normal mt-0.5">
+                <div className="text-xs sm:text-sm text-[#747474] font-normal mt-1 leading-normal">
                   Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
                 </div>
               </div>

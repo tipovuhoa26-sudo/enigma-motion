@@ -191,12 +191,12 @@ export function MethodStorytellingSection() {
                   </div>
                 </div>
 
-                {/* Fixed Metric Skeleton */}
-                <div className="pt-5 border-t border-[#E7E7E5] flex items-baseline gap-4 min-h-[76px]">
-                  <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
+                {/* Fixed Metric Skeleton (Vertically Centered Optical Alignment) */}
+                <div className="pt-5 border-t border-[#E7E7E5] flex items-center gap-4 min-h-[76px]">
+                  <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
                     {step.proofNum}
                   </span>
-                  <div className="text-xs sm:text-sm font-medium text-[#747474]">
+                  <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug">
                     {step.proofLabel}
                   </div>
                 </div>
