@@ -2,11 +2,10 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/Button';
 import { AiTransformationNetwork } from '@/components/visuals/AiTransformationNetwork';
-import { AiControlRoomDashboard } from '@/components/visuals/AiControlRoomDashboard';
-import { createHeroTimeline, setupHeroScrollChoreography } from '@/motion/timelines/hero';
+import { createHeroTimeline } from '@/motion/timelines/hero';
 
 interface HeroProps {
   autoPlayIntro?: boolean;
@@ -42,17 +41,17 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
     <section
       ref={containerRef}
       id="home"
-      className="relative w-full min-h-[calc(100vh-80px)] px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-12 lg:py-16 flex flex-col justify-center overflow-hidden bg-white hero-ambient-gradient"
+      className="relative w-full min-h-[calc(100vh-80px)] px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
       data-motion="hero"
     >
       <div className="max-w-[1360px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 items-center relative z-10 my-auto">
         
-        {/* Left Column: 1 Bold Proposition + 1 Paragraph + 2 Clean CTAs */}
+        {/* Left Column: 1 Bold Statement + 1 Focused Lead Sentence + 2 Clean CTAs */}
         <div data-hero-left className="lg:col-span-7 flex flex-col justify-center max-w-[720px]">
           
-          {/* Huge Editorial H1 (Harmonious responsive font sizes, zero overlap with visual) */}
+          {/* Huge Editorial H1 (Zero collision, Gold ratio font sizing) */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.25rem] 2xl:text-[3.65rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.65rem] xl:text-[3.25rem] 2xl:text-[3.65rem] font-light tracking-tight text-[#0A0A0A] leading-[1.14] mb-6"
             data-hero-headline
           >
             <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A] md:whitespace-nowrap">
@@ -64,12 +63,12 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             </span>
           </h1>
 
-          {/* Editorial Lead Copy: 18-20px, #515151 */}
+          {/* Focused Lead Sentence (≤ 18 words, sharp & enterprise) */}
           <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[580px] leading-relaxed mb-9 font-normal">
-            Chuyển đổi AI thực chất do bài toán kinh doanh dẫn dắt. Không bán tool đại trà, Sunext tái cấu trúc quy trình, trao quyền đội ngũ và nghiệm thu theo P&L định lượng.
+            Sunext chuẩn hóa quy trình, trao quyền đội ngũ và triển khai AI nghiệm thu theo P&L định lượng.
           </p>
 
-          {/* Primary Orange CTA + Clean Outline Secondary */}
+          {/* Primary Orange CTA + Clean Secondary Outline */}
           <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-4" data-hero-cta>
             <Link href="/#contact">
               <Button variant="orange" size="lg" className="rounded-xl font-medium shadow-sm hover:shadow-md cursor-pointer">
@@ -79,17 +78,18 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
             </Link>
 
             <Link href="/danh-gia-san-sang-ai">
-              <Button variant="outline" size="lg" className="rounded-xl font-medium cursor-pointer">
+              <Button variant="outline" size="lg" className="rounded-xl font-medium cursor-pointer bg-white/80 hover:bg-white border-[#D5D3CC]">
                 <span>Đo Độ Sẵn Sàng (12 Câu)</span>
+                <ArrowRight className="w-4 h-4 ml-1 opacity-70" />
               </Button>
             </Link>
           </div>
         </div>
 
-        {/* Right Column: 1 Signature AI Transformation Network Visual */}
+        {/* Right Column: Living Atmospheric Sun & Orbit System */}
         <div
           ref={visualRef}
-          className="lg:col-span-5 relative flex items-center justify-center lg:justify-end min-h-[360px] md:min-h-[460px] lg:min-h-[480px]"
+          className="lg:col-span-5 relative flex items-center justify-center lg:justify-end min-h-[380px] md:min-h-[460px] lg:min-h-[500px]"
           data-hero-visual
         >
           <AiTransformationNetwork />

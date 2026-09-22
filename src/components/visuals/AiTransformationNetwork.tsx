@@ -1,68 +1,53 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 interface NetworkNode {
   id: string;
   name: string;
-  subtitle: string;
   angle: number; // in degrees
   distance: number; // from center
-  category: 'core' | 'strategy' | 'execution' | 'governance';
-  tag: string;
   metric: string;
 }
 
 const NODES: NetworkNode[] = [
-  { id: 'strategy', name: 'Chiến Lược', subtitle: 'Strategy & ROI', angle: -90, distance: 178, category: 'strategy', tag: 'Cửa ải Gate 1-4', metric: 'P&L Direct' },
-  { id: 'data', name: 'Dữ Liệu Lõi', subtitle: 'Data Architecture', angle: -45, distance: 182, category: 'execution', tag: 'Vector DB & Mesh', metric: 'Clean Data' },
-  { id: 'people', name: 'Con Người', subtitle: 'People & Culture', angle: 0, distance: 176, category: 'strategy', tag: 'Làm chủ công cụ', metric: '70% Nỗ lực (BCG)' },
-  { id: 'process', name: 'Quy Trình', subtitle: 'Process & SOP', angle: 45, distance: 182, category: 'execution', tag: 'Chuẩn hóa luồng', metric: '100% Đồng bộ' },
-  { id: 'agents', name: 'Multi-Agents', subtitle: 'Autonomous Agents', angle: 90, distance: 178, category: 'execution', tag: 'Swarm Execution', metric: 'Real-time' },
-  { id: 'automation', name: 'Tự Động Hóa', subtitle: 'Automation & API', angle: 135, distance: 182, category: 'execution', tag: 'n8n & Pipelines', metric: '3d ➔ 2h' },
-  { id: 'knowledge', name: 'Tri Thức', subtitle: 'Knowledge Base', angle: 180, distance: 176, category: 'strategy', tag: 'RAG & Runbook', metric: 'Single Truth' },
-  { id: 'governance', name: 'Quản Trị', subtitle: 'Security & Safety', angle: 225, distance: 182, category: 'governance', tag: 'NDA & On-premise', metric: 'Zero Leak' },
+  { id: 'strategy', name: 'Chiến Lược & P&L', angle: -90, distance: 180, metric: 'ROI Focus' },
+  { id: 'data', name: 'Dữ Liệu & RAG', angle: -45, distance: 184, metric: 'Private VPC' },
+  { id: 'people', name: 'Đội Ngũ Tự Chủ', angle: 0, distance: 178, metric: 'Enablement' },
+  { id: 'process', name: 'Quy Trình & SOP', angle: 45, distance: 184, metric: '−67% Time' },
+  { id: 'agents', name: 'Multi-Agents', angle: 90, distance: 180, metric: 'Autonomous' },
+  { id: 'automation', name: 'Tự Động Hóa', angle: 135, distance: 184, metric: 'Real-time' },
+  { id: 'governance', name: 'An Toàn & Bảo Mật', angle: 225, distance: 184, metric: 'Zero Leak' },
 ];
-
-function getNodeLabelConfig(id: string) {
-  switch (id) {
-    case 'strategy':
-      return { lx: -40, ly: -34, w: 80, h: 24, tx: 0, ty: -19, anchor: 'middle' as const };
-    case 'agents':
-      return { lx: -42, ly: 14, w: 84, h: 24, tx: 0, ty: 29, anchor: 'middle' as const };
-    case 'people':
-      return { lx: 14, ly: -12, w: 72, h: 24, tx: 50, ty: 4, anchor: 'middle' as const };
-    case 'data':
-      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
-    case 'process':
-      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
-    case 'knowledge':
-      // Placed inwards towards center to prevent any protrusion into the left column
-      return { lx: 14, ly: -12, w: 72, h: 24, tx: 50, ty: 4, anchor: 'middle' as const };
-    case 'governance':
-      return { lx: -38, ly: -34, w: 76, h: 24, tx: 0, ty: -19, anchor: 'middle' as const };
-    case 'automation':
-      return { lx: -42, ly: 14, w: 84, h: 24, tx: 0, ty: 29, anchor: 'middle' as const };
-    default:
-      return { lx: 14, ly: -12, w: 76, h: 24, tx: 52, ty: 4, anchor: 'middle' as const };
-  }
-}
 
 export function AiTransformationNetwork() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
+  const [autoIndex, setAutoIndex] = useState<number>(0);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Ultra-slow ambient sequence: gently illuminates one node every 4.5 seconds if not hovered
+  useEffect(() => {
+    if (activeNode !== null) return;
+    const interval = setInterval(() => {
+      setAutoIndex((prev) => (prev + 1) % NODES.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [activeNode]);
+
+  const currentHighlightedId = activeNode || NODES[autoIndex]?.id;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const relX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
     const relY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
-    setMouseOffset({ x: relX * 5, y: relY * 5 });
+    setMouseOffset({ x: relX * 6, y: relY * 6 });
   };
 
   const handleMouseLeave = () => {
     setMouseOffset({ x: 0, y: 0 });
+    setActiveNode(null);
   };
 
   const cx = 270;
@@ -73,10 +58,26 @@ export function AiTransformationNetwork() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[440px] sm:max-w-[480px] lg:max-w-[460px] xl:max-w-[500px] 2xl:max-w-[520px] aspect-square flex items-center justify-center select-none font-sans"
+      className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-[540px] xl:max-w-[580px] aspect-square flex items-center justify-center select-none font-sans"
     >
-      {/* Background Soft Glow */}
-      <div className="absolute inset-0 bg-radial from-purple-500/[0.04] via-transparent to-transparent rounded-full pointer-events-none" />
+      {/* 1. Atmospheric Diffuse Halo extending 600-800px behind the Sun (Cloudflare-grade) */}
+      <div 
+        className="absolute w-[640px] h-[640px] rounded-full pointer-events-none -z-10 animate-sun-halo"
+        style={{
+          background: 'radial-gradient(circle, rgba(255,247,232,0.6) 0%, rgba(255,191,117,0.3) 18%, rgba(239,124,44,0.14) 38%, rgba(239,124,44,0.04) 58%, transparent 72%)',
+          filter: 'blur(50px)',
+          transform: 'scale(1.3)',
+        }}
+      />
+
+      {/* Secondary Soft Purple Atmosphere Layer */}
+      <div 
+        className="absolute w-[500px] h-[500px] rounded-full pointer-events-none -z-10"
+        style={{
+          background: 'radial-gradient(circle, rgba(105,64,190,0.07) 0%, rgba(105,64,190,0.02) 45%, transparent 70%)',
+          filter: 'blur(40px)',
+        }}
+      />
 
       <svg
         viewBox="0 0 540 540"
@@ -84,90 +85,77 @@ export function AiTransformationNetwork() {
         xmlns="http://www.w3.org/2000/svg"
         style={{
           transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
-          transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         className="w-full h-full block overflow-visible"
       >
         <defs>
-          {/* 5 Primitives: Dot Grid Pattern */}
-          <pattern id="network-dots" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1" fill="#E8E8E8" />
-          </pattern>
-
-          {/* Sun Solar Glow */}
-          <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#F97316" stopOpacity="0.32" />
-            <stop offset="55%" stopColor="#FB923C" stopOpacity="0.12" />
-            <stop offset="100%" stopColor="#6B21A8" stopOpacity="0" />
-          </radialGradient>
-
-          {/* Sun Core Radial Gradient */}
-          <radialGradient id="sun-core-grad" cx="38%" cy="36%" r="64%">
+          {/* Subtle Sun Core Radial Gradient */}
+          <radialGradient id="cf-sun-core" cx="42%" cy="38%" r="62%">
             <stop offset="0%" stopColor="#FFF7ED" />
-            <stop offset="25%" stopColor="#FB923C" />
-            <stop offset="70%" stopColor="#F97316" />
+            <stop offset="20%" stopColor="#FFBF75" />
+            <stop offset="50%" stopColor="#F97316" />
             <stop offset="100%" stopColor="#EA580C" />
           </radialGradient>
 
-          {/* Sun Rim Highlight */}
-          <linearGradient id="sun-rim-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.75" />
-            <stop offset="100%" stopColor="#C2410C" stopOpacity="0.25" />
+          {/* Active Ray Gradient */}
+          <linearGradient id="cf-ray-active" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#581C87" stopOpacity="0.3" />
           </linearGradient>
 
-          {/* Active Line Gradient */}
-          <linearGradient id="active-line-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#F97316" />
-            <stop offset="100%" stopColor="#6B21A8" />
-          </linearGradient>
+          {/* Ambient Glow */}
+          <radialGradient id="cf-sun-aura" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.25" />
+            <stop offset="60%" stopColor="#FB923C" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#6B21A8" stopOpacity="0" />
+          </radialGradient>
         </defs>
 
-        {/* Primitive 1: Background Subtle Coordinate Grid */}
-        <rect x="20" y="20" width="500" height="500" rx="20" fill="url(#network-dots)" opacity="0.6" />
+        {/* 2. Concentric Faint Orbital Lines (Fade gently into background) */}
+        <circle cx={cx} cy={cy} r="110" stroke="#E6E4DF" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.75" />
+        <circle cx={cx} cy={cy} r="182" stroke="#E1DFDA" strokeWidth="0.8" strokeDasharray="4 6" opacity="0.65" />
+        <circle cx={cx} cy={cy} r="248" stroke="#ECEAE5" strokeWidth="0.6" strokeDasharray="2 6" opacity="0.45" />
 
-        {/* Primitive 2: Concentric Orbital Circles */}
-        <circle cx={cx} cy={cy} r="120" stroke="#EAEAEA" strokeWidth="1" strokeDasharray="3 3" />
-        <circle cx={cx} cy={cy} r="190" stroke="#E2E0E8" strokeWidth="1" strokeDasharray="4 4" />
-        <circle cx={cx} cy={cy} r="250" stroke="#F0EFEA" strokeWidth="0.8" />
+        {/* Sun Outer Aura */}
+        <circle cx={cx} cy={cy} r="110" fill="url(#cf-sun-aura)" />
 
-        {/* Center Aura */}
-        <circle cx={cx} cy={cy} r="96" fill="url(#sun-glow)" />
-
-        {/* Primitive 3 & 4: Connecting Lines & Data Rays from Center to Nodes */}
-        {NODES.map((node, idx) => {
+        {/* 3. Subtle Hairline Connectors to Nodes */}
+        {NODES.map((node) => {
           const rad = (node.angle * Math.PI) / 180;
           const x = cx + node.distance * Math.cos(rad);
           const y = cy + node.distance * Math.sin(rad);
-          const isNodeActive = activeNode === node.id;
+          const isHighlighted = currentHighlightedId === node.id;
 
           return (
             <g key={`line-${node.id}`}>
-              {/* Static Hairline Connector with slow breathing */}
               <line
                 x1={cx}
                 y1={cy}
                 x2={x}
                 y2={y}
-                stroke={isNodeActive ? 'url(#active-line-grad)' : '#E5E3DC'}
-                strokeWidth={isNodeActive ? 2 : 1}
-                strokeDasharray={isNodeActive ? 'none' : '4 3'}
-                style={{ animationDelay: `${idx * 1.2}s` }}
-                className={`transition-colors duration-300 ${!isNodeActive ? 'animate-line-breathe' : ''}`}
+                stroke={isHighlighted ? 'url(#cf-ray-active)' : '#E7E5E0'}
+                strokeWidth={isHighlighted ? 1.5 : 0.8}
+                strokeDasharray={isHighlighted ? 'none' : '3 4'}
+                opacity={isHighlighted ? 0.9 : 0.4}
+                className="transition-all duration-500"
               />
 
-              {/* Data Flow Pulse Traveling Particle */}
-              <circle
-                cx={cx + (node.distance * 0.55) * Math.cos(rad)}
-                cy={cy + (node.distance * 0.55) * Math.sin(rad)}
-                r={isNodeActive ? 3.5 : 2}
-                fill={isNodeActive ? '#F97316' : '#581C87'}
-                className="animate-pulse"
-              />
+              {/* Data pulse particle along active ray */}
+              {isHighlighted && (
+                <circle
+                  cx={cx + node.distance * 0.52 * Math.cos(rad)}
+                  cy={cy + node.distance * 0.52 * Math.sin(rad)}
+                  r="2.5"
+                  fill="#F97316"
+                  className="animate-pulse"
+                />
+              )}
             </g>
           );
         })}
 
-        {/* Peripheral Connecting Web Lines (Between adjacent nodes) */}
+        {/* Subtle Web Lines between adjacent nodes */}
         {NODES.map((node, i) => {
           const nextNode = NODES[(i + 1) % NODES.length];
           const rad1 = (node.angle * Math.PI) / 180;
@@ -184,19 +172,25 @@ export function AiTransformationNetwork() {
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#EAE8E2"
-              strokeWidth="0.8"
-              opacity="0.8"
+              stroke="#E8E6E0"
+              strokeWidth="0.6"
+              opacity="0.35"
             />
           );
         })}
 
-        {/* 8 Satellite Nodes with Subtle Organic Breathing */}
-        {NODES.map((node, idx) => {
+        {/* 4. Nodes: Clean Dots by Default; ONLY 1 Node Reveals Label When Active */}
+        {NODES.map((node) => {
           const rad = (node.angle * Math.PI) / 180;
           const x = cx + node.distance * Math.cos(rad);
           const y = cy + node.distance * Math.sin(rad);
-          const isNodeActive = activeNode === node.id;
+          const isHighlighted = currentHighlightedId === node.id;
+
+          // Label placement calculation: offset away from center
+          const labelDist = 26;
+          const lx = Math.cos(rad) * labelDist;
+          const ly = Math.sin(rad) * labelDist;
+          const textAnchor = Math.cos(rad) > 0.3 ? 'start' : Math.cos(rad) < -0.3 ? 'end' : 'middle';
 
           return (
             <g
@@ -204,139 +198,105 @@ export function AiTransformationNetwork() {
               transform={`translate(${x}, ${y})`}
               onMouseEnter={() => setActiveNode(node.id)}
               onMouseLeave={() => setActiveNode(null)}
-              className="cursor-pointer group"
+              className="cursor-pointer"
             >
-              <g className="animate-node-breathe" style={{ animationDelay: `${idx * 1.5}s` }}>
-                {/* Outer Hover Ring */}
-                <circle
-                  cx="0"
-                  cy="0"
-                  r={isNodeActive ? 28 : 22}
-                  fill="#FFFFFF"
-                  stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
-                  strokeWidth={isNodeActive ? 2 : 1}
-                  filter="drop-shadow(0 2px 6px rgba(0,0,0,0.04))"
-                  className="transition-all duration-300"
-                />
+              {/* Node Outer Halo (Gentle hover expansion) */}
+              <circle
+                cx="0"
+                cy="0"
+                r={isHighlighted ? 16 : 8}
+                fill={isHighlighted ? '#FFFFFF' : 'transparent'}
+                stroke={isHighlighted ? '#F97316' : '#D5D3CC'}
+                strokeWidth={isHighlighted ? 1.5 : 0.8}
+                opacity={isHighlighted ? 1 : 0.6}
+                className="transition-all duration-300"
+              />
 
-                {/* Inner Node Core */}
-                <circle
-                  cx="0"
-                  cy="0"
-                  r={isNodeActive ? 7 : 5}
-                  fill={isNodeActive ? '#F97316' : '#581C87'}
-                  className="transition-all duration-300"
-                />
+              {/* Inner Node Dot */}
+              <circle
+                cx="0"
+                cy="0"
+                r={isHighlighted ? 5 : 3.5}
+                fill={isHighlighted ? '#F97316' : '#581C87'}
+                className="transition-all duration-300"
+              />
 
-                {/* Node Label Card (Floating & Self-Contained) */}
-                {(() => {
-                  const cfg = getNodeLabelConfig(node.id);
-                  return (
-                    <g className="transition-transform duration-200">
-                      <rect
-                        x={cfg.lx}
-                        y={cfg.ly}
-                        width={cfg.w}
-                        height={cfg.h}
-                        rx="6"
-                        fill={isNodeActive ? '#FAF8FC' : '#FFFFFF'}
-                        stroke={isNodeActive ? '#581C87' : '#E8E8E8'}
-                        strokeWidth={1}
-                        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.02))"
-                      />
-                      <text
-                        x={cfg.tx}
-                        y={cfg.ty}
-                        textAnchor={cfg.anchor}
-                        dominantBaseline="central"
-                        fill={isNodeActive ? '#581C87' : '#111111'}
-                        fontSize="9"
-                        fontFamily="system-ui, sans-serif"
-                        fontWeight={isNodeActive ? '700' : '600'}
-                      >
-                        {node.name}
-                      </text>
-                    </g>
-                  );
-                })()}
-              </g>
+              {/* Single Reveal Label: ONLY VISIBLE WHEN THIS NODE IS HIGHLIGHTED */}
+              {isHighlighted && (
+                <g className="transition-all duration-300 ease-out" style={{ transform: `translate(${lx}px, ${ly}px)` }}>
+                  {/* Subtle Background Pill for high readability */}
+                  <rect
+                    x={textAnchor === 'start' ? -6 : textAnchor === 'end' ? -98 : -52}
+                    y="-11"
+                    width="104"
+                    height="22"
+                    rx="5"
+                    fill="#0A0A0A"
+                    opacity="0.92"
+                    filter="drop-shadow(0 2px 8px rgba(0,0,0,0.12))"
+                  />
+                  <text
+                    x={textAnchor === 'start' ? 4 : textAnchor === 'end' ? -4 : 0}
+                    y="0"
+                    textAnchor={textAnchor}
+                    dominantBaseline="central"
+                    fill="#FFFFFF"
+                    fontSize="9.5"
+                    fontFamily="system-ui, sans-serif"
+                    fontWeight="500"
+                    letterSpacing="0.01em"
+                  >
+                    {node.name}
+                  </text>
+                </g>
+              )}
             </g>
           );
         })}
 
-        {/* Central Core: MẶT TRỜI SUNEXT (Technological Sun Center) */}
-        <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer group">
+        {/* 5. Central Living Sun: Core (~90px) + Rotating Subtle Corona */}
+        <g transform={`translate(${cx}, ${cy})`} className="cursor-pointer">
+          {/* Slow Ambient Breathing Container */}
           <g className="animate-sun-breathe">
-          {/* Rotating Solar Corona Rings */}
-          <circle cx="0" cy="0" r="58" fill="none" stroke="#F97316" strokeWidth="1" strokeDasharray="3 7" opacity="0.6">
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              from="0"
-              to="360"
-              dur="40s"
-              repeatCount="indefinite"
-            />
-          </circle>
-          <circle cx="0" cy="0" r="48" fill="none" stroke="#FB923C" strokeWidth="1.2" strokeDasharray="5 5" opacity="0.5">
-            <animateTransform
-              attributeName="transform"
-              type="rotate"
-              from="360"
-              to="0"
-              dur="28s"
-              repeatCount="indefinite"
-            />
-          </circle>
-
-          {/* 16 Radiant Solar Rays (Tia Nắng Mặt Trời) */}
-          {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5].map((angle, idx) => {
-            const isMajor = idx % 2 === 0;
-            const innerR = 38;
-            const outerR = isMajor ? 52 : 45;
-            const rad = (angle * Math.PI) / 180;
-            const x1 = innerR * Math.cos(rad);
-            const y1 = innerR * Math.sin(rad);
-            const x2 = outerR * Math.cos(rad);
-            const y2 = outerR * Math.sin(rad);
-
-            return (
-              <line
-                key={`solar-ray-${angle}`}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke={isMajor ? '#F97316' : '#FB923C'}
-                strokeWidth={isMajor ? 2 : 1.2}
-                strokeLinecap="round"
-                opacity={isMajor ? 0.85 : 0.55}
+            {/* Outer Slow Rotating Ray Rings */}
+            <circle cx="0" cy="0" r="56" fill="none" stroke="#F97316" strokeWidth="0.8" strokeDasharray="3 8" opacity="0.45">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0"
+                to="360"
+                dur="45s"
+                repeatCount="indefinite"
               />
-            );
-          })}
+            </circle>
 
-          {/* Sun Disc Core (Mặt Trời Chính) */}
-          <circle
-            cx="0"
-            cy="0"
-            r="36"
-            fill="url(#sun-core-grad)"
-            filter="drop-shadow(0 6px 20px rgba(234,88,12,0.35))"
-            className="transition-transform duration-300 group-hover:scale-105"
-          />
-          {/* Inner Solar Rim Light */}
-          <circle cx="0" cy="0" r="36" fill="none" stroke="url(#sun-rim-grad)" strokeWidth="1.5" />
+            <circle cx="0" cy="0" r="46" fill="none" stroke="#FB923C" strokeWidth="1" strokeDasharray="4 6" opacity="0.4">
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="360"
+                to="0"
+                dur="30s"
+                repeatCount="indefinite"
+              />
+            </circle>
 
-          {/* Central Solar Geometry (Lõi Hạt Nhân Mặt Trời) */}
-          <circle cx="0" cy="0" r="14" fill="#FFFFFF" fillOpacity="0.22" stroke="#FFFFFF" strokeWidth="1.2" />
-          <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
-
-            {/* 4 Cardinal Solar Flares */}
-            <path
-              d="M0 -22 L3 -16 L-3 -16 Z M0 22 L3 16 L-3 16 Z M-22 0 L-16 3 L-16 -3 Z M22 0 L16 3 L16 -3 Z"
-              fill="#FFFFFF"
-              opacity="0.9"
+            {/* Radiant Sun Disc Core */}
+            <circle
+              cx="0"
+              cy="0"
+              r="38"
+              fill="url(#cf-sun-core)"
+              filter="drop-shadow(0 4px 18px rgba(239,124,44,0.32))"
+              className="transition-transform duration-500 hover:scale-105"
             />
+
+            {/* Inner Highlight Ring */}
+            <circle cx="0" cy="0" r="38" fill="none" stroke="#FFFFFF" strokeWidth="1.2" strokeOpacity="0.75" />
+
+            {/* Central Nucleus */}
+            <circle cx="0" cy="0" r="13" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
+            <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
           </g>
         </g>
       </svg>

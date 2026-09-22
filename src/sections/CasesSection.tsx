@@ -1,10 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { CaseVinhomesSolarMesh } from '@/components/visuals/CaseVinhomesSolarMesh';
-import { CaseBidvSolarMesh } from '@/components/visuals/CaseBidvSolarMesh';
+import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
 
 export function CasesSection() {
   const [activeCase, setActiveCase] = useState<'vinhomes' | 'bidv'>('vinhomes');
@@ -12,123 +9,228 @@ export function CasesSection() {
   return (
     <section
       id="cases"
-      className="relative w-full py-24 sm:py-36 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] scroll-mt-20 border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full py-20 sm:py-28 px-6 md:px-12 lg:px-20 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
     >
       <div className="max-w-[1280px] mx-auto">
         
-        {/* 1 Headline + 1 Support Line */}
+        {/* Section Header (≤ 7 words) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
           <div>
-            <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-3 block">
-              {activeCase === 'vinhomes'
-                ? 'Dự án thực tế · Hệ Sinh Thái Sales Enablement'
-                : 'Dự án thực tế · Thẩm Định Tín Dụng AI'}
+            <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold mb-2 block">
+              Hiệu Quả Thực Tế · Before ➔ After
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight">
-              {activeCase === 'vinhomes' ? (
-                <>
-                  Case Vinhomes Green Paradise:{' '}
-                  <span className="font-normal text-[#0A0A0A] sm:whitespace-nowrap">
-                    500+ Môi Giới Tự Chủ AI.
-                  </span>
-                </>
-              ) : (
-                <>
-                  Case Ngân Hàng BIDV:{' '}
-                  <span className="font-normal text-[#0A0A0A] sm:whitespace-nowrap">
-                    Rà Soát Tín Dụng AI.
-                  </span>
-                </>
-              )}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight text-[#0A0A0A] leading-tight">
+              Đo lường trên <span className="font-normal text-[#0A0A0A]">kết quả vận hành.</span>
             </h2>
           </div>
 
-          <p className="text-base text-[#515151] max-w-[440px] leading-relaxed font-normal">
-            {activeCase === 'vinhomes'
-              ? 'Đào tạo thực chiến gần 500 môi giới BĐS, thiết lập hệ thống Chatbot AI 24/7, tự sinh Landing Page phân khu và Media AI truyền thông thần tốc.'
-              : 'Đào tạo 45 cán bộ tín dụng & quản lý chi nhánh, chuẩn hóa quy trình AI rà soát điều kiện vay, bóc tách BCTC và lập tờ trình thẩm định tự động.'}
-          </p>
+          {/* Minimal Case Switcher */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveCase('vinhomes')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
+                activeCase === 'vinhomes'
+                  ? 'bg-[#0A0A0A] text-white shadow-xs'
+                  : 'bg-white text-[#747474] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
+              }`}
+            >
+              01 · Vinhomes Green Paradise
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveCase('bidv')}
+              className={`px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
+                activeCase === 'bidv'
+                  ? 'bg-[#0A0A0A] text-white shadow-xs'
+                  : 'bg-white text-[#747474] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
+              }`}
+            >
+              02 · Ngân Hàng BIDV
+            </button>
+          </div>
         </div>
 
-        {/* Interactive Case Switcher Bar */}
-        <div className="flex items-center gap-3 mb-6">
-          <button
-            type="button"
-            onClick={() => setActiveCase('vinhomes')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-2 ${
-              activeCase === 'vinhomes'
-                ? 'bg-[#581C87] text-white shadow-xs'
-                : 'bg-white text-[#515151] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
-            }`}
-          >
-            <span className={`w-2 h-2 rounded-full ${activeCase === 'vinhomes' ? 'bg-[#F97316]' : 'bg-[#9CA3AF]'}`} />
-            <span>01 · VINHOMES GREEN PARADISE (500+ MÔI GIỚI BĐS)</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveCase('bidv')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-mono font-semibold transition-all cursor-pointer flex items-center gap-2 ${
-              activeCase === 'bidv'
-                ? 'bg-[#006850] text-white shadow-xs'
-                : 'bg-white text-[#515151] border border-[#E7E7E5] hover:bg-[#F3F4F6]'
-            }`}
-          >
-            <span className={`w-2 h-2 rounded-full ${activeCase === 'bidv' ? 'bg-[#F97316]' : 'bg-[#9CA3AF]'}`} />
-            <span>02 · NGÂN HÀNG BIDV (RÀ SOÁT TÍN DỤNG AI)</span>
-          </button>
-        </div>
-
-        {/* 1 Main Visual: The Solar Time-Warp & Ecosystem Engine */}
-        <div className="w-full rounded-2xl bg-white border border-[#E7E7E5] p-6 sm:p-10 mb-12 shadow-xs">
-          
-          {/* Header Tag */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-[#E7E7E5] mb-8">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#581C87] font-semibold">
-              <span className={`w-2 h-2 rounded-full ${activeCase === 'bidv' ? 'bg-[#006850]' : 'bg-[#581C87]'}`} />
-              <span className={activeCase === 'bidv' ? 'text-[#006850]' : 'text-[#581C87]'}>
-                {activeCase === 'vinhomes'
-                  ? 'VINHOMES GREEN PARADISE · 500+ MÔI GIỚI BĐS LÀM CHỦ AI'
-                  : 'NGÂN HÀNG BIDV · 45 CÁN BỘ TÍN DỤNG LÀM CHỦ AI'}
-              </span>
+        {/* ==================================================================== */}
+        {/* 1 FLAGSHIP CASE: BEFORE ➔ AFTER WITH 1 MONUMENTAL METRIC */}
+        {/* ==================================================================== */}
+        {activeCase === 'vinhomes' ? (
+          <div className="w-full bg-white rounded-2xl border border-[#E7E7E5] p-6 sm:p-10 shadow-xs">
+            
+            {/* Case Title & Scope */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E7E7E5] mb-8">
+              <div>
+                <span className="text-xs font-mono text-[#581C87] font-semibold block mb-1">
+                  CASE VINHOMES GREEN PARADISE
+                </span>
+                <h3 className="text-xl sm:text-2xl font-light text-[#0A0A0A]">
+                  500+ Môi Giới BĐS Làm Chủ AI
+                </h3>
+              </div>
+              <div className="text-xs font-mono text-[#747474] bg-[#F8F8F6] px-3 py-1.5 rounded-lg border border-[#E7E7E5] self-start sm:self-auto">
+                Bất động sản · Sales Enablement
+              </div>
             </div>
 
-            <Link
-              href={
-                activeCase === 'vinhomes'
-                  ? '/case-studies/vinhomes-ai-sales-enablement'
-                  : '/case-studies'
-              }
-              className="text-xs font-mono text-[#581C87] hover:underline flex items-center gap-1 font-medium"
-            >
-              <span>Xem hồ sơ chi tiết</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* Before ➔ After Side-by-Side Comparison */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
+              
+              {/* BEFORE (Muted Gray / Friction) */}
+              <div className="p-6 rounded-xl bg-[#FAF8F6] border border-[#EBE8E1] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#747474] uppercase mb-4">
+                    <Clock className="w-3.5 h-3.5 text-[#747474]" />
+                    <span>TRƯỚC KHI CÓ AI (BEFORE)</span>
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-light text-[#747474] tracking-tight mb-4">
+                    24 giờ
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-[#747474]">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold mt-0.5">✕</span>
+                      <span>Tra cứu giỏ hàng phân tán và tính lịch trả góp thủ công bằng Excel.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold mt-0.5">✕</span>
+                      <span>Chờ đợi đội ngũ thiết kế media dự án, mất cơ hội chốt khách nóng.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold mt-0.5">✕</span>
+                      <span>Quên chăm sóc khách hàng cũ, tỷ lệ kích hoạt lại dưới 15%.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* AFTER (Sunext Orange / High Efficiency) */}
+              <div className="p-6 rounded-xl bg-[#FFFDF9] border border-[#FDBA74]/60 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#EA580C] uppercase mb-4">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#EA580C]" />
+                    <span>SAU KHI TRIỂN KHAI SUNEXT (AFTER)</span>
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-light text-[#EA580C] tracking-tight mb-4">
+                    &lt; 5 phút
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-[#0A0A0A]">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
+                      <span>Chatbot AI 24/7 tra cứu giỏ hàng và dự toán vay trong 30 giây.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
+                      <span>Tự sinh Landing page phân khu và kịch bản video AI trong 2 phút.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
+                      <span>Hệ thống tự động kích hoạt lại 70% khách cũ, gấp đôi tỷ lệ hẹn thực địa.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+            {/* 1 Big Quantifiable Metric */}
+            <div className="pt-6 border-t border-[#E7E7E5] flex flex-wrap items-baseline justify-between gap-4">
+              <div className="flex items-baseline gap-4">
+                <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
+                  500+
+                </span>
+                <div className="text-sm font-medium text-[#0A0A0A]">
+                  Môi giới BĐS làm chủ công cụ AI
+                </div>
+              </div>
+              <div className="text-xs font-mono text-[#059669] font-semibold">
+                Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp tăng 100%
+              </div>
+            </div>
+
           </div>
+        ) : (
+          <div className="w-full bg-white rounded-2xl border border-[#E7E7E5] p-6 sm:p-10 shadow-xs">
+            
+            {/* BIDV Case */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#E7E7E5] mb-8">
+              <div>
+                <span className="text-xs font-mono text-[#006850] font-semibold block mb-1">
+                  CASE NGÂN HÀNG BIDV
+                </span>
+                <h3 className="text-xl sm:text-2xl font-light text-[#0A0A0A]">
+                  Rà Soát Điều Kiện Tín Dụng AI
+                </h3>
+              </div>
+              <div className="text-xs font-mono text-[#747474] bg-[#F8F8F6] px-3 py-1.5 rounded-lg border border-[#E7E7E5] self-start sm:self-auto">
+                Tài chính Ngân hàng · Rà soát tín dụng
+              </div>
+            </div>
 
-          {/* Living SVG Drawing */}
-          {activeCase === 'vinhomes' ? <CaseVinhomesSolarMesh /> : <CaseBidvSolarMesh />}
+            {/* Before ➔ After */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch mb-10">
+              
+              <div className="p-6 rounded-xl bg-[#FAF8F6] border border-[#EBE8E1] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#747474] uppercase mb-4">
+                    <Clock className="w-3.5 h-3.5 text-[#747474]" />
+                    <span>TRƯỚC KHI CÓ AI (BEFORE)</span>
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-light text-[#747474] tracking-tight mb-4">
+                    2 ngày
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-[#747474]">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold mt-0.5">✕</span>
+                      <span>Đọc hàng trăm trang hồ sơ pháp lý và sao kê tài chính phân tán.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-400 font-bold mt-0.5">✕</span>
+                      <span>Tính toán chỉ số D/E, DSCR thủ công, dễ sai sót và mất thời gian.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-        </div>
+              <div className="p-6 rounded-xl bg-[#F0FDF4] border border-[#86EFAC]/60 flex flex-col justify-between shadow-xs">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#006850] uppercase mb-4">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#006850]" />
+                    <span>SAU KHI TRIỂN KHAI SUNEXT (AFTER)</span>
+                  </div>
+                  <div className="text-3xl sm:text-4xl font-light text-[#006850] tracking-tight mb-4">
+                    30 phút
+                  </div>
+                  <ul className="space-y-3 text-xs sm:text-sm text-[#0A0A0A]">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
+                      <span>Bóc tách BCTC & sao kê tự động trong 60 giây.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#059669] font-bold mt-0.5">✓</span>
+                      <span>Đối chiếu 100% checklist điều kiện cấp tín dụng và sinh tờ trình chuẩn.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-        {/* 1 Clear Proof Metric */}
-        <div className="flex items-baseline gap-4 pt-2">
-          <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums whitespace-nowrap">
-            {activeCase === 'vinhomes' ? '500+' : '30m'}
-          </span>
-          <div className="flex flex-col">
-            <span className="text-base font-medium text-[#0A0A0A]">
-              {activeCase === 'vinhomes'
-                ? 'Môi giới BĐS được đào tạo & làm chủ AI'
-                : 'Rút ngắn thời gian rà soát hồ sơ vay (Gốc: 2 ngày)'}
-            </span>
-            <span className="text-xs font-mono text-[#747474]">
-              {activeCase === 'vinhomes'
-                ? 'Phản hồi khách hàng < 5 phút · Tự tạo Landing Page & Media AI tốc độ x3'
-                : '45 Cán bộ tín dụng · 100% Khớp mẫu biểu tờ trình & checklist điều kiện cấp tín dụng'}
-            </span>
+            </div>
+
+            {/* 1 Big Metric */}
+            <div className="pt-6 border-t border-[#E7E7E5] flex flex-wrap items-baseline justify-between gap-4">
+              <div className="flex items-baseline gap-4">
+                <span className="text-4xl sm:text-5xl font-light tracking-tight text-[#0A0A0A] tabular-nums">
+                  45
+                </span>
+                <div className="text-sm font-medium text-[#0A0A0A]">
+                  Cán bộ tín dụng & quản lý chi nhánh làm chủ quy trình
+                </div>
+              </div>
+              <div className="text-xs font-mono text-[#006850] font-semibold">
+                Nghiệm thu: 100% Khớp mẫu biểu tờ trình thẩm định
+              </div>
+            </div>
+
           </div>
-        </div>
+        )}
 
       </div>
     </section>

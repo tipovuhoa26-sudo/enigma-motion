@@ -117,11 +117,23 @@ body {
   transform: translateY(0px) scale(0.98);
 }
 
-/* Cloudflare-style Subtle Ambient Gradient */
+/* Sunext Cloudflare-grade Atmospheric Background Canvas */
+.sunext-atmospheric-canvas {
+  background-color: #f8f8f6;
+  background-image: 
+    radial-gradient(55% 65% at 75% 55%, rgba(242, 120, 35, 0.14) 0%, rgba(242, 120, 35, 0.06) 35%, transparent 72%),
+    radial-gradient(45% 55% at 85% 15%, rgba(105, 64, 190, 0.08) 0%, transparent 70%),
+    radial-gradient(35% 45% at 5% 5%, rgba(80, 120, 255, 0.04) 0%, transparent 75%);
+  background-attachment: fixed;
+}
+
+/* Cloudflare-style Subtle Ambient Gradient (Section level) */
 .hero-ambient-gradient {
-  background: radial-gradient(circle at 75% 30%, rgba(107, 33, 168, 0.05), transparent 40%),
-              radial-gradient(circle at 20% 70%, rgba(249, 115, 22, 0.03), transparent 35%),
-              #FFFFFF;
+  background: 
+    radial-gradient(55% 65% at 75% 55%, rgba(242, 120, 35, 0.14) 0%, rgba(242, 120, 35, 0.06) 35%, transparent 72%),
+    radial-gradient(45% 55% at 85% 15%, rgba(105, 64, 190, 0.08) 0%, transparent 70%),
+    radial-gradient(35% 45% at 5% 5%, rgba(80, 120, 255, 0.04) 0%, transparent 75%),
+    #f8f8f6;
 }
 
 /* Marquee Slow Ambient Loop */
