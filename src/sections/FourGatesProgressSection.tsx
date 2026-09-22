@@ -85,51 +85,56 @@ export function FourGatesProgressSection() {
         {/* ==================================================================== */}
         <div className="relative w-full py-10 my-4 select-none">
           
-          {/* Base Background Track Hairline */}
-          <div className="absolute top-[48px] sm:top-[56px] left-[5%] right-[5%] h-[2px] bg-[#E7E5DF] z-0" />
+          {/* Progression Track System with Exact Geometric Center Alignment (12.5% to 87.5%) */}
+          <div className="relative">
 
-          {/* Illuminated Progressive Beam */}
-          <div
-            className="absolute top-[48px] sm:top-[56px] left-[5%] h-[2.5px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-700 ease-out z-0"
-            style={{ width: `${(activeStep / 3) * 90}%` }}
-          />
+            {/* Base Background Track Hairline: Exactly from Center of Node 0 (12.5%) to Center of Node 3 (87.5%) */}
+            <div className="absolute top-6 sm:top-7 -translate-y-1/2 left-[12.5%] right-[12.5%] h-[2px] bg-[#E7E5DF] z-0" />
 
-          {/* 4 Pure Nodes */}
-          <div className="relative flex items-center justify-between z-10">
-            {GATES.map((gate, idx) => {
-              const isPassed = activeStep >= idx;
-              const isCurrent = activeStep === idx;
-              const isScale = gate.isOutcome;
+            {/* Illuminated Progressive Beam: 100% = exactly Node 3 center, zero overshoot */}
+            <div className="absolute top-6 sm:top-7 -translate-y-1/2 left-[12.5%] right-[12.5%] h-[2.5px] z-0 pointer-events-none">
+              <div
+                className="h-full bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-700 ease-out"
+                style={{ width: `${(activeStep / 3) * 100}%` }}
+              />
+            </div>
 
-              return (
-                <div
-                  key={gate.id}
-                  onClick={() => setActiveStep(idx)}
-                  className="flex flex-col items-center group cursor-pointer"
-                >
-                    {/* Outer Glowing Halo for Final Scale Node (Soft 45px Glow) */}
-                    <div className="relative flex items-center justify-center">
-                      {isScale && isPassed && (
-                        <div className="absolute w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-orange-500/12 animate-ping opacity-50 pointer-events-none" />
-                      )}
+            {/* 4 Pure Nodes in Balanced 4-Column Grid */}
+            <div className="relative grid grid-cols-4 z-10">
+              {GATES.map((gate, idx) => {
+                const isPassed = activeStep >= idx;
+                const isCurrent = activeStep === idx;
+                const isScale = gate.isOutcome;
 
-                      {/* Node Circle (Refined 1.25x Optical Scale) */}
-                      <div
-                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-mono text-xs sm:text-sm font-bold transition-all duration-500 ${
-                          isScale && isPassed
-                            ? 'bg-[#F97316] text-white shadow-lg shadow-orange-500/25 scale-105 ring-2 ring-orange-200/80'
-                            : isPassed
-                            ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/15'
-                            : 'bg-white text-[#747474] border-2 border-[#E7E5DF]'
-                        }`}
-                      >
-                        {isPassed ? (
-                          <span>●</span>
-                        ) : (
-                          <span>○</span>
+                return (
+                  <div
+                    key={gate.id}
+                    onClick={() => setActiveStep(idx)}
+                    className="flex flex-col items-center group cursor-pointer"
+                  >
+                      {/* Outer Glowing Halo for Final Scale Node (Soft 45px Glow) */}
+                      <div className="relative flex items-center justify-center">
+                        {isScale && isPassed && (
+                          <div className="absolute w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-orange-500/12 animate-ping opacity-50 pointer-events-none" />
                         )}
+
+                        {/* Node Circle (Refined 1.25x Optical Scale) */}
+                        <div
+                          className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-500 ${
+                            isScale && isPassed
+                              ? 'bg-[#F97316] text-white shadow-lg shadow-orange-500/25 scale-105 ring-2 ring-orange-200/80'
+                              : isPassed
+                              ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/15'
+                              : 'bg-white text-[#747474] border-2 border-[#E7E5DF]'
+                          }`}
+                        >
+                          {isPassed ? (
+                            <span className="w-2.5 h-2.5 rounded-full bg-white block shadow-xs" />
+                          ) : (
+                            <span className="w-2.5 h-2.5 rounded-full border-2 border-[#A3A3A3] block" />
+                          )}
+                        </div>
                       </div>
-                    </div>
 
                     {/* Stage Label */}
                     <div className="mt-5 text-center flex flex-col items-center">
@@ -166,10 +171,10 @@ export function FourGatesProgressSection() {
               );
             })}
           </div>
-
         </div>
-
       </div>
-    </section>
+
+    </div>
+  </section>
   );
 }

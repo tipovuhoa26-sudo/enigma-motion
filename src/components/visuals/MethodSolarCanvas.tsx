@@ -59,7 +59,7 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
           {/* Purple to Green Beam */}
           <linearGradient id="purple-to-green-beam" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#581C87" />
-            <stop offset="60%" stopColor="#0D9488" />
+            <stop offset="50%" stopColor="#0D9488" />
             <stop offset="100%" stopColor="#059669" />
           </linearGradient>
         </defs>
@@ -78,23 +78,34 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
             {/* Active Colored Laser Beam */}
             <line x1="80" y1={cy} x2={resultX} y2={cy} stroke="url(#purple-to-orange-beam-lg)" strokeWidth="2.5" />
 
-            {/* Traveling Pulse Bead */}
-            <circle cy={cy} r="4" fill="#F97316" filter="drop-shadow(0 0 6px #F97316)">
+            {/* Synchronized Continuous Traveling Pulse Stream (Cadence: 2.4s, Offset: 1.2s) */}
+            <circle cy={cy} r="4.5" fill="#F97316" filter="drop-shadow(0 0 6px #F97316)">
               <animate attributeName="cx" from="80" to={resultX} dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cy={cy} r="4" fill="#7000FF" filter="drop-shadow(0 0 5px #7000FF)">
+              <animate attributeName="cx" from="80" to={resultX} dur="2.4s" begin="1.2s" repeatCount="indefinite" />
             </circle>
 
             {/* Node 1: PEOPLE */}
             <g transform={`translate(140, ${cy})`}>
+              {/* Rotating Subtle Halo */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#581C87" strokeWidth="1" strokeDasharray="3 5" opacity="0.4">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="25s" repeatCount="indefinite" />
+              </circle>
               <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#581C87" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(88,28,135,0.06))" />
               <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700" letterSpacing="0.05em">PEOPLE</text>
-              <text x="0" y="52" textAnchor="middle" fill="#747474" fontSize="12" fontFamily="sans-serif" fontWeight="500">Con người</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Con người</text>
             </g>
 
             {/* Node 2: PROCESS */}
             <g transform={`translate(360, ${cy})`}>
+              {/* Rotating Subtle Orbit */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#7000FF" strokeWidth="1" strokeDasharray="4 6" opacity="0.45">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite" />
+              </circle>
               <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#581C87" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(88,28,135,0.06))" />
               <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700" letterSpacing="0.05em">PROCESS</text>
-              <text x="0" y="52" textAnchor="middle" fill="#747474" fontSize="12" fontFamily="sans-serif" fontWeight="500">Quy trình SOP</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Quy trình SOP</text>
             </g>
           </g>
         )}
@@ -104,37 +115,82 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
         {/* ==================================================================== */}
         {activeStep === 1 && (
           <g className="animate-in fade-in duration-300">
-            {/* Converging Streamlines from 3 Sources into central Data Bus */}
-            <path d={`M 150 70 L 290 70 L 290 ${cy} L ${resultX} ${cy}`} stroke="#581C87" strokeWidth="1.8" strokeDasharray="5 5" fill="none" opacity="0.5" />
-            <path d={`M 150 ${cy} L ${resultX} ${cy}`} stroke="#581C87" strokeWidth="2" fill="none" opacity="0.8" />
-            <path d={`M 150 290 L 290 290 L 290 ${cy} L ${resultX} ${cy}`} stroke="#581C87" strokeWidth="1.8" strokeDasharray="5 5" fill="none" opacity="0.5" />
+            {/* Streamlines from 3 Sources terminating cleanly at boundary of Data Bus (x=296) */}
+            <path id="path-erp" d="M 140 69 C 220 69, 240 165, 296 174" stroke="#581C87" strokeWidth="2" strokeDasharray="5 5" fill="none" opacity="0.75" />
+            <path id="path-crm" d={`M 140 ${cy} L 296 ${cy}`} stroke="#581C87" strokeWidth="2.2" fill="none" opacity="0.85" />
+            <path id="path-db" d="M 140 291 C 220 291, 240 195, 296 186" stroke="#581C87" strokeWidth="2" strokeDasharray="5 5" fill="none" opacity="0.75" />
 
-            {/* Active Data Laser Beam to Fixed Result */}
-            <line x1="290" y1={cy} x2={resultX} y2={cy} stroke="url(#purple-to-green-beam)" strokeWidth="3" />
+            {/* Synchronized Ingress Traveling Data Pulses into Data Bus (Cadence: 2.4s) */}
+            <circle r="4" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
+              <animateMotion path="M 140 69 C 220 69, 240 165, 296 174" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cy={cy} r="4" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
+              <animate attributeName="cx" from="140" to="296" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle r="4" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
+              <animateMotion path="M 140 291 C 220 291, 240 195, 296 186" dur="2.4s" repeatCount="indefinite" />
+            </circle>
 
-            {/* Source 1: ERP */}
-            <g transform="translate(60, 52)">
-              <rect width="90" height="36" rx="8" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
-              <text x="45" y="23" textAnchor="middle" fill="#0A0A0A" fontSize="12" fontFamily="monospace" fontWeight="700">ERP</text>
+            {/* Active Encrypted Laser Beam exiting cleanly from Data Bus (x=384) to Result */}
+            <line x1="384" y1={cy} x2={resultX} y2={cy} stroke="url(#purple-to-green-beam)" strokeWidth="3" />
+
+            {/* Synchronized Egress Encrypted Data Pulse Stream (Cadence: 2.4s, Offset: 1.2s) */}
+            <circle cy={cy} r="5" fill="#059669" filter="drop-shadow(0 0 8px #059669)">
+              <animate attributeName="cx" from="384" to={resultX} dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cy={cy} r="4" fill="#10B981" filter="drop-shadow(0 0 6px #10B981)">
+              <animate attributeName="cx" from="384" to={resultX} dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            </circle>
+
+            {/* Source 1: ERP with Live Pulse Dot */}
+            <g transform="translate(55, 52)">
+              <rect width="85" height="34" rx="7" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
+              <circle cx="16" cy="17" r="3" fill="#059669" />
+              <circle cx="16" cy="17" r="3" fill="none" stroke="#059669" opacity="0.6">
+                <animate attributeName="r" values="3;7" dur="2.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;0" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <text x="48" y="21" textAnchor="middle" fill="#0A0A0A" fontSize="12" fontFamily="monospace" fontWeight="700">ERP</text>
             </g>
 
-            {/* Source 2: CRM */}
-            <g transform={`translate(60, ${cy - 18})`}>
-              <rect width="90" height="36" rx="8" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
-              <text x="45" y="23" textAnchor="middle" fill="#0A0A0A" fontSize="12" fontFamily="monospace" fontWeight="700">CRM</text>
+            {/* Source 2: CRM with Live Pulse Dot */}
+            <g transform={`translate(55, ${cy - 17})`}>
+              <rect width="85" height="34" rx="7" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
+              <circle cx="16" cy="17" r="3" fill="#059669" />
+              <circle cx="16" cy="17" r="3" fill="none" stroke="#059669" opacity="0.6">
+                <animate attributeName="r" values="3;7" dur="2.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;0" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <text x="48" y="21" textAnchor="middle" fill="#0A0A0A" fontSize="12" fontFamily="monospace" fontWeight="700">CRM</text>
             </g>
 
-            {/* Source 3: DATABASE */}
-            <g transform="translate(60, 272)">
-              <rect width="90" height="36" rx="8" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
-              <text x="45" y="23" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">DATABASE</text>
+            {/* Source 3: DATABASE with Live Pulse Dot */}
+            <g transform="translate(55, 274)">
+              <rect width="85" height="34" rx="7" fill="#FFFFFF" stroke="#D1D1CE" strokeWidth="1.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.03))" />
+              <circle cx="14" cy="17" r="3" fill="#059669" />
+              <circle cx="14" cy="17" r="3" fill="none" stroke="#059669" opacity="0.6">
+                <animate attributeName="r" values="3;7" dur="2.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.6;0" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <text x="48" y="21" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">DATABASE</text>
             </g>
 
-            {/* Central Node: DATA BUS */}
-            <g transform={`translate(310, ${cy})`}>
-              <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#059669" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(5,150,105,0.08))" />
-              <text x="0" y="4" textAnchor="middle" fill="#059669" fontSize="11" fontFamily="monospace" fontWeight="700">DATA BUS</text>
-              <text x="0" y="50" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif">Kết nối an toàn</text>
+            {/* Central Node: DATA BUS (x=340, r=44 - Completely Unobstructed, Generous Breathing Space) */}
+            <g transform={`translate(340, ${cy})`}>
+              {/* Outer Security Shield Ring */}
+              <circle cx="0" cy="0" r="54" fill="none" stroke="#059669" strokeWidth="1" strokeDasharray="4 6" opacity="0.45">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" />
+              </circle>
+              {/* Inner Pulsing Security Wave */}
+              <circle cx="0" cy="0" r="36" fill="#ECFDF5" opacity="0.7">
+                <animate attributeName="r" values="36;42;36" dur="2.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              {/* Clean White Masking Disc */}
+              <circle cx="0" cy="0" r="44" fill="#FFFFFF" stroke="#059669" strokeWidth="2.2" filter="drop-shadow(0 4px 16px rgba(5,150,105,0.14))" />
+              <text x="0" y="4" textAnchor="middle" fill="#047857" fontSize="11" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">DATA BUS</text>
+              {/* Distinct Non-overlapping Sublabel at y=74 (20px clear of r=54 ring) */}
+              <text x="0" y="74" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Ranh giới cô lập</text>
             </g>
           </g>
         )}
@@ -147,25 +203,51 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
             {/* Active Colored Laser Beam */}
             <line x1="80" y1={cy} x2={resultX} y2={cy} stroke="url(#purple-to-orange-beam-lg)" strokeWidth="2.5" />
 
+            {/* Synchronized Intelligent Traveling Pulse Stream (Cadence: 2.4s, Offset: 1.2s) */}
+            <circle cy={cy} r="4.5" fill="#F97316" filter="drop-shadow(0 0 6px #F97316)">
+              <animate attributeName="cx" from="80" to={resultX} dur="2.4s" repeatCount="indefinite" />
+            </circle>
+            <circle cy={cy} r="4" fill="#7000FF" filter="drop-shadow(0 0 5px #7000FF)">
+              <animate attributeName="cx" from="80" to={resultX} dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            </circle>
+
             {/* Node 1: DATA */}
-            <g transform={`translate(120, ${cy})`}>
-              <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="#581C87" strokeWidth="1.8" filter="drop-shadow(0 3px 10px rgba(88,28,135,0.05))" />
+            <g transform={`translate(130, ${cy})`}>
+              {/* Rotating Orbit */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#581C87" strokeWidth="1" strokeDasharray="3 5" opacity="0.4">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#581C87" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(88,28,135,0.06))" />
               <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">DATA</text>
-              <text x="0" y="48" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif">Dữ liệu</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Dữ liệu</text>
             </g>
 
-            {/* Node 2: AI */}
-            <g transform={`translate(280, ${cy})`}>
-              <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="#581C87" strokeWidth="1.8" filter="drop-shadow(0 3px 10px rgba(88,28,135,0.05))" />
-              <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">AI</text>
-              <text x="0" y="48" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif">Mô hình</text>
+            {/* Node 2: AI (Algorithmic Processing Core) */}
+            <g transform={`translate(290, ${cy})`}>
+              {/* Outer Counter-Rotating Algorithmic Halo */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#7000FF" strokeWidth="1.2" strokeDasharray="4 6" opacity="0.5">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite" />
+              </circle>
+              {/* Inner Neural Pulse Core */}
+              <circle cx="0" cy="0" r="14" fill="#7000FF" opacity="0.12">
+                <animate attributeName="r" values="12;20;12" dur="2.4s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2.4s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#7000FF" strokeWidth="2.2" filter="drop-shadow(0 4px 14px rgba(112,0,255,0.14))" />
+              <circle cx="0" cy="0" r="11" fill="#F5F3FF" stroke="#7000FF" strokeWidth="1" />
+              <text x="0" y="4" textAnchor="middle" fill="#7000FF" fontSize="11" fontFamily="monospace" fontWeight="700">AI</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Mô hình AI</text>
             </g>
 
-            {/* Node 3: KPI */}
-            <g transform={`translate(440, ${cy})`}>
-              <circle cx="0" cy="0" r="30" fill="#FFFFFF" stroke="#581C87" strokeWidth="1.8" filter="drop-shadow(0 3px 10px rgba(88,28,135,0.05))" />
+            {/* Node 3: KPI (Quantitative Proof Gate) */}
+            <g transform={`translate(450, ${cy})`}>
+              {/* Rotating Outcome Ring */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#EA580C" strokeWidth="1" strokeDasharray="4 6" opacity="0.45">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#EA580C" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(234,88,12,0.1))" />
               <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">KPI</text>
-              <text x="0" y="48" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif">Định lượng</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">P&L định lượng</text>
             </g>
           </g>
         )}
