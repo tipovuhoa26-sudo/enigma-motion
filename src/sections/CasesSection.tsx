@@ -1,12 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ArrowDown } from 'lucide-react';
 
 export function CasesSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [pulsePhase, setPulsePhase] = useState<number>(3); // Default settled
+  const [metricSettled, setMetricSettled] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Sequenced one-pass physical activation: Lead -> AI -> Response
+          setPulsePhase(1);
+          setMetricSettled(false);
+
+          const t1 = setTimeout(() => {
+            setPulsePhase(2);
+            setMetricSettled(true);
+          }, 450);
+
+          const t2 = setTimeout(() => {
+            setPulsePhase(3);
+          }, 900);
+
+          return () => {
+            clearTimeout(t1);
+            clearTimeout(t2);
+          };
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={containerRef}
       id="cases"
       className="relative w-full py-24 sm:py-32 px-6 md:px-12 bg-[#F9F9F8] border-b border-[#E7E7E5] overflow-hidden"
     >
@@ -28,7 +65,7 @@ export function CasesSection() {
           </h2>
         </div>
 
-        {/* Scene Layout: Left 3-Tier Narrative | Right Living Workflow Morph */}
+        {/* Scene Layout: Left 3-Tier Narrative | Right Living Minimal Flow */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: 3 Clean Levels (Vinhomes | 24 giờ → < 5 phút | 500+ Môi giới) */}
@@ -42,13 +79,19 @@ export function CasesSection() {
               </span>
             </div>
 
-            {/* Level 2: Core Transformation Metric (24 giờ → < 5 phút) */}
+            {/* Level 2: Core Transformation Metric (24 giờ → < 5 phút with sequenced activation) */}
             <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap mb-8">
               <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] tabular-nums">
                 24 giờ
               </span>
-              <span className="text-2xl sm:text-3xl text-[#747474] font-light">→</span>
-              <span className="text-5xl sm:text-6xl lg:text-7xl font-light text-[#EA580C] tracking-tight tabular-nums">
+              <span className={`text-2xl sm:text-3xl transition-colors duration-300 font-light ${metricSettled ? 'text-[#EA580C]' : 'text-[#747474]'}`}>
+                →
+              </span>
+              <span className={`text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight tabular-nums transition-all duration-500 ${
+                metricSettled
+                  ? 'text-[#EA580C] scale-100 opacity-100'
+                  : 'text-[#A3A3A3] scale-95 opacity-60'
+              }`}>
                 &lt; 5 phút
               </span>
             </div>
@@ -63,7 +106,7 @@ export function CasesSection() {
                   Môi giới làm chủ AI
                 </div>
                 <div className="text-xs sm:text-sm text-[#747474] font-normal mt-0.5">
-                  Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
+                  Nghiệm thu: Tỷ lệ chuyển đổi hẹn gặp khách hàng tăng 100%.
                 </div>
               </div>
             </div>
@@ -79,56 +122,79 @@ export function CasesSection() {
 
           </div>
 
-          {/* Right Column: Animated Operational Flow (LEAD ➔ AI ➔ RESPONSE) */}
+          {/* Right Column: De-chromed Living System Pipeline (Flow is the visual) */}
           <div className="lg:col-span-6 w-full flex items-center justify-center select-none">
-            <div className="w-full max-w-[520px] p-6 sm:p-8 rounded-2xl bg-white border border-[#E7E7E5] shadow-xs relative overflow-hidden">
+            <div className="w-full max-w-[480px] py-4 px-2 relative">
               
-              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#E7E7E5] text-xs font-mono text-[#747474]">
-                <span>LUỒNG XỬ LÝ THỰC TẾ</span>
-                <span className="text-[#059669] font-semibold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-pulse" />
-                  Live System
-                </span>
-              </div>
-
-              {/* Vertical Flow Diagram */}
-              <div className="space-y-4 relative">
+              {/* Vertical Continuous Flow Axis */}
+              <div className="space-y-8 relative pl-6">
                 
-                {/* Connecting Vertical Laser Line */}
-                <div className="absolute top-6 bottom-6 left-6 w-[2px] bg-[#E7E7E5] -z-0">
-                  <div className="w-full h-1/2 bg-gradient-to-b from-[#581C87] to-[#F97316] animate-pulse" />
-                </div>
+                {/* Connecting Vertical Track Hairline */}
+                <div className="absolute top-5 bottom-5 left-10 w-[2px] bg-[#E7E5DF] -z-0" />
+                
+                {/* Active Light Pulse Traveling Down (Single Pass) */}
+                <div 
+                  className="absolute left-10 w-[2px] bg-gradient-to-b from-[#581C87] to-[#F97316] -z-0 transition-all duration-700 ease-out"
+                  style={{
+                    top: '20px',
+                    height: pulsePhase === 1 ? '30%' : pulsePhase === 2 ? '70%' : '100%',
+                  }}
+                />
 
-                {/* Step 1: LEAD */}
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#F5F3FF] border border-[#DDD6FE] text-[#581C87] font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                {/* Node 01: LEAD */}
+                <div className="flex items-start gap-5 relative z-10">
+                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                    pulsePhase >= 1
+                      ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/20'
+                      : 'bg-white text-[#747474] border border-[#E7E5DF]'
+                  }`}>
                     01
                   </div>
-                  <div className="flex-1 p-3.5 rounded-xl bg-[#F9F9F8] border border-[#E7E7E5]">
-                    <div className="text-xs font-mono font-bold text-[#581C87] uppercase">LEAD INPUT</div>
-                    <div className="text-sm font-medium text-[#0A0A0A]">Khách quan tâm phân khu & dự toán vay</div>
+                  <div className="pt-1.5">
+                    <div className="text-xs font-mono font-bold text-[#581C87] uppercase tracking-wider">
+                      LEAD INPUT
+                    </div>
+                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
+                      Khách quan tâm phân khu &amp; dự toán vay ngân hàng
+                    </div>
                   </div>
                 </div>
 
-                {/* Step 2: AI ENGINE */}
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#FFF7ED] border border-[#FDBA74] text-[#EA580C] font-mono font-bold text-xs flex items-center justify-center shrink-0 shadow-sm shadow-orange-500/10">
+                {/* Node 02: AI CO-WORKER */}
+                <div className="flex items-start gap-5 relative z-10">
+                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                    pulsePhase >= 2
+                      ? 'bg-[#EA580C] text-white shadow-md shadow-orange-500/25 ring-2 ring-orange-200/80'
+                      : 'bg-white text-[#747474] border border-[#E7E5DF]'
+                  }`}>
                     AI
                   </div>
-                  <div className="flex-1 p-3.5 rounded-xl bg-orange-50/50 border border-orange-200/80">
-                    <div className="text-xs font-mono font-bold text-[#EA580C] uppercase">SUNEXT AI CO-WORKER</div>
-                    <div className="text-sm font-medium text-[#0A0A0A]">Tra cứu giỏ hàng ERP & tính bảng trả góp (30 giây)</div>
+                  <div className="pt-1.5">
+                    <div className="text-xs font-mono font-bold text-[#EA580C] uppercase tracking-wider">
+                      TRA CỨU ERP &amp; TÍNH TOÁN
+                    </div>
+                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
+                      Tự động đối soát bảng hàng và sinh phương án tài chính (30s)
+                    </div>
                   </div>
                 </div>
 
-                {/* Step 3: RESPONSE */}
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#059669] font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                {/* Node 03: RESPONSE */}
+                <div className="flex items-start gap-5 relative z-10">
+                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                    pulsePhase >= 3
+                      ? 'bg-[#059669] text-white shadow-md shadow-emerald-600/20 ring-2 ring-emerald-200/80'
+                      : 'bg-white text-[#747474] border border-[#E7E5DF]'
+                  }`}>
                     ✓
                   </div>
-                  <div className="flex-1 p-3.5 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0]">
-                    <div className="text-xs font-mono font-bold text-[#059669] uppercase">RESPONSE OUTPUT</div>
-                    <div className="text-sm font-medium text-[#0A0A0A]">Gửi báo giá & kịch bản tư vấn hoàn chỉnh (&lt; 5m)</div>
+                  <div className="pt-1.5">
+                    <div className="text-xs font-mono font-bold text-[#059669] uppercase tracking-wider">
+                      RESPONSE OUTPUT
+                    </div>
+                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
+                      Gửi trọn bộ kịch bản tư vấn hoàn chỉnh (&lt; 5 phút)
+                    </div>
                   </div>
                 </div>
 

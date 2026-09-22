@@ -42,7 +42,10 @@ const STEPS: StepData[] = [
 export function MethodStorytellingSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState<number>(0);
+  const [displayedStep, setDisplayedStep] = useState<number>(0);
+  const [animPhase, setAnimPhase] = useState<'idle' | 'exit' | 'enter'>('idle');
   const [scrollProgress, setScrollProgress] = useState<number>(0);
+  const targetStepRef = useRef<number>(0);
 
   const handleScroll = useCallback(() => {
     if (!containerRef.current) return;
@@ -71,6 +74,39 @@ export function MethodStorytellingSection() {
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
+
+  // Sequenced transition: exit old (180ms) -> pause (40ms) -> enter new (320ms). Zero ghosting.
+  useEffect(() => {
+    targetStepRef.current = activeStep;
+    if (activeStep === displayedStep) return;
+
+    setAnimPhase('exit');
+
+    const exitTimer = setTimeout(() => {
+      const nextStep = targetStepRef.current;
+      setDisplayedStep(nextStep);
+
+      const pauseTimer = setTimeout(() => {
+        setAnimPhase('enter');
+        const settleTimer = setTimeout(() => {
+          setAnimPhase('idle');
+        }, 320);
+        return () => clearTimeout(settleTimer);
+      }, 40);
+
+      return () => clearTimeout(pauseTimer);
+    }, 180);
+
+    return () => clearTimeout(exitTimer);
+  }, [activeStep, displayedStep]);
+
+  const step = STEPS[displayedStep] || STEPS[0];
+  const animClass =
+    animPhase === 'exit'
+      ? 'opacity-0 -translate-y-2.5 transition-all duration-[180ms] ease-out'
+      : animPhase === 'enter'
+      ? 'opacity-100 translate-y-0 transition-all duration-[320ms] ease-out'
+      : 'opacity-100 translate-y-0';
 
   return (
     <section
@@ -103,11 +139,11 @@ export function MethodStorytellingSection() {
 
               {/* Status Step Indicator (Read-only, synchronized with scroll) */}
               <div className="flex items-center gap-2">
-                {STEPS.map((step, idx) => {
+                {STEPS.map((s, idx) => {
                   const isActive = activeStep === idx;
                   return (
                     <div
-                      key={step.num}
+                      key={s.num}
                       className={`px-2.5 py-1 rounded text-xs font-mono transition-all duration-200 flex items-center gap-1.5 ${
                         isActive
                           ? 'bg-[#0A0A0A] text-white font-medium'
@@ -115,7 +151,7 @@ export function MethodStorytellingSection() {
                       }`}
                     >
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0" />}
-                      <span>{step.pillLabel}</span>
+                      <span>{s.pillLabel}</span>
                     </div>
                   );
                 })}
@@ -126,48 +162,48 @@ export function MethodStorytellingSection() {
           {/* Main Content & Living Visual Flow */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-6">
             
-            {/* Left Column: Lean Confident Narrative */}
-            <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[320px] flex flex-col justify-center">
-              {STEPS.map((step, idx) => {
-                const isCurrent = activeStep === idx;
-                return (
-                  <div
-                    key={step.num}
-                    className={`transition-all duration-500 ease-out flex flex-col justify-between ${
-                      isCurrent
-                        ? 'opacity-100 translate-y-0 relative z-10'
-                        : 'opacity-0 translate-y-4 absolute inset-0 z-0 pointer-events-none'
-                    }`}
-                  >
-                    <div>
-                      <div className="text-xs font-mono font-medium text-[#747474] mb-2 tracking-normal">
-                        Bước {step.num}
-                      </div>
-
-                      <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08] mb-4">
-                        {step.title}
-                      </h2>
-
-                      <p className="text-base text-[#515151] font-normal leading-relaxed mb-6 max-w-[420px]">
-                        {step.copy}
-                      </p>
-                    </div>
-
-                    {/* Metric Display */}
-                    <div className="pt-5 border-t border-[#E7E7E5] flex items-baseline gap-4">
-                      <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
-                        {step.proofNum}
-                      </span>
-                      <div className="text-xs sm:text-sm font-medium text-[#747474]">
-                        {step.proofLabel}
-                      </div>
-                    </div>
+            {/* Left Column: Lean Confident Narrative with Fixed Typographic Skeleton */}
+            <div className="lg:col-span-5 relative min-h-[290px] sm:min-h-[320px] flex flex-col justify-center">
+              <div className={`${animClass} flex flex-col justify-between`}>
+                <div>
+                  <div className="text-xs font-mono font-medium text-[#747474] mb-2 tracking-normal">
+                    Bước {step.num}
                   </div>
-                );
-              })}
+
+                  {/* Fixed Title Skeleton (Prevents baseline shift between 1-line and 2-line titles) */}
+                  <div className="min-h-[96px] sm:min-h-[110px] flex items-start mb-3">
+                    <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
+                      {displayedStep === 0 ? (
+                        <>
+                          Quy trình trước<br className="hidden sm:inline" /> công cụ.
+                        </>
+                      ) : (
+                        step.title
+                      )}
+                    </h2>
+                  </div>
+
+                  {/* Fixed Description Skeleton */}
+                  <div className="min-h-[48px] sm:min-h-[56px] mb-6">
+                    <p className="text-base text-[#515151] font-normal leading-relaxed max-w-[420px]">
+                      {step.copy}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Fixed Metric Skeleton */}
+                <div className="pt-5 border-t border-[#E7E7E5] flex items-baseline gap-4 min-h-[76px]">
+                  <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0">
+                    {step.proofNum}
+                  </span>
+                  <div className="text-xs sm:text-sm font-medium text-[#747474]">
+                    {step.proofLabel}
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Right Column: Evolving System Visual (Lives Directly on Section Canvas, Zero Card Chrome) */}
+            {/* Right Column: Evolving System Visual with Fixed Permanent Result Anchor */}
             <div className="lg:col-span-7 w-full flex items-center justify-center relative overflow-visible">
               <MethodSolarCanvas activeStep={activeStep} />
             </div>

@@ -19,6 +19,7 @@ const GATES: Gate[] = [
 export function FourGatesProgressSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState<number>(3); // All 4 illuminated by default
+  const [showOutcomeBadge, setShowOutcomeBadge] = useState<boolean>(true);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -26,11 +27,17 @@ export function FourGatesProgressSection() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Play progression animation sequence: 0 -> 1 -> 2 -> 3
+          // Play deliberate business progression: G1->G2 (fast), G2->G3 (fast), G3->G4 (slower + hold 400ms)
           setActiveStep(0);
-          const t1 = setTimeout(() => setActiveStep(1), 500);
-          const t2 = setTimeout(() => setActiveStep(2), 1000);
-          const t3 = setTimeout(() => setActiveStep(3), 1500);
+          setShowOutcomeBadge(false);
+
+          const t1 = setTimeout(() => setActiveStep(1), 320);
+          const t2 = setTimeout(() => setActiveStep(2), 640);
+          const t3 = setTimeout(() => {
+            setActiveStep(3);
+            const tBadge = setTimeout(() => setShowOutcomeBadge(true), 400);
+            return () => clearTimeout(tBadge);
+          }, 1200);
 
           return () => {
             clearTimeout(t1);
@@ -50,7 +57,7 @@ export function FourGatesProgressSection() {
     <section
       ref={containerRef}
       id="delivery"
-      className="relative w-full py-24 sm:py-32 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full pt-24 sm:pt-32 pb-32 sm:pb-40 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden"
     >
       {/* Background Subtle Flattened Orbit Connecting with Atmosphere */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40">
@@ -100,55 +107,61 @@ export function FourGatesProgressSection() {
                   onClick={() => setActiveStep(idx)}
                   className="flex flex-col items-center group cursor-pointer"
                 >
-                  {/* Outer Glowing Halo for Final Scale Node */}
-                  <div className="relative flex items-center justify-center">
-                    {isScale && isPassed && (
-                      <div className="absolute w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-500/15 animate-ping opacity-60 pointer-events-none" />
-                    )}
+                    {/* Outer Glowing Halo for Final Scale Node (Soft 45px Glow) */}
+                    <div className="relative flex items-center justify-center">
+                      {isScale && isPassed && (
+                        <div className="absolute w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-orange-500/12 animate-ping opacity-50 pointer-events-none" />
+                      )}
 
-                    {/* Node Circle */}
-                    <div
-                      className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center font-mono text-xs sm:text-sm font-bold transition-all duration-500 ${
-                        isScale && isPassed
-                          ? 'bg-[#F97316] text-white shadow-xl shadow-orange-500/30 scale-110 ring-4 ring-orange-100'
-                          : isPassed
-                          ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/15'
-                          : 'bg-white text-[#747474] border-2 border-[#E7E5DF]'
-                      }`}
-                    >
-                      {isPassed ? (
-                        <span>●</span>
+                      {/* Node Circle (Refined 1.25x Optical Scale) */}
+                      <div
+                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center font-mono text-xs sm:text-sm font-bold transition-all duration-500 ${
+                          isScale && isPassed
+                            ? 'bg-[#F97316] text-white shadow-lg shadow-orange-500/25 scale-105 ring-2 ring-orange-200/80'
+                            : isPassed
+                            ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/15'
+                            : 'bg-white text-[#747474] border-2 border-[#E7E5DF]'
+                        }`}
+                      >
+                        {isPassed ? (
+                          <span>●</span>
+                        ) : (
+                          <span>○</span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Stage Label */}
+                    <div className="mt-5 text-center flex flex-col items-center">
+                      <span
+                        className={`text-xs sm:text-sm font-mono font-bold tracking-wider transition-colors ${
+                          isScale && isPassed
+                            ? 'text-[#EA580C]'
+                            : isPassed
+                            ? 'text-[#0A0A0A]'
+                            : 'text-[#A3A3A3]'
+                        }`}
+                      >
+                        {gate.name}
+                      </span>
+
+                      {/* Clean Subtitle or Outcome Callout (Revealed after hold) */}
+                      {isScale ? (
+                        showOutcomeBadge ? (
+                          <span className="text-xs sm:text-sm font-mono font-bold text-[#EA580C] mt-1.5 px-2.5 py-0.5 rounded-full bg-orange-50 border border-orange-200/80 animate-in fade-in duration-300">
+                            Client operated.
+                          </span>
+                        ) : (
+                          <span className="text-xs text-transparent mt-1.5 px-2.5 py-0.5 select-none">
+                            &nbsp;
+                          </span>
+                        )
                       ) : (
-                        <span>○</span>
+                        <span className="text-xs text-[#747474] font-normal mt-1 hidden sm:block">
+                          {gate.sub}
+                        </span>
                       )}
                     </div>
-                  </div>
-
-                  {/* Stage Label */}
-                  <div className="mt-5 text-center flex flex-col items-center">
-                    <span
-                      className={`text-xs sm:text-sm font-mono font-bold tracking-wider transition-colors ${
-                        isScale && isPassed
-                          ? 'text-[#EA580C]'
-                          : isPassed
-                          ? 'text-[#0A0A0A]'
-                          : 'text-[#A3A3A3]'
-                      }`}
-                    >
-                      {gate.name}
-                    </span>
-
-                    {/* Clean Subtitle or Outcome Callout */}
-                    {isScale ? (
-                      <span className="text-xs sm:text-sm font-mono font-bold text-[#EA580C] mt-1.5 px-2.5 py-0.5 rounded-full bg-orange-50 border border-orange-200/80 animate-in fade-in duration-300">
-                        Client operated.
-                      </span>
-                    ) : (
-                      <span className="text-xs text-[#747474] font-normal mt-1 hidden sm:block">
-                        {gate.sub}
-                      </span>
-                    )}
-                  </div>
                 </div>
               );
             })}

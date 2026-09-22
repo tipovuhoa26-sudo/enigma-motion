@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* Motion Tokens (Standardized per Lead Review) */
-  --motion-fast: 160ms;
-  --motion-ui: 260ms;
-  --motion-enter: 600ms;
-  --motion-story: 900ms;
+  /* Physical System Motion Tokens (Enterprise Motion Choreography) */
+  --motion-micro: 180ms;
+  --motion-ui: 280ms;
+  --motion-enter: 480ms;
+  --motion-morph: 720ms;
+  --motion-cinematic: 1200ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
   --ease-editorial: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Radius */
   --radius-sm: 8px;
@@ -218,6 +219,27 @@ body {
 
 .animate-pulse-travel {
   animation: beam-pulse-travel 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes single-beam-pulse-travel {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-pulse-once {
+  animation: single-beam-pulse-travel 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

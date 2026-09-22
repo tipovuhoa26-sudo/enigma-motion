@@ -4,15 +4,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const TRUSTED_LOGOS = [
-  { name: 'Vinhomes (Vingroup)', src: '/logos/vinhomes.png', width: 120, height: 36 },
-  { name: 'Tập đoàn Hòa Phát', src: '/logos/hoa_phat.png', width: 110, height: 32 },
-  { name: 'Đại học FPT', src: '/logos/fptu.png', width: 110, height: 34 },
-  { name: 'Dentsu Sports & Creative', src: '/logos/dentsu.png', width: 110, height: 32 },
-  { name: 'Ngân hàng BIDV', src: '/logos/bidv.png', width: 105, height: 34 },
-  { name: 'VNPT VinaPhone', src: '/logos/vnpt_vinaphone.png', width: 120, height: 36 },
-  { name: 'Đài Truyền Hình HTV', src: '/logos/htv.png', width: 95, height: 32 },
-  { name: 'Trung Sơn Pharma', src: '/logos/trung_son.png', width: 115, height: 34 },
-  { name: 'Smartland Bất Động Sản', src: '/logos/smartland.png', width: 115, height: 34 },
+  { name: 'Vinhomes (Vingroup)', src: '/logos/vinhomes.png', width: 120, height: 36, opacity: 'opacity-55' },
+  { name: 'Tập đoàn Hòa Phát', src: '/logos/hoa_phat.png', width: 110, height: 32, opacity: 'opacity-70' },
+  { name: 'Đại học FPT', src: '/logos/fptu.png', width: 110, height: 34, opacity: 'opacity-60' },
+  { name: 'Dentsu Sports & Creative', src: '/logos/dentsu.png', width: 110, height: 32, opacity: 'opacity-40' },
+  { name: 'Ngân hàng BIDV', src: '/logos/bidv.png', width: 105, height: 34, opacity: 'opacity-70' },
+  { name: 'VNPT VinaPhone', src: '/logos/vnpt_vinaphone.png', width: 120, height: 36, opacity: 'opacity-50' },
+  { name: 'Đài Truyền Hình HTV', src: '/logos/htv.png', width: 95, height: 32, opacity: 'opacity-75' },
+  { name: 'Trung Sơn Pharma', src: '/logos/trung_son.png', width: 115, height: 34, opacity: 'opacity-65' },
+  { name: 'Smartland Bất Động Sản', src: '/logos/smartland.png', width: 115, height: 34, opacity: 'opacity-60' },
 ];
 
 export function StatsStrip() {
@@ -106,22 +106,22 @@ export function StatsStrip() {
         {/* Unified Operational Metrics: Fixed Grid Rows for Exact Optical Baseline */}
         <div className="relative mb-20 sm:mb-24">
           
-          {/* Continuous Left-to-Right Connecting Beam with Traveling Light Pulse */}
+          {/* Continuous Left-to-Right Connecting Beam with Single Meaningful Light Pulse */}
           <div className="hidden md:block absolute top-[66px] lg:top-[70px] left-[4%] right-[4%] h-[1.5px] pointer-events-none z-0">
             <div className="w-full h-full bg-[#E5E3DC]" />
-            {/* Active Glow Pulse Moving Left -> Right (Quality -> Speed -> Efficiency) */}
-            <div className="absolute top-1/2 -translate-y-1/2 h-[3px] w-28 bg-gradient-to-r from-transparent via-[#F97316] to-transparent rounded-full blur-[1px] animate-pulse-travel" />
-            <div className="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#F97316] shadow-[0_0_8px_#F97316] animate-pulse-travel" />
+            {/* Active Glow Pulse Moving Left -> Right (Runs Once When Intersecting, No Loop) */}
+            <div className={`absolute top-1/2 -translate-y-1/2 h-[3px] w-28 bg-gradient-to-r from-transparent via-[#F97316] to-transparent rounded-full blur-[1px] ${hasAnimated ? 'animate-pulse-once' : 'opacity-0'}`} />
+            <div className={`absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#F97316] shadow-[0_0_8px_#F97316] ${hasAnimated ? 'animate-pulse-once' : 'opacity-0'}`} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 relative z-10">
             
             {/* Metric 01: 99.8% (Quality / Accuracy) */}
             <div className="grid grid-rows-[24px_84px_28px_44px] gap-y-1.5">
-              {/* Row 1: Category Tag */}
+              {/* Row 1: Category Tag (Neutral Text, Colored Dot) */}
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#581C87]" />
-                <span className="text-xs font-mono uppercase tracking-wider text-[#581C87] font-semibold">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#737373] font-medium">
                   Accuracy · Chất lượng
                 </span>
               </div>
@@ -144,10 +144,10 @@ export function StatsStrip() {
               {/* Row 1: Category Tag */}
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
-                <span className="text-xs font-mono uppercase tracking-wider text-[#7000FF] font-semibold">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#737373] font-medium">
                   Response · Tốc độ
                 </span>
-                <span className="text-[10px] font-mono text-[#EA580C] bg-orange-50 px-1.5 py-0.5 rounded border border-orange-200 ml-1">
+                <span className="text-[10px] font-mono text-[#737373] bg-neutral-100 px-1.5 py-0.5 rounded border border-neutral-200 ml-1">
                   TỪ 24H
                 </span>
               </div>
@@ -174,7 +174,7 @@ export function StatsStrip() {
               {/* Row 1: Category Tag */}
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-                <span className="text-xs font-mono uppercase tracking-wider text-[#EA580C] font-semibold">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#737373] font-medium">
                   Processing · Hiệu quả
                 </span>
               </div>
@@ -207,7 +207,7 @@ export function StatsStrip() {
               {TRUSTED_LOGOS.map((logo, idx) => (
                 <div
                   key={`logo-1-${idx}`}
-                  className="shrink-0 flex items-center justify-center grayscale opacity-55 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-9 px-2"
+                  className={`shrink-0 flex items-center justify-center grayscale ${logo.opacity} hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-9 px-2`}
                   title={logo.name}
                 >
                   <Image
@@ -224,7 +224,7 @@ export function StatsStrip() {
               {TRUSTED_LOGOS.map((logo, idx) => (
                 <div
                   key={`logo-2-${idx}`}
-                  className="shrink-0 flex items-center justify-center grayscale opacity-55 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-9 px-2"
+                  className={`shrink-0 flex items-center justify-center grayscale ${logo.opacity} hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-9 px-2`}
                   title={logo.name}
                 >
                   <Image

@@ -221,29 +221,20 @@ export function AiTransformationNetwork() {
                 className="transition-all duration-300"
               />
 
-              {/* Single Reveal Label: ONLY VISIBLE WHEN HIGHLIGHTED */}
-              {isHighlighted && (
+              {/* Subtle Reveal Label on Hover (Zero Black Tooltip Chrome) */}
+              {isHighlighted && activeNode !== null && (
                 <g className="transition-all duration-300 ease-out" style={{ transform: `translate(${lx}px, ${ly}px)` }}>
-                  <rect
-                    x={textAnchor === 'start' ? -6 : textAnchor === 'end' ? -108 : -56}
-                    y="-13"
-                    width="114"
-                    height="26"
-                    rx="6"
-                    fill="#0A0A0A"
-                    opacity="0.94"
-                    filter="drop-shadow(0 3px 10px rgba(0,0,0,0.15))"
-                  />
                   <text
                     x={textAnchor === 'start' ? 5 : textAnchor === 'end' ? -5 : 0}
                     y="0"
                     textAnchor={textAnchor}
                     dominantBaseline="central"
-                    fill="#FFFFFF"
-                    fontSize="10"
+                    fill="#0A0A0A"
+                    fontSize="11"
                     fontFamily="system-ui, sans-serif"
                     fontWeight="500"
-                    letterSpacing="0.01em"
+                    letterSpacing="0.02em"
+                    className="filter drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]"
                   >
                     {node.name}
                   </text>

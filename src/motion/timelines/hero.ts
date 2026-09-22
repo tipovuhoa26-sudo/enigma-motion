@@ -50,7 +50,7 @@ export function createHeroTimeline(elements: HeroElements): gsap.core.Timeline {
   if (dockItems.length > 0) gsap.set(dockItems, { opacity: 0, x: -12 });
   if (navBar) gsap.set(navBar, { opacity: 0, y: -8 });
   if (ctas.length > 0) gsap.set(ctas, { opacity: 0, y: 10 });
-  if (headlineLines.length > 0) gsap.set(headlineLines, { opacity: 0, y: 28, filter: 'blur(8px)' });
+  if (headlineLines.length > 0) gsap.set(headlineLines, { opacity: 0, y: 12, filter: 'blur(3px)' });
   if (visual) gsap.set(visual, { opacity: 0, scale: 0.94 });
   if (exploreWidget) gsap.set(exploreWidget, { opacity: 0, y: 16 });
   if (statCard) gsap.set(statCard, { opacity: 0, y: 16 });
@@ -88,15 +88,15 @@ export function createHeroTimeline(elements: HeroElements): gsap.core.Timeline {
     }, 0.2);
   }
 
-  // MOT-HERO-004: Headline reveal (+100ms after CTAs)
+  // MOT-HERO-004: Headline reveal (+100ms after CTAs) - Light, fast & crisp
   if (headlineLines.length > 0) {
     tl.to(headlineLines, {
       opacity: 1,
       y: 0,
       filter: 'blur(0px)',
-      duration: duration.lg,
+      duration: 0.5,
       ease: ease.enter,
-      stagger: 0.09,
+      stagger: 0.08,
     }, 0.3);
   }
 
