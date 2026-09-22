@@ -327,7 +327,7 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
 
           {/* Outcome Header Badge */}
           <text x="0" y="-52" textAnchor="middle" fill={activeStep === 1 ? '#059669' : '#EA580C'} fontSize="13" fontFamily="monospace" fontWeight="bold" letterSpacing="0.08em">
-            {activeStep === 2 ? '◉ P&L RESULT' : activeStep === 1 ? '◉ PRIVATE CORE' : '◉ RESULT'}
+            {activeStep === 2 ? '◉ BUSINESS IMPACT' : activeStep === 1 ? '◉ PRIVATE CORE' : '◉ RESULT'}
           </text>
 
           {/* Result Metric Text Label (Subtly Morphs with Step) */}

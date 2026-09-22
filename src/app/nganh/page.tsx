@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
+  ArrowUpRight,
   ChevronRight,
   Sparkles,
   ShoppingBag,
@@ -57,83 +58,156 @@ export default function IndustryIndexPage() {
           </div>
 
           {/* Hero Section */}
-          <section className="max-w-4xl mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-medium block mb-3">
-              Industry Verticals · Sunext AI Solutions
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">
-              Giải Pháp Chuyển Đổi AI May Đo Theo Đặc Thù Ngành
+          {/* Hero Header */}
+          <section className="max-w-4xl mb-12">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
+              <span className="text-xs uppercase tracking-widest text-[#7000FF] font-semibold font-mono">
+                INDUSTRY VERTICALS · TAXONOMY THEO NGÀNH
+              </span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.18] mb-4">
+              1 Vấn Đề Kinh Tế ➔ 1 Case ➔ 3 Capabilities
             </h1>
-            <p className="text-base sm:text-lg text-[#6E6E6E] leading-relaxed max-w-3xl">
-              Không dùng chung một giải pháp rập khuôn cho mọi doanh nghiệp. Sunext giải quyết đúng điểm nghẽn kinh tế lớn nhất của từng ngành — từ tối ưu chi phí nhân sự bán lẻ, kiểm định chất lượng sản xuất 24/7 đến tự động hóa Content Factory B2B.
+            <p className="text-base sm:text-lg text-[#626262] leading-relaxed max-w-3xl font-light">
+              Mỗi ngành kinh doanh có cấu trúc chi phí và điểm nghẽn P&L riêng biệt. Sunext không dùng giải pháp rập khuôn: chúng tôi giải đúng bài toán kinh tế trọng yếu nhất, chứng minh bằng case study thực tế và chuyển giao 3 năng lực cốt lõi.
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#FAF5FF] border border-[#EDE9FE] text-xs text-[#515151]">
+              <span className="text-[#7000FF] font-semibold">Lưu ý kiến trúc:</span>
+              <span>Trang này là <strong>Industry Taxonomy riêng</strong>, độc lập và bổ trợ cho Deep Domain Network (tri thức liên ngành) tại trang chủ.</span>
+            </div>
           </section>
 
-          {/* 3 Industry Cards Grid with Authentic Photography */}
-          <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          {/* Industry Scenes Grid: 1 Problem ➔ 1 Case ➔ 3 Capabilities */}
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
             {INDUSTRIES_DATA.map((ind) => {
               const Icon = INDUSTRY_ICONS[ind.id] || Sparkles;
+              const primaryChallenge = ind.challenges[0] || {
+                title: 'Chi phí vận hành thủ công quá lớn',
+                description: ind.marketContext,
+                impact: 'Giảm biên lợi nhuận',
+              };
+
               return (
                 <div
                   key={ind.id}
-                  className="rounded-3xl bg-white border border-black/10 shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
+                  className="rounded-3xl bg-white border border-[#E8E8E8] hover:border-[#17151A] shadow-xs hover:shadow-md transition-all p-6 sm:p-8 flex flex-col justify-between relative group"
                 >
+                  {/* Top: Industry Name & Icon */}
                   <div>
-                    {/* Visual Asset Container */}
-                    <div className="relative w-full h-[220px] overflow-hidden border-b border-black/5">
-                      <IndustryVisual slug={ind.slug} compact />
-                      <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
-                        <span className="text-[10px] font-mono uppercase tracking-wider bg-black/60 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-white/20">
-                          {ind.englishName}
-                        </span>
-                        <div className="w-7 h-7 rounded-full bg-white text-[#17151A] flex items-center justify-center shadow-xs">
-                          <Icon className="w-3.5 h-3.5" />
+                    <div className="flex items-center justify-between pb-4 border-b border-black/5 mb-6">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#FAF5FF] border border-[#EDE9FE] flex items-center justify-center text-[#7000FF]">
+                          <Icon className="w-5 h-5" />
                         </div>
+                        <div>
+                          <span className="text-[10px] font-mono text-[#747474] uppercase tracking-wider block">
+                            {ind.englishName}
+                          </span>
+                          <h2 className="text-xl font-normal text-[#17151A]">
+                            {ind.name}
+                          </h2>
+                        </div>
+                      </div>
+                      <Link
+                        href={`/nganh/${ind.slug}`}
+                        className="w-8 h-8 rounded-full bg-[#F5F3F6] group-hover:bg-[#17151A] text-[#17151A] group-hover:text-white flex items-center justify-center transition-all"
+                      >
+                        <ChevronRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+
+                    {/* Step 1: VẤN ĐỀ KINH TẾ (1 Economic Problem) */}
+                    <div className="p-4 rounded-2xl bg-[#FFFBF7] border border-[#FED7AA] mb-4">
+                      <div className="flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-[#EA580C] mb-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C]" />
+                        <span>1. Vấn Đề Kinh Tế Cốt Lõi</span>
+                      </div>
+                      <p className="text-xs font-semibold text-[#17151A] mb-1">
+                        {primaryChallenge.title}
+                      </p>
+                      <p className="text-xs text-[#626262] leading-relaxed line-clamp-2">
+                        {primaryChallenge.description}
+                      </p>
+                    </div>
+
+                    {/* Node Connector Line */}
+                    <div className="flex items-center justify-center py-1">
+                      <div className="flex flex-col items-center">
+                        <div className="w-[1px] h-3 bg-[#7000FF]/40" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#7000FF]" />
+                        <div className="w-[1px] h-3 bg-[#7000FF]/40" />
                       </div>
                     </div>
 
-                    {/* Card Content */}
-                    <div className="p-6">
-                      <h2 className="text-xl font-normal text-[#17151A] group-hover:font-medium transition-all mb-3 leading-snug">
-                        {ind.name}
-                      </h2>
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-6 line-clamp-3">
-                        {ind.heroSubheadline}
-                      </p>
+                    {/* Step 2: BẰNG CHỨNG XÁC THỰC (1 Verified Case) */}
+                    <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] mb-4">
+                      <div className="flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-[#17151A] mb-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
+                          <span>2. Case Study Thực Chứng: {ind.centralCaseStudy.client}</span>
+                        </div>
+                        <span className="text-emerald-800 font-mono">{ind.centralCaseStudy.scale}</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 pt-2 mt-2 border-t border-black/5">
+                        {ind.centralCaseStudy.metrics.slice(0, 2).map((m, mIdx) => (
+                          <div key={mIdx} className="bg-white/80 p-2 rounded-lg border border-black/5">
+                            <span className="text-lg font-light font-mono text-[#EA580C] block leading-none">
+                              {m.value}
+                            </span>
+                            <span className="text-[10px] text-[#626262] block mt-1 line-clamp-1">
+                              {m.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                      {/* Case Study Highlight Badge */}
-                      <div className="p-3.5 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] space-y-2 mb-4">
-                        <div className="flex items-center justify-between text-[11px] font-semibold text-[#17151A]">
-                          <span>Bằng chứng xác thực:</span>
-                          <span className="text-emerald-800">{ind.centralCaseStudy.scale}</span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-2 pt-1 border-t border-black/5">
-                          {ind.centralCaseStudy.metrics.slice(0, 2).map((m, mIdx) => (
-                            <div key={mIdx}>
-                              <span className="text-lg font-light text-[#17151A] block leading-none">
-                                {m.value}
-                              </span>
-                              <span className="text-[10px] text-[#6E6E6E] block mt-0.5 line-clamp-1">
-                                {m.label}
-                              </span>
+                    {/* Node Connector Line */}
+                    <div className="flex items-center justify-center py-1">
+                      <div className="flex flex-col items-center">
+                        <div className="w-[1px] h-3 bg-[#7000FF]/40" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#7000FF]" />
+                        <div className="w-[1px] h-3 bg-[#7000FF]/40" />
+                      </div>
+                    </div>
+
+                    {/* Step 3: 3 CAPABILITIES (3 Năng Lực Cốt Lõi Chuyển Giao) */}
+                    <div className="p-4 rounded-2xl bg-white border border-[#E8E8E8] shadow-2xs">
+                      <div className="flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-[#7000FF] mb-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#7000FF]" />
+                        <span>3. Ba Năng Lực Cốt Lõi (3 Capabilities)</span>
+                      </div>
+                      <div className="space-y-2 text-xs text-[#374151]">
+                        {ind.solutions.slice(0, 3).map((sol, sIdx) => (
+                          <div key={sIdx} className="flex items-start gap-2">
+                            <span className="w-5 h-5 rounded-md bg-[#FAF5FF] border border-[#EDE9FE] text-[#7000FF] text-[10px] font-mono font-bold flex items-center justify-center shrink-0 mt-0.5">
+                              0{sIdx + 1}
+                            </span>
+                            <div>
+                              <strong className="text-[#17151A] font-medium">{sol.name}</strong>
+                              <p className="text-[11px] text-[#626262] leading-snug line-clamp-1">
+                                {sol.description}
+                              </p>
                             </div>
-                          ))}
-                        </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
 
                   {/* Bottom Link Action */}
-                  <div className="p-6 pt-0">
+                  <div className="pt-6 mt-6 border-t border-black/5 flex items-center justify-between">
                     <Link
                       href={`/nganh/${ind.slug}`}
-                      className="w-full inline-flex items-center justify-between p-3 rounded-full bg-[#F5F3F6] hover:bg-[#17151A] text-[#17151A] hover:text-white transition-all text-xs font-medium group/btn"
+                      className="text-xs font-semibold text-[#7000FF] hover:text-[#581C87] inline-flex items-center gap-1.5"
                     >
-                      <span>Xem Giải Pháp Chi Tiết & Case Study</span>
-                      <div className="w-6 h-6 rounded-full bg-white text-[#17151A] flex items-center justify-center group-hover/btn:translate-x-1 transition-transform">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
+                      <span>Xem toàn bộ lộ trình ngành &amp; kiến trúc</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
+                    <span className="text-[11px] text-[#747474] font-mono">
+                      {ind.roadmap.length} Phases
+                    </span>
                   </div>
                 </div>
               );

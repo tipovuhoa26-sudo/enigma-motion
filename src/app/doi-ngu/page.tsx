@@ -38,8 +38,78 @@ const BLOCK_COLORS: Record<string, { bg: string; text: string; badge: string }> 
   operations: { bg: 'bg-amber-900', text: 'text-white', badge: 'bg-amber-50 text-amber-800 border-amber-200' },
 };
 
+const DOMAIN_FACULTY_MAP = [
+  {
+    id: 'banking',
+    title: 'BANKING & FINANCE',
+    nameVi: 'Tài Chính, Ngân Hàng & Đầu Tư',
+    blockTarget: 'finance',
+    experts: [
+      { name: 'Nguyễn Tùng Chi', role: '24+ Năm KN · Nguyên Thẩm định Niêm yết HOSE & CFO Aurai Wind Energy' },
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'CAIO Sunext · Cố vấn Kiến trúc Multi-Agent Tài chính' },
+    ],
+    relatedCase: { title: 'Vietcap Securities', metric: '−75% Thời gian bóc tách BCTC thô', link: '/case-studies/vietcap-ai-multi-agent-nghien-cuu-thi-truong' },
+  },
+  {
+    id: 'real-estate',
+    title: 'REAL ESTATE',
+    nameVi: 'Bất Động Sản & Quản Lý Dự Án',
+    blockTarget: 'executive',
+    experts: [
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Lead AI Trainer cho 500+ nhân sự Vinhomes & CenGroup' },
+      { name: 'Trịnh Minh Hùng', role: 'ThS., CEO · Cố vấn Tái cấu trúc Vận hành Doanh nghiệp' },
+    ],
+    relatedCase: { title: 'Vinhomes', metric: '< 1.5s Tra cứu bảng hàng & chính sách 24/7', link: '/case-studies/vinhomes-ai-sales-enablement' },
+  },
+  {
+    id: 'manufacturing',
+    title: 'MANUFACTURING & OPS',
+    nameVi: 'Sản Xuất Chế Tạo & Chuỗi Cung Ứng',
+    blockTarget: 'operations',
+    experts: [
+      { name: 'Trịnh Minh Hùng', role: '17+ Năm KN · Cố vấn Tối ưu Quy trình Sản xuất & Giám sát P&L' },
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Kiến trúc sư giải pháp Computer Vision trên chuyền máy' },
+    ],
+    relatedCase: { title: 'Nhà Máy Cơ Khí Chính Xác', metric: '99.8% Độ chính xác kiểm định bề mặt 24/7', link: '/case-studies/ai-auditor-manufacturing' },
+  },
+  {
+    id: 'marketing',
+    title: 'SALES & MARKETING',
+    nameVi: 'Tiếp Thị, Thương Hiệu & Tăng Trưởng',
+    blockTarget: 'marketing',
+    experts: [
+      { name: 'Nguyễn Trường Quang Khôi', role: 'CEO KST Canada · Cố vấn Phát triển Thị trường Quốc tế' },
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Kiến trúc sư Content Factory & AI Pitch Deck Engine' },
+    ],
+    relatedCase: { title: 'Dentsu Sports & Creative', metric: '−65% Thời gian hoàn thiện hồ sơ thầu', link: '/case-studies/dentsu-ai-pitch-deck-automation' },
+  },
+  {
+    id: 'hr',
+    title: 'HR & LEARNING',
+    nameVi: 'Nhân Tài & Đào Tạo Chuẩn Bậc 6',
+    blockTarget: 'hr',
+    experts: [
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Cấp chứng nhận cho 600+ giảng viên chuẩn Bậc 6' },
+      { name: 'Trịnh Minh Hùng', role: 'Chuyên gia Huấn luyện Năng lực Quản trị C-Level' },
+    ],
+    relatedCase: { title: 'Đại Học FPT', metric: 'Nâng bậc GV Bậc 6 & 10.000+ sinh viên Tech Fest', link: '/case-studies/fpt-university-ai-event-agents' },
+  },
+  {
+    id: 'tech-data',
+    title: 'TECHNOLOGY & DATA',
+    nameVi: 'Hạ Tầng Dữ Liệu & Private AI',
+    blockTarget: 'executive',
+    experts: [
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Lead AI Architect · Thiết kế Private Vector Vault On-premise' },
+      { name: 'Nguyễn Tùng Chi', role: 'Kiến trúc sư Dữ liệu Tài chính & Single Source of Truth' },
+    ],
+    relatedCase: { title: 'Private AI Core', metric: '100% Bảo mật nội bộ, Zero Data Leakage', link: '/tu-duy-chuyen-doi-ai/kien-truc-du-lieu' },
+  },
+];
+
 export default function TeamLeadershipPage() {
   const [activeBlock, setActiveBlock] = useState<string>('all');
+  const [activeDomainTree, setActiveDomainTree] = useState<string>('banking');
   const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
 
   React.useEffect(() => {
@@ -242,6 +312,91 @@ export default function TeamLeadershipPage() {
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* DEEP DOMAIN NETWORK (Interactive Proof of Homepage Hero Graph) */}
+          <section className="max-w-5xl mx-auto mb-16 p-6 sm:p-10 rounded-3xl bg-[#FAF5FF] border border-[#EDE9FE] shadow-xs">
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-purple-100">
+              <div>
+                <span className="text-xs uppercase tracking-widest text-[#7000FF] font-semibold block mb-1">
+                  DEEP DOMAIN NETWORK · BẰNG CHỨNG THỰC CỦA GRAPH TRANG CHỦ
+                </span>
+                <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">
+                  Tri thức chuyên sâu hội tụ từ những chuyên gia thực chiến
+                </h3>
+              </div>
+              <span className="text-xs font-mono text-[#747474]">
+                Hover hoặc chọn một miền để giải mã
+              </span>
+            </div>
+
+            {/* Horizontal Domain Selector Pills */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
+              {DOMAIN_FACULTY_MAP.map((domain) => {
+                const isActive = activeDomainTree === domain.id;
+                return (
+                  <button
+                    key={domain.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveDomainTree(domain.id);
+                      if (domain.blockTarget) setActiveBlock(domain.blockTarget);
+                    }}
+                    onMouseEnter={() => setActiveDomainTree(domain.id)}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+                      isActive
+                        ? 'bg-[#7000FF] text-white shadow-xs'
+                        : 'bg-white border border-[#E8E8E8] text-[#515151] hover:border-[#7000FF] hover:text-[#17151A]'
+                    }`}
+                  >
+                    <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#EA580C]' : 'bg-[#7000FF]'}`} />
+                    <span>{domain.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Interactive Tree Branch Display */}
+            {(() => {
+              const active = DOMAIN_FACULTY_MAP.find((d) => d.id === activeDomainTree) || DOMAIN_FACULTY_MAP[0];
+              return (
+                <div className="bg-white rounded-2xl border border-[#EDE9FE] p-6 shadow-xs space-y-4">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#7000FF]">
+                    <span>{active.title}</span>
+                    <span className="text-[#747474] font-sans font-normal">({active.nameVi})</span>
+                  </div>
+
+                  <div className="font-mono text-xs text-[#515151] space-y-3 pl-2">
+                    <div className="text-[#7000FF] font-bold">│</div>
+                    {active.experts.map((exp, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <span className="text-[#7000FF] shrink-0">├</span>
+                        <div>
+                          <strong className="text-[#17151A] font-semibold">{exp.name}</strong>
+                          <span className="text-[#747474] ml-2">({exp.role})</span>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="flex items-center gap-2 pt-1">
+                      <span className="text-[#7000FF] shrink-0">└</span>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="text-[#EA580C] font-semibold">Related case:</span>
+                        <Link
+                          href={active.relatedCase.link}
+                          className="font-medium text-[#17151A] hover:text-[#7000FF] hover:underline inline-flex items-center gap-1"
+                        >
+                          <span>{active.relatedCase.title}</span>
+                          <span className="px-2 py-0.5 rounded-md bg-[#FFF7ED] text-[#EA580C] font-semibold text-[11px]">
+                            {active.relatedCase.metric}
+                          </span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#7000FF]" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
           </section>
 
           {/* Section: 11 Faculty Members across 5 Blocks (Progressive Disclosure) */}

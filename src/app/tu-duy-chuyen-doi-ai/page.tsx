@@ -26,9 +26,11 @@ import { CaseStudyVisual } from '@/components/visuals/CaseStudyVisual';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { PILLARS_DATA } from '@/content/aiTransformation';
+import { SixPillarsDiagnosticRadar } from '@/components/visuals/SixPillarsDiagnosticRadar';
 
 export default function AiTransformationHubPage() {
   const [selectedCase, setSelectedCase] = useState<number>(0);
+  const [activePillarTab, setActivePillarTab] = useState<number>(0);
 
   const verifiedCases = [
     {
@@ -106,216 +108,237 @@ export default function AiTransformationHubPage() {
             </div>
           </div>
 
-          {/* Hero Header Section */}
-          <section className="max-w-4xl mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-medium block mb-3">
-              Tư Duy Chuyển Đổi AI · Báo Cáo Chiến Lược
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-light tracking-tight text-[#17151A] leading-[1.18] mb-8">
-              Vì sao nhiều chương trình AI <span className="font-normal underline decoration-black/20 underline-offset-8">không tạo được giá trị</span> — dù đã mua đủ công cụ
-            </h1>
+          {/* Hero Header Section — 50/50 Editorial Layout with Diagnostic Radar */}
+          <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 pb-12 border-b border-black/5">
+            <div className="lg:col-span-6 space-y-6">
+              <span className="text-xs uppercase tracking-widest text-[#7000FF] font-semibold block">
+                CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC · 6 TRỤ CỘT
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.15]">
+                AI đang mắc ở đâu trong tổ chức?
+              </h1>
+              <p className="text-base sm:text-lg text-[#626262] leading-relaxed font-light">
+                <strong>6 Trụ Cột = Organizational Capability Checklist</strong>, được kích hoạt linh hoạt, <em>không phải quy trình 6 bước tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn đang chặn use case ưu tiên rồi tập trung mở khoá.
+              </p>
 
-            {/* Pain Point Lead In (Sam Ovens style) */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#F5F3F6] border border-black/5 text-[#17151A] space-y-4 mb-8">
-              <p className="text-base sm:text-lg font-medium leading-relaxed">
-                Bạn đã mua ChatGPT Team cho cả phòng.
-              </p>
-              <p className="text-base text-[#6E6E6E] leading-relaxed">
-                Bạn đã cho nhân viên đi học một khoá &ldquo;AI cho người mới bắt đầu&rdquo;. Bạn đã thử một con chatbot, một cái dashboard, một con agent nào đó do đội IT tự ráp.
-              </p>
-              <p className="text-base text-[#17151A] font-medium leading-relaxed">
-                Sáu tháng sau, mọi thứ vẫn y như cũ. Người ta vẫn copy-paste giữa Excel và email. Vẫn họp để hỏi &ldquo;ai có bản mới nhất&rdquo;. Vẫn mất ba ngày cho việc lẽ ra ba phút xong.
-              </p>
-              <div className="pt-3 border-t border-black/10 flex items-center gap-3 text-xs text-[#6E6E6E]">
-                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>
-                  Thực tế cho thấy: Phần lớn chương trình chuyển đổi không tạo được giá trị không phải vì mô hình AI kém, mà vì <strong>đầu tư công nghệ nhưng không tái cấu trúc tổ chức và chuẩn hóa quy trình để vận hành nó</strong>.
-                </span>
+              {/* BCG 10-20-70 Lean Indicator */}
+              <div className="p-4 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] text-xs text-[#515151] space-y-2">
+                <div className="flex items-center justify-between text-[#7000FF] font-semibold text-[11px] uppercase tracking-wider">
+                  <span>Khung phân bổ nỗ lực BCG</span>
+                  <span>10 — 20 — 70</span>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
+                  <div className="p-2 rounded-lg bg-white border border-[#EDE9FE]">
+                    <span className="font-bold text-[#17151A] block">10%</span>
+                    <span className="text-[#747474] text-[10px]">Mô hình &amp; Tool</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-white border border-[#EDE9FE]">
+                    <span className="font-bold text-[#17151A] block">20%</span>
+                    <span className="text-[#747474] text-[10px]">Hạ tầng Dữ liệu</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-[#7000FF]/10 border border-[#7000FF]/20 text-[#7000FF]">
+                    <span className="font-bold block">70%</span>
+                    <span className="font-medium text-[10px]">Con người &amp; Quy trình</span>
+                  </div>
+                </div>
               </div>
+
+              {/* Action CTAs */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <Link href="/danh-gia-san-sang-ai">
+                  <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold px-5 py-2.5">
+                    <ClipboardCheck className="w-4 h-4 mr-1.5" />
+                    <span>Đo lường với 12 câu hỏi</span>
+                  </Button>
+                </Link>
+
+                <a
+                  href="#cac-tru-cot"
+                  className="px-4 py-2.5 rounded-xl border border-[#D5D3CC] hover:border-[#17151A] text-xs font-medium text-[#17151A] transition-colors inline-flex items-center gap-1.5 bg-white"
+                >
+                  <span>Xem 6 trụ cột chi tiết</span>
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: SixPillarsDiagnosticRadar Visual */}
+            <div className="lg:col-span-6 flex justify-center">
+              <SixPillarsDiagnosticRadar />
             </div>
           </section>
 
-          {/* Section: Quy tắc 10-20-70 BCG Callout */}
-          <section className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            <div className="md:col-span-4">
-              <div className="flex items-center gap-2 mb-2">
-                <PieChart className="w-4 h-4 text-emerald-800" />
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E6E]">
-                  Khung Phân Bổ Nỗ Lực BCG
-                </span>
-              </div>
-              <h2 className="text-2xl font-light text-[#17151A]">
-                Quy tắc 10 — 20 — 70
-              </h2>
-              <p className="text-xs text-[#6E6E6E] mt-2 leading-relaxed">
-                Quy tắc 10–20–70 của BCG nhấn mạnh phần lớn nỗ lực chuyển đổi phải dành cho con người và quy trình (khoảng 10% thuật toán, 20% công nghệ/dữ liệu và 70% con người/quy trình). Đa phần doanh nghiệp đầu tư sai lệch khi dồn toàn bộ ngân sách vào 10% công cụ.
-              </p>
-            </div>
-
-            <div className="md:col-span-8 grid grid-cols-3 gap-3 text-center">
-              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5 flex flex-col justify-between">
-                <div>
-                  <span className="text-3xl font-light text-[#17151A] block">10%</span>
-                  <span className="text-xs font-semibold text-[#17151A] block mt-1">Thuật toán & Tool</span>
-                </div>
-                <span className="text-[10px] text-[#6E6E6E] mt-2 block">Mô hình AI chỉ là công cụ hỗ trợ</span>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5 flex flex-col justify-between">
-                <div>
-                  <span className="text-3xl font-light text-[#17151A] block">20%</span>
-                  <span className="text-xs font-semibold text-[#17151A] block mt-1">Hạ tầng Dữ liệu</span>
-                </div>
-                <span className="text-[10px] text-[#6E6E6E] mt-2 block">Độ sạch và kết nối hệ thống lõi</span>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] flex flex-col justify-between">
-                <div>
-                  <span className="text-3xl font-light text-emerald-900 block">70%</span>
-                  <span className="text-xs font-semibold text-emerald-900 block mt-1">Con người & Quy trình</span>
-                </div>
-                <span className="text-[10px] text-emerald-800 mt-2 block font-medium">Tái cấu trúc tổ chức & Năng lực</span>
-              </div>
-            </div>
-          </section>
-
-          {/* Section: Cái Lầm Tưởng vs Bản Chất Rewired */}
-          <section className="mb-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Myth Column */}
-              <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col justify-between">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium mb-4">
-                    <AlertTriangle className="w-3.5 h-3.5" />
-                    <span>Lầm tưởng khiến bạn tốn tiền</span>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-normal text-[#17151A] mb-4">
-                    &ldquo;Cứ mua đủ công cụ tốt, đội ngũ rồi sẽ tự biết cách dùng.&rdquo;
-                  </h2>
-                  <p className="text-sm text-[#6E6E6E] leading-relaxed mb-4">
-                    Sai. Hoàn toàn sai. AI không phải một phần mềm bạn cài vào rồi xong. AI là một <strong>năng lực tổ chức</strong>.
-                  </p>
-                  <p className="text-sm text-[#6E6E6E] leading-relaxed">
-                    Thiếu một trong sáu thứ — chiến lược, con người, quy trình, nền tảng, dữ liệu, cơ chế nhân rộng — tiền bạn bỏ ra mua công cụ AI chỉ nằm im trong một góc, không ai dùng, không tạo ra một đồng giá trị nào.
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-black/5 text-xs text-[#6E6E6E]">
-                  Hậu quả: Sau 90 ngày, chỉ còn 2-3 người tự mày mò sử dụng, 90% ngân sách bản quyền bốc hơi lãng phí.
-                </div>
-              </div>
-
-              {/* Reality Column (Sunext Method Concept) */}
-              <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-[#FAFFDE] border border-[#DFE2C8] flex flex-col justify-between">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/5 text-xs font-semibold text-[#17151A] mb-4">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
-                    <span>Bản chất: Phương Pháp Luận Sunext (Tham Chiếu Rewired)</span>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl font-normal text-[#17151A] mb-4">
-                    Tái đấu nối lại toàn bộ doanh nghiệp, không chỉ lắp thêm một cái app
-                  </h2>
-                  <p className="text-sm text-[#17151A]/80 leading-relaxed mb-6">
-                    Để AI tạo ra giá trị kinh tế trên bảng P&L, tổ chức được chẩn đoán toàn diện trên <strong>6 trụ cột năng lực</strong>. Không cần kích hoạt cả sáu cùng lúc. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung xử lý.
-                  </p>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">01 Strategy</span>
-                      <span className="text-[#6E6E6E]">Chiến lược & Giá trị</span>
-                    </div>
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">02 People</span>
-                      <span className="text-[#6E6E6E]">Nhân tài & Năng lực</span>
-                    </div>
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">03 Process</span>
-                      <span className="text-[#6E6E6E]">Mô hình vận hành</span>
-                    </div>
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">04 Technology</span>
-                      <span className="text-[#6E6E6E]">Nền tảng & Tích hợp</span>
-                    </div>
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">05 Data</span>
-                      <span className="text-[#6E6E6E]">Kiến trúc dữ liệu</span>
-                    </div>
-                    <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">06 Governance</span>
-                      <span className="text-[#6E6E6E]">Quản trị & Mở rộng</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-black/10 flex items-center justify-between">
-                  <span className="text-xs font-medium text-[#17151A]">Bạn đang ở đâu trong 6 trụ cột này?</span>
-                  <Link href="/danh-gia-san-sang-ai">
-                    <Button variant="primary" size="sm" className="rounded-full text-xs gap-1.5">
-                      <ClipboardCheck className="w-3.5 h-3.5" />
-                      <span>Đo lường với 12 câu hỏi</span>
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Section: 6 Trụ Cột Chẩn Đoán Năng Lực AI */}
-          <section className="mb-20">
-            <div className="max-w-3xl mb-10">
-              <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-                Khung Chẩn Đoán Năng Lực Tổ Chức
+          {/* Section: 6 Trụ Cột Chẩn Đoán Năng Lực AI (Diagnostic Dossier) */}
+          <section id="cac-tru-cot" className="mb-20 scroll-mt-24">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs uppercase tracking-wider text-[#7000FF] font-semibold block mb-2">
+                ORGANIZATIONAL CAPABILITY CHECKLIST
               </span>
               <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight">
                 6 trụ cột để biết AI đang mắc ở đâu
               </h2>
               <p className="text-sm text-[#6E6E6E] mt-3 leading-relaxed">
-                Không cần kích hoạt cả sáu cùng lúc. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung xử lý. Đây là 6 chiều năng lực tổ chức được lượng hóa rõ ràng để đảm bảo AI cắm sâu vào vận hành thực tế.
+                Không kích hoạt tuần tự. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung mở khoá. Mỗi trụ cột được chẩn đoán theo 4 thành tố: <strong>Tình huống thật → Insight chẩn đoán → 3 việc Sunext làm → Bằng chứng thực tế</strong>.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Pillar Selector Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar border-b border-black/5">
               {PILLARS_DATA.map((pillar, idx) => {
-                const IconComponent = pillarIcons[idx] || Zap;
+                const isActive = activePillarTab === idx;
                 return (
-                  <Link
+                  <button
                     key={pillar.id}
-                    href={`/tu-duy-chuyen-doi-ai/${pillar.slug}`}
-                    className="group rounded-3xl p-6 bg-white/80 border border-black/5 hover:border-black/20 hover:shadow-md transition-all flex flex-col justify-between"
+                    type="button"
+                    onClick={() => setActivePillarTab(idx)}
+                    className={`px-4 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all cursor-pointer flex items-center gap-2 ${
+                      isActive
+                        ? 'bg-[#17151A] text-white shadow-xs'
+                        : 'bg-white border border-[#E8E8E8] text-[#515151] hover:text-[#17151A]'
+                    }`}
                   >
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="w-8 h-8 rounded-full bg-[#F5F3F6] group-hover:bg-[#FAFFDE] border border-black/5 flex items-center justify-center text-xs font-semibold text-[#17151A] transition-colors">
-                          0{pillar.number}
-                        </span>
-                        <span className="text-[11px] font-medium text-[#6E6E6E] group-hover:text-[#17151A] transition-colors">
-                          {pillar.rewiredName}
-                        </span>
-                      </div>
-
-                      <div className="w-10 h-10 rounded-2xl bg-[#F8F8F6] border border-black/5 flex items-center justify-center text-[#17151A] mb-4 group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-5 h-5" />
-                      </div>
-
-                      <h3 className="text-lg font-normal text-[#17151A] group-hover:font-medium transition-all mb-2 leading-snug">
-                        {pillar.title}
-                      </h3>
-
-                      <p className="text-xs text-[#6E6E6E] leading-relaxed mb-4">
-                        {pillar.tagline}
-                      </p>
-                    </div>
-
-                    <div className="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#17151A] font-medium">
-                      <span>Đọc phân tích chuyên sâu</span>
-                      <div className="w-6 h-6 rounded-full bg-[#17151A] text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </div>
-                    </div>
-                  </Link>
+                    <span className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-mono ${
+                      isActive ? 'bg-white/20 text-white' : 'bg-black/5 text-[#515151]'
+                    }`}>
+                      0{pillar.number}
+                    </span>
+                    <span>{pillar.title.split('·')[0].trim()}</span>
+                  </button>
                 );
               })}
             </div>
+
+            {/* Active Pillar 4-Part Diagnosis Card */}
+            {(() => {
+              const p = PILLARS_DATA[activePillarTab] || PILLARS_DATA[0];
+              const IconComponent = pillarIcons[activePillarTab] || Zap;
+
+              return (
+                <div className="bg-white rounded-3xl border border-black/10 shadow-xs p-6 sm:p-10 space-y-8 animate-in fade-in duration-300">
+                  {/* Dossier Header */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-black/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] flex items-center justify-center text-[#7000FF] shrink-0">
+                        <IconComponent className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#7000FF]">
+                            Trụ Cột 0{p.number} · {p.rewiredName}
+                          </span>
+                        </div>
+                        <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">
+                          {p.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    <Link href={`/tu-duy-chuyen-doi-ai/${p.slug}`}>
+                      <Button variant="outline" size="sm" className="rounded-xl text-xs gap-1.5 border-[#D5D3CC]">
+                        <span>Đọc chuyên sâu</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Button>
+                    </Link>
+                  </div>
+
+                  {/* 4-Part Diagnosis Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* 1. TÌNH HUỐNG THẬT */}
+                    <div className="p-5 rounded-2xl bg-[#FFFBF7] border border-[#FED7AA] space-y-3 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C2410C]">
+                          <AlertTriangle className="w-4 h-4" />
+                          <span>1. Tình Huống Thật Tại Doanh Nghiệp</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#515151] mt-3 leading-relaxed">
+                          {p.introParagraphs[0]}
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-black/5 text-[11px] text-[#747474] font-medium">
+                        Điểm nghẽn: Thiếu tính đồng bộ và cơ chế đo lường kết quả cụ thể.
+                      </div>
+                    </div>
+
+                    {/* 2. INSIGHT CHẨN ĐOÁN */}
+                    <div className="p-5 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] space-y-3 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#7000FF]">
+                          <Zap className="w-4 h-4" />
+                          <span>2. Insight Chẩn Đoán Cốt Lõi</span>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#515151] mt-3 leading-relaxed">
+                          {p.reality.summary}
+                        </p>
+                      </div>
+                      <div className="pt-3 border-t border-black/5 text-[11px] text-[#7000FF] font-medium">
+                        Bản chất: AI là năng lực tổ chức, không phải một gói phần mềm mua về cài đặt.
+                      </div>
+                    </div>
+
+                    {/* 3. 3 VIỆC SUNEXT LÀM */}
+                    <div className="p-5 rounded-2xl bg-[#F0FDF4] border border-[#BBF7D0] space-y-3">
+                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#15803D]">
+                        <CheckCircle2 className="w-4 h-4" />
+                        <span>3. Ba Việc Sunext Triển Khai</span>
+                      </div>
+                      <ul className="space-y-2 mt-3 text-xs sm:text-sm text-[#374151]">
+                        {p.solution.highlights.slice(0, 3).map((item, hIdx) => (
+                          <li key={hIdx} className="flex items-start gap-2">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#15803D] mt-2 shrink-0" />
+                            <span className="leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* 4. BẰNG CHỨNG THỰC TẾ */}
+                    <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs space-y-3 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#17151A]">
+                          <div className="flex items-center gap-1.5">
+                            <TrendingUp className="w-4 h-4 text-[#EA580C]" />
+                            <span>4. Bằng Chứng Thực Tế</span>
+                          </div>
+                          <span className="text-[10px] text-[#747474] font-normal font-mono">VERIFIED METRIC</span>
+                        </div>
+
+                        {p.evidence && p.evidence.length > 0 ? (
+                          <div className="mt-3 space-y-2">
+                            <div className="text-xs font-medium text-[#17151A]">
+                              {p.evidence[0].client} · <span className="text-[#747474] font-normal">{p.evidence[0].industry}</span>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2 pt-2">
+                              {p.evidence[0].metrics.slice(0, 2).map((m, mIdx) => (
+                                <div key={mIdx} className="p-2 rounded-lg bg-[#FAF5FF] border border-[#EDE9FE]">
+                                  <span className="text-lg font-light text-[#7000FF] block leading-none font-mono">
+                                    {m.value}
+                                  </span>
+                                  <span className="text-[10px] text-[#747474] block mt-1 line-clamp-1">
+                                    {m.label}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="mt-3 p-3 rounded-xl bg-[#F8F8F6] border border-black/5 text-xs text-[#515151]">
+                            Được tích hợp đồng bộ trong các giải pháp Lộ trình chuyển đổi Sunext BOT.
+                          </div>
+                        )}
+                      </div>
+
+                      <Link
+                        href={p.evidence && p.evidence.length > 0 ? p.evidence[0].caseStudyUrl : `/tu-duy-chuyen-doi-ai/${p.slug}`}
+                        className="inline-flex items-center gap-1 text-xs font-medium text-[#EA580C] hover:underline pt-2 border-t border-black/5"
+                      >
+                        <span>Xem chi tiết bằng chứng</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
           </section>
 
           {/* Section: Bằng Chứng Thật - 3 Doanh Nghiệp Đã Làm Đúng (With Authentic Photography) */}

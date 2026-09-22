@@ -66,72 +66,41 @@ export default function ClientsNetworkPage() {
               Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ thống phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận ứng dụng AI hiệu quả trên khắp cả nước.
             </p>
 
-            {/* Metric Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
-              <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8]">
-                <span className="text-2xl font-light text-[#17151A] block">45</span>
-                <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Tổ chức
+            {/* Metric Badges: 8 Case Studies · 40+ Engagements · 45 Organizations */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mb-12">
+              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+                <span className="text-3xl sm:text-4xl font-light font-mono text-[#EA580C] block">08</span>
+                <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
+                  Case Studies
                 </span>
-                <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Trong mạng lưới hợp tác
-                </span>
-              </div>
-              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                <span className="text-2xl font-light text-[#17151A] block">40+</span>
-                <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Dự án & đề án
-                </span>
-                <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Triển khai thực tế
+                <span className="text-[11px] text-[#747474] block mt-0.5">
+                  Bằng chứng chuyên sâu có số liệu đo lường
                 </span>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                <span className="text-2xl font-light text-[#17151A] block">08</span>
-                <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Macro-Domains
+              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+                <span className="text-3xl sm:text-4xl font-light font-mono text-[#7000FF] block">40+</span>
+                <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
+                  Engagements
                 </span>
-                <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Tài chính, BĐS, Sản xuất...
+                <span className="text-[11px] text-[#747474] block mt-0.5">
+                  Đề án &amp; chương trình triển khai thực tế
                 </span>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                <span className="text-2xl font-light text-[#17151A] block">100%</span>
-                <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Cam Kết NDA
+              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+                <span className="text-3xl sm:text-4xl font-light font-mono text-[#17151A] block">45</span>
+                <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
+                  Organizations
                 </span>
-                <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Bảo vệ dữ liệu & quyền riêng tư
+                <span className="text-[11px] text-[#747474] block mt-0.5">
+                  10 Direct Engagements &amp; 35 Ecosystem
                 </span>
               </div>
             </div>
           </section>
 
-          {/* Lớp 1 — Lưới Logo Duyệt Nhanh (Browse Layer: Lean Grayscale-to-Color) */}
-          <section className="max-w-6xl mx-auto mb-16">
-            <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Sparkles className="w-4 h-4 text-emerald-700" />
-                  <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-semibold">
-                    LỚP 1 · LƯỚI DUYỆT NHANH (PROGRESSIVE DISCLOSURE)
-                  </span>
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-light text-[#17151A]">
-                  Tổ Chức & Thương Hiệu Tiêu Biểu
-                </h3>
-                <p className="text-xs sm:text-sm text-[#6E6E6E] mt-1 font-light">
-                  Rê chuột để xem màu nhận diện thương hiệu. Nhấp để xem chi tiết nghiệp vụ hoặc case study.
-                </p>
-              </div>
-
-              <div className="text-xs text-[#6E6E6E] sm:text-right shrink-0">
-                Hiển thị <span className="font-semibold text-[#17151A]">{filteredLogos.length}</span> tổ chức
-              </div>
-            </div>
-
-            {/* 7 Industry Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+          {/* Industry Filter Pills */}
+          <section className="max-w-6xl mx-auto mb-12">
+            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar border-b border-black/5">
               {INDUSTRY_FILTERS.map((ind) => {
                 const isActive = activeIndustry === ind.id;
                 const count =
@@ -142,10 +111,10 @@ export default function ClientsNetworkPage() {
                   <button
                     key={ind.id}
                     onClick={() => setActiveIndustry(ind.id)}
-                    className={`shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2 cursor-pointer ${
+                    className={`shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all flex items-center gap-2 cursor-pointer ${
                       isActive
                         ? 'bg-[#17151A] text-white shadow-xs'
-                        : 'bg-white border border-black/10 text-[#6E6E6E] hover:border-black/25 hover:text-[#17151A]'
+                        : 'bg-white border border-[#E8E8E8] text-[#515151] hover:border-[#17151A] hover:text-[#17151A]'
                     }`}
                   >
                     <span>{ind.name}</span>
@@ -161,53 +130,131 @@ export default function ClientsNetworkPage() {
               })}
             </div>
 
-            {/* Logo Grid: 6-8 cols desktop, grayscale default, smooth hover */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4">
-              {filteredLogos.map((org) => {
-                const hasCase = Boolean(org.caseStudySlug);
-                return (
-                  <div
-                    key={org.id}
-                    onClick={() => setSelectedOrg(org)}
-                    className="relative p-3.5 sm:p-4 rounded-2xl bg-white border border-black/10 shadow-xs hover:border-black/30 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[125px] group cursor-pointer filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
-                  >
-                    {/* Case Study Indicator Badge */}
-                    {hasCase && (
-                      <span className="absolute top-2 right-2 text-[9px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded-full border border-emerald-200 shadow-2xs">
-                        Case
-                      </span>
-                    )}
-
-                    {/* Authentic Brand Logo Image */}
-                    <div className="w-full h-12 flex items-center justify-center mb-2 px-1 py-1">
-                      <Image
-                        src={org.logoUrl}
-                        alt={org.name}
-                        width={110}
-                        height={44}
-                        className="max-h-9 max-w-[92px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-
-                    {/* Brand Name & Industry Label */}
-                    <div className="w-full">
-                      <span className="text-xs font-medium text-[#17151A] tracking-tight block truncate w-full group-hover:font-semibold transition-all">
-                        {org.shortName || org.name}
-                      </span>
-                      <span className="text-[10px] text-[#8E8E8E] block truncate w-full mt-0.5">
-                        {org.industryName}
+            {/* TIER 1: DIRECT ENGAGEMENTS (ĐỐI TÁC TRIỂN KHAI TRỰC TIẾP) */}
+            {filteredLogos.some((org) => org.tier === 1) && (
+              <div className="mb-16">
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#EA580C]" />
+                      <span className="text-xs uppercase tracking-widest text-[#EA580C] font-semibold font-mono">
+                        TIER 1 · DIRECT ENGAGEMENTS
                       </span>
                     </div>
-
-                    {/* Hover Link Action */}
-                    <div className="mt-2 text-[10px] font-medium text-emerald-800 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                      <span>Chi tiết</span>
-                      <ArrowUpRight className="w-3 h-3" />
-                    </div>
+                    <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">
+                      Tổ Chức &amp; Đề Án Hợp Tác Trực Tiếp (Có Case Study)
+                    </h3>
                   </div>
-                );
-              })}
-            </div>
+                  <span className="text-xs font-mono text-[#747474] hidden sm:inline">
+                    Xác thực bằng số liệu &amp; sản phẩm
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredLogos
+                    .filter((org) => org.tier === 1)
+                    .map((org) => {
+                      return (
+                        <div
+                          key={org.id}
+                          onClick={() => setSelectedOrg(org)}
+                          className="p-6 rounded-2xl bg-white border border-[#E8E8E8] hover:border-[#7000FF] shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                        >
+                          <div>
+                            <div className="flex items-start justify-between gap-3 mb-4">
+                              <div className="w-14 h-14 rounded-xl bg-[#F8F8F6] border border-black/5 p-2 flex items-center justify-center shrink-0">
+                                <Image
+                                  src={org.logoUrl}
+                                  alt={org.name}
+                                  width={100}
+                                  height={40}
+                                  className="max-h-9 max-w-[48px] w-auto h-auto object-contain"
+                                />
+                              </div>
+                              <span className="px-2.5 py-0.5 rounded-full bg-[#FFF7ED] border border-[#FED7AA] text-[10px] font-mono font-semibold text-[#EA580C]">
+                                {org.industryName}
+                              </span>
+                            </div>
+
+                            <h4 className="text-base font-medium text-[#17151A] group-hover:text-[#7000FF] transition-colors mb-2">
+                              {org.name}
+                            </h4>
+                            <p className="text-xs text-[#515151] leading-relaxed line-clamp-3 mb-4">
+                              {org.description}
+                            </p>
+                          </div>
+
+                          <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs text-[#17151A]">
+                            {org.caseStudySlug ? (
+                              <Link
+                                href={`/case-studies/${org.caseStudySlug}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center gap-1 font-semibold text-[#7000FF] hover:underline"
+                              >
+                                <span>Xem Case Study</span>
+                                <ArrowUpRight className="w-3.5 h-3.5" />
+                              </Link>
+                            ) : (
+                              <span className="text-[#747474]">Đề án bảo mật NDA</span>
+                            )}
+                            <span className="text-[11px] text-[#747474] group-hover:text-[#17151A] transition-colors">
+                              Chi tiết ➔
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
+
+            {/* TIER 2: NETWORK & ECOSYSTEM (MẠNG LƯỚI LIÊN KẾT & HỆ SINH THÁI) */}
+            {filteredLogos.some((org) => org.tier === 2) && (
+              <div>
+                <div className="flex items-center justify-between gap-4 mb-6 pt-6 border-t border-black/5">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
+                      <span className="text-xs uppercase tracking-widest text-[#7000FF] font-semibold font-mono">
+                        TIER 2 · NETWORK &amp; ECOSYSTEM
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-light text-[#17151A]">
+                      Mạng Lưới Đối Tác &amp; Hệ Sinh Thái Doanh Nghiệp
+                    </h3>
+                  </div>
+                  <span className="text-xs text-[#747474]">
+                    {filteredLogos.filter((org) => org.tier === 2).length} tổ chức
+                  </span>
+                </div>
+
+                {/* Secondary Logo Grid: grayscale-to-color */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
+                  {filteredLogos
+                    .filter((org) => org.tier === 2)
+                    .map((org) => (
+                      <div
+                        key={org.id}
+                        onClick={() => setSelectedOrg(org)}
+                        className="p-3 rounded-xl bg-white border border-[#E8E8E8] hover:border-black/30 hover:shadow-xs transition-all flex flex-col items-center justify-center text-center min-h-[90px] group cursor-pointer filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
+                      >
+                        <div className="w-full h-8 flex items-center justify-center mb-1.5">
+                          <Image
+                            src={org.logoUrl}
+                            alt={org.name}
+                            width={90}
+                            height={32}
+                            className="max-h-7 max-w-[70px] w-auto h-auto object-contain transition-transform group-hover:scale-105"
+                          />
+                        </div>
+                        <span className="text-[11px] font-medium text-[#17151A] block truncate w-full">
+                          {org.shortName || org.name}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
           </section>
 
           {/* Interactive Modal for Organization Details */}
