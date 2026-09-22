@@ -35,48 +35,37 @@ interface SemanticEdge {
   y2: number;
 }
 
-// Level 0: Sunext Central MOC Index Coordinates (~56% height of 720px visual canvas)
+// Level 0: Sunext Central MOC Index Coordinates (Exact center of upper orchestrator field)
 const SUNEXT_INDEX = {
   cx: 360,
-  cy: 405,
+  cy: 315,
 };
 
-// Level 1: 8 Canonical Macro-Domains with Real Depth (Obsidian MOC Layout)
+// Orchestration Destination: Business Results & Autonomy Terminal Node
+const RESULT_NODE = {
+  cx: 360,
+  cy: 515,
+};
+
+// Level 1: 8 Canonical Macro-Domains Surrounding Sunext Core Radially
+// (Top vertical axis kept open to ensure Sunext is visibly the central MOC nucleus)
 const DOMAINS: DomainCluster[] = [
-  {
-    id: 'governance',
-    name: 'Strategy & Governance',
-    shortName: 'Strategy & Governance',
-    subline: 'Zero-Leak · Tuân thủ · Policy Guard',
-    cx: 360,
-    cy: 115,
-    labelX: 360,
-    labelY: 76,
-    textAnchor: 'middle',
-    linkUrl: '/phap-ly-bao-mat',
-    capabilities: [
-      { id: 'g1', name: 'Zero-Leak', x: 290, y: 70 },
-      { id: 'g2', name: 'Compliance', x: 360, y: 45 },
-      { id: 'g3', name: 'Policy', x: 430, y: 70 },
-    ],
-  },
   {
     id: 'banking',
     name: 'Banking & Finance',
     shortName: 'Banking & Finance',
     subline: 'Credit · Risk · AML · Retail · Document AI',
-    cx: 175,
-    cy: 175,
-    labelX: 200,
-    labelY: 155,
-    textAnchor: 'start',
-    linkUrl: '/doi-ngu',
+    cx: 195,
+    cy: 145,
+    labelX: 195,
+    labelY: 104,
+    textAnchor: 'middle',
+    linkUrl: '/doi-ngu#finance',
     capabilities: [
-      { id: 'b1', name: 'Credit', x: 105, y: 135 },
-      { id: 'b2', name: 'Risk', x: 155, y: 105 },
-      { id: 'b3', name: 'AML', x: 95, y: 210 },
-      { id: 'b4', name: 'Retail', x: 120, y: 255 },
-      { id: 'b5', name: 'Document AI', x: 230, y: 115 },
+      { id: 'b1', name: 'Credit', x: 125, y: 125 },
+      { id: 'b2', name: 'Risk', x: 155, y: 75 },
+      { id: 'b3', name: 'AML', x: 110, y: 185 },
+      { id: 'b4', name: 'Document AI', x: 255, y: 95 },
     ],
   },
   {
@@ -84,16 +73,16 @@ const DOMAINS: DomainCluster[] = [
     name: 'Technology & Data',
     shortName: 'Technology & Data',
     subline: 'Data Bus · Private VPC · Enterprise RAG',
-    cx: 545,
-    cy: 175,
-    labelX: 520,
-    labelY: 155,
-    textAnchor: 'end',
+    cx: 525,
+    cy: 145,
+    labelX: 525,
+    labelY: 104,
+    textAnchor: 'middle',
     linkUrl: '/tu-duy-chuyen-doi-ai/nen-tang-cong-nghe',
     capabilities: [
-      { id: 't1', name: 'VPC', x: 625, y: 135 },
-      { id: 't2', name: 'Bus', x: 635, y: 205 },
-      { id: 't3', name: 'RAG', x: 585, y: 105 },
+      { id: 't1', name: 'VPC', x: 595, y: 125 },
+      { id: 't2', name: 'RAG', x: 465, y: 95 },
+      { id: 't3', name: 'Data Bus', x: 610, y: 185 },
     ],
   },
   {
@@ -102,15 +91,15 @@ const DOMAINS: DomainCluster[] = [
     shortName: 'HR & Learning',
     subline: 'L&D Co-worker · Wiki nội bộ · Talent AI',
     cx: 110,
-    cy: 345,
-    labelX: 135,
-    labelY: 335,
-    textAnchor: 'start',
-    linkUrl: '/doi-ngu',
+    cy: 295,
+    labelX: 110,
+    labelY: 255,
+    textAnchor: 'middle',
+    linkUrl: '/doi-ngu#hr',
     capabilities: [
-      { id: 'h1', name: 'L&D', x: 45, y: 310 },
-      { id: 'h2', name: 'Wiki', x: 40, y: 380 },
-      { id: 'h3', name: 'Talent', x: 65, y: 435 },
+      { id: 'h1', name: 'L&D', x: 45, y: 270 },
+      { id: 'h2', name: 'Wiki', x: 40, y: 340 },
+      { id: 'h3', name: 'Talent', x: 65, y: 395 },
     ],
   },
   {
@@ -119,15 +108,15 @@ const DOMAINS: DomainCluster[] = [
     shortName: 'Retail & Consumer',
     subline: 'Omnichannel · Demand AI · POS Sync',
     cx: 610,
-    cy: 340,
-    labelX: 585,
-    labelY: 325,
-    textAnchor: 'end',
-    linkUrl: '/nganh',
+    cy: 295,
+    labelX: 610,
+    labelY: 255,
+    textAnchor: 'middle',
+    linkUrl: '/doi-ngu#marketing',
     capabilities: [
-      { id: 'rc1', name: 'POS', x: 675, y: 300 },
-      { id: 'rc2', name: 'Demand', x: 680, y: 380 },
-      { id: 'rc3', name: 'Omni', x: 630, y: 415 },
+      { id: 'rc1', name: 'POS', x: 675, y: 270 },
+      { id: 'rc2', name: 'Demand', x: 680, y: 340 },
+      { id: 'rc3', name: 'Omni', x: 655, y: 395 },
     ],
   },
   {
@@ -135,16 +124,16 @@ const DOMAINS: DomainCluster[] = [
     name: 'Manufacturing & Operations',
     shortName: 'Manufacturing & Ops',
     subline: 'QA Vision · Lean SOP · Chuỗi cung ứng',
-    cx: 175,
-    cy: 535,
-    labelX: 175,
-    labelY: 485,
+    cx: 140,
+    cy: 460,
+    labelX: 140,
+    labelY: 505,
     textAnchor: 'middle',
     linkUrl: '/case-studies/ai-auditor-manufacturing',
     capabilities: [
-      { id: 'm1', name: 'Vision', x: 105, y: 520 },
-      { id: 'm2', name: 'Lean', x: 115, y: 595 },
-      { id: 'm3', name: 'Logistics', x: 195, y: 625 },
+      { id: 'm1', name: 'Vision', x: 75, y: 445 },
+      { id: 'm2', name: 'Lean', x: 80, y: 520 },
+      { id: 'm3', name: 'Logistics', x: 155, y: 545 },
     ],
   },
   {
@@ -152,16 +141,16 @@ const DOMAINS: DomainCluster[] = [
     name: 'Sales & Growth',
     shortName: 'Sales & Growth',
     subline: 'Lead 24/7 · CRM Automation · Chốt cọc',
-    cx: 545,
-    cy: 510,
-    labelX: 520,
-    labelY: 495,
-    textAnchor: 'end',
-    linkUrl: '/case-studies',
+    cx: 580,
+    cy: 460,
+    labelX: 580,
+    labelY: 505,
+    textAnchor: 'middle',
+    linkUrl: '/case-studies/vinhomes-ai-sales-enablement',
     capabilities: [
-      { id: 's1', name: 'Lead', x: 625, y: 490 },
-      { id: 's2', name: 'CRM', x: 610, y: 565 },
-      { id: 's3', name: 'Booking', x: 550, y: 605 },
+      { id: 's1', name: 'Lead', x: 645, y: 445 },
+      { id: 's2', name: 'CRM', x: 640, y: 520 },
+      { id: 's3', name: 'Booking', x: 565, y: 545 },
     ],
   },
   {
@@ -169,42 +158,55 @@ const DOMAINS: DomainCluster[] = [
     name: 'Real Estate',
     shortName: 'Real Estate',
     subline: 'Môi giới · Dự án · Thẩm định giá · CRM',
-    cx: 360,
+    cx: 215,
     cy: 620,
-    labelX: 360,
-    labelY: 660,
+    labelX: 215,
+    labelY: 665,
     textAnchor: 'middle',
-    linkUrl: '/nganh',
+    linkUrl: '/nganh/bat-dong-san',
     capabilities: [
-      { id: 're1', name: 'Broker', x: 295, y: 655 },
-      { id: 're2', name: 'Project', x: 425, y: 655 },
-      { id: 're3', name: 'Valuation', x: 360, y: 690 },
+      { id: 're1', name: 'Broker', x: 150, y: 615 },
+      { id: 're2', name: 'Valuation', x: 165, y: 675 },
+      { id: 're3', name: 'Project', x: 270, y: 670 },
+    ],
+  },
+  {
+    id: 'governance',
+    name: 'Strategy & Governance',
+    shortName: 'Strategy & Governance',
+    subline: 'Zero-Leak · Tuân thủ · Policy Guard',
+    cx: 505,
+    cy: 620,
+    labelX: 505,
+    labelY: 665,
+    textAnchor: 'middle',
+    linkUrl: '/phap-ly-bao-mat',
+    capabilities: [
+      { id: 'g1', name: 'Zero-Leak', x: 450, y: 670 },
+      { id: 'g2', name: 'Compliance', x: 555, y: 675 },
+      { id: 'g3', name: 'Policy', x: 570, y: 615 },
     ],
   },
 ];
 
-// Level 3: Cross-Domain Semantic Mesh Edges (Real Peer-to-Peer Interconnections)
+// Level 3: Cross-Domain Perimeter Mesh (Secondary Selective Peer Edges that Enclose Center)
 const SEMANTIC_EDGES: SemanticEdge[] = [
-  // 1. Banking ↔ Governance (Risk & Compliance)
-  { id: 'e-bank-gov', source: 'banking', target: 'governance', bridgeLabel: 'Risk & Compliance', x1: 175, y1: 175, x2: 360, y2: 115 },
-  // 2. Governance ↔ Technology (Policy Guard & Data Isolation)
-  { id: 'e-gov-tech', source: 'governance', target: 'tech', bridgeLabel: 'Policy Guard', x1: 360, y1: 115, x2: 545, y2: 175 },
-  // 3. Banking ↔ Technology (Private VPC & Enterprise RAG)
-  { id: 'e-bank-tech', source: 'banking', target: 'tech', bridgeLabel: 'Private VPC', x1: 175, y1: 175, x2: 545, y2: 175 },
-  // 4. Banking ↔ Manufacturing (Document AI & Underwriting)
-  { id: 'e-bank-mfg', source: 'banking', target: 'manufacturing', bridgeLabel: 'Document AI', x1: 175, y1: 175, x2: 175, y2: 535 },
-  // 5. HR ↔ Technology (Internal Knowledge Base RAG)
-  { id: 'e-hr-tech', source: 'hr', target: 'tech', bridgeLabel: 'Internal Wiki RAG', x1: 110, y1: 345, x2: 545, y2: 175 },
-  // 6. HR ↔ Manufacturing (SOP Training & AI Co-worker)
-  { id: 'e-hr-mfg', source: 'hr', target: 'manufacturing', bridgeLabel: 'SOP Training', x1: 110, y1: 345, x2: 175, y2: 535 },
-  // 7. Technology ↔ Retail (Real-time POS Data Bus)
-  { id: 'e-tech-retail', source: 'tech', target: 'retail', bridgeLabel: 'POS Data Bus', x1: 545, y1: 175, x2: 610, y2: 340 },
-  // 8. Retail ↔ Sales (Omnichannel & Lead Journey)
-  { id: 'e-retail-sales', source: 'retail', target: 'sales', bridgeLabel: 'Omnichannel Leads', x1: 610, y1: 340, x2: 545, y2: 510 },
-  // 9. Real Estate ↔ Sales (CRM & 24/7 Lead Response)
-  { id: 'e-re-sales', source: 'real-estate', target: 'sales', bridgeLabel: 'Lead Engine 24/7', x1: 360, y1: 620, x2: 545, y2: 510 },
-  // 10. Real Estate ↔ Manufacturing (Contract Workflow & Inspection)
-  { id: 'e-re-mfg', source: 'real-estate', target: 'manufacturing', bridgeLabel: 'Contract Workflow', x1: 360, y1: 620, x2: 175, y2: 535 },
+  // 1. Banking ↔ Technology (Top Horizon)
+  { id: 'e-bank-tech', source: 'banking', target: 'tech', bridgeLabel: 'Private VPC', x1: 195, y1: 145, x2: 525, y2: 145 },
+  // 2. Banking ↔ HR (Upper West Arc)
+  { id: 'e-bank-hr', source: 'banking', target: 'hr', bridgeLabel: 'Compliance Training', x1: 195, y1: 145, x2: 110, y2: 295 },
+  // 3. HR ↔ Manufacturing (Mid West Arc)
+  { id: 'e-hr-mfg', source: 'hr', target: 'manufacturing', bridgeLabel: 'Lean SOP Co-worker', x1: 110, y1: 295, x2: 140, y2: 460 },
+  // 4. Manufacturing ↔ Real Estate (Lower West Arc)
+  { id: 'e-mfg-re', source: 'manufacturing', target: 'real-estate', bridgeLabel: 'Project Inspection', x1: 140, y1: 460, x2: 215, y2: 620 },
+  // 5. Real Estate ↔ Governance (Bottom Horizon Arc)
+  { id: 'e-re-gov', source: 'real-estate', target: 'governance', bridgeLabel: 'Legal Audit', x1: 215, y1: 620, x2: 505, y2: 620 },
+  // 6. Governance ↔ Sales (Lower East Arc)
+  { id: 'e-gov-sales', source: 'governance', target: 'sales', bridgeLabel: 'Contract Guard', x1: 505, y1: 620, x2: 580, y2: 460 },
+  // 7. Sales ↔ Retail (Mid East Arc)
+  { id: 'e-sales-retail', source: 'sales', target: 'retail', bridgeLabel: 'Omnichannel Leads', x1: 580, y1: 460, x2: 610, y2: 295 },
+  // 8. Retail ↔ Technology (Upper East Arc)
+  { id: 'e-retail-tech', source: 'retail', target: 'tech', bridgeLabel: 'POS Data Bus', x1: 610, y1: 295, x2: 525, y2: 145 },
 ];
 
 export function AiTransformationNetwork() {
@@ -260,15 +262,15 @@ export function AiTransformationNetwork() {
       onMouseLeave={handleMouseLeave}
       className="relative w-full max-w-[540px] sm:max-w-[600px] lg:max-w-[640px] xl:max-w-[700px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
     >
-      {/* Ambient Atmospheric Cloud Glow centered at Sunext MOC Index (bleed subtly downward) */}
+      {/* Ambient Atmospheric Cloud Glow centered at Sunext MOC Index */}
       <div 
         className="absolute w-[560px] h-[560px] lg:w-[680px] lg:h-[680px] rounded-full pointer-events-none -z-10 animate-sun-halo"
         style={{
           top: '50%',
           left: '50%',
-          marginTop: '-240px',
+          marginTop: '-300px',
           marginLeft: '-280px',
-          background: 'radial-gradient(circle at 50% 56%, rgba(255,247,232,0.85) 0%, rgba(255,191,117,0.35) 26%, rgba(239,124,44,0.14) 48%, rgba(105,64,190,0.03) 72%, transparent 88%)',
+          background: 'radial-gradient(circle at 50% 45%, rgba(255,247,232,0.85) 0%, rgba(255,191,117,0.35) 26%, rgba(239,124,44,0.14) 48%, rgba(105,64,190,0.03) 72%, transparent 88%)',
           filter: 'blur(60px)',
           transform: 'scale(1.05)',
         }}
@@ -295,15 +297,21 @@ export function AiTransformationNetwork() {
 
           {/* Active Semantic Edge Pulse Stream */}
           <linearGradient id="semantic-pulse-gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#581C87" stopOpacity="0.9" />
-            <stop offset="50%" stopColor="#7000FF" stopOpacity="1" />
-            <stop offset="100%" stopColor="#F97316" stopOpacity="1" />
+            <stop offset="0%" stopColor="#581C87" stopOpacity="0.85" />
+            <stop offset="50%" stopColor="#7000FF" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#A855F7" stopOpacity="0.85" />
           </linearGradient>
 
           {/* Hub-Spoke Direct Return Gradient (Domain -> Sunext Index) */}
-          <linearGradient id="hub-spoke-active" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#F97316" stopOpacity="1" />
+          <linearGradient id="hub-spoke-inward" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#EA580C" stopOpacity="0.85" />
+          </linearGradient>
+
+          {/* Outward Orchestration Artery Gradient (Sunext -> Result) */}
+          <linearGradient id="orchestration-artery" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#F97316" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#EA580C" stopOpacity="0.95" />
           </linearGradient>
 
           {/* Core Ambient Aura */}
@@ -312,6 +320,12 @@ export function AiTransformationNetwork() {
             <stop offset="55%" stopColor="#FB923C" stopOpacity="0.10" />
             <stop offset="100%" stopColor="#581C87" stopOpacity="0" />
           </radialGradient>
+
+          {/* Result Badge Fill Gradient */}
+          <linearGradient id="result-badge-fill" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#FFFDF7" />
+            <stop offset="100%" stopColor="#FEF3C7" />
+          </linearGradient>
         </defs>
 
         {/* 1. Background Constellation Web (Obsidian-Style Organic Matrix) */}
@@ -319,44 +333,45 @@ export function AiTransformationNetwork() {
         <circle cx={SUNEXT_INDEX.cx} cy={SUNEXT_INDEX.cy} r="165" stroke="#EBE9E2" strokeWidth="0.6" strokeDasharray="3 6" opacity="0.3" />
 
         {/* Sunext Core Ambient Halo */}
-        <circle cx={SUNEXT_INDEX.cx} cy={SUNEXT_INDEX.cy} r="135" fill="url(#sunext-core-aura)" />
+        <circle cx={SUNEXT_INDEX.cx} cy={SUNEXT_INDEX.cy} r="125" fill="url(#sunext-core-aura)" />
 
         {/* ==================================================================== */}
-        {/* LEVEL 1 — DIRECT SPOKES TO SUNEXT INDEX: ALL MACRO DOMAINS RETURN HERE */}
+        {/* LEVEL 1 — DIRECT CONVERGENCE SPOKES: EVERY DOMAIN FEEDS INTO SUNEXT   */}
+        {/* (All 8 radial spokes clearly visible to establish central MOC Index)  */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isDomainActive = domain.id === activeDomainId;
 
           return (
             <g key={`hub-spoke-${domain.id}`}>
-              {/* Primary Spoke Line to Central Index */}
+              {/* Primary Spoke Line directly to Central Sunext Index */}
               <line
                 x1={domain.cx}
                 y1={domain.cy}
                 x2={SUNEXT_INDEX.cx}
                 y2={SUNEXT_INDEX.cy}
-                stroke={isDomainActive ? 'url(#hub-spoke-active)' : '#E7E5DF'}
-                strokeWidth={isDomainActive ? 2.2 : 0.9}
-                strokeDasharray={isDomainActive ? 'none' : '4 6'}
-                opacity={isDomainActive ? 1 : 0.65}
+                stroke={isDomainActive ? 'url(#hub-spoke-inward)' : '#D6D3CD'}
+                strokeWidth={isDomainActive ? 2.6 : 1.2}
+                strokeDasharray={isDomainActive ? 'none' : '3 4'}
+                opacity={isDomainActive ? 1 : 0.85}
                 className="transition-all duration-400"
               />
 
-              {/* Inward Moving Convergence Pulse when Domain is Active */}
+              {/* Inward Moving Purple Pulse: Deep Domain -> Sunext Index */}
               {isDomainActive && (
-                <circle r="4" fill="#F97316" filter="drop-shadow(0 0 6px #EA580C)">
+                <circle r="4.5" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
                   <animate
                     attributeName="cx"
                     from={domain.cx}
                     to={SUNEXT_INDEX.cx}
-                    dur="1.8s"
+                    dur="1.7s"
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="cy"
                     from={domain.cy}
                     to={SUNEXT_INDEX.cy}
-                    dur="1.8s"
+                    dur="1.7s"
                     repeatCount="indefinite"
                   />
                 </circle>
@@ -366,7 +381,7 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 3 — CROSS-DOMAIN KNOWLEDGE MESH (Direct Semantic Peer Edges)   */}
+        {/* LEVEL 3 — PERIMETER CROSS-DOMAIN MESH (Secondary Selective Edges)    */}
         {/* ==================================================================== */}
         {SEMANTIC_EDGES.map((edge) => {
           const isEdgeActive = connectedEdgeIds.has(edge.id);
@@ -380,16 +395,16 @@ export function AiTransformationNetwork() {
                 y1={edge.y1}
                 x2={edge.x2}
                 y2={edge.y2}
-                stroke={isEdgeActive ? 'url(#semantic-pulse-gradient)' : '#581C87'}
-                strokeWidth={isEdgeActive ? 1.8 : 0.75}
+                stroke={isEdgeActive ? 'url(#semantic-pulse-gradient)' : '#6B21A8'}
+                strokeWidth={isEdgeActive ? 1.8 : 0.8}
                 strokeDasharray={isEdgeActive ? 'none' : '3 5'}
-                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.12 : 0.22}
+                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.16 : 0.28}
                 className="transition-all duration-400"
               />
 
-              {/* Traveling Pulse along Active Semantic Link */}
+              {/* Traveling Pulse along Active Semantic Perimeter Link */}
               {isEdgeActive && (
-                <circle r="3.5" fill="#7000FF" filter="drop-shadow(0 0 5px #7000FF)">
+                <circle r="3" fill="#A855F7" filter="drop-shadow(0 0 5px #7000FF)">
                   <animate
                     attributeName="cx"
                     from={edge.x1}
@@ -411,7 +426,40 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 2 — INTERNAL CLUSTER CAPABILITY SPOKES (Domain to Micro Dots)  */}
+        {/* ORCHESTRATION PIPELINE: SUNEXT -> BUSINESS RESULT & TỰ CHỦ          */}
+        {/* ==================================================================== */}
+        {/* Main Artery Link */}
+        <line
+          x1={SUNEXT_INDEX.cx}
+          y1={SUNEXT_INDEX.cy + 38}
+          x2={RESULT_NODE.cx}
+          y2={RESULT_NODE.cy - 18}
+          stroke="url(#orchestration-artery)"
+          strokeWidth="2.4"
+          strokeDasharray="4 3"
+          opacity="0.9"
+        />
+
+        {/* Single Radiant Orange Pulse streaming OUTWARD from Sunext to Business Result */}
+        <circle r="5" fill="#F97316" filter="drop-shadow(0 0 8px #EA580C)">
+          <animate
+            attributeName="cx"
+            from={SUNEXT_INDEX.cx}
+            to={RESULT_NODE.cx}
+            dur="1.6s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="cy"
+            from={SUNEXT_INDEX.cy + 38}
+            to={RESULT_NODE.cy - 18}
+            dur="1.6s"
+            repeatCount="indefinite"
+          />
+        </circle>
+
+        {/* ==================================================================== */}
+        {/* LEVEL 2 — SUB-NODE SPOKES (Parent Domain to Micro Dots)             */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
@@ -424,10 +472,10 @@ export function AiTransformationNetwork() {
                   y1={domain.cy}
                   x2={cap.x}
                   y2={cap.y}
-                  stroke={isClusterActive ? '#7000FF' : '#D1CECE'}
+                  stroke={isClusterActive ? '#7000FF' : '#CBD5E1'}
                   strokeWidth={isClusterActive ? 1.2 : 0.7}
                   strokeDasharray={isClusterActive ? 'none' : '2 3'}
-                  opacity={isClusterActive ? 0.75 : 0.3}
+                  opacity={isClusterActive ? 0.8 : 0.4}
                   className="transition-all duration-300"
                 />
               ))}
@@ -436,14 +484,13 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 2 — SUB-NODES: PURE DOTS (Clean Obsidian Aesthetics, NO clutters)*/}
+        {/* LEVEL 2 — SUB-NODES: PURE DOTS (Clean Obsidian Aesthetics)          */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
-          const isDimmed = !connectedDomainIds.has(domain.id);
 
           return (
-            <g key={`caps-${domain.id}`} opacity={isDimmed ? 0.2 : 1} className="transition-opacity duration-300">
+            <g key={`caps-${domain.id}`} className="transition-opacity duration-300">
               {domain.capabilities.map((cap) => (
                 <g key={cap.id} transform={`translate(${cap.x}, ${cap.y})`}>
                   {isClusterActive && (
@@ -460,9 +507,9 @@ export function AiTransformationNetwork() {
                   <circle
                     cx="0"
                     cy="0"
-                    r={isClusterActive ? 3.5 : 2.4}
-                    fill={isClusterActive ? '#7000FF' : '#581C87'}
-                    opacity={isClusterActive ? 0.95 : 0.45}
+                    r={isClusterActive ? 3.5 : 2.5}
+                    fill={isClusterActive ? '#7000FF' : '#6B21A8'}
+                    opacity={isClusterActive ? 0.95 : 0.55}
                     className="transition-all duration-300"
                   />
                 </g>
@@ -472,12 +519,11 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 1 — DOMAIN MOC NODES (Clickable to Expert & Case Pages)       */}
+        {/* LEVEL 1 — DOMAIN MOC NODES (Clickable to Expert Faculty & Cases)    */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
           const isConnectedToActive = connectedDomainIds.has(domain.id);
-          const isDimmed = !isConnectedToActive;
 
           return (
             <Link key={`hub-${domain.id}`} href={domain.linkUrl}>
@@ -485,7 +531,7 @@ export function AiTransformationNetwork() {
                 onMouseEnter={() => setHoveredDomain(domain.id)}
                 onMouseLeave={() => setHoveredDomain(null)}
                 className="cursor-pointer group"
-                opacity={isClusterActive ? 1 : isConnectedToActive ? 0.85 : isDimmed ? 0.2 : 0.7}
+                opacity={isClusterActive ? 1 : isConnectedToActive ? 0.95 : 0.78}
                 style={{ transition: 'opacity 0.3s ease' }}
               >
                 {/* Outer Pulsing Orbit Ring when active */}
@@ -493,7 +539,7 @@ export function AiTransformationNetwork() {
                   <circle
                     cx={domain.cx}
                     cy={domain.cy}
-                    r="21"
+                    r="20"
                     fill="none"
                     stroke="#7000FF"
                     strokeWidth="1"
@@ -517,8 +563,8 @@ export function AiTransformationNetwork() {
                   cy={domain.cy}
                   r={isClusterActive ? 13 : 9.5}
                   fill="#FFFFFF"
-                  stroke={isClusterActive ? '#7000FF' : '#D1CECE'}
-                  strokeWidth={isClusterActive ? 2 : 1.2}
+                  stroke={isClusterActive ? '#7000FF' : '#CBD5E1'}
+                  strokeWidth={isClusterActive ? 2 : 1.3}
                   filter="drop-shadow(0 2px 8px rgba(0,0,0,0.06))"
                   className="transition-all duration-300 group-hover:stroke-[#7000FF]"
                 />
@@ -528,19 +574,19 @@ export function AiTransformationNetwork() {
                   cx={domain.cx}
                   cy={domain.cy}
                   r={isClusterActive ? 5 : 3.5}
-                  fill={isClusterActive ? '#7000FF' : '#581C87'}
+                  fill={isClusterActive ? '#7000FF' : '#6B21A8'}
                   className="transition-all duration-300"
                 />
 
-                {/* Primary Macro-Domain Name */}
+                {/* Primary Macro-Domain Name (Always Legible) */}
                 <text
                   x={domain.labelX}
                   y={domain.labelY}
                   textAnchor={domain.textAnchor}
-                  fill={isClusterActive ? '#0A0A0A' : '#4B5563'}
-                  fontSize={isClusterActive ? 12 : 11}
+                  fill={isClusterActive ? '#0A0A0A' : '#1F2937'}
+                  fontSize={isClusterActive ? 12 : 11.5}
                   fontFamily="system-ui, sans-serif"
-                  fontWeight={isClusterActive ? 700 : 500}
+                  fontWeight={isClusterActive ? 700 : 600}
                   letterSpacing="0.01em"
                   className="transition-all duration-300 select-none filter drop-shadow-[0_1px_5px_rgba(255,255,255,0.95)]"
                 >
@@ -569,13 +615,61 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 0 — SUNEXT CENTRAL MOC INDEX (The Convergence Nucleus)        */}
+        {/* DESTINATION NODE — KẾT QUẢ KINH DOANH & TỰ CHỦ (Final Deliverable)  */}
+        {/* ==================================================================== */}
+        <Link href="/case-studies">
+          <g
+            transform={`translate(${RESULT_NODE.cx}, ${RESULT_NODE.cy})`}
+            className="cursor-pointer group"
+          >
+            {/* Ambient Pulse Ring */}
+            <circle cx="0" cy="0" r="22" fill="none" stroke="#F97316" strokeWidth="0.8" opacity="0.35">
+              <animate attributeName="r" values="20;32;20" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.45;0;0.45" dur="2.4s" repeatCount="indefinite" />
+            </circle>
+
+            {/* Pill Container (Solid Fill so lines behind never cut through) */}
+            <rect
+              x="-96"
+              y="-15"
+              width="192"
+              height="30"
+              rx="15"
+              fill="url(#result-badge-fill)"
+              stroke="#F59E0B"
+              strokeWidth="1.4"
+              filter="drop-shadow(0 4px 14px rgba(245,158,11,0.25))"
+              className="transition-all duration-300 group-hover:stroke-[#EA580C] group-hover:scale-105"
+            />
+
+            {/* Result Monogram Dot */}
+            <circle cx="-76" cy="0" r="4.5" fill="#EA580C" />
+
+            {/* Result Text */}
+            <text
+              x="-64"
+              y="4"
+              textAnchor="start"
+              fill="#9A3412"
+              fontSize="9.5"
+              fontFamily="monospace"
+              fontWeight="700"
+              letterSpacing="0.08em"
+              className="select-none group-hover:fill-[#C2410C] transition-colors"
+            >
+              KẾT QUẢ P&amp;L · TỰ CHỦ
+            </text>
+          </g>
+        </Link>
+
+        {/* ==================================================================== */}
+        {/* LEVEL 0 — SUNEXT CENTRAL MOC INDEX (Convergence & Orchestrator Nucleus) */}
         {/* ==================================================================== */}
         <Link href="/tu-duy-chuyen-doi-ai">
           <g transform={`translate(${SUNEXT_INDEX.cx}, ${SUNEXT_INDEX.cy})`} className="cursor-pointer group">
             {/* Outward Radiating Convergence Waves */}
             <circle cx="0" cy="0" r="46" fill="none" stroke="#F97316" strokeWidth="1.2" opacity="0.65">
-              <animate attributeName="r" values="44;70;44" dur="2.4s" repeatCount="indefinite" />
+              <animate attributeName="r" values="44;68;44" dur="2.4s" repeatCount="indefinite" />
               <animate attributeName="opacity" values="0.75;0;0.75" dur="2.4s" repeatCount="indefinite" />
             </circle>
 
@@ -588,29 +682,29 @@ export function AiTransformationNetwork() {
             <circle
               cx="0"
               cy="0"
-              r="40"
+              r="38"
               fill="url(#sunext-index-gradient)"
               filter="drop-shadow(0 6px 24px rgba(239,124,44,0.42))"
               className="transition-transform duration-500 group-hover:scale-105"
             />
 
             {/* Inner Highlight Ring */}
-            <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" strokeWidth="1.4" strokeOpacity="0.85" />
+            <circle cx="0" cy="0" r="38" fill="none" stroke="#FFFFFF" strokeWidth="1.4" strokeOpacity="0.85" />
 
             {/* Central Nucleus Dot */}
-            <circle cx="0" cy="0" r="13" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
-            <circle cx="0" cy="0" r="5" fill="#FFFFFF" />
+            <circle cx="0" cy="0" r="12" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
+            <circle cx="0" cy="0" r="4.5" fill="#FFFFFF" />
 
             {/* Index Label Monogram */}
             <text
               x="0"
-              y="56"
+              y="52"
               textAnchor="middle"
               fill="#EA580C"
-              fontSize="9"
+              fontSize="8.5"
               fontFamily="monospace"
               fontWeight="700"
-              letterSpacing="0.16em"
+              letterSpacing="0.14em"
               className="select-none filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]"
             >
               SUNEXT · INDEX MOC

@@ -42,6 +42,23 @@ export default function TeamLeadershipPage() {
   const [activeBlock, setActiveBlock] = useState<string>('all');
   const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
 
+  React.useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (['finance', 'marketing', 'hr', 'operations', 'executive'].includes(hash)) {
+        setActiveBlock(hash);
+        const el = document.getElementById('faculty-network');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   const filteredFaculty = activeBlock === 'all'
     ? FACULTY_MEMBERS
     : FACULTY_MEMBERS.filter((m) => m.blockId === activeBlock);
@@ -228,7 +245,7 @@ export default function TeamLeadershipPage() {
           </section>
 
           {/* Section: 11 Faculty Members across 5 Blocks (Progressive Disclosure) */}
-          <section className="max-w-5xl mx-auto mb-16">
+          <section id="faculty-network" className="max-w-5xl mx-auto mb-16 scroll-mt-24">
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="w-4 h-4 text-emerald-700" />
