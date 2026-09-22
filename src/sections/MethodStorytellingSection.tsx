@@ -206,12 +206,12 @@ export function MethodStorytellingSection() {
                   </div>
                 </div>
 
-                {/* Fixed Metric Skeleton (Vertically Centered Optical Alignment) */}
+                {/* Fixed Metric Skeleton (Vertically Centered Optical Alignment to Big Digits) */}
                 <div className="pt-5 border-t border-[#E7E7E5] flex items-center gap-4 min-h-[76px]">
                   <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
                     {step.proofNum}
                   </span>
-                  <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug">
+                  <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug -translate-y-1 sm:-translate-y-1.5">
                     {step.proofLabel}
                   </div>
                 </div>

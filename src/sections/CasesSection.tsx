@@ -79,15 +79,15 @@ export function CasesSection() {
               </span>
             </div>
 
-            {/* Level 2: Core Transformation Metric (24 giờ → < 5 phút with sequenced activation) */}
-            <div className="flex items-baseline gap-3 sm:gap-4 flex-wrap mb-8">
-              <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] tabular-nums">
+            {/* Level 2: Core Transformation Metric (24 giờ → < 5 phút with exact optical center alignment) */}
+            <div className="flex items-center gap-3 sm:gap-4 flex-wrap mb-8">
+              <span className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#A3A3A3] tabular-nums leading-none">
                 24 giờ
               </span>
-              <span className={`text-2xl sm:text-3xl transition-colors duration-300 font-light ${metricSettled ? 'text-[#EA580C]' : 'text-[#747474]'}`}>
-                →
-              </span>
-              <span className={`text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight tabular-nums transition-all duration-500 ${
+              <div className={`flex items-center justify-center transition-colors duration-300 ${metricSettled ? 'text-[#EA580C]' : 'text-[#747474]'}`}>
+                <ArrowRight className="w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9 stroke-[2.2]" />
+              </div>
+              <span className={`text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight tabular-nums transition-all duration-500 leading-none ${
                 metricSettled
                   ? 'text-[#EA580C] scale-100 opacity-100'
                   : 'text-[#A3A3A3] scale-95 opacity-60'
