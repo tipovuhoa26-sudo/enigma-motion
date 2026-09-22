@@ -150,7 +150,7 @@ export function CookieConsent() {
             className="bg-white rounded-2xl border border-[#E8E8E8] shadow-2xl max-w-lg w-full p-6 text-[#0A0A0A] max-h-[90vh] overflow-y-auto"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#E8E8E8] mb-5">
+            <div className="flex items-center justify-between pb-4 border-b border-[#E8E8E8] mb-4">
               <div className="flex items-center gap-2.5">
                 <div className="w-7 h-7 rounded-lg bg-[#FAF5FF] border border-[#EDE9FE] flex items-center justify-center text-[#7000FF]">
                   <ShieldCheck className="w-4 h-4" />
@@ -172,6 +172,15 @@ export function CookieConsent() {
               >
                 <X className="w-4 h-4" />
               </button>
+            </div>
+
+            {/* Compliance Guarantee Notice */}
+            <div className="mb-4 px-3 py-2 rounded-xl bg-[#FAF8FC] border border-[#EDE9FE] flex items-start gap-2 text-[11px] text-[#581C87]">
+              <ShieldCheck className="w-4 h-4 text-[#7000FF] shrink-0 mt-0.5" />
+              <div className="leading-snug">
+                <span className="font-semibold">Tuân thủ Luật BVNDC 2025 &amp; NĐ 356/2025/NĐ-CP: </span>
+                Mặc định tắt toàn bộ cookie phân tích và tiếp thị cho đến khi bạn chủ động kích hoạt. Tuyệt đối không nạp mã theo dõi khi chưa có sự đồng ý rõ ràng.
+              </div>
             </div>
 
             {/* Category 1: Cookie cần thiết (Luôn bật) */}
