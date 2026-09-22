@@ -118,16 +118,13 @@ export function StatsStrip() {
               <div className="text-base font-medium text-[#0A0A0A] flex items-center">
                 Độ chính xác kiểm định
               </div>
-              {/* Row 4: Attribution + Description */}
-              <div className="space-y-1.5">
+              {/* Row 4: Attribution Badge */}
+              <div>
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#581C87] bg-[#FAF5FF] border border-[#F3E8FF] px-2 py-0.5 rounded transition-colors group-hover:bg-[#581C87] group-hover:text-white">
                   <span>Manufacturing</span>
                   <span className="opacity-50">·</span>
                   <span className="text-[11px] opacity-80">Computer Vision QA</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
-                  Kiểm chứng trên mẫu 2,000–5,000 bản ghi dữ liệu thực tế.
-                </p>
               </div>
             </div>
 
@@ -155,18 +152,15 @@ export function StatsStrip() {
               </div>
               {/* Row 3: Title */}
               <div className="text-base font-medium text-[#0A0A0A] flex items-center">
-                Thời gian phản hồi nghiệp vụ
+                Thời gian phản hồi lead
               </div>
-              {/* Row 4: Attribution + Description */}
-              <div className="space-y-1.5">
+              {/* Row 4: Attribution Badge */}
+              <div>
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#7000FF] bg-[#F5F3FF] border border-[#EDE9FE] px-2 py-0.5 rounded transition-colors group-hover:bg-[#7000FF] group-hover:text-white">
                   <span>Real Estate</span>
                   <span className="opacity-50">·</span>
                   <span className="text-[11px] opacity-80">Vinhomes Lead Response</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
-                  Tra cứu thông tin, dự toán tài chính và sinh tài liệu tức thì.
-                </p>
               </div>
             </div>
 
@@ -189,18 +183,15 @@ export function StatsStrip() {
               </div>
               {/* Row 3: Title */}
               <div className="text-base font-medium text-[#0A0A0A] flex items-center">
-                Thời gian xử lý chu kỳ
+                Thời gian xử lý chứng từ
               </div>
-              {/* Row 4: Attribution + Description */}
-              <div className="space-y-1.5">
+              {/* Row 4: Attribution Badge */}
+              <div>
                 <div className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#EA580C] bg-[#FFF7ED] border border-[#FFEDD5] px-2 py-0.5 rounded transition-colors group-hover:bg-[#EA580C] group-hover:text-white">
                   <span>Finance</span>
                   <span className="opacity-50">·</span>
                   <span className="text-[11px] opacity-80">Document Processing</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#747474] font-normal leading-relaxed max-w-[300px]">
-                  Rút ngắn thời gian xử lý chu kỳ từ 3 ngày xuống 2 giờ làm việc.
-                </p>
               </div>
             </div>
 

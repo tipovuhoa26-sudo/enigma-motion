@@ -17,7 +17,7 @@ const STEPS: StepData[] = [
     num: '01',
     pillLabel: '01 Quy trình',
     title: 'Quy trình trước công cụ.',
-    copy: 'Chuẩn hóa SOP và tự động hóa thao tác lặp lại trước khi ứng dụng AI.',
+    copy: 'Chuẩn hóa quy trình, bỏ thao tác thừa rồi mới đưa AI vào.',
     proofNum: '−67%',
     proofLabel: 'Thời gian chu kỳ xử lý',
   },
@@ -25,9 +25,9 @@ const STEPS: StepData[] = [
     num: '02',
     pillLabel: '02 Dữ liệu',
     title: 'Dữ liệu phải kết nối.',
-    copy: 'Kết nối ERP, CRM và Database vào AI trong ranh giới cô lập tuyệt đối, zero rò rỉ.',
-    proofNum: '100%',
-    proofLabel: 'On-Premise / Private VPC',
+    copy: 'Kết nối dữ liệu vào AI trong ranh giới bảo mật của doanh nghiệp.',
+    proofNum: '',
+    proofLabel: 'On-premise / Private VPC',
   },
   {
     num: '03',
@@ -143,12 +143,12 @@ export function MethodStorytellingSection() {
 
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-medium text-[#747474]">
-                  Phương pháp
+                <span className="text-xs font-mono font-bold tracking-wider text-[#0A0A0A] uppercase">
+                  Phương pháp Sunext
                 </span>
                 <span className="text-[#A3A3A3] text-xs">/</span>
                 <span className="text-xs font-mono text-[#747474]">
-                  3 Bước Vận Hành
+                  3 Nguyên Tắc Thiết Kế · 4 Chốt Triển Khai
                 </span>
               </div>
 
@@ -181,8 +181,11 @@ export function MethodStorytellingSection() {
             <div className="lg:col-span-5 relative min-h-[290px] sm:min-h-[320px] flex flex-col justify-center">
               <div className={`${animClass} flex flex-col justify-between`}>
                 <div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-[#F97316] font-semibold mb-0.5">
+                    Phương pháp Sunext
+                  </div>
                   <div className="text-xs font-mono font-medium text-[#747474] mb-2 tracking-normal">
-                    Bước {step.num}
+                    3 Nguyên tắc thiết kế · Bước {step.num}
                   </div>
 
                   {/* Fixed Title Skeleton (Prevents baseline shift between 1-line and 2-line titles) */}
@@ -215,14 +218,27 @@ export function MethodStorytellingSection() {
                   </div>
                 </div>
 
-                {/* Fixed Metric Skeleton (Vertically Centered Optical Alignment to Big Digits) */}
-                <div className="pt-5 border-t border-[#E7E7E5] flex items-center gap-4 min-h-[76px]">
-                  <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
-                    {step.proofNum}
-                  </span>
-                  <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug -translate-y-1 sm:-translate-y-1.5">
-                    {step.proofLabel}
-                  </div>
+                {/* Fixed Metric Skeleton (Vertically Centered Optical Alignment to Big Digits or Typography) */}
+                <div className="pt-5 border-t border-[#E7E7E5] flex items-center min-h-[76px]">
+                  {displayedStep === 1 ? (
+                    <div className="flex flex-col justify-center">
+                      <span className="text-xl sm:text-2xl font-medium tracking-tight text-[#0A0A0A] leading-snug">
+                        Dữ liệu trong vùng kiểm soát
+                      </span>
+                      <span className="text-xs font-mono text-[#747474] mt-0.5">
+                        On-premise / Private VPC
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-4">
+                      <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
+                        {step.proofNum}
+                      </span>
+                      <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug -translate-y-1 sm:-translate-y-1.5">
+                        {step.proofLabel}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -234,9 +250,9 @@ export function MethodStorytellingSection() {
 
           </div>
 
-          {/* Minimal Bottom Scroll Status Hint */}
+          {/* Minimal Bottom Scroll Status Hint (Fades out after Step 0 to reduce clutter) */}
           <div className="flex items-center justify-between pt-4 border-t border-[#E7E7E5] text-xs font-mono text-[#747474]">
-            <div className="flex items-center gap-2">
+            <div className={`flex items-center gap-2 transition-opacity duration-300 ${activeStep === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
               <span className="inline-block w-2 h-2 rounded-full bg-[#F97316] animate-pulse" />
               <span>Cuộn chuột để xem chuyển tiếp hệ thống</span>
             </div>

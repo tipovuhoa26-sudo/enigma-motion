@@ -6,14 +6,15 @@ interface Gate {
   id: string;
   name: string;
   sub: string;
+  annotation?: string;
   isOutcome?: boolean;
 }
 
 const GATES: Gate[] = [
-  { id: 'G1', name: 'DISCOVER', sub: 'Tọa độ bài toán' },
-  { id: 'G2', name: 'PILOT', sub: 'Kiểm chứng PoC' },
-  { id: 'G3', name: 'DEPLOY', sub: 'Private VPC' },
-  { id: 'G4', name: 'SCALE', sub: 'Client operated', isOutcome: true },
+  { id: 'G1', name: 'DISCOVER', sub: 'Chốt bài toán & baseline' },
+  { id: 'G2', name: 'PILOT', sub: 'Chứng minh KPI' },
+  { id: 'G3', name: 'DEPLOY', sub: 'Tích hợp & vận hành', annotation: 'Private VPC / On-prem' },
+  { id: 'G4', name: 'SCALE', sub: 'Doanh nghiệp tự chủ', isOutcome: true },
 ];
 
 export function FourGatesProgressSection() {
@@ -73,8 +74,17 @@ export function FourGatesProgressSection() {
 
       <div className="max-w-[1280px] mx-auto relative z-10">
         
-        {/* Section Headline: Confident Editorial Title (Zero paragraph clutter) */}
+        {/* Section Headline: Confident Editorial Title with Framing */}
         <div className="mb-12 sm:mb-14 text-left">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#F97316] font-semibold">
+              Phương pháp Sunext
+            </span>
+            <span className="text-[#D1D1CE] text-xs">/</span>
+            <span className="text-xs font-mono font-medium text-[#747474]">
+              4 Chốt Triển Khai An Toàn
+            </span>
+          </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
             Kiểm soát trước khi mở rộng.
           </h2>
@@ -153,18 +163,25 @@ export function FourGatesProgressSection() {
                       {/* Clean Subtitle or Outcome Callout (Revealed after hold) */}
                       {isScale ? (
                         showOutcomeBadge ? (
-                          <span className="text-xs sm:text-sm font-mono font-bold text-[#EA580C] mt-1.5 px-2.5 py-0.5 rounded-full bg-orange-50 border border-orange-200/80 animate-in fade-in duration-300">
-                            Client operated.
+                          <span className="text-xs sm:text-sm font-mono font-bold text-[#EA580C] mt-1.5 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 animate-in fade-in duration-300">
+                            Doanh nghiệp tự chủ
                           </span>
                         ) : (
-                          <span className="text-xs text-transparent mt-1.5 px-2.5 py-0.5 select-none">
+                          <span className="text-xs text-transparent mt-1.5 px-3 py-1 select-none">
                             &nbsp;
                           </span>
                         )
                       ) : (
-                        <span className="text-xs text-[#747474] font-normal mt-1 hidden sm:block">
-                          {gate.sub}
-                        </span>
+                        <div className="flex flex-col items-center mt-1">
+                          <span className="text-xs text-[#515151] font-medium text-center">
+                            {gate.sub}
+                          </span>
+                          {gate.annotation && (
+                            <span className="text-[10px] font-mono text-[#8C8A84] mt-0.5">
+                              {gate.annotation}
+                            </span>
+                          )}
+                        </div>
                       )}
                     </div>
                 </div>
