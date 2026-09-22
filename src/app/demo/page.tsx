@@ -61,7 +61,7 @@ export default function DemoVideoPage() {
             <div className="text-xs font-mono font-bold text-[#F97316] uppercase mb-1">Scene 01 · 00:00 - 00:05</div>
             <h3 className="text-base font-semibold text-[#111111] mb-1">Hero 3-Layer Depth & AI Control Room</h3>
             <p className="text-xs text-[#666666] leading-relaxed">
-              Mạng lưới Transformation Network kết hợp cùng Control Room Dashboard hiển thị 4 Cửa ải (Gate 01-04) và các chỉ số vận hành thực tế.
+              Mạng lưới Transformation Network kết hợp cùng Control Room Dashboard hiển thị 4 Chốt Kiểm Soát (Gate 01-04) và các chỉ số vận hành thực tế.
             </p>
           </div>
 

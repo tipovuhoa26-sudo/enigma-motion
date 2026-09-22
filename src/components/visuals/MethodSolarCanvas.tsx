@@ -287,15 +287,6 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
               <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#7000FF" strokeWidth="2.2" filter="drop-shadow(0 4px 14px rgba(112,0,255,0.14))" />
               <text x="0" y="4" textAnchor="middle" fill="#7000FF" fontSize="11" fontFamily="monospace" fontWeight="700">KPI</text>
               <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">KPI Vận Hành</text>
-
-              {/* Integrated Operational Dimensions Sublabel (Illuminates upon pulse) */}
-              <text x="0" y="70" textAnchor="middle" fill="#7000FF" fontSize="9" fontFamily="monospace" fontWeight="600" letterSpacing="0.02em">
-                <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
-                  keyTimes="0; 0.24; 0.30; 0.56; 0.62; 1"
-                  values="0.3; 0.3; 1; 1; 0.3; 0.3"
-                />
-                Accuracy · Time · Cost
-              </text>
             </g>
 
             {/* Node 3: IMPACT (x=450) - Business Impact */}
@@ -318,15 +309,6 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
               <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#9333EA" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(147,51,234,0.1))" />
               <text x="0" y="4" textAnchor="middle" fill="#9333EA" fontSize="10.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.04em">IMPACT</text>
               <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Tác Động Kinh Doanh</text>
-
-              {/* Integrated Business Dimensions Sublabel (Illuminates upon pulse) */}
-              <text x="0" y="70" textAnchor="middle" fill="#9333EA" fontSize="9" fontFamily="monospace" fontWeight="600" letterSpacing="0.04em">
-                <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
-                  keyTimes="0; 0.52; 0.58; 0.82; 0.88; 1"
-                  values="0.3; 0.3; 1; 1; 0.3; 0.3"
-                />
-                Revenue · Cost · Risk
-              </text>
             </g>
           </g>
         )}

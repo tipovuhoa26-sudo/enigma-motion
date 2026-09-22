@@ -96,8 +96,8 @@ export default function AiMaturityAssessmentQuizPage() {
     summary:
       'Dữ liệu còn phân tán, nhân sự dùng AI tự phát, chưa gắn với bài toán P&L. Doanh nghiệp cần chứng minh hiệu quả kinh tế trên quy mô nhỏ trước khi đầu tư lớn.',
     recommendedEntryPoint: 'Điểm Vào Khởi Điểm (Single Use Case Quick Win)',
-    referencePackage: 'Gói 1: AI Pilot & Quick Wins (4–6 tuần)',
-    packageHref: '/khung-dau-tu#goi-1',
+    referencePackage: 'Lộ trình 1: AI Pilot & Quick Wins (4–6 tuần)',
+    packageHref: '/khung-dau-tu#lo-trinh-1',
     gatePrerequisite: 'Hoàn thành khảo sát dữ liệu mẫu và xác thực cổng kết nối API (Gate 1).',
     priorityAction:
       'Không vội mua phần mềm đắt tiền. Chọn đúng 1 use case đau đầu nhất (lọc CV, làm content, hoặc báo cáo tuần), đào tạo Tầng 1–2 và đo lường ROI cụ thể trong 4–6 tuần để lấy niềm tin cho toàn tổ chức.',
@@ -112,8 +112,8 @@ export default function AiMaturityAssessmentQuizPage() {
       summary:
         'Quy trình đã chuẩn hóa, nhân sự sẵn sàng cao, điểm nghẽn nằm ở hạ tầng bảo mật cấp tập đoàn và kiến trúc dữ liệu diện rộng kết nối hệ thống lõi.',
       recommendedEntryPoint: 'Điểm Vào Khảo Sát Tổng Thể & Tích Hợp Hệ Thống Lõi (Enterprise Scoping)',
-      referencePackage: 'Gói 3: Enterprise AI Transformation (Cấu hình tham chiếu 4–6 tháng)',
-      packageHref: '/khung-dau-tu#goi-3',
+      referencePackage: 'Lộ trình 3: Enterprise AI Transformation (Cấu hình tham chiếu 4–6 tháng)',
+      packageHref: '/khung-dau-tu#lo-trinh-3',
       gatePrerequisite:
         'Bắt buộc hoàn tất Enterprise Discovery & Data Security Gate (thẩm định an toàn thông tin thực tế đạt chuẩn) trước khi can thiệp hệ thống lõi (Core ERP, Core Banking, MES).',
       priorityAction:
@@ -128,8 +128,8 @@ export default function AiMaturityAssessmentQuizPage() {
       summary:
         'Đã có nhận thức lãnh đạo và một số nhân sự thành thạo, nhưng quy trình còn cồng kềnh và thiếu liên kết công cụ. Các phòng ban vẫn vận hành như các đảo dữ liệu riêng lẻ.',
       recommendedEntryPoint: 'Điểm Vào Chuẩn Hóa Vận Hành Phòng Ban (Department OS)',
-      referencePackage: 'Gói 2: Department AI Operating System (Cấu hình tham chiếu 8–12 tuần)',
-      packageHref: '/khung-dau-tu#goi-2',
+      referencePackage: 'Lộ trình 2: Department AI Operating System (Cấu hình tham chiếu 8–12 tuần)',
+      packageHref: '/khung-dau-tu#lo-trinh-2',
       gatePrerequisite:
         'Bắt buộc vượt qua Technical Scoping về API phần mềm phòng ban và độ sạch của kho dữ liệu nghiệp vụ.',
       priorityAction:
@@ -394,7 +394,7 @@ export default function AiMaturityAssessmentQuizPage() {
                     <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between gap-4">
                       <div>
                         <span className="text-[11px] font-semibold uppercase tracking-wider text-[#C2FF24] block mb-1">
-                          Gói Tham Chiếu Phù Hợp Sau Scoping
+                          Lộ Trình Đầu Tư Phù Hợp Sau Scoping
                         </span>
                         <h4 className="text-lg font-medium text-white mb-2">
                           {maturityTier.referencePackage}

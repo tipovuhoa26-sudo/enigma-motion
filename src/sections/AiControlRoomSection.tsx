@@ -18,7 +18,7 @@ export function AiControlRoomSection() {
             LIVE OPERATIONAL MESH
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0A0A0A] leading-tight mb-4">
-            Kiểm soát chuyển đổi qua <span className="font-normal">4 cửa ải định lượng</span>
+            Kiểm soát chuyển đổi qua <span className="font-normal">4 chốt kiểm soát định lượng</span>
           </h2>
           <p className="text-base sm:text-lg text-[#515151] max-w-2xl mx-auto leading-relaxed">
             Mọi bài toán AI đều phải vượt qua 4 chốt chặn kỹ thuật và tài chính khắt khe trước khi bàn giao đưa vào vận hành thực tế.

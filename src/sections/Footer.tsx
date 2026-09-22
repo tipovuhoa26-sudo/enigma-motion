@@ -81,9 +81,9 @@ export function Footer() {
           </Link>
         </div>
 
-        {/* 4. TRUST */}
+        {/* 4. AN TOÀN & PHÁP LÝ */}
         <div className="col-span-1 md:col-span-2 flex flex-col gap-2.5">
-          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">Trust</span>
+          <span className="font-semibold text-xs text-[#111111] uppercase tracking-wider">An toàn &amp; pháp lý</span>
           <Link href="/phap-ly-bao-mat" className="hover:text-[#6B21A8] transition-colors flex items-center gap-1">
             <span>Bảo mật &amp; pháp lý</span>
             <ArrowUpRight className="w-3 h-3" />

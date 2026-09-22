@@ -350,10 +350,10 @@ export function AiTransformationNetwork() {
                 y1={domain.cy}
                 x2={SUNEXT_INDEX.cx}
                 y2={SUNEXT_INDEX.cy}
-                stroke={isDomainActive ? 'url(#hub-spoke-inward)' : '#D6D3CD'}
-                strokeWidth={isDomainActive ? 2.6 : 1.2}
+                stroke={isDomainActive ? 'url(#hub-spoke-inward)' : '#CBD5E1'}
+                strokeWidth={isDomainActive ? 2.6 : 1.1}
                 strokeDasharray={isDomainActive ? 'none' : '3 4'}
-                opacity={isDomainActive ? 1 : 0.85}
+                opacity={isDomainActive ? 1 : 0.65}
                 className="transition-all duration-400"
               />
 
@@ -398,7 +398,7 @@ export function AiTransformationNetwork() {
                 stroke={isEdgeActive ? 'url(#semantic-pulse-gradient)' : '#6B21A8'}
                 strokeWidth={isEdgeActive ? 1.8 : 0.8}
                 strokeDasharray={isEdgeActive ? 'none' : '3 5'}
-                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.16 : 0.28}
+                opacity={isEdgeActive ? 0.95 : isDimmed ? 0.08 : 0.14}
                 className="transition-all duration-400"
               />
 
@@ -695,19 +695,32 @@ export function AiTransformationNetwork() {
             <circle cx="0" cy="0" r="12" fill="#FFFFFF" fillOpacity="0.25" stroke="#FFFFFF" strokeWidth="1" />
             <circle cx="0" cy="0" r="4.5" fill="#FFFFFF" />
 
-            {/* Index Label Monogram */}
+            {/* Core Label Monogram */}
             <text
               x="0"
               y="52"
               textAnchor="middle"
               fill="#EA580C"
-              fontSize="8.5"
+              fontSize="9"
               fontFamily="monospace"
-              fontWeight="700"
-              letterSpacing="0.14em"
+              fontWeight="800"
+              letterSpacing="0.18em"
               className="select-none filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]"
             >
-              SUNEXT · INDEX MOC
+              SUNEXT
+            </text>
+            <text
+              x="0"
+              y="63"
+              textAnchor="middle"
+              fill="#9A3412"
+              fontSize="6.5"
+              fontFamily="monospace"
+              fontWeight="700"
+              letterSpacing="0.12em"
+              className="select-none opacity-80 filter drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+            >
+              COLLECTIVE INTELLIGENCE
             </text>
           </g>
         </Link>

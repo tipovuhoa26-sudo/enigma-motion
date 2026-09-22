@@ -112,7 +112,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     index: 3,
     eyebrow: 'Nghiệm thu định lượng',
     title: 'Nghiệm Thu Bằng Giờ Công Và P&L Thực Tế',
-    description: 'Sunext từ chối nghiệm thu bằng slide trình diễn. Mọi dự án chuyển đổi AI được chia nhỏ theo 4 cửa ải kiểm soát (Gate 1-4) với chỉ số P&L và giờ công thực tế làm căn cứ thanh toán.',
+    description: 'Sunext từ chối nghiệm thu bằng slide trình diễn. Mọi dự án chuyển đổi AI được chia nhỏ theo 4 chốt kiểm soát (Gate 1-4) với chỉ số P&L và giờ công thực tế làm căn cứ thanh toán.',
     bgColor: '#FAFFDE',
     metric: {
       value: 5,
@@ -123,7 +123,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     },
     pillars: [
       {
-        title: 'Quy trình 4 cửa ải kiểm soát (Gate 1-4)',
+        title: 'Quy trình 4 chốt kiểm soát (Gate 1-4)',
         desc: 'Xác định bài toán ➔ Thử nghiệm PoC ➔ Tích hợp hệ thống ➔ Nghiệm thu số liệu.',
       },
       {
@@ -136,7 +136,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
       },
     ],
     benchmarks: [
-      { label: 'Quy trình kiểm soát', value: '4 Cửa ải Gate 1-4' },
+      { label: 'Quy trình kiểm soát', value: '4 Chốt kiểm soát Gate 1-4' },
       { label: 'Chu kỳ đo lường', value: 'Báo cáo hàng tuần' },
       { label: 'Rủi ro đầu tư', value: 'Không nghiệm thu bằng slide' },
     ],

@@ -20,7 +20,7 @@ export function SunextTransformationGraph({ activeStep }: TransformationGraphPro
       <div className="w-full pb-4 border-b border-[#E8E8E8]">
         <div className="flex items-center justify-between mb-2">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-[#6B21A8]">
-            Hệ thống 4 cửa ải Gate 1–4
+            Hệ thống 4 chốt kiểm soát Gate 1–4
           </span>
           <span className="text-[11px] font-mono text-[#8E8E8E]">
             {activeStep === 0 ? 'Giai đoạn 1/3' : activeStep === 1 ? 'Giai đoạn 2/3' : 'Giai đoạn 3/3: Nghiệm thu'}

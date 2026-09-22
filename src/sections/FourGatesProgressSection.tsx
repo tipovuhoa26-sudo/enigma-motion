@@ -105,7 +105,7 @@ export function FourGatesProgressSection() {
             </span>
             <span className="text-[#D1D1CE] text-xs">/</span>
             <span className="text-xs font-mono font-medium text-[#747474]">
-              4 Pha Triển Khai · 4 Chốt An Toàn
+              4 Pha Triển Khai · 4 Chốt Kiểm Soát
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">

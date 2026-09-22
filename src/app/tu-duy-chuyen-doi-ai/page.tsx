@@ -267,7 +267,7 @@ export default function AiTransformationHubPage() {
                 Khung Chẩn Đoán Năng Lực Tổ Chức
               </span>
               <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight">
-                6 trụ cột để chẩn đoán năng lực AI của tổ chức
+                6 trụ cột để biết AI đang mắc ở đâu
               </h2>
               <p className="text-sm text-[#6E6E6E] mt-3 leading-relaxed">
                 Không cần kích hoạt cả sáu cùng lúc. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung xử lý. Đây là 6 chiều năng lực tổ chức được lượng hóa rõ ràng để đảm bảo AI cắm sâu vào vận hành thực tế.
