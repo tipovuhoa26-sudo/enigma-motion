@@ -61,7 +61,7 @@ export function CasesSection() {
         {/* Confident Heading */}
         <div className="mb-14 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
-            Đo lường trên kết quả vận hành.
+            Kết quả trong vận hành.
           </h2>
         </div>
 
@@ -122,78 +122,78 @@ export function CasesSection() {
 
           </div>
 
-          {/* Right Column: De-chromed Living System Pipeline (Flow is the visual) */}
+          {/* Right Column: Scaled-up Minimal Flow Pipeline (2-3 words, high visual impact) */}
           <div className="lg:col-span-6 w-full flex items-center justify-center select-none">
-            <div className="w-full max-w-[480px] py-4 px-2 relative">
+            <div className="w-full max-w-[420px] py-6 px-4 relative">
               
               {/* Vertical Continuous Flow Axis */}
-              <div className="space-y-8 relative pl-6">
+              <div className="space-y-10 relative pl-4">
                 
                 {/* Connecting Vertical Track Hairline */}
-                <div className="absolute top-5 bottom-5 left-10 w-[2px] bg-[#E7E5DF] -z-0" />
+                <div className="absolute top-6 bottom-6 left-10 w-[2px] bg-[#E7E5DF] -z-0" />
                 
                 {/* Active Light Pulse Traveling Down (Single Pass) */}
                 <div 
                   className="absolute left-10 w-[2px] bg-gradient-to-b from-[#581C87] to-[#F97316] -z-0 transition-all duration-700 ease-out"
                   style={{
-                    top: '20px',
+                    top: '24px',
                     height: pulsePhase === 1 ? '30%' : pulsePhase === 2 ? '70%' : '100%',
                   }}
                 />
 
                 {/* Node 01: LEAD */}
-                <div className="flex items-start gap-5 relative z-10">
-                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                <div className="flex items-center gap-6 relative z-10">
+                  <div className={`w-12 h-12 rounded-full font-mono text-sm font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
                     pulsePhase >= 1
-                      ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/20'
+                      ? 'bg-[#581C87] text-white shadow-md shadow-purple-900/20 ring-4 ring-purple-100'
                       : 'bg-white text-[#747474] border border-[#E7E5DF]'
                   }`}>
                     01
                   </div>
-                  <div className="pt-1.5">
+                  <div>
                     <div className="text-xs font-mono font-bold text-[#581C87] uppercase tracking-wider">
-                      LEAD INPUT
+                      LEAD
                     </div>
-                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
-                      Khách quan tâm phân khu &amp; dự toán vay ngân hàng
+                    <div className="text-base font-medium text-[#0A0A0A]">
+                      Tiếp nhận yêu cầu
                     </div>
                   </div>
                 </div>
 
-                {/* Node 02: AI CO-WORKER */}
-                <div className="flex items-start gap-5 relative z-10">
-                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                {/* Node 02: AI */}
+                <div className="flex items-center gap-6 relative z-10">
+                  <div className={`w-12 h-12 rounded-full font-mono text-sm font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
                     pulsePhase >= 2
-                      ? 'bg-[#EA580C] text-white shadow-md shadow-orange-500/25 ring-2 ring-orange-200/80'
+                      ? 'bg-[#EA580C] text-white shadow-md shadow-orange-500/25 ring-4 ring-orange-100'
                       : 'bg-white text-[#747474] border border-[#E7E5DF]'
                   }`}>
                     AI
                   </div>
-                  <div className="pt-1.5">
+                  <div>
                     <div className="text-xs font-mono font-bold text-[#EA580C] uppercase tracking-wider">
-                      TRA CỨU ERP &amp; TÍNH TOÁN
+                      AI CO-WORKER
                     </div>
-                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
-                      Tự động đối soát bảng hàng và sinh phương án tài chính (30s)
+                    <div className="text-base font-medium text-[#0A0A0A]">
+                      Tra cứu &amp; đối soát
                     </div>
                   </div>
                 </div>
 
                 {/* Node 03: RESPONSE */}
-                <div className="flex items-start gap-5 relative z-10">
-                  <div className={`w-10 h-10 rounded-full font-mono text-xs font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
+                <div className="flex items-center gap-6 relative z-10">
+                  <div className={`w-12 h-12 rounded-full font-mono text-sm font-bold flex items-center justify-center shrink-0 transition-all duration-400 ${
                     pulsePhase >= 3
-                      ? 'bg-[#059669] text-white shadow-md shadow-emerald-600/20 ring-2 ring-emerald-200/80'
+                      ? 'bg-[#059669] text-white shadow-md shadow-emerald-600/20 ring-4 ring-emerald-100'
                       : 'bg-white text-[#747474] border border-[#E7E5DF]'
                   }`}>
                     ✓
                   </div>
-                  <div className="pt-1.5">
+                  <div>
                     <div className="text-xs font-mono font-bold text-[#059669] uppercase tracking-wider">
-                      RESPONSE OUTPUT
+                      RESPONSE
                     </div>
-                    <div className="text-sm font-medium text-[#0A0A0A] mt-0.5">
-                      Gửi trọn bộ kịch bản tư vấn hoàn chỉnh (&lt; 5 phút)
+                    <div className="text-base font-medium text-[#0A0A0A]">
+                      Phản hồi tức thì
                     </div>
                   </div>
                 </div>

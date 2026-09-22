@@ -112,19 +112,34 @@ export function MethodStorytellingSection() {
     <section
       ref={containerRef}
       id="method"
-      className="relative h-[240vh] sm:h-[260vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
+      className="relative h-[195vh] sm:h-[210vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
     >
       {/* Sticky Pinned Screen Viewport - Pure Scroll-Driven Morph, Zero Carousel Chrome */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 py-8 sm:py-12">
         <div className="max-w-[1280px] w-full mx-auto flex-1 flex flex-col justify-between">
           
           {/* Top Progress Track */}
-          <div className="w-full pb-4 border-b border-[#E7E7E5] relative">
+          <div className="w-full pb-4 border-b border-[#E7E7E5] relative mb-2">
             {/* Ambient Gradient Scrub Bar */}
             <div
-              className="absolute -bottom-[1px] left-0 h-[2px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-150 ease-out"
+              className="absolute -bottom-[1px] left-0 h-[2px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-150 ease-out z-10"
               style={{ width: `${(scrollProgress * 100).toFixed(1)}%` }}
             />
+
+            {/* Three Micro Milestones (01, 02, 03 with Ticks) along the line */}
+            <div className="absolute -bottom-[18px] left-0 right-0 flex justify-between pointer-events-none z-20 px-1">
+              {['01', '02', '03'].map((num, idx) => {
+                const isPassed = activeStep >= idx;
+                return (
+                  <div key={num} className="flex flex-col items-center">
+                    <div className={`w-[1.5px] h-[4px] transition-colors duration-200 ${isPassed ? 'bg-[#F97316]' : 'bg-[#D1D1CE]'}`} />
+                    <span className={`text-[9px] font-mono leading-none mt-0.5 transition-colors duration-200 ${isPassed ? 'text-[#0A0A0A] font-semibold' : 'text-[#A3A3A3]'}`}>
+                      {num}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
 
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2">

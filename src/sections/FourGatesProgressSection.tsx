@@ -31,13 +31,13 @@ export function FourGatesProgressSection() {
           setActiveStep(0);
           setShowOutcomeBadge(false);
 
-          const t1 = setTimeout(() => setActiveStep(1), 320);
-          const t2 = setTimeout(() => setActiveStep(2), 640);
+          const t1 = setTimeout(() => setActiveStep(1), 250);
+          const t2 = setTimeout(() => setActiveStep(2), 500);
           const t3 = setTimeout(() => {
             setActiveStep(3);
-            const tBadge = setTimeout(() => setShowOutcomeBadge(true), 400);
+            const tBadge = setTimeout(() => setShowOutcomeBadge(true), 350);
             return () => clearTimeout(tBadge);
-          }, 1200);
+          }, 850);
 
           return () => {
             clearTimeout(t1);
@@ -57,7 +57,7 @@ export function FourGatesProgressSection() {
     <section
       ref={containerRef}
       id="delivery"
-      className="relative w-full pt-24 sm:pt-32 pb-32 sm:pb-40 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden"
+      className="relative w-full pt-16 sm:pt-20 pb-20 sm:pb-24 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden"
     >
       {/* Background Subtle Flattened Orbit Connecting with Atmosphere */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40">

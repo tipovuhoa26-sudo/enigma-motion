@@ -67,9 +67,18 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           </h1>
 
           {/* Focused Lead Sentence (≤ 18 words, sharp & enterprise) */}
-          <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[560px] leading-relaxed mb-9 font-normal">
+          <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[560px] leading-relaxed mb-4 font-normal">
             Sunext chuẩn hóa quy trình, trao quyền đội ngũ và triển khai AI nghiệm thu theo P&L định lượng.
           </p>
+
+          {/* Three Capabilities Pillar (Lean & Subtly Enterprise) */}
+          <div className="flex items-center gap-2 text-xs sm:text-sm font-medium tracking-wide text-[#706E6A] mb-8 uppercase">
+            <span>Đào tạo</span>
+            <span className="text-[#C4C2BC]">·</span>
+            <span>Tư vấn</span>
+            <span className="text-[#C4C2BC]">·</span>
+            <span>Triển khai</span>
+          </div>
 
           {/* Primary Orange CTA + Clean Secondary Outline */}
           <div ref={ctaGroupRef} className="flex flex-wrap items-center gap-4" data-hero-cta>
