@@ -33,7 +33,7 @@ export default function CaseStudiesIndexPage() {
               Case studies & kết quả đo lường được
             </h1>
             <p className="text-base text-[#6E6E6E] mt-4 leading-relaxed">
-              Khám phá cách các doanh nghiệp Việt Nam giải quyết bài toán vận hành thật cùng Phương Pháp Luận Sunext: giải phóng sức lao động, tự động hóa kiểm định cơ khí và nghiệm thu bằng hiệu quả P&L định lượng.
+              Khám phá cách các doanh nghiệp Việt Nam giải quyết bài toán vận hành thật cùng Phương Pháp Luận Sunext: giải phóng sức lao động, tự động hóa kiểm định cơ khí và nghiệm thu bằng KPI vận hành, mức độ áp dụng và tác động kinh doanh đo được.
             </p>
           </div>
 

@@ -69,14 +69,14 @@ export default function LegalSecurityPage() {
               Khung Pháp Lý, An Toàn Thông Tin & Quản Trị Vận Hành
             </h1>
             <p className="text-base sm:text-lg text-[#6E6E6E] leading-relaxed max-w-2xl mx-auto mb-8">
-              Bản cam kết minh bạch dành riêng cho Hội Đồng Thẩm Định (Buying Committee), CISO, Giám Đốc Pháp Chế và Ban Điều Hành: Phân định quyền sở hữu trí tuệ, thỏa thuận xử lý dữ liệu DPA, 4 tầng an toàn dữ liệu và cơ chế giải ngân theo Stage-Gate.
+              Bản cam kết minh bạch dành riêng cho Hội Đồng Thẩm Định (Buying Committee), CISO, Giám Đốc Pháp Chế và Ban Điều Hành: Phân định quyền sở hữu trí tuệ, thỏa thuận xử lý dữ liệu DPA, 3 cấp an toàn dữ liệu · 4 cấu hình triển khai và cơ chế giải ngân theo Stage-Gate.
             </p>
 
             {/* In-page Anchor Navigation Bar */}
             <div className="flex flex-wrap items-center justify-center gap-2 p-2 rounded-2xl bg-[#F5F3F6] border border-black/5 text-xs font-medium">
               {[
                 { href: '#ip', label: '1. Phân định Sở hữu trí tuệ' },
-                { href: '#dpa', label: '2. 4 Tầng An toàn dữ liệu' },
+                { href: '#dpa', label: '2. 3 Cấp an toàn · 4 Cấu hình' },
                 { href: '#stage-gate', label: '3. 4 Cổng Stage-Gate' },
                 { href: '#compliance', label: '4. Tuân thủ Ngành' },
                 { href: '#uat', label: '5. Tiêu chuẩn UAT' },
@@ -146,7 +146,7 @@ export default function LegalSecurityPage() {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-light text-[#17151A] mb-4">
-              Thỏa Thuận Xử Lý Dữ Liệu & Phân Định 4 Tầng An Toàn
+              Thỏa Thuận Xử Lý Dữ Liệu & 3 Cấp An Toàn · 4 Cấu Hình Triển Khai
             </h2>
             <p className="text-xs sm:text-sm text-[#6E6E6E] leading-relaxed mb-8">
               Mọi dự án đều bắt buộc ký kết Thỏa thuận Xử lý Dữ liệu (DPA) và NDA trước khi tiếp cận dữ liệu nghiệp vụ. Kiến trúc phân vùng đảm bảo nguyên tắc Zero Data Retention và Zero Data Egress.
@@ -158,7 +158,7 @@ export default function LegalSecurityPage() {
             {/* 4 Data Tiers Table */}
             <div className="p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs overflow-x-auto">
               <h3 className="text-lg font-semibold text-[#17151A] mb-4">
-                Bảng Đối Soát 4 Tầng An Toàn & Lưu Trú Dữ Liệu (Data Residency Tiers)
+                Bảng Đối Soát 3 Cấp An Toàn Dữ Liệu · 4 Cấu Hình Triển Khai (Tier 1, Tier 2, Tier 3A, Tier 3B)
               </h3>
               <table className="w-full text-left text-xs font-sans">
                 <thead>

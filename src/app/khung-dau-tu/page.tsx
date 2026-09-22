@@ -39,10 +39,10 @@ export default function InvestmentFrameworkPage() {
 
   // Calculations
   const sizeMultipliers = {
-    small: { hours: 160, saveMil: 45, tier: 'Gói 1: AI Pilot & Quick Wins', weeks: '4-6 tuần' },
-    medium: { hours: 480, saveMil: 140, tier: 'Gói 2: Department AI Operating System', weeks: '8-12 tuần' },
-    large: { hours: 1200, saveMil: 360, tier: 'Gói 2 / Gói 3: Multi-department OS', weeks: '12-16 tuần' },
-    enterprise: { hours: 3200, saveMil: 950, tier: 'Gói 3: Enterprise AI Transformation', weeks: '4-6 tháng' },
+    small: { hours: 160, saveMil: 45, tier: 'Lộ trình 1 · AI Pilot & Quick Wins', weeks: '4-6 tuần' },
+    medium: { hours: 480, saveMil: 140, tier: 'Lộ trình 2 · Department AI Operating System', weeks: '8-12 tuần' },
+    large: { hours: 1200, saveMil: 360, tier: 'Lộ trình 2 / Lộ trình 3 · Multi-department OS', weeks: '12-16 tuần' },
+    enterprise: { hours: 3200, saveMil: 950, tier: 'Lộ trình 3 · Enterprise AI Transformation', weeks: '4-6 tháng' },
   };
 
   const domainNames = {

@@ -68,7 +68,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
 
           {/* Focused Lead Sentence (≤ 18 words, sharp & enterprise) */}
           <p className="text-base sm:text-lg lg:text-xl text-[#515151] max-w-[560px] leading-relaxed mb-4 font-normal">
-            Sunext chuẩn hóa quy trình, trao quyền đội ngũ và triển khai AI nghiệm thu theo P&L định lượng.
+            Sunext chuẩn hóa quy trình, trao quyền đội ngũ và triển khai AI nghiệm thu bằng KPI vận hành và tác động kinh doanh định lượng.
           </p>
 
           {/* Three Capabilities Pillar (Lean & Subtly Enterprise) */}

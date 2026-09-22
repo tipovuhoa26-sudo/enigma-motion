@@ -151,7 +151,7 @@ export default function IndustryIndexPage() {
                 Tất cả giải pháp ngành đều vận hành trên Phương Pháp Luận Sunext
               </h2>
               <p className="text-sm text-neutral-300 leading-relaxed mb-6">
-                Dù bạn thuộc ngành bán lẻ, sản xuất hay dịch vụ, việc áp dụng AI chỉ bền vững khi tổ chức đi qua đủ 6 trụ cột năng lực. Hãy kiểm tra xem doanh nghiệp bạn đang sẵn sàng tới đâu.
+                Mọi giải pháp ngành đều được đánh giá trên cùng 6 trụ cột năng lực; Sunext chỉ kích hoạt những trụ cột thực sự đang chặn kết quả. Hãy kiểm tra xem doanh nghiệp bạn đang sẵn sàng tới đâu.
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/tu-duy-chuyen-doi-ai">

@@ -102,7 +102,7 @@ export function Footer() {
           <div className="flex flex-col gap-1.5 pt-0.5 text-xs text-[#626262]">
             <span className="leading-snug">• Private VPC / On-premise</span>
             <span className="leading-snug">• Ký kết thỏa thuận bảo mật NDA</span>
-            <span className="leading-snug">• Cách ly dữ liệu tuyệt đối</span>
+            <span className="leading-snug">• Cách ly dữ liệu theo kiến trúc được phê duyệt</span>
           </div>
           <Link href="/phap-ly-bao-mat" className="text-xs text-[#6B21A8] hover:underline flex items-center gap-1 pt-1 font-medium">
             <span>Bảo mật &amp; Pháp lý</span>

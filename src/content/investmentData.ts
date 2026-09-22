@@ -50,7 +50,7 @@ export interface InvestmentTier {
 export const INVESTMENT_TIERS: InvestmentTier[] = [
   {
     id: 'pilot',
-    name: 'Gói 1: AI Pilot & Quick Wins',
+    name: 'Lộ Trình 1 · AI Pilot & Quick Wins',
     badge: 'Khởi Điểm Tối Ưu',
     subtitle: 'Chứng minh ROI định lượng trong 4-6 tuần với 1 use case trọng điểm trước khi đầu tư mở rộng.',
     recommendedFor: 'Doanh nghiệp muốn kiểm chứng hiệu quả thực tế của AI trên bài toán đau đầu nhất mà không cần giải ngân ngân sách lớn.',
@@ -130,7 +130,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
   },
   {
     id: 'department',
-    name: 'Gói 2: Department AI Operating System',
+    name: 'Lộ Trình 2 · Department AI Operating System',
     badge: 'Phổ Biến Nhất',
     subtitle: 'Thiết lập hệ điều hành AI chuẩn hóa cho 1 phòng ban mũi nhọn (Marketing, Sales, HR, hoặc Vận hành).',
     recommendedFor: 'Doanh nghiệp 50 - 300 nhân sự muốn giải phóng sức lao động của một bộ phận then chốt và tạo đòn bẩy tăng trưởng 3x-5x.',
@@ -209,7 +209,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
   },
   {
     id: 'enterprise',
-    name: 'Gói 3: Enterprise AI Transformation',
+    name: 'Lộ Trình 3 · Enterprise AI Transformation',
     badge: 'Toàn Diện Sunext Method',
     subtitle: 'Tái thiết kế toàn bộ tổ chức theo Phương Pháp Luận Sunext với hạ tầng Private AI bảo mật cấp doanh nghiệp.',
     recommendedFor: 'Tập đoàn & Doanh nghiệp 200 - 1.000+ nhân sự cam kết xây dựng AI như lợi thế cạnh tranh cốt lõi dài hạn.',

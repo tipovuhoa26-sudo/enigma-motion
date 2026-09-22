@@ -148,7 +148,7 @@ export function MethodStorytellingSection() {
                 </span>
                 <span className="text-[#A3A3A3] text-xs">/</span>
                 <span className="text-xs font-mono text-[#747474]">
-                  3 Nguyên Tắc Thiết Kế · 4 Chốt Triển Khai
+                  3 Nguyên Tắc Thiết Kế
                 </span>
               </div>
 
@@ -185,7 +185,7 @@ export function MethodStorytellingSection() {
                     Phương pháp Sunext
                   </div>
                   <div className="text-xs font-mono font-medium text-[#747474] mb-2 tracking-normal">
-                    3 Nguyên tắc thiết kế · Bước {step.num}
+                    3 Nguyên tắc thiết kế · Nguyên tắc {step.num}
                   </div>
 
                   {/* Fixed Title Skeleton (Prevents baseline shift between 1-line and 2-line titles) */}

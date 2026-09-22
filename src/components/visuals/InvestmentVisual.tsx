@@ -56,7 +56,7 @@ export function InvestmentVisual({ className = '' }: InvestmentVisualProps) {
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[10px] uppercase tracking-wider text-emerald-400 font-bold bg-emerald-500/20 px-2 py-0.5 rounded">
-                GIAI ĐOẠN 1
+                LỘ TRÌNH 1 · PILOT
               </span>
               <span className="text-xs text-zinc-400">4 – 6 Tuần</span>
             </div>
@@ -79,7 +79,7 @@ export function InvestmentVisual({ className = '' }: InvestmentVisualProps) {
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[10px] uppercase tracking-wider text-[#A3E635] font-bold bg-[#A3E635]/20 px-2 py-0.5 rounded">
-                GIAI ĐOẠN 2
+                LỘ TRÌNH 2 · DEPARTMENT
               </span>
               <span className="text-xs text-zinc-400">8 – 12 Tuần</span>
             </div>
@@ -99,7 +99,7 @@ export function InvestmentVisual({ className = '' }: InvestmentVisualProps) {
           <div>
             <div className="flex items-center justify-between mb-2">
               <span className="text-[10px] uppercase tracking-wider text-cyan-400 font-bold bg-cyan-500/20 px-2 py-0.5 rounded">
-                GIAI ĐOẠN 3
+                LỘ TRÌNH 3 · ENTERPRISE
               </span>
               <span className="text-xs text-zinc-400">4 – 6 Tháng</span>
             </div>

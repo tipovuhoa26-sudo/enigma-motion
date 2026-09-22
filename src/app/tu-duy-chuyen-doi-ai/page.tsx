@@ -112,7 +112,7 @@ export default function AiTransformationHubPage() {
               Tư Duy Chuyển Đổi AI · Báo Cáo Chiến Lược
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-light tracking-tight text-[#17151A] leading-[1.18] mb-8">
-              Vì sao <span className="font-normal underline decoration-black/20 underline-offset-8">phần lớn chương trình chuyển đổi</span> không đạt mục tiêu — và AI cũng không phải ngoại lệ
+              Vì sao nhiều chương trình AI <span className="font-normal underline decoration-black/20 underline-offset-8">không tạo được giá trị</span> — dù đã mua đủ công cụ
             </h1>
 
             {/* Pain Point Lead In (Sam Ovens style) */}
@@ -129,7 +129,7 @@ export default function AiTransformationHubPage() {
               <div className="pt-3 border-t border-black/10 flex items-center gap-3 text-xs text-[#6E6E6E]">
                 <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
                 <span>
-                  Khảo sát thực tế chỉ ra: Phần lớn sáng kiến chuyển đổi số và AI thất bại không phải vì mô hình AI kém hay thiếu kinh phí, mà vì <strong>đầu tư công nghệ nhưng không tái cấu trúc tổ chức và chuẩn hóa quy trình để vận hành nó</strong>.
+                  Thực tế cho thấy: Phần lớn chương trình chuyển đổi không tạo được giá trị không phải vì mô hình AI kém, mà vì <strong>đầu tư công nghệ nhưng không tái cấu trúc tổ chức và chuẩn hóa quy trình để vận hành nó</strong>.
                 </span>
               </div>
             </div>
@@ -145,10 +145,10 @@ export default function AiTransformationHubPage() {
                 </span>
               </div>
               <h2 className="text-2xl font-light text-[#17151A]">
-                Công thức 10 — 20 — 70
+                Quy tắc 10 — 20 — 70
               </h2>
               <p className="text-xs text-[#6E6E6E] mt-2 leading-relaxed">
-                Khung phân bổ nỗ lực chuyển đổi của BCG: 70% nỗ lực và sự tập trung cần dành cho con người & quy trình (SOP), 20% cho nền tảng dữ liệu & công nghệ, và 10% cho thuật toán AI. Đa phần doanh nghiệp đầu tư sai lệch khi dồn toàn bộ ngân sách vào 10% công cụ.
+                Quy tắc 10–20–70 của BCG nhấn mạnh phần lớn nỗ lực chuyển đổi phải dành cho con người và quy trình (khoảng 10% thuật toán, 20% công nghệ/dữ liệu và 70% con người/quy trình). Đa phần doanh nghiệp đầu tư sai lệch khi dồn toàn bộ ngân sách vào 10% công cụ.
               </p>
             </div>
 
@@ -216,33 +216,33 @@ export default function AiTransformationHubPage() {
                     Tái đấu nối lại toàn bộ doanh nghiệp, không chỉ lắp thêm một cái app
                   </h2>
                   <p className="text-sm text-[#17151A]/80 leading-relaxed mb-6">
-                    Để AI tạo ra giá trị kinh tế trên bảng P&L, tổ chức phải vượt qua đồng bộ <strong>6 cửa ải</strong>. Bạn không cần hoàn hảo cả 6 cửa ải cùng lúc, nhưng bạn bắt buộc phải biết <strong>mình đang nghẽn nặng nhất ở đâu</strong> để tập trung nguồn lực giải trước.
+                    Để AI tạo ra giá trị kinh tế trên bảng P&L, tổ chức được chẩn đoán toàn diện trên <strong>6 trụ cột năng lực</strong>. Không cần kích hoạt cả sáu cùng lúc. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung xử lý.
                   </p>
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 1</span>
-                      <span className="text-[#6E6E6E]">Chiến lược số</span>
+                      <span className="font-semibold block text-[#17151A]">01 Strategy</span>
+                      <span className="text-[#6E6E6E]">Chiến lược & Giá trị</span>
                     </div>
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 2</span>
-                      <span className="text-[#6E6E6E]">Nhân tài nội bộ</span>
+                      <span className="font-semibold block text-[#17151A]">02 People</span>
+                      <span className="text-[#6E6E6E]">Nhân tài & Năng lực</span>
                     </div>
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 3</span>
+                      <span className="font-semibold block text-[#17151A]">03 Process</span>
                       <span className="text-[#6E6E6E]">Mô hình vận hành</span>
                     </div>
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 4</span>
-                      <span className="text-[#6E6E6E]">Nền tảng công nghệ</span>
+                      <span className="font-semibold block text-[#17151A]">04 Technology</span>
+                      <span className="text-[#6E6E6E]">Nền tảng & Tích hợp</span>
                     </div>
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 5</span>
+                      <span className="font-semibold block text-[#17151A]">05 Data</span>
                       <span className="text-[#6E6E6E]">Kiến trúc dữ liệu</span>
                     </div>
                     <div className="p-3 bg-white/70 rounded-2xl border border-black/5">
-                      <span className="font-semibold block text-[#17151A]">Trụ Cột 6</span>
-                      <span className="text-[#6E6E6E]">Mở rộng & Áp dụng</span>
+                      <span className="font-semibold block text-[#17151A]">06 Governance</span>
+                      <span className="text-[#6E6E6E]">Quản trị & Mở rộng</span>
                     </div>
                   </div>
                 </div>
@@ -260,17 +260,17 @@ export default function AiTransformationHubPage() {
             </div>
           </section>
 
-          {/* Section: 6 Cửa Ải Mọi Doanh Nghiệp Phải Qua */}
+          {/* Section: 6 Trụ Cột Chẩn Đoán Năng Lực AI */}
           <section className="mb-20">
             <div className="max-w-3xl mb-10">
               <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-                Chi Tiết 6 Trụ Cột Tổ Chức
+                Khung Chẩn Đoán Năng Lực Tổ Chức
               </span>
               <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight">
-                6 cửa ải mọi doanh nghiệp phải qua
+                6 trụ cột để chẩn đoán năng lực AI của tổ chức
               </h2>
               <p className="text-sm text-[#6E6E6E] mt-3 leading-relaxed">
-                Đây không phải lý thuyết hàn lâm. Đây là 6 điểm nghẽn cụ thể mà các dự án AI thường chết trong im lặng — không ai báo cáo lên sếp là &ldquo;dự án đã chết&rdquo;, nó chỉ lặng lẽ không ai dùng nữa.
+                Không cần kích hoạt cả sáu cùng lúc. Sunext xác định trụ cột đang chặn use case ưu tiên rồi tập trung xử lý. Đây là 6 chiều năng lực tổ chức được lượng hóa rõ ràng để đảm bảo AI cắm sâu vào vận hành thực tế.
               </p>
             </div>
 

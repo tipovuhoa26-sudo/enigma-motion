@@ -49,7 +49,7 @@ export default function ClientsNetworkPage() {
               href="/doi-ngu"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#17151A] hover:underline transition-colors"
             >
-              <span>Xem Mạng Lưới 11 Giảng Viên & Chuyên Gia</span>
+              <span>Xem mạng lưới chuyên gia</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -60,39 +60,48 @@ export default function ClientsNetworkPage() {
               ECOSYSTEM & NETWORK · MẠNG LƯỚI ĐỒNG HÀNH TOÀN QUỐC
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">
-              Mạng Lưới 45+ Dự Án & Tổ Chức Đồng Hành Chuyển Đổi AI
+              Mạng Lưới Tổ Chức & Đề Án Đồng Hành Chuyển Đổi AI
             </h1>
             <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-3xl mb-8">
               Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ thống phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận ứng dụng AI hiệu quả trên khắp cả nước.
             </p>
 
             {/* Metric Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
               <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8]">
-                <span className="text-2xl font-light text-[#17151A] block">45+</span>
+                <span className="text-2xl font-light text-[#17151A] block">45</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Tổ Chức & Dự Án Đã Tham Gia
+                  Tổ chức
                 </span>
                 <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Đào tạo, cố vấn hoặc thiết lập SOP AI
+                  Trong mạng lưới hợp tác
                 </span>
               </div>
               <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
-                <span className="text-2xl font-light text-[#17151A] block">07</span>
+                <span className="text-2xl font-light text-[#17151A] block">40+</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Nhóm Ngành Trọng Điểm
+                  Dự án & đề án
                 </span>
                 <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Từ tài chính, BĐS đến FMCG & EdTech
+                  Triển khai thực tế
+                </span>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
+                <span className="text-2xl font-light text-[#17151A] block">08</span>
+                <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
+                  Macro-Domains
+                </span>
+                <span className="text-[11px] text-[#6E6E6E] block mt-1">
+                  Tài chính, BĐS, Sản xuất...
                 </span>
               </div>
               <div className="p-4 rounded-2xl bg-[#F8F8F6] border border-black/5">
                 <span className="text-2xl font-light text-[#17151A] block">100%</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-0.5">
-                  Cam Kết Bảo Mật (NDA)
+                  Cam Kết NDA
                 </span>
                 <span className="text-[11px] text-[#6E6E6E] block mt-1">
-                  Bảo vệ dữ liệu & quyền riêng tư tuyệt đối
+                  Bảo vệ dữ liệu & quyền riêng tư
                 </span>
               </div>
             </div>

@@ -17,38 +17,38 @@ export default function AiReadinessEditorialIntroPage() {
   const sixAxes = [
     {
       num: '01',
-      title: 'Chiến lược & tầm nhìn AI',
-      desc: 'Bạn có biết miền nghiệp vụ nào nên ưu tiên trước để tạo ra lợi nhuận P&L rõ ràng, hay đang thử nghiệm dàn trải ở khắp nơi?',
+      title: 'Strategy & Value · Chiến lược số do kinh doanh dẫn dắt',
+      desc: 'Doanh nghiệp có biết miền nghiệp vụ nào nên ưu tiên trước để tạo ra giá trị kinh tế P&L rõ ràng, hay đang thử nghiệm dàn trải ở khắp nơi?',
       pillarUrl: '/tu-duy-chuyen-doi-ai/chien-luoc-so',
     },
     {
       num: '02',
-      title: 'Dữ liệu & hệ thống công nghệ',
-      desc: 'Dữ liệu của bạn đã đủ sạch, kết nối hai chiều qua API bảo mật với ERP/CRM/ATS để AI sử dụng an toàn hay chưa?',
-      pillarUrl: '/tu-duy-chuyen-doi-ai/nen-tang-cong-nghe',
+      title: 'People & Capability · Đội ngũ nhân tài & Năng lực nội bộ',
+      desc: 'Đội ngũ có đủ kỹ năng theo thang 5 tầng năng lực để dùng AI ra kết quả thực tế, hay chỉ dùng thử vài lần rồi bỏ vì không biết cách prompt nghiệp vụ?',
+      pillarUrl: '/tu-duy-chuyen-doi-ai/nang-luc-doi-ngu',
     },
     {
       num: '03',
-      title: 'Quy trình & cách vận hành',
-      desc: 'Quy trình hiện tại có chỗ cho AI tích hợp tự nhiên theo cơ chế Human-in-the-loop, hay AI sẽ chỉ làm cái cũ chạy nhanh hơn?',
+      title: 'Process & Operating Model · Mô hình vận hành & Quy trình',
+      desc: 'Quy trình hiện tại có chỗ cho AI tích hợp tự nhiên theo cơ chế Human-in-the-loop, hay AI sẽ chỉ làm một quy trình cũ chạy nhanh hơn?',
       pillarUrl: '/tu-duy-chuyen-doi-ai/mo-hinh-van-hanh',
     },
     {
       num: '04',
-      title: 'Con người & năng lực đội ngũ',
-      desc: 'Đội ngũ có đủ kỹ năng theo thang năng lực để dùng AI ra kết quả, hay chỉ dùng thử vài lần rồi bỏ vì không biết cách prompt nghiệp vụ?',
-      pillarUrl: '/tu-duy-chuyen-doi-ai/nang-luc-doi-ngu',
+      title: 'Technology & Integration · Nền tảng công nghệ & Tích hợp',
+      desc: 'Khả năng kết nối hệ thống lõi (ERP, CRM, ATS) qua API bảo mật hai chiều để chuyển từ chat web rời rạc sang tự động hóa luồng việc.',
+      pillarUrl: '/tu-duy-chuyen-doi-ai/nen-tang-cong-nghe',
     },
     {
       num: '05',
-      title: 'Bảo mật, rủi ro & governance',
-      desc: 'Doanh nghiệp có kiểm soát được dữ liệu khi đưa vào AI không, có cam kết NDA và hạ tầng Private AI hay đang phó mặc rủi ro rò rỉ?',
-      pillarUrl: '/tu-duy-chuyen-doi-ai/mo-rong-quy-mo',
+      title: 'Data Architecture · Kiến trúc dữ liệu doanh nghiệp',
+      desc: 'Dữ liệu nội bộ có đủ sạch, có nguồn dữ liệu chuẩn (Single Source of Truth) và cơ chế bảo vệ rò rỉ khi đưa vào kho vector/RAG doanh nghiệp hay không?',
+      pillarUrl: '/tu-duy-chuyen-doi-ai/kien-truc-du-lieu',
     },
     {
       num: '06',
-      title: 'Quản trị thay đổi & mở rộng sáng kiến',
-      desc: 'Nếu một phòng ban làm tốt, doanh nghiệp có quy trình nào để đo lường ROI định lượng và nhân rộng sang các bộ phận khác không?',
+      title: 'Governance, Adoption & Scale · Quản trị, Mở rộng & Tự chủ',
+      desc: 'Doanh nghiệp có cơ chế đo lường KPI vận hành và tác động P&L định lượng để chuyển giao và nhân rộng giải pháp sang các phòng ban khác không?',
       pillarUrl: '/tu-duy-chuyen-doi-ai/mo-rong-quy-mo',
     },
   ];
@@ -155,7 +155,7 @@ export default function AiReadinessEditorialIntroPage() {
                   <strong>Vấn đề:</strong> nếu không đo trước, bạn không &ldquo;biết&rdquo; — bạn đoán. Và đoán trong bối cảnh AI năm 2026 rất tốn kém, vì công nghệ thay đổi nhanh, mỗi hướng đi sai đồng nghĩa với vài tháng và một khoản ngân sách không quay lại được.
                 </p>
                 <p>
-                  Doanh nghiệp bạn có thể rất mạnh về công nghệ nhưng yếu về con người. Hoặc ngược lại — đội ngũ rất sẵn sàng học, nhưng dữ liệu đang là một mớ hỗn độn không ai dám tin. Không đo, bạn sẽ không biết mình đang rơi vào trường hợp nào — và sẽ đầu tư sai chỗ, đúng công thức thất bại mà hơn 70% doanh nghiệp chuyển đổi số đã gặp phải.
+                  Doanh nghiệp bạn có thể rất mạnh về công nghệ nhưng yếu về con người. Hoặc ngược lại — đội ngũ rất sẵn sàng học, nhưng dữ liệu đang là một mớ hỗn độn không ai dám tin. Không đo, bạn sẽ không biết mình đang rơi vào trường hợp nào — và sẽ đầu tư sai chỗ, đi vào vết xe đổ mà nhiều chương trình chuyển đổi đã gặp phải khi bỏ quên yếu tố con người và quy trình.
                 </p>
               </div>
             </div>
