@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: 'Tư vấn và triển khai chuyển đổi AI trên bài toán thật cho doanh nghiệp Việt Nam. Nghiệm thu theo kết quả vận hành và kinh doanh.',
 };
 
+import { CookieConsent } from '@/components/CookieConsent';
+
 export default function RootLayout({
   children,
 }: {
@@ -31,6 +33,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>
+        <CookieConsent />
       </body>
     </html>
   );
