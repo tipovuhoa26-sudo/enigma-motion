@@ -33,9 +33,9 @@ const STEPS: StepData[] = [
     num: '03',
     pillLabel: '03 KPI',
     title: 'KPI trước AI.',
-    copy: 'Mọi mô hình AI đều quy đổi ra P&L định lượng và nghiệm thu theo kết quả kinh doanh thật.',
-    proofNum: '< 4 tháng',
-    proofLabel: 'Thu hồi vốn định lượng',
+    copy: 'Không có KPI, chưa triển khai AI. Mỗi use case AI phải gắn với KPI vận hành và tác động kinh doanh có thể đo được.',
+    proofNum: '−75%',
+    proofLabel: 'Thời gian xử lý',
   },
 ];
 
@@ -199,9 +199,18 @@ export function MethodStorytellingSection() {
                   </div>
 
                   {/* Fixed Description Skeleton */}
-                  <div className="min-h-[48px] sm:min-h-[56px] mb-6">
+                  <div className="min-h-[56px] sm:min-h-[64px] mb-6">
                     <p className="text-base text-[#515151] font-normal leading-relaxed max-w-[420px]">
-                      {step.copy}
+                      {displayedStep === 2 ? (
+                        <>
+                          <span className="font-medium text-[#0A0A0A] block mb-1">
+                            Không có KPI, chưa triển khai AI.
+                          </span>
+                          Mỗi use case AI phải gắn với KPI vận hành và tác động kinh doanh có thể đo được.
+                        </>
+                      ) : (
+                        step.copy
+                      )}
                     </p>
                   </div>
                 </div>

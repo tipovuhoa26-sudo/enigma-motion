@@ -45,14 +45,14 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       className="relative w-full min-h-[calc(100vh-80px)] px-6 md:px-12 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
       data-motion="hero"
     >
-      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center relative z-10 my-auto">
+      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-16 items-center relative z-10 my-auto">
         
         {/* Left Column: 1 Bold Statement + 1 Focused Lead Sentence + 2 Clean CTAs */}
-        <div data-hero-left className="lg:col-span-6 flex flex-col justify-center max-w-[620px]">
+        <div data-hero-left className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center max-w-[620px] z-10">
           
           {/* Display XL Editorial H1 (Optically Balanced 3-Line Cadence) */}
           <h1
-            className="text-4xl sm:text-5xl lg:text-[4.15rem] xl:text-[4.65rem] font-light tracking-tight text-[#0A0A0A] leading-[1.04] mb-6"
+            className="text-4xl sm:text-5xl lg:text-[2.85rem] xl:text-[3.75rem] 2xl:text-[4.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.06] mb-6"
             data-hero-headline
           >
             <span ref={headlineLine1Ref} className="line block font-normal text-[#0A0A0A] whitespace-nowrap">
@@ -101,7 +101,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
         {/* Right Column: Living Atmospheric Sun & Orbit System (50-60% Viewport Presence) */}
         <div
           ref={visualRef}
-          className="lg:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[440px] md:min-h-[520px] lg:min-h-[600px] xl:min-h-[660px] overflow-visible"
+          className="lg:col-span-5 xl:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[440px] md:min-h-[520px] lg:min-h-[560px] xl:min-h-[620px] overflow-visible"
           data-hero-visual
         >
           <AiTransformationNetwork />

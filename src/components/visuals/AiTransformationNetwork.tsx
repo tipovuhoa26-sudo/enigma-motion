@@ -142,15 +142,15 @@ export function AiTransformationNetwork() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[620px] sm:max-w-[700px] lg:max-w-[780px] xl:max-w-[860px] aspect-square flex items-center justify-center select-none font-sans overflow-visible -mr-6 lg:-mr-12"
+      className="relative w-full max-w-[520px] sm:max-w-[580px] lg:max-w-[620px] xl:max-w-[680px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
     >
       {/* Ambient Atmospheric Cloud Glow */}
       <div 
-        className="absolute w-[800px] h-[800px] lg:w-[1000px] lg:h-[1000px] rounded-full pointer-events-none -z-10 animate-sun-halo"
+        className="absolute w-[560px] h-[560px] lg:w-[680px] lg:h-[680px] rounded-full pointer-events-none -z-10 animate-sun-halo"
         style={{
           background: 'radial-gradient(circle, rgba(255,247,232,0.65) 0%, rgba(255,191,117,0.32) 20%, rgba(239,124,44,0.14) 42%, rgba(105,64,190,0.03) 65%, transparent 78%)',
           filter: 'blur(60px)',
-          transform: 'scale(1.2)',
+          transform: 'scale(1.08)',
         }}
       />
 

@@ -62,6 +62,20 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
             <stop offset="50%" stopColor="#0D9488" />
             <stop offset="100%" stopColor="#059669" />
           </linearGradient>
+
+          {/* Purple to Impact Beam */}
+          <linearGradient id="purple-to-impact-beam" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#581C87" />
+            <stop offset="50%" stopColor="#7000FF" />
+            <stop offset="100%" stopColor="#9333EA" />
+          </linearGradient>
+
+          {/* Impact to Orange Beam */}
+          <linearGradient id="impact-to-orange-beam" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#9333EA" />
+            <stop offset="70%" stopColor="#F97316" />
+            <stop offset="100%" stopColor="#EA580C" />
+          </linearGradient>
         </defs>
 
         {/* Seamless Open Dot Matrix */}
@@ -196,58 +210,141 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
         )}
 
         {/* ==================================================================== */}
-        {/* STEP 2: DATA ──────── AI ──────── KPI ─────────── ◉ RESULT           */}
+        {/* STEP 2: AI ────────── KPI ────────── IMPACT ────────── ◉ P&L RESULT */}
+        {/* Sequenced Choreography: AI -> KPI (w/ metrics) -> IMPACT (w/ impact) -> P&L */}
         {/* ==================================================================== */}
         {activeStep === 2 && (
           <g className="animate-in fade-in duration-300">
-            {/* Active Colored Laser Beam */}
-            <line x1="80" y1={cy} x2={resultX} y2={cy} stroke="url(#purple-to-orange-beam-lg)" strokeWidth="2.5" />
+            {/* Active Colored Laser Beam 1: AI to IMPACT (Purple to Indigo) */}
+            <line x1="130" y1={cy} x2="450" y2={cy} stroke="url(#purple-to-impact-beam)" strokeWidth="2.5" />
+            {/* Active Colored Laser Beam 2: IMPACT to P&L RESULT (Transitions to Orange) */}
+            <line x1="450" y1={cy} x2={resultX} y2={cy} stroke="url(#impact-to-orange-beam)" strokeWidth="3" />
 
-            {/* Synchronized Intelligent Traveling Pulse Stream (Cadence: 2.4s, Offset: 1.2s) */}
-            <circle cy={cy} r="4.5" fill="#F97316" filter="drop-shadow(0 0 6px #F97316)">
-              <animate attributeName="cx" from="80" to={resultX} dur="2.4s" repeatCount="indefinite" />
-            </circle>
-            <circle cy={cy} r="4" fill="#7000FF" filter="drop-shadow(0 0 5px #7000FF)">
-              <animate attributeName="cx" from="80" to={resultX} dur="2.4s" begin="1.2s" repeatCount="indefinite" />
+            {/* Traveling Pulse 1: Purple from AI (130) -> KPI (290) -> IMPACT (450) [0.0s -> 2.0s of 3.6s cycle] */}
+            <circle cy={cy} r="4.5" fill="#7000FF" filter="drop-shadow(0 0 6px #7000FF)">
+              <animate attributeName="cx" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.28; 0.56; 0.58; 1"
+                values="130; 290; 450; 450; 450"
+              />
+              <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.05; 0.55; 0.58; 1"
+                values="0; 1; 1; 0; 0"
+              />
             </circle>
 
-            {/* Node 1: DATA */}
+            {/* Traveling Pulse 2: Radiant Orange from IMPACT (450) -> P&L RESULT (620) [2.0s -> 2.9s of 3.6s cycle] */}
+            <circle cy={cy} r="5.5" fill="#F97316" filter="drop-shadow(0 0 10px #F97316)">
+              <animate attributeName="cx" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.56; 0.81; 0.83; 1"
+                values="450; 450; 620; 620; 450"
+              />
+              <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.55; 0.58; 0.81; 0.84; 1"
+                values="0; 0; 1; 1; 0; 0"
+              />
+            </circle>
+
+            {/* P&L Shockwave Ring upon Orange Pulse Arrival [2.9s -> 3.5s] */}
+            <circle cx={resultX} cy={cy} fill="none" stroke="#F97316" strokeWidth="2">
+              <animate attributeName="r" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.80; 0.95; 1"
+                values="42; 44; 76; 76"
+              />
+              <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                keyTimes="0; 0.80; 0.82; 0.96; 1"
+                values="0; 0; 0.9; 0; 0"
+              />
+            </circle>
+
+            {/* Node 1: AI (x=130) - Uncluttered Core */}
             <g transform={`translate(130, ${cy})`}>
               {/* Rotating Orbit */}
               <circle cx="0" cy="0" r="44" fill="none" stroke="#581C87" strokeWidth="1" strokeDasharray="3 5" opacity="0.4">
                 <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite" />
               </circle>
               <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#581C87" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(88,28,135,0.06))" />
-              <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">DATA</text>
-              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Dữ liệu</text>
-            </g>
-
-            {/* Node 2: AI (Algorithmic Processing Core) */}
-            <g transform={`translate(290, ${cy})`}>
-              {/* Outer Counter-Rotating Algorithmic Halo */}
-              <circle cx="0" cy="0" r="44" fill="none" stroke="#7000FF" strokeWidth="1.2" strokeDasharray="4 6" opacity="0.5">
-                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite" />
-              </circle>
-              {/* Inner Neural Pulse Core */}
-              <circle cx="0" cy="0" r="14" fill="#7000FF" opacity="0.12">
-                <animate attributeName="r" values="12;20;12" dur="2.4s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.2;0.05;0.2" dur="2.4s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#7000FF" strokeWidth="2.2" filter="drop-shadow(0 4px 14px rgba(112,0,255,0.14))" />
-              <circle cx="0" cy="0" r="11" fill="#F5F3FF" stroke="#7000FF" strokeWidth="1" />
-              <text x="0" y="4" textAnchor="middle" fill="#7000FF" fontSize="11" fontFamily="monospace" fontWeight="700">AI</text>
+              <text x="0" y="4" textAnchor="middle" fill="#581C87" fontSize="12" fontFamily="monospace" fontWeight="700">AI</text>
               <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Mô hình AI</text>
             </g>
 
-            {/* Node 3: KPI (Quantitative Proof Gate) */}
+            {/* Node 2: KPI (x=290) - Operational Metrics */}
+            <g transform={`translate(290, ${cy})`}>
+              {/* Outer Counter-Rotating Ring */}
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#7000FF" strokeWidth="1.2" strokeDasharray="4 6" opacity="0.45">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite" />
+              </circle>
+              {/* Pulse Reactivity Ring at KPI arrival (t = ~1.0s) */}
+              <circle cx="0" cy="0" fill="#7000FF">
+                <animate attributeName="r" dur="3.6s" repeatCount="indefinite"
+                  keyTimes="0; 0.25; 0.35; 0.50; 1"
+                  values="12; 12; 32; 14; 12"
+                />
+                <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                  keyTimes="0; 0.25; 0.30; 0.50; 1"
+                  values="0.08; 0.08; 0.32; 0.08; 0.08"
+                />
+              </circle>
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#7000FF" strokeWidth="2.2" filter="drop-shadow(0 4px 14px rgba(112,0,255,0.14))" />
+              <text x="0" y="4" textAnchor="middle" fill="#7000FF" fontSize="11" fontFamily="monospace" fontWeight="700">KPI</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">KPI Vận Hành</text>
+
+              {/* Sequential Micro-Label Badge (Accuracy / Time / Conversion / Cost) */}
+              {/* Appears when pulse reaches KPI (t=1.0s) and fades before impact */}
+              <g transform="translate(0, -48)">
+                <rect x="-95" y="-11" width="190" height="22" rx="5" fill="#F5F3FF" stroke="#DDD6FE" strokeWidth="1.2" filter="drop-shadow(0 2px 8px rgba(112,0,255,0.12))">
+                  <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.24; 0.30; 0.56; 0.62; 1"
+                    values="0; 0; 1; 1; 0; 0"
+                  />
+                </rect>
+                <text x="0" y="4" textAnchor="middle" fill="#7000FF" fontSize="8" fontFamily="monospace" fontWeight="600" letterSpacing="0.02em">
+                  <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.24; 0.30; 0.56; 0.62; 1"
+                    values="0; 0; 1; 1; 0; 0"
+                  />
+                  Accuracy · Time · Conversion · Cost
+                </text>
+              </g>
+            </g>
+
+            {/* Node 3: IMPACT (x=450) - Business Impact */}
             <g transform={`translate(450, ${cy})`}>
               {/* Rotating Outcome Ring */}
-              <circle cx="0" cy="0" r="44" fill="none" stroke="#EA580C" strokeWidth="1" strokeDasharray="4 6" opacity="0.45">
+              <circle cx="0" cy="0" r="44" fill="none" stroke="#9333EA" strokeWidth="1" strokeDasharray="4 6" opacity="0.45">
                 <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite" />
               </circle>
-              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#EA580C" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(234,88,12,0.1))" />
-              <text x="0" y="4" textAnchor="middle" fill="#0A0A0A" fontSize="11" fontFamily="monospace" fontWeight="700">KPI</text>
-              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">P&L định lượng</text>
+              {/* Pulse Reactivity Ring at IMPACT arrival (t = ~2.0s) */}
+              <circle cx="0" cy="0" fill="#9333EA">
+                <animate attributeName="r" dur="3.6s" repeatCount="indefinite"
+                  keyTimes="0; 0.52; 0.62; 0.78; 1"
+                  values="12; 12; 32; 14; 12"
+                />
+                <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                  keyTimes="0; 0.52; 0.58; 0.78; 1"
+                  values="0.08; 0.08; 0.35; 0.08; 0.08"
+                />
+              </circle>
+              <circle cx="0" cy="0" r="34" fill="#FFFFFF" stroke="#9333EA" strokeWidth="2" filter="drop-shadow(0 4px 12px rgba(147,51,234,0.1))" />
+              <text x="0" y="4" textAnchor="middle" fill="#9333EA" fontSize="10.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.04em">IMPACT</text>
+              <text x="0" y="54" textAnchor="middle" fill="#747474" fontSize="11" fontFamily="sans-serif" fontWeight="500">Tác Động Kinh Doanh</text>
+
+              {/* Sequential Micro-Label Badge (Revenue / Cost / Risk) */}
+              {/* Appears when pulse reaches IMPACT (t=2.0s) and fades before reset */}
+              <g transform="translate(0, -48)">
+                <rect x="-70" y="-11" width="140" height="22" rx="5" fill="#FAF5FF" stroke="#E9D5FF" strokeWidth="1.2" filter="drop-shadow(0 2px 8px rgba(147,51,234,0.12))">
+                  <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.52; 0.58; 0.82; 0.88; 1"
+                    values="0; 0; 1; 1; 0; 0"
+                  />
+                </rect>
+                <text x="0" y="4" textAnchor="middle" fill="#9333EA" fontSize="8.5" fontFamily="monospace" fontWeight="600" letterSpacing="0.03em">
+                  <animate attributeName="opacity" dur="3.6s" repeatCount="indefinite"
+                    keyTimes="0; 0.52; 0.58; 0.82; 0.88; 1"
+                    values="0; 0; 1; 1; 0; 0"
+                  />
+                  Revenue · Cost · Risk
+                </text>
+              </g>
             </g>
           </g>
         )}
@@ -266,7 +363,7 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
 
           {/* Outcome Header Badge */}
           <text x="0" y="-52" textAnchor="middle" fill="#EA580C" fontSize="13" fontFamily="monospace" fontWeight="bold" letterSpacing="0.08em">
-            ◉ RESULT
+            {activeStep === 2 ? '◉ P&L RESULT' : '◉ RESULT'}
           </text>
 
           {/* Result Metric Text Label (Subtly Morphs with Step) */}
@@ -282,7 +379,7 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
           )}
           {activeStep === 2 && (
             <text x="0" y="60" textAnchor="middle" fill="#EA580C" fontSize="18" fontFamily="sans-serif" fontWeight="700" className="animate-in fade-in duration-200">
-              &lt; 4 Tháng ROI
+              −75% Thời Gian
             </text>
           )}
         </g>
