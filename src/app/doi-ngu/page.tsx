@@ -270,15 +270,10 @@ export default function TeamLeadershipPage() {
                 </p>
               </div>
 
-              {/* Methodology & Narrative */}
-              <div className="space-y-4 text-sm sm:text-base text-[#515151] leading-relaxed font-light">
-                <p>
-                  Với hơn 10 năm trực tiếp điều hành và triển khai trong lĩnh vực công nghệ số, AI và tăng trưởng doanh nghiệp, Ông Nguyễn Phước Vĩnh Hưng đã chủ trì các chương trình đào tạo cho hàng loạt tổ chức, trường đại học và định chế tài chính hàng đầu tại Việt Nam.
-                </p>
-                <p>
-                  Dưới sự dẫn dắt phương pháp luận của CAIO, Sunext kiên định với triết lý: <strong className="text-[#17151A] font-semibold">Đo lường trước, đầu tư sau</strong>. Đội ngũ Sunext không chỉ xây dựng hệ thống kỹ thuật mà còn chuyển giao trọn vẹn năng lực tự chủ cho nhân sự nội bộ, đảm bảo hệ thống tiếp tục sống và phát triển bền vững sau khi dự án bàn giao.
-                </p>
-              </div>
+              {/* Methodology Thesis */}
+              <p className="text-sm sm:text-base text-[#515151] leading-relaxed font-light">
+                Sunext kiên định với triết lý phương pháp luận: <strong className="text-[#17151A] font-medium">Đo lường trước, đầu tư sau</strong>. Đội ngũ Sunext không chỉ xây dựng hệ thống kỹ thuật mà còn chuyển giao trọn vẹn năng lực tự chủ cho nhân sự nội bộ, đảm bảo hệ thống tiếp tục sống và tạo ra giá trị bền vững sau khi bàn giao.
+              </p>
 
               {/* Quantitative Metrics: Baseline with subtle hairlines */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-black/10">

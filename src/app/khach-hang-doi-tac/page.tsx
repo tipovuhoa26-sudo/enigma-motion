@@ -241,54 +241,60 @@ export default function ClientsNetworkPage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Editorial Hairline Registry (No rectangular cards) */}
+          <div className="divide-y divide-black/10">
             {tier1Orgs.map((org) => {
               const proofText = TIER1_PROOFS[org.id] || org.description.split('.')[0] + '.';
               return (
                 <div
                   key={org.id}
                   onClick={() => setSelectedOrg(org)}
-                  className="group cursor-pointer p-6 rounded-2xl bg-white/70 backdrop-blur-xs border border-black/5 hover:border-black/20 hover:bg-white transition-all flex flex-col justify-between"
+                  className="group cursor-pointer py-5 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors hover:bg-black/[0.015] px-2 rounded-lg"
                 >
-                  <div>
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-[#F8F8F6] border border-black/5 p-2 flex items-center justify-center shrink-0">
-                        <Image
-                          src={org.logoUrl}
-                          alt={org.name}
-                          width={100}
-                          height={40}
-                          className="max-h-8 max-w-[40px] w-auto h-auto object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                        />
-                      </div>
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#FFF7ED] border border-[#FED7AA] text-[10px] font-mono font-semibold text-[#EA580C]">
+                  {/* Name & Industry */}
+                  <div className="flex items-center gap-4 min-w-[280px]">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-black/5 p-1.5 flex items-center justify-center shrink-0 shadow-xs">
+                      <Image
+                        src={org.logoUrl}
+                        alt={org.name}
+                        width={80}
+                        height={32}
+                        className="max-h-6 max-w-[32px] w-auto h-auto object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-normal text-[#17151A] group-hover:text-[#7000FF] transition-colors">
+                        {org.name}
+                      </h3>
+                      <span className="text-[11px] font-mono text-[#747474]">
                         {org.industryName}
                       </span>
                     </div>
+                  </div>
 
-                    <h3 className="text-base font-normal text-[#17151A] group-hover:text-[#7000FF] transition-colors mb-1.5">
-                      {org.name}
-                    </h3>
-                    <p className="text-xs font-mono text-[#EA580C] leading-snug mb-4">
+                  {/* Engagement Proof Metric */}
+                  <div className="md:flex-1 md:px-6">
+                    <p className="text-xs sm:text-sm font-mono text-[#EA580C] leading-snug">
                       {proofText}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs text-[#17151A]">
+                  {/* Action Link & Arrow */}
+                  <div className="flex items-center gap-4 shrink-0 text-xs">
                     {org.caseStudySlug ? (
                       <Link
                         href={`/case-studies/${org.caseStudySlug}`}
                         onClick={(e) => e.stopPropagation()}
                         className="inline-flex items-center gap-1 font-semibold text-[#7000FF] hover:underline"
                       >
-                        <span>Xem Case Study</span>
+                        <span>Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </Link>
                     ) : (
-                      <span className="text-[#747474] font-light">Đề án bảo mật NDA</span>
+                      <span className="text-[#8E8E8E] font-light">Bảo mật NDA</span>
                     )}
-                    <span className="text-[11px] text-[#747474] group-hover:text-[#17151A] transition-colors">
-                      Chi tiết →
+                    <span className="text-[#747474] group-hover:text-[#17151A] transition-colors">
+                      →
                     </span>
                   </div>
                 </div>

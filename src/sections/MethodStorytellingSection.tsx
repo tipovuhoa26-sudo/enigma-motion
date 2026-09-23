@@ -130,10 +130,10 @@ export function MethodStorytellingSection() {
               {/* Context & Framework */}
               <div className="flex flex-col gap-1.5">
                 <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#F97316] font-semibold">
-                  PHƯƠNG PHÁP SUNEXT
+                  02 DESIGN · NGUYÊN TẮC THIẾT KẾ
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-[#747474]">
-                  3 nguyên tắc thiết kế
+                  Quy trình · Dữ liệu · KPI
                 </span>
               </div>
 

@@ -231,19 +231,11 @@ export default function IndustryIndexPage() {
                   </div>
                 </div>
 
-                {/* Key Capabilities */}
-                <div className="pt-4 border-t border-black/5 flex flex-wrap items-center gap-2">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#747474] mr-2">
-                    Năng lực triển khai:
+                {/* Key Capabilities: Clean inline text */}
+                <div className="pt-3 border-t border-black/5 text-xs text-[#6E6E6E] font-light">
+                  <span className="font-mono text-[11px] text-[#747474]">
+                    Năng lực lõi: {activeIndustry.capabilities.join(' · ')}
                   </span>
-                  {activeIndustry.capabilities.map((cap) => (
-                    <span
-                      key={cap}
-                      className="px-2.5 py-1 rounded-lg bg-[#FAF5FF] border border-[#EDE9FE] text-xs font-mono text-[#7000FF]"
-                    >
-                      {cap}
-                    </span>
-                  ))}
                 </div>
 
                 {/* CTA Action Link */}

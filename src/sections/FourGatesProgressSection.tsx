@@ -101,11 +101,11 @@ export function FourGatesProgressSection() {
         <div className="mb-12 sm:mb-14 text-left">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#F97316] font-semibold">
-              Phương pháp Sunext
+              03 DELIVER · XƯƠNG SỐNG VẬN HÀNH
             </span>
             <span className="text-[#D1D1CE] text-xs">/</span>
             <span className="text-xs font-mono font-medium text-[#747474]">
-              4 Pha Triển Khai · 4 Chốt Kiểm Soát
+              4 Pha · 4 Cổng Kiểm Soát Rủi Ro
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
