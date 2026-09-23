@@ -309,6 +309,57 @@ export default function TeamLeadershipPage() {
                     </div>
                   ))}
                 </div>
+
+                {/* Field Work Evidence */}
+                <div className="pt-6 border-t border-black/10">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#6E6E6E] font-semibold">
+                      HOẠT ĐỘNG THỰC CHIẾN TẠI HIỆN TRƯỜNG · FIELD EVIDENCE
+                    </span>
+                    <span className="text-[10px] font-mono text-[#8E8E8E]">
+                      2 TIÊU BIỂU
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="group relative rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10]">
+                      <Image
+                        src="/evidence/vinhomes-sales-deployment.png"
+                        alt="Hiện trường chuyển giao 500+ môi giới Vinhomes"
+                        fill
+                        className="object-cover saturate-[0.92] group-hover:scale-102 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 360px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-2.5 left-3 right-3 text-white">
+                        <span className="text-[9px] font-mono uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded border border-white/20 inline-block mb-1">
+                          ONSITE DEPLOYMENT
+                        </span>
+                        <p className="text-[11px] font-light leading-snug line-clamp-2">
+                          Chủ trì đào tạo & chuyển giao thực địa cho 500+ chuyên viên Vinhomes
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="group relative rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10]">
+                      <Image
+                        src="/evidence/tayninh-executive-session.jpg"
+                        alt="Phiên tham vấn chiến lược cho lãnh đạo doanh nghiệp"
+                        fill
+                        className="object-cover saturate-[0.92] group-hover:scale-102 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 360px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-2.5 left-3 right-3 text-white">
+                        <span className="text-[9px] font-mono uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded border border-white/20 inline-block mb-1">
+                          EXECUTIVE SESSION
+                        </span>
+                        <p className="text-[11px] font-light leading-snug line-clamp-2">
+                          Phiên tham vấn chiến lược AI và keynote chuyển đổi số cho lãnh đạo doanh nghiệp
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -652,6 +703,41 @@ export default function TeamLeadershipPage() {
                         >
                           {cert}
                         </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Field Evidence / Working Photos in Modal */}
+                {selectedFaculty.fieldImages && selectedFaculty.fieldImages.length > 0 && (
+                  <div className="mb-6 pt-4 border-t border-black/10">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#6E6E6E] flex items-center gap-2 mb-3">
+                      <Sparkles className="w-3.5 h-3.5 text-[#7000FF]" />
+                      <span>Hoạt Động & Minh Chứng Hiện Trường (Field Evidence)</span>
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {selectedFaculty.fieldImages.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className="group relative rounded-2xl overflow-hidden border border-black/10 bg-black/5 aspect-[16/10]"
+                        >
+                          <Image
+                            src={img.url}
+                            alt={img.caption}
+                            fill
+                            className="object-cover saturate-[0.92] group-hover:scale-102 transition-transform duration-300"
+                            sizes="(max-width: 640px) 100vw, 300px"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+                          <div className="absolute bottom-2.5 left-3 right-3 text-white">
+                            <span className="text-[9px] font-mono uppercase tracking-wider bg-black/60 px-2 py-0.5 rounded border border-white/20 inline-block mb-1">
+                              {img.context}
+                            </span>
+                            <p className="text-[11px] font-light leading-snug line-clamp-2">
+                              {img.caption}
+                            </p>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>

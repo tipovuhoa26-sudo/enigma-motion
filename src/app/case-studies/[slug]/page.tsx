@@ -2,6 +2,7 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp, Sparkles, ShieldCheck } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
@@ -264,6 +265,57 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+
+            {/* Field Proof Photography: Minh Chứng Hiện Trường Triển Khai Thực Tế */}
+            {detail.fieldEvidences && detail.fieldEvidences.length > 0 && (
+              <div className="mb-16 pt-10 border-t border-black/10">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#F97316]" />
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#747474]">
+                    MINH CHỨNG HIỆN TRƯỜNG · FIELD EVIDENCE
+                  </span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] mb-3">
+                  Hình Ảnh Triển Khai Thực Tế Tại Doanh Nghiệp
+                </h3>
+                <p className="text-sm text-[#6E6E6E] mb-8 max-w-2xl leading-relaxed">
+                  Minh chứng từ các buổi khảo sát quy trình, phòng lab thử nghiệm và chuyển giao công cụ trực tiếp cho đội ngũ vận hành đối tác.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                  {detail.fieldEvidences.map((ev, idx) => (
+                    <div key={idx} className="flex flex-col rounded-xl overflow-hidden border border-[#E7E7E5] bg-[#FBFBFA] shadow-xs">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src={ev.image}
+                          alt={ev.caption}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover object-center filter saturate-[0.92] hover:scale-102 transition-transform duration-500 ease-out"
+                        />
+                        <div className="absolute top-3 left-3">
+                          <span className="px-2.5 py-1 rounded text-[10px] font-mono font-semibold bg-white/90 backdrop-blur-xs text-[#0A0A0A] border border-black/5 uppercase tracking-wider">
+                            {ev.stageLabel}
+                          </span>
+                        </div>
+                        {ev.metricHighlight && (
+                          <div className="absolute bottom-3 right-3">
+                            <span className="px-2.5 py-1 rounded text-xs font-mono font-bold bg-[#0A0A0A]/85 backdrop-blur-xs text-white">
+                              {ev.metricHighlight}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                        <p className="text-sm text-[#17151A] font-medium leading-relaxed">
+                          {ev.caption}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Bottom Call to Action */}
             <div className="p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col sm:flex-row items-center justify-between gap-6 mb-12">

@@ -283,6 +283,14 @@ export interface CaseStoryBeat {
   narrative: string;
 }
 
+export interface CaseFieldEvidence {
+  stage: 'discovery' | 'deployment' | 'handover';
+  stageLabel: string;
+  image: string;
+  caption: string;
+  metricHighlight?: string;
+}
+
 export interface CaseStudyDetail {
   slug: string;
   title: string;
@@ -293,6 +301,7 @@ export interface CaseStudyDetail {
   implementationLevel?: 'Level 1' | 'Level 2' | 'Level 3' | 'Level 4';
   deploymentStatus?: 'Production' | 'Controlled Run' | 'Innovation Lab Prototype';
   hitlBoundary?: string;
+  fieldEvidences?: CaseFieldEvidence[];
   image?: string;
   challenge: string;
   solution: string;
@@ -317,6 +326,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     implementationLevel: 'Level 2',
     deploymentStatus: 'Production',
     hitlBoundary: 'AI chỉ thực hiện trích xuất dữ liệu hồ sơ, đối chiếu tiêu chí ca kíp và chấm điểm xếp hạng tham chiếu. Quyết định mời phỏng vấn, từ chối hồ sơ hoặc tuyển dụng cuối cùng TUYỆT ĐỐI thuộc về chuyên viên nhân sự (Recruiter). Không có bất kỳ quyết định tuyển dụng nào được tự động hóa hoàn toàn.',
+    fieldEvidences: [
+      {
+        stage: 'discovery',
+        stageLabel: 'Chuẩn Hóa SOP Nhân Sự',
+        image: '/evidence/prudential-consultant-enablement.png',
+        caption: 'Đào tạo đội ngũ nhân sự làm chủ luồng sàng lọc hồ sơ tự động, bảo đảm ranh giới Human-In-The-Loop trong mọi quyết định tuyển chọn.',
+        metricHighlight: '−70% Thời Gian Lọc Hồ Sơ',
+      },
+    ],
     challenge:
       'Mỗi quý mở rộng, chuỗi bán lẻ 500 nhân sự cần tuyển từ 60 đến 80 vị trí mới. Nhưng cả bộ phận Nhân sự chỉ có vỏn vẹn 4 người. Họ mất trung bình 3 ngày làm việc thủ công cho mỗi vị trí chỉ để mở từng file hồ sơ, đối chiếu tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Khối lượng tác vụ lặp lại đè nặng khiến cả đội gần như phải dừng mọi hoạt động phát triển nhân sự khác trong mùa cao điểm.',
     solution:
@@ -385,6 +403,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     deliveryType: 'System Integration',
     implementationLevel: 'Level 4',
     deploymentStatus: 'Production',
+    fieldEvidences: [
+      {
+        stage: 'deployment',
+        stageLabel: 'Hiện Trường Vận Hành Kho Vận',
+        image: '/evidence/ptexim-operations-onsite.png',
+        caption: 'Khảo sát hiện trường vận hành logistics và quy trình chứng từ xuất nhập khẩu để chuẩn hóa SOP trước khi đưa AI vào tự động hóa.',
+        metricHighlight: '−67% Chu Kỳ Xử Lý',
+      },
+    ],
     challenge:
       'Trên 6 dây chuyền sản xuất cơ khí chính xác, công nhân kiểm định chất lượng (QA/QC) phải soi từng chi tiết dưới ánh đèn công suất lớn suốt ca 8 tiếng. Sau 4 tiếng liên tục, hiện tượng mỏi mắt cơ học khiến việc phát hiện các vết nứt vi mô, vết xước bề mặt hay sai lệch kích thước nhỏ trở nên thiếu ổn định. Rủi ro sản phẩm lỗi lọt ra ngoài thị trường đe dọa trực tiếp đến các hợp đồng gia công quốc tế khắt khe.',
     solution:
@@ -522,6 +549,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     implementationLevel: 'Level 3',
     deploymentStatus: 'Innovation Lab Prototype',
     hitlBoundary: 'Hệ thống vận hành trong môi trường phòng lab thử nghiệm sáng tạo (Innovation Lab Prototype). Toàn bộ dữ liệu bóc tách BCTC và đối soát số liệu hai chiều đóng vai trò dữ liệu tiền xử lý; Chuyên viên Phân tích (Research Analyst) bắt buộc thẩm định tính logic kế toán, kiểm chứng nguồn trang và chịu trách nhiệm chuyên môn cao nhất trước khi phát hành báo cáo đầu tư.',
+    fieldEvidences: [
+      {
+        stage: 'discovery',
+        stageLabel: 'Workshop Khảo Sát & Thiết Kế Kiến Trúc',
+        image: '/evidence/vietcombank-strategic-workshop.jpg',
+        caption: 'Phiên làm việc chuyên sâu cùng đội ngũ chuyên gia phân tích tài chính nhằm xác lập ranh giới bảo mật ZDR và logic đối soát BCTC 2 chiều.',
+        metricHighlight: '−75% Thời Gian Bóc Tách BCTC',
+      },
+    ],
     challenge:
       'Mỗi mùa công bố kết quả kinh doanh quý, hơn 30 chuyên viên phân tích cao cấp tại Vietcap Securities đối mặt với hàng trăm báo cáo tài chính dài từ 60 đến 120 trang mỗi bản. Họ phải mất trung bình 2 ngày làm việc thủ công cho mỗi doanh nghiệp chỉ để bóc tách từng con số trên bảng cân đối kế toán, lưu chuyển tiền tệ và thuyết minh phức tạp. Tác vụ gõ số cơ học gây áp lực nặng nề và tiềm ẩn nguy cơ sai lệch dữ liệu định giá trong các báo cáo khuyến nghị quan trọng gửi nhà đầu tư tổ chức.',
     solution:
@@ -591,6 +627,22 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     implementationLevel: 'Level 1',
     deploymentStatus: 'Production',
     hitlBoundary: 'Trợ lý ảo AI chỉ truy xuất kho tài liệu chính sách bán hàng và bảng giỏ hàng đã được pháp chế và ban dự án phê duyệt chính thức. Khi khách hàng có nhu cầu đàm phán chính sách ưu đãi riêng, đặt cọc giữ chỗ hoặc ký kết hợp đồng, hệ thống bắt buộc chuyển quyền xử lý (Handoff) tức thì sang Chuyên viên Kinh doanh người thật.',
+    fieldEvidences: [
+      {
+        stage: 'deployment',
+        stageLabel: 'Triển Khai Hiện Trường',
+        image: '/evidence/vinhomes-sales-deployment.png',
+        caption: '500+ Chuyên viên môi giới bất động sản tại Vinhomes được huấn luyện và thao tác trực tiếp kịch bản AI Lead & tra cứu giỏ hàng.',
+        metricHighlight: '500+ Môi Giới · < 5 Phút',
+      },
+      {
+        stage: 'handover',
+        stageLabel: 'Nghiệm Thu & Chuyển Giao',
+        image: '/evidence/smartlands-real-estate-ai.jpg',
+        caption: 'Chuyển giao năng lực thực chiến cho đội ngũ bán hàng đại lý chiến lược Smartlands, ứng dụng AI vào chăm sóc khách hàng 24/7.',
+        metricHighlight: '100% Tỷ Lệ Hẹn Gặp',
+      },
+    ],
     challenge:
       'Trong các chiến dịch mở bán dự án quy mô lớn, mạng lưới hơn 500 nhân sự kinh doanh bất động sản phải xử lý lượng yêu cầu thông tin khổng lồ từ khách hàng. Tuy nhiên, việc tra cứu giỏ hàng, cập nhật chính sách bán hàng và soạn kịch bản tư vấn thực địa theo từng phân khúc diễn ra thủ công và rời rạc. Tốc độ phản hồi chậm khiến tỷ lệ kích hoạt lại tệp khách hàng cũ (lead reactivation) sụt giảm, nhiều cơ hội giao dịch giá trị cao bị bỏ lỡ.',
     solution:
@@ -659,6 +711,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     deliveryType: 'Workflow Automation',
     implementationLevel: 'Level 2',
     deploymentStatus: 'Production',
+    fieldEvidences: [
+      {
+        stage: 'deployment',
+        stageLabel: 'Phòng Lab AI Đa Kênh',
+        image: '/evidence/dentsu-marketing-ai-lab.png',
+        caption: 'Phòng Lab AI tại Dentsu: Xây dựng workflow Multi-Agent tự động hóa tạo slide đề xuất, nghiên cứu insight khách hàng và tăng tốc phản hồi chiến dịch.',
+        metricHighlight: '−65% Thời Gian Làm Thầu · +35% Tốc Độ Phản Hồi',
+      },
+    ],
     challenge:
       'Các agency truyền thông quốc tế thường xuyên phải tham gia những đợt đấu thầu tài trợ thể thao và chiến dịch thương hiệu lớn với thời hạn gấp gáp. Đội ngũ 25 chuyên viên chiến lược và account phải mất hàng tuần phân tích insight người tiêu dùng, dựng storyline và thiết kế pitch deck hàng trăm trang. Áp lực thời gian kéo dài khiến nhân sự kiệt sức, làm hạn chế số lượng hồ sơ thầu mà công ty có thể tham gia mỗi quý.',
     solution:
@@ -795,6 +856,15 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     deliveryType: 'Enablement',
     implementationLevel: 'Level 1',
     deploymentStatus: 'Production',
+    fieldEvidences: [
+      {
+        stage: 'handover',
+        stageLabel: 'Đào Tạo & Chuyển Giao Năng Lực',
+        image: '/evidence/nttu-academic-ai.png',
+        caption: 'Chương trình chuẩn hóa năng lực AI Bậc 6 và chuyển giao giải pháp AI Agent điều phối sự kiện học thuật công nghệ quy mô lớn.',
+        metricHighlight: '10.000+ Người Tham Gia',
+      },
+    ],
     challenge:
       'Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ hiện đại cho hàng chục nghìn lượt khách tham gia.',
     solution:

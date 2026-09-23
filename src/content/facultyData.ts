@@ -11,6 +11,11 @@ export interface FacultyMember {
   certifications?: string[];
   quote?: string;
   avatarUrl?: string;
+  fieldImages?: {
+    url: string;
+    caption: string;
+    context: string;
+  }[];
 }
 
 export const FACULTY_BLOCKS = [
@@ -42,6 +47,18 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     organizations: ['Đại học FPT', 'Vinhomes', 'Vietcap Securities', 'Dentsu Sports Vietnam', 'HTV', 'VNPT VinaPhone'],
     certifications: ['Lead AI Trainer Certificate', 'AI Strategy & Enterprise Transformation'],
     quote: 'Mục tiêu cốt lõi của chuyển đổi AI là biến công nghệ thành người đồng nghiệp đáng tin cậy trong chuỗi công việc thường nhật, bảo vệ biên lợi nhuận cho doanh nghiệp.',
+    fieldImages: [
+      {
+        url: '/evidence/vinhomes-sales-deployment.png',
+        caption: 'Chủ trì đào tạo & chuyển giao thực địa cho mạng lưới 500+ chuyên viên Vinhomes',
+        context: 'Onsite Deployment · Vinhomes',
+      },
+      {
+        url: '/evidence/tayninh-executive-session.jpg',
+        caption: 'Phiên tham vấn chiến lược AI và keynote chuyển đổi số cho lãnh đạo doanh nghiệp',
+        context: 'Executive Keynote & Strategy Session',
+      },
+    ],
   },
   {
     id: 'nguyen-tung-chi',
@@ -62,6 +79,13 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
     organizations: ['Sở Giao dịch Chứng khoán TP.HCM (HOSE)', 'Aurai Wind Energy (Bamboo Capital Group)', 'United Business Institute Brussels'],
     certifications: ['Executive MBA (Brussels)', 'HOSE Listing Evaluator Board'],
     quote: 'AI trong tài chính không phải là vẽ biểu đồ cho đẹp. Nó là cơ chế đối soát hai chiều bảo đảm tính toàn vẹn của dữ liệu dòng tiền và loại bỏ sai lệch số liệu cơ học.',
+    fieldImages: [
+      {
+        url: '/evidence/vietcombank-strategic-workshop.jpg',
+        caption: 'Workshop kiến trúc dữ liệu tài chính & Single Source of Truth Vietcombank',
+        context: 'Strategic Session · Banking & Finance',
+      },
+    ],
   },
   {
     id: 'trinh-minh-hung',

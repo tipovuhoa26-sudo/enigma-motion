@@ -6,6 +6,7 @@ import { Hero } from '@/sections/Hero';
 import { StatsStrip } from '@/sections/StatsStrip';
 import { MethodStorytellingSection } from '@/sections/MethodStorytellingSection';
 import { FourGatesProgressSection } from '@/sections/FourGatesProgressSection';
+import { FieldEvidenceSection } from '@/sections/FieldEvidenceSection';
 import { CasesSection } from '@/sections/CasesSection';
 import { CtaFooter } from '@/sections/CtaFooter';
 import { Footer } from '@/sections/Footer';
@@ -28,10 +29,13 @@ export default function HomePage() {
         {/* 04. DELIVERY: G1 ➔ G2 ➔ G3 ➔ G4 One Progression Beam + 3 Capabilities */}
         <FourGatesProgressSection />
 
-        {/* 05. CASE: 1 Real World Transformation (Vinhomes Before ➔ After) */}
+        {/* 05. FIELD EVIDENCE: Được Xây Từ Hiện Trường (Proof Photography) */}
+        <FieldEvidenceSection />
+
+        {/* 06. CASE: 1 Real World Transformation (Vinhomes Before ➔ After) */}
         <CasesSection />
 
-        {/* 06. CTA: Pure Horizon Sun · One Statement · One Action */}
+        {/* 07. CTA: Pure Horizon Sun · One Statement · One Action */}
         <CtaFooter />
       </main>
 

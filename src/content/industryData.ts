@@ -8,6 +8,7 @@ export interface IndustrySolution {
   heroHeadline: string;
   heroSubheadline: string;
   heroImage?: string;
+  evidenceCaption?: string;
   marketContext: string;
   criticalNotice?: {
     title: string;
@@ -52,6 +53,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Retail & Consumer Goods',
     heroHeadline: 'Tối Ưu Vận Hành Bán Lẻ: Cắt Giảm Chi Phí Tuyển Dụng & Sàng Lọc CV Tự Động',
     heroSubheadline: 'Giải quyết triệt để nút thắt tuyển dụng nhân sự chuỗi: rút ngắn thời gian lọc hồ sơ từ 3 ngày xuống 2 giờ, tiết kiệm 40% chi phí tuyển dụng thực tế.',
+    heroImage: '/evidence/dentsu-marketing-ai-lab.png',
+    evidenceCaption: 'Lab thực nghiệm & workshop chuyển giao mô hình Marketing/Sales AI Agent cho chuỗi bán lẻ',
     marketContext: 'Bạn mở rộng chuỗi cửa hàng, tuyển dụng liên tục nhưng đội HR 4 người luôn kiệt sức vì hàng trăm CV đổ về mỗi đợt. Phần lớn thời gian của họ trôi qua vào việc đọc hồ sơ rác, gọi điện xác nhận ca kíp và đặt lịch hẹn. Đây không phải bài toán thiếu người — đây là bài toán quy trình thủ công đang tiêu tốn ngân sách tuyển dụng mỗi tháng.',
     challenges: [
       {
@@ -118,6 +121,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Manufacturing & Industrial',
     heroHeadline: 'Kiểm Soát Lỗi Tự Động: Đạt Độ Chính Xác 99.8% Bằng Thị Giác Máy Tính',
     heroSubheadline: 'Loại bỏ hoàn toàn sự phụ thuộc vào kiểm tra thủ công bằng mắt thường. Camera AI giám sát chuyền sản xuất 24/7, hạ tỷ lệ lỗi xuống 1.5%.',
+    heroImage: '/evidence/ptexim-operations-onsite.png',
+    evidenceCaption: 'Khảo sát và kiểm thử quy trình vận hành trực tiếp tại hiện trường phân loại xưởng PTExim Corp',
     marketContext: 'Trong nhà máy cơ khí chính xác, công nhân kiểm định (QA/QC) phải soi hàng nghìn linh kiện mỗi ngày dưới ánh đèn chói. Sau 4 tiếng liên tục, mắt bắt đầu mỏi và sai sót xảy ra. Một vết nứt vi mô bị bỏ sót lọt ra thị trường có thể hủy hoại cả hợp đồng xuất khẩu. Tự động hóa bằng thị giác AI là giải pháp tối ưu để kiểm soát chất lượng đồng nhất 100% chi tiết.',
     challenges: [
       {
@@ -184,6 +189,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'B2B Professional Services',
     heroHeadline: 'Đóng Gói Tri Thức Chuyên Gia: Tăng Tốc x5 Sản Xuất Tài Liệu & Content B2B',
     heroSubheadline: 'Không còn cảnh chuyên gia phải ngồi gõ từng proposal hay marketing bế tắc vì thiếu bài viết kỹ thuật. Tăng trưởng organic traffic B2B bền vững với Content Factory chuẩn brand voice.',
+    heroImage: '/evidence/prudential-consultant-enablement.png',
+    evidenceCaption: 'Buổi làm việc chuyên sâu đóng gói quy trình tư vấn và tri thức chuyên gia cho đội ngũ B2B',
     marketContext: 'Trong các công ty tư vấn, luật, tài chính hay công nghệ B2B, tài sản quý giá nhất là tri thức của các chuyên gia đầu ngành. Nhưng các chuyên gia này luôn bận rộn với dự án của khách hàng. Kết quả là hồ sơ đề xuất (proposal) mất hàng tuần mới soạn xong, còn kênh marketing nội dung thì chết đứng vì không ai có thời gian viết bài phân tích chuyên sâu.',
     challenges: [
       {
@@ -250,6 +257,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Real Estate & PropTech',
     heroHeadline: 'Tăng Tốc Kinh Doanh BĐS: Tự Động Hóa Chăm Sóc Khách Hàng & Video Thực Địa',
     heroSubheadline: 'Trao quyền cho 500+ môi giới làm chủ AI tự sản xuất video hiện trường và kịch bản tư vấn ngay trên điện thoại di động, phản hồi khách hàng trong chưa đầy 5 phút.',
+    heroImage: '/evidence/vinhomes-sales-deployment.png',
+    evidenceCaption: 'Hiện trường triển khai AI Sales Enablement thực tế cho hơn 500 chuyên viên kinh doanh BĐS Vinhomes',
     marketContext: 'Trong bối cảnh thị trường bất động sản cạnh tranh khốc liệt, khách hàng đòi hỏi phản hồi thông tin giỏ hàng, bảng tính dòng tiền và video tiến độ hạ tầng trong vài phút. Nhưng phần lớn sàn giao dịch và đội ngũ môi giới vẫn hoạt động thủ công: tra cứu giỏ hàng qua tin nhắn rời rạc, chờ phòng marketing dựng từng video thực địa và bỏ quên 70% tệp khách hàng cũ. Đơn vị nào phản hồi chậm quá 15 phút, khách hàng sẽ chuyển sang đơn vị phân phối khác.',
     challenges: [
       {
@@ -316,6 +325,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Finance, Securities & Asset Management',
     heroHeadline: 'Tự Động Hóa Bóc Tách BCTC & Đối Soát Logic Số Liệu Hai Chiều',
     heroSubheadline: 'Bóc tách báo cáo tài chính PDF scan phức tạp, đối soát logic hai chiều giữa Bảng cân đối và Lưu chuyển tiền tệ với 100% truy vết số trang nguồn gốc (Source Traceability).',
+    heroImage: '/evidence/vietcombank-strategic-workshop.jpg',
+    evidenceCaption: 'Working session kiến trúc AI và bảo mật dữ liệu tài chính trong môi trường Private VPC Vietcombank',
     marketContext: 'Chi phí cơ hội và rủi ro sai sót số liệu trong các báo cáo định giá tài sản là vấn đề sống còn. Hàng chục chuyên viên phân tích phải dành 2–3 ngày làm việc cơ học cho mỗi doanh nghiệp chỉ để gõ lại số liệu từ PDF vào Excel. Rủi ro gõ sai một con số trên thuyết minh nợ vay hoặc dòng tiền có thể làm sai lệch mô hình định giá (DCF/PE), ảnh hưởng trực tiếp đến uy tín khuyến nghị đầu tư gửi khách hàng tổ chức. Yêu cầu bắt buộc của ngành là Source Traceability (truy vết số trang gốc), Audit Logging (nhật ký kiểm toán) và Cổng kiểm soát rủi ro No-Go khi số liệu mâu thuẫn.',
     criticalNotice: FINANCE_COMPLIANCE_NOTICE,
     challenges: [
@@ -383,6 +394,8 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     englishName: 'Healthcare & Hospital Administration',
     heroHeadline: 'Số Hóa Thủ Tục Hành Chính Y Tế & Hỗ Trợ Tra Cứu Phác Đồ Dưới Quyền Bác Sĩ',
     heroSubheadline: 'Giải tỏa 30-40% áp lực thủ tục giấy tờ hành chính cho y bác sĩ và điều dưỡng. Trợ lý ảo phân luồng tiếp đón 24/7 và tra cứu phác đồ với nguyên tắc Non-negotiable Clinical Boundary tuyệt đối.',
+    heroImage: '/evidence/thue-tphcm-document-ai.png',
+    evidenceCaption: 'Kiểm thử thực địa hệ thống xử lý chứng từ và ranh giới bảo mật dữ liệu y tế phi lâm sàng',
     marketContext: 'Gánh nặng thủ tục giấy tờ đè nặng lên thời gian thăm khám trực tiếp của y bác sĩ. Bác sĩ và điều dưỡng mất từ 30% đến 40% thời lượng làm việc chỉ để gõ biên bản khám, nhập thông tin bảo hiểm và tra cứu lịch sử bệnh án phân tán. Tình trạng này gây ùn ứ tại các quầy tiếp đón và giảm chất lượng tương tác giữa bác sĩ với người bệnh. Ứng dụng AI trong y tế đòi hỏi sự chuẩn mực tuyệt đối về ranh giới lâm sàng và bảo mật dữ liệu sức khỏe cá nhân.',
     criticalNotice: HEALTHCARE_CLINICAL_BOUNDARY_NOTICE,
     challenges: [

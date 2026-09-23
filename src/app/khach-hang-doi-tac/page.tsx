@@ -132,12 +132,139 @@ export default function ClientsNetworkPage() {
             {/* TIER 1: DIRECT ENGAGEMENTS (ĐỐI TÁC TRIỂN KHAI TRỰC TIẾP) */}
             {filteredLogos.some((org) => org.tier === 1) && (
               <div className="mb-16">
+                
+                {/* TIER 1 FIELD EVIDENCE: MINH CHỨNG HIỆN TRƯỜNG ĐỀ ÁN LỚN */}
+                <div className="mb-10 p-6 sm:p-8 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-[#EA580C]" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#EA580C]">
+                      FIELD EVIDENCE · TIER 1 DIRECT ENGAGEMENTS
+                    </span>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">
+                        Hiện Trường Vận Hành &amp; Triển Khai Thực Tế
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#6E6E6E] mt-1 max-w-2xl">
+                        Minh chứng từ các đề án hợp tác sâu tại các tổ chức hàng đầu (Vinhomes, PTExim, Vietcombank, Smartlands), phân biệt rõ với mạng lưới đào tạo ngắn hạn.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {/* Vinhomes Card */}
+                    <div className="flex flex-col rounded-xl overflow-hidden border border-[#E7E7E5] bg-[#FBFBFA]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src="/evidence/vinhomes-sales-deployment.png"
+                          alt="Vinhomes 500+ Sales AI Deployment"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 25vw"
+                          className="object-cover object-center filter saturate-[0.92]"
+                        />
+                        <div className="absolute top-2 left-2">
+                          <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-white/90 text-[#0A0A0A] border border-black/5">
+                            VINHOMES
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-3.5 flex-1 flex flex-col justify-between">
+                        <p className="text-xs text-[#17151A] font-medium leading-snug">
+                          Triển khai AI Sales Enablement &amp; giỏ hàng cho 500+ môi giới.
+                        </p>
+                        <span className="text-[11px] font-mono font-bold text-[#EA580C] mt-2 block">
+                          &lt; 5 Phút phản hồi
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* PTExim Card */}
+                    <div className="flex flex-col rounded-xl overflow-hidden border border-[#E7E7E5] bg-[#FBFBFA]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src="/evidence/ptexim-operations-onsite.png"
+                          alt="PTExim Logistics Operations"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 25vw"
+                          className="object-cover object-center filter saturate-[0.92]"
+                        />
+                        <div className="absolute top-2 left-2">
+                          <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-white/90 text-[#0A0A0A] border border-black/5">
+                            PTEXIM
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-3.5 flex-1 flex flex-col justify-between">
+                        <p className="text-xs text-[#17151A] font-medium leading-snug">
+                          Khảo sát hiện trường &amp; chuẩn hóa SOP xuất nhập khẩu.
+                        </p>
+                        <span className="text-[11px] font-mono font-bold text-[#EA580C] mt-2 block">
+                          −67% Chu kỳ xử lý
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Vietcombank Card */}
+                    <div className="flex flex-col rounded-xl overflow-hidden border border-[#E7E7E5] bg-[#FBFBFA]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src="/evidence/vietcombank-strategic-workshop.jpg"
+                          alt="Vietcombank Financial AI Workshop"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 25vw"
+                          className="object-cover object-center filter saturate-[0.92]"
+                        />
+                        <div className="absolute top-2 left-2">
+                          <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-white/90 text-[#0A0A0A] border border-black/5">
+                            VIETCOMBANK
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-3.5 flex-1 flex flex-col justify-between">
+                        <p className="text-xs text-[#17151A] font-medium leading-snug">
+                          Workshop chiến lược Multi-Agent &amp; bảo mật ZDR Private VPC.
+                        </p>
+                        <span className="text-[11px] font-mono font-bold text-[#EA580C] mt-2 block">
+                          Zero Data Retention
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Smartlands Card */}
+                    <div className="flex flex-col rounded-xl overflow-hidden border border-[#E7E7E5] bg-[#FBFBFA]">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src="/evidence/smartlands-real-estate-ai.jpg"
+                          alt="Smartlands Real Estate AI"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 25vw"
+                          className="object-cover object-center filter saturate-[0.92]"
+                        />
+                        <div className="absolute top-2 left-2">
+                          <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold bg-white/90 text-[#0A0A0A] border border-black/5">
+                            SMARTLANDS
+                          </span>
+                        </div>
+                      </div>
+                      <div className="p-3.5 flex-1 flex flex-col justify-between">
+                        <p className="text-xs text-[#17151A] font-medium leading-snug">
+                          Chuyển giao năng lực tư vấn tự động 24/7 cho đại lý chiến lược.
+                        </p>
+                        <span className="text-[11px] font-mono font-bold text-[#EA580C] mt-2 block">
+                          100% Tỷ lệ hẹn gặp
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span className="w-2 h-2 rounded-full bg-[#EA580C]" />
                       <span className="text-xs uppercase tracking-widest text-[#EA580C] font-semibold font-mono">
-                        TIER 1 · DIRECT ENGAGEMENTS
+                        DANH MỤC ĐỐI TÁC TIER 1
                       </span>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-light text-[#17151A]">

@@ -2,6 +2,7 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import {
   ArrowLeft,
@@ -209,6 +210,35 @@ export default function IndustryDetailPage({ params }: PageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Field Evidence Proof Image */}
+              {industry.heroImage && (
+                <div className="mt-8 pt-8 border-t border-[#7000FF]/15">
+                  <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-xl overflow-hidden border border-black/10 shadow-sm bg-black/5">
+                    <Image
+                      src={industry.heroImage}
+                      alt={industry.evidenceCaption || industry.centralCaseStudy.title}
+                      fill
+                      className="object-cover saturate-[0.92] hover:scale-[1.01] transition-transform duration-500"
+                      sizes="(max-width: 1024px) 100vw, 896px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-xs">
+                      <span className="font-mono text-[10px] tracking-widest uppercase bg-black/60 backdrop-blur-md px-2.5 py-1 rounded border border-white/20">
+                        HIỆN TRƯỜNG THỰC TẾ · FIELD EVIDENCE
+                      </span>
+                      <span className="text-[11px] text-white/90 hidden sm:inline-block font-light">
+                        {industry.evidenceCaption}
+                      </span>
+                    </div>
+                  </div>
+                  {industry.evidenceCaption && (
+                    <p className="text-xs text-[#6E6E6E] mt-2.5 sm:hidden italic">
+                      {industry.evidenceCaption}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Section 3: Bộ Giải Pháp AI Mapped to Rewired */}
