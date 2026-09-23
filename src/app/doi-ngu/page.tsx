@@ -296,8 +296,8 @@ export default function TeamLeadershipPage() {
                 {/* Quantitative Badges */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-black/10">
                   {credentials.map((c, idx) => (
-                    <div key={idx} className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8]">
-                      <span className="text-2xl font-light text-[#17151A] block">
+                    <div key={idx} className="p-4 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE]">
+                      <span className="text-2xl font-light text-[#7000FF] block">
                         {c.metric}
                       </span>
                       <span className="text-xs font-semibold text-[#17151A] block mt-1">
@@ -595,8 +595,8 @@ export default function TeamLeadershipPage() {
 
                 {/* Quote Box if available */}
                 {selectedFaculty.quote && (
-                  <div className="mb-6 p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] flex items-start gap-3">
-                    <Quote className="w-4 h-4 text-emerald-800 shrink-0 mt-0.5" />
+                  <div className="mb-6 p-4 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] flex items-start gap-3">
+                    <Quote className="w-4 h-4 text-[#7000FF] shrink-0 mt-0.5" />
                     <p className="text-xs sm:text-sm text-[#17151A] italic leading-relaxed">
                       &ldquo;{selectedFaculty.quote}&rdquo;
                     </p>
@@ -762,7 +762,7 @@ export default function TeamLeadershipPage() {
           {/* CTA Section */}
           <section className="max-w-5xl mx-auto p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white text-center space-y-6">
             <div className="max-w-xl mx-auto space-y-3">
-              <span className="text-xs uppercase tracking-wider text-[#FAFFDE] font-semibold">
+              <span className="text-xs uppercase tracking-wider text-[#F97316] font-semibold">
                 ĐỒNG HÀNH CHIẾN LƯỢC
               </span>
               <h3 className="text-2xl sm:text-3xl font-light">

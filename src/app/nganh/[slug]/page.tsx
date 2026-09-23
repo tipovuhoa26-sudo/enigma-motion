@@ -83,8 +83,8 @@ export default function IndustryDetailPage({ params }: PageProps) {
           <article className="max-w-4xl mx-auto mb-16">
             {/* Header Eyebrow */}
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <IconComponent className="w-3.5 h-3.5 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <IconComponent className="w-3.5 h-3.5 text-[#7000FF]" />
                 {industry.englishName.toUpperCase()}
               </span>
               <span className="text-xs text-[#6E6E6E] font-medium">Phương Pháp Luận Sunext</span>
@@ -163,10 +163,10 @@ export default function IndustryDetailPage({ params }: PageProps) {
             </div>
 
             {/* Section 2: Case Study Xác Thực Trung Tâm */}
-            <div className="p-6 sm:p-10 rounded-3xl bg-[#FAFFDE] border border-[#DFE2C8] mb-16">
+            <div className="p-6 sm:p-10 rounded-3xl bg-[#FAF5FF] border border-[#EDE9FE] mb-16">
               <div className="flex items-center gap-2 mb-3">
-                <Sparkles className="w-4 h-4 text-emerald-800" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-emerald-900">
+                <Sparkles className="w-4 h-4 text-[#7000FF]" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#7000FF]">
                   Bằng Chứng Xác Thực Từ Hiện Trường Khách Hàng
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                       <div className="flex items-center gap-2 mb-2">
                         <Link
                           href={`/tu-duy-chuyen-doi-ai/${sol.pillarId}`}
-                          className="px-2.5 py-0.5 rounded-full bg-[#F5F3F6] hover:bg-[#FAFFDE] border border-black/5 text-[10px] font-semibold text-[#17151A] transition-colors"
+                          className="px-2.5 py-0.5 rounded-full bg-[#F5F3F6] hover:bg-[#FAF5FF] hover:border-[#EDE9FE] hover:text-[#7000FF] border border-black/5 text-[10px] font-semibold text-[#17151A] transition-colors"
                         >
                           {sol.pillarName}
                         </Link>
@@ -265,8 +265,8 @@ export default function IndustryDetailPage({ params }: PageProps) {
             {/* Section 4: Lộ Trình Triển Khai 3 Giai Đoạn */}
             <div className="p-6 sm:p-8 rounded-3xl bg-[#17151A] text-white mb-16">
               <div className="flex items-center gap-2 mb-3">
-                <Clock className="w-4 h-4 text-[#FAFFDE]" />
-                <span className="text-xs font-semibold uppercase tracking-wider text-[#FAFFDE]">
+                <Clock className="w-4 h-4 text-[#F97316]" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316]">
                   Lộ Trình Triển Khai Chuẩn
                 </span>
               </div>
@@ -281,7 +281,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                 {industry.roadmap.map((rm, rIdx) => (
                   <div key={rIdx} className="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between text-xs text-[#FAFFDE] font-mono mb-2">
+                      <div className="flex items-center justify-between text-xs text-[#F97316] font-mono mb-2">
                         <span>{rm.phase}</span>
                         <span>{rm.duration}</span>
                       </div>

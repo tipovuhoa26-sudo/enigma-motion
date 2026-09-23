@@ -5,8 +5,8 @@ export const motionTokens = {
   colors: {
     surfaceBase: '#F8F8F6',
     surfacePill: '#F5F3F6',
-    lime100: '#FAFFDE',
-    lime200: '#DFE2C8',
+    lime100: '#FAF5FF',
+    lime200: '#EDE9FE',
     ink900: '#17151A',
     ink800: '#1E1C1E',
     textMuted: '#6E6E6E',

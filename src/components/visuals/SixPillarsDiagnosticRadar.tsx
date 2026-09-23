@@ -23,9 +23,9 @@ const PILLARS: PillarNode[] = [
     name: 'STRATEGY',
     english: 'Chiến Lược & Giá Trị',
     x: 300,
-    y: 95,
+    y: 110,
     labelX: 300,
-    labelY: 65,
+    labelY: 52,
     textAnchor: 'middle',
     bottleneck: 'AI chạy thử nghiệm ngẫu nhiên, không đo lường được tác động P&L thực tế.',
     benchmark: 'Xác định 1–2 miền nghiệp vụ có đòn bẩy kinh tế cao nhất trước khi đầu tư.',
@@ -37,7 +37,7 @@ const PILLARS: PillarNode[] = [
     english: 'Nền Tảng & Tích Hợp',
     x: 485,
     y: 200,
-    labelX: 505,
+    labelX: 518,
     labelY: 195,
     textAnchor: 'start',
     bottleneck: 'Tool mua rời rạc, không kết nối API hai chiều với hệ thống lõi (CRM, ERP, ATS).',
@@ -50,8 +50,8 @@ const PILLARS: PillarNode[] = [
     english: 'Kiến Trúc Dữ Liệu',
     x: 485,
     y: 410,
-    labelX: 505,
-    labelY: 415,
+    labelX: 518,
+    labelY: 412,
     textAnchor: 'start',
     bottleneck: 'Dữ liệu phân tán, nhiều dị bản, rò rỉ khi đẩy vào mô hình công cộng.',
     benchmark: 'Single Source of Truth, phân quyền bảo mật cấp enterprise và RAG nội bộ.',
@@ -62,9 +62,9 @@ const PILLARS: PillarNode[] = [
     name: 'GOVERNANCE',
     english: 'Quản Trị & Tự Chủ',
     x: 300,
-    y: 515,
+    y: 505,
     labelX: 300,
-    labelY: 548,
+    labelY: 546,
     textAnchor: 'middle',
     bottleneck: 'Thiếu KPI nghiệm thu và cơ chế chuyển giao, phụ thuộc vĩnh viễn vào bên ngoài.',
     benchmark: 'Khung quản trị rủi ro, chuyển giao BOT và đào tạo đội ngũ tự chủ 100%.',
@@ -76,8 +76,8 @@ const PILLARS: PillarNode[] = [
     english: 'Quy Trình & Vận Hành',
     x: 115,
     y: 410,
-    labelX: 95,
-    labelY: 415,
+    labelX: 82,
+    labelY: 412,
     textAnchor: 'end',
     bottleneck: 'Dùng AI vào quy trình cũ lỗi thời, sinh thêm việc rà soát thay vì tăng tốc.',
     benchmark: 'Tái cấu trúc SOP theo cơ chế Human-in-the-loop, loại bỏ lãng phí tác vụ.',
@@ -89,7 +89,7 @@ const PILLARS: PillarNode[] = [
     english: 'Nhân Tài & Năng Lực',
     x: 115,
     y: 200,
-    labelX: 95,
+    labelX: 82,
     labelY: 195,
     textAnchor: 'end',
     bottleneck: 'Nhân sự chỉ dừng ở mức thử prompt cơ bản, 90% bỏ cuộc sau 60 ngày.',
@@ -237,7 +237,7 @@ export function SixPillarsDiagnosticRadar({
           <circle
             cx="0"
             cy="0"
-            r="38"
+            r="40"
             fill="#FFFFFF"
             stroke="#7000FF"
             strokeWidth="1.8"
@@ -248,23 +248,20 @@ export function SixPillarsDiagnosticRadar({
           <circle
             cx="0"
             cy="0"
-            r="16"
+            r="32"
             fill="#FAF5FF"
-            stroke="#7000FF"
+            stroke="#EDE9FE"
             strokeWidth="1"
-            opacity="0.8"
+            opacity="0.9"
           />
-
-          {/* Core Dot */}
-          <circle cx="0" cy="0" r="5" fill="#7000FF" />
 
           {/* Core Labels */}
           <text
             x="0"
-            y="-6"
+            y="-3"
             textAnchor="middle"
             fill="#17151A"
-            fontSize="10.5"
+            fontSize="10"
             fontFamily="monospace"
             fontWeight="700"
             letterSpacing="0.08em"
@@ -273,12 +270,12 @@ export function SixPillarsDiagnosticRadar({
           </text>
           <text
             x="0"
-            y="7"
+            y="10"
             textAnchor="middle"
             fill="#7000FF"
             fontSize="7.5"
             fontFamily="sans-serif"
-            fontWeight="600"
+            fontWeight="700"
             letterSpacing="0.06em"
           >
             DIAGNOSIS

@@ -57,8 +57,8 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
           <article className="max-w-4xl mx-auto">
             {/* Header Eyebrow */}
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <Building2 className="w-3.5 h-3.5 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <Building2 className="w-3.5 h-3.5 text-[#7000FF]" />
                 {detail.category}
               </span>
               <span className="text-xs text-[#6E6E6E] font-medium">Quy mô: {detail.scale}</span>
@@ -164,11 +164,11 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
                       <Link
                         key={p.slug}
                         href={`/tu-duy-chuyen-doi-ai/${p.slug}`}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-black/10 text-xs text-[#17151A] font-medium hover:border-black/30 hover:bg-[#FAFFDE] transition-all"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-black/10 text-xs text-[#17151A] font-medium hover:border-[#EDE9FE] hover:bg-[#FAF5FF] hover:text-[#7000FF] transition-all"
                       >
-                        <Layers className="w-3 h-3 text-[#17151A]" />
+                        <Layers className="w-3.5 h-3.5 text-[#7000FF]" />
                         <span>{p.name}</span>
-                        <ArrowUpRight className="w-3 h-3 text-[#6E6E6E]" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-[#6E6E6E]" />
                       </Link>
                     ))}
                   </div>
@@ -177,10 +177,10 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
 
               {/* Verified Metrics Column */}
               <div className="space-y-6">
-                <div className="bg-[#FAFFDE] rounded-3xl p-6 border border-[#DFE2C8] flex flex-col gap-4">
+                <div className="bg-[#FAF5FF] rounded-3xl p-6 border border-[#EDE9FE] flex flex-col gap-4">
                   <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-emerald-700" />
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#17151A]">
+                    <TrendingUp className="w-4 h-4 text-[#7000FF]" />
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#7000FF]">
                       Chỉ Số Hiệu Quả Đo Được
                     </span>
                   </div>
@@ -223,7 +223,7 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
             {/* Bottom Call to Action */}
             <div className="p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col sm:flex-row items-center justify-between gap-6 mb-12">
               <div className="space-y-2 text-center sm:text-left">
-                <span className="text-xs uppercase tracking-wider text-[#FAFFDE] font-semibold">
+                <span className="text-xs uppercase tracking-wider text-[#F97316] font-semibold">
                   Tối Ưu Cho Doanh Nghiệp Của Bạn
                 </span>
                 <h3 className="text-xl sm:text-2xl font-light">

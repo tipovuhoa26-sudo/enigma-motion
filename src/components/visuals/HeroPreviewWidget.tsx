@@ -16,13 +16,13 @@ export function HeroIndustryWidget() {
       </div>
 
       <div className="my-auto text-left">
-        <span className="text-[10px] font-bold text-[#FAFFDE] block font-mono">4 NGÀNH</span>
+        <span className="text-[10px] font-bold text-[#F97316] block font-mono">4 NGÀNH</span>
         <span className="text-[7px] text-zinc-400 block font-mono">May đo theo P&L</span>
       </div>
 
       <div className="flex items-center justify-between">
         <span className="text-[8px] font-mono text-emerald-400">40+ Dự án</span>
-        <div className="w-4 h-4 rounded-full bg-white/10 group-hover:bg-[#A3E635] group-hover:text-[#17151A] text-white flex items-center justify-center transition-colors">
+        <div className="w-4 h-4 rounded-full bg-white/10 group-hover:bg-[#F97316] group-hover:text-white text-white flex items-center justify-center transition-colors">
           <ArrowUpRight className="w-2.5 h-2.5" />
         </div>
       </div>

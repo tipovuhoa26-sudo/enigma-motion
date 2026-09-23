@@ -99,7 +99,7 @@ export function Dock({ activeIndex: propActiveIndex }: DockProps) {
                 aria-label={`Jump to ${item.label}`}
                 className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 border cursor-pointer ${
                   isActive
-                    ? 'bg-[#FAFFDE] border-[#DFE2C8] text-[#17151A] shadow-xs scale-105'
+                    ? 'bg-[#FAF5FF] border-[#EDE9FE] text-[#7000FF] shadow-xs scale-105'
                     : 'bg-[#F5F3F6] border-black/5 text-[#6E6E6E] hover:text-[#17151A] hover:bg-white hover:border-black/10'
                 }`}
                 data-dock-item={index}

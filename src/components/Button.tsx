@@ -27,8 +27,8 @@ export function Button({
     outline: 'border border-[#E7E7E5] bg-white text-[#0A0A0A] hover:border-[#0A0A0A] hover:bg-[#F9F9F8] active:scale-[0.98]',
     // Tech Purple Variant
     purple: 'bg-[#581C87] text-white hover:bg-[#4A1570] shadow-sm hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]',
-    // Backward Compatibility Lime
-    lime: 'bg-[#FAFFDE] text-[#0A0A0A] border border-[#DFE2C8] hover:bg-[#F3FAC5] active:scale-[0.98]',
+    // Brand Purple-Tinted / Accent
+    lime: 'bg-[#FAF5FF] text-[#7000FF] border border-[#EDE9FE] hover:bg-[#F3E8FF] active:scale-[0.98]',
   };
 
   const sizeStyles = {

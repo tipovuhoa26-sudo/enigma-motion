@@ -54,12 +54,12 @@ function HrRecruitmentSvgVisual({ compact, className = '' }: { compact?: boolean
 
         {/* Top Header Bar */}
         <line x1="24" y1="46" x2="456" y2="46" stroke="#E5E3DC" strokeWidth="1" />
-        <circle cx="32" cy="28" r="4" fill="#059669" />
+        <circle cx="32" cy="28" r="4" fill="#7000FF" />
         <text x="44" y="32" fill="#17151A" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600" letterSpacing="0.05em">
           ATS STREAM · HR AI SCREENER
         </text>
-        <rect x="350" y="18" width="106" height="20" rx="10" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
-        <text x="403" y="32" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+        <rect x="340" y="18" width="116" height="20" rx="10" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1" />
+        <text x="398" y="32" fill="#7000FF" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
           500 NHÂN SỰ · 4 HR
         </text>
 
@@ -70,19 +70,19 @@ function HrRecruitmentSvgVisual({ compact, className = '' }: { compact?: boolean
           </text>
 
           {/* Tier 1: 1.200 CVs */}
-          <rect x="0" y="24" width="180" height="22" rx="6" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
-          <text x="12" y="39" fill="#76747E" fontSize="10" fontFamily="system-ui, sans-serif">1.200 CV Nộp Vào</text>
-          <text x="168" y="39" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">100%</text>
+          <rect x="0" y="22" width="180" height="24" rx="6" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
+          <text x="12" y="38" fill="#76747E" fontSize="10" fontFamily="system-ui, sans-serif">1.200 CV Nộp Vào</text>
+          <text x="168" y="38" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">100%</text>
 
           {/* Tier 2: 180 Match */}
-          <rect x="18" y="54" width="144" height="22" rx="6" fill="#FAFFDE" stroke="#D8E97C" strokeWidth="1" />
-          <text x="28" y="69" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">180 Đạt Tiêu Chuẩn</text>
-          <text x="152" y="69" fill="#059669" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">15%</text>
+          <rect x="16" y="52" width="148" height="24" rx="6" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1" />
+          <text x="26" y="68" fill="#17151A" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">180 Đạt Tiêu Chuẩn</text>
+          <text x="154" y="68" fill="#7000FF" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">15%</text>
 
           {/* Tier 3: 35 Final */}
-          <rect x="36" y="84" width="108" height="22" rx="6" fill="#17151A" />
-          <text x="46" y="99" fill="#FAFFDE" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">35 Mời Phỏng Vấn</text>
-          <text x="134" y="99" fill="#A3E635" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">Pass</text>
+          <rect x="32" y="82" width="116" height="24" rx="6" fill="#17151A" />
+          <text x="42" y="98" fill="#FFFFFF" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="500">35 Mời Phỏng Vấn</text>
+          <text x="138" y="98" fill="#F97316" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="end">Pass</text>
         </g>
 
         {/* Right: Latency Compression Comparison */}
@@ -92,7 +92,7 @@ function HrRecruitmentSvgVisual({ compact, className = '' }: { compact?: boolean
           </text>
 
           {/* Old Workflow Bar */}
-          <g transform="translate(0, 24)">
+          <g transform="translate(0, 22)">
             <rect x="0" y="0" width="216" height="36" rx="8" fill="#FFFFFF" stroke="#E5E3DC" strokeWidth="1" />
             <text x="10" y="16" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif">Quy trình thủ công cũ</text>
             <text x="206" y="16" fill="#DC2626" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="end">72 Giờ</text>
@@ -101,12 +101,12 @@ function HrRecruitmentSvgVisual({ compact, className = '' }: { compact?: boolean
           </g>
 
           {/* New AI Workflow Bar */}
-          <g transform="translate(0, 70)">
-            <rect x="0" y="0" width="216" height="36" rx="8" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1" />
+          <g transform="translate(0, 68)">
+            <rect x="0" y="0" width="216" height="36" rx="8" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1" />
             <text x="10" y="16" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">AI Resume Screener</text>
-            <text x="206" y="16" fill="#059669" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="end">2 Giờ (3d → 2h)</text>
+            <text x="206" y="16" fill="#7000FF" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="end">2 Giờ (3d → 2h)</text>
             <rect x="10" y="22" width="196" height="6" rx="3" fill="#E5E4DE" />
-            <rect x="10" y="22" width="32" height="6" rx="3" fill="#059669" />
+            <rect x="10" y="22" width="32" height="6" rx="3" fill="#7000FF" />
           </g>
         </g>
 
@@ -203,9 +203,9 @@ function ManufacturingVisionSvgVisual({ compact, className = '' }: { compact?: b
           </g>
 
           <g transform="translate(296, 28)">
-            <rect x="0" y="0" width="92" height="44" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
+            <rect x="0" y="0" width="92" height="44" rx="6" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="0.8" />
             <text x="8" y="16" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">DEFECT SCAN</text>
-            <text x="8" y="32" fill="#059669" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="700">0.00% DRIFT</text>
+            <text x="8" y="32" fill="#7000FF" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="700">0.00% DRIFT</text>
           </g>
         </g>
 
@@ -261,9 +261,9 @@ function B2bContentFactorySvgVisual({ compact, className = '' }: { compact?: boo
         <g transform="translate(36, 66)">
           {/* Core Hub Node */}
           <rect x="0" y="20" width="116" height="64" rx="10" fill="#17151A" />
-          <text x="16" y="42" fill="#FAFFDE" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600">1 SOP LÕI</text>
+          <text x="16" y="42" fill="#FFFFFF" fontSize="11" fontFamily="system-ui, sans-serif" fontWeight="600">1 SOP LÕI</text>
           <text x="16" y="58" fill="#A1A0A8" fontSize="8" fontFamily="system-ui, sans-serif">Whitepaper & Data</text>
-          <text x="16" y="72" fill="#B4E839" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Single Source</text>
+          <text x="16" y="72" fill="#F97316" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Single Source</text>
 
           {/* Branching Connectors */}
           <path d="M 116 36 C 146 36, 146 16, 172 16" stroke="#8B5CF6" strokeWidth="1.2" fill="none" />
@@ -284,7 +284,7 @@ function B2bContentFactorySvgVisual({ compact, className = '' }: { compact?: boo
           <text x="182" y="79" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">LinkedIn Pulse Series</text>
 
           {/* Module 4: Pitch Deck Slidedeck */}
-          <rect x="172" y="94" width="112" height="24" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="0.8" />
+          <rect x="172" y="94" width="112" height="24" rx="6" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="0.8" />
           <text x="182" y="109" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">Proposal Decks</text>
 
           {/* Right: Growth Trajectory Curve */}
@@ -351,14 +351,14 @@ function VietcapMultiAgentSvgVisual({ compact, className = '' }: { compact?: boo
           <polygon points="200,10 60,110 340,110" stroke="#CBD5E1" strokeWidth="1.2" strokeDasharray="4 3" fill="none" />
           
           {/* Center Agent Core Node */}
-          <circle cx="200" cy="76" r="26" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.5" />
+          <circle cx="200" cy="76" r="26" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1.5" />
           <text x="200" y="74" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle">SWARM AI</text>
-          <text x="200" y="86" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">AUDIT</text>
+          <text x="200" y="86" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">AUDIT</text>
 
           {/* Node 1: P&L (Top) */}
           <g transform="translate(130, 0)">
             <rect x="0" y="0" width="140" height="28" rx="6" fill="#17151A" />
-            <text x="70" y="18" fill="#FAFFDE" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
+            <text x="70" y="18" fill="#FFFFFF" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
               BÁO CÁO P&L (KẾT QUẢ KD)
             </text>
           </g>
@@ -446,30 +446,30 @@ function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boo
               {/* Row 1 */}
               <rect x="0" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
               <text x="16" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1501</text>
-              <rect x="38" y="0" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
-              <text x="54" y="13" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1502</text>
+              <rect x="38" y="0" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="54" y="13" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1502</text>
               <rect x="76" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
               <text x="92" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1503</text>
               <rect x="114" y="0" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="130" y="13" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1504</text>
+              <text x="130" y="13" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1504</text>
 
               {/* Row 2 */}
-              <rect x="0" y="26" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
-              <text x="16" y="39" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1401</text>
+              <rect x="0" y="26" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="16" y="39" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1401</text>
               <rect x="38" y="26" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
               <text x="54" y="39" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1402</text>
               <rect x="76" y="26" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="92" y="39" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1403</text>
-              <rect x="114" y="26" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
-              <text x="130" y="39" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1404</text>
+              <text x="92" y="39" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1403</text>
+              <rect x="114" y="26" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="130" y="39" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1404</text>
 
               {/* Row 3 */}
               <rect x="0" y="52" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="16" y="65" fill="#FAFFDE" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1201</text>
-              <rect x="38" y="52" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
-              <text x="54" y="65" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1202</text>
-              <rect x="76" y="52" width="32" height="20" rx="4" fill="#FAFFDE" stroke="#D4E751" />
-              <text x="92" y="65" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1203</text>
+              <text x="16" y="65" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1201</text>
+              <rect x="38" y="52" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="54" y="65" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1202</text>
+              <rect x="76" y="52" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="92" y="65" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1203</text>
               <rect x="114" y="52" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
               <text x="130" y="65" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1204</text>
             </g>
@@ -487,8 +487,8 @@ function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boo
             <text x="20" y="41" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">"Căn 2PN hướng Đông Nam S2 còn không?"</text>
 
             {/* AI Real-time Response Bubble */}
-            <rect x="12" y="58" width="198" height="54" rx="6" fill="#FAFFDE" stroke="#D4E751" />
-            <text x="20" y="72" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">AI Co-Pilot (1.2 Giây):</text>
+            <rect x="12" y="58" width="198" height="54" rx="6" fill="#FAF5FF" stroke="#EDE9FE" />
+            <text x="20" y="72" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">AI Co-Pilot (1.2 Giây):</text>
             <text x="20" y="86" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">"Còn căn S2.1502 · Chiết khấu 8.5%"</text>
             <text x="20" y="100" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">Chính sách quà tặng & tiến độ thanh toán gửi kèm</text>
           </g>
@@ -556,8 +556,8 @@ function DentsuPitchDeckSvgVisual({ compact, className = '' }: { compact?: boole
           <text x="40" y="42" fill="#9CA3AF" fontSize="8" fontFamily="system-ui, sans-serif">02 / CULTURAL INSIGHT</text>
 
           {/* Slide 1 (Front Active Card) */}
-          <rect x="0" y="30" width="240" height="116" rx="8" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.2" />
-          <text x="16" y="52" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">01 / CREATIVE STRATEGY</text>
+          <rect x="0" y="30" width="240" height="116" rx="8" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1.2" />
+          <text x="16" y="52" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">01 / CREATIVE STRATEGY</text>
           <text x="16" y="70" fill="#17151A" fontSize="12" fontFamily="system-ui, sans-serif" fontWeight="600">Proposal Deck RFP Sunext</text>
           
           {/* Mini elements on slide */}
@@ -652,11 +652,11 @@ function PhuongTruongAnVideoSvgVisual({ compact, className = '' }: { compact?: b
             {/* Track 1: Video Clips */}
             <rect x="0" y="18" width="218" height="22" rx="4" fill="#F0EFEA" stroke="#E5E3DC" />
             <rect x="2" y="20" width="65" height="18" rx="3" fill="#17151A" />
-            <text x="34" y="32" fill="#FAFFDE" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 1 (Flycam)</text>
-            <rect x="70" y="20" width="75" height="18" rx="3" fill="#FAFFDE" stroke="#D4E751" />
-            <text x="107" y="32" fill="#17151A" fontSize="7" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">Shot 2 (Cọc Móng)</text>
+            <text x="34" y="32" fill="#FFFFFF" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 1 (Flycam)</text>
+            <rect x="70" y="20" width="75" height="18" rx="3" fill="#FAF5FF" stroke="#EDE9FE" />
+            <text x="107" y="32" fill="#7000FF" fontSize="7" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">Shot 2 (Cọc Móng)</text>
             <rect x="148" y="20" width="68" height="18" rx="3" fill="#17151A" />
-            <text x="182" y="32" fill="#FAFFDE" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 3 (Toàn Cảnh)</text>
+            <text x="182" y="32" fill="#FFFFFF" fontSize="7" fontFamily="system-ui, sans-serif" textAnchor="middle">Shot 3 (Toàn Cảnh)</text>
 
             {/* Track 2: Audio Waveform */}
             <rect x="0" y="46" width="218" height="22" rx="4" fill="#F0EFEA" stroke="#E5E3DC" />
@@ -727,9 +727,9 @@ function FptuFacultySwarmSvgVisual({ compact, className = '' }: { compact?: bool
 
           {/* Central Orchestrator Node */}
           <circle cx="200" cy="66" r="34" fill="#17151A" />
-          <circle cx="200" cy="66" r="38" stroke="#D4E751" strokeWidth="1.5" fill="none" />
-          <text x="200" y="63" fill="#FAFFDE" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle">CENTRAL</text>
-          <text x="200" y="75" fill="#A3E635" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">ORCHESTRATOR</text>
+          <circle cx="200" cy="66" r="38" stroke="#7000FF" strokeWidth="1.5" fill="none" />
+          <text x="200" y="63" fill="#FFFFFF" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="700" textAnchor="middle">CENTRAL</text>
+          <text x="200" y="75" fill="#F97316" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">ORCHESTRATOR</text>
 
           {/* Satellite Agent 1: Check-in */}
           <g transform="translate(10, 16)">
@@ -740,8 +740,8 @@ function FptuFacultySwarmSvgVisual({ compact, className = '' }: { compact?: bool
 
           {/* Satellite Agent 2: FAQ & Helpdesk */}
           <g transform="translate(270, 16)">
-            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1" />
-            <circle cx="14" cy="15" r="4" fill="#F59E0B" />
+            <rect x="0" y="0" width="120" height="30" rx="6" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1" />
+            <circle cx="14" cy="15" r="4" fill="#7000FF" />
             <text x="24" y="19" fill="#17151A" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Agent 2: FAQ &amp; Giải Đáp</text>
           </g>
 
@@ -789,7 +789,7 @@ function GenericDataSvgVisual({ slug, compact, className = '' }: { slug: string;
     <div className={`relative w-full h-full min-h-[200px] select-none bg-[#F9F9F7] ${className}`}>
       <svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full block">
         <rect width="480" height="300" fill="#F9F9F7" />
-        <circle cx="240" cy="130" r="40" fill="#FAFFDE" stroke="#D4E751" strokeWidth="1.5" />
+        <circle cx="240" cy="130" r="40" fill="#FAF5FF" stroke="#EDE9FE" strokeWidth="1.5" />
         <text x="240" y="134" fill="#17151A" fontSize="12" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
           SUNEXT CASE STUDY
         </text>

@@ -72,7 +72,7 @@ function RetailIndustryVisual({ compact, className }: { compact?: boolean; class
           </div>
           <div className="bg-pink-950/20 p-2.5 rounded-xl border border-pink-500/20">
             <span className="text-[10px] text-zinc-400 block">TIÊU DÙNG & TỒN KHO</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">Real-time Demand</span>
+            <span className="text-base text-white font-bold mt-1 block">Real-time Demand</span>
             <span className="text-[9px] text-zinc-400 block">Tối ưu điểm bán theo ca kíp</span>
           </div>
         </div>
@@ -127,7 +127,7 @@ function ManufacturingIndustryVisual({ compact, className }: { compact?: boolean
           </div>
           <div className="bg-cyan-950/20 p-2.5 rounded-xl border border-cyan-500/20">
             <span className="text-[10px] text-zinc-400 block">TỐC ĐỘ QUÉT BIÊN</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">&lt; 50ms / Chi Tiết</span>
+            <span className="text-base text-white font-bold mt-1 block">&lt; 50ms / Chi Tiết</span>
             <span className="text-[9px] text-zinc-400 block">Đồng bộ trực tiếp MES</span>
           </div>
         </div>
@@ -182,7 +182,7 @@ function B2bIndustryVisual({ compact, className }: { compact?: boolean; classNam
           </div>
           <div className="bg-purple-950/20 p-2.5 rounded-xl border border-purple-500/20">
             <span className="text-[10px] text-zinc-400 block">HỒ SƠ ĐẤU THẦU</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">-65% Thời Gian</span>
+            <span className="text-base text-white font-bold mt-1 block">-65% Thời Gian</span>
             <span className="text-[9px] text-zinc-400 block">Tự động dựng pitch deck</span>
           </div>
         </div>
@@ -237,7 +237,7 @@ function RealEstateIndustryVisual({ compact, className }: { compact?: boolean; c
           </div>
           <div className="bg-amber-950/20 p-2.5 rounded-xl border border-amber-500/20">
             <span className="text-[10px] text-zinc-400 block">TRỢ LÝ ẢO GIỎ HÀNG</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">24/7 Phản Hồi</span>
+            <span className="text-base text-white font-bold mt-1 block">24/7 Phản Hồi</span>
             <span className="text-[9px] text-zinc-400 block">Tra cứu căn & kịch bản chốt</span>
           </div>
         </div>
@@ -255,7 +255,7 @@ function RealEstateIndustryVisual({ compact, className }: { compact?: boolean; c
         </div>
         <div className="bg-amber-950/30 p-2 rounded-xl">
           <span className="text-[9px] text-zinc-400 uppercase block">Kích Hoạt Lead</span>
-          <span className="text-sm sm:text-base font-bold text-[#A3E635]">+35%</span>
+          <span className="text-sm sm:text-base font-bold text-[#F97316]">+35%</span>
         </div>
       </div>
     </div>
@@ -292,7 +292,7 @@ function FinanceIndustryVisual({ compact, className }: { compact?: boolean; clas
           </div>
           <div className="bg-teal-950/20 p-2.5 rounded-xl border border-teal-500/20">
             <span className="text-[10px] text-zinc-400 block">FINANCIAL AUDIT GATE</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">Zero Anomaly</span>
+            <span className="text-base text-white font-bold mt-1 block">Zero Anomaly</span>
             <span className="text-[9px] text-zinc-400 block">Đối soát cân đối & dòng tiền</span>
           </div>
         </div>
@@ -310,7 +310,7 @@ function FinanceIndustryVisual({ compact, className }: { compact?: boolean; clas
         </div>
         <div className="bg-teal-950/30 p-2 rounded-xl">
           <span className="text-[9px] text-zinc-400 uppercase block">Kiểm Toán Dữ Liệu</span>
-          <span className="text-sm sm:text-base font-bold text-[#A3E635]">Audit Log</span>
+          <span className="text-sm sm:text-base font-bold text-teal-300">Audit Log</span>
         </div>
       </div>
     </div>
@@ -347,7 +347,7 @@ function HealthcareIndustryVisual({ compact, className }: { compact?: boolean; c
           </div>
           <div className="bg-emerald-950/20 p-2.5 rounded-xl border border-emerald-500/20">
             <span className="text-[10px] text-zinc-400 block">TRA CỨU PHÁC ĐỒ BỘ Y TẾ</span>
-            <span className="text-base text-[#FAFFDE] font-bold mt-1 block">Doctor-in-the-loop</span>
+            <span className="text-base text-white font-bold mt-1 block">Doctor-in-the-loop</span>
             <span className="text-[9px] text-zinc-400 block">Tham khảo văn bản nguồn</span>
           </div>
         </div>

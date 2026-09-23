@@ -75,8 +75,8 @@ export default function InvestmentFrameworkPage() {
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <DollarSign className="w-3 h-3 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <DollarSign className="w-3 h-3 text-[#7000FF]" />
                 MINH BẠCH NGÂN SÁCH ĐẦU TƯ
               </span>
               <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
@@ -124,7 +124,7 @@ export default function InvestmentFrameworkPage() {
                     }`}
                   >
                     {isPopular && (
-                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#17151A] text-[#FAFFDE] text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#17151A] text-[#F97316] text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
                         Lộ trình phổ biến nhất
                       </span>
                     )}
@@ -155,7 +155,7 @@ export default function InvestmentFrameworkPage() {
                         </div>
                       </div>
 
-                      <div className="p-3 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] text-xs text-[#17151A]">
+                      <div className="p-3 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] text-xs text-[#17151A]">
                         <span className="text-[10px] font-semibold text-[#6E6E6E] uppercase block mb-1">Điểm vào chẩn đoán:</span>
                         <span className="font-medium block">{tier.recommendedEntryScoreRange.label}</span>
                       </div>
@@ -190,7 +190,7 @@ export default function InvestmentFrameworkPage() {
                           const el = document.getElementById('package-deep-dive');
                           if (el) el.scrollIntoView({ behavior: 'smooth' });
                         }}
-                        className="w-full py-2.5 px-4 rounded-xl bg-[#17151A] hover:bg-black text-[#FAFFDE] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                        className="w-full py-2.5 px-4 rounded-xl bg-[#17151A] hover:bg-black text-[#F97316] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                       >
                         <span>Xem chi tiết CFO & CTO</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -243,7 +243,7 @@ export default function InvestmentFrameworkPage() {
                 onClick={() => setDeepDiveTab('cfo')}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   deepDiveTab === 'cfo'
-                    ? 'bg-[#FAFFDE] text-[#17151A] border border-[#DFE2C8] shadow-2xs'
+                    ? 'bg-[#FAF5FF] text-[#7000FF] border border-[#EDE9FE] shadow-2xs'
                     : 'bg-[#F5F3F6] text-[#6E6E6E] hover:text-[#17151A] border border-transparent'
                 }`}
               >
@@ -255,11 +255,11 @@ export default function InvestmentFrameworkPage() {
                 onClick={() => setDeepDiveTab('cto')}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                   deepDiveTab === 'cto'
-                    ? 'bg-[#17151A] text-[#FAFFDE] shadow-2xs'
+                    ? 'bg-[#17151A] text-white shadow-2xs'
                     : 'bg-[#F5F3F6] text-[#6E6E6E] hover:text-[#17151A] border border-transparent'
                 }`}
               >
-                <FileCode className="w-4 h-4 text-[#A3E635]" />
+                <FileCode className="w-4 h-4 text-[#F97316]" />
                 <span>Lớp B: Dành Cho CTO / CIO & Solution Architect (API, Security, SLA)</span>
               </button>
             </div>
@@ -301,7 +301,7 @@ export default function InvestmentFrameworkPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] space-y-3">
+                <div className="p-6 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] space-y-3">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-emerald-950 block">
                     4. Sản Phẩm Bàn Giao Chính & Tiêu Chuẩn Nghiệm Thu:
                   </span>
@@ -404,7 +404,7 @@ export default function InvestmentFrameworkPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between gap-3 mb-3">
-                        <span className="px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-mono font-bold text-[#17151A]">
+                        <span className="px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-mono font-bold text-[#7000FF]">
                           CỔNG 0{gate.gateNumber}
                         </span>
                         <span className="text-xs text-[#6E6E6E] font-mono">{gate.phaseLabel.split(':')[0]}</span>
@@ -799,7 +799,7 @@ export default function InvestmentFrameworkPage() {
                 </div>
               </div>
 
-              <div className="md:col-span-5 bg-[#FAFFDE] rounded-2xl p-5 border border-[#DFE2C8] space-y-3">
+              <div className="md:col-span-5 bg-[#FAF5FF] rounded-2xl p-5 border border-[#EDE9FE] space-y-3">
                 <div>
                   <span className="text-3xl font-light text-[#17151A] block">
                     ~{currentCalc.hours.toLocaleString()} giờ

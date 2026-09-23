@@ -367,7 +367,7 @@ export default function ClientsNetworkPage() {
           {/* CTA Section */}
           <section className="max-w-5xl mx-auto p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white text-center space-y-6">
             <div className="max-w-xl mx-auto space-y-3">
-              <span className="text-xs uppercase tracking-wider text-[#FAFFDE] font-semibold">
+              <span className="text-xs uppercase tracking-wider text-[#F97316] font-semibold">
                 ĐÀO TẠO & TRIỂN KHAI DOANH NGHIỆP
               </span>
               <h3 className="text-2xl sm:text-3xl font-light">

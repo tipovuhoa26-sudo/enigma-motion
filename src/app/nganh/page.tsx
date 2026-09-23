@@ -49,8 +49,8 @@ export default function IndustryIndexPage() {
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <Sparkles className="w-3 h-3 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <Sparkles className="w-3 h-3 text-[#7000FF]" />
                 GIẢI PHÁP THEO NGÀNH THỰC TẾ
               </span>
             </div>
@@ -140,7 +140,7 @@ export default function IndustryIndexPage() {
                     </div>
 
                     {/* Step 2: BẰNG CHỨNG XÁC THỰC (1 Verified Case) */}
-                    <div className="p-4 rounded-2xl bg-[#FAFFDE] border border-[#DFE2C8] mb-4">
+                    <div className="p-4 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] mb-4">
                       <div className="flex items-center justify-between text-[11px] font-mono font-bold uppercase tracking-wider text-[#17151A] mb-1">
                         <div className="flex items-center gap-1.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#059669]" />
@@ -216,8 +216,8 @@ export default function IndustryIndexPage() {
           {/* Connected with Sunext Method Banner */}
           <section className="p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-center justify-between gap-8 mb-20">
             <div className="max-w-xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#FAFFDE] mb-4 border border-white/10">
-                <Layers className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#F97316] mb-4 border border-white/10">
+                <Layers className="w-3.5 h-3.5 text-[#F97316]" />
                 KHUNG NĂNG LỰC TOÀN TRÌNH
               </span>
               <h2 className="text-2xl sm:text-3xl font-light leading-snug mb-4">
@@ -228,12 +228,12 @@ export default function IndustryIndexPage() {
               </p>
               <div className="flex flex-wrap items-center gap-3">
                 <Link href="/tu-duy-chuyen-doi-ai">
-                  <Button variant="lime" size="md" className="rounded-full text-xs font-semibold">
+                  <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold">
                     Khám Phá Sunext Method
                   </Button>
                 </Link>
                 <Link href="/danh-gia-san-sang-ai">
-                  <Button variant="secondary" size="md" className="rounded-full text-xs">
+                  <Button variant="outline" size="md" className="rounded-xl text-xs text-white border-white/20 hover:bg-white/10">
                     Đo Lường Sẵn Sàng (12 Câu)
                   </Button>
                 </Link>
@@ -246,15 +246,15 @@ export default function IndustryIndexPage() {
                 <span>Tiêu Chuẩn Thực Thi Dự Án:</span>
               </span>
               <div className="flex items-center gap-2">
-                <span className="text-[#FAFFDE]">✓</span>
+                <span className="text-[#F97316]">✓</span>
                 <span>Khảo sát đo lường ROI trước khi triển khai</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[#FAFFDE]">✓</span>
+                <span className="text-[#F97316]">✓</span>
                 <span>Bảo mật dữ liệu tuyệt đối (NDA-first)</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[#FAFFDE]">✓</span>
+                <span className="text-[#F97316]">✓</span>
                 <span>Chuyển giao 100% năng lực Tầng 1➔5</span>
               </div>
             </div>

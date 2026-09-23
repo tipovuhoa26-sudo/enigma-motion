@@ -45,7 +45,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Con người & Quy trình',
     title: '70% Nỗ Lực Chuyển Đổi Nằm Ở Con Người & Quy Trình',
     description: 'Theo chuẩn BCG: 70% nỗ lực chuyển đổi quyết định bởi con người và quy trình (SOP), 20% bởi hạ tầng dữ liệu và chỉ 10% bởi thuật toán AI. Sunext đồng hành chuẩn hóa quy trình và đào tạo đội ngũ làm chủ luồng việc mới.',
-    bgColor: '#FAFFDE',
+    bgColor: '#FAF5FF',
     metric: {
       value: 70,
       suffix: '%',
@@ -113,7 +113,7 @@ export const ADVANTAGES_DATA: AdvantageCard[] = [
     eyebrow: 'Nghiệm thu định lượng',
     title: 'Nghiệm Thu Bằng Giờ Công Và P&L Thực Tế',
     description: 'Sunext từ chối nghiệm thu bằng slide trình diễn. Mọi dự án chuyển đổi AI được chia nhỏ theo 4 chốt kiểm soát (Gate 1-4) với chỉ số P&L và giờ công thực tế làm căn cứ thanh toán.',
-    bgColor: '#FAFFDE',
+    bgColor: '#FFF7ED',
     metric: {
       value: 5,
       prefix: '',

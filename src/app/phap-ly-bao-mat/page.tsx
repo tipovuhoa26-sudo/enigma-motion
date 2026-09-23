@@ -52,8 +52,8 @@ export default function LegalSecurityPage() {
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-800" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#7000FF]" />
                 C-LEVEL GOVERNANCE & LEGAL COMPLIANCE
               </span>
             </div>
@@ -116,7 +116,7 @@ export default function LegalSecurityPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[10px] font-bold text-[#17151A] uppercase tracking-wider">
+                      <span className="px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-bold text-[#7000FF] uppercase tracking-wider">
                         {block.badge}
                       </span>
                       <span className="text-[11px] font-mono text-[#6E6E6E]">{block.subtitle}</span>
@@ -204,7 +204,7 @@ export default function LegalSecurityPage() {
                   className="p-6 rounded-3xl bg-white border border-black/10 shadow-2xs grid grid-cols-1 md:grid-cols-12 gap-6 items-start"
                 >
                   <div className="md:col-span-4 space-y-2">
-                    <span className="px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[10px] font-mono font-bold text-[#17151A] inline-block">
+                    <span className="px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-mono font-bold text-[#7000FF] inline-block">
                       CỔNG 0{gate.gateNumber}
                     </span>
                     <h3 className="text-lg font-semibold text-[#17151A]">{gate.name}</h3>
@@ -451,7 +451,7 @@ export default function LegalSecurityPage() {
 
           {/* Direct Consultation Trigger */}
           <section className="max-w-4xl mx-auto mb-12 p-8 rounded-3xl bg-[#17151A] text-white text-center">
-            <ShieldCheck className="w-8 h-8 text-[#A3E635] mx-auto mb-3" />
+            <ShieldCheck className="w-8 h-8 text-[#F97316] mx-auto mb-3" />
             <h2 className="text-2xl sm:text-3xl font-light mb-3">
               Cần Thẩm Định NDA / DPA Cho Doanh Nghiệp?
             </h2>
@@ -466,7 +466,7 @@ export default function LegalSecurityPage() {
               </Link>
               <Link
                 href="/khung-dau-tu"
-                className="text-xs text-[#FAFFDE] hover:underline flex items-center gap-1 font-mono"
+                className="text-xs text-[#F97316] hover:underline flex items-center gap-1 font-mono"
               >
                 <span>Xem lại Khung Đầu Tư & Ngân Sách</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

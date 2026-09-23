@@ -84,8 +84,8 @@ export default function PillarDetailPage({ params }: PageProps) {
           {/* Hero Header */}
           <article className="max-w-4xl mx-auto mb-16">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <IconComponent className="w-3.5 h-3.5 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <IconComponent className="w-3.5 h-3.5 text-[#7000FF]" />
                 TRỤ CỘT 0{pillar.number} / 06 · REWIRED
               </span>
               <span className="text-xs text-[#6E6E6E] font-medium">
@@ -134,7 +134,7 @@ export default function PillarDetailPage({ params }: PageProps) {
             </div>
 
             {/* Section 2: Cái Đúng Theo Khung Rewired */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-[#FAFFDE] border border-[#DFE2C8] mb-12">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#FAF5FF] border border-[#EDE9FE] mb-12">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/5 text-xs font-semibold text-[#17151A] mb-4">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
                 <span>Bản chất: Khung Rewired của McKinsey</span>
@@ -301,7 +301,7 @@ export default function PillarDetailPage({ params }: PageProps) {
                         </Link>
                       </div>
 
-                      <div className="md:col-span-5 bg-[#FAFFDE] rounded-xl p-4 border border-[#DFE2C8] flex flex-col justify-around gap-3">
+                      <div className="md:col-span-5 bg-[#FAF5FF] rounded-xl p-4 border border-[#EDE9FE] flex flex-col justify-around gap-3">
                         {ev.metrics.map((m, mIdx) => (
                           <div key={mIdx} className="border-b border-black/5 pb-2 last:border-b-0 last:pb-0">
                             <span className="text-2xl font-light text-[#17151A] block">{m.value}</span>
@@ -317,7 +317,7 @@ export default function PillarDetailPage({ params }: PageProps) {
 
             {/* Section 4: Cách Sunext Giải Trụ Cột Này */}
             <div className="p-6 sm:p-8 rounded-3xl bg-[#17151A] text-white mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#FAFFDE] mb-4 border border-white/10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#F97316] mb-4 border border-white/10">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>{pillar.sunextService.badge}</span>
               </div>
@@ -331,7 +331,7 @@ export default function PillarDetailPage({ params }: PageProps) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {pillar.solution.highlights.map((item, idx) => (
                   <div key={idx} className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-[#FAFFDE] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#F97316] shrink-0 mt-0.5" />
                     <span className="text-xs text-neutral-200">{item}</span>
                   </div>
                 ))}
@@ -339,13 +339,13 @@ export default function PillarDetailPage({ params }: PageProps) {
 
               <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10">
                 <Link href="/#contact">
-                  <Button variant="lime" size="md" className="rounded-full text-xs font-semibold gap-2">
+                  <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold gap-2">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>Đặt Lịch Tư Vấn Trụ Cột Này</span>
                   </Button>
                 </Link>
                 <Link href={pillar.sunextService.url}>
-                  <Button variant="secondary" size="md" className="rounded-full text-xs gap-1.5">
+                  <Button variant="outline" size="md" className="rounded-xl text-xs gap-1.5 text-white border-white/20 hover:bg-white/10">
                     <span>{pillar.solution.ctaText}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Button>

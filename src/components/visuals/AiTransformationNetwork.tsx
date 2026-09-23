@@ -213,6 +213,15 @@ const CROSS_CHORDS = [
   { id: 'c-tech-sales', x1: 520, y1: 165, x2: 580, y2: 505 },
   { id: 'c-hr-gov', x1: 110, y1: 335, x2: 490, y2: 635 },
   { id: 'c-mfg-tech', x1: 140, y1: 505, x2: 520, y2: 165 },
+  // Inter-node perimeter chords (faint connecting lines across adjacent capability clusters)
+  { id: 'c-cap-b-t', x1: 260, y1: 115, x2: 460, y2: 115 },
+  { id: 'c-cap-b-h', x1: 115, y1: 205, x2: 45, y2: 310 },
+  { id: 'c-cap-h-m', x1: 65, y1: 435, x2: 75, y2: 490 },
+  { id: 'c-cap-m-re', x1: 155, y1: 590, x2: 165, y2: 630 },
+  { id: 'c-cap-re-g', x1: 285, y1: 685, x2: 435, y2: 685 },
+  { id: 'c-cap-g-s', x1: 555, y1: 630, x2: 565, y2: 590 },
+  { id: 'c-cap-s-rc', x1: 645, y1: 490, x2: 655, y2: 435 },
+  { id: 'c-cap-rc-t', x1: 675, y1: 310, x2: 605, y2: 205 },
 ];
 
 export function AiTransformationNetwork() {
@@ -441,14 +450,13 @@ export function AiTransformationNetwork() {
 
         {/* ==================================================================== */}
         {/* LEVEL 2 — SUB-NODE SPOKES (Parent Domain to Micro Dots)             */}
-        {/* (Only displayed when active or hovered to keep graph uncluttered)   */}
+        {/* (Rendered faintly always, with high contrast when active/hovered)   */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
-          if (!isClusterActive) return null;
 
           return (
-            <g key={`spokes-${domain.id}`} className="animate-in fade-in duration-300">
+            <g key={`spokes-${domain.id}`}>
               {domain.capabilities.map((cap) => (
                 <line
                   key={`cap-link-${domain.id}-${cap.id}`}
@@ -456,9 +464,11 @@ export function AiTransformationNetwork() {
                   y1={domain.cy}
                   x2={cap.x}
                   y2={cap.y}
-                  stroke="#7000FF"
-                  strokeWidth="1.2"
-                  opacity="0.75"
+                  stroke={isClusterActive ? '#7000FF' : '#8B5CF6'}
+                  strokeWidth={isClusterActive ? 1.4 : 0.75}
+                  strokeDasharray={isClusterActive ? 'none' : '2 3'}
+                  opacity={isClusterActive ? 0.85 : 0.25}
+                  className="transition-all duration-300"
                 />
               ))}
             </g>
@@ -466,33 +476,48 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* LEVEL 2 — SUB-NODES: PURE DOTS (Clean Obsidian Aesthetics)          */}
-        {/* (Only bloom when active or hovered to avoid background noise)       */}
+        {/* LEVEL 2 — SUB-NODES: PURE DOTS & SATELLITES                         */}
+        {/* (Ambiently visible constellation dots, bloom on hover/active)        */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
-          if (!isClusterActive) return null;
 
           return (
-            <g key={`caps-${domain.id}`} className="animate-in fade-in duration-300">
+            <g key={`caps-${domain.id}`}>
               {domain.capabilities.map((cap) => (
                 <g key={cap.id} transform={`translate(${cap.x}, ${cap.y})`}>
                   <circle
                     cx="0"
                     cy="0"
-                    r="6.5"
-                    fill="none"
+                    r={isClusterActive ? 6.5 : 4}
+                    fill={isClusterActive ? '#FAF5FF' : 'none'}
                     stroke="#7000FF"
                     strokeWidth="0.8"
-                    opacity="0.45"
+                    opacity={isClusterActive ? 0.6 : 0.25}
+                    className="transition-all duration-300"
                   />
                   <circle
                     cx="0"
                     cy="0"
-                    r="3.5"
+                    r={isClusterActive ? 3.5 : 2}
                     fill="#7000FF"
-                    opacity="0.95"
+                    opacity={isClusterActive ? 0.95 : 0.45}
+                    className="transition-all duration-300"
                   />
+                  {isClusterActive && (
+                    <text
+                      x="0"
+                      y="14"
+                      textAnchor="middle"
+                      fill="#17151A"
+                      fontSize="9"
+                      fontFamily="system-ui, -apple-system, sans-serif"
+                      fontWeight="500"
+                      className="select-none pointer-events-none"
+                    >
+                      {cap.name}
+                    </text>
+                  )}
                 </g>
               ))}
             </g>

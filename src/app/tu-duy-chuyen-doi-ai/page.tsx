@@ -98,8 +98,8 @@ export default function AiTransformationHubPage() {
             </nav>
 
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[11px] font-semibold text-[#17151A]">
-                <Layers className="w-3 h-3 text-[#17151A]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
+                <Layers className="w-3 h-3 text-[#7000FF]" />
                 SUNEXT METHOD
               </span>
               <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
@@ -182,7 +182,7 @@ export default function AiTransformationHubPage() {
             </div>
 
             {/* Pillar Selector Tabs */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar border-b border-black/5">
+            <div className="flex flex-wrap items-center gap-2 pb-4 mb-8 border-b border-black/5">
               {PILLARS_DATA.map((pillar, idx) => {
                 const isActive = activePillarTab === idx;
                 return (
@@ -380,7 +380,7 @@ export default function AiTransformationHubPage() {
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#FAFFDE] border border-[#DFE2C8] text-[10px] font-semibold text-[#17151A]">
+                        <span className="px-2.5 py-0.5 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-semibold text-[#7000FF]">
                           {current.tag}
                         </span>
                         <span className="text-xs text-[#6E6E6E]">{current.industry}</span>
@@ -418,8 +418,8 @@ export default function AiTransformationHubPage() {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 bg-[#FAFFDE] rounded-2xl p-6 border border-[#DFE2C8] flex flex-col justify-around gap-4">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#17151A]">
+                  <div className="lg:col-span-5 bg-[#FAF5FF] rounded-2xl p-6 border border-[#EDE9FE] flex flex-col justify-around gap-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#7000FF]">
                       Chỉ Số Kinh Tế Xác Thực
                     </span>
                     {current.metrics.map((m) => (
@@ -441,7 +441,7 @@ export default function AiTransformationHubPage() {
           {/* Section: Đánh Giá Sẵn Sàng (Readiness Assessment Banner) */}
           <section className="mb-20 p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
             <div className="max-w-xl z-10">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#FAFFDE] mb-4 border border-white/10">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#F97316] mb-4 border border-white/10">
                 <ClipboardCheck className="w-3.5 h-3.5" />
                 ĐÁNH GIÁ TRỰC QUAN MIỄN PHÍ
               </span>
@@ -453,12 +453,12 @@ export default function AiTransformationHubPage() {
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Link href="/ai-maturity-assessment">
-                  <Button variant="lime" size="lg" className="rounded-full text-sm font-semibold">
+                  <Button variant="orange" size="lg" className="rounded-xl text-sm font-semibold">
                     Làm Bài Chẩn Đoán 12 Câu
                   </Button>
                 </Link>
                 <Link href="/khung-dau-tu">
-                  <Button variant="secondary" size="lg" className="rounded-full text-sm">
+                  <Button variant="outline" size="lg" className="rounded-xl text-sm text-white border-white/20 hover:bg-white/10">
                     Xem Khung Đầu Tư Tham Khảo
                   </Button>
                 </Link>
@@ -468,32 +468,32 @@ export default function AiTransformationHubPage() {
             {/* Decorative Matrix Graphic */}
             <div className="w-full md:w-auto shrink-0 flex flex-col gap-2 p-5 rounded-2xl bg-white/5 border border-white/10 text-xs text-neutral-300 z-10">
               <div className="font-semibold text-white mb-1 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#FAFFDE]" />
+                <ShieldCheck className="w-4 h-4 text-[#F97316]" />
                 <span>6 Trục Chẩn Đoán Cốt Lõi</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1 border-b border-white/5">
                 <span>1. Chiến lược & Tầm nhìn</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 1</span>
+                <span className="font-mono text-[#F97316]">Pillar 1</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1 border-b border-white/5">
                 <span>2. Đội ngũ & Năng lực</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 2</span>
+                <span className="font-mono text-[#F97316]">Pillar 2</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1 border-b border-white/5">
                 <span>3. Mô hình vận hành</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 3</span>
+                <span className="font-mono text-[#F97316]">Pillar 3</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1 border-b border-white/5">
                 <span>4. Nền tảng công nghệ</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 4</span>
+                <span className="font-mono text-[#F97316]">Pillar 4</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1 border-b border-white/5">
                 <span>5. Kiến trúc dữ liệu</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 5</span>
+                <span className="font-mono text-[#F97316]">Pillar 5</span>
               </div>
               <div className="flex items-center justify-between gap-6 py-1">
                 <span>6. Mở rộng & Governance</span>
-                <span className="font-mono text-[#FAFFDE]">Pillar 6</span>
+                <span className="font-mono text-[#F97316]">Pillar 6</span>
               </div>
             </div>
           </section>

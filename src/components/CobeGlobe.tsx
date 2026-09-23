@@ -199,7 +199,7 @@ export function CobeGlobe() {
       {/* Bottom Floating Interactive Cue */}
       <div className="absolute bottom-2 left-2 sm:left-4 z-20 flex items-center gap-2 pointer-events-none">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#17151A]/85 backdrop-blur-md text-white text-[11px] font-medium shadow-sm">
-          <Compass className="w-3.5 h-3.5 text-[#FAFFDE] animate-spin-slow" />
+          <Compass className="w-3.5 h-3.5 text-[#F97316] animate-spin-slow" />
           <span>Kéo để xoay 3D</span>
         </div>
       </div>
