@@ -20,18 +20,78 @@ import {
 const TIER1_PROOFS: Record<string, string> = {
   vietcap: '−75% thời gian bóc tách BCTC thô',
   vinhomes: '< 5 phút phản hồi thông tin cho 500+ môi giới',
+  fptu: '10.000+ tương tác & nâng chuẩn Bậc 6 cho 600+ GV',
   dentsu: '−65% thời gian phát triển proposal đấu thầu',
-  ptexim: 'Chuẩn hóa SOP xuất nhập khẩu, giảm 67% chu kỳ xử lý',
-  vietcombank: 'Workshop chiến lược Multi-Agent & ZDR Private VPC',
-  smartlands: '100% tỷ lệ kết nối giỏ hàng và tư vấn tự động 24/7',
+  vnpt: 'Gấp 3 lần sản lượng nội dung truyền thông số',
   'phuong-truong-an': '+200% sản lượng video tiến độ hiện trường',
-  'fpt-university': '10.000+ sinh viên & nâng chuẩn Bậc 6 cho 600+ GV',
-  prudential: 'Chuyển giao năng lực tư vấn tài chính cá nhân',
-  'thue-tphcm': 'Xử lý và đối soát chứng từ văn bản tự động',
+  'truong-doan': 'Tiết kiệm 70% thời gian duyệt ảnh activation',
+  htv: 'Rút ngắn 50% thời gian sản xuất đồ họa trường quay',
+  smartland: 'Tự động hóa 80% tương tác ban đầu với khách hàng',
+  'trung-son': 'Tư vấn CRM & Omnichannel cho chuỗi nhà thuốc',
 };
+
+const PROOF_ITEMS = [
+  {
+    id: 'vinhomes',
+    client: 'VINHOMES',
+    year: '2026',
+    industry: 'Bất Động Sản · AI Sales Enablement',
+    headline: '500+ Môi giới làm chủ công cụ AI tại hiện trường',
+    desc: 'Thiết lập trợ lý ảo hỗ trợ tư vấn thực địa 24/7, tự động bóc tách tiến độ, chính sách bán hàng và matching nhu cầu khách hàng theo thời gian thực.',
+    metric: '< 5 PHÚT',
+    metricLabel: 'Tốc độ phản hồi lead & đối soát giỏ hàng tức thì',
+    image: '/evidence/vinhomes-sales-deployment.png',
+  },
+  {
+    id: 'fptu',
+    client: 'ĐẠI HỌC FPT (FPTU)',
+    year: '2026',
+    industry: 'Giáo Dục Đại Học · Chuyển Giao Năng Lực',
+    headline: 'Điều phối AI Agents Tech Fest & Chuẩn hóa Bậc 6',
+    desc: 'Chuyển giao năng lực AI giảng dạy cho 600+ giảng viên chuẩn Bậc 6 và điều phối hệ thống MC ảo, tác tử AI hỗ trợ 10.000+ người tham gia.',
+    metric: '10.000+',
+    metricLabel: 'Lượt tương tác đa tác tử AI tại sự kiện công nghệ',
+    image: '/evidence/fptu-techfest-onsite.png',
+  },
+  {
+    id: 'dentsu',
+    client: 'DENTSU SPORTS & CREATIVE',
+    year: '2025',
+    industry: 'Truyền Thông Quốc Tế · Pitch Deck AI',
+    headline: 'Tự động hóa Storyline Pitching & Đấu thầu tài trợ',
+    desc: 'Chuẩn hóa quy trình AI tạo dựng storyline pitching và tự động hóa pitch deck cho các đề án tài trợ thể thao quốc tế với các thương hiệu hàng đầu.',
+    metric: '−65%',
+    metricLabel: 'Thời gian phát triển proposal đấu thầu',
+    image: '/evidence/dentsu-workshop-onsite.png',
+  },
+  {
+    id: 'smartland',
+    client: 'SMARTLAND BẤT ĐỘNG SẢN',
+    year: '2025',
+    industry: 'Phân Phối BĐS Cao Cấp',
+    headline: 'Tác tử AI sàng lọc và tương tác khách hàng 24/7',
+    desc: 'Tự động hóa 80% khâu tương tác ban đầu với khách hàng tiềm năng dự án căn hộ cao cấp qua AI Agents, tối ưu tỷ lệ chuyển đổi cuộc hẹn tư vấn.',
+    metric: '80%',
+    metricLabel: 'Tự động hóa tương tác khách hàng ban đầu',
+    image: '/evidence/smartlands-real-estate-ai.jpg',
+  },
+  {
+    id: 'ptexim',
+    client: 'PTEXIM LOGISTICS (FIELD STUDY)',
+    year: '2025',
+    industry: 'Khảo Sát Thực Địa Vận Hành & SOP',
+    headline: 'Chuẩn hóa dòng chứng từ xuất nhập khẩu tại hiện trường',
+    desc: 'Khảo sát và kiểm thử quy trình vận hành trực tiếp tại xưởng phân loại PTExim Corp, loại bỏ thao tác thừa trước khi tích hợp hệ thống số hóa.',
+    metric: '−67%',
+    metricLabel: 'Chu kỳ xử lý chứng từ logistics',
+    image: '/evidence/ptexim-operations-onsite.png',
+  },
+];
 
 export default function ClientsNetworkPage() {
   const [selectedOrg, setSelectedOrg] = useState<OrganizationLogo | null>(null);
+  const [activeProofIdx, setActiveProofIdx] = useState<number>(0);
+  const activeProof = PROOF_ITEMS[activeProofIdx];
 
   const tier1Orgs = ORGANIZATION_LOGOS.filter((org) => org.tier === 1);
   const tier2Orgs = ORGANIZATION_LOGOS.filter((org) => org.tier === 2);
@@ -114,113 +174,106 @@ export default function ClientsNetworkPage() {
           </div>
         </section>
 
-        {/* TIER 1 FIELD EVIDENCE: ASYMMETRICAL EDITORIAL PHOTO SPREAD (No Card Shells) */}
+        {/* FIELD EVIDENCE: STICKY PROOF ARCHITECTURE (ZERO ACCIDENTAL WHITE HOLE) */}
         <section className="mb-24">
-          <div className="mb-8">
+          <div className="mb-10">
             <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#EA580C] block mb-2">
-              FIELD EVIDENCE · TIER 1 DIRECT ENGAGEMENTS
+              FIELD EVIDENCE · STICKY PROOF DOSSIER
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
               Hiện Trường Vận Hành &amp; Triển Khai Thực Tế
             </h2>
             <p className="text-sm sm:text-base text-[#6E6E6E] mt-2 max-w-2xl font-light">
-              Minh chứng từ các đề án hợp tác sâu tại các tổ chức hàng đầu (Vinhomes, PTExim, Vietcombank, Smartlands), phân biệt rõ với mạng lưới đào tạo ngắn hạn.
+              Minh chứng vật lý từ các đề án hợp tác sâu tại các tổ chức hàng đầu (Vinhomes, FPTU, Dentsu, Smartland, PTExim), phân biệt rõ với mạng lưới đào tạo ngắn hạn.
             </p>
           </div>
 
-          {/* Asymmetrical Photo Grid: 1 Dominant Spotlight + 3 Satellites */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Dominant Spotlight: Vinhomes (7 cols) */}
-            <div className="lg:col-span-7 space-y-3">
-              <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden bg-neutral-100 border border-black/10 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+            {/* Left Sticky Photo Canvas (7 cols) */}
+            <div className="lg:col-span-7 lg:sticky lg:top-28 space-y-3">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 border border-black/10">
                 <Image
-                  src="/evidence/vinhomes-sales-deployment.png"
-                  alt="Vinhomes 500+ Sales AI Deployment"
+                  src={activeProof.image}
+                  alt={activeProof.headline}
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-cover saturate-[0.94]"
+                  className="object-cover object-center filter saturate-[0.95] transition-all duration-700 ease-out"
                   priority
                 />
-              </div>
-              <div className="pt-1">
-                <div className="flex items-center gap-3">
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/5 text-[#17151A] font-semibold">
-                    VINHOMES
+
+                {/* Editorial Typography Overlay In Negative Space */}
+                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-black/75 backdrop-blur-xs text-white border border-white/20">
+                  {activeProof.client} / {activeProof.year}
+                </div>
+
+                {/* Giant Metric Anchored to Image Edge */}
+                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 text-right px-4 py-3 bg-neutral-950/85 backdrop-blur-md border border-white/10 text-white">
+                  <span className="font-mono text-3xl sm:text-4xl lg:text-5xl font-light text-[#EA580C] block leading-none">
+                    {activeProof.metric}
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#EA580C]">
-                    &lt; 5 Phút phản hồi
+                  <span className="text-[10px] sm:text-[11px] font-mono text-neutral-300 block mt-1">
+                    {activeProof.metricLabel}
                   </span>
                 </div>
-                <h3 className="text-lg font-normal text-[#17151A] mt-1.5">
-                  Triển khai AI Sales Enablement &amp; giỏ hàng tự động cho 500+ môi giới
+              </div>
+
+              {/* Caption */}
+              <div className="pt-2">
+                <span className="text-xs font-mono text-[#7000FF] font-semibold block">
+                  {activeProof.industry}
+                </span>
+                <h3 className="text-lg font-normal text-[#17151A] mt-1">
+                  {activeProof.headline}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#6E6E6E] font-light mt-1 leading-relaxed">
-                  Thiết lập trợ lý ảo hỗ trợ tư vấn thực địa 24/7, tự động bóc tách tiến độ, chính sách bán hàng và matching nhu cầu khách hàng theo thời gian thực.
+                  {activeProof.desc}
                 </p>
               </div>
             </div>
 
-            {/* 3 Satellite Photos (5 cols) */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* PTExim */}
-              <div className="space-y-2 pb-5 border-b border-black/10">
-                <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-neutral-100 border border-black/10">
-                  <Image
-                    src="/evidence/ptexim-operations-onsite.png"
-                    alt="PTExim Logistics Operations"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover saturate-[0.92]"
-                  />
-                </div>
-                <div className="flex items-center justify-between text-xs pt-1">
-                  <span className="font-mono text-[#7000FF] font-semibold">PTEXIM LOGISTICS</span>
-                  <span className="font-mono text-[#EA580C] font-bold">−67% Chu kỳ xử lý</span>
-                </div>
-                <p className="text-xs text-[#515151] font-light leading-snug">
-                  Khảo sát hiện trường &amp; chuẩn hóa SOP xuất nhập khẩu hạt tiêu xuất khẩu.
-                </p>
-              </div>
+            {/* Right Dossier List (5 cols) */}
+            <div className="lg:col-span-5 space-y-3.5">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-[#747474] font-semibold block mb-2">
+                HỒ SƠ KHẢO SÁT &amp; TRIỂN KHAI ({PROOF_ITEMS.length})
+              </span>
 
-              {/* Vietcombank */}
-              <div className="space-y-2 pb-5 border-b border-black/10">
-                <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-neutral-100 border border-black/10">
-                  <Image
-                    src="/evidence/vietcombank-strategic-workshop.jpg"
-                    alt="Vietcombank Financial AI Workshop"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover saturate-[0.92]"
-                  />
-                </div>
-                <div className="flex items-center justify-between text-xs pt-1">
-                  <span className="font-mono text-[#7000FF] font-semibold">VIETCOMBANK</span>
-                  <span className="font-mono text-emerald-700 font-bold">Zero Data Retention</span>
-                </div>
-                <p className="text-xs text-[#515151] font-light leading-snug">
-                  Workshop chiến lược Multi-Agent &amp; rà soát an toàn dữ liệu Private VPC.
-                </p>
-              </div>
+              {PROOF_ITEMS.map((item, idx) => {
+                const isSelected = activeProofIdx === idx;
+                return (
+                  <div
+                    key={item.id}
+                    onClick={() => setActiveProofIdx(idx)}
+                    onMouseEnter={() => setActiveProofIdx(idx)}
+                    className={`p-4 sm:p-5 rounded-2xl transition-all cursor-pointer border ${
+                      isSelected
+                        ? 'bg-neutral-950 text-white border-neutral-800 shadow-md'
+                        : 'bg-white hover:bg-neutral-50 border-black/10 text-[#17151A]'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between text-xs font-mono mb-1.5">
+                      <span className={isSelected ? 'text-[#EA580C] font-bold' : 'text-[#7000FF] font-semibold'}>
+                        {item.client}
+                      </span>
+                      <span className={isSelected ? 'text-neutral-400' : 'text-[#747474]'}>
+                        {item.year}
+                      </span>
+                    </div>
 
-              {/* Smartlands */}
-              <div className="space-y-2">
-                <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-neutral-100 border border-black/10">
-                  <Image
-                    src="/evidence/smartlands-real-estate-ai.jpg"
-                    alt="Smartlands Real Estate AI"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover saturate-[0.92]"
-                  />
-                </div>
-                <div className="flex items-center justify-between text-xs pt-1">
-                  <span className="font-mono text-[#7000FF] font-semibold">SMARTLANDS</span>
-                  <span className="font-mono text-[#EA580C] font-bold">100% Tỷ lệ hẹn gặp</span>
-                </div>
-                <p className="text-xs text-[#515151] font-light leading-snug">
-                  Chuyển giao năng lực tư vấn tự động 24/7 cho đại lý chiến lược phân phối BĐS cao cấp.
-                </p>
-              </div>
+                    <h4 className={`text-sm sm:text-base font-normal tracking-tight ${isSelected ? 'text-white' : 'text-[#0A0A0A]'}`}>
+                      {item.headline}
+                    </h4>
+
+                    <div className="mt-3 flex items-center justify-between text-xs font-mono pt-2 border-t border-white/10">
+                      <span className={isSelected ? 'text-[#FB923C] font-bold' : 'text-[#EA580C] font-semibold'}>
+                        {item.metric}
+                      </span>
+                      <span className={`text-[10.5px] ${isSelected ? 'text-neutral-400' : 'text-[#747474]'}`}>
+                        {item.industry.split('·')[0].trim()}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

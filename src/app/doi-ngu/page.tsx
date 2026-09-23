@@ -362,111 +362,215 @@ export default function TeamLeadershipPage() {
           </div>
         </section>
 
-        {/* SECTION: FACULTY ROSTER (Bare on canvas with clean whitespace + hairlines) */}
-        <section id="faculty-network" className="mb-24 scroll-mt-24">
+        {/* ==================================================================== */}
+        {/* SECTION: DEEP DOMAIN NETWORK (THE ART OBJECT)                        */}
+        {/* Connects the Sunflower Graph Macro-Domains directly to Expert Leaders */}
+        {/* ==================================================================== */}
+        <section id="domain-network" className="mb-24 scroll-mt-24">
           <div className="mb-10">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
-              FACULTY NETWORK · MẠNG LƯỚI 12 CHUYÊN GIA ĐA LĨNH VỰC
+              DEEP DOMAIN NETWORK · TRI THỨC HỘI TỤ VỀ CON NGƯỜI
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
-              Đội Ngũ Cố Vấn &amp; Giảng Viên Thực Chiến Đa Ngành
+              Người Thật Đứng Sau Từng Miền Năng Lực AI
             </h3>
             <p className="text-base text-[#6E6E6E] leading-relaxed max-w-3xl font-light mt-3">
-              Sunext không dạy công cụ chung chung. Chúng tôi xây dựng mạng lưới 12 chuyên gia kỳ cựu từng giữ trọng trách điều hành cấp cao tại các tổ chức như HOSE, Golden Gate Group, Carlsberg, Lotte, Central Retail... trực tiếp chuyển giao phương pháp luận AI vào đúng bài toán chuyên môn sâu.
+              Mỗi cụm chuyên môn trên Sunflower Graph không phải là khái niệm trừu tượng. Đằng sau mỗi domain là các chuyên gia thực chiến với 10–24 năm kinh nghiệm trực tiếp thiết kế SOP và chịu trách nhiệm P&amp;L cùng doanh nghiệp.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar border-b border-black/5">
-            {FACULTY_BLOCKS.map((block) => {
-              const isActive = activeBlock === block.id;
-              const count = block.id === 'all'
-                ? FACULTY_MEMBERS.length
-                : FACULTY_MEMBERS.filter((m) => m.blockId === block.id).length;
-              return (
-                <button
-                  key={block.id}
-                  onClick={() => setActiveBlock(block.id)}
-                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all flex items-center gap-2 cursor-pointer ${
-                    isActive
-                      ? 'bg-[#17151A] text-white shadow-xs'
-                      : 'bg-white/80 border border-black/10 text-[#6E6E6E] hover:border-black/25 hover:text-[#17151A]'
-                  }`}
-                >
-                  <span>{block.name}</span>
-                  <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-black/5 text-[#6E6E6E]'
+          {/* Interactive Domain Network Spread */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs">
+            {/* Left Column: 4 Domain Hub Switchers */}
+            <div className="lg:col-span-5 space-y-3">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#747474] block mb-2 font-semibold">
+                CHỌN MIỀN NĂNG LỰC ĐỂ XEM CHUYÊN GIA
+              </span>
+
+              {[
+                {
+                  id: 'finance',
+                  shortName: 'FINANCE & RISK',
+                  fullName: 'Tài Chính, Chứng Khoán & Rủi Ro',
+                  leads: 'Nguyễn Tùng Chi · Lê Thị Cẩm Vân',
+                  exp: '21–24 năm kinh nghiệm',
+                },
+                {
+                  id: 'marketing',
+                  shortName: 'MARKETING & GROWTH',
+                  fullName: 'Tiếp Thị, Thương Hiệu & Bán Lẻ',
+                  leads: 'Lợi Hồng Thanh · Nguyễn Thị Hồng Vi',
+                  exp: '16–18 năm kinh nghiệm',
+                },
+                {
+                  id: 'strategy',
+                  shortName: 'STRATEGY & GOVERNANCE',
+                  fullName: 'Chiến Lược Doanh Nghiệp & Quản Trị AI',
+                  leads: 'Nguyễn Phước Vĩnh Hưng · Trịnh Minh Hùng',
+                  exp: '12–17 năm kinh nghiệm',
+                },
+                {
+                  id: 'operations',
+                  shortName: 'OPERATIONS & SUPPLY',
+                  fullName: 'Vận Hành, Chuỗi Cung Ứng & No-code',
+                  leads: 'Nguyễn Thị Hạnh',
+                  exp: '4+ năm chuyên môn',
+                },
+              ].map((domain) => {
+                const isSelected = activeBlock === domain.id;
+                return (
+                  <div
+                    key={domain.id}
+                    onClick={() => setActiveBlock(domain.id)}
+                    className={`p-4 rounded-2xl transition-all cursor-pointer border ${
+                      isSelected
+                        ? 'bg-[#17151A] text-white border-[#17151A] shadow-sm'
+                        : 'bg-neutral-50 hover:bg-white border-black/5 hover:border-black/15 text-[#17151A]'
                     }`}
                   >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Editorial Faculty Roster (No card shells: clean rows on canvas with hairlines) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-            {filteredFaculty.map((member) => {
-              const blockStyle = BLOCK_COLORS[member.blockId] || BLOCK_COLORS.executive;
-              const initials = getInitials(member.name);
-              return (
-                <div
-                  key={member.id}
-                  onClick={() => setSelectedFaculty(member)}
-                  className="group cursor-pointer pb-6 border-b border-black/10 flex flex-col justify-between"
-                >
-                  <div>
-                    {/* Portrait & Block Tag */}
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      {member.avatarUrl ? (
-                        <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-black/10 shadow-xs shrink-0 bg-neutral-100">
-                          <Image
-                            src={member.avatarUrl}
-                            alt={member.name}
-                            fill
-                            sizes="64px"
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                      ) : (
-                        <div
-                          className={`w-16 h-16 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-xl font-light tracking-wider shadow-xs shrink-0`}
-                        >
-                          {initials}
-                        </div>
-                      )}
-
-                      <span className="text-[10px] font-mono text-[#7000FF] px-2.5 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] uppercase tracking-wider">
-                        {member.blockName.split('&')[0].trim()}
+                    <div className="flex items-center justify-between text-xs font-mono mb-1">
+                      <span className={isSelected ? 'text-[#EA580C] font-bold' : 'text-[#7000FF] font-semibold'}>
+                        {domain.shortName}
+                      </span>
+                      <span className={isSelected ? 'text-neutral-400' : 'text-[#747474]'}>
+                        {domain.exp}
                       </span>
                     </div>
-
-                    {/* Name */}
-                    <h4 className="text-xl font-light text-[#17151A] group-hover:text-[#7000FF] transition-colors leading-snug">
-                      {member.name}
+                    <h4 className={`text-base font-light tracking-tight ${isSelected ? 'text-white' : 'text-[#17151A]'}`}>
+                      {domain.fullName}
                     </h4>
-
-                    {/* Title */}
-                    <p className="text-xs text-[#6E6E6E] font-medium mt-1 mb-2">
-                      {member.title.split('&')[0].trim()}
-                    </p>
-
-                    {/* Credential summary */}
-                    <p className="text-xs font-mono text-[#17151A] font-light">
-                      {member.experienceYears}+ năm · {member.organizations.slice(0, 2).join(' / ')}
+                    <p className={`text-xs mt-1.5 font-light ${isSelected ? 'text-neutral-300' : 'text-[#6E6E6E]'}`}>
+                      Chuyên gia phụ trách: <strong className={isSelected ? 'text-white font-medium' : 'text-[#17151A]'}>{domain.leads}</strong>
                     </p>
                   </div>
+                );
+              })}
+            </div>
 
-                  {/* CTA link */}
-                  <div className="mt-5 pt-3 border-t border-black/5 flex items-center justify-between text-xs font-medium text-[#747474] group-hover:text-[#7000FF] transition-colors">
-                    <span>Xem chuyên môn &amp; hồ sơ</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
-                </div>
-              );
-            })}
+            {/* Right Column: Lead Faculty Dossier Display */}
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#747474] block mb-2 font-semibold">
+                HỒ SƠ CHUYÊN GIA DẪN DẮT MIỀN NĂNG LỰC
+              </span>
+
+              <div className="space-y-4">
+                {FACULTY_MEMBERS.filter((m) => activeBlock === 'all' || m.blockId === activeBlock).slice(0, 2).map((lead) => {
+                  return (
+                    <div
+                      key={lead.id}
+                      onClick={() => setSelectedFaculty(lead)}
+                      className="p-5 sm:p-6 rounded-2xl bg-neutral-50 hover:bg-neutral-100/80 transition-all border border-black/5 cursor-pointer group"
+                    >
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <div className="flex items-center gap-3">
+                          {lead.avatarUrl ? (
+                            <div className="relative w-14 h-14 rounded-2xl overflow-hidden border border-black/10 shrink-0">
+                              <Image src={lead.avatarUrl} alt={lead.name} fill className="object-cover" />
+                            </div>
+                          ) : (
+                            <div className="w-14 h-14 rounded-2xl bg-neutral-900 text-white flex items-center justify-center font-serif text-lg font-light shrink-0">
+                              {getInitials(lead.name)}
+                            </div>
+                          )}
+                          <div>
+                            <h4 className="text-xl font-light text-[#17151A] group-hover:text-[#7000FF] transition-colors">
+                              {lead.name}
+                            </h4>
+                            <p className="text-xs text-[#6E6E6E] font-medium mt-0.5 line-clamp-1">
+                              {lead.title}
+                            </p>
+                          </div>
+                        </div>
+
+                        <span className="text-xs font-mono text-[#EA580C] font-semibold shrink-0">
+                          {lead.experienceYears}+ Năm
+                        </span>
+                      </div>
+
+                      {/* Thesis Quote */}
+                      <p className="text-xs sm:text-sm text-[#515151] font-light italic leading-relaxed pl-3 border-l-2 border-[#7000FF] mb-3">
+                        &ldquo;{lead.quote}&rdquo;
+                      </p>
+
+                      <div className="flex items-center justify-between text-xs font-mono pt-2 border-t border-black/5">
+                        <span className="text-[#747474] text-[11px]">
+                          Từng giữ trọng trách tại: <strong className="text-[#17151A]">{lead.organizations.slice(0, 2).join(' · ')}</strong>
+                        </span>
+                        <span className="text-[#7000FF] font-semibold inline-flex items-center gap-1 group-hover:underline">
+                          <span>Xem hồ sơ</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================================================================== */}
+        {/* SECTION: FACULTY ROSTER (QUIET UTILITY — MINIMALIST HAIRLINE TABLE) */}
+        {/* ==================================================================== */}
+        <section id="faculty-network" className="mb-24 scroll-mt-24">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8 pb-4 border-b border-black/10">
+            <div>
+              <span className="text-[11px] uppercase tracking-widest text-[#747474] font-semibold block font-mono mb-1">
+                FACULTY DIRECTORY · TOÀN BỘ 12 CHUYÊN GIA
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight">
+                Danh Bạ Cố Vấn &amp; Giảng Viên Chuyển Giao
+              </h3>
+            </div>
+            <span className="text-xs font-mono text-[#747474]">
+              Nhấp vào chuyên gia để xem hồ sơ năng lực chi tiết
+            </span>
+          </div>
+
+          {/* Minimalist Hairline Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs font-sans border-collapse">
+              <thead>
+                <tr className="border-b border-black/15 text-[#747474] font-mono text-[11px] uppercase tracking-wider">
+                  <th className="py-3 pr-4 font-semibold">Chuyên Gia</th>
+                  <th className="py-3 px-4 font-semibold">Khối Chuyên Môn</th>
+                  <th className="py-3 px-4 font-semibold">Kinh Nghiệm</th>
+                  <th className="py-3 px-4 font-semibold">Tổ Chức Tiêu Biểu</th>
+                  <th className="py-3 pl-4 text-right font-semibold">Chi Tiết</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-black/5">
+                {FACULTY_MEMBERS.map((member) => (
+                  <tr
+                    key={member.id}
+                    onClick={() => setSelectedFaculty(member)}
+                    className="hover:bg-black/5 transition-colors cursor-pointer group"
+                  >
+                    <td className="py-3.5 pr-4">
+                      <div className="font-medium text-[#17151A] text-sm group-hover:text-[#7000FF] transition-colors">
+                        {member.name}
+                      </div>
+                      <div className="text-[11px] text-[#747474] line-clamp-1">{member.title}</div>
+                    </td>
+                    <td className="py-3.5 px-4 font-mono text-[#7000FF]">
+                      {member.blockName.split('&')[0].trim()}
+                    </td>
+                    <td className="py-3.5 px-4 font-mono text-[#EA580C] font-semibold">
+                      {member.experienceYears}+ Năm
+                    </td>
+                    <td className="py-3.5 px-4 text-[#515151] font-light max-w-[240px] truncate">
+                      {member.organizations.join(', ')}
+                    </td>
+                    <td className="py-3.5 pl-4 text-right font-mono text-[#747474] group-hover:text-[#17151A]">
+                      <span className="inline-flex items-center gap-1 font-medium">
+                        <span>Hồ sơ</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 

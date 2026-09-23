@@ -216,21 +216,21 @@ const OBSIDIAN_CROSS_LINKS: CrossLink[] = [
 function generatePhyllotaxisSeeds(): LatentSeed[] {
   const seeds: LatentSeed[] = [];
   const goldenAngle = 137.507764 * (Math.PI / 180);
-  const totalSeeds = 46;
+  const totalSeeds = 68;
 
   for (let n = 1; n <= totalSeeds; n++) {
     const theta = n * goldenAngle;
-    const r = 52 + 38 * Math.sqrt(n);
-    if (r > 310) continue;
+    const r = 48 + 36 * Math.sqrt(n);
+    if (r > 345) continue;
 
     const x = SUNEXT_INDEX.cx + r * Math.cos(theta);
     const y = SUNEXT_INDEX.cy + r * Math.sin(theta);
 
     const distToCenter = Math.hypot(x - SUNEXT_INDEX.cx, y - SUNEXT_INDEX.cy);
-    if (distToCenter < 58) continue;
+    if (distToCenter < 52) continue;
 
-    const radius = Math.max(1.2, 2.8 - (distToCenter / 310) * 1.5);
-    const opacity = Math.max(0.08, 0.26 - (distToCenter / 320) * 0.14);
+    const radius = Math.max(1.3, 3.2 - (distToCenter / 345) * 1.6);
+    const opacity = Math.max(0.09, 0.28 - (distToCenter / 355) * 0.15);
 
     seeds.push({
       id: `phy-seed-${n}`,
@@ -296,19 +296,19 @@ export function AiTransformationNetwork() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[540px] sm:max-w-[600px] lg:max-w-[640px] xl:max-w-[680px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
+      className="relative w-full max-w-[620px] sm:max-w-[700px] lg:max-w-[780px] xl:max-w-[840px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
       aria-label="Sunext Collective Intelligence Graph — Art-Directed Knowledge Topology"
     >
       {/* Subtle Atmospheric Sun Glow centered at Sunext Optical Core */}
       <div
-        className="absolute w-[520px] h-[520px] lg:w-[620px] lg:h-[620px] rounded-full pointer-events-none -z-10"
+        className="absolute w-[600px] h-[600px] lg:w-[720px] lg:h-[720px] rounded-full pointer-events-none -z-10"
         style={{
           top: '50%',
           left: '50%',
-          marginTop: '-260px',
-          marginLeft: '-260px',
-          background: 'radial-gradient(circle at 50% 50%, rgba(255,247,232,0.8) 0%, rgba(255,191,117,0.25) 26%, rgba(239,124,44,0.08) 50%, transparent 75%)',
-          filter: 'blur(50px)',
+          marginTop: '-300px',
+          marginLeft: '-300px',
+          background: 'radial-gradient(circle at 50% 50%, rgba(255,247,232,0.85) 0%, rgba(255,191,117,0.28) 28%, rgba(239,124,44,0.09) 52%, transparent 75%)',
+          filter: 'blur(60px)',
         }}
       />
 
@@ -582,11 +582,11 @@ export function AiTransformationNetwork() {
                 <circle
                   cx={domain.cx}
                   cy={domain.cy}
-                  r={isClusterActive ? 12 : 9}
+                  r={isClusterActive ? 14 : 11}
                   fill="#FFFFFF"
-                  stroke={isClusterActive ? '#7000FF' : '#CBD5E1'}
-                  strokeWidth={isClusterActive ? 2.0 : 1.2}
-                  filter="drop-shadow(0 2px 6px rgba(0,0,0,0.06))"
+                  stroke={isClusterActive ? '#7000FF' : '#94A3B8'}
+                  strokeWidth={isClusterActive ? 2.4 : 1.5}
+                  filter="drop-shadow(0 3px 8px rgba(0,0,0,0.08))"
                   className="transition-all duration-300 group-hover:stroke-[#7000FF]"
                 />
 
@@ -594,8 +594,8 @@ export function AiTransformationNetwork() {
                 <circle
                   cx={domain.cx}
                   cy={domain.cy}
-                  r={isClusterActive ? 4.8 : 3.4}
-                  fill={isClusterActive ? '#7000FF' : '#6B21A8'}
+                  r={isClusterActive ? 5.5 : 4.0}
+                  fill={isClusterActive ? '#7000FF' : '#581C87'}
                   className="transition-all duration-300"
                 />
 
@@ -604,11 +604,11 @@ export function AiTransformationNetwork() {
                   x={domain.labelX}
                   y={domain.labelY}
                   textAnchor={domain.textAnchor}
-                  fill={isClusterActive ? '#0A0A0A' : '#334155'}
-                  fontSize={isClusterActive ? 11 : 10.5}
+                  fill={isClusterActive ? '#0A0A0A' : '#1E293B'}
+                  fontSize={isClusterActive ? 12 : 11}
                   fontFamily="system-ui, -apple-system, sans-serif"
-                  fontWeight={isClusterActive ? 700 : 600}
-                  letterSpacing="0.04em"
+                  fontWeight={isClusterActive ? 750 : 650}
+                  letterSpacing="0.05em"
                   className="transition-all duration-300 select-none filter drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]"
                 >
                   {domain.shortName}
@@ -618,10 +618,10 @@ export function AiTransformationNetwork() {
                 {isClusterActive && (
                   <text
                     x={domain.labelX}
-                    y={domain.labelY + 14}
+                    y={domain.labelY + 15}
                     textAnchor={domain.textAnchor}
                     fill="#7000FF"
-                    fontSize="9"
+                    fontSize="9.5"
                     fontFamily="system-ui, sans-serif"
                     fontWeight="600"
                     letterSpacing="0.01em"

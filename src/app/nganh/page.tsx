@@ -189,75 +189,71 @@ export default function IndustryIndexPage() {
             })}
           </div>
 
-          {/* Right Column: Shared Large Canvas (One dominant object responding to hover) */}
-          <div className="lg:col-span-7 lg:sticky lg:top-28">
-            <div className="rounded-3xl bg-white border border-[#E7E7E5] p-6 sm:p-8 shadow-xs space-y-6 animate-in fade-in duration-200">
-              
-              {/* Photo Area */}
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100">
-                <Image
-                  src={activeIndustry.image}
-                  alt={activeIndustry.name}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover object-center filter saturate-[0.95] transition-all duration-500"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-white/90 backdrop-blur-xs text-[#17151A] border border-black/5 uppercase tracking-wider">
-                    {activeIndustry.number} · {activeIndustry.name}
-                  </span>
-                </div>
+          {/* Right Column: Shared Large Canvas (Unboxed, Dominant Art Object) */}
+          <div className="lg:col-span-7 lg:sticky lg:top-28 space-y-5">
+            {/* Unboxed Full-Bleed Photo Area with Giant Typography in Negative Space */}
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 border border-black/10">
+              <Image
+                src={activeIndustry.image}
+                alt={activeIndustry.name}
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover object-center filter saturate-[0.95] transition-all duration-700 ease-out"
+                priority
+              />
+
+              {/* Editorial Badge in Upper Left */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-black/75 backdrop-blur-xs text-white border border-white/20">
+                {activeIndustry.number} · {activeIndustry.english.toUpperCase()}
               </div>
 
-              {/* Core Pain Point & Metric */}
-              <div className="space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pt-2">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#747474] block mb-1">
-                      ĐIỂM NGHẼN KINH TẾ CỐT LÕI
-                    </span>
-                    <p className="text-base sm:text-lg font-light text-[#17151A] leading-snug max-w-md">
-                      {activeIndustry.painPoint}
-                    </p>
-                  </div>
+              {/* Giant Metric in Negative Space of Image */}
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 text-right px-4 py-3 bg-neutral-950/85 backdrop-blur-md border border-white/10 text-white">
+                <span className="font-mono text-3xl sm:text-4xl lg:text-5xl font-light text-[#EA580C] block leading-none">
+                  {activeIndustry.metric}
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-mono text-neutral-300 block mt-1">
+                  {activeIndustry.metricLabel}
+                </span>
+              </div>
+            </div>
 
-                  <div className="sm:text-right shrink-0">
-                    <span className="text-4xl sm:text-5xl font-light font-mono text-[#EA580C] block leading-none">
-                      {activeIndustry.metric}
-                    </span>
-                    <span className="text-xs text-[#747474] font-light block mt-1.5 max-w-[160px]">
-                      {activeIndustry.metricLabel}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Key Capabilities: Clean inline text */}
-                <div className="pt-3 border-t border-black/5 text-xs text-[#6E6E6E] font-light">
-                  <span className="font-mono text-[11px] text-[#747474]">
-                    Năng lực lõi: {activeIndustry.capabilities.join(' · ')}
-                  </span>
-                </div>
-
-                {/* CTA Action Link */}
-                <div className="pt-4 flex items-center justify-between">
-                  <Link
-                    href={`/nganh/${activeIndustry.slug}`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#17151A] text-white text-xs font-medium hover:bg-[#333] transition-all cursor-pointer"
-                  >
-                    <span>Khám phá đề án {activeIndustry.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-
-                  <Link
-                    href="/case-studies"
-                    className="text-xs text-[#747474] hover:text-[#17151A] inline-flex items-center gap-1 font-mono transition-colors"
-                  >
-                    <span>Xem case study liên quan</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
+            {/* Editorial Annotation Directly on Canvas (No Outer Box) */}
+            <div className="space-y-4 pt-1">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#7000FF] font-semibold block mb-1">
+                  ĐIỂM NGHẼN KINH TẾ CỐT LÕI
+                </span>
+                <p className="text-lg sm:text-xl font-light text-[#17151A] leading-snug">
+                  {activeIndustry.painPoint}
+                </p>
               </div>
 
+              {/* Key Capabilities: Clean inline text */}
+              <div className="pt-3 border-t border-black/10 text-xs text-[#6E6E6E] font-light">
+                <span className="font-mono text-[11px] text-[#515151]">
+                  Năng lực lõi: <strong className="text-[#17151A] font-semibold">{activeIndustry.capabilities.join(' · ')}</strong>
+                </span>
+              </div>
+
+              {/* Action Links */}
+              <div className="pt-3 flex flex-wrap items-center justify-between gap-4">
+                <Link
+                  href={`/nganh/${activeIndustry.slug}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#17151A] text-white text-xs font-medium hover:bg-[#333] transition-all cursor-pointer"
+                >
+                  <span>Khám phá đề án {activeIndustry.name}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+
+                <Link
+                  href="/case-studies"
+                  className="text-xs text-[#747474] hover:text-[#17151A] inline-flex items-center gap-1 font-mono transition-colors"
+                >
+                  <span>Xem case study liên quan</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           </div>
 

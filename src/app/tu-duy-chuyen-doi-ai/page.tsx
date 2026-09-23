@@ -24,6 +24,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
 import { SixPillarsDiagnosticRadar } from '@/components/visuals/SixPillarsDiagnosticRadar';
+import { SunextMethodVisualEngine } from '@/components/visuals/SunextMethodVisualEngine';
 
 export default function AiTransformationHubPage() {
   const [selectedCase, setSelectedCase] = useState<number>(0);
@@ -189,83 +190,9 @@ export default function AiTransformationHubPage() {
             </p>
           </div>
 
-          {/* 4 Sequential Flow Columns with Hairlines */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8 border-t border-black/10">
-            {/* 01 DIAGNOSE */}
-            <div className="space-y-4 pb-6 border-b md:border-b-0 md:border-r border-black/10 pr-6">
-              <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-[#7000FF] font-bold">01 DIAGNOSE</span>
-                <span className="text-[#747474]">What we diagnose</span>
-              </div>
-              <h3 className="text-xl font-light text-[#17151A]">
-                Doanh nghiệp đang mắc ở đâu?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6E6E6E] font-light leading-relaxed">
-                Áp dụng <strong>Khung 6 Trụ Cột Năng Lực</strong> (Chiến lược, Con người, Quy trình, Công nghệ, Dữ liệu, Quản trị) để định vị đúng bài toán P&amp;L điểm nghẽn.
-              </p>
-              <div className="pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#7000FF] bg-[#FAF5FF] px-2.5 py-1 rounded border border-[#EDE9FE] inline-block font-semibold">
-                  6 Pillars Checklist
-                </span>
-              </div>
-            </div>
-
-            {/* 02 DESIGN */}
-            <div className="space-y-4 pb-6 border-b md:border-b-0 md:border-r border-black/10 pr-6">
-              <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-[#7000FF] font-bold">02 DESIGN</span>
-                <span className="text-[#747474]">How we design</span>
-              </div>
-              <h3 className="text-xl font-light text-[#17151A]">
-                Can thiệp thế nào là đúng?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6E6E6E] font-light leading-relaxed">
-                Thiết kế giải pháp tuân thủ <strong>3 Nguyên Tắc Cốt Lõi</strong>: Quy trình trước công cụ · Dữ liệu phải kết nối · KPI trước AI. Chọn đúng độ sâu kỹ thuật (Level 1–4).
-              </p>
-              <div className="pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#7000FF] bg-[#FAF5FF] px-2.5 py-1 rounded border border-[#EDE9FE] inline-block font-semibold">
-                  3 Principles · Depth 1–4
-                </span>
-              </div>
-            </div>
-
-            {/* 03 DELIVER */}
-            <div className="space-y-4 pb-6 border-b md:border-b-0 md:border-r border-black/10 pr-6">
-              <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-[#EA580C] font-bold">03 DELIVER</span>
-                <span className="text-[#747474]">How we deliver</span>
-              </div>
-              <h3 className="text-xl font-light text-[#17151A]">
-                Triển khai &amp; kiểm soát thế nào?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6E6E6E] font-light leading-relaxed">
-                Xương sống vận hành <strong>4 Pha &amp; 4 Chốt Kiểm Soát (Gate 1 → Gate 4)</strong>. Có cơ chế Go/No-Go độc lập, ngăn chặn hoàn toàn rủi ro đầu tư thất thoát.
-              </p>
-              <div className="pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#EA580C] bg-[#FFF7ED] px-2.5 py-1 rounded border border-[#FED7AA] inline-block font-semibold">
-                  4 Phases · 4 Gates Go/No-Go
-                </span>
-              </div>
-            </div>
-
-            {/* 04 TRANSFER */}
-            <div className="space-y-4 pb-6 border-none">
-              <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-emerald-700 font-bold">04 TRANSFER</span>
-                <span className="text-[#747474]">Self-reliance</span>
-              </div>
-              <h3 className="text-xl font-light text-[#17151A]">
-                Đội ngũ tự làm chủ thế nào?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#6E6E6E] font-light leading-relaxed">
-                Chuyển giao năng lực theo <strong>5 Tầng Năng Lực Con Người</strong>. Đào tạo cầm tay chỉ việc để doanh nghiệp tự vận hành và mở rộng mà không phụ thuộc tư vấn.
-              </p>
-              <div className="pt-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 inline-block font-semibold">
-                  5 Talent Levels · Handover
-                </span>
-              </div>
-            </div>
+          {/* Sunext Method Visual Engine: Morphing Narrative across 4 Verbs */}
+          <div className="pt-4">
+            <SunextMethodVisualEngine />
           </div>
 
           {/* Guardrails Banner across the bottom */}
@@ -387,10 +314,10 @@ export default function AiTransformationHubPage() {
               </div>
             </article>
 
-            {/* CHAPTER 03: VẬN HÀNH — Mini SOP Human-in-the-loop Flow */}
-            <article className="min-h-[45vh] flex flex-col justify-center group">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-                <div className="lg:col-span-8">
+            {/* CHAPTER 03: VẬN HÀNH — Architectural Swimlane SOP Human-in-the-Loop Pipeline */}
+            <article className="min-h-[48vh] flex flex-col justify-center group">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+                <div className="lg:col-span-6">
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">03</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
@@ -400,8 +327,8 @@ export default function AiTransformationHubPage() {
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
                     Quy trình đã được thiết kế lại cho AI chưa?
                   </h3>
-                  <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Trụ cột Vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng tuyệt đối.
+                  <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-xl mb-6">
+                    Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Trụ cột Vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng và trách nhiệm giải trình tuyệt đối.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/mo-hinh-van-hanh"
@@ -412,20 +339,77 @@ export default function AiTransformationHubPage() {
                   </Link>
                 </div>
 
-                {/* Evidence: Human-in-the-loop SOP Flow + x5 Metric */}
-                <div className="lg:col-span-4 flex flex-col lg:items-end lg:text-right pt-2 space-y-3">
-                  <span className="text-5xl sm:text-6xl font-light font-mono text-[#EA580C] block leading-none">
-                    x5 lần
-                  </span>
-                  <span className="text-xs text-[#747474] font-light block max-w-[200px] leading-relaxed">
-                    Năng suất sản xuất nội dung &amp; SOP vận hành
-                  </span>
-                  {/* Mini Flow Indicator */}
-                  <div className="p-3 rounded-xl bg-white/80 border border-black/10 text-left font-mono text-[10px] space-y-1 text-[#515151]">
-                    <div><span className="text-[#7000FF]">Step 1:</span> Input nghiệp vụ thô</div>
-                    <div><span className="text-[#7000FF]">Step 2:</span> Custom AI Agent drafting</div>
-                    <div><span className="text-[#EA580C] font-bold">Gate:</span> Human expert approval</div>
-                    <div><span className="text-emerald-700">Output:</span> Chuẩn hóa ban hành</div>
+                {/* Evidence: Architectural Swimlane Pipeline (Fills Right Column with High Visual Tension) */}
+                <div className="lg:col-span-6 flex flex-col pt-2 space-y-4">
+                  <div className="flex items-baseline justify-between gap-4 border-b border-black/10 pb-4">
+                    <div>
+                      <span className="text-4xl sm:text-5xl font-light font-mono text-[#EA580C] block leading-none">
+                        x5 lần
+                      </span>
+                      <span className="text-xs text-[#747474] font-light block mt-1">
+                        Tốc độ chu kỳ SOP &amp; xử lý hồ sơ nghiệp vụ
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 font-semibold shrink-0">
+                      Zero-Hallucination Gate
+                    </span>
+                  </div>
+
+                  {/* High-Tension Architectural Swimlane Diagram */}
+                  <div className="p-5 sm:p-6 rounded-2xl bg-neutral-950 border border-neutral-800 text-left font-mono space-y-3.5 shadow-sm">
+                    <div className="text-[10px] uppercase tracking-wider text-[#A855F7] font-semibold flex items-center justify-between pb-2 border-b border-neutral-800">
+                      <span>HITL SOP EXECUTION PIPELINE</span>
+                      <span className="text-neutral-500">CAN THIỆP CẤP ĐỘ 2 &amp; 3</span>
+                    </div>
+
+                    {/* Step 1: Ingestion */}
+                    <div className="flex items-center gap-3 text-xs text-neutral-300">
+                      <div className="w-6 h-6 rounded-full bg-neutral-800 border border-neutral-700 flex items-center justify-center text-[10px] text-white shrink-0">01</div>
+                      <div className="flex-1">
+                        <span className="text-white font-semibold">Nghiệp Vụ Thô &amp; CRM/ERP Trigger</span>
+                        <div className="text-[10px] text-neutral-400 font-sans">Tiếp nhận hồ sơ, brief dự án hoặc luồng dữ liệu tự động</div>
+                      </div>
+                      <span className="text-[10px] text-[#A855F7] shrink-0 font-mono">Ingestion</span>
+                    </div>
+
+                    <div className="w-0.5 h-2.5 bg-neutral-800 ml-3" />
+
+                    {/* Step 2: Custom Agent RAG */}
+                    <div className="flex items-center gap-3 text-xs text-neutral-300">
+                      <div className="w-6 h-6 rounded-full bg-purple-950 border border-[#7000FF] flex items-center justify-center text-[10px] text-[#C084FC] shrink-0">02</div>
+                      <div className="flex-1">
+                        <span className="text-[#C084FC] font-semibold">Custom AI Agent &amp; RAG Vector Bus</span>
+                        <div className="text-[10px] text-neutral-400 font-sans">Soạn thảo văn bản, đối chiếu quy chuẩn, tính toán bước đầu</div>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 shrink-0 font-mono">&lt; 3 giây</span>
+                    </div>
+
+                    <div className="w-0.5 h-2.5 bg-neutral-800 ml-3" />
+
+                    {/* Step 3: Human-in-the-Loop Checkpoint */}
+                    <div className="flex items-center gap-3 text-xs p-2.5 rounded-xl bg-orange-950/40 border border-orange-700/60">
+                      <div className="w-6 h-6 rounded-full bg-[#EA580C] text-white flex items-center justify-center text-[10px] font-bold shrink-0">G</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[#FB923C] font-bold uppercase tracking-wider text-[10.5px]">Human-In-The-Loop Checkpoint</span>
+                          <span className="text-[9px] bg-red-900/60 text-red-200 px-1.5 py-0.2 rounded font-sans">Bắt buộc</span>
+                        </div>
+                        <div className="text-[10px] text-orange-200/80 font-sans">Chuyên gia chuyên môn rà soát ngoại lệ &amp; ký duyệt trách nhiệm</div>
+                      </div>
+                      <span className="text-[10px] text-[#FB923C] shrink-0 font-mono font-bold">100% Audit</span>
+                    </div>
+
+                    <div className="w-0.5 h-2.5 bg-neutral-800 ml-3" />
+
+                    {/* Step 4: Dispatch & Tamper-proof Log */}
+                    <div className="flex items-center gap-3 text-xs text-neutral-300">
+                      <div className="w-6 h-6 rounded-full bg-emerald-950 border border-emerald-500 flex items-center justify-center text-[10px] text-emerald-400 shrink-0">04</div>
+                      <div className="flex-1">
+                        <span className="text-emerald-300 font-semibold">Ban Hành &amp; Lưu Vết Audit Log Bất Biến</span>
+                        <div className="text-[10px] text-neutral-400 font-sans">Đồng bộ sang core banking / ERP / DMS có chứng thư số</div>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 shrink-0 font-mono">Verified</span>
+                    </div>
                   </div>
                 </div>
               </div>

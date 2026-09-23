@@ -1,150 +1,192 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 interface EvidenceItem {
   id: string;
   image: string;
   client: string;
-  category: 'trien-khai' | 'discovery' | 'van-hanh';
+  year: string;
   categoryLabel: string;
   headline: string;
   subtext: string;
-  metric?: string;
+  metric: string;
+  metricLabel: string;
   linkUrl: string;
 }
 
 const FIELD_EVIDENCE: EvidenceItem[] = [
   {
-    id: 'ev-vinhomes',
+    id: 'vinhomes',
     image: '/evidence/vinhomes-sales-deployment.png',
-    client: 'Vinhomes Green Paradise',
-    category: 'trien-khai',
-    categoryLabel: 'Triển Khai Thực Chiến',
+    client: 'VINHOMES',
+    year: '2026',
+    categoryLabel: 'AI Sales Enablement · Bất Động Sản',
     headline: '500+ Môi giới làm chủ công cụ AI tại hiện trường',
     subtext: 'Chuyển giao năng lực phản hồi lead tự động < 5 phút và đối soát giỏ hàng tức thì trực tiếp trên thiết bị di động.',
-    metric: '500+ Môi Giới · < 5 Phút',
+    metric: '< 5 PHÚT',
+    metricLabel: 'Tốc độ phản hồi lead & khớp căn tự động',
     linkUrl: '/case-studies/vinhomes-ai-sales-enablement',
   },
   {
-    id: 'ev-ptexim',
-    image: '/evidence/ptexim-operations-onsite.png',
-    client: 'PTExim Logistics',
-    category: 'van-hanh',
-    categoryLabel: 'Hiện Trường Vận Hành',
-    headline: 'Khảo sát dòng chứng từ & tối ưu SOP logistics',
-    subtext: 'Làm việc trực tiếp tại hiện trường xuất nhập khẩu để chuẩn hóa dữ liệu trước khi tích hợp hệ thống AI tự động.',
-    metric: '−67% Thời Gian Xử Lý',
-    linkUrl: '/khach-hang-doi-tac',
+    id: 'fptu',
+    image: '/evidence/fptu-techfest-onsite.png',
+    client: 'ĐẠI HỌC FPT',
+    year: '2026',
+    categoryLabel: 'Giáo Dục & Chuyển Giao Năng Lực',
+    headline: '10.000+ Lượt tương tác & Nâng bậc giảng viên chuẩn Bậc 6',
+    subtext: 'Điều phối hệ thống AI Agents và MC ảo trực tiếp tại Tech Fest cùng chương trình nâng bậc phương pháp luận.',
+    metric: '10.000+',
+    metricLabel: 'Lượt tương tác đa tác tử AI tại hiện trường',
+    linkUrl: '/case-studies/fptu-nang-bac-giang-vien-ai',
   },
   {
-    id: 'ev-vietcombank',
-    image: '/evidence/vietcombank-strategic-workshop.jpg',
-    client: 'Vietcombank & Định Chế Tài Chính',
-    category: 'discovery',
-    categoryLabel: 'Discovery & Kiến Trúc',
-    headline: 'Hội thảo chiến lược & kiến trúc Multi-Agent tài chính',
-    subtext: 'Định hình bài toán ứng dụng AI, xác lập ranh giới bảo mật ZDR và mô hình phân quyền dữ liệu nghiêm ngặt.',
-    metric: 'Bảo Mật Private VPC',
-    linkUrl: '/doi-ngu#finance',
+    id: 'dentsu',
+    image: '/evidence/dentsu-workshop-onsite.png',
+    client: 'DENTSU SPORTS',
+    year: '2025',
+    categoryLabel: 'Truyền Thông & Đấu Thầu Quốc Tế',
+    headline: 'Rút ngắn 65% thời gian phát triển proposal đấu thầu',
+    subtext: 'Chuẩn hóa quy trình AI tạo dựng storyline pitching và tự động hóa pitch deck cho các đề án tài trợ thể thao.',
+    metric: '−65%',
+    metricLabel: 'Thời gian hoàn thiện hồ sơ đấu thầu',
+    linkUrl: '/case-studies/dentsu-ai-pitch-deck-automation',
+  },
+  {
+    id: 'ptexim',
+    image: '/evidence/ptexim-operations-onsite.png',
+    client: 'PTEXIM LOGISTICS',
+    year: '2025',
+    categoryLabel: 'Khảo Sát Thực Địa Vận Hành & SOP',
+    headline: 'Khảo sát dòng chứng từ & chuẩn hóa dữ liệu xuất nhập khẩu',
+    subtext: 'Đội ngũ chuyên gia Sunext làm việc trực tiếp tại hiện trường phân loại hạt tiêu để rà soát điểm nghẽn trước khi số hóa.',
+    metric: '−67%',
+    metricLabel: 'Chu kỳ xử lý chứng từ hải quan & kho bãi',
+    linkUrl: '/khach-hang-doi-tac',
   },
 ];
 
 export function FieldEvidenceSection() {
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const activeItem = FIELD_EVIDENCE[activeIdx];
+
   return (
     <section className="relative w-full py-20 sm:py-28 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         
         {/* Section Header: Lean & Decisive */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-12 sm:mb-14">
           <span className="text-[11px] font-mono font-bold tracking-[0.16em] uppercase text-[#7000FF] block mb-2">
-            THỰC TẾ TRIỂN KHAI
+            DOCUMENTARY PROOF · THỰC TẾ TRIỂN KHAI
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12]">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12]">
             Được xây từ hiện trường.
           </h2>
+          <p className="text-sm sm:text-base text-[#6E6E6E] font-light mt-2 max-w-2xl">
+            Không dùng ảnh stock. Mọi hình ảnh và số liệu đều là minh chứng vật lý từ các phiên bàn giao, workshop và khảo sát thực địa cùng đối tác.
+          </p>
         </div>
 
-        {/* Asymmetrical Editorial Photography Spread — Breathable, No Heavy Card Shells */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        {/* Unboxed Editorial Photography Spread — No rounded white card shell */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           
-          {/* Main Hero Photo: Vinhomes 500+ Sales Deployment */}
-          <Link
-            href={FIELD_EVIDENCE[0].linkUrl}
-            className="lg:col-span-7 group block cursor-pointer"
-          >
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-neutral-100 shadow-xs group-hover:shadow-md transition-shadow duration-300">
+          {/* Dominant Editorial Photography Canvas (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
+            <div className="relative aspect-[16/10] w-full overflow-hidden bg-neutral-900 border border-black/10">
               <Image
-                src={FIELD_EVIDENCE[0].image}
-                alt={FIELD_EVIDENCE[0].headline}
+                src={activeItem.image}
+                alt={activeItem.headline}
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center filter saturate-[0.94] group-hover:scale-[1.02] group-hover:saturate-100 transition-all duration-500 ease-out"
+                className="object-cover object-center filter saturate-[0.95] transition-all duration-700 ease-out"
+                priority
               />
-            </div>
 
-            <div className="mt-5 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-mono text-[#747474]">
-                <span className="text-[#EA580C] font-semibold">{FIELD_EVIDENCE[0].client}</span>
-                <span>·</span>
-                <span>{FIELD_EVIDENCE[0].categoryLabel}</span>
+              {/* Editorial Typography Overlay In Negative Space */}
+              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 font-mono text-[11px] uppercase tracking-wider px-3 py-1 bg-black/75 backdrop-blur-xs text-white border border-white/20">
+                {activeItem.client} / {activeItem.year}
               </div>
-              <h3 className="text-xl sm:text-2xl font-light text-[#0A0A0A] tracking-tight group-hover:text-[#F97316] transition-colors leading-snug">
-                {FIELD_EVIDENCE[0].headline}
-              </h3>
-              <p className="text-sm text-[#6E6E6E] font-light leading-relaxed max-w-xl">
-                {FIELD_EVIDENCE[0].subtext}
-              </p>
-              <div className="pt-2 flex items-center gap-4 text-xs font-mono">
-                <span className="text-[#EA580C] font-semibold">{FIELD_EVIDENCE[0].metric}</span>
-                <span className="inline-flex items-center gap-1 text-[#0A0A0A] group-hover:text-[#F97316] transition-colors font-medium">
-                  <span>Xem case</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+
+              {/* Giant Metric Anchored to Image Edge */}
+              <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 text-right px-4 py-3 bg-neutral-950/85 backdrop-blur-md border border-white/10 text-white">
+                <span className="font-mono text-3xl sm:text-4xl lg:text-5xl font-light text-[#EA580C] block leading-none">
+                  {activeItem.metric}
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-mono text-neutral-300 block mt-1">
+                  {activeItem.metricLabel}
                 </span>
               </div>
             </div>
-          </Link>
 
-          {/* Secondary Column: PTExim & Vietcombank Editorial Stack */}
-          <div className="lg:col-span-5 space-y-8 lg:space-y-10">
-            {FIELD_EVIDENCE.slice(1).map((item, idx) => (
+            {/* Editorial Caption / Annotation */}
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 border-b border-black/10 pb-5">
+              <div className="space-y-1">
+                <span className="text-xs font-mono text-[#7000FF] font-semibold block">
+                  {activeItem.categoryLabel}
+                </span>
+                <h3 className="text-lg sm:text-xl font-light text-[#0A0A0A] tracking-tight">
+                  {activeItem.headline}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#6E6E6E] font-light max-w-xl leading-relaxed">
+                  {activeItem.subtext}
+                </p>
+              </div>
+
               <Link
-                key={item.id}
-                href={item.linkUrl}
-                className="group block cursor-pointer pb-6 border-b border-[#E7E7E5] last:border-b-0 last:pb-0"
+                href={activeItem.linkUrl}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A0A0A] hover:text-[#EA580C] transition-colors shrink-0 font-mono"
               >
-                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-neutral-100 shadow-xs group-hover:shadow-md transition-shadow duration-300 mb-4">
-                  <Image
-                    src={item.image}
-                    alt={item.headline}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 40vw"
-                    className="object-cover object-center filter saturate-[0.94] group-hover:scale-[1.02] group-hover:saturate-100 transition-all duration-500 ease-out"
-                  />
-                </div>
+                <span>Xem hồ sơ</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
 
-                <div className="space-y-1.5">
-                  <div className="flex items-center gap-2 text-[11px] font-mono text-[#747474]">
-                    <span className="text-[#17151A] font-medium">{item.client}</span>
-                    <span>·</span>
-                    <span>{item.categoryLabel}</span>
+          {/* Right Column: Interactive Dossier Roster (5 cols) */}
+          <div className="lg:col-span-5 space-y-3">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#747474] font-semibold block mb-1">
+              CHỌN MINH CHỨNG KHẢO SÁT ({FIELD_EVIDENCE.length})
+            </span>
+
+            {FIELD_EVIDENCE.map((item, idx) => {
+              const isSelected = activeIdx === idx;
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => setActiveIdx(idx)}
+                  className={`p-4 rounded-xl transition-all cursor-pointer border ${
+                    isSelected
+                      ? 'bg-neutral-950 text-white border-neutral-800 shadow-md'
+                      : 'bg-white hover:bg-neutral-50 border-black/10 text-[#17151A]'
+                  }`}
+                >
+                  <div className="flex items-center justify-between text-xs font-mono mb-1">
+                    <span className={isSelected ? 'text-[#EA580C] font-bold' : 'text-[#7000FF] font-semibold'}>
+                      {item.client}
+                    </span>
+                    <span className={isSelected ? 'text-neutral-400' : 'text-[#747474]'}>
+                      {item.year}
+                    </span>
                   </div>
-                  <h4 className="text-base sm:text-lg font-normal text-[#0A0A0A] tracking-tight group-hover:text-[#F97316] transition-colors leading-snug">
+
+                  <h4 className={`text-sm font-normal tracking-tight line-clamp-1 ${isSelected ? 'text-white' : 'text-[#0A0A0A]'}`}>
                     {item.headline}
                   </h4>
-                  <div className="pt-1 flex items-center justify-between text-xs font-mono">
-                    <span className="text-[#EA580C] font-semibold">{item.metric}</span>
-                    <span className="inline-flex items-center gap-1 text-[#0A0A0A] group-hover:text-[#F97316] transition-colors font-medium">
-                      <span>Khảo sát</span>
-                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+
+                  <div className="mt-2 flex items-center justify-between text-[11px] font-mono pt-1.5 border-t border-white/10">
+                    <span className={isSelected ? 'text-[#FB923C] font-semibold' : 'text-[#EA580C] font-semibold'}>
+                      {item.metric}
+                    </span>
+                    <span className={`text-[10px] ${isSelected ? 'text-neutral-400' : 'text-[#747474]'}`}>
+                      {item.categoryLabel.split('·')[0].trim()}
                     </span>
                   </div>
                 </div>
-              </Link>
-            ))}
+              );
+            })}
           </div>
 
         </div>
