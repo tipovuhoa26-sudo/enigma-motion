@@ -318,7 +318,7 @@ export default function ClientsNetworkPage() {
                                   alt={org.name}
                                   width={100}
                                   height={40}
-                                  className="max-h-9 max-w-[48px] w-auto h-auto object-contain"
+                                  className="max-h-9 max-w-[48px] w-auto h-auto object-contain filter grayscale opacity-70 contrast-75 group-hover:grayscale-0 group-hover:opacity-100 group-hover:contrast-100 transition-all duration-300"
                                 />
                               </div>
                               <span className="px-2.5 py-0.5 rounded-full bg-[#FFF7ED] border border-[#FED7AA] text-[10px] font-mono font-semibold text-[#EA580C]">
@@ -379,7 +379,7 @@ export default function ClientsNetworkPage() {
                   </span>
                 </div>
 
-                {/* Secondary Logo Grid: grayscale-to-color */}
+                {/* Secondary Logo Grid: Clean monochrome-to-color on hover */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-3">
                   {filteredLogos
                     .filter((org) => org.tier === 2)
@@ -387,18 +387,18 @@ export default function ClientsNetworkPage() {
                       <div
                         key={org.id}
                         onClick={() => setSelectedOrg(org)}
-                        className="p-3 rounded-xl bg-white border border-[#E8E8E8] hover:border-black/30 hover:shadow-xs transition-all flex flex-col items-center justify-center text-center min-h-[90px] group cursor-pointer filter grayscale hover:grayscale-0 opacity-75 hover:opacity-100"
+                        className="p-3.5 rounded-xl bg-white border border-[#E8E8E8] hover:border-[#17151A] hover:shadow-xs transition-all flex flex-col items-center justify-center text-center min-h-[96px] group cursor-pointer"
                       >
-                        <div className="w-full h-8 flex items-center justify-center mb-1.5">
+                        <div className="w-full h-9 flex items-center justify-center mb-2 px-1">
                           <Image
                             src={org.logoUrl}
                             alt={org.name}
                             width={90}
                             height={32}
-                            className="max-h-7 max-w-[70px] w-auto h-auto object-contain transition-transform group-hover:scale-105"
+                            className="max-h-7 max-w-[72px] w-auto h-auto object-contain filter grayscale opacity-60 contrast-75 group-hover:grayscale-0 group-hover:opacity-100 group-hover:contrast-100 transition-all duration-300"
                           />
                         </div>
-                        <span className="text-[11px] font-medium text-[#17151A] block truncate w-full">
+                        <span className="text-[11px] font-medium text-[#747474] group-hover:text-[#17151A] transition-colors block truncate w-full">
                           {org.shortName || org.name}
                         </span>
                       </div>

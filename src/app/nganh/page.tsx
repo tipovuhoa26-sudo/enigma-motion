@@ -205,9 +205,9 @@ export default function IndustryIndexPage() {
                   </Button>
                 </Link>
                 <Link href="/danh-gia-san-sang-ai">
-                  <Button variant="outline" size="md" className="rounded-xl text-xs text-white border-white/20 hover:bg-white/10">
+                  <button type="button" className="px-5 py-2.5 rounded-xl text-xs font-medium text-white border border-white/20 hover:bg-white/10 transition-all cursor-pointer">
                     Đo Lường Sẵn Sàng (12 Câu)
-                  </Button>
+                  </button>
                 </Link>
               </div>
             </div>

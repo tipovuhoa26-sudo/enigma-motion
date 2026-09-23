@@ -174,10 +174,10 @@ export default function AiTransformationHubPage() {
             </div>
           </section>
 
-          {/* Section: 6 Trụ Cột Năng Lực (Clean Overview Grid) */}
-          <section id="cac-tru-cot" className="mb-24 scroll-mt-24">
+          {/* Section: 6 Trụ Cột Năng Lực (Editorial Chapters with Generous Whitespace) */}
+          <section id="cac-tru-cot" className="mb-28 lg:mb-36 scroll-mt-24">
             {/* Section Header with Spacing Grammar: Eyebrow -> 8-12px -> Sublabel -> 44-64px -> H2 -> 20-28px -> Body */}
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-16">
               <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block">
                 PHƯƠNG PHÁP SUNEXT
               </span>
@@ -188,115 +188,105 @@ export default function AiTransformationHubPage() {
               <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight mt-12">
                 Biết chính xác AI đang mắc ở đâu
               </h2>
-              <p className="text-sm sm:text-base text-[#6E6E6E] font-light mt-6 leading-relaxed">
-                Mỗi trụ cột trả lời một câu hỏi cốt lõi về sự sẵn sàng của tổ chức. Chọn trụ cột để xem đầy đủ: <em>1 tình huống → 1 insight → 3 việc Sunext làm → 1 proof xác thực</em>.
+              <p className="text-base text-[#6E6E6E] font-light mt-6 leading-relaxed">
+                6 Trụ Cột là checklist năng lực tổ chức cùng tồn tại đồng thời, không phải quy trình tuần tự. Mỗi chương giải quyết một câu hỏi trọng yếu để tìm đúng điểm nghẽn trước khi đầu tư.
               </p>
             </div>
 
-            {/* 6-Pillar Lean Overview Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 6 Editorial Chapters Stream */}
+            <div className="space-y-4">
               {[
                 {
                   number: 1,
                   slug: 'chien-luoc-so',
-                  name: 'Chiến lược',
+                  englishName: 'STRATEGY',
                   question: 'AI đang tạo giá trị ở đâu?',
-                  focus: 'Xác định bài toán P&L trọng yếu, tránh thử nghiệm dàn trải không tạo ra tác động kinh tế.',
-                  rewired: 'Business-led Roadmap',
-                  icon: Target,
+                  focus: 'Doanh nghiệp thường thử nghiệm AI phân tán ở khắp nơi nhưng không nơi nào tạo ra kết quả kinh tế. Trụ cột Chiến lược giúp xác định đúng 1–2 miền nghiệp vụ có đòn bẩy P&L cao nhất để tập trung nguồn lực đầu tư có đo lường.',
+                  metric: '−40%',
+                  metricLabel: 'Chi phí tuyển dụng & phân bổ ngân sách',
                 },
                 {
                   number: 2,
                   slug: 'nguoi-tai-cong-nghe',
-                  name: 'Con người',
+                  englishName: 'PEOPLE',
                   question: 'Đội ngũ có thực sự làm chủ AI?',
-                  focus: 'Phân định 5 tầng năng lực rõ ràng, chuẩn đầu ra Pass Mark độc lập cho từng vị trí.',
-                  rewired: 'Talent & Culture Engine',
-                  icon: Users,
+                  focus: '90% nhân sự dừng lại ở mức thử prompt cơ bản rồi bỏ cuộc sau 60 ngày. Trụ cột Con người phân định chuẩn 5 tầng năng lực thực chiến, đo bằng Pass Mark độc lập và sản lượng công việc thực tế thay vì lý thuyết chung.',
+                  metric: '600+',
+                  metricLabel: 'Giảng viên & chuyên viên đạt chuẩn Bậc 6',
                 },
                 {
                   number: 3,
                   slug: 'mo-hinh-van-hanh',
-                  name: 'Vận hành',
+                  englishName: 'PROCESS',
                   question: 'Quy trình đã được thiết kế lại cho AI chưa?',
-                  focus: 'Chuẩn hóa quy trình, bỏ thao tác thừa trước khi đưa AI vào thay thế công việc thủ công.',
-                  rewired: 'Agile Operating Model',
-                  icon: Workflow,
+                  focus: 'Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Trụ cột Vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng tuyệt đối.',
+                  metric: 'x5 lần',
+                  metricLabel: 'Năng suất sản xuất nội dung & SOP nội bộ',
                 },
                 {
                   number: 4,
                   slug: 'ha-tang-cong-nghe',
-                  name: 'Công nghệ',
+                  englishName: 'TECHNOLOGY',
                   question: 'Hạ tầng có hỗ trợ Agent vận hành liên tục?',
-                  focus: 'Nền tảng Multi-Agent phân tán, bảo mật Private VPC với cam kết Zero Data Retention.',
-                  rewired: 'Distributed Tech Platform',
-                  icon: Cpu,
+                  focus: 'Mua công cụ rời rạc khiến dữ liệu bị cô lập. Trụ cột Công nghệ thiết kế nền tảng Multi-Agent phân tán kết nối trực tiếp với CRM/ERP, triển khai trên hạ tầng Private VPC bảo mật với cam kết Zero Data Retention.',
+                  metric: '24/7',
+                  metricLabel: 'Vận hành liên tục & Zero Data Leakage',
                 },
                 {
                   number: 5,
                   slug: 'du-lieu-doanh-nghiep',
-                  name: 'Dữ liệu',
+                  englishName: 'DATA',
                   question: 'Dữ liệu có sạch và kết nối trong vùng an toàn?',
-                  focus: 'Xây dựng Single Source of Truth, kết nối dữ liệu phân tán vào Vector Vault nội bộ.',
-                  rewired: 'Data Products & Governance',
-                  icon: Database,
+                  focus: 'Dữ liệu phân tán và thiếu kiểm soát là nguyên nhân hàng đầu khiến mô hình AI sinh ảo giác. Trụ cột Dữ liệu xây dựng Single Source of Truth, phân quyền an toàn và kết nối kho tri thức vào Private Vector Vault.',
+                  metric: '99.8%',
+                  metricLabel: 'Độ chính xác truy xuất dữ liệu nghiệp vụ',
                 },
                 {
                   number: 6,
                   slug: 'do-luong-mo-rong',
-                  name: 'Quản trị & Mở rộng',
+                  englishName: 'GOVERNANCE',
                   question: 'Đã có cơ chế kiểm soát rủi ro và đo lường ROI?',
-                  focus: 'Cơ chế Human-in-the-Loop, rào giậu kiểm soát an toàn và theo dõi P&L theo thời gian thực.',
-                  rewired: 'Scaling & Value Tracking',
-                  icon: TrendingUp,
+                  focus: 'Thiếu KPI nghiệm thu và cơ chế chuyển giao khiến doanh nghiệp phụ thuộc vĩnh viễn vào tư vấn ngoài. Trụ cột Quản trị thiết lập rào giậu kiểm soát rủi ro, theo dõi ROI theo thời gian thực và bàn giao 100% tự chủ.',
+                  metric: '100%',
+                  metricLabel: 'Tự chủ vận hành không phụ thuộc bên ngoài',
                 },
-              ].map((p) => {
-                const IconComponent = p.icon;
-                return (
-                  <Link
-                    key={p.slug}
-                    href={`/tu-duy-chuyen-doi-ai/${p.slug}`}
-                    className="group p-7 sm:p-8 rounded-3xl bg-white border border-[#E8E8E8] hover:border-[#17151A] shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      {/* Top: Number & Icon */}
-                      <div className="flex items-center justify-between pb-4 border-b border-black/5 mb-6">
-                        <div className="flex items-center gap-2">
-                          <span className="w-7 h-7 rounded-lg bg-[#FAF5FF] border border-[#EDE9FE] text-[#7000FF] font-mono text-xs font-bold flex items-center justify-center">
-                            0{p.number}
-                          </span>
-                          <span className="text-xs font-medium text-[#17151A]">
-                            {p.name}
-                          </span>
-                        </div>
-                        <span className="text-[10px] font-mono text-[#8E8E8E] uppercase tracking-wider">
-                          {p.rewired}
-                        </span>
-                      </div>
+              ].map((p) => (
+                <article
+                  key={p.slug}
+                  className="py-12 sm:py-16 border-b border-[#E7E7E5] last:border-0 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group"
+                >
+                  <div className="lg:col-span-8">
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase block mb-3">
+                      0{p.number} — {p.englishName}
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight leading-snug group-hover:text-[#7000FF] transition-colors mb-4">
+                      {p.question}
+                    </h3>
+                    <p className="text-base text-[#6E6E6E] font-light leading-relaxed max-w-2xl">
+                      {p.focus}
+                    </p>
+                  </div>
 
-                      {/* Primary Statement: The Core Diagnostic Question */}
-                      <h3 className="text-xl sm:text-2xl font-light text-[#17151A] group-hover:text-[#7000FF] transition-colors leading-snug mb-3">
-                        {p.question}
-                      </h3>
-
-                      {/* Supporting Thought */}
-                      <p className="text-xs sm:text-sm text-[#6E6E6E] font-light leading-relaxed mb-6">
-                        {p.focus}
-                      </p>
-                    </div>
-
-                    {/* Bottom Action: 1 Link to Detail */}
-                    <div className="pt-4 border-t border-black/5 flex items-center justify-between text-xs font-medium text-[#17151A]">
-                      <span className="text-[#747474] group-hover:text-[#17151A] transition-colors">
-                        Xem 4 bước chẩn đoán
+                  <div className="lg:col-span-4 flex flex-col justify-between items-start lg:items-end h-full pt-1">
+                    <div className="text-left lg:text-right mb-6">
+                      <span className="text-3xl sm:text-4xl font-light font-mono text-[#EA580C] block tracking-tight leading-none">
+                        {p.metric}
                       </span>
-                      <div className="w-6 h-6 rounded-full bg-[#FAF5FF] group-hover:bg-[#17151A] text-[#7000FF] group-hover:text-white flex items-center justify-center transition-all">
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </div>
+                      <span className="text-xs text-[#747474] font-light block mt-2">
+                        {p.metricLabel}
+                      </span>
                     </div>
-                  </Link>
-                );
-              })}
+
+                    <Link
+                      href={`/tu-duy-chuyen-doi-ai/${p.slug}`}
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] group-hover:text-[#7000FF] transition-colors pt-2 border-t border-black/5 w-full lg:w-auto lg:border-0"
+                    >
+                      <span>Xem trụ cột</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
             </div>
           </section>
 

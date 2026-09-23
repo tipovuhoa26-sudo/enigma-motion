@@ -58,17 +58,14 @@ export function FieldEvidenceSection() {
     <section className="relative w-full py-20 sm:py-28 px-6 md:px-12 bg-white border-b border-[#E7E7E5] overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         
-        {/* Section Header: Minimal & Decisive */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
+        {/* Section Header: Lean & Decisive */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#F97316]" />
-              <span className="text-xs font-mono font-bold tracking-[0.16em] uppercase text-[#747474]">
-                ĐƯỢC XÂY TỪ HIỆN TRƯỜNG
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12]">
-              Từ phòng họp chiến lược đến vận hành thực tế.
+            <span className="text-[11px] font-mono font-bold tracking-[0.16em] uppercase text-[#7000FF] block mb-2">
+              THỰC TẾ TRIỂN KHAI
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-light tracking-tight text-[#0A0A0A] leading-[1.12]">
+              Từ chiến lược đến hiện trường.
             </h2>
           </div>
 
