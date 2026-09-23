@@ -18,33 +18,33 @@ const TABS: StateTab[] = [
   {
     id: 'diagnose',
     num: '01',
-    name: 'DIAGNOSE',
+    name: 'CHẨN ĐOÁN · Diagnose',
     question: 'Doanh nghiệp đang mắc ở đâu?',
-    badge: '6 Trục Năng Lực',
+    badge: '6 Trụ Cột Năng Lực',
     icon: Activity,
   },
   {
     id: 'design',
     num: '02',
-    name: 'DESIGN',
+    name: 'THIẾT KẾ · Design',
     question: 'Can thiệp thế nào là đúng?',
-    badge: '3 Nguyên Tắc Cốt Lõi',
+    badge: '3 Nguyên Tắc Thiết Kế',
     icon: Cpu,
   },
   {
     id: 'deliver',
     num: '03',
-    name: 'DELIVER',
-    question: 'Triển khai và kiểm soát rủi ro thế nào?',
-    badge: '4 Phases · 4 Gates',
+    name: 'TRIỂN KHAI · Deliver',
+    question: 'Làm thế nào để đi vào vận hành an toàn?',
+    badge: '4 Pha · 4 Cổng Kiểm Soát',
     icon: ShieldCheck,
   },
   {
     id: 'transfer',
     num: '04',
-    name: 'TRANSFER',
+    name: 'CHUYỂN GIAO · Transfer',
     question: 'Đội ngũ tự làm chủ thế nào?',
-    badge: '5 Tầng Nhân Tài',
+    badge: '5 Tầng Năng Lực',
     icon: Award,
   },
 ];
@@ -101,7 +101,7 @@ export function SunextMethodVisualEngine() {
           <div className="text-xs font-mono text-[#747474]">
             Trạng thái:{' '}
             <span className="font-bold text-[#7000FF] uppercase">
-              {TABS.find((t) => t.id === activeState)?.num} — {activeState}
+              {TABS.find((t) => t.id === activeState)?.num} — {TABS.find((t) => t.id === activeState)?.name}
             </span>
           </div>
         </div>
@@ -209,12 +209,12 @@ export function SunextMethodVisualEngine() {
 
               {/* 6 Axes */}
               {[
-                { label: 'STRATEGY (P&L)', x: 480, y: 35, score: 'Level 2' },
-                { label: 'PEOPLE (Culture)', x: 630, y: 110, score: 'Level 1' },
-                { label: 'PROCESS (SOP)', x: 630, y: 270, score: 'Level 2' },
-                { label: 'TECHNOLOGY (VPC)', x: 480, y: 345, score: 'Level 3' },
-                { label: 'DATA (Integration)', x: 330, y: 270, score: 'Bottleneck' },
-                { label: 'GOVERNANCE (HITL)', x: 330, y: 110, score: 'Level 2' },
+                { label: 'STRATEGY (P&L)', x: 480, y: 35, score: 'Mức 2/4' },
+                { label: 'PEOPLE (Culture)', x: 630, y: 110, score: 'Mức 1/4' },
+                { label: 'PROCESS (SOP)', x: 630, y: 270, score: 'Mức 2/4' },
+                { label: 'TECHNOLOGY (VPC)', x: 480, y: 345, score: 'Mức 3/4' },
+                { label: 'DATA (Integration)', x: 330, y: 270, score: 'Điểm nghẽn (1/4)' },
+                { label: 'GOVERNANCE (HITL)', x: 330, y: 110, score: 'Mức 2/4' },
               ].map((axis, i) => (
                 <g key={`diag-axis-${i}`}>
                   <line
@@ -243,7 +243,7 @@ export function SunextMethodVisualEngine() {
                     x={axis.x}
                     y={axis.y > 190 ? axis.y + 30 : axis.y - 24}
                     textAnchor="middle"
-                    fill={axis.score === 'Bottleneck' ? '#EA580C' : '#38BDF8'}
+                    fill={axis.score.startsWith('Điểm nghẽn') ? '#EA580C' : '#38BDF8'}
                     fontSize="9.5"
                     fontFamily="monospace"
                     fontWeight="600"

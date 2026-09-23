@@ -124,24 +124,23 @@ export default function AiTransformationHubPage() {
               <strong>6 Trụ Cột = Organizational Capability Checklist</strong>, được kích hoạt linh hoạt để tìm ra nút thắt P&amp;L trọng yếu, <em>không phải quy trình 6 bước tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn rồi mới thiết kế giải pháp mở khoá.
             </p>
 
-            {/* BCG Effort Allocation Framework */}
-            <div className="pt-6 border-t border-black/5">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#7000FF] font-semibold block mb-4">
-                QUY TẮC PHÂN BỔ NỖ LỰC BCG 10–20–70
-              </span>
-              <div className="grid grid-cols-3 gap-6 font-mono">
-                <div>
-                  <span className="text-2xl sm:text-3xl font-light text-[#17151A] block">10%</span>
-                  <span className="text-xs text-[#747474] font-sans font-normal mt-1 block">Technology &amp; Tools</span>
-                </div>
-                <div>
-                  <span className="text-2xl sm:text-3xl font-light text-[#17151A] block">20%</span>
-                  <span className="text-xs text-[#747474] font-sans font-normal mt-1 block">Data Architecture</span>
-                </div>
-                <div>
-                  <span className="text-2xl sm:text-3xl font-light text-[#7000FF] block">70%</span>
-                  <span className="text-xs text-[#7000FF] font-sans font-medium mt-1 block">People &amp; Process</span>
-                </div>
+            {/* Supporting Benchmark: BCG 10-20-70 */}
+            <div className="pt-4 border-t border-black/5">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#747474]">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[#8A8A8A] font-medium">
+                  Tham chiếu BCG 10–20–70:
+                </span>
+                <span className="font-mono text-[#525252]">
+                  <strong className="text-[#17151A] font-semibold">10%</strong> Công nghệ
+                </span>
+                <span className="text-[#D4D4D8]">•</span>
+                <span className="font-mono text-[#525252]">
+                  <strong className="text-[#17151A] font-semibold">20%</strong> Dữ liệu
+                </span>
+                <span className="text-[#D4D4D8]">•</span>
+                <span className="font-mono text-[#7000FF]">
+                  <strong className="text-[#7000FF] font-semibold">70%</strong> Con người &amp; Quy trình
+                </span>
               </div>
             </div>
 
@@ -158,7 +157,7 @@ export default function AiTransformationHubPage() {
                 href="#master-narrative"
                 className="text-xs font-medium text-[#17151A] hover:text-[#7000FF] transition-colors inline-flex items-center gap-1.5"
               >
-                <span>Xem kiến trúc 4 động từ</span>
+                <span>Xem phương pháp xuyên suốt</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -170,7 +169,7 @@ export default function AiTransformationHubPage() {
           </div>
         </section>
 
-        {/* MASTER ARCHITECTURE: 4 ĐỘNG TỪ TUYẾN TÍNH CỦA SUNEXT METHOD */}
+        {/* MASTER ARCHITECTURE: PHƯƠNG PHÁP XUYÊN SUỐT CỦA SUNEXT */}
         <section id="master-narrative" className="mb-28 lg:mb-36 scroll-mt-24">
           <div className="mb-12 max-w-3xl">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
@@ -183,10 +182,10 @@ export default function AiTransformationHubPage() {
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
-              4 Động Từ Khóa Trọn Vẹn Hành Trình Chuyển Đổi AI
+              Một phương pháp xuyên suốt từ chẩn đoán đến chuyển giao.
             </h2>
             <p className="text-base text-[#6E6E6E] font-light mt-3 leading-relaxed">
-              Mọi khung năng lực nội bộ (6 Pillars, 3 Principles, 4 Gates, 5 Talent Levels) không cạnh tranh nhau, mà lần lượt trả lời 4 câu hỏi sống còn của một dự án chuyển đổi:
+              Một phương pháp xuyên suốt: chẩn đoán đúng điểm nghẽn, thiết kế đúng cách can thiệp, triển khai qua các cổng kiểm soát và chuyển giao để đội ngũ tự chủ.
             </p>
           </div>
 

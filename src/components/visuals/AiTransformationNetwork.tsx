@@ -32,12 +32,13 @@ interface CrossLink {
   y1: number;
   x2: number;
   y2: number;
+  bezierPath: string;
 }
 
 // ============================================================================
 // LAYER 0: SUNEXT CENTRAL INDEX NUCLEUS
 // Positioned at optical center (388, 392) in 720x720 viewBox
-// Core scaled +15% (r=44) with bold "SUNEXT" typography (no clutter subline)
+// Core scaled (r=44) with bold "SUNEXT" typography. Orange = convergence/result.
 // ============================================================================
 const SUNEXT_INDEX = {
   cx: 388,
@@ -45,10 +46,69 @@ const SUNEXT_INDEX = {
 };
 
 // ============================================================================
-// LAYER 1: 7 MACRO-DOMAINS (TIẾNG VIỆT CHUẨN MỰC, CỐ ĐỊNH NHÃN TRẠNG THÁI TĨNH)
+// PHYLLOTAXIS / GOLDEN SPIRAL INNER KNOWLEDGE SEEDS (DÀY Ở GẦN SUNEXT)
+// 14 seeds following the golden angle (137.508°), r in [74, 150]
+// High relationship density near Sunext core — "Sunext là nơi các chuyên môn giao nhau"
+// ============================================================================
+const GOLDEN_ANGLE_RAD = 137.507764 * (Math.PI / 180);
+
+interface InnerKnowledgeSeed {
+  id: string;
+  x: number;
+  y: number;
+  radius: number;
+}
+
+const INNER_KNOWLEDGE_SEEDS: InnerKnowledgeSeed[] = (() => {
+  const seeds: InnerKnowledgeSeed[] = [];
+  for (let i = 1; i <= 14; i++) {
+    const r = 68 + i * 5.8;
+    const a = i * GOLDEN_ANGLE_RAD;
+    seeds.push({
+      id: `seed-${i}`,
+      x: +(SUNEXT_INDEX.cx + r * Math.cos(a)).toFixed(1),
+      y: +(SUNEXT_INDEX.cy + r * Math.sin(a)).toFixed(1),
+      radius: r,
+    });
+  }
+  return seeds;
+})();
+
+// Spiral connection pairs between inner seeds to form twin parastichy arcs
+const INNER_SPIRAL_EDGES = [
+  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7],
+  [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13],
+  [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10], [8, 11],
+];
+
+// Helper to calculate smooth Bézier curve bowing along sunflower spiral
+function calculateSunflowerBezierPath(
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+  curvatureFactor = 0.16
+): string {
+  const mx = (x1 + x2) / 2;
+  const my = (y1 + y2) / 2;
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const len = Math.hypot(dx, dy) || 1;
+  const nx = -dy / len;
+  const ny = dx / len;
+  const vcx = mx - SUNEXT_INDEX.cx;
+  const vcy = my - SUNEXT_INDEX.cy;
+  const dot = nx * vcx + ny * vcy;
+  const sign = dot >= 0 ? 1 : -1;
+  const cpx = +(mx + nx * (len * curvatureFactor) * sign).toFixed(1);
+  const cpy = +(my + ny * (len * curvatureFactor) * sign).toFixed(1);
+  return `M ${x1} ${y1} Q ${cpx} ${cpy} ${x2} ${y2}`;
+}
+
+// ============================================================================
+// LAYER 1: 7 MACRO-DOMAINS (MID-EXPERTISE HUBS — PHYLLOTAXIS DISTRIBUTION)
 // Exactly 7 macro-domain hubs permanently labeled when idle.
 // Each domain has at most 3 leaves. Leaf labels ONLY reveal upon active/hover.
-// NO DUPLICATE SUBLINE TEXT.
 // ============================================================================
 const DOMAINS: DomainCluster[] = [
   {
@@ -56,136 +116,150 @@ const DOMAINS: DomainCluster[] = [
     name: 'Tài Chính & Định Giá',
     shortName: 'TÀI CHÍNH',
     cx: 345,
-    cy: 135,
+    cy: 155,
     labelX: 345,
-    labelY: 96,
+    labelY: 118,
     textAnchor: 'middle',
     linkUrl: '/doi-ngu#finance',
     capabilities: [
-      { id: 'b1', name: 'Tín dụng', x: 345, y: 70 },
-      { id: 'b2', name: 'Rủi ro', x: 275, y: 110 },
-      { id: 'b3', name: 'AML', x: 415, y: 110 },
+      { id: 'b1', name: 'Tín dụng', x: 345, y: 80 },
+      { id: 'b2', name: 'Rủi ro', x: 275, y: 125 },
+      { id: 'b3', name: 'AML', x: 415, y: 125 },
     ],
   },
   {
     id: 'real-estate',
     name: 'Bất Động Sản',
     shortName: 'BẤT ĐỘNG SẢN',
-    cx: 565,
-    cy: 215,
-    labelX: 565,
-    labelY: 176,
+    cx: 580,
+    cy: 235,
+    labelX: 580,
+    labelY: 198,
     textAnchor: 'middle',
     linkUrl: '/nganh/bat-dong-san',
     capabilities: [
-      { id: 're1', name: 'Định giá', x: 635, y: 175 },
-      { id: 're2', name: 'CRM BĐS', x: 645, y: 235 },
-      { id: 're3', name: 'Pháp lý', x: 595, y: 145 },
+      { id: 're1', name: 'Định giá', x: 648, y: 195 },
+      { id: 're2', name: 'CRM BĐS', x: 658, y: 255 },
+      { id: 're3', name: 'Pháp lý', x: 610, y: 160 },
     ],
   },
   {
     id: 'sales',
     name: 'Tăng Trưởng & Bán Hàng',
     shortName: 'TĂNG TRƯỞNG',
-    cx: 580,
-    cy: 450,
-    labelX: 580,
-    labelY: 502,
+    cx: 585,
+    cy: 460,
+    labelX: 585,
+    labelY: 512,
     textAnchor: 'middle',
     linkUrl: '/case-studies/vinhomes-ai-sales-enablement',
     capabilities: [
-      { id: 's1', name: 'Phễu bán', x: 645, y: 415 },
-      { id: 's2', name: 'Chốt cọc', x: 650, y: 475 },
-      { id: 's3', name: 'Đa kênh', x: 620, y: 530 },
+      { id: 's1', name: 'Phễu bán', x: 650, y: 425 },
+      { id: 's2', name: 'Chốt cọc', x: 655, y: 485 },
+      { id: 's3', name: 'Đa kênh', x: 625, y: 538 },
     ],
   },
   {
     id: 'governance',
     name: 'Chiến Lược & Quản Trị',
     shortName: 'QUẢN TRỊ',
-    cx: 415,
-    cy: 625,
-    labelX: 415,
-    labelY: 678,
+    cx: 410,
+    cy: 620,
+    labelX: 410,
+    labelY: 672,
     textAnchor: 'middle',
     linkUrl: '/phap-ly-bao-mat',
     capabilities: [
-      { id: 'g1', name: 'Chính sách', x: 480, y: 665 },
-      { id: 'g2', name: 'Kiểm định', x: 415, y: 690 },
-      { id: 'g3', name: 'Chủ quyền', x: 345, y: 665 },
+      { id: 'g1', name: 'Chính sách', x: 475, y: 658 },
+      { id: 'g2', name: 'Kiểm định', x: 410, y: 686 },
+      { id: 'g3', name: 'Chủ quyền', x: 340, y: 658 },
     ],
   },
   {
     id: 'tech',
     name: 'Công Nghệ & Dữ Liệu',
     shortName: 'CÔNG NGHỆ',
-    cx: 215,
-    cy: 565,
-    labelX: 215,
-    labelY: 618,
+    cx: 210,
+    cy: 550,
+    labelX: 210,
+    labelY: 602,
     textAnchor: 'middle',
     linkUrl: '/tu-duy-chuyen-doi-ai',
     capabilities: [
-      { id: 't1', name: 'Vector DB', x: 145, y: 595 },
-      { id: 't2', name: 'RAG Pipeline', x: 180, y: 645 },
-      { id: 't3', name: 'Private VPC', x: 250, y: 655 },
+      { id: 't1', name: 'Vector DB', x: 140, y: 580 },
+      { id: 't2', name: 'RAG Pipeline', x: 175, y: 630 },
+      { id: 't3', name: 'Private VPC', x: 245, y: 640 },
     ],
   },
   {
     id: 'manufacturing',
     name: 'Sản Xuất & Vận Hành',
     shortName: 'SẢN XUẤT',
-    cx: 145,
-    cy: 375,
-    labelX: 145,
-    labelY: 425,
+    cx: 155,
+    cy: 370,
+    labelX: 155,
+    labelY: 420,
     textAnchor: 'middle',
     linkUrl: '/case-studies/ai-auditor-manufacturing',
     capabilities: [
-      { id: 'm1', name: 'QA Vision', x: 75, y: 340 },
-      { id: 'm2', name: 'Lean SOP', x: 65, y: 400 },
-      { id: 'm3', name: 'Chuỗi cung ứng', x: 95, y: 455 },
+      { id: 'm1', name: 'QA Vision', x: 85, y: 335 },
+      { id: 'm2', name: 'Lean SOP', x: 75, y: 395 },
+      { id: 'm3', name: 'Chuỗi cung ứng', x: 105, y: 450 },
     ],
   },
   {
     id: 'hr',
     name: 'Con Người & Tổ Chức',
     shortName: 'CON NGƯỜI',
-    cx: 195,
-    cy: 195,
-    labelX: 195,
-    labelY: 154,
+    cx: 205,
+    cy: 205,
+    labelX: 205,
+    labelY: 165,
     textAnchor: 'middle',
     linkUrl: '/doi-ngu#hr',
     capabilities: [
-      { id: 'h1', name: 'Wiki tri thức', x: 130, y: 155 },
-      { id: 'h2', name: 'Đào tạo AI', x: 95, y: 205 },
-      { id: 'h3', name: 'Thực thi SOP', x: 125, y: 255 },
+      { id: 'h1', name: 'Wiki tri thức', x: 140, y: 165 },
+      { id: 'h2', name: 'Đào tạo AI', x: 105, y: 215 },
+      { id: 'h3', name: 'Thực thi SOP', x: 135, y: 265 },
     ],
   },
 ];
 
+// Map coordinates for quick cross-link calculations
+const DOMAIN_MAP = new Map(DOMAINS.map((d) => [d.id, d]));
+
 // ============================================================================
-// SEMANTIC CROSS-LINKS (PEER RELATIONSHIPS)
-// IDLE STATE: 100% INVISIBLE (0 opacity). No spiderweb clutter!
-// ACTIVE STATE: Only 1–2 horizontal links reveal when connected domain is active.
+// SEMANTIC CROSS-LINKS (BÉZIER CURVES ALONG SUNFLOWER SPIRAL)
+// Idle state: Always visible at 2.5–4% opacity (fine knowledge network wireframe)
+// Active state: Flares to 25–40% with traveling spark when connected domain is active.
 // ============================================================================
-const OBSIDIAN_CROSS_LINKS: CrossLink[] = [
-  // 1. Tài chính ↔ Quản trị (Rủi ro & Tuân thủ)
-  { id: 'cl-bank-gov', sourceDomain: 'banking', targetDomain: 'governance', label: 'Rủi ro & Kiểm định', x1: 345, y1: 135, x2: 415, y2: 625 },
-  // 2. Bất động sản ↔ Tăng trưởng (Lead & Chốt cọc)
-  { id: 'cl-re-sales', sourceDomain: 'real-estate', targetDomain: 'sales', label: 'Lead & Chốt cọc', x1: 565, y1: 215, x2: 580, y2: 450 },
-  // 3. Con người ↔ Công nghệ (Wiki & Co-worker)
-  { id: 'cl-hr-tech', sourceDomain: 'hr', targetDomain: 'tech', label: 'Wiki & Tri thức số', x1: 195, y1: 195, x2: 215, y2: 565 },
-  // 4. Sản xuất ↔ Công nghệ (Telemetry & QA Vision)
-  { id: 'cl-mfg-tech', sourceDomain: 'manufacturing', targetDomain: 'tech', label: 'Dữ liệu vận hành', x1: 145, y1: 375, x2: 215, y2: 565 },
-  // 5. Sản xuất ↔ Quản trị (SOP & Kiểm định an toàn)
-  { id: 'cl-mfg-gov', sourceDomain: 'manufacturing', targetDomain: 'governance', label: 'Chuẩn hóa SOP', x1: 145, y1: 375, x2: 415, y2: 625 },
-  // 6. Tài chính ↔ Công nghệ (Financial Data Bus)
-  { id: 'cl-bank-tech', sourceDomain: 'banking', targetDomain: 'tech', label: 'Tích hợp tài chính', x1: 345, y1: 135, x2: 215, y2: 565 },
-  // 7. Tăng trưởng ↔ Công nghệ (Conversion Telemetry)
-  { id: 'cl-sales-tech', sourceDomain: 'sales', targetDomain: 'tech', label: 'Dữ liệu chuyển đổi', x1: 580, y1: 450, x2: 215, y2: 565 },
+const RAW_CROSS_LINKS = [
+  { id: 'cl-bank-gov', sourceDomain: 'banking', targetDomain: 'governance', label: 'Rủi ro & Kiểm định' },
+  { id: 'cl-re-sales', sourceDomain: 'real-estate', targetDomain: 'sales', label: 'Lead & Chốt cọc' },
+  { id: 'cl-hr-tech', sourceDomain: 'hr', targetDomain: 'tech', label: 'Wiki & Tri thức số' },
+  { id: 'cl-mfg-tech', sourceDomain: 'manufacturing', targetDomain: 'tech', label: 'Dữ liệu vận hành' },
+  { id: 'cl-mfg-gov', sourceDomain: 'manufacturing', targetDomain: 'governance', label: 'Chuẩn hóa SOP' },
+  { id: 'cl-bank-tech', sourceDomain: 'banking', targetDomain: 'tech', label: 'Tích hợp tài chính' },
+  { id: 'cl-sales-tech', sourceDomain: 'sales', targetDomain: 'tech', label: 'Dữ liệu chuyển đổi' },
+  { id: 'cl-bank-re', sourceDomain: 'banking', targetDomain: 'real-estate', label: 'Định giá & Tín dụng BĐS' },
+  { id: 'cl-hr-gov', sourceDomain: 'hr', targetDomain: 'governance', label: 'Phân quyền & Tự chủ' },
+  { id: 'cl-sales-gov', sourceDomain: 'sales', targetDomain: 'governance', label: 'Chính sách & Tuân thủ' },
+  { id: 'cl-mfg-sales', sourceDomain: 'manufacturing', targetDomain: 'sales', label: 'Dự báo & Chuyền sản xuất' },
+  { id: 'cl-hr-mfg', sourceDomain: 'hr', targetDomain: 'manufacturing', label: 'SOP & An toàn chuyền' },
 ];
+
+const OBSIDIAN_CROSS_LINKS: CrossLink[] = RAW_CROSS_LINKS.map((item) => {
+  const s = DOMAIN_MAP.get(item.sourceDomain)!;
+  const t = DOMAIN_MAP.get(item.targetDomain)!;
+  return {
+    ...item,
+    x1: s.cx,
+    y1: s.cy,
+    x2: t.cx,
+    y2: t.cy,
+    bezierPath: calculateSunflowerBezierPath(s.cx, s.cy, t.cx, t.cy, 0.15),
+  };
+});
 
 export function AiTransformationNetwork() {
   const [hoveredDomain, setHoveredDomain] = useState<string | null>(null);
@@ -224,20 +298,13 @@ export function AiTransformationNetwork() {
     setHoveredDomain(null);
   };
 
-  // Connected cross-links for the active domain (revealed ONLY when cluster is active)
-  const activeCrossLinks = useMemo(() => {
-    return OBSIDIAN_CROSS_LINKS.filter(
-      (cl) => cl.sourceDomain === activeDomainId || cl.targetDomain === activeDomainId
-    ).slice(0, 2); // Max 1–2 cross-links per active state to maintain pristine clarity
-  }, [activeDomainId]);
-
   return (
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative w-full max-w-[620px] sm:max-w-[700px] lg:max-w-[780px] xl:max-w-[840px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
-      aria-label="Sunext Knowledge Topology — Obsidian Art-Directed Graph"
+      aria-label="Sunext Sunflower Knowledge Topology — Obsidian Art-Directed Network"
     >
       {/* Warm Ambient Sun Glow Behind Central Core */}
       <div
@@ -278,10 +345,10 @@ export function AiTransformationNetwork() {
             <stop offset="100%" stopColor="#EA580C" stopOpacity="0.9" />
           </linearGradient>
 
-          {/* Cross-Link Gradient */}
+          {/* Cross-Link Active Gradient */}
           <linearGradient id="cross-link-gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="#7000FF" stopOpacity="0.7" />
+            <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#7000FF" stopOpacity="0.8" />
           </linearGradient>
 
           {/* Glow filter for convergence particle */}
@@ -295,8 +362,94 @@ export function AiTransformationNetwork() {
         </defs>
 
         {/* ==================================================================== */}
-        {/* 1. STRUCTURAL EDGES: MACRO-DOMAIN ───── SUNEXT                       */}
-        {/* Exactly 7 faint hairlines in idle. Becomes vibrant beam on active.  */}
+        {/* TIER 3: BÉZIER CROSS-LINKS ACROSS DOMAINS & LEAVES                   */}
+        {/* Curved along sunflower spiral. Idle: 2.5–3.5% opacity (never 0).    */}
+        {/* Active: 30–35% opacity on connected links with traveling spark.      */}
+        {/* ==================================================================== */}
+        {OBSIDIAN_CROSS_LINKS.map((cl) => {
+          const isLinkConnected = cl.sourceDomain === activeDomainId || cl.targetDomain === activeDomainId;
+
+          return (
+            <g key={cl.id}>
+              <path
+                d={cl.bezierPath}
+                stroke={isLinkConnected ? 'url(#cross-link-gradient)' : '#8B5CF6'}
+                strokeWidth={isLinkConnected ? 1.4 : 0.75}
+                strokeDasharray={isLinkConnected ? '3 3' : '2 4'}
+                opacity={isLinkConnected ? 0.35 : 0.03}
+                fill="none"
+                className="transition-all duration-500"
+              />
+
+              {/* Traveling Spark on Active Cross-Link */}
+              {isLinkConnected && (
+                <circle r="2.2" fill="#A855F7">
+                  <animateMotion
+                    path={cl.bezierPath}
+                    dur="2.8s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              )}
+            </g>
+          );
+        })}
+
+        {/* ==================================================================== */}
+        {/* INNER KNOWLEDGE MATRIX (GOLDEN SPIRAL SEEDS CLOSE TO SUNEXT CORE)    */}
+        {/* Dense relationship mesh near Sunext, thins outward.                  */}
+        {/* ==================================================================== */}
+        {/* A. Twin parastichy spiral edges between inner seeds */}
+        {INNER_SPIRAL_EDGES.map(([fromIdx, toIdx], edgeIdx) => {
+          const p1 = INNER_KNOWLEDGE_SEEDS[fromIdx];
+          const p2 = INNER_KNOWLEDGE_SEEDS[toIdx];
+          if (!p1 || !p2) return null;
+
+          return (
+            <line
+              key={`inner-edge-${edgeIdx}`}
+              x1={p1.x}
+              y1={p1.y}
+              x2={p2.x}
+              y2={p2.y}
+              stroke="#A855F7"
+              strokeWidth="0.5"
+              strokeDasharray="2 3"
+              opacity="0.04"
+            />
+          );
+        })}
+
+        {/* B. Inner seeds radial links to Sunext Core */}
+        {INNER_KNOWLEDGE_SEEDS.map((seed) => (
+          <line
+            key={`seed-radial-${seed.id}`}
+            x1={seed.x}
+            y1={seed.y}
+            x2={SUNEXT_INDEX.cx}
+            y2={SUNEXT_INDEX.cy}
+            stroke="#7000FF"
+            strokeWidth="0.5"
+            strokeDasharray="1.5 3"
+            opacity="0.06"
+          />
+        ))}
+
+        {/* C. Inner Knowledge Dots (r=1.8, quiet, unlabeled) */}
+        {INNER_KNOWLEDGE_SEEDS.map((seed) => (
+          <circle
+            key={`seed-dot-${seed.id}`}
+            cx={seed.x}
+            cy={seed.y}
+            r="1.8"
+            fill="#8B5CF6"
+            opacity="0.28"
+          />
+        ))}
+
+        {/* ==================================================================== */}
+        {/* TIER 1: STRUCTURAL EDGES: MACRO-DOMAIN ───── SUNEXT                 */}
+        {/* Straight radial lines. Idle: 8–10% opacity. Active: 80–85% beam.     */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isDomainActive = domain.id === activeDomainId;
@@ -309,8 +462,8 @@ export function AiTransformationNetwork() {
                 x2={SUNEXT_INDEX.cx}
                 y2={SUNEXT_INDEX.cy}
                 stroke={isDomainActive ? 'url(#convergence-beam)' : '#7000FF'}
-                strokeWidth={isDomainActive ? 2.0 : 0.8}
-                strokeDasharray={isDomainActive ? 'none' : '2 4'}
+                strokeWidth={isDomainActive ? 2.2 : 0.8}
+                strokeDasharray={isDomainActive ? 'none' : '2 3'}
                 opacity={isDomainActive ? 0.85 : 0.09}
                 className="transition-all duration-500"
               />
@@ -339,46 +492,9 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* 2. SEMANTIC CROSS-LINKS (PEER SATELLITES)                            */}
-        {/* Idle: ZERO lines rendered (0 opacity).                               */}
-        {/* Active: Max 1–2 subtle links appear with a traveling spark.          */}
-        {/* ==================================================================== */}
-        {activeCrossLinks.map((cl) => (
-          <g key={cl.id} className="animate-in fade-in duration-500">
-            <line
-              x1={cl.x1}
-              y1={cl.y1}
-              x2={cl.x2}
-              y2={cl.y2}
-              stroke="url(#cross-link-gradient)"
-              strokeWidth={1.2}
-              strokeDasharray="3 4"
-              opacity={0.65}
-            />
-            {/* Subtle Traveling Spark on Active Cross-Link */}
-            <circle r="2.2" fill="#A855F7">
-              <animate
-                attributeName="cx"
-                from={cl.x1}
-                to={cl.x2}
-                dur="2.4s"
-                repeatCount="indefinite"
-              />
-              <animate
-                attributeName="cy"
-                from={cl.y1}
-                to={cl.y2}
-                dur="2.4s"
-                repeatCount="indefinite"
-              />
-            </circle>
-          </g>
-        ))}
-
-        {/* ==================================================================== */}
-        {/* 3. LEAF NODES (MAX 3 PER DOMAIN)                                     */}
-        {/* Idle: Tiny quiet dots (r=1.8), NO TEXT LABELS.                      */}
-        {/* Active: Exactly 3 leaf labels reveal outward via vector math.        */}
+        {/* TIER 2: LEAF NODES (OUTER EXPERTISE — MAX 3 PER DOMAIN)              */}
+        {/* Idle: Feeder lines at 4–6% opacity. Nodes at r=1.8 (NO LABELS).     */}
+        {/* Active: Feeder lines at 55%. Exactly 3 leaf labels reveal outward.  */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
@@ -393,10 +509,10 @@ export function AiTransformationNetwork() {
                   y1={domain.cy}
                   x2={cap.x}
                   y2={cap.y}
-                  stroke={isClusterActive ? '#7000FF' : '#94A3B8'}
-                  strokeWidth={isClusterActive ? 1.0 : 0.5}
-                  strokeDasharray={isClusterActive ? 'none' : '2 3'}
-                  opacity={isClusterActive ? 0.75 : 0.04}
+                  stroke={isClusterActive ? '#7000FF' : '#8B5CF6'}
+                  strokeWidth={isClusterActive ? 1.2 : 0.6}
+                  strokeDasharray={isClusterActive ? 'none' : '1.5 2.5'}
+                  opacity={isClusterActive ? 0.55 : 0.05}
                   className="transition-all duration-400"
                 />
               ))}
@@ -422,8 +538,8 @@ export function AiTransformationNetwork() {
                     cx="0"
                     cy="0"
                     r={isClusterActive ? 3.0 : 1.8}
-                    fill={isClusterActive ? '#7000FF' : '#A855F7'}
-                    opacity={isClusterActive ? 0.95 : 0.25}
+                    fill={isClusterActive ? '#7000FF' : '#8B5CF6'}
+                    opacity={isClusterActive ? 0.95 : 0.3}
                     className="transition-all duration-300"
                   />
 
@@ -460,8 +576,8 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* 4. 7 MACRO-DOMAIN HUBS (PERMANENTLY LABELED IN IDLE STATE)          */}
-        {/* Crisp Monospace typography, NO DUPLICATE SUBLINE TEXT.               */}
+        {/* 7 MACRO-DOMAIN HUBS (PERMANENTLY LABELED IN IDLE STATE)              */}
+        {/* Strictly 7 domain labels + 1 SUNEXT core label visible in idle.     */}
         {/* ==================================================================== */}
         {DOMAINS.map((domain) => {
           const isClusterActive = activeDomainId === domain.id;
@@ -472,7 +588,7 @@ export function AiTransformationNetwork() {
                 onMouseEnter={() => setHoveredDomain(domain.id)}
                 onMouseLeave={() => setHoveredDomain(null)}
                 className="cursor-pointer group"
-                opacity={isClusterActive ? 1 : 0.85}
+                opacity={isClusterActive ? 1 : 0.88}
                 style={{ transition: 'opacity 0.3s ease' }}
               >
                 {/* Active Focus Halo */}
@@ -539,8 +655,8 @@ export function AiTransformationNetwork() {
         })}
 
         {/* ==================================================================== */}
-        {/* 5. LEVEL 0: SUNEXT CENTRAL NUCLEUS AT OPTICAL CENTER                 */}
-        {/* Scaled +15% (r=44), bold "SUNEXT" only (no collective intelligence) */}
+        {/* LEVEL 0: SUNEXT CENTRAL NUCLEUS AT OPTICAL CENTER                    */}
+        {/* Core scaled (r=44), bold "SUNEXT" only. Orange convergence center.  */}
         {/* ==================================================================== */}
         <Link href="/tu-duy-chuyen-doi-ai">
           <g transform={`translate(${SUNEXT_INDEX.cx}, ${SUNEXT_INDEX.cy})`} className="cursor-pointer group">
@@ -564,7 +680,7 @@ export function AiTransformationNetwork() {
               <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite" />
             </circle>
 
-            {/* Core Sun Disc: r=44 (+15% larger) */}
+            {/* Core Sun Disc: r=44 */}
             <circle
               cx="0"
               cy="0"
