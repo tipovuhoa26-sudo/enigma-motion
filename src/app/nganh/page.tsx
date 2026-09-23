@@ -122,7 +122,7 @@ export default function IndustryIndexPage() {
           </nav>
 
           <span className="text-xs font-mono text-[#7000FF] uppercase tracking-wider">
-            6 Ngành Trọng Điểm · 1 Shared Canvas
+            6 Ngành Trọng Điểm
           </span>
         </div>
 

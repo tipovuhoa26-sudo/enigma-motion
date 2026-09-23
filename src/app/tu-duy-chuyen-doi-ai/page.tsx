@@ -174,7 +174,7 @@ export default function AiTransformationHubPage() {
         <section id="master-narrative" className="mb-28 lg:mb-36 scroll-mt-24">
           <div className="mb-12 max-w-3xl">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
-              THE MASTER NARRATIVE · XƯƠNG SỐNG PHƯƠNG PHÁP LUẬN
+              MỘT PHƯƠNG PHÁP XUYÊN SUỐT
             </span>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C]" />
@@ -351,14 +351,14 @@ export default function AiTransformationHubPage() {
                       </span>
                     </div>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 font-semibold shrink-0">
-                      Zero-Hallucination Gate
+                      Kiểm tra nguồn &amp; phê duyệt
                     </span>
                   </div>
 
                   {/* High-Tension Architectural Swimlane Diagram */}
                   <div className="p-5 sm:p-6 rounded-2xl bg-neutral-950 border border-neutral-800 text-left font-mono space-y-3.5 shadow-sm">
                     <div className="text-[10px] uppercase tracking-wider text-[#A855F7] font-semibold flex items-center justify-between pb-2 border-b border-neutral-800">
-                      <span>HITL SOP EXECUTION PIPELINE</span>
+                      <span>LUỒNG VẬN HÀNH CÓ KIỂM SOÁT</span>
                       <span className="text-neutral-500">CAN THIỆP CẤP ĐỘ 2 &amp; 3</span>
                     </div>
 

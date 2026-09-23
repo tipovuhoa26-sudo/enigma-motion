@@ -210,7 +210,7 @@ export const FACULTY_MEMBERS: FacultyMember[] = [
       'Nguyên Giám Đốc Tài Chính (CFO), Phó Giám Đốc Điều Hành và Thành viên Ban Kiểm Soát Công ty Cổ phần Yến Việt (quỹ VinaCapital đầu tư)',
       'Từng đảm nhiệm các vị trí quản trị tài chính tại Tổng Công ty Tài chính Cổ phần Dầu khí Việt Nam (PVFC)',
     ],
-    organizations: ['Công ty CP Yến Việt (VinaCapital)', 'Tổng Công ty Tài chính Cổ phần Dầu khí Việt Nam (PVFC)'],
+    organizations: ['Công ty CP Yến Việt (VinaCapital đầu tư)', 'Tổng Công ty Tài chính Cổ phần Dầu khí Việt Nam (PVFC)'],
     certifications: ['CFO Certification', 'Certified Internal Auditor (CIA) Foundation'],
     quote: 'Kiểm soát nội bộ trong kỷ nguyên số không phải là tạo thêm giấy tờ thủ tục. Đó là cơ chế kiểm soát tự động phát hiện rủi ro từ sớm trước khi thất thoát xảy ra.',
   },

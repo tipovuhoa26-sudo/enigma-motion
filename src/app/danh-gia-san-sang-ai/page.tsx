@@ -101,8 +101,8 @@ export default function AiReadinessDiagnosticPage() {
   };
 
   let suggestedEntryPoint = {
-    phase: 'DISCOVERY (Pha 1 · Gate 1)',
-    tag: 'Technical Scoping & Data Audit',
+    phase: 'Khảo sát & Chuẩn hóa nền tảng',
+    tag: 'Bước tiếp theo: Data Audit & Scoping nhanh',
     rationale:
       'Điểm nghẽn tập trung ở Kiến trúc Dữ liệu và Mô hình vận hành. Doanh nghiệp cần hoàn thành khảo sát thực tế và rà soát an toàn dữ liệu trước khi đầu tư phần mềm.',
     recommendedRoadmap: 'Lộ trình 1: AI Pilot & Quick Wins (4–6 tuần)',
@@ -118,8 +118,8 @@ export default function AiReadinessDiagnosticPage() {
       color: '#059669',
     };
     suggestedEntryPoint = {
-      phase: 'ENTERPRISE DEPLOYMENT (Pha 2-3 · Gate 2-3)',
-      tag: 'Core System Integration & Mesh',
+      phase: 'Tích hợp hệ thống diện rộng',
+      tag: 'Bước tiếp theo: Kiến trúc dữ liệu & Scoping chuyên sâu',
       rationale:
         'Tổ chức có độ trưởng thành cao. Điểm vào phù hợp là triển khai Private AI On-Premise và tích hợp trực tiếp vào hệ thống lõi ERP/CRM.',
       recommendedRoadmap: 'Lộ trình 3: Enterprise AI Transformation (4–6 tháng)',
@@ -130,12 +130,12 @@ export default function AiReadinessDiagnosticPage() {
       stageNumber: 2,
       name: 'Chuẩn Hóa & Mở Rộng (Standardized & Scaling)',
       range: '24 – 37 Điểm',
-      description: 'Doanh nghiệp đã có nhận thức và quy trình cơ bản nhưng việc ứng dụng AI còn phân mảnh giữa các phòng ban. Điểm vào tối ưu là chuẩn hóa toàn diện 1 phòng ban mũi nhọn (Sales/Marketing) với Custom Agents kết nối RAG.',
+      description: 'Doanh nghiệp đã có nhận thức và quy trình cơ bản nhưng việc ứng dụng AI còn phân mảnh giữa các phòng ban. Cần chuẩn hóa toàn diện 1 phòng ban mũi nhọn (Sales/Marketing) với Custom Agents kết nối RAG.',
       color: '#7000FF',
     };
     suggestedEntryPoint = {
-      phase: 'DEPARTMENT PILOT (Pha 2 · Gate 2)',
-      tag: 'Single Department Operating System',
+      phase: 'Chuẩn hóa vận hành phòng ban',
+      tag: 'Bước tiếp theo: Discovery & Technical Scoping',
       rationale:
         'Quy trình cơ bản đã có, cần chuẩn hóa vận hành 1 phòng ban mũi nhọn (Sales hoặc Marketing) và tích hợp Custom Agents đo bằng KPI cụ thể.',
       recommendedRoadmap: 'Lộ trình 2: Department AI Operating System (8–12 tuần)',
@@ -168,7 +168,7 @@ export default function AiReadinessDiagnosticPage() {
 
           <div className="flex items-center gap-2 text-xs font-mono text-[#7000FF] font-semibold">
             <span className={`w-2 h-2 rounded-full ${isCompleted ? 'bg-[#EA580C]' : 'bg-[#7000FF]'}`} />
-            <span>{isCompleted ? 'DIAGNOSIS COMPLETED' : 'DIAGNOSTIC PRODUCT UI'}</span>
+            <span>{isCompleted ? 'KẾT QUẢ ĐÁNH GIÁ' : 'BÀI ĐÁNH GIÁ TRỰC TUYẾN'}</span>
           </div>
         </div>
 
@@ -182,7 +182,7 @@ export default function AiReadinessDiagnosticPage() {
               Chẩn Đoán Điểm Nghẽn AI Trong Doanh Nghiệp
             </h1>
             <p className="text-base sm:text-lg text-[#626262] mt-4 leading-relaxed font-light">
-              Khung kiểm tra định lượng 12 câu hỏi map trực tiếp về <strong>6 Trụ Cột Năng Lực Sunext</strong>. Phát hiện chính xác nút thắt tổ chức và xác định lộ trình đầu tư tối ưu.
+              Khung kiểm tra định lượng 12 câu hỏi dựa trên <strong>6 Trụ Cột Năng Lực Sunext</strong>. Gợi ý điểm nghẽn cần ưu tiên xác minh và điểm vào phù hợp cho bước Discovery.
             </p>
           </div>
 
@@ -344,7 +344,7 @@ export default function AiReadinessDiagnosticPage() {
                   <div className="flex items-center gap-2 mb-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C]" />
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#EA580C]">
-                      BÁO CÁO CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC · EXECUTIVE BRIEFING
+                      BÁO CÁO CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC · KẾT QUẢ ĐÁNH GIÁ SƠ BỘ
                     </span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
@@ -411,7 +411,7 @@ export default function AiReadinessDiagnosticPage() {
                     {suggestedEntryPoint.phase.split(' ')[0]}
                   </span>
                   <span className="text-[11px] text-neutral-400 block mt-1 font-mono">
-                    Gate {maturityStage.stageNumber} Entry
+                    Khảo sát Discovery
                   </span>
                 </div>
               </div>
@@ -507,7 +507,7 @@ export default function AiReadinessDiagnosticPage() {
                     <div className="flex items-center gap-2 mb-3">
                       <Zap className="w-4 h-4 text-[#7000FF]" />
                       <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#7000FF]">
-                        ĐIỂM VÀO ĐẦU TƯ TỐI ƯU
+                        ĐIỂM VÀO THAM CHIẾU
                       </h3>
                     </div>
 

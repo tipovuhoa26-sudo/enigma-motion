@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { href: '/nganh', label: 'Giải pháp' },
   { href: '/case-studies', label: 'Dự án' },
   { href: '/danh-gia-san-sang-ai', label: 'Đo Độ Sẵn Sàng' },
-  { href: '/doi-ngu', label: 'Về Sunext' },
+  { href: '/doi-ngu', label: 'Đội ngũ' },
 ];
 
 interface HeaderProps {

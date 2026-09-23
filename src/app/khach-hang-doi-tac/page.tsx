@@ -141,10 +141,10 @@ export default function ClientsNetworkPage() {
                 08
               </span>
               <span className="text-xs font-semibold text-[#17151A] block mt-1.5 uppercase tracking-wider">
-                Case Studies
+                Dự Án Điển Hình
               </span>
               <span className="text-xs text-[#747474] block mt-0.5 font-light">
-                Bằng chứng có số liệu đo lường ROI
+                Có chỉ số đo lường cụ thể
               </span>
             </div>
 
@@ -153,10 +153,10 @@ export default function ClientsNetworkPage() {
                 40+
               </span>
               <span className="text-xs font-semibold text-[#17151A] block mt-1.5 uppercase tracking-wider">
-                Engagements
+                Đề Án &amp; Chương Trình
               </span>
               <span className="text-xs text-[#747474] block mt-0.5 font-light">
-                Đề án &amp; chương trình thực tế
+                Triển khai &amp; đào tạo thực tế
               </span>
             </div>
 
@@ -165,10 +165,10 @@ export default function ClientsNetworkPage() {
                 45
               </span>
               <span className="text-xs font-semibold text-[#17151A] block mt-1.5 uppercase tracking-wider">
-                Organizations
+                Tổ Chức Đồng Hành
               </span>
               <span className="text-xs text-[#747474] block mt-0.5 font-light">
-                10 Direct &amp; 35 Ecosystem
+                10 Trực tiếp &amp; 35 Mạng lưới
               </span>
             </div>
           </div>
@@ -178,13 +178,13 @@ export default function ClientsNetworkPage() {
         <section className="mb-24">
           <div className="mb-10">
             <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#EA580C] block mb-2">
-              FIELD EVIDENCE · STICKY PROOF DOSSIER
+              BẰNG CHỨNG TỪ HIỆN TRƯỜNG
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
-              Hiện Trường Vận Hành &amp; Triển Khai Thực Tế
+              Triển Khai Tại Hiện Trường
             </h2>
             <p className="text-sm sm:text-base text-[#6E6E6E] mt-2 max-w-2xl font-light">
-              Minh chứng vật lý từ các đề án hợp tác sâu tại các tổ chức hàng đầu (Vinhomes, FPTU, Dentsu, Smartland, PTExim), phân biệt rõ với mạng lưới đào tạo ngắn hạn.
+              Minh chứng thực tế từ các đề án hợp tác sâu tại các tổ chức hàng đầu (Vinhomes, Đại học FPT, Dentsu Sports, Smartland, PTExim), phân biệt rõ với mạng lưới đào tạo ngắn hạn.
             </p>
           </div>
 
@@ -283,14 +283,14 @@ export default function ClientsNetworkPage() {
           <div className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-black/10">
             <div>
               <span className="text-xs uppercase tracking-widest text-[#EA580C] font-semibold font-mono block mb-1">
-                DANH MỤC ĐỐI TÁC TIER 1
+                TRIỂN KHAI TRỰC TIẾP
               </span>
               <h2 className="text-2xl sm:text-3xl font-light text-[#17151A]">
                 Tổ Chức &amp; Đề Án Hợp Tác Trực Tiếp (Có Case Study)
               </h2>
             </div>
             <span className="text-xs font-mono text-[#747474] hidden sm:inline">
-              Xác thực bằng số liệu ROI
+              Xác thực bằng chỉ số đo lường
             </span>
           </div>
 
@@ -361,7 +361,7 @@ export default function ClientsNetworkPage() {
           <div className="flex items-center justify-between gap-4 mb-8 pb-4 border-b border-black/10">
             <div>
               <span className="text-xs uppercase tracking-widest text-[#7000FF] font-semibold font-mono block mb-1">
-                TIER 2 · QUIET LOGO FIELD
+                MẠNG LƯỚI HỢP TÁC
               </span>
               <h2 className="text-xl sm:text-2xl font-light text-[#17151A]">
                 Mạng Lưới Đối Tác &amp; Hệ Sinh Thái Doanh Nghiệp ({tier2Orgs.length} tổ chức)

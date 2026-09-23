@@ -155,7 +155,7 @@ export default function TeamLeadershipPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl">
-                Các node tri thức trên Sunflower Graph không phải là khái niệm trừu tượng. Đằng sau mỗi miền năng lực là các chuyên gia thực chiến với 10–24 năm kinh nghiệm tại HOSE, Carlsberg, Golden Gate, VinaCapital... trực tiếp thiết kế SOP và chịu trách nhiệm P&amp;L cùng doanh nghiệp.
+                Đội ngũ chuyên gia thực chiến với 10–24 năm kinh nghiệm trực tiếp thiết kế SOP, dẫn dắt các miền năng lực và chịu trách nhiệm hiệu quả kinh tế cùng doanh nghiệp.
               </p>
 
               <div className="flex flex-wrap items-center gap-6 pt-2 text-xs font-mono text-[#17151A]">
@@ -177,7 +177,7 @@ export default function TeamLeadershipPage() {
                 <div className="flex items-center gap-2 pb-1 border-b border-black/5">
                   <span className="w-2 h-2 rounded-full bg-[#7000FF]" />
                   <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#7000FF]">
-                    HOMEPAGE GRAPH ─── HUMAN FACULTY
+                    CHUYÊN GIA THEO MIỀN NĂNG LỰC
                   </span>
                 </div>
 
@@ -185,11 +185,11 @@ export default function TeamLeadershipPage() {
                 <div>
                   <div className="text-[#17151A] font-semibold flex items-center gap-1.5">
                     <span className="text-[#7000FF]">●</span>
-                    <span className="uppercase tracking-wider">Banking &amp; Finance</span>
+                    <span className="uppercase tracking-wider">Tài Chính &amp; Rủi Ro</span>
                   </div>
                   <div className="pl-4 text-[#6E6E6E] space-y-1 mt-1 font-sans">
                     <div><span className="text-[#7000FF] font-mono">├──</span> <strong className="text-[#17151A]">Nguyễn Tùng Chi</strong> <span className="text-[11px] text-[#747474]">(24+ năm · Nguyên HOSE &amp; CFO)</span></div>
-                    <div><span className="text-[#7000FF] font-mono">└──</span> <strong className="text-[#17151A]">Lê Thị Cẩm Vân</strong> <span className="text-[11px] text-[#747474]">(21 năm · Nguyên CFO Yến Việt / VinaCapital)</span></div>
+                    <div><span className="text-[#7000FF] font-mono">└──</span> <strong className="text-[#17151A]">Lê Thị Cẩm Vân</strong> <span className="text-[11px] text-[#747474]">(21 năm · Nguyên CFO Yến Việt · Từng công tác tại PVFC)</span></div>
                   </div>
                 </div>
 
@@ -197,11 +197,11 @@ export default function TeamLeadershipPage() {
                 <div>
                   <div className="text-[#17151A] font-semibold flex items-center gap-1.5">
                     <span className="text-[#7000FF]">●</span>
-                    <span className="uppercase tracking-wider">Marketing &amp; Growth</span>
+                    <span className="uppercase tracking-wider">Marketing &amp; Tăng Trưởng</span>
                   </div>
                   <div className="pl-4 text-[#6E6E6E] space-y-1 mt-1 font-sans">
                     <div><span className="text-[#7000FF] font-mono">├──</span> <strong className="text-[#17151A]">Lợi Hồng Thanh</strong> <span className="text-[11px] text-[#747474]">(16+ năm · Carlsberg, Mondelēz, BAT)</span></div>
-                    <div><span className="text-[#7000FF] font-mono">└──</span> <strong className="text-[#17151A]">Nguyễn Thị Hồng Vi</strong> <span className="text-[11px] text-[#747474]">(18+ năm · Nguyên CMO Chuỗi Chạm, Golden Gate)</span></div>
+                    <div><span className="text-[#7000FF] font-mono">└──</span> <strong className="text-[#17151A]">Nguyễn Thị Hồng Vi</strong> <span className="text-[11px] text-[#747474]">(18+ năm · Cựu Head of Marketing Golden Gate Group)</span></div>
                   </div>
                 </div>
 
@@ -369,13 +369,13 @@ export default function TeamLeadershipPage() {
         <section id="domain-network" className="mb-24 scroll-mt-24">
           <div className="mb-10">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
-              DEEP DOMAIN NETWORK · TRI THỨC HỘI TỤ VỀ CON NGƯỜI
+              MẠNG LƯỚI CHUYÊN MÔN SÂU · TRI THỨC HỘI TỤ VỀ CON NGƯỜI
             </span>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
               Người Thật Đứng Sau Từng Miền Năng Lực AI
             </h3>
             <p className="text-base text-[#6E6E6E] leading-relaxed max-w-3xl font-light mt-3">
-              Mỗi cụm chuyên môn trên Sunflower Graph không phải là khái niệm trừu tượng. Đằng sau mỗi domain là các chuyên gia thực chiến với 10–24 năm kinh nghiệm trực tiếp thiết kế SOP và chịu trách nhiệm P&amp;L cùng doanh nghiệp.
+              Mỗi miền năng lực của Sunext được dẫn dắt bởi các chuyên gia thực chiến 10–24 năm kinh nghiệm, trực tiếp thiết kế SOP và bảo đảm chất lượng giải pháp.
             </p>
           </div>
 
@@ -494,7 +494,7 @@ export default function TeamLeadershipPage() {
 
                       <div className="flex items-center justify-between text-xs font-mono pt-2 border-t border-black/5">
                         <span className="text-[#747474] text-[11px]">
-                          Từng giữ trọng trách tại: <strong className="text-[#17151A]">{lead.organizations.slice(0, 2).join(' · ')}</strong>
+                          {lead.id === 'nguyen-phuoc-vinh-hung' ? 'Từng đồng hành triển khai:' : 'Từng công tác tại:'} <strong className="text-[#17151A]">{lead.organizations.slice(0, 2).join(' · ')}</strong>
                         </span>
                         <span className="text-[#7000FF] font-semibold inline-flex items-center gap-1 group-hover:underline">
                           <span>Xem hồ sơ</span>
@@ -516,10 +516,10 @@ export default function TeamLeadershipPage() {
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8 pb-4 border-b border-black/10">
             <div>
               <span className="text-[11px] uppercase tracking-widest text-[#747474] font-semibold block font-mono mb-1">
-                FACULTY DIRECTORY · TOÀN BỘ 12 CHUYÊN GIA
+                ĐỘI NGŨ CHUYÊN GIA · TOÀN BỘ 12 CỐ VẤN &amp; GIẢNG VIÊN
               </span>
               <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight">
-                Danh Bạ Cố Vấn &amp; Giảng Viên Chuyển Giao
+                Đội Ngũ Cố Vấn &amp; Chuyên Gia
               </h3>
             </div>
             <span className="text-xs font-mono text-[#747474]">
@@ -862,6 +862,16 @@ export default function TeamLeadershipPage() {
             </Link>
           </div>
         </section>
+
+        {/* Subtle Experience Footprint Strip */}
+        <div className="pt-8 pb-4 text-center font-mono border-t border-black/5 mb-12">
+          <span className="text-[10px] text-[#747474] uppercase tracking-widest block mb-2 font-semibold">
+            Kinh nghiệm chuyên môn &amp; dự án trải rộng qua
+          </span>
+          <p className="text-xs sm:text-sm text-[#17151A] font-medium tracking-wide">
+            HOSE · Carlsberg · Golden Gate · Vinhomes · Vietcap · Đại học FPT · Dentsu Sports · Smartland · PVFC
+          </p>
+        </div>
       </main>
 
       <Footer />

@@ -93,14 +93,8 @@ export function SunextMethodVisualEngine() {
       <div className="relative z-10 mb-8">
         <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-black/10">
           <div>
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
-              <span className="text-[11px] font-mono font-bold tracking-wider text-[#EA580C] uppercase">
-                SUNEXT VISUAL ENGINE · MORPHING NARRATIVE
-              </span>
-            </div>
             <h3 className="text-xl sm:text-2xl font-light text-[#17151A] tracking-tight">
-              Phương Pháp Luận Biến Hình Xuyên Suốt Vòng Đời Dự Án
+              Phương Pháp Luận Xuyên Suốt Vòng Đời Dự Án
             </h3>
           </div>
 
