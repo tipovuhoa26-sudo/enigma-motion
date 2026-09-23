@@ -56,10 +56,10 @@ const DOMAIN_FACULTY_MAP = [
     nameVi: 'Bất Động Sản & Quản Lý Dự Án',
     blockTarget: 'executive',
     experts: [
-      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Lead AI Trainer cho 500+ nhân sự Vinhomes & CenGroup' },
+      { name: 'Nguyễn Phước Vĩnh Hưng', role: 'Lead AI Trainer cho 500+ nhân sự mạng lưới kinh doanh BĐS (Vinhomes)' },
       { name: 'Trịnh Minh Hùng', role: 'ThS., CEO · Cố vấn Tái cấu trúc Vận hành Doanh nghiệp' },
     ],
-    relatedCase: { title: 'Vinhomes', metric: '< 1.5s Tra cứu bảng hàng & chính sách 24/7', link: '/case-studies/vinhomes-ai-sales-enablement' },
+    relatedCase: { title: 'Vinhomes', metric: '< 5 phút Phản hồi thông tin & giỏ hàng', link: '/case-studies/vinhomes-ai-sales-enablement' },
   },
   {
     id: 'manufacturing',

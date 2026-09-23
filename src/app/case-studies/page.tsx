@@ -8,51 +8,59 @@ import { Footer } from '@/sections/Footer';
 import { CASES_DATA } from '@/content/data';
 
 // Map delivery models to cases
-const CASE_DELIVERY_TAGS: Record<string, { tag: string; clientShort: string; primaryMetric: string; primaryLabel: string }> = {
+const CASE_DELIVERY_TAGS: Record<string, { tag: string; statusBadge?: string; clientShort: string; primaryMetric: string; primaryLabel: string }> = {
   'vietcap-ai-multi-agent-nghien-cuu-thi-truong': {
-    tag: 'Custom Agent · Lab',
+    tag: 'Custom Agent · Level 3',
+    statusBadge: 'LAB PROTOTYPE',
     clientShort: 'VIETCAP',
     primaryMetric: '−75%',
     primaryLabel: 'Thời gian bóc tách BCTC thô',
   },
   'vinhomes-ai-sales-enablement': {
-    tag: 'Sales Co-Pilot · Enterprise',
+    tag: 'Sales Enablement · Level 1',
+    statusBadge: 'PRODUCTION',
     clientShort: 'VINHOMES',
-    primaryMetric: '< 1.5s',
-    primaryLabel: 'Tra cứu bảng hàng & chính sách 24/7',
+    primaryMetric: '< 5 Phút',
+    primaryLabel: 'Thời gian phản hồi thông tin & giỏ hàng',
   },
   'dentsu-ai-pitch-deck-automation': {
-    tag: 'Pitch Engine · Pilot',
+    tag: 'Workflow Automation · Level 2',
+    statusBadge: 'PRODUCTION',
     clientShort: 'DENTSU',
     primaryMetric: '−65%',
-    primaryLabel: 'Thời gian hoàn thiện thầu RFP',
+    primaryLabel: 'Thời gian phát triển proposal đấu thầu',
   },
   'ai-auditor-manufacturing': {
-    tag: 'Computer Vision · Enterprise',
+    tag: 'System Integration · Level 4',
+    statusBadge: 'PRODUCTION',
     clientShort: 'CƠ KHÍ CHÍNH XÁC',
     primaryMetric: '99.8%',
     primaryLabel: 'Độ chính xác kiểm định bề mặt 24/7',
   },
   'toi-uu-chi-phi-tuyen-dung-hr-ai': {
-    tag: 'HR Automation · Dept OS',
+    tag: 'Workflow Automation · Level 2',
+    statusBadge: 'PRODUCTION',
     clientShort: 'CHUỖI BÁN LẺ',
     primaryMetric: '3N ➔ 2H',
     primaryLabel: 'Rút ngắn thời gian sàng lọc CV',
   },
   'phuong-truong-an-video-ai-hien-truong': {
-    tag: 'Field Studio AI · Training',
+    tag: 'Sales Enablement · Level 1',
+    statusBadge: 'PRODUCTION',
     clientShort: 'PHƯƠNG TRƯỜNG AN',
     primaryMetric: '+200%',
     primaryLabel: 'Sản lượng video tiến độ thực tế',
   },
   'fpt-university-ai-event-agents': {
-    tag: 'Campus Agents · Event',
+    tag: 'Academic Enablement · Level 1',
+    statusBadge: 'PRODUCTION',
     clientShort: 'ĐẠI HỌC FPT',
     primaryMetric: '10.000+',
     primaryLabel: 'Lượt tương tác sinh viên & doanh nghiệp',
   },
   'content-factory-b2b-marketing': {
-    tag: 'Content Engine · Pilot',
+    tag: 'Workflow Automation · Level 2',
+    statusBadge: 'PRODUCTION',
     clientShort: 'DỊCH VỤ B2B',
     primaryMetric: 'x5 Lần',
     primaryLabel: 'Tốc độ xuất bản SOP nội bộ',
@@ -175,13 +183,21 @@ export default function CaseStudiesIndexPage() {
 
                   {/* Top: Client & Delivery Tag */}
                   <div>
-                    <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center justify-between gap-1.5 mb-3 flex-wrap">
                       <span className="text-xs font-mono font-bold tracking-wider text-[#17151A] uppercase">
                         {meta.clientShort}
                       </span>
-                      <span className="px-2 py-0.5 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-mono text-[#7000FF] font-medium">
-                        {meta.tag}
-                      </span>
+                      <div className="flex items-center gap-1">
+                        {meta.statusBadge === 'LAB PROTOTYPE' ? (
+                          <span className="px-2 py-0.5 rounded-full bg-amber-50 border border-amber-300 text-[9px] font-mono text-amber-800 font-bold">
+                            LAB PROTOTYPE
+                          </span>
+                        ) : (
+                          <span className="px-2 py-0.5 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-mono text-[#7000FF] font-medium">
+                            {meta.tag}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     <h3 className="text-sm font-medium text-[#17151A] group-hover:text-[#7000FF] transition-colors line-clamp-2 leading-snug mb-4">

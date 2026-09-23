@@ -205,14 +205,14 @@ export const CASES_DATA: CaseStudy[] = [
     id: 'case-5',
     title: 'AI Trợ Lý Bán Hàng Bất Động Sản',
     category: 'Bất Động Sản & Nhà Phố',
-    client: 'Vinhomes / CenGroup',
+    client: 'Vinhomes',
     widthClass: 'w-[310px] sm:w-[350px] md:w-[390px]',
     heightClass: 'h-[210px] sm:h-[240px] md:h-[270px]',
     slug: 'vinhomes-ai-sales-enablement',
     summary: 'Hệ thống AI Co-Pilot hỗ trợ nhân viên kinh doanh tra cứu bảng hàng thời gian thực, tự động tạo kịch bản tư vấn và video thực địa.',
     metrics: [
-      { value: '< 1.5 Giây', label: 'Thời gian tra bảng hàng' },
-      { value: '98%', label: 'Tỷ lệ phục vụ Lead' },
+      { value: '< 5 Phút', label: 'Thời gian phản hồi thông tin' },
+      { value: '500+', label: 'Môi giới làm chủ công cụ AI' },
     ],
   },
   {
@@ -226,7 +226,7 @@ export const CASES_DATA: CaseStudy[] = [
     summary: 'Tự động hóa luồng phát triển proposal đấu thầu tài trợ và chiến dịch thương hiệu theo chuẩn nhận diện và ngân sách quốc tế.',
     metrics: [
       { value: '-65%', label: 'Thời gian hoàn thiện thầu' },
-      { value: '24 Giờ', label: 'Tốc độ phản hồi RFP' },
+      { value: '+35%', label: 'Tốc độ phản hồi chiến dịch' },
     ],
   },
   {
@@ -289,6 +289,10 @@ export interface CaseStudyDetail {
   client: string;
   category: string;
   scale: string;
+  deliveryType?: 'Enablement' | 'Workflow Automation' | 'Custom Agent' | 'System Integration';
+  implementationLevel?: 'Level 1' | 'Level 2' | 'Level 3' | 'Level 4';
+  deploymentStatus?: 'Production' | 'Controlled Run' | 'Innovation Lab Prototype';
+  hitlBoundary?: string;
   image?: string;
   challenge: string;
   solution: string;
@@ -309,6 +313,10 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Chuỗi Bán Lẻ Thời Trang & Hàng Tiêu Dùng',
     category: 'Bán Lẻ & FMCG',
     scale: '500 nhân sự · Đội HR 4 người · Tuyển 60-80 vị trí/quý',
+    deliveryType: 'Workflow Automation',
+    implementationLevel: 'Level 2',
+    deploymentStatus: 'Production',
+    hitlBoundary: 'AI chỉ thực hiện trích xuất dữ liệu hồ sơ, đối chiếu tiêu chí ca kíp và chấm điểm xếp hạng tham chiếu. Quyết định mời phỏng vấn, từ chối hồ sơ hoặc tuyển dụng cuối cùng TUYỆT ĐỐI thuộc về chuyên viên nhân sự (Recruiter). Không có bất kỳ quyết định tuyển dụng nào được tự động hóa hoàn toàn.',
     challenge:
       'Mỗi quý mở rộng, chuỗi bán lẻ 500 nhân sự cần tuyển từ 60 đến 80 vị trí mới. Nhưng cả bộ phận Nhân sự chỉ có vỏn vẹn 4 người. Họ mất trung bình 3 ngày làm việc thủ công cho mỗi vị trí chỉ để mở từng file hồ sơ, đối chiếu tiêu chí ca kíp và gọi điện hẹn giờ phỏng vấn. Khối lượng tác vụ lặp lại đè nặng khiến cả đội gần như phải dừng mọi hoạt động phát triển nhân sự khác trong mùa cao điểm.',
     solution:
@@ -374,6 +382,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Nhà Máy Chế Tạo Cơ Khí Phụ Tùng Xuất Khẩu',
     category: 'Sản Xuất Cơ Khí & Chế Tạo',
     scale: '800 công nhân · 6 dây chuyền sản xuất liên tục',
+    deliveryType: 'System Integration',
+    implementationLevel: 'Level 4',
+    deploymentStatus: 'Production',
     challenge:
       'Trên 6 dây chuyền sản xuất cơ khí chính xác, công nhân kiểm định chất lượng (QA/QC) phải soi từng chi tiết dưới ánh đèn công suất lớn suốt ca 8 tiếng. Sau 4 tiếng liên tục, hiện tượng mỏi mắt cơ học khiến việc phát hiện các vết nứt vi mô, vết xước bề mặt hay sai lệch kích thước nhỏ trở nên thiếu ổn định. Rủi ro sản phẩm lỗi lọt ra ngoài thị trường đe dọa trực tiếp đến các hợp đồng gia công quốc tế khắt khe.',
     solution:
@@ -439,6 +450,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Công Ty Tư Vấn Giải Pháp & Dịch Vụ Doanh Nghiệp',
     category: 'Dịch Vụ Doanh Nghiệp & B2B',
     scale: '200 nhân sự · Đội Marketing 4 người',
+    deliveryType: 'Workflow Automation',
+    implementationLevel: 'Level 2',
+    deploymentStatus: 'Production',
     challenge:
       'Tài sản quý giá nhất của doanh nghiệp tư vấn là kinh nghiệm chuyên sâu của các chuyên gia đầu ngành. Nhưng các chuyên gia luôn bận rộn với dự án khách hàng, không thể dành hàng giờ viết bài. Đội marketing nội bộ 4 người nếu thuê ngoài agency chỉ nhận được các bài viết bề nổi, thiếu chiều sâu chuyên môn để thuyết phục khách hàng B2B khó tính. Kênh marketing tự nhiên bị đình trệ, công ty phụ thuộc hoàn toàn vào quảng cáo đắt đỏ.',
     solution:
@@ -504,6 +518,10 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Vietcap Securities (VCI) — Khối Phân Tích & Nghiên Cứu',
     category: 'Chứng Khoán & Đầu Tư',
     scale: '30+ Chuyên viên Phân tích & Khối Nghiên cứu Khách hàng Tổ chức',
+    deliveryType: 'Custom Agent',
+    implementationLevel: 'Level 3',
+    deploymentStatus: 'Innovation Lab Prototype',
+    hitlBoundary: 'Hệ thống vận hành trong môi trường phòng lab thử nghiệm sáng tạo (Innovation Lab Prototype). Toàn bộ dữ liệu bóc tách BCTC và đối soát số liệu hai chiều đóng vai trò dữ liệu tiền xử lý; Chuyên viên Phân tích (Research Analyst) bắt buộc thẩm định tính logic kế toán, kiểm chứng nguồn trang và chịu trách nhiệm chuyên môn cao nhất trước khi phát hành báo cáo đầu tư.',
     challenge:
       'Mỗi mùa công bố kết quả kinh doanh quý, hơn 30 chuyên viên phân tích cao cấp tại Vietcap Securities đối mặt với hàng trăm báo cáo tài chính dài từ 60 đến 120 trang mỗi bản. Họ phải mất trung bình 2 ngày làm việc thủ công cho mỗi doanh nghiệp chỉ để bóc tách từng con số trên bảng cân đối kế toán, lưu chuyển tiền tệ và thuyết minh phức tạp. Tác vụ gõ số cơ học gây áp lực nặng nề và tiềm ẩn nguy cơ sai lệch dữ liệu định giá trong các báo cáo khuyến nghị quan trọng gửi nhà đầu tư tổ chức.',
     solution:
@@ -537,7 +555,7 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
       {
         beatNumber: 6,
         beatTitle: 'Trạng Thái Mới & P&L: Giảm 75% Thời Gian, Ra Báo Cáo Trong 3 Giờ',
-        narrative: 'Thời gian bóc tách BCTC giảm 75%, chu kỳ hoàn thành Báo cáo Cập nhật Doanh nghiệp rút ngắn từ 2 ngày xuống chỉ còn 3 giờ. Sai lệch số liệu cơ học được loại bỏ hoàn toàn, chuyên viên phân tích tập trung toàn lực vào nhận định thị trường sắc bén.',
+        narrative: 'Thời gian bóc tách BCTC giảm 75%, chu kỳ hoàn thành Báo cáo Cập nhật Doanh nghiệp rút ngắn từ 2 ngày xuống chỉ còn 3 giờ. Khả năng truy vết nguồn (Source Traceability) và đối soát hai chiều trên mẫu kiểm thử phòng lab giúp chuyên viên phân tích tập trung toàn lực vào nhận định thị trường sắc bén.',
       },
     ],
     pillarsInvolved: [
@@ -557,9 +575,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
         description: 'Tăng tốc độ phản ứng với diễn biến thị trường và kết quả kinh doanh quý',
       },
       {
-        value: '100%',
-        label: 'Loại bỏ hoàn toàn sai lệch số liệu cơ học',
-        description: 'Cơ chế đối soát hai chiều bảo đảm tính chuẩn xác của các biến số mô hình',
+        value: 'Đối soát 2 chiều',
+        label: 'Source Traceability trên mẫu test lab',
+        description: 'Gắn nhãn số trang nguồn tài liệu và đối soát logic 2 chiều trên mẫu BCTC thử nghiệm',
       },
     ],
   },
@@ -569,6 +587,10 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Mạng Lưới Kinh Doanh & Phân Phối Bất Động Sản (Dự án tiêu biểu: Vinhomes)',
     category: 'Bất Động Sản & Nhà Phố',
     scale: '500+ Chuyên viên Kinh doanh BĐS',
+    deliveryType: 'Enablement',
+    implementationLevel: 'Level 1',
+    deploymentStatus: 'Production',
+    hitlBoundary: 'Trợ lý ảo AI chỉ truy xuất kho tài liệu chính sách bán hàng và bảng giỏ hàng đã được pháp chế và ban dự án phê duyệt chính thức. Khi khách hàng có nhu cầu đàm phán chính sách ưu đãi riêng, đặt cọc giữ chỗ hoặc ký kết hợp đồng, hệ thống bắt buộc chuyển quyền xử lý (Handoff) tức thì sang Chuyên viên Kinh doanh người thật.',
     challenge:
       'Trong các chiến dịch mở bán dự án quy mô lớn, mạng lưới hơn 500 nhân sự kinh doanh bất động sản phải xử lý lượng yêu cầu thông tin khổng lồ từ khách hàng. Tuy nhiên, việc tra cứu giỏ hàng, cập nhật chính sách bán hàng và soạn kịch bản tư vấn thực địa theo từng phân khúc diễn ra thủ công và rời rạc. Tốc độ phản hồi chậm khiến tỷ lệ kích hoạt lại tệp khách hàng cũ (lead reactivation) sụt giảm, nhiều cơ hội giao dịch giá trị cao bị bỏ lỡ.',
     solution:
@@ -634,6 +656,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Dentsu Sports Vietnam & Creative Agency',
     category: 'Truyền Thông & Sáng Tạo',
     scale: '25 Chuyên viên Chiến lược & Account Director',
+    deliveryType: 'Workflow Automation',
+    implementationLevel: 'Level 2',
+    deploymentStatus: 'Production',
     challenge:
       'Các agency truyền thông quốc tế thường xuyên phải tham gia những đợt đấu thầu tài trợ thể thao và chiến dịch thương hiệu lớn với thời hạn gấp gáp. Đội ngũ 25 chuyên viên chiến lược và account phải mất hàng tuần phân tích insight người tiêu dùng, dựng storyline và thiết kế pitch deck hàng trăm trang. Áp lực thời gian kéo dài khiến nhân sự kiệt sức, làm hạn chế số lượng hồ sơ thầu mà công ty có thể tham gia mỗi quý.',
     solution:
@@ -699,6 +724,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Phương Trường An Group (Bất Động Sản Thương Mại & Đất Nền)',
     category: 'Bất Động Sản & Nhà Phố',
     scale: '~300 Nhân sự Kinh doanh & Marketing',
+    deliveryType: 'Enablement',
+    implementationLevel: 'Level 1',
+    deploymentStatus: 'Production',
     challenge:
       'Tại các dự án đất nền và bất động sản thương mại tại Bình Dương, khách hàng luôn đòi hỏi video cập nhật tiến độ hạ tầng và pháp lý thực tế liên tục. Tuy nhiên, đội ngũ marketing nội bộ chỉ vài người không thể đáp ứng khối lượng video cho gần 300 chuyên viên kinh doanh ngoài hiện trường. Chi phí thuê ngoài quay dựng đắt đỏ và thời gian chờ đợi sản phẩm mất cả tuần khiến thông tin bị nguội.',
     solution:
@@ -764,6 +792,9 @@ export const CANONICAL_CASE_STUDIES: Record<string, CaseStudyDetail> = {
     client: 'Đại Học FPT (FPTU) & Ngày Hội Công Nghệ Tech Fest',
     category: 'Giáo Dục & Công Nghệ',
     scale: 'Toàn bộ Giảng viên FPTU HCM & Hybrid HN + 10.000+ sinh viên & khách tham dự Tech Fest',
+    deliveryType: 'Enablement',
+    implementationLevel: 'Level 1',
+    deploymentStatus: 'Production',
     challenge:
       'Sự bùng nổ của AI tạo sinh đặt ra thách thức lớn đối với môi trường giáo dục đại học. Giảng viên cần nhanh chóng cập nhật năng lực ứng dụng AI theo chuẩn Bậc 6 để thiết kế bài giảng mang tính tư duy phản biện cao. Đồng thời, tại các sự kiện công nghệ quy mô lớn như Tech Fest, ban tổ chức cần giải pháp điều phối, tương tác và trình diễn công nghệ hiện đại cho hàng chục nghìn lượt khách tham gia.',
     solution:

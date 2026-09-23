@@ -431,7 +431,7 @@ function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boo
         </text>
         <rect x="346" y="18" width="110" height="20" rx="10" fill="#FEF9C3" stroke="#FDE047" strokeWidth="0.8" />
         <text x="401" y="32" fill="#854D0E" fontSize="10" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">
-          300 SALES AGENTS
+          500+ SALES AGENTS
         </text>
 
         {/* Center: Inventory Grid & Real-Time Query Dialogue */}
@@ -450,45 +450,51 @@ function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boo
               <text x="54" y="13" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1502</text>
               <rect x="76" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
               <text x="92" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1503</text>
-              <rect x="114" y="0" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="130" y="13" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1504</text>
-
-              {/* Row 2 */}
-              <rect x="0" y="26" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
-              <text x="16" y="39" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1401</text>
-              <rect x="38" y="26" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
-              <text x="54" y="39" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1402</text>
-              <rect x="76" y="26" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="92" y="39" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1403</text>
-              <rect x="114" y="26" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
-              <text x="130" y="39" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1404</text>
-
-              {/* Row 3 */}
-              <rect x="0" y="52" width="32" height="20" rx="4" fill="#17151A" />
-              <text x="16" y="65" fill="#FFFFFF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1201</text>
-              <rect x="38" y="52" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
-              <text x="54" y="65" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1202</text>
-              <rect x="76" y="52" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
-              <text x="92" y="65" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1203</text>
-              <rect x="114" y="52" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
-              <text x="130" y="65" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1204</text>
+              <rect x="114" y="0" width="32" height="20" rx="4" fill="#FEF2F2" stroke="#FCA5A5" />
+              <text x="130" y="13" fill="#DC2626" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">ĐÃ CỌC</text>
             </g>
 
-            <text x="12" y="116" fill="#A1A0A8" fontSize="7" fontFamily="system-ui, sans-serif">■ Đã cọc  □ Mở bán  ■ Giữ chỗ</text>
+            <g transform="translate(12, 54)">
+              {/* Row 2 */}
+              <rect x="0" y="0" width="32" height="20" rx="4" fill="#FEF2F2" stroke="#FCA5A5" />
+              <text x="16" y="13" fill="#DC2626" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">ĐÃ CỌC</text>
+              <rect x="38" y="0" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="54" y="13" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1602</text>
+              <rect x="76" y="0" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="92" y="13" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1603</text>
+              <rect x="114" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="130" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1604</text>
+            </g>
+
+            <g transform="translate(12, 80)">
+              {/* Row 3 */}
+              <rect x="0" y="0" width="32" height="20" rx="4" fill="#FAF5FF" stroke="#EDE9FE" />
+              <text x="16" y="13" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600" textAnchor="middle">1701</text>
+              <rect x="38" y="0" width="32" height="20" rx="4" fill="#FEF2F2" stroke="#FCA5A5" />
+              <text x="54" y="13" fill="#DC2626" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">ĐÃ CỌC</text>
+              <rect x="76" y="0" width="32" height="20" rx="4" fill="#F0EFEA" stroke="#D8D6CE" />
+              <text x="92" y="13" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">1703</text>
+              <rect x="114" y="0" width="32" height="20" rx="4" fill="#FEF2F2" stroke="#FCA5A5" />
+              <text x="130" y="13" fill="#DC2626" fontSize="8" fontFamily="system-ui, sans-serif" textAnchor="middle">ĐÃ CỌC</text>
+            </g>
+
+            <text x="12" y="116" fill="#059669" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">
+              ● Đồng bộ bảng hàng 24/7
+            </text>
           </g>
 
-          {/* Right: AI Vector Dialogue Card */}
+          {/* Right: AI Handoff Chat Bubble */}
           <g transform="translate(186, 0)">
             <rect x="0" y="0" width="222" height="126" rx="8" fill="#FFFFFF" stroke="#E2E0D8" strokeWidth="1" />
-            
-            {/* Sales Question Bubble */}
-            <rect x="12" y="14" width="198" height="34" rx="6" fill="#F8F8F6" stroke="#E5E3DC" />
-            <text x="20" y="28" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">Môi giới hỏi (Zalo/App):</text>
-            <text x="20" y="41" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">"Căn 2PN hướng Đông Nam S2 còn không?"</text>
+            <text x="12" y="18" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">TRUY VẤN TƯ VẤN DỰ ÁN</text>
 
-            {/* AI Real-time Response Bubble */}
+            {/* Bubble 1: Broker */}
+            <rect x="12" y="26" width="198" height="24" rx="6" fill="#F4F4F2" />
+            <text x="20" y="42" fill="#17151A" fontSize="8.5" fontFamily="system-ui, sans-serif">"Check căn 2PN view hồ, chính sách thanh toán sớm?"</text>
+
+            {/* Bubble 2: AI Response */}
             <rect x="12" y="58" width="198" height="54" rx="6" fill="#FAF5FF" stroke="#EDE9FE" />
-            <text x="20" y="72" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">AI Co-Pilot (1.2 Giây):</text>
+            <text x="20" y="72" fill="#7000FF" fontSize="8" fontFamily="system-ui, sans-serif" fontWeight="600">Trợ Lý Bán Hàng AI:</text>
             <text x="20" y="86" fill="#17151A" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="600">"Còn căn S2.1502 · Chiết khấu 8.5%"</text>
             <text x="20" y="100" fill="#76747E" fontSize="8" fontFamily="system-ui, sans-serif">Chính sách quà tặng & tiến độ thanh toán gửi kèm</text>
           </g>
@@ -500,15 +506,15 @@ function VinhomesSalesMeshSvgVisual({ compact, className = '' }: { compact?: boo
           
           <rect x="0" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
           <text x="16" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỐC ĐỘ PHẢN HỒI</text>
-          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">&lt; 1.5 Giây</text>
+          <text x="16" y="58" fill="#059669" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">&lt; 5 Phút</text>
 
           <rect x="148" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
-          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TỶ LỆ PHỤC VỤ</text>
-          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">98% Lead</text>
+          <text x="164" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">LÀM CHỦ CÔNG CỤ AI</text>
+          <text x="164" y="58" fill="#17151A" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">500+ Môi Giới</text>
 
           <rect x="296" y="12" width="136" height="66" rx="10" fill="#FFFFFF" stroke="#EAE8E1" strokeWidth="1" />
-          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">TRA CỨU CHÍNH SÁCH</text>
-          <text x="312" y="58" fill="#CA8A04" fontSize="18" fontFamily="system-ui, sans-serif" fontWeight="600">500+ Trang</text>
+          <text x="312" y="32" fill="#76747E" fontSize="9" fontFamily="system-ui, sans-serif" fontWeight="500">SẢN XUẤT VIDEO AI</text>
+          <text x="312" y="58" fill="#CA8A04" fontSize="20" fontFamily="system-ui, sans-serif" fontWeight="600">x3 Tốc Độ</text>
         </g>
       </svg>
     </div>

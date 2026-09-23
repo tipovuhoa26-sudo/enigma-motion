@@ -7,7 +7,6 @@ import { INDUSTRIES_DATA } from '../src/content/industryData';
 import { INVESTMENT_TIERS } from '../src/content/investmentData';
 import { FACULTY_BLOCKS, FACULTY_MEMBERS } from '../src/content/facultyData';
 import { INDUSTRY_FILTERS, ORGANIZATION_LOGOS } from '../src/content/logoData';
-import { SUNEXT_HUBS } from '../src/components/CobeGlobe';
 
 function generateMarkdown(): string {
   const lines: string[] = [];
@@ -81,13 +80,7 @@ function generateMarkdown(): string {
   add('  - *Widget 1*: `Kiến Trúc Dữ Liệu` (Biểu đồ cột nhịp điệu) → `/tu-duy-chuyen-doi-ai/kien-truc-du-lieu`');
   add('  - *Widget 2*: Ảnh xem trước dự án theo ngành (Ảnh thực địa cửa hàng Việt Nam) → `/nganh`');
   add('- **Tâm điểm thị giác bên phải (Visual Centerpiece)**:');
-  add('  - Quả cầu WebGL 3D Cobe Globe (Tương tác xoay theo quán tính vật lý, biểu diễn mạng lưới tọa độ dự án thực tế).');
-  add('  - Huy hiệu góc trên quả cầu: `40+ Dự Án Thực Tế` (Đèn xanh radar nhấp nháy).');
-  add('  - Hướng dẫn tương tác góc dưới: `Kéo để xoay 3D`.');
-  add('  - **Danh sách 8 Hubs tọa độ trên quả cầu**:');
-  SUNEXT_HUBS.forEach((hub) => {
-    add(`    - **${hub.name}** [${hub.location.join(', ')}]: ${hub.badge} — *${hub.description}*`);
-  });
+  add('  - AiTransformationNetwork: Mạng lưới chuyển đổi AI tương tác cao, kết nối các nút chuyên gia, luồng dữ liệu thời gian thực và liên kết chòm sao');
   add('- **Thẻ đo lường nổi (Floating Stat Card)**:');
   add('  - Nhãn: `Hiệu Quả Vận Hành` (Icon TrendingUp)');
   add('  - Chỉ số số nhảy: `20% - 40%`');

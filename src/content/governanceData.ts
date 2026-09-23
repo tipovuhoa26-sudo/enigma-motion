@@ -103,7 +103,7 @@ export const STAGE_GATES: StageGate[] = [
       proratedSettlement: 'Hoàn trả 100% ngân sách Gate 4; quyết toán theo tỷ lệ nghiệm thu thực tế của Gate 2/Gate 3.',
     },
     signOff: {
-      documentName: 'Biên Bản Nghiệm Thu Kỹ Thuật Toàn Hệ Thống & Phê Duyệt Production',
+      documentName: 'Biên Bản Nghiệm Thu Kỹ Thuật Toàn Hệ Thống & Phê Duyệt Vận Hành Production',
       natureOfAcceptance: 'Nghiệm thu chất lượng kỹ thuật của mã nguồn và thuật toán; chấp thuận đưa vào Production',
       prerequisite: 'Hệ thống vượt qua bài kiểm thử UAT Golden Set với dung sai cam kết',
       systemStateAfter: 'Chuyển từ "Chạy thử nghiệm có kiểm soát (Controlled Run)" sang "Vận hành Production chính thức"',
@@ -155,31 +155,31 @@ export interface DataSecurityTier {
 export const DATA_SECURITY_TIERS: DataSecurityTier[] = [
   {
     id: 'tier1',
-    label: 'Tầng 1: Dữ liệu công khai & Bán công khai',
-    scopeOfUse: 'Thông tin sản phẩm, bài viết truyền thông, mô tả tuyển dụng, thông cáo báo chí, dữ liệu nghiên cứu thị trường công khai.',
-    processingMechanism: 'Xử lý qua cổng Enterprise API thương mại tiêu chuẩn (OpenAI, Anthropic, Google Vertex AI) với cơ chế Enterprise Zero Data Retention (ZDR).',
-    legalTechnicalCommitment: 'Cam kết bằng thỏa thuận pháp lý của nhà cung cấp nền tảng: Dữ liệu đầu vào và kết quả đầu ra TUYỆT ĐỐI KHÔNG bị sử dụng để tái huấn luyện mô hình nền tảng.',
+    label: 'Tier 1 — Enterprise API & Zero Data Retention (ZDR)',
+    scopeOfUse: 'Dữ liệu công khai & Tác vụ nghiệp vụ chuẩn hóa: Thông tin sản phẩm, bài viết truyền thông, kịch bản tư vấn ban đầu, mô tả tuyển dụng, thông cáo báo chí, dữ liệu nghiên cứu thị trường công khai.',
+    processingMechanism: 'Xử lý qua cổng Enterprise API thương mại tiêu chuẩn (OpenAI, Anthropic, Google Vertex AI) với cơ chế Enterprise Zero Data Retention (ZDR). Dữ liệu chỉ luân chuyển tạm thời qua RAM để sinh phản hồi; không lưu trữ lại sau phiên xử lý.',
+    legalTechnicalCommitment: 'Cam kết bằng thỏa thuận pháp lý DPA/ZDR của nhà cung cấp nền tảng: Dữ liệu đầu vào và kết quả đầu ra TUYỆT ĐỐI KHÔNG bị sử dụng để tái huấn luyện mô hình nền tảng.',
   },
   {
     id: 'tier2',
-    label: 'Tầng 2: Dữ liệu vận hành nội bộ & Phòng ban',
-    scopeOfUse: 'Hồ sơ ứng viên (CV/ATS), email trao đổi nội bộ, tài liệu SOP nghiệp vụ, hợp đồng mẫu, báo cáo bán hàng, dữ liệu CRM tương tác khách hàng.',
-    processingMechanism: 'Lưu trữ và tra cứu trên môi trường Vector Database chuyên biệt (Dedicated Tenant) đặt tại máy chủ đám mây của doanh nghiệp. Áp dụng kỹ thuật phân tầng dữ liệu (Data Masking/Anonymization) loại bỏ PII (Họ tên, CCCD, SĐT, Email cá nhân) trước khi chuyển qua API xử lý.',
+    label: 'Tier 2 — Vector DB & Dedicated Tenant (Hybrid RAG)',
+    scopeOfUse: 'Dữ liệu vận hành nội bộ & Phòng ban: Hồ sơ ứng viên (CV/ATS), email trao đổi, tài liệu SOP nghiệp vụ, hợp đồng mẫu, báo cáo bán hàng, dữ liệu CRM tương tác khách hàng.',
+    processingMechanism: 'Lưu trữ và tra cứu trên môi trường Vector Database chuyên biệt (Dedicated Tenant) đặt tại đám mây của doanh nghiệp. Áp dụng kỹ thuật phân tầng dữ liệu (Data Masking/Anonymization) loại bỏ PII (Họ tên, CCCD, SĐT, Email cá nhân) trước khi chuyển qua API xử lý.',
     legalTechnicalCommitment: 'Mã hóa hai chiều: AES-256 ở trạng thái nghỉ (At-rest) và TLS 1.3 ở trạng thái truyền tải (In-transit). Phân quyền truy cập theo vai trò (RBAC) nghiêm ngặt.',
   },
   {
     id: 'tier3a',
-    label: 'Tầng 3A: Dữ liệu mật, BCTC lõi & Lợi thế kinh doanh',
-    scopeOfUse: 'Báo cáo tài chính chưa công bố, công thức giá, dữ liệu giao dịch nhạy cảm, thuật toán kinh doanh độc quyền, bí mật thương mại.',
-    processingMechanism: 'Xử lý hoàn toàn trong hạ tầng đám mây riêng biệt (Private VPC trên AWS/GCP/Azure) hoặc Cụm máy chủ On-Premise do khách hàng sở hữu.',
-    legalTechnicalCommitment: 'Cơ chế Zero Data Egress: Dữ liệu không bao giờ rời khỏi chu vi mạng nội bộ. Kích hoạt mô hình mã nguồn mở nội bộ (Open-source LLMs/Vision) tự host.',
+    label: 'Tier 3A — Dedicated Private Cloud VPC',
+    scopeOfUse: 'Dữ liệu mật, BCTC lõi & Lợi thế kinh doanh: Báo cáo tài chính chưa công bố, công thức giá, dữ liệu giao dịch nhạy cảm, thuật toán kinh doanh độc quyền, bí mật thương mại.',
+    processingMechanism: 'Xử lý hoàn toàn trong hạ tầng đám mây riêng biệt (Private VPC trên AWS/GCP/Azure do khách hàng đứng tên sở hữu). Kích hoạt các mô hình mã nguồn mở nội bộ (Open-source LLMs/Vision) tự host trong VPC.',
+    legalTechnicalCommitment: 'Cơ chế Zero Data Egress: Dữ liệu không bao giờ rời khỏi chu vi mạng nội bộ. Kiểm soát mạng qua Security Group, VPC Peering và Private Endpoint cách ly.',
   },
   {
     id: 'tier3b',
-    label: 'Tầng 3B: Dữ liệu pháp lý tối mật / Cách ly vật lý',
-    scopeOfUse: 'Dữ liệu y tế bệnh nhân, hồ sơ tài chính ngân hàng lõi, thông tin định danh cấp cao, dữ liệu an ninh quốc phòng.',
+    label: 'Tier 3B — On-Premise Air-Gapped Network',
+    scopeOfUse: 'Dữ liệu pháp lý tối mật & Cách ly vật lý: Dữ liệu y tế bệnh nhân, hồ sơ tài chính ngân hàng lõi, thông tin định danh cấp cao, dữ liệu an ninh & bí mật công nghệ quốc gia.',
     processingMechanism: 'Vận hành trên môi trường mạng cách ly vật lý hoàn toàn (Air-gapped Network / On-Premise GPU Cluster). Không kết nối Internet ra bên ngoài.',
-    legalTechnicalCommitment: 'Audit log bất biến lưu vết 100% truy vấn trên hệ thống lưu trữ phân tán. Ký Thỏa thuận Bảo Mật Toàn Diện (Enterprise DPA & NDA) đi kèm chế tài bồi thường.',
+    legalTechnicalCommitment: 'Audit log bất biến lưu vết 100% truy vấn trên hệ thống lưu trữ phân tán. Ký Thỏa thuận Bảo Mật Toàn Diện (Enterprise DPA & NDA) đi kèm chế tài bồi thường pháp lý cao nhất.',
   },
 ];
 
@@ -257,9 +257,79 @@ export interface ResponsibilityMatrix {
   }[];
 }
 
-export const RBAC_CHANGE_AUTHORITY_MATRIX: ResponsibilityMatrix = {
-  id: 'rbac_change_authority',
-  title: 'Bản Đồ Phân Quyền Thay Đổi & Quản Trị AI (AI Change Authority & RBAC Matrix)',
+export const RBAC_ROLE_MATRIX: ResponsibilityMatrix = {
+  id: 'rbac_role_matrix',
+  title: 'Ma Trận Phân Quyền & Thẩm Quyền Thay Đổi AI Theo Vai Trò (RBAC Matrix)',
+  columns: [
+    'Nhóm Vai Trò Tổ Chức',
+    'Quyền Sử Dụng (Usage Rights)',
+    'Tinh Chỉnh Prompt (Prompt Tuning)',
+    'Cấu Hình Agent & RAG',
+    'Quản Trị Pipeline & API',
+    'Phê Duyệt Go-live Production',
+  ],
+  rows: [
+    {
+      rowLabel: 'Nhân Viên Nghiệp Vụ (End User)',
+      rowMeta: 'Người dùng cuối tại các phòng ban',
+      cells: [
+        { code: 'FULL', description: 'Toàn quyền tương tác trong phạm vi nhiệm vụ phân công' },
+        { code: 'RESTRICTED', description: 'Chỉ lưu và sử dụng prompt cá nhân trên giao diện người dùng' },
+        { code: 'NONE', description: 'Không có quyền truy cập cấu hình' },
+        { code: 'NONE', description: 'Không có quyền can thiệp pipeline' },
+        { code: 'NONE', description: 'Không có quyền phê duyệt' },
+      ],
+    },
+    {
+      rowLabel: 'AI Champions / Domain Leads',
+      rowMeta: 'Nhân sự nòng cốt đạt Tầng 3 Năng Lực',
+      cells: [
+        { code: 'FULL', description: 'Toàn quyền sử dụng & hỗ trợ đồng nghiệp phòng ban' },
+        { code: 'FULL', description: 'Toàn quyền thiết kế & hiệu chỉnh thư viện prompt chuẩn phòng ban' },
+        { code: 'CONFIG', description: 'Quyền nạp kho tri thức RAG & tinh chỉnh tham số Agent phòng ban' },
+        { code: 'TEST', description: 'Xem log vận hành & kích hoạt luồng kiểm thử sandbox' },
+        { code: 'SIGN-OFF', description: 'Đồng phê duyệt kết quả kiểm thử UAT cấp phòng ban' },
+      ],
+    },
+    {
+      rowLabel: 'Trưởng Phòng Ban / Business PO',
+      rowMeta: 'Chủ sở hữu bài toán nghiệp vụ & P&L',
+      cells: [
+        { code: 'FULL', description: 'Toàn quyền quản trị phân bổ người dùng phòng ban' },
+        { code: 'APPROVE', description: 'Phê duyệt ban hành thư viện prompt chuẩn của bộ phận' },
+        { code: 'APPROVE', description: 'Phê duyệt danh mục tài liệu nạp vào RAG & routing luồng việc' },
+        { code: 'BUDGET', description: 'Giám sát chi phí token API & định mức ngân sách hàng tháng' },
+        { code: 'GATE 2/3', description: 'Ký nghiệm thu nghiệp vụ UAT & cho phép vận hành phòng ban' },
+      ],
+    },
+    {
+      rowLabel: 'Kỹ Sư IT / DevOps Nội Bộ',
+      rowMeta: 'Đội ngũ kỹ thuật đạt Tầng 4 Năng Lực',
+      cells: [
+        { code: 'ADMIN', description: 'Toàn quyền quản trị tài nguyên hạ tầng & phân quyền tài khoản' },
+        { code: 'SUPPORT', description: 'Hỗ trợ kỹ thuật & khắc phục sự cố prompt injection' },
+        { code: 'INFRA', description: 'Quản trị hạ tầng Vector DB, Private VPC & phân quyền RBAC' },
+        { code: 'FULL', description: 'Toàn quyền quản trị API Keys, Secrets, Webhooks, CI/CD' },
+        { code: 'AUDIT', description: 'Thẩm định an toàn thông tin & ký biên bản kỹ thuật Gate 3' },
+      ],
+    },
+    {
+      rowLabel: 'Ban Chỉ Đạo Dự Án / CIO / CISO',
+      rowMeta: 'Lãnh đạo tối cao quản trị rủi ro & chiến lược',
+      cells: [
+        { code: 'AUDIT', description: 'Toàn quyền truy cập báo cáo kiểm toán & bảng điều khiển rủi ro' },
+        { code: 'POLICY', description: 'Ban hành quy chuẩn quản trị prompt & tiêu chuẩn đạo đức AI' },
+        { code: 'ARCH', description: 'Phê duyệt kiến trúc Model Mesh toàn doanh nghiệp' },
+        { code: 'COMPLIANCE', description: 'Giám sát tuân thủ DPA, bảo mật dữ liệu & Zero Data Egress' },
+        { code: 'FINAL', description: 'Phê duyệt tối cao Go-live Production & ký nghiệm thu Gate 3/Gate 4' },
+      ],
+    },
+  ],
+};
+
+export const IMPLEMENTATION_LEVEL_CROSSWALK: ResponsibilityMatrix = {
+  id: 'implementation_level_crosswalk',
+  title: 'Bản Đồ Phân Quyền Thay Đổi & Quản Trị AI (AI Change Authority & Crosswalk)',
   columns: [
     'Cấp Độ Triển Khai',
     'Gói Dịch Vụ Áp Dụng',
@@ -315,6 +385,8 @@ export const RBAC_CHANGE_AUTHORITY_MATRIX: ResponsibilityMatrix = {
     },
   ],
 };
+
+export const RBAC_CHANGE_AUTHORITY_MATRIX = IMPLEMENTATION_LEVEL_CROSSWALK;
 
 export type CompetencyTierId = 'tier1' | 'tier2' | 'tier3' | 'tier4' | 'tier5';
 

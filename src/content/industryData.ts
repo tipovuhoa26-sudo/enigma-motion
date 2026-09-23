@@ -249,7 +249,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
     name: 'Bất Động Sản & Nhà Phố',
     englishName: 'Real Estate & PropTech',
     heroHeadline: 'Tăng Tốc Kinh Doanh BĐS: Tự Động Hóa Chăm Sóc Khách Hàng & Video Thực Địa',
-    heroSubheadline: 'Giải phóng 80% thời gian tương tác thủ công ban đầu của môi giới. Nhân sự kinh doanh tự sản xuất video hiện trường và kịch bản tư vấn bằng AI ngay trên điện thoại di động.',
+    heroSubheadline: 'Trao quyền cho 500+ môi giới làm chủ AI tự sản xuất video hiện trường và kịch bản tư vấn ngay trên điện thoại di động, phản hồi khách hàng trong chưa đầy 5 phút.',
     marketContext: 'Trong bối cảnh thị trường bất động sản cạnh tranh khốc liệt, khách hàng đòi hỏi phản hồi thông tin giỏ hàng, bảng tính dòng tiền và video tiến độ hạ tầng trong vài phút. Nhưng phần lớn sàn giao dịch và đội ngũ môi giới vẫn hoạt động thủ công: tra cứu giỏ hàng qua tin nhắn rời rạc, chờ phòng marketing dựng từng video thực địa và bỏ quên 70% tệp khách hàng cũ. Đơn vị nào phản hồi chậm quá 15 phút, khách hàng sẽ chuyển sang đơn vị phân phối khác.',
     challenges: [
       {
@@ -274,7 +274,7 @@ export const INDUSTRIES_DATA: IndustrySolution[] = [
       scale: '500+ Chuyên viên Kinh doanh BĐS · Hàng nghìn lead/tháng',
       description: 'Sunext triển khai Trụ cột 2 (Đào tạo năng lực tự sản xuất video & kịch bản) và Trụ cột 3 (Tự động hóa luồng tương tác và trợ lý ảo thông tin dự án). Môi giới chủ động phản hồi khách hàng trong chưa đầy 5 phút với tài liệu cá nhân hóa cao.',
       metrics: [
-        { value: '80%', label: 'Tự động hóa tương tác ban đầu với khách hàng' },
+        { value: '500+', label: 'Môi giới làm chủ công cụ AI' },
         { value: '+200%', label: 'Sản lượng video thực địa do nhân viên tự sản xuất' },
         { value: '< 5 phút', label: 'Thời gian phản hồi thông tin dự án & giỏ hàng' },
       ],

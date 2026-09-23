@@ -2,7 +2,7 @@
 
 import React, { use } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Layers, Building2, TrendingUp, Sparkles, ShieldCheck } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/sections/Footer';
 import { Button } from '@/components/Button';
@@ -56,12 +56,42 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
 
           <article className="max-w-4xl mx-auto">
             {/* Header Eyebrow */}
-            <div className="flex flex-wrap items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-2.5 mb-4">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF]">
                 <Building2 className="w-3.5 h-3.5 text-[#7000FF]" />
                 {detail.category}
               </span>
-              <span className="text-xs text-[#6E6E6E] font-medium">Quy mô: {detail.scale}</span>
+
+              {detail.deliveryType && (
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-[#F5F3F6] border border-black/5 text-[11px] font-mono font-medium text-[#17151A]">
+                  {detail.deliveryType} {detail.implementationLevel ? `· ${detail.implementationLevel}` : ''}
+                </span>
+              )}
+
+              {detail.deploymentStatus && (
+                <span
+                  className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider ${
+                    detail.deploymentStatus === 'Innovation Lab Prototype'
+                      ? 'bg-amber-50 text-amber-800 border border-amber-300'
+                      : detail.deploymentStatus === 'Controlled Run'
+                      ? 'bg-blue-50 text-blue-800 border border-blue-200'
+                      : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                  }`}
+                >
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      detail.deploymentStatus === 'Innovation Lab Prototype'
+                        ? 'bg-amber-500'
+                        : detail.deploymentStatus === 'Controlled Run'
+                        ? 'bg-blue-500'
+                        : 'bg-emerald-500'
+                    }`}
+                  />
+                  {detail.deploymentStatus}
+                </span>
+              )}
+
+              <span className="text-xs text-[#6E6E6E] font-medium ml-auto">Quy mô: {detail.scale}</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-8">
@@ -96,6 +126,21 @@ export default function CaseStudyDetailPage({ params }: PageProps) {
                     {detail.solution}
                   </p>
                 </div>
+
+                {/* HITL Boundary Callout */}
+                {detail.hitlBoundary && (
+                  <div className="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 text-xs space-y-2">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-amber-800 shrink-0" />
+                      <span className="font-mono font-bold uppercase tracking-wider text-amber-900 text-[11px]">
+                        Ranh Giới Quản Trị &amp; Human-In-The-Loop (HITL)
+                      </span>
+                    </div>
+                    <p className="text-amber-950 leading-relaxed font-sans">
+                      {detail.hitlBoundary}
+                    </p>
+                  </div>
+                )}
 
                 {/* 6-Beat Transformation Story per Write Moving Stories */}
                 {detail.storyBeats && detail.storyBeats.length > 0 && (

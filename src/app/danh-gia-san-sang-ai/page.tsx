@@ -13,6 +13,7 @@ import {
   RefreshCw,
   Zap,
   ShieldCheck,
+  ShieldAlert,
   Lock,
   Layers,
   Sparkles,
@@ -29,11 +30,17 @@ export default function AiReadinessDiagnosticPage() {
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
 
   const totalQuestions = ASSESSMENT_QUESTIONS.length;
-  const currentQuestion = ASSESSMENT_QUESTIONS[activeStep] || ASSESSMENT_QUESTIONS[0];
   const answeredCount = Object.keys(answers).length;
+  const progressPercent = Math.round((answeredCount / totalQuestions) * 100);
+
+  const currentQuestion = ASSESSMENT_QUESTIONS[activeStep] || ASSESSMENT_QUESTIONS[0];
+  const isLastQuestion = activeStep === totalQuestions - 1;
 
   const handleSelectOption = (questionId: string, score: number) => {
-    setAnswers((prev) => ({ ...prev, [questionId]: score }));
+    setAnswers((prev) => ({
+      ...prev,
+      [questionId]: score,
+    }));
   };
 
   const handleNext = () => {
@@ -58,25 +65,24 @@ export default function AiReadinessDiagnosticPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Group raw scores by pillar (1 to 6)
-  // Each pillar has 2 questions, max score per question = 4, max score per pillar = 8
+  // Calculate Pillar Scores (Each pillar has 2 questions, max 8 points per pillar)
   const pillarScores: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+  const pillarMaxScores: Record<number, number> = { 1: 8, 2: 8, 3: 8, 4: 8, 5: 8, 6: 8 };
+
   ASSESSMENT_QUESTIONS.forEach((q) => {
-    const score = answers[q.id] || 0;
-    pillarScores[q.pillarNumber] = (pillarScores[q.pillarNumber] || 0) + score;
+    const val = answers[q.id] || 0;
+    if (pillarScores[q.pillarNumber] !== undefined) {
+      pillarScores[q.pillarNumber] += val;
+    }
   });
 
-  // Calculate pillar percentages (out of 8 points)
-  const pillarPercentages: Record<number, number> = {
-    1: Math.round(((pillarScores[1] || 0) / 8) * 100),
-    2: Math.round(((pillarScores[2] || 0) / 8) * 100),
-    3: Math.round(((pillarScores[3] || 0) / 8) * 100),
-    4: Math.round(((pillarScores[4] || 0) / 8) * 100),
-    5: Math.round(((pillarScores[5] || 0) / 8) * 100),
-    6: Math.round(((pillarScores[6] || 0) / 8) * 100),
-  };
+  const pillarPercentages: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+  Object.keys(pillarScores).forEach((k) => {
+    const num = Number(k);
+    pillarPercentages[num] = Math.round((pillarScores[num] / pillarMaxScores[num]) * 100);
+  });
 
-  // Identify bottleneck pillars (pillars with percentage <= 50%)
+  // Identify Bottlenecks (Pillars with lowest percentage)
   const bottleneckPillars = [1, 2, 3, 4, 5, 6]
     .map((num) => ({
       num,
@@ -93,7 +99,15 @@ export default function AiReadinessDiagnosticPage() {
   // Total raw score
   const totalScore = Object.values(answers).reduce((a, b) => a + b, 0);
 
-  // Suggested Entry Point (Mapped to BOT Delivery Framework)
+  // Maturity Stage info & Suggested Entry Point (Mapped to BOT Delivery Framework)
+  let maturityStage = {
+    stageNumber: 1,
+    name: 'Khởi Phát & Thử Nghiệm (Emerging & Exploratory)',
+    range: '12 – 23 Điểm',
+    description: 'Tổ chức ở giai đoạn đầu tiếp cận AI, chủ yếu dừng lại ở các thử nghiệm cá nhân rời rạc. Cần tập trung chuẩn hóa năng lực nền tảng, thiết lập rào giậu an toàn dữ liệu và giải quyết dứt điểm 1 bài toán điểm nghẽn để tạo niềm tin ROI.',
+    color: '#EA580C',
+  };
+
   let suggestedEntryPoint = {
     phase: 'DISCOVERY (Pha 1 · Gate 1)',
     tag: 'Technical Scoping & Data Audit',
@@ -104,6 +118,13 @@ export default function AiReadinessDiagnosticPage() {
   };
 
   if (totalScore >= 38) {
+    maturityStage = {
+      stageNumber: 3,
+      name: 'Tự Chủ & Sẵn Sàng Tích Hợp (Autonomous & Mesh-Ready)',
+      range: '38 – 48 Điểm',
+      description: 'Tổ chức có độ trưởng thành cao, quy trình chuẩn hóa và năng lực số vững chắc. Đủ điều kiện triển khai Private AI On-Premise hoặc Private VPC, tích hợp trực tiếp vào hệ thống lõi ERP/CRM và xây dựng AI CoE tự chủ.',
+      color: '#059669',
+    };
     suggestedEntryPoint = {
       phase: 'ENTERPRISE DEPLOYMENT (Pha 2-3 · Gate 2-3)',
       tag: 'Core System Integration & Mesh',
@@ -112,7 +133,14 @@ export default function AiReadinessDiagnosticPage() {
       recommendedRoadmap: 'Lộ trình 3: Enterprise AI Transformation (4–6 tháng)',
       roadmapHref: '/khung-dau-tu#lo-trinh-3',
     };
-  } else if (totalScore >= 25) {
+  } else if (totalScore >= 24) {
+    maturityStage = {
+      stageNumber: 2,
+      name: 'Chuẩn Hóa & Mở Rộng (Standardized & Scaling)',
+      range: '24 – 37 Điểm',
+      description: 'Doanh nghiệp đã có nhận thức và quy trình cơ bản nhưng việc ứng dụng AI còn phân mảnh giữa các phòng ban. Điểm vào tối ưu là chuẩn hóa toàn diện 1 phòng ban mũi nhọn (Sales/Marketing) với Custom Agents kết nối RAG.',
+      color: '#7000FF',
+    };
     suggestedEntryPoint = {
       phase: 'DEPARTMENT PILOT (Pha 2 · Gate 2)',
       tag: 'Single Department Operating System',
@@ -122,6 +150,10 @@ export default function AiReadinessDiagnosticPage() {
       roadmapHref: '/khung-dau-tu#lo-trinh-2',
     };
   }
+
+  // Security Red Flag Gate: Triggered when Pillar 5 (Data Architecture & Security) score <= 2/8
+  const pillar5Score = pillarScores[5] || 0;
+  const isSecurityRedFlag = pillar5Score <= 2;
 
   return (
     <div className="w-full min-h-screen flex flex-col sunext-atmospheric-canvas">
@@ -342,6 +374,68 @@ export default function AiReadinessDiagnosticPage() {
                     <span>Làm lại bài kiểm tra</span>
                   </button>
                 </div>
+
+                {/* Overall Score & Maturity Stage Banner */}
+                <div className="p-6 sm:p-8 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-md border border-black/10">
+                  <div className="space-y-2 max-w-xl">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/10 text-neutral-300">
+                        MỨC ĐỘ TRƯỞNG THÀNH TỔ CHỨC
+                      </span>
+                      <span className="text-xs font-mono font-semibold text-emerald-400">
+                        {maturityStage.range}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl sm:text-3xl font-light tracking-tight text-white">
+                      {maturityStage.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">
+                      {maturityStage.description}
+                    </p>
+                  </div>
+
+                  <div className="shrink-0 flex flex-col items-center md:items-end justify-center p-5 rounded-2xl bg-white/5 border border-white/10 min-w-[160px]">
+                    <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-widest block mb-1">
+                      TỔNG ĐIỂM CHẨN ĐOÁN
+                    </span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl sm:text-5xl font-mono font-light text-white tracking-tight">
+                        {totalScore}
+                      </span>
+                      <span className="text-lg font-mono text-neutral-400">/ 48</span>
+                    </div>
+                    <span className="text-[10px] text-neutral-400 mt-1 font-mono">
+                      (Đạt {Math.round((totalScore / 48) * 100)}% tối đa)
+                    </span>
+                  </div>
+                </div>
+
+                {/* Security Red Flag Gate (When Pillar 5 score <= 2/8) */}
+                {isSecurityRedFlag && (
+                  <div className="p-6 rounded-2xl bg-rose-50 border-2 border-rose-300 space-y-3 animate-in fade-in">
+                    <div className="flex items-center gap-2 text-rose-700">
+                      <ShieldAlert className="w-5 h-5 shrink-0 text-rose-600" />
+                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-rose-800">
+                        CẢNH BÁO ĐỎ AN TOÀN DỮ LIỆU (SECURITY RED FLAG GATE)
+                      </h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-rose-950 leading-relaxed font-sans">
+                      <strong>Phát hiện rủi ro bảo mật trọng yếu:</strong> Trụ cột 5 (Kiến Trúc Dữ Liệu &amp; Bảo Mật) chỉ đạt <strong>{pillar5Score}/8 điểm ({Math.round((pillar5Score / 8) * 100)}%)</strong>. Tổ chức đối mặt nguy cơ thất thoát dữ liệu nội bộ, rò rỉ bí mật kinh doanh hoặc vi phạm chính sách nếu để nhân sự tự do đưa dữ liệu khách hàng/tài chính vào các mô hình AI đại trà bên ngoài.
+                    </p>
+                    <div className="pt-1 flex flex-wrap items-center gap-3">
+                      <span className="text-[11px] font-mono text-rose-800 font-bold uppercase">
+                        KHUYẾN NGHỊ BẮT BUỘC:
+                      </span>
+                      <Link
+                        href="/phap-ly-bao-mat#data-security-tiers"
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-800 underline hover:text-rose-950 transition-colors"
+                      >
+                        <span>Áp dụng cơ chế Zero Data Retention (ZDR) &amp; Khung 3 Tầng Bảo Mật</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                )}
 
                 {/* Score & Bottleneck Summary Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -32,7 +32,7 @@ import {
   INCIDENT_SLA_MATRIX,
   EXIT_TRANSITION_RIGHTS,
 } from '@/content/legalSecurityData';
-import { DATA_SECURITY_TIERS, STAGE_GATES } from '@/content/governanceData';
+import { DATA_SECURITY_TIERS, STAGE_GATES, RBAC_ROLE_MATRIX } from '@/content/governanceData';
 import { DataSecurityVisual } from '@/components/visuals/DataSecurityVisual';
 
 export default function LegalSecurityPage() {
@@ -224,9 +224,91 @@ export default function LegalSecurityPage() {
                       <p className="text-amber-900 leading-relaxed">{gate.noGo.condition}</p>
                       <p className="text-amber-950 font-medium">Bảo toàn ngân sách: {gate.noGo.budgetTreatment}</p>
                     </div>
+
+                    {gate.signOff && (
+                      <div className="p-3.5 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] space-y-1 text-xs">
+                        <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] font-mono">
+                          <span className="font-bold text-[#7000FF] uppercase tracking-wider">
+                            VĂN BẢN NGHIỆM THU PHÁP LÝ (SIGN-OFF)
+                          </span>
+                          <span className="text-[#6E6E6E]">
+                            Đầu mối ký: {gate.signOff.signatoryRole}
+                          </span>
+                        </div>
+                        <p className="text-xs font-semibold text-[#17151A]">
+                          {gate.signOff.documentName}
+                        </p>
+                        <p className="text-[11px] text-[#6E6E6E] leading-relaxed">
+                          <strong>Bản chất:</strong> {gate.signOff.natureOfAcceptance} · <strong>Trạng thái sau ký:</strong> {gate.signOff.systemStateAfter}
+                        </p>
+                        <p className="text-[11px] text-emerald-800 font-medium">
+                          <strong>Tác động giải ngân:</strong> {gate.signOff.disbursementImpact}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* RBAC Role & Change Authority Matrix */}
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-black/10 shadow-xs overflow-x-auto">
+              <div className="flex items-center gap-2 mb-2">
+                <Lock className="w-4 h-4 text-[#7000FF]" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#7000FF]">
+                  PHÂN QUYỀN TRUY CẬP THEO VAI TRÒ (RBAC MATRIX)
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold text-[#17151A] mb-2">
+                {RBAC_ROLE_MATRIX.title}
+              </h3>
+              <p className="text-xs text-[#6E6E6E] mb-6 leading-relaxed">
+                Thiết lập ranh giới quản trị và thẩm quyền phê duyệt rõ ràng giữa 5 nhóm vai trò tổ chức, ngăn ngừa rủi ro vận hành và bảo vệ tính toàn vẹn của mô hình.
+              </p>
+
+              <table className="w-full text-left text-xs font-sans">
+                <thead>
+                  <tr className="border-b border-black/10 text-[#6E6E6E] uppercase tracking-wider text-[10px]">
+                    {RBAC_ROLE_MATRIX.columns.map((col, cIdx) => (
+                      <th key={cIdx} className={`pb-3 font-semibold ${cIdx === 0 ? 'w-1/4' : 'w-[15%]'}`}>
+                        {col}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-black/5 text-[#17151A]">
+                  {RBAC_ROLE_MATRIX.rows.map((row, rIdx) => (
+                    <tr key={rIdx}>
+                      <td className="py-4 pr-4 align-top">
+                        <strong className="block text-[#17151A]">{row.rowLabel}</strong>
+                        {row.rowMeta && (
+                          <span className="text-[11px] text-[#6E6E6E] block mt-0.5">{row.rowMeta}</span>
+                        )}
+                      </td>
+                      {row.cells.map((cell, cellIdx) => (
+                        <td key={cellIdx} className="py-4 pr-3 align-top leading-relaxed text-[11px]">
+                          {cell.code && (
+                            <span
+                              className={`inline-block px-1.5 py-0.5 rounded text-[9px] font-mono font-bold mb-1 ${
+                                cell.code === 'NONE'
+                                  ? 'bg-neutral-100 text-neutral-500'
+                                  : cell.code === 'FULL' || cell.code === 'FINAL'
+                                  ? 'bg-purple-100 text-[#7000FF]'
+                                  : cell.code === 'APPROVE' || cell.code === 'SIGN-OFF'
+                                  ? 'bg-emerald-100 text-emerald-800'
+                                  : 'bg-amber-100 text-amber-800'
+                              }`}
+                            >
+                              {cell.code}
+                            </span>
+                          )}
+                          <p className="text-[#515151]">{cell.description}</p>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -321,7 +403,7 @@ export default function LegalSecurityPage() {
                 <span className="text-[11px] font-mono font-bold text-emerald-800 uppercase block">BƯỚC 3</span>
                 <h4 className="font-semibold text-sm text-[#17151A]">Nghiệm Thu Toàn Hệ Thống</h4>
                 <p className="text-xs text-[#6E6E6E] leading-relaxed">
-                  Ký Biên Bản Nghiệm Thu Kỹ Thuật Toàn Hệ Thống & Phê Duyệt Production khi đáp ứng tiêu chí chức năng và dung sai hiệu năng.
+                  Ký Biên Bản Nghiệm Thu Kỹ Thuật Toàn Hệ Thống & Phê Duyệt Vận Hành Production khi đáp ứng tiêu chí chức năng và dung sai hiệu năng.
                 </p>
               </div>
             </div>

@@ -97,7 +97,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
       warrantyAndSla: '30 ngày bảo hành kỹ thuật tiêu chuẩn (sửa lỗi logic custom code, phản hồi ban đầu Severity 1 trong vòng < 2 giờ làm việc).',
     },
     scope: '1 use case trọng điểm (HR Tuyển dụng, B2B Content Factory, hoặc Tự động hóa Báo cáo)',
-    supportLevel: 'Đồng hành chuyên gia 1-on-1 trong 60 ngày',
+    supportLevel: 'Đồng hành kỹ thuật & bảo hành tiêu chuẩn 30 ngày',
     deliverables: [
       {
         category: '1. Khảo sát & Đóng gói Use Case',
@@ -177,7 +177,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
       warrantyAndSla: '60 ngày bảo hành kỹ thuật tiêu chuẩn (sửa lỗi custom code, hiệu chỉnh prompt drift định kỳ); tùy chọn chuyển sang gói Support Retainer theo quý.',
     },
     scope: 'Toàn bộ quy trình của 1 phòng ban + tích hợp 2-3 AI Agents vào hệ thống hiện tại',
-    supportLevel: 'Cố vấn chuyên sâu 90 ngày + Giám sát kỹ thuật 24/7',
+    supportLevel: 'Cố vấn chuyên sâu & bảo hành kỹ thuật 60 ngày',
     deliverables: [
       {
         category: '1. Tái cấu trúc Quy trình (Operating Model)',
@@ -257,7 +257,7 @@ export const INVESTMENT_TIERS: InvestmentTier[] = [
       warrantyAndSla: '90 ngày bảo hành kỹ thuật tiêu chuẩn (xử lý sự cố Severity 1-3 từ custom code); tùy chọn chuyển sang Hợp đồng Dịch vụ Vận hành Thường niên SLA 99.5%.',
     },
     scope: 'Toàn bộ doanh nghiệp đa phòng ban kết hợp hạ tầng Private AI chuyên biệt',
-    supportLevel: 'Đội ngũ kỹ sư chuyên trách On-site / Standby + Ban Cố Vấn CAIO chỉ đạo',
+    supportLevel: 'Đội ngũ kỹ sư On-site / Standby & bảo hành kỹ thuật 90 ngày',
     deliverables: [
       {
         category: '1. Chiến lược & Lộ trình Chuyển đổi (Strategy)',

@@ -114,10 +114,13 @@ export default function InvestmentFrameworkPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {INVESTMENT_TIERS.map((tier) => {
                 const isPopular = tier.id === 'department';
+                const anchorId =
+                  tier.id === 'pilot' ? 'lo-trinh-1' : tier.id === 'department' ? 'lo-trinh-2' : 'lo-trinh-3';
                 return (
                   <div
                     key={tier.id}
-                    className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
+                    id={anchorId}
+                    className={`scroll-mt-28 rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative ${
                       isPopular
                         ? 'bg-white border-2 border-[#17151A] shadow-lg ring-4 ring-black/5 -translate-y-1'
                         : 'bg-white/80 border border-black/10 shadow-xs hover:shadow-md'
@@ -426,10 +429,23 @@ export default function InvestmentFrameworkPage() {
                         </ul>
                       </div>
 
-                      <div className="p-3 rounded-2xl bg-[#F8F8F6] border border-black/5 text-xs text-[#17151A] mb-4">
+                      <div className="p-3 rounded-2xl bg-[#F8F8F6] border border-black/5 text-xs text-[#17151A] mb-3">
                         <strong className="block text-[#17151A] mb-1">Điều kiện thông qua:</strong>
                         <p className="text-[#6E6E6E] leading-relaxed">{gate.passCondition}</p>
                       </div>
+
+                      {gate.signOff && (
+                        <div className="p-3 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] text-xs space-y-1 mb-4">
+                          <div className="flex items-center justify-between text-[10px] font-mono">
+                            <span className="font-bold text-[#7000FF] uppercase">VĂN BẢN NGHIỆM THU</span>
+                            <span className="text-[#6E6E6E]">{gate.signOff.signatoryRole}</span>
+                          </div>
+                          <p className="font-semibold text-[#17151A]">{gate.signOff.documentName}</p>
+                          <p className="text-[11px] text-[#6E6E6E] leading-relaxed">
+                            <strong>Bản chất:</strong> {gate.signOff.natureOfAcceptance}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
                     {/* Accordion for No-Go clause */}
@@ -579,7 +595,7 @@ export default function InvestmentFrameworkPage() {
                 <tr>
                   <td className="py-3 font-semibold text-[#6E6E6E]">Dự toán OPEX bên thứ 3</td>
                   {INVESTMENT_TIERS.map((t) => (
-                    <td key={t.id} className="py-3 text-xs text-[#6E6E6E]">{t.cfoLayer.thirdPartyOpexEstimate.split('(')[0]}</td>
+                    <td key={t.id} className="py-3 text-xs text-[#6E6E6E]">{t.cfoLayer.thirdPartyOpexEstimate}</td>
                   ))}
                 </tr>
                 <tr>
