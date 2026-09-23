@@ -118,67 +118,82 @@ export function MethodStorytellingSection() {
       <div className="sticky top-0 h-screen w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 py-8 sm:py-12">
         <div className="max-w-[1280px] w-full mx-auto flex-1 flex flex-col justify-between">
           
-          {/* Top Progress Track */}
-          <div className="w-full pb-4 border-b border-[#E7E7E5] relative mb-2">
+          {/* Top Progress Track & Context */}
+          <div className="w-full pb-4 sm:pb-5 border-b border-[#E7E7E5] relative mb-4 sm:mb-6">
             {/* Ambient Gradient Scrub Bar */}
             <div
               className="absolute -bottom-[1px] left-0 h-[2px] bg-gradient-to-r from-[#581C87] via-[#7000FF] to-[#F97316] transition-all duration-150 ease-out z-10"
               style={{ width: `${(scrollProgress * 100).toFixed(1)}%` }}
             />
 
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-mono font-bold tracking-wider text-[#0A0A0A] uppercase">
-                  Phương pháp Sunext
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              {/* Context & Framework */}
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#F97316] font-semibold">
+                  PHƯƠNG PHÁP SUNEXT
                 </span>
-                <span className="text-[#A3A3A3] text-xs">/</span>
-                <span className="text-xs font-mono text-[#747474]">
-                  3 Nguyên Tắc Thiết Kế
+                <span className="text-xs sm:text-sm font-mono text-[#747474]">
+                  3 nguyên tắc thiết kế
                 </span>
               </div>
 
-              {/* Status Step Indicator (Read-only, synchronized with scroll) */}
-              <div className="flex items-center gap-2">
-                {STEPS.map((s, idx) => {
-                  const isActive = activeStep === idx;
-                  return (
-                    <div
-                      key={s.num}
-                      className={`px-2.5 py-1 rounded text-xs font-mono transition-all duration-200 flex items-center gap-1.5 ${
-                        isActive
-                          ? 'bg-[#0A0A0A] text-white font-medium'
-                          : 'text-[#747474]'
-                      }`}
-                    >
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#F97316] shrink-0" />}
-                      <span>{s.pillLabel}</span>
-                    </div>
-                  );
-                })}
+              {/* Single Progress Bar: 01 Quy trình ━━━━ 02 Dữ liệu ━━━━ 03 KPI */}
+              <div className="w-full sm:w-auto sm:min-w-[320px] max-w-[420px]">
+                <div className="flex items-center justify-between gap-2 text-xs font-mono">
+                  {STEPS.map((s, idx) => {
+                    const isActive = activeStep === idx;
+                    const isPassed = activeStep > idx;
+                    return (
+                      <React.Fragment key={s.num}>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <span
+                            className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-semibold transition-all duration-300 ${
+                              isActive
+                                ? 'bg-[#F97316] text-white shadow-xs ring-4 ring-[#F97316]/15'
+                                : isPassed
+                                ? 'bg-[#0A0A0A] text-white'
+                                : 'bg-[#E7E7E5] text-[#747474]'
+                            }`}
+                          >
+                            {s.num}
+                          </span>
+                          <span
+                            className={`text-xs transition-colors duration-200 hidden sm:inline ${
+                              isActive ? 'text-[#0A0A0A] font-medium' : 'text-[#8E8E8A]'
+                            }`}
+                          >
+                            {s.pillLabel.replace(/^\d+\s*/, '')}
+                          </span>
+                        </div>
+
+                        {idx < STEPS.length - 1 && (
+                          <div className="flex-1 h-[2px] bg-[#E7E7E5] relative mx-2 rounded-full overflow-hidden">
+                            <div
+                              className="absolute inset-y-0 left-0 bg-[#F97316] transition-all duration-300 ease-out"
+                              style={{
+                                width: isPassed ? '100%' : isActive ? '50%' : '0%',
+                              }}
+                            />
+                          </div>
+                        )}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
 
           {/* Main Content & Living Visual Flow */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-4 sm:py-6">
             
             {/* Left Column: Lean Confident Narrative with Fixed Typographic Skeleton */}
             <div className="lg:col-span-5 relative flex flex-col justify-center">
               <div className={`${animClass} flex flex-col justify-between`}>
                 <div>
-                  {/* Micro-label Block (8–12px relationship) */}
-                  <div className="flex flex-col gap-2.5">
-                    <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#F97316] font-semibold">
-                      PHƯƠNG PHÁP SUNEXT
-                    </span>
-                    <span className="text-xs sm:text-sm font-mono text-[#747474] tracking-wide">
-                      3 nguyên tắc thiết kế
-                    </span>
-                  </div>
-
-                  {/* Large Premium Breathing Space: 48–64px before H2 */}
-                  <div className="mt-12 sm:mt-14 lg:mt-16 min-h-[88px] sm:min-h-[105px] lg:min-h-[115px] flex items-start">
-                    <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.08]">
+                  {/* Large Premium Breathing Space before H2 */}
+                  <div className="min-h-[88px] sm:min-h-[105px] lg:min-h-[120px] flex items-start">
+                    <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.0] lg:leading-[1.02]">
                       {displayedStep === 0 && (
                         <>
                           Quy trình trước<br />công cụ.
@@ -197,7 +212,7 @@ export function MethodStorytellingSection() {
                     </h2>
                   </div>
 
-                  {/* Supporting Copy (20–28px after H2, constrained to 380–440px for clean 2 lines) */}
+                  {/* Supporting Copy (24–30px after H2, constrained to 380–440px for clean 2 lines) */}
                   <div className="mt-6 sm:mt-7 min-h-[56px] sm:min-h-[64px]">
                     <p className="text-base text-[#515151] font-normal leading-relaxed max-w-[400px]">
                       {displayedStep === 0 && (
@@ -219,82 +234,33 @@ export function MethodStorytellingSection() {
                   </div>
                 </div>
 
-                {/* Fixed Metric Skeleton (48–72px after supporting copy) */}
-                <div className="mt-12 sm:mt-14 lg:mt-16 pt-6 border-t border-[#E7E7E5] flex items-center min-h-[76px]">
+                {/* Fixed Metric Skeleton (36–48px after supporting copy, separated by subtle divider) */}
+                <div className="mt-10 sm:mt-12 lg:mt-14 pt-6 border-t border-[#E7E7E5] flex flex-col justify-center min-h-[80px]">
                   {displayedStep === 1 ? (
                     <div className="flex flex-col justify-center">
-                      <span className="text-xl sm:text-2xl font-medium tracking-tight text-[#0A0A0A] leading-snug">
+                      <span className="text-xl sm:text-2xl font-light tracking-tight text-[#0A0A0A] leading-snug">
                         Dữ liệu trong vùng kiểm soát
                       </span>
-                      <span className="text-xs font-mono text-[#747474] mt-0.5">
+                      <span className="text-xs font-mono text-[#747474] mt-1">
                         On-premise / Private VPC
                       </span>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-4">
-                      <span className="text-5xl sm:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums shrink-0 leading-none">
+                    <div className="flex flex-col justify-center">
+                      <span className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums leading-none">
                         {step.proofNum}
                       </span>
-                      <div className="text-xs sm:text-sm font-medium text-[#747474] leading-snug -translate-y-1 sm:-translate-y-1.5">
+                      <span className="text-xs sm:text-sm font-normal text-[#747474] mt-2">
                         {step.proofLabel}
-                      </div>
+                      </span>
                     </div>
                   )}
                 </div>
               </div>
             </div>
 
-            {/* Right Column: Evolving System Visual with Segmented Milestone Track (01 ━━━━ 02 ━━━━ 03) */}
-            <div className="lg:col-span-7 w-full flex flex-col items-center justify-center relative overflow-visible">
-              
-              {/* Segmented Milestone Bar: 01 ━━━━━━━━━ 02 ━━━━━━━━━ 03 */}
-              <div className="w-full max-w-[480px] mb-6 px-2">
-                <div className="flex items-center justify-between gap-3 text-xs font-mono">
-                  {STEPS.map((s, idx) => {
-                    const isActive = activeStep === idx;
-                    const isPassed = activeStep > idx;
-                    return (
-                      <React.Fragment key={s.num}>
-                        {/* Milestone Number + Label */}
-                        <div className="flex items-center gap-2 shrink-0">
-                          <span
-                            className={`w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-semibold transition-all duration-300 ${
-                              isActive
-                                ? 'bg-[#F97316] text-white shadow-sm ring-4 ring-[#F97316]/15'
-                                : isPassed
-                                ? 'bg-[#0A0A0A] text-white'
-                                : 'bg-[#E7E7E5] text-[#747474]'
-                            }`}
-                          >
-                            {s.num}
-                          </span>
-                          <span
-                            className={`text-xs transition-colors duration-200 hidden sm:inline ${
-                              isActive ? 'text-[#0A0A0A] font-medium' : 'text-[#8E8E8A]'
-                            }`}
-                          >
-                            {s.title.replace('.', '')}
-                          </span>
-                        </div>
-
-                        {/* Connector Line between milestones */}
-                        {idx < STEPS.length - 1 && (
-                          <div className="flex-1 h-[2px] bg-[#E7E7E5] relative mx-2 rounded-full overflow-hidden">
-                            <div
-                              className="absolute inset-y-0 left-0 bg-[#F97316] transition-all duration-300 ease-out"
-                              style={{
-                                width: isPassed ? '100%' : isActive ? '50%' : '0%',
-                              }}
-                            />
-                          </div>
-                        )}
-                      </React.Fragment>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Living Visual Canvas */}
+            {/* Right Column: Pure Living Visual Canvas (No duplicate milestone bar) */}
+            <div className="lg:col-span-7 w-full flex items-center justify-center relative overflow-visible">
               <MethodSolarCanvas activeStep={activeStep} />
             </div>
 

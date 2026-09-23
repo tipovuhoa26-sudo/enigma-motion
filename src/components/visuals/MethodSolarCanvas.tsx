@@ -326,31 +326,9 @@ export function MethodSolarCanvas({ activeStep }: MethodSolarCanvasProps) {
           <circle cx="0" cy="0" r="6" fill="#FFFFFF" />
 
           {/* Outcome Header Badge */}
-          <text x="0" y="-52" textAnchor="middle" fill={activeStep === 1 ? '#059669' : '#EA580C'} fontSize="13" fontFamily="monospace" fontWeight="bold" letterSpacing="0.08em">
-            {activeStep === 2 ? '◉ BUSINESS IMPACT' : activeStep === 1 ? '◉ PRIVATE CORE' : '◉ RESULT'}
+          <text x="0" y="-52" textAnchor="middle" fill={activeStep === 1 ? '#059669' : '#EA580C'} fontSize="12" fontFamily="monospace" fontWeight="bold" letterSpacing="0.1em">
+            {activeStep === 2 ? '◉ IMPACT' : activeStep === 1 ? '◉ PRIVATE CORE' : '◉ RESULT'}
           </text>
-
-          {/* Result Metric Text Label (Subtly Morphs with Step) */}
-          {activeStep === 0 && (
-            <text x="0" y="60" textAnchor="middle" fill="#EA580C" fontSize="18" fontFamily="sans-serif" fontWeight="700" className="animate-in fade-in duration-200">
-              −67% Thời Gian
-            </text>
-          )}
-          {activeStep === 1 && (
-            <g className="animate-in fade-in duration-200">
-              <text x="0" y="58" textAnchor="middle" fill="#059669" fontSize="13" fontFamily="sans-serif" fontWeight="700" letterSpacing="0.02em">
-                VÙNG KIỂM SOÁT
-              </text>
-              <text x="0" y="74" textAnchor="middle" fill="#747474" fontSize="10.5" fontFamily="monospace" fontWeight="500">
-                Private VPC / On-Prem
-              </text>
-            </g>
-          )}
-          {activeStep === 2 && (
-            <text x="0" y="60" textAnchor="middle" fill="#EA580C" fontSize="18" fontFamily="sans-serif" fontWeight="700" className="animate-in fade-in duration-200">
-              −75% Thời Gian
-            </text>
-          )}
         </g>
 
       </svg>
