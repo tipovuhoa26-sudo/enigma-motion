@@ -17,6 +17,7 @@ dist
 # Misc
 .DS_Store
 *.pem
+*.mp4
 
 # Debug logs
 npm-debug.log*

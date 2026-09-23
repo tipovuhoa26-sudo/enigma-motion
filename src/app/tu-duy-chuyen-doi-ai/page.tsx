@@ -127,30 +127,29 @@ export default function AiTransformationHubPage() {
                 <strong>6 Trụ Cột = Organizational Capability Checklist</strong>, được kích hoạt linh hoạt, <em>không phải quy trình 6 bước tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn đang chặn use case ưu tiên rồi tập trung mở khoá.
               </p>
 
-              {/* Body -> 40-56px -> Proof Indicator */}
-              <div className="mt-11 p-4 rounded-2xl bg-[#FAF5FF] border border-[#EDE9FE] text-xs text-[#515151] space-y-2">
-                <div className="flex items-center justify-between text-[#7000FF] font-semibold text-[11px] uppercase tracking-wider">
-                  <span>Khung phân bổ nỗ lực BCG</span>
-                  <span>10 — 20 — 70</span>
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
-                  <div className="p-2 rounded-lg bg-white border border-[#EDE9FE]">
-                    <span className="font-bold text-[#17151A] block">10%</span>
-                    <span className="text-[#747474] text-[10px]">Mô hình &amp; Tool</span>
+              {/* Body -> 40-56px -> Proof Indicator as pure typography */}
+              <div className="mt-10 pt-8 border-t border-black/5">
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#7000FF] font-semibold block mb-4">
+                  KHUNG PHÂN BỔ NỖ LỰC BCG
+                </span>
+                <div className="grid grid-cols-3 gap-6 font-mono">
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-light text-[#17151A] block">10%</span>
+                    <span className="text-xs text-[#747474] font-sans font-normal mt-1 block">Technology &amp; Tools</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-white border border-[#EDE9FE]">
-                    <span className="font-bold text-[#17151A] block">20%</span>
-                    <span className="text-[#747474] text-[10px]">Hạ tầng Dữ liệu</span>
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-light text-[#17151A] block">20%</span>
+                    <span className="text-xs text-[#747474] font-sans font-normal mt-1 block">Data Architecture</span>
                   </div>
-                  <div className="p-2 rounded-lg bg-[#7000FF]/10 border border-[#7000FF]/20 text-[#7000FF]">
-                    <span className="font-bold block">70%</span>
-                    <span className="font-medium text-[10px]">Con người &amp; Quy trình</span>
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-light text-[#7000FF] block">70%</span>
+                    <span className="text-xs text-[#7000FF] font-sans font-medium mt-1 block">People &amp; Process</span>
                   </div>
                 </div>
               </div>
 
               {/* Action CTAs */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-wrap items-center gap-4 pt-6">
                 <Link href="/danh-gia-san-sang-ai">
                   <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold px-5 py-2.5">
                     <ClipboardCheck className="w-4 h-4 mr-1.5" />
@@ -160,9 +159,9 @@ export default function AiTransformationHubPage() {
 
                 <a
                   href="#cac-tru-cot"
-                  className="px-4 py-2.5 rounded-xl border border-[#D5D3CC] hover:border-[#17151A] text-xs font-medium text-[#17151A] transition-colors inline-flex items-center gap-1.5 bg-white"
+                  className="text-xs font-medium text-[#17151A] hover:text-[#7000FF] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span>Xem 6 trụ cột chi tiết</span>
+                  <span>Khám phá 6 trụ cột</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -174,18 +173,13 @@ export default function AiTransformationHubPage() {
             </div>
           </section>
 
-          {/* Section: 6 Trụ Cột Năng Lực (Editorial Chapters with Generous Whitespace) */}
-          <section id="cac-tru-cot" className="mb-28 lg:mb-36 scroll-mt-24">
-            {/* Section Header with Spacing Grammar: Eyebrow -> 8-12px -> Sublabel -> 44-64px -> H2 -> 20-28px -> Body */}
-            <div className="max-w-3xl mb-16">
+          {/* Section: 6 Trụ Cột Năng Lực (Alternating Editorial Chapters, 60–80vh, No Cards, No Borders) */}
+          <section id="cac-tru-cot" className="mb-28 lg:mb-40 scroll-mt-24">
+            <div className="max-w-2xl mb-20">
               <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block">
                 PHƯƠNG PHÁP SUNEXT
               </span>
-              <span className="text-xs text-[#747474] font-medium block mt-2">
-                6 trụ cột năng lực tổ chức
-              </span>
-
-              <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight mt-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#17151A] tracking-tight mt-4 leading-[1.12]">
                 Biết chính xác AI đang mắc ở đâu
               </h2>
               <p className="text-base text-[#6E6E6E] font-light mt-6 leading-relaxed">
@@ -193,128 +187,154 @@ export default function AiTransformationHubPage() {
               </p>
             </div>
 
-            {/* 6 Editorial Chapters Stream */}
-            <div className="space-y-4">
+            {/* Alternating Editorial Chapters Stream (60-80vh per pillar) */}
+            <div className="space-y-24 lg:space-y-36">
               {[
                 {
-                  number: 1,
+                  number: '01',
                   slug: 'chien-luoc-so',
+                  vietnameseName: 'CHIẾN LƯỢC',
                   englishName: 'STRATEGY',
                   question: 'AI đang tạo giá trị ở đâu?',
                   focus: 'Doanh nghiệp thường thử nghiệm AI phân tán ở khắp nơi nhưng không nơi nào tạo ra kết quả kinh tế. Trụ cột Chiến lược giúp xác định đúng 1–2 miền nghiệp vụ có đòn bẩy P&L cao nhất để tập trung nguồn lực đầu tư có đo lường.',
                   metric: '−40%',
                   metricLabel: 'Chi phí tuyển dụng & phân bổ ngân sách',
+                  align: 'left',
                 },
                 {
-                  number: 2,
+                  number: '02',
                   slug: 'nguoi-tai-cong-nghe',
+                  vietnameseName: 'CON NGƯỜI',
                   englishName: 'PEOPLE',
                   question: 'Đội ngũ có thực sự làm chủ AI?',
                   focus: '90% nhân sự dừng lại ở mức thử prompt cơ bản rồi bỏ cuộc sau 60 ngày. Trụ cột Con người phân định chuẩn 5 tầng năng lực thực chiến, đo bằng Pass Mark độc lập và sản lượng công việc thực tế thay vì lý thuyết chung.',
                   metric: '600+',
                   metricLabel: 'Giảng viên & chuyên viên đạt chuẩn Bậc 6',
+                  align: 'right',
                 },
                 {
-                  number: 3,
+                  number: '03',
                   slug: 'mo-hinh-van-hanh',
+                  vietnameseName: 'VẬN HÀNH',
                   englishName: 'PROCESS',
                   question: 'Quy trình đã được thiết kế lại cho AI chưa?',
                   focus: 'Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Trụ cột Vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng tuyệt đối.',
                   metric: 'x5 lần',
                   metricLabel: 'Năng suất sản xuất nội dung & SOP nội bộ',
+                  align: 'left',
                 },
                 {
-                  number: 4,
+                  number: '04',
                   slug: 'ha-tang-cong-nghe',
+                  vietnameseName: 'CÔNG NGHỆ',
                   englishName: 'TECHNOLOGY',
                   question: 'Hạ tầng có hỗ trợ Agent vận hành liên tục?',
                   focus: 'Mua công cụ rời rạc khiến dữ liệu bị cô lập. Trụ cột Công nghệ thiết kế nền tảng Multi-Agent phân tán kết nối trực tiếp với CRM/ERP, triển khai trên hạ tầng Private VPC bảo mật với cam kết Zero Data Retention.',
                   metric: '24/7',
                   metricLabel: 'Vận hành liên tục & Zero Data Leakage',
+                  align: 'right',
                 },
                 {
-                  number: 5,
+                  number: '05',
                   slug: 'du-lieu-doanh-nghiep',
+                  vietnameseName: 'DỮ LIỆU',
                   englishName: 'DATA',
                   question: 'Dữ liệu có sạch và kết nối trong vùng an toàn?',
                   focus: 'Dữ liệu phân tán và thiếu kiểm soát là nguyên nhân hàng đầu khiến mô hình AI sinh ảo giác. Trụ cột Dữ liệu xây dựng Single Source of Truth, phân quyền an toàn và kết nối kho tri thức vào Private Vector Vault.',
                   metric: '99.8%',
                   metricLabel: 'Độ chính xác truy xuất dữ liệu nghiệp vụ',
+                  align: 'left',
                 },
                 {
-                  number: 6,
+                  number: '06',
                   slug: 'do-luong-mo-rong',
+                  vietnameseName: 'QUẢN TRỊ & MỞ RỘNG',
                   englishName: 'GOVERNANCE',
                   question: 'Đã có cơ chế kiểm soát rủi ro và đo lường ROI?',
                   focus: 'Thiếu KPI nghiệm thu và cơ chế chuyển giao khiến doanh nghiệp phụ thuộc vĩnh viễn vào tư vấn ngoài. Trụ cột Quản trị thiết lập rào giậu kiểm soát rủi ro, theo dõi ROI theo thời gian thực và bàn giao 100% tự chủ.',
                   metric: '100%',
                   metricLabel: 'Tự chủ vận hành không phụ thuộc bên ngoài',
+                  align: 'right',
                 },
-              ].map((p) => (
-                <article
-                  key={p.slug}
-                  className="py-12 sm:py-16 border-b border-[#E7E7E5] last:border-0 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start group"
-                >
-                  <div className="lg:col-span-8">
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase block mb-3">
-                      0{p.number} — {p.englishName}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight leading-snug group-hover:text-[#7000FF] transition-colors mb-4">
-                      {p.question}
-                    </h3>
-                    <p className="text-base text-[#6E6E6E] font-light leading-relaxed max-w-2xl">
-                      {p.focus}
-                    </p>
-                  </div>
+              ].map((p) => {
+                const isLeft = p.align === 'left';
+                return (
+                  <article
+                    key={p.slug}
+                    className="min-h-[50vh] flex flex-col justify-center group"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                      {/* Editorial Statement Column */}
+                      <div className={`lg:col-span-8 ${isLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+                        <div className="flex items-baseline gap-3 mb-4">
+                          <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]/60 group-hover:text-[#7000FF] transition-colors">
+                            {p.number}
+                          </span>
+                          <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                            {p.vietnameseName} · {p.englishName}
+                          </span>
+                        </div>
 
-                  <div className="lg:col-span-4 flex flex-col justify-between items-start lg:items-end h-full pt-1">
-                    <div className="text-left lg:text-right mb-6">
-                      <span className="text-3xl sm:text-4xl font-light font-mono text-[#EA580C] block tracking-tight leading-none">
-                        {p.metric}
-                      </span>
-                      <span className="text-xs text-[#747474] font-light block mt-2">
-                        {p.metricLabel}
-                      </span>
+                        <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
+                          {p.question}
+                        </h3>
+
+                        <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
+                          {p.focus}
+                        </p>
+
+                        <Link
+                          href={`/tu-duy-chuyen-doi-ai/${p.slug}`}
+                          className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors group/link"
+                        >
+                          <span>Xem chi tiết trụ cột {p.number}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                        </Link>
+                      </div>
+
+                      {/* Visual / Metric Accent Column */}
+                      <div className={`lg:col-span-4 flex flex-col ${isLeft ? 'lg:order-2 lg:items-end lg:text-right' : 'lg:order-1 lg:items-start lg:text-left'} pt-4`}>
+                        <div className="space-y-2">
+                          <span className="text-5xl sm:text-6xl font-light font-mono text-[#EA580C] block tracking-tight leading-none">
+                            {p.metric}
+                          </span>
+                          <span className="text-xs text-[#747474] font-light block max-w-[200px] leading-relaxed">
+                            {p.metricLabel}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-
-                    <Link
-                      href={`/tu-duy-chuyen-doi-ai/${p.slug}`}
-                      className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] group-hover:text-[#7000FF] transition-colors pt-2 border-t border-black/5 w-full lg:w-auto lg:border-0"
-                    >
-                      <span>Xem trụ cột</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           </section>
 
-          {/* Section: Bằng Chứng Thật - 3 Doanh Nghiệp Đã Làm Đúng (With Authentic Photography) */}
-          <section className="mb-20 p-6 sm:p-10 rounded-3xl bg-[#F5F3F6] border border-black/5">
-            <div className="max-w-3xl mb-8">
-              <span className="text-xs uppercase tracking-wider text-[#6E6E6E] font-medium block mb-2">
-                Dữ Liệu Kiểm Chứng Thật Tại Hiện Trường
+          {/* Section: Bằng Chứng Thật - 3 Doanh Nghiệp Đã Làm Đúng (Open Editorial Spread, No Nested Card Shells) */}
+          <section className="mb-28 lg:mb-36 pt-16 border-t border-[#E7E7E5]">
+            <div className="max-w-3xl mb-12">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#7000FF] font-semibold block mb-2">
+                DỮ LIỆU KIỂM CHỨNG TẠI HIỆN TRƯỜNG
               </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-[#17151A] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight leading-snug">
                 Đây không phải lý thuyết — đây là ba doanh nghiệp đã làm đúng
               </h2>
-              <p className="text-xs sm:text-sm text-[#6E6E6E] mt-2">
+              <p className="text-sm sm:text-base text-[#6E6E6E] font-light mt-4 leading-relaxed">
                 Không phép màu nào ở đây cả. Chỉ là ba doanh nghiệp đã làm đúng thứ tự: biết mình yếu ở trụ cột nào, rồi giải đúng trụ cột đó trước khi mua thêm công cụ.
               </p>
             </div>
 
-            {/* Case selector tabs */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            {/* Case selector text tabs */}
+            <div className="flex flex-wrap gap-4 mb-10 pb-4 border-b border-black/5 font-mono text-xs">
               {verifiedCases.map((c, idx) => (
                 <button
                   key={c.title}
                   type="button"
                   onClick={() => setSelectedCase(idx)}
-                  className={`px-4 py-2 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                  className={`transition-all cursor-pointer pb-1 ${
                     selectedCase === idx
-                      ? 'bg-[#17151A] text-white shadow-xs'
-                      : 'bg-white border border-black/5 text-[#6E6E6E] hover:text-[#17151A]'
+                      ? 'text-[#17151A] font-semibold border-b-2 border-[#17151A]'
+                      : 'text-[#747474] hover:text-[#17151A]'
                   }`}
                 >
                   <span>{c.title}</span>
@@ -322,37 +342,32 @@ export default function AiTransformationHubPage() {
               ))}
             </div>
 
-            {/* Selected Case Card with Real Visual Asset */}
+            {/* Selected Case Open Spread */}
             {(() => {
               const current = verifiedCases[selectedCase];
               return (
-                <div className="bg-white rounded-3xl p-6 sm:p-8 border border-black/5 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-                  <div className="lg:col-span-7 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="px-2.5 py-0.5 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[10px] font-semibold text-[#7000FF]">
-                          {current.tag}
-                        </span>
-                        <span className="text-xs text-[#6E6E6E]">{current.industry}</span>
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-normal text-[#17151A] mb-2">
-                        {current.title}
-                      </h3>
-                      <p className="text-xs font-medium text-[#6E6E6E] mb-4">{current.team}</p>
-                      <p className="text-sm text-[#6E6E6E] leading-relaxed mb-6">
-                        {current.story}
-                      </p>
-
-                      {/* Case Study Visual Telemetry */}
-                      <div className="relative w-full h-[190px] rounded-2xl overflow-hidden border border-black/5 mb-4 shadow-xs">
-                        <CaseStudyVisual slug={current.link.replace('/case-studies/', '')} compact />
-                      </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                  <div className="lg:col-span-7 space-y-4">
+                    <div className="flex items-center gap-2 text-xs font-mono">
+                      <span className="text-[#7000FF] font-semibold">{current.tag}</span>
+                      <span>·</span>
+                      <span className="text-[#6E6E6E]">{current.industry}</span>
+                      <span>·</span>
+                      <span className="text-[#6E6E6E]">{current.team}</span>
                     </div>
 
-                    <div className="pt-4 border-t border-black/5 flex flex-wrap items-center justify-between gap-3 text-xs">
+                    <h3 className="text-2xl sm:text-3xl font-light text-[#17151A]">
+                      {current.title}
+                    </h3>
+
+                    <p className="text-base text-[#6E6E6E] font-light leading-relaxed">
+                      {current.story}
+                    </p>
+
+                    <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-mono">
                       <Link
                         href={current.link}
-                        className="inline-flex items-center gap-1.5 font-medium text-[#17151A] hover:underline"
+                        className="inline-flex items-center gap-1.5 font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                       >
                         <span>Hồ sơ kỹ thuật Case Study</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
@@ -360,28 +375,21 @@ export default function AiTransformationHubPage() {
 
                       <Link
                         href={`/nganh/${current.industrySlug}`}
-                        className="inline-flex items-center gap-1.5 font-medium text-emerald-800 hover:underline"
+                        className="inline-flex items-center gap-1.5 text-[#747474] hover:text-[#17151A] transition-colors"
                       >
-                        <span>Xem giải pháp theo ngành tương ứng</span>
+                        <span>Xem giải pháp theo ngành</span>
                         <ChevronRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 bg-[#FAF5FF] rounded-2xl p-6 border border-[#EDE9FE] flex flex-col justify-around gap-4">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-[#7000FF]">
-                      Chỉ Số Kinh Tế Xác Thực
-                    </span>
+                  <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 pt-2 font-mono">
                     {current.metrics.map((m) => (
-                      <div key={m.label} className="border-b border-black/5 pb-3 last:border-b-0 last:pb-0">
-                        <span className="text-3xl font-light text-[#17151A] block">{m.value}</span>
-                        <span className="text-xs text-[#6E6E6E]">{m.label}</span>
+                      <div key={m.label} className="pb-4 border-b border-[#E7E7E5] last:border-b-0">
+                        <span className="text-3xl sm:text-4xl font-light text-[#EA580C] block leading-none">{m.value}</span>
+                        <span className="text-xs text-[#747474] font-sans font-light mt-2 block">{m.label}</span>
                       </div>
                     ))}
-
-                    <div className="pt-2 border-t border-black/5 text-[11px] text-[#6E6E6E]">
-                      Cam kết bảo vệ dữ liệu với mô hình NDA-first & Private Architecture.
-                    </div>
                   </div>
                 </div>
               );
