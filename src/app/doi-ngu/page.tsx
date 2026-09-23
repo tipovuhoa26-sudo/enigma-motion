@@ -496,7 +496,7 @@ export default function TeamLeadershipPage() {
               })}
             </div>
 
-            {/* Browse Layer: Faculty Cards Grid */}
+            {/* Browse Layer: Faculty Cards Grid (Lean 4-line editorial cards, full bio in modal) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredFaculty.map((member) => {
                 const blockStyle = BLOCK_COLORS[member.blockId] || BLOCK_COLORS.executive;
@@ -505,76 +505,54 @@ export default function TeamLeadershipPage() {
                   <div
                     key={member.id}
                     onClick={() => setSelectedFaculty(member)}
-                    className="p-6 rounded-3xl bg-white border border-black/10 shadow-xs hover:border-black/25 hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                    className="p-7 rounded-3xl bg-white border border-[#E8E8E8] hover:border-[#17151A] shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
                   >
-                    <div className="space-y-4">
-                      {/* Card Header: Avatar & Experience Tag */}
-                      <div className="flex items-start justify-between gap-3">
+                    <div>
+                      {/* Photo / Avatar */}
+                      <div className="flex items-start justify-between gap-3 mb-6">
                         {member.avatarUrl ? (
-                          <div className="relative w-12 h-12 rounded-2xl overflow-hidden border border-black/10 shadow-xs shrink-0">
+                          <div className="relative w-16 h-16 rounded-2xl overflow-hidden border border-black/10 shadow-xs shrink-0 bg-neutral-100">
                             <Image
                               src={member.avatarUrl}
                               alt={member.name}
                               fill
-                              className="object-cover"
+                              sizes="64px"
+                              className="object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
                         ) : (
                           <div
-                            className={`w-12 h-12 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-lg font-light tracking-wider shadow-xs shrink-0`}
+                            className={`w-16 h-16 rounded-2xl ${blockStyle.bg} ${blockStyle.text} flex items-center justify-center font-serif text-xl font-light tracking-wider shadow-xs shrink-0`}
                           >
                             {initials}
                           </div>
                         )}
-                        <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 shrink-0">
-                          {member.experienceYears}+ Năm KN
+                        <span className="text-[10px] font-mono text-[#7000FF] px-2.5 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] uppercase tracking-wider">
+                          {member.blockName.split('&')[0].trim()}
                         </span>
                       </div>
 
-                      {/* Name & Title */}
-                      <div>
-                        <span
-                          className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full border inline-block mb-1.5 ${blockStyle.badge}`}
-                        >
-                          {member.blockName}
-                        </span>
-                        <h4 className="text-base font-medium text-[#17151A] group-hover:text-neutral-700 transition-colors">
-                          {member.name}
-                        </h4>
-                        <p className="text-xs text-[#6E6E6E] font-medium mt-0.5">
-                          {member.title}
-                        </p>
-                        <p className="text-[11px] text-[#8E8E8E] mt-1 leading-snug">
-                          {member.roleInSunext}
-                        </p>
-                      </div>
+                      {/* Name: Bold statement */}
+                      <h4 className="text-lg font-normal text-[#17151A] group-hover:text-[#7000FF] transition-colors leading-snug">
+                        {member.name}
+                      </h4>
 
-                      {/* Organizations pill list */}
-                      <div className="pt-2 border-t border-black/5">
-                        <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-semibold block mb-1.5">
-                          Từng đồng hành / Công tác:
-                        </span>
-                        <div className="flex flex-wrap gap-1">
-                          {member.organizations.slice(0, 3).map((org, oIdx) => (
-                            <span
-                              key={oIdx}
-                              className="text-[10px] px-2 py-0.5 rounded-md bg-[#F8F8F6] border border-black/5 text-[#17151A] font-medium"
-                            >
-                              {org}
-                            </span>
-                          ))}
-                          {member.organizations.length > 3 && (
-                            <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-[#F8F8F6] text-neutral-400">
-                              +{member.organizations.length - 3}
-                            </span>
-                          )}
-                        </div>
-                      </div>
+                      {/* Domain */}
+                      <p className="text-xs text-[#6E6E6E] font-medium mt-1 mb-2">
+                        {member.title.split('&')[0].trim()}
+                      </p>
+
+                      {/* Experience summary: 24+ năm · Former HOSE / CFO */}
+                      <p className="text-xs font-mono text-[#17151A] font-light">
+                        {member.experienceYears}+ năm · {member.organizations.slice(0, 2).join(' / ')}
+                      </p>
                     </div>
 
-                    {/* Card Footer: Trigger CTA */}
-                    <div className="mt-5 pt-3 border-t border-black/5 flex items-center justify-between text-xs font-semibold text-[#17151A] group-hover:text-emerald-800 transition-colors">
-                      <span>Xem Hồ Sơ Chi Tiết</span>
+                    {/* CTA Link */}
+                    <div className="mt-6 pt-4 border-t border-black/5 flex items-center justify-between text-xs font-medium text-[#17151A] group-hover:text-[#7000FF] transition-colors">
+                      <span className="text-[#747474] group-hover:text-[#17151A] transition-colors">
+                        Xem chuyên môn
+                      </span>
                       <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>

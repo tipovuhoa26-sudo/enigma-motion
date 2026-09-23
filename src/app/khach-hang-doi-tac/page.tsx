@@ -20,6 +20,19 @@ import {
   OrganizationLogo,
 } from '@/content/logoData';
 
+const TIER1_PROOFS: Record<string, string> = {
+  vietcap: '−75% thời gian bóc tách BCTC thô',
+  vinhomes: '< 5 phút phản hồi thông tin cho 500+ môi giới',
+  dentsu: '−65% thời gian phát triển proposal đấu thầu',
+  ptexim: 'Chuẩn hóa SOP xuất nhập khẩu, giảm 67% chu kỳ xử lý',
+  vietcombank: 'Workshop chiến lược Multi-Agent & ZDR Private VPC',
+  smartlands: '100% tỷ lệ kết nối giỏ hàng và tư vấn tự động 24/7',
+  'phuong-truong-an': '+200% sản lượng video tiến độ hiện trường',
+  'fpt-university': '10.000+ sinh viên & nâng chuẩn Bậc 6 cho 600+ GV',
+  prudential: 'Chuyển giao năng lực tư vấn tài chính cá nhân',
+  'thue-tphcm': 'Xử lý và đối soát chứng từ văn bản tự động',
+};
+
 export default function ClientsNetworkPage() {
   const [activeIndustry, setActiveIndustry] = useState<string>('all');
   const [selectedOrg, setSelectedOrg] = useState<OrganizationLogo | null>(null);
@@ -54,44 +67,54 @@ export default function ClientsNetworkPage() {
           </div>
 
           {/* Hero Section */}
-          <section className="max-w-4xl mb-12">
-            <span className="text-xs uppercase tracking-widest text-[#6E6E6E] font-medium block mb-3">
-              ECOSYSTEM & NETWORK · MẠNG LƯỚI ĐỒNG HÀNH TOÀN QUỐC
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mb-6">
-              Mạng Lưới Tổ Chức & Đề Án Đồng Hành Chuyển Đổi AI
+          <section className="max-w-4xl mb-20">
+            {/* Eyebrow -> 8-12px -> Sublabel */}
+            <div>
+              <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block">
+                HỆ SINH THÁI ĐỐI TÁC
+              </span>
+              <span className="text-xs text-[#747474] font-medium block mt-2">
+                Mạng lưới đồng hành chuyển đổi AI toàn quốc
+              </span>
+            </div>
+
+            {/* Context block -> 44-64px -> H1 */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.2] mt-12">
+              Mạng Lưới Tổ Chức &amp; Đề Án Đồng Hành Chuyển Đổi AI
             </h1>
-            <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-3xl mb-8">
-              Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ thống phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận ứng dụng AI hiệu quả trên khắp cả nước.
+
+            {/* Heading -> 20-28px -> Body */}
+            <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-3xl mt-6">
+              Từ các định chế tài chính niêm yết, tập đoàn bất động sản đến các trường đại học hàng đầu và hệ sinh thái phân phối bán lẻ, đội ngũ chuyên gia Sunext đã đồng hành đào tạo, cố vấn và chuyển giao phương pháp luận ứng dụng AI hiệu quả trên khắp cả nước.
             </p>
 
-            {/* Metric Badges: 8 Case Studies · 40+ Engagements · 45 Organizations */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mb-12">
-              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+            {/* Body -> 40-56px -> Metric Badges: 8 Case Studies · 40+ Engagements · 45 Organizations */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mt-11">
+              <div className="p-6 rounded-3xl bg-white border border-[#E8E8E8] shadow-xs">
                 <span className="text-3xl sm:text-4xl font-light font-mono text-[#EA580C] block">08</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
                   Case Studies
                 </span>
-                <span className="text-[11px] text-[#747474] block mt-0.5">
-                  Bằng chứng chuyên sâu có số liệu đo lường
+                <span className="text-[11px] text-[#747474] block mt-1 font-light">
+                  Bằng chứng có số liệu đo lường
                 </span>
               </div>
-              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+              <div className="p-6 rounded-3xl bg-white border border-[#E8E8E8] shadow-xs">
                 <span className="text-3xl sm:text-4xl font-light font-mono text-[#7000FF] block">40+</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
                   Engagements
                 </span>
-                <span className="text-[11px] text-[#747474] block mt-0.5">
-                  Đề án &amp; chương trình triển khai thực tế
+                <span className="text-[11px] text-[#747474] block mt-1 font-light">
+                  Đề án &amp; chương trình thực tế
                 </span>
               </div>
-              <div className="p-5 rounded-2xl bg-white border border-[#E8E8E8] shadow-xs">
+              <div className="p-6 rounded-3xl bg-white border border-[#E8E8E8] shadow-xs">
                 <span className="text-3xl sm:text-4xl font-light font-mono text-[#17151A] block">45</span>
                 <span className="text-xs font-semibold text-[#17151A] block mt-1 uppercase tracking-wider">
                   Organizations
                 </span>
-                <span className="text-[11px] text-[#747474] block mt-0.5">
-                  10 Direct Engagements &amp; 35 Ecosystem
+                <span className="text-[11px] text-[#747474] block mt-1 font-light">
+                  10 Direct &amp; 35 Ecosystem
                 </span>
               </div>
             </div>
@@ -280,15 +303,16 @@ export default function ClientsNetworkPage() {
                   {filteredLogos
                     .filter((org) => org.tier === 1)
                     .map((org) => {
+                      const proofText = TIER1_PROOFS[org.id] || org.description.split('.')[0] + '.';
                       return (
                         <div
                           key={org.id}
                           onClick={() => setSelectedOrg(org)}
-                          className="p-6 rounded-2xl bg-white border border-[#E8E8E8] hover:border-[#7000FF] shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
+                          className="p-7 rounded-3xl bg-white border border-[#E8E8E8] hover:border-[#17151A] shadow-xs hover:shadow-md transition-all flex flex-col justify-between group cursor-pointer"
                         >
                           <div>
-                            <div className="flex items-start justify-between gap-3 mb-4">
-                              <div className="w-14 h-14 rounded-xl bg-[#F8F8F6] border border-black/5 p-2 flex items-center justify-center shrink-0">
+                            <div className="flex items-start justify-between gap-3 mb-5">
+                              <div className="w-14 h-14 rounded-2xl bg-[#F8F8F6] border border-black/5 p-2 flex items-center justify-center shrink-0">
                                 <Image
                                   src={org.logoUrl}
                                   alt={org.name}
@@ -302,15 +326,16 @@ export default function ClientsNetworkPage() {
                               </span>
                             </div>
 
-                            <h4 className="text-base font-medium text-[#17151A] group-hover:text-[#7000FF] transition-colors mb-2">
+                            <h4 className="text-base font-normal text-[#17151A] group-hover:text-[#7000FF] transition-colors mb-2">
                               {org.name}
                             </h4>
-                            <p className="text-xs text-[#515151] leading-relaxed line-clamp-3 mb-4">
-                              {org.description}
+                            {/* 1-line proof tag */}
+                            <p className="text-xs font-mono text-[#EA580C] leading-snug mb-4">
+                              {proofText}
                             </p>
                           </div>
 
-                          <div className="pt-3 border-t border-black/5 flex items-center justify-between text-xs text-[#17151A]">
+                          <div className="pt-4 border-t border-black/5 flex items-center justify-between text-xs text-[#17151A]">
                             {org.caseStudySlug ? (
                               <Link
                                 href={`/case-studies/${org.caseStudySlug}`}
@@ -321,10 +346,10 @@ export default function ClientsNetworkPage() {
                                 <ArrowUpRight className="w-3.5 h-3.5" />
                               </Link>
                             ) : (
-                              <span className="text-[#747474]">Đề án bảo mật NDA</span>
+                              <span className="text-[#747474] font-light">Đề án bảo mật NDA</span>
                             )}
                             <span className="text-[11px] text-[#747474] group-hover:text-[#17151A] transition-colors">
-                              Chi tiết ➔
+                              Chi tiết →
                             </span>
                           </div>
                         </div>

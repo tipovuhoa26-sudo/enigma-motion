@@ -254,25 +254,28 @@ export default function AiReadinessDiagnosticPage() {
 
             {/* MAIN CONTENT: QUESTIONNAIRE OR RESULTS */}
             {!isCompleted ? (
-              /* Questionnaire Interface */
+              /* Questionnaire Interface: Lean Question Header (03 / 12 · Operating Model · Question) */
               <div className="bg-white rounded-3xl border border-[#E8E8E8] p-6 sm:p-10 shadow-sm animate-in fade-in duration-200">
                 {/* Current Question Info */}
-                <div className="mb-6 pb-4 border-b border-black/5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="px-2.5 py-0.5 rounded-md bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-mono text-[#7000FF] font-semibold">
-                      TRỤ CỘT 0{currentQuestion.pillarNumber}
-                    </span>
-                    <span className="text-xs text-[#747474]">
-                      {currentQuestion.axis}
+                <div className="mb-8 pb-6 border-b border-black/5">
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold text-[#7000FF]">
+                        {activeStep + 1 < 10 ? `0${activeStep + 1}` : activeStep + 1} / {totalQuestions}
+                      </span>
+                      <span className="text-[#D5D3CC]">•</span>
+                      <span className="text-xs font-mono text-[#6E6E6E] uppercase tracking-wider">
+                        {currentQuestion.axis}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-[#8E8E8E] hidden sm:inline">
+                      Trụ Cột 0{currentQuestion.pillarNumber}
                     </span>
                   </div>
 
-                  <h2 className="text-xl sm:text-2xl font-light text-[#17151A] leading-snug mb-2">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-light text-[#17151A] leading-snug">
                     {currentQuestion.question}
                   </h2>
-                  <p className="text-xs text-[#626262] italic">
-                    {currentQuestion.subtext}
-                  </p>
                 </div>
 
                 {/* Question Options */}
@@ -375,37 +378,56 @@ export default function AiReadinessDiagnosticPage() {
                   </button>
                 </div>
 
-                {/* Overall Score & Maturity Stage Banner */}
-                <div className="p-6 sm:p-8 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-md border border-black/10">
-                  <div className="space-y-2 max-w-xl">
-                    <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/10 text-neutral-300">
-                        MỨC ĐỘ TRƯỞNG THÀNH TỔ CHỨC
-                      </span>
-                      <span className="text-xs font-mono font-semibold text-emerald-400">
-                        {maturityStage.range}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-light tracking-tight text-white">
-                      {maturityStage.name}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">
-                      {maturityStage.description}
-                    </p>
-                  </div>
-
-                  <div className="shrink-0 flex flex-col items-center md:items-end justify-center p-5 rounded-2xl bg-white/5 border border-white/10 min-w-[160px]">
-                    <span className="text-[11px] font-mono text-neutral-400 uppercase tracking-widest block mb-1">
-                      TỔNG ĐIỂM CHẨN ĐOÁN
+                {/* Executive Summary Card: Score · Stage · Bottleneck · Recommended Entry */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 sm:p-8 rounded-3xl bg-[#17151A] text-white">
+                  <div className="border-r border-white/10 pr-4">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
+                      TỔNG ĐIỂM
                     </span>
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl sm:text-5xl font-mono font-light text-white tracking-tight">
+                      <span className="text-3xl sm:text-4xl font-mono font-light text-white">
                         {totalScore}
                       </span>
-                      <span className="text-lg font-mono text-neutral-400">/ 48</span>
+                      <span className="text-sm font-mono text-neutral-400">/ 48</span>
                     </div>
-                    <span className="text-[10px] text-neutral-400 mt-1 font-mono">
-                      (Đạt {Math.round((totalScore / 48) * 100)}% tối đa)
+                    <span className="text-[10px] text-neutral-400 block mt-1 font-mono">
+                      {Math.round((totalScore / 48) * 100)}% tối đa
+                    </span>
+                  </div>
+
+                  <div className="border-r border-white/10 pr-4">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
+                      CẤP ĐỘ
+                    </span>
+                    <span className="text-xl sm:text-2xl font-light text-white block">
+                      {totalScore >= 38 ? 'Tự Chủ' : totalScore >= 24 ? 'Chuẩn Hóa' : 'Khởi Phát'}
+                    </span>
+                    <span className="text-[10px] text-emerald-400 block mt-1 font-mono">
+                      Giai đoạn {maturityStage.stageNumber}
+                    </span>
+                  </div>
+
+                  <div className="border-r border-white/10 pr-4">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
+                      ĐIỂM NGHẼN
+                    </span>
+                    <span className="text-xl sm:text-2xl font-light text-[#EA580C] block truncate">
+                      {primaryBottleneck.name.split(' ')[0]}
+                    </span>
+                    <span className="text-[10px] text-neutral-400 block mt-1 truncate font-mono">
+                      {primaryBottleneck.pct}% năng lực
+                    </span>
+                  </div>
+
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
+                      RECOMMENDED ENTRY
+                    </span>
+                    <span className="text-xl sm:text-2xl font-light text-[#A855F7] block truncate">
+                      {suggestedEntryPoint.phase.split(' ')[0]}
+                    </span>
+                    <span className="text-[10px] text-neutral-400 block mt-1 font-mono">
+                      Gate {maturityStage.stageNumber} Entry
                     </span>
                   </div>
                 </div>
