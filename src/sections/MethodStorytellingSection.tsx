@@ -127,10 +127,10 @@ export function MethodStorytellingSection() {
             />
 
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-              {/* Context & Framework */}
+              {/* Context & Framework: Single Delivery Spine (02 BUILD) */}
               <div className="flex flex-col gap-1.5">
                 <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#F97316] font-semibold">
-                  02 DESIGN · NGUYÊN TẮC THIẾT KẾ
+                  02 BUILD · 3 NGUYÊN TẮC THIẾT KẾ
                 </span>
                 <span className="text-xs sm:text-sm font-mono text-[#747474]">
                   Quy trình · Dữ liệu · KPI
@@ -222,36 +222,61 @@ export function MethodStorytellingSection() {
                       )}
                       {displayedStep === 1 && (
                         <>
-                          Kết nối dữ liệu vào AI trong ranh giới<br className="hidden sm:inline" /> bảo mật của doanh nghiệp.
+                          Hội tụ dữ liệu phân tán vào kho tri thức an toàn<br className="hidden sm:inline" /> trong ranh giới bảo mật của doanh nghiệp.
                         </>
                       )}
                       {displayedStep === 2 && (
                         <>
-                          Không có KPI, chưa triển khai AI. Mỗi use case<br className="hidden sm:inline" /> phải gắn với kết quả kinh doanh đo được.
+                          Không có KPI, chưa triển khai AI. Mọi use case<br className="hidden sm:inline" /> phải đo lường được từ baseline trước vận hành.
                         </>
                       )}
                     </p>
                   </div>
                 </div>
 
-                {/* Fixed Metric Skeleton (36–48px after supporting copy, separated by subtle divider) */}
-                <div className="mt-10 sm:mt-12 lg:mt-14 pt-6 border-t border-[#E7E7E5] flex flex-col justify-center min-h-[80px]">
-                  {displayedStep === 1 ? (
+                {/* Varied Metric Syntax: Breaks monotony across the 3 principles */}
+                <div className="mt-8 sm:mt-10 lg:mt-12 pt-6 border-t border-[#E7E7E5] flex flex-col justify-center min-h-[90px]">
+                  {displayedStep === 0 && (
                     <div className="flex flex-col justify-center">
-                      <span className="text-xl sm:text-2xl font-light tracking-tight text-[#0A0A0A] leading-snug">
-                        Dữ liệu trong vùng kiểm soát
-                      </span>
-                      <span className="text-xs font-mono text-[#747474] mt-1">
-                        On-premise / Private VPC
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col justify-center">
-                      <span className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#0A0A0A] tabular-nums leading-none">
-                        {step.proofNum}
+                      <span className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#EA580C] tabular-nums leading-none">
+                        −67%
                       </span>
                       <span className="text-xs sm:text-sm font-normal text-[#747474] mt-2">
-                        {step.proofLabel}
+                        Thời gian chu kỳ xử lý SOP chuẩn hóa
+                      </span>
+                    </div>
+                  )}
+
+                  {displayedStep === 1 && (
+                    <div className="flex flex-col justify-center">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xl sm:text-2xl font-light tracking-tight text-[#0A0A0A] font-mono">
+                          5 nguồn dữ liệu
+                        </span>
+                        <span className="text-base font-mono text-[#059669]">→</span>
+                        <span className="text-xl sm:text-2xl font-light tracking-tight text-[#059669] font-mono font-medium">
+                          1 luồng kiểm soát
+                        </span>
+                      </div>
+                      <span className="text-xs sm:text-sm font-normal text-[#747474] mt-2 font-mono">
+                        ERP · CRM · Docs · Database · API (Private VPC)
+                      </span>
+                    </div>
+                  )}
+
+                  {displayedStep === 2 && (
+                    <div className="flex flex-col justify-center">
+                      <div className="flex items-baseline gap-2.5">
+                        <span className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#747474] line-through font-mono">
+                          2 ngày
+                        </span>
+                        <span className="text-2xl font-mono text-[#7000FF]">→</span>
+                        <span className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#7000FF] font-mono font-medium">
+                          3 giờ
+                        </span>
+                      </div>
+                      <span className="text-xs sm:text-sm font-normal text-[#747474] mt-2">
+                        Thời gian đối soát &amp; xử lý tài chính tự động có HITL
                       </span>
                     </div>
                   )}

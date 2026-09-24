@@ -3,11 +3,12 @@
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Hero } from '@/sections/Hero';
-import { StatsStrip } from '@/sections/StatsStrip';
+import { ProofStrip } from '@/sections/ProofStrip';
 import { MethodStorytellingSection } from '@/sections/MethodStorytellingSection';
 import { FourGatesProgressSection } from '@/sections/FourGatesProgressSection';
-import { FieldEvidenceSection } from '@/sections/FieldEvidenceSection';
+import { PhotographicInterruptionSection } from '@/sections/PhotographicInterruptionSection';
 import { CasesSection } from '@/sections/CasesSection';
+import { ClientSovereigntySection } from '@/sections/ClientSovereigntySection';
 import { CtaFooter } from '@/sections/CtaFooter';
 import { Footer } from '@/sections/Footer';
 
@@ -17,25 +18,28 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-1 flex flex-col w-full">
-        {/* 01. HERO: Statement + Living Sun System (Nodes reveal on interaction) */}
+        {/* 01. HERO: Statement + Living Sun System (Scale +28%, Optical Gravity, Mini-Story 0s-7s) */}
         <Hero autoPlayIntro={true} />
 
-        {/* 02. PROOF: Kết quả được đo (3 Connected Metrics + Integrated Client Logos) */}
-        <StatsStrip />
+        {/* 02. PROOF STRIP: Quiet Trust (40+ engagements · 8 case studies · 45 orgs + Monochrome Logos) */}
+        <ProofStrip />
 
-        {/* 03. METHOD: 3 Scroll States (Process ➔ Data ➔ KPI) */}
+        {/* 03. METHOD: 3 Principles with Varied Geometry & Syntax (Process -67% ➔ Data Fan ➔ KPI Timeline) */}
         <MethodStorytellingSection />
 
-        {/* 04. DELIVERY: G1 ➔ G2 ➔ G3 ➔ G4 One Progression Beam + 3 Capabilities */}
+        {/* 04. DELIVERY: Dark Cinematic System (Discover G1 ➔ Build G2 ➔ Operate G3 ➔ Transfer G4) */}
         <FourGatesProgressSection />
 
-        {/* 05. FIELD EVIDENCE: Được Xây Từ Hiện Trường (Proof Photography) */}
-        <FieldEvidenceSection />
+        {/* 05. EARLY PHOTOGRAPHIC INTERRUPTION: Từ Hệ Thống Đến Hiện Trường (Vinhomes Unboxed 75vw) */}
+        <PhotographicInterruptionSection />
 
-        {/* 06. CASE: 1 Real World Transformation (Vinhomes Before ➔ After) */}
+        {/* 06. CASE STUDIES: In-depth Transformation Evidence */}
         <CasesSection />
 
-        {/* 07. CTA: Pure Horizon Sun · One Statement · One Action */}
+        {/* 07. TRANSFER: Client Sovereignty Climax (Sunext Shifts Outward ➔ Client Team Becomes Radiant Core) */}
+        <ClientSovereigntySection />
+
+        {/* 08. CTA: Pure Horizon Sun · One Statement · One Action */}
         <CtaFooter />
       </main>
 

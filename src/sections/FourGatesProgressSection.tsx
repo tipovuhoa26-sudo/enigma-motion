@@ -107,7 +107,7 @@ export function FourGatesProgressSection() {
           <div className="flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
             <span className="text-[11px] font-mono uppercase tracking-wider text-[#A855F7] font-semibold">
-              03 DELIVER · KIỂM SOÁT TRƯỚC KHI MỞ RỘNG
+              03 OPERATE · KIỂM SOÁT TRƯỚC KHI MỞ RỘNG
             </span>
             <span className="text-[#3A354D] text-xs">/</span>
             <span className="text-xs font-mono font-medium text-[#94A3B8]">

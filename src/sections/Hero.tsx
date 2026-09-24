@@ -101,7 +101,7 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
         {/* Right Column: Living Atmospheric Sun & Orbit System (Dominant 50% Canvas Presence) */}
         <div
           ref={visualRef}
-          className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[480px] md:min-h-[560px] lg:min-h-[640px] xl:min-h-[700px] overflow-visible"
+          className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[500px] md:min-h-[580px] lg:min-h-[660px] xl:min-h-[740px] overflow-visible w-full"
           data-hero-visual
         >
           <AiTransformationNetwork />
