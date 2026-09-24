@@ -109,7 +109,7 @@ export default function AiTransformationHubPage() {
           <div className="lg:col-span-7 space-y-6">
             <div>
               <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
-                01 DIAGNOSE · CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC
+                01 DISCOVER · CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC
               </span>
               <span className="text-xs text-[#747474] font-medium block mt-2">
                 Biết chính xác điểm nghẽn trước khi đầu tư phần mềm
@@ -117,31 +117,21 @@ export default function AiTransformationHubPage() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.12]">
-              AI đang mắc ở đâu trong tổ chức?
+              Xác định năng lực đang cản AI tạo giá trị.
             </h1>
 
             <p className="text-base sm:text-lg text-[#626262] leading-relaxed font-light max-w-2xl">
-              <strong>6 Trụ Cột = Organizational Capability Checklist</strong>, được kích hoạt linh hoạt để tìm ra nút thắt P&amp;L trọng yếu, <em>không phải quy trình 6 bước tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn rồi mới thiết kế giải pháp mở khoá.
+              <strong>6 Năng Lực Tổ Chức (tham chiếu McKinsey Rewired)</strong> được kích hoạt linh hoạt để tìm ra nút thắt P&amp;L trọng yếu, <em>không phải quy trình tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn rồi mới thiết kế giải pháp can thiệp.
             </p>
 
-            {/* Supporting Benchmark: BCG 10-20-70 */}
+            {/* Supporting Research Perspective: BCG 10-20-70 */}
             <div className="pt-4 border-t border-black/5">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#747474]">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[#8A8A8A] font-medium">
-                  Tham chiếu BCG 10–20–70:
-                </span>
-                <span className="font-mono text-[#525252]">
-                  <strong className="text-[#17151A] font-semibold">10%</strong> Công nghệ
-                </span>
-                <span className="text-[#D4D4D8]">•</span>
-                <span className="font-mono text-[#525252]">
-                  <strong className="text-[#17151A] font-semibold">20%</strong> Dữ liệu
-                </span>
-                <span className="text-[#D4D4D8]">•</span>
-                <span className="font-mono text-[#7000FF]">
-                  <strong className="text-[#7000FF] font-semibold">70%</strong> Con người &amp; Quy trình
-                </span>
-              </div>
+              <p className="text-xs text-[#747474] leading-relaxed font-light">
+                <strong className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] font-semibold block sm:inline mr-2">
+                  Góc nhìn nghiên cứu:
+                </strong>
+                Nguyên lý 10–20–70 của BCG nhấn mạnh phần lớn nỗ lực chuyển đổi nằm ở con người và quy trình (<strong className="text-[#7000FF] font-semibold font-mono">70%</strong>), nền tảng công nghệ &amp; dữ liệu (<strong className="text-[#17151A] font-semibold font-mono">20%</strong>), thay vì thuật toán đơn thuần (<strong className="text-[#17151A] font-semibold font-mono">10%</strong>).
+              </p>
             </div>
 
             {/* CTAs */}
@@ -173,19 +163,19 @@ export default function AiTransformationHubPage() {
         <section id="master-narrative" className="mb-28 lg:mb-36 scroll-mt-24">
           <div className="mb-12 max-w-3xl">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
-              MỘT PHƯƠNG PHÁP XUYÊN SUỐT
+              MỘT XƯƠNG SỐNG DUY NHẤT
             </span>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C]" />
               <span className="text-sm font-mono font-bold text-[#EA580C] uppercase tracking-wider">
-                VẬN HÀNH → KẾT QUẢ → TỰ CHỦ
+                VẬN HÀNH → KẾT QUẢ → TỰ CHỦ (BRAND PROMISE)
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#17151A] tracking-tight">
-              Một phương pháp xuyên suốt từ chẩn đoán đến chuyển giao.
+              Một xương sống duy nhất: Discover → Build → Operate → Transfer.
             </h2>
             <p className="text-base text-[#6E6E6E] font-light mt-3 leading-relaxed">
-              Một phương pháp xuyên suốt: chẩn đoán đúng điểm nghẽn, thiết kế đúng cách can thiệp, triển khai qua các cổng kiểm soát và chuyển giao để đội ngũ tự chủ.
+              Bốn chặng triển khai với 4 cổng kiểm soát Go/No-Go. Tại mỗi chặng, các công cụ và khung năng lực được kích hoạt đúng lúc dưới sự bảo vệ của rào chắn Governance &amp; Security xuyên suốt.
             </p>
           </div>
 
@@ -208,17 +198,17 @@ export default function AiTransformationHubPage() {
           </div>
         </section>
 
-        {/* SECTION: 6 TRỤ CỘT NĂNG LỰC — ALTERNATING CHAPTERS VỚI VISUAL EVIDENCE ĐA DẠNG */}
+        {/* SECTION: 6 NĂNG LỰC TỔ CHỨC — THAM CHIẾU MCKINSEY REWIRED */}
         <section id="cac-tru-cot" className="mb-28 lg:mb-40 scroll-mt-24">
           <div className="max-w-2xl mb-20">
             <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
-              01 DIAGNOSE · 6 TRỤ CỘT NĂNG LỰC
+              6 NĂNG LỰC TỔ CHỨC · THAM CHIẾU MCKINSEY REWIRED
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#17151A] tracking-tight mt-4 leading-[1.12]">
-              Biết chính xác AI đang mắc ở đâu
+              Sáu năng lực quyết định AI có đi vào vận hành
             </h2>
             <p className="text-base text-[#6E6E6E] font-light mt-4 leading-relaxed">
-              6 Trụ Cột là checklist năng lực tổ chức cùng tồn tại đồng thời. Mỗi chương dưới đây được minh chứng bằng một bằng chứng trực quan khác biệt — từ số liệu P&amp;L, tháp năng lực, lưu đồ SOP đến ảnh thực địa hiện trường.
+              6 Năng lực tổ chức cùng tồn tại đồng thời, đo lường năng lực thực tế của doanh nghiệp trước khi đầu tư sâu vào công nghệ. Mỗi năng lực dưới đây được minh chứng bằng một bằng chứng trực quan khác biệt.
             </p>
           </div>
 
@@ -231,14 +221,14 @@ export default function AiTransformationHubPage() {
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">01</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      CHIẾN LƯỢC · STRATEGY
+                      CHIẾN LƯỢC · BUSINESS-LED STRATEGY
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    AI đang tạo giá trị ở đâu?
+                    Giá trị được đo từ baseline trước triển khai đến kết quả sau vận hành.
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    Doanh nghiệp thường thử nghiệm AI phân tán ở khắp nơi nhưng không nơi nào tạo ra kết quả kinh tế. Trụ cột Chiến lược giúp xác định đúng 1–2 miền nghiệp vụ có đòn bẩy P&amp;L cao nhất để tập trung nguồn lực đầu tư có đo lường.
+                    Doanh nghiệp thường thử nghiệm AI phân tán ở khắp nơi nhưng không nơi nào tạo ra kết quả kinh tế. Năng lực Chiến lược giúp xác định đúng 1–2 miền nghiệp vụ có đòn bẩy P&amp;L cao nhất để tập trung nguồn lực đầu tư có đo lường.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/chien-luoc-so"
@@ -261,27 +251,27 @@ export default function AiTransformationHubPage() {
               </div>
             </article>
 
-            {/* CHAPTER 02: CON NGƯỜI — 5 Talent Levels Visual Progression */}
+            {/* CHAPTER 02: NHÂN TÀI — 5 Talent Levels Visual Progression */}
             <article className="min-h-[45vh] flex flex-col justify-center group">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8 lg:order-2">
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">02</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      CON NGƯỜI · PEOPLE
+                      NHÂN TÀI &amp; NĂNG LỰC · TALENT &amp; SKILLS
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    Đội ngũ có thực sự làm chủ AI?
+                    Năng lực nội bộ quyết định AI có được duy trì và mở rộng.
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    90% nhân sự dừng lại ở mức thử prompt cơ bản rồi bỏ cuộc sau 60 ngày. Trụ cột Con người phân định chuẩn 5 tầng năng lực thực chiến, đo bằng Pass Mark độc lập và sản lượng công việc thực tế thay vì lý thuyết chung.
+                    90% nhân sự dừng lại ở mức thử prompt cơ bản rồi bỏ cuộc sau 60 ngày. Năng lực Nhân tài phân định chuẩn 5 tầng năng lực thực chiến, đo bằng Pass Mark độc lập và sản lượng công việc thực tế thay vì lý thuyết chung.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/nguoi-tai-cong-nghe"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                   >
-                    <span>Xem chi tiết trụ cột 02</span>
+                    <span>Xem chi tiết năng lực 02</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -320,20 +310,20 @@ export default function AiTransformationHubPage() {
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">03</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      VẬN HÀNH · PROCESS
+                      MÔ HÌNH VẬN HÀNH &amp; SOP · OPERATING MODEL
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    Quy trình đã được thiết kế lại cho AI chưa?
+                    Tái cấu trúc luồng việc trước khi áp dụng công cụ.
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-xl mb-6">
-                    Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Trụ cột Vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng và trách nhiệm giải trình tuyệt đối.
+                    Đưa AI vào quy trình cũ chỉ làm tăng chi phí rà soát lỗi. Năng lực Mô hình vận hành chuẩn hóa SOP và loại bỏ thao tác thừa trước khi tích hợp AI, thiết lập cơ chế Human-in-the-loop bảo đảm kiểm soát chất lượng và trách nhiệm giải trình tuyệt đối.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/mo-hinh-van-hanh"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                   >
-                    <span>Xem chi tiết trụ cột 03</span>
+                    <span>Xem chi tiết năng lực 03</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -421,20 +411,20 @@ export default function AiTransformationHubPage() {
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">04</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      CÔNG NGHỆ · TECHNOLOGY
+                      NỀN TẢNG CÔNG NGHỆ · TECHNOLOGY PLATFORM
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    Hạ tầng có hỗ trợ Agent vận hành liên tục?
+                    AI chỉ mở rộng khi hạ tầng đủ ổn định, quan sát được và kiểm soát được.
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    Mua công cụ rời rạc khiến dữ liệu bị cô lập. Trụ cột Công nghệ thiết kế nền tảng Multi-Agent phân tán kết nối trực tiếp với CRM/ERP, triển khai trên hạ tầng Private VPC bảo mật với cam kết Zero Data Retention.
+                    Mua công cụ rời rạc khiến dữ liệu bị cô lập. Năng lực Nền tảng công nghệ thiết kế kiến trúc phân tán kết nối trực tiếp với CRM/ERP, triển khai trên hạ tầng Private VPC bảo mật với cam kết Zero Data Retention.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/ha-tang-cong-nghe"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                   >
-                    <span>Xem chi tiết trụ cột 04</span>
+                    <span>Xem chi tiết năng lực 04</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -470,20 +460,20 @@ export default function AiTransformationHubPage() {
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">05</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      DỮ LIỆU · DATA
+                      KIẾN TRÚC DỮ LIỆU · DATA ARCHITECTURE
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    Dữ liệu có sạch và kết nối trong vùng an toàn?
+                    Dữ liệu phải kết nối an toàn trong ranh giới bảo mật.
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    Dữ liệu phân tán và thiếu kiểm soát là nguyên nhân hàng đầu khiến mô hình AI sinh ảo giác. Trụ cột Dữ liệu xây dựng Single Source of Truth, phân quyền an toàn và kết nối kho tri thức vào Private Vector Vault.
+                    Dữ liệu phân tán và thiếu kiểm soát là nguyên nhân hàng đầu khiến mô hình AI sinh ảo giác. Năng lực Dữ liệu xây dựng Single Source of Truth, phân quyền an toàn và kết nối kho tri thức vào Private Vector Vault.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/du-lieu-doanh-nghiep"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                   >
-                    <span>Xem chi tiết trụ cột 05</span>
+                    <span>Xem chi tiết năng lực 05</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -511,56 +501,56 @@ export default function AiTransformationHubPage() {
               </div>
             </article>
 
-            {/* CHAPTER 06: QUẢN TRỊ — 4 Gates Governance Verification Checklist */}
+            {/* CHAPTER 06: ÁP DỤNG & MỞ RỘNG — Adoption & Scale */}
             <article className="min-h-[45vh] flex flex-col justify-center group">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8 lg:order-2">
                   <div className="flex items-baseline gap-3 mb-4">
                     <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">06</span>
                     <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
-                      QUẢN TRỊ &amp; MỞ RỘNG · GOVERNANCE
+                      ÁP DỤNG &amp; MỞ RỘNG · ADOPTION &amp; SCALE
                     </span>
                   </div>
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#17151A] tracking-tight leading-[1.12] mb-6">
-                    Đã có cơ chế kiểm soát rủi ro và đo lường ROI?
+                    Làm sao để AI không dừng lại ở một điểm sáng đơn lẻ?
                   </h3>
                   <p className="text-base sm:text-lg text-[#6E6E6E] font-light leading-relaxed max-w-2xl mb-6">
-                    Thiếu KPI nghiệm thu và cơ chế chuyển giao khiến doanh nghiệp phụ thuộc vĩnh viễn vào tư vấn ngoài. Trụ cột Quản trị thiết lập rào giậu kiểm soát rủi ro, theo dõi ROI theo thời gian thực và bàn giao 100% tự chủ.
+                    Nhiều dự án AI thất bại vì chỉ dừng lại ở vài cá nhân thử nghiệm, không lan tỏa ra toàn bộ phòng ban. Năng lực Áp Dụng &amp; Mở Rộng thiết lập cơ chế đo lường adoption thực tế theo tuần, chính sách thúc đẩy áp dụng và lộ trình nhân rộng use-case từ phòng ban ra toàn bộ doanh nghiệp.
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/do-luong-mo-rong"
                     className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
                   >
-                    <span>Xem chi tiết trụ cột 06</span>
+                    <span>Xem chi tiết năng lực 06</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
 
-                {/* Evidence: 4 Gates Handover Checklist + 100% Metric */}
+                {/* Evidence: Adoption & Scaling Metric + Checklist */}
                 <div className="lg:col-span-4 lg:order-1 pt-2 space-y-3 font-mono">
                   <span className="text-4xl sm:text-5xl font-light text-[#059669] block leading-none">
-                    100%
+                    &gt;85%
                   </span>
                   <span className="text-xs text-[#747474] font-sans font-light block leading-snug">
-                    Tự chủ vận hành không phụ thuộc đối tác ngoài
+                    Tỷ lệ nhân sự ứng dụng hàng ngày sau bàn giao
                   </span>
-                  {/* Mini Gate Checklist */}
+                  {/* Mini Adoption Checklist */}
                   <div className="p-3.5 rounded-xl bg-white/80 border border-black/10 space-y-1.5 text-[10px] text-[#17151A]">
                     <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
                       <CheckCircle2 className="w-3 h-3 text-emerald-700" />
-                      <span>Gate 1: Data &amp; Scoping Audit</span>
+                      <span>Đo lường tỷ lệ áp dụng theo tuần (DAU/MAU)</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
                       <CheckCircle2 className="w-3 h-3 text-emerald-700" />
-                      <span>Gate 2: Architecture &amp; ZDR</span>
+                      <span>Lộ trình nhân rộng use-case liên phòng ban</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
                       <CheckCircle2 className="w-3 h-3 text-emerald-700" />
-                      <span>Gate 3: Controlled UAT Pilot</span>
+                      <span>Chính sách khuyến khích &amp; đào tạo liên tục</span>
                     </div>
                     <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
                       <CheckCircle2 className="w-3 h-3 text-emerald-700" />
-                      <span>Gate 4: Handover &amp; CoE Adoption</span>
+                      <span>Đánh giá tác động P&amp;L định kỳ</span>
                     </div>
                   </div>
                 </div>
@@ -655,6 +645,41 @@ export default function AiTransformationHubPage() {
           })()}
         </section>
 
+        {/* EXTERNAL MATURITY REFERENCE: MCKINSEY 2026 THREE HORIZONS */}
+        <section className="mb-14 p-6 sm:p-8 rounded-3xl bg-white/70 border border-black/10 backdrop-blur-xs text-xs text-[#525252] space-y-4 font-sans">
+          <div className="flex items-center justify-between flex-wrap gap-2 pb-3 border-b border-black/5">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#7000FF] font-semibold">
+              THAM CHIẾU MỨC ĐỘ BIẾN ĐỔI TỔ CHỨC · MCKINSEY 2026 THREE HORIZONS
+            </span>
+            <span className="text-[10.5px] font-mono text-[#747474]">Góc nhìn tổ chức độc lập với độ sâu công nghệ</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-[11px]">
+            <div className="p-4 rounded-2xl bg-black/5 border border-black/5">
+              <span className="font-bold text-[#17151A] text-xs block mb-1">01 · Enablement</span>
+              <span className="text-[#626262] font-sans text-xs leading-relaxed block">
+                AI hỗ trợ từng cá nhân tăng tốc công việc hiện tại.
+              </span>
+            </div>
+            <div className="p-4 rounded-2xl bg-black/5 border border-black/5">
+              <span className="font-bold text-[#17151A] text-xs block mb-1">02 · Automation</span>
+              <span className="text-[#626262] font-sans text-xs leading-relaxed block">
+                AI tự động hóa các workflow xuyên chức năng ở quy mô lớn.
+              </span>
+            </div>
+            <div className="p-4 rounded-2xl bg-purple-50/80 border border-purple-200/70">
+              <span className="font-bold text-[#7000FF] text-xs block mb-1">03 · Reinvention</span>
+              <span className="text-[#581C87] font-sans text-xs leading-relaxed block">
+                Thiết kế lại toàn bộ vai trò và mô hình vận hành với AI ở lõi.
+              </span>
+            </div>
+          </div>
+
+          <p className="text-[11px] text-[#747474] font-light">
+            * Sunext sử dụng khung này như tham chiếu về mức độ chuyển đổi cách tổ chức làm việc; kết quả đánh giá Sunext không phải là điểm số hay chứng nhận của McKinsey.
+          </p>
+        </section>
+
         {/* SECTION: ĐÁNH GIÁ SẴN SÀNG AI */}
         <section className="mb-20 p-8 sm:p-12 rounded-3xl bg-[#17151A] text-white flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
           <div className="max-w-xl z-10">
@@ -663,10 +688,10 @@ export default function AiTransformationHubPage() {
               ĐO LƯỜNG NĂNG LỰC 12 CÂU HỎI
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-snug mb-4">
-              Doanh nghiệp bạn đang ở đâu trong 6 trụ cột?
+              Doanh nghiệp bạn đang ở đâu trong 6 năng lực tổ chức?
             </h2>
             <p className="text-sm text-neutral-300 leading-relaxed mb-6 font-light">
-              Dành 10 phút làm bài chẩn đoán 12 câu hỏi map trực tiếp về 6 Trụ Cột để nhận ngay báo cáo định vị điểm nghẽn và đề xuất điểm vào đầu tư tối ưu.
+              Dành 10 phút làm bài chẩn đoán 12 câu hỏi map trực tiếp về 6 Năng Lực Tổ Chức (tham chiếu McKinsey Rewired) để nhận ngay báo cáo định vị điểm nghẽn và đề xuất điểm vào đầu tư tối ưu.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Link href="/danh-gia-san-sang-ai">
@@ -685,31 +710,31 @@ export default function AiTransformationHubPage() {
           <div className="w-full md:w-auto shrink-0 flex flex-col gap-2 p-6 rounded-2xl bg-white/5 border border-white/10 text-xs text-neutral-300 z-10 font-mono">
             <div className="font-semibold text-white mb-1 flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#EA580C]" />
-              <span>6 TRỤC CHẨN ĐOÁN CỐT LÕI</span>
+              <span>6 NĂNG LỰC TỔ CHỨC CHẨN ĐOÁN</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5 border-b border-white/5">
-              <span>01. Chiến lược &amp; P&amp;L</span>
-              <span className="text-[#EA580C]">Pillar 1</span>
+              <span>01. Chiến lược &amp; Lộ trình P&amp;L</span>
+              <span className="text-[#EA580C]">Capability 1</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5 border-b border-white/5">
-              <span>02. Đội ngũ &amp; 5 Tầng Năng Lực</span>
-              <span className="text-[#EA580C]">Pillar 2</span>
+              <span>02. Nhân tài &amp; 5 Tầng Năng Lực</span>
+              <span className="text-[#EA580C]">Capability 2</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5 border-b border-white/5">
-              <span>03. Vận hành &amp; SOP HITL</span>
-              <span className="text-[#EA580C]">Pillar 3</span>
+              <span>03. Mô hình vận hành &amp; SOP</span>
+              <span className="text-[#EA580C]">Capability 3</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5 border-b border-white/5">
-              <span>04. Nền tảng Multi-Agent &amp; VPC</span>
-              <span className="text-[#EA580C]">Pillar 4</span>
+              <span>04. Nền tảng công nghệ &amp; VPC</span>
+              <span className="text-[#EA580C]">Capability 4</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5 border-b border-white/5">
-              <span>05. Dữ liệu &amp; Zero Retention</span>
-              <span className="text-[#EA580C]">Pillar 5</span>
+              <span>05. Kiến trúc dữ liệu an toàn</span>
+              <span className="text-[#EA580C]">Capability 5</span>
             </div>
             <div className="flex items-center justify-between gap-8 py-1.5">
-              <span>06. Quản trị &amp; 4 Cổng Kiểm Soát</span>
-              <span className="text-[#EA580C]">Pillar 6</span>
+              <span>06. Áp dụng &amp; Mở rộng quy mô</span>
+              <span className="text-[#EA580C]">Capability 6</span>
             </div>
           </div>
         </section>

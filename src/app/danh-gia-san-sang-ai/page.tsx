@@ -395,8 +395,8 @@ export default function AiReadinessDiagnosticPage() {
                   <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
                     03 ĐIỂM NGHẼN
                   </span>
-                  <span className="text-xl sm:text-2xl font-light text-[#EA580C] block truncate">
-                    {primaryBottleneck.name.split(' ')[0]}
+                  <span className="text-base sm:text-lg font-light text-[#EA580C] block leading-tight truncate" title={primaryBottleneck.name}>
+                    {primaryBottleneck.name}
                   </span>
                   <span className="text-[11px] text-neutral-400 block mt-1 truncate font-mono">
                     {primaryBottleneck.pct}% năng lực
@@ -407,8 +407,8 @@ export default function AiReadinessDiagnosticPage() {
                   <span className="text-[10px] font-mono uppercase tracking-wider text-neutral-400 block mb-1">
                     04 ĐIỂM VÀO ĐỀ XUẤT
                   </span>
-                  <span className="text-xl sm:text-2xl font-light text-[#A855F7] block truncate">
-                    {suggestedEntryPoint.phase.split(' ')[0]}
+                  <span className="text-base sm:text-lg font-light text-[#A855F7] block leading-tight truncate" title={suggestedEntryPoint.phase}>
+                    {suggestedEntryPoint.phase}
                   </span>
                   <span className="text-[11px] text-neutral-400 block mt-1 font-mono">
                     Khảo sát Discovery
@@ -536,6 +536,35 @@ export default function AiReadinessDiagnosticPage() {
                     </Link>
                   </div>
                 </div>
+              </div>
+
+              {/* External Maturity Reference (McKinsey 2026 Three Horizons) */}
+              <div className="p-6 rounded-2xl bg-black/3 border border-black/10 space-y-3">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#6E6E6E] font-semibold">
+                    EXTERNAL MATURITY REFERENCE · MCKINSEY 2026 THREE HORIZONS
+                  </span>
+                  <span className="text-[10px] font-mono text-[#8E8E8E]">
+                    Enablement → Automation → Reinvention
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-[#515151]">
+                  <div className="p-3 rounded-xl bg-white border border-black/5">
+                    <span className="font-semibold text-[#17151A] block mb-0.5">Horizon 1: Enablement</span>
+                    <span className="text-[11px] text-[#6E6E6E]">AI hỗ trợ từng cá nhân hoàn thành công việc nhanh hơn trong quy trình hiện hữu.</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white border border-black/5">
+                    <span className="font-semibold text-[#17151A] block mb-0.5">Horizon 2: Automation</span>
+                    <span className="text-[11px] text-[#6E6E6E]">Tự động hóa luồng nghiệp vụ xuyên chức năng và kết nối dữ liệu ở quy mô lớn.</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white border border-black/5">
+                    <span className="font-semibold text-[#17151A] block mb-0.5">Horizon 3: Reinvention</span>
+                    <span className="text-[11px] text-[#6E6E6E]">Thiết kế lại toàn diện vai trò, quy trình và mô hình vận hành với AI đặt tại lõi.</span>
+                  </div>
+                </div>
+                <p className="text-[11px] text-[#747474] font-light leading-relaxed pt-1 italic">
+                  * Sunext sử dụng khung này như tham chiếu về mức độ chuyển đổi tổ chức; kết quả đánh giá Sunext không phải là điểm số hay chứng nhận của McKinsey.
+                </p>
               </div>
 
               {/* Final Editorial Call to Action */}
