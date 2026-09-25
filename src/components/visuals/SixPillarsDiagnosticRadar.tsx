@@ -20,12 +20,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 1,
     slug: 'chien-luoc-so',
-    name: 'STRATEGY',
+    name: 'Chiến lược',
     english: 'Chiến Lược & Giá Trị',
     x: 300,
     y: 110,
     labelX: 300,
-    labelY: 52,
+    labelY: 75,
     textAnchor: 'middle',
     bottleneck: 'AI chạy thử nghiệm ngẫu nhiên, không đo lường được tác động P&L thực tế.',
     benchmark: 'Xác định 1–2 miền nghiệp vụ có đòn bẩy kinh tế cao nhất trước khi đầu tư.',
@@ -33,12 +33,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 4,
     slug: 'nen-tang-cong-nghe',
-    name: 'TECHNOLOGY',
+    name: 'Công nghệ',
     english: 'Nền Tảng & Tích Hợp',
     x: 485,
     y: 200,
-    labelX: 518,
-    labelY: 195,
+    labelX: 512,
+    labelY: 204,
     textAnchor: 'start',
     bottleneck: 'Tool mua rời rạc, không kết nối API hai chiều với hệ thống lõi (CRM, ERP, ATS).',
     benchmark: 'Xây dựng Private AI Vector Mesh bảo mật, tích hợp luồng việc tự động.',
@@ -46,12 +46,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 5,
     slug: 'kien-truc-du-lieu',
-    name: 'DATA',
+    name: 'Dữ liệu',
     english: 'Kiến Trúc Dữ Liệu',
     x: 485,
     y: 410,
-    labelX: 518,
-    labelY: 412,
+    labelX: 512,
+    labelY: 414,
     textAnchor: 'start',
     bottleneck: 'Dữ liệu phân tán, nhiều dị bản, rò rỉ khi đẩy vào mô hình công cộng.',
     benchmark: 'Single Source of Truth, phân quyền bảo mật cấp enterprise và RAG nội bộ.',
@@ -59,12 +59,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 6,
     slug: 'mo-rong-quy-mo',
-    name: 'ADOPTION & SCALE',
+    name: 'Áp dụng & mở rộng',
     english: 'Áp Dụng & Mở Rộng',
     x: 300,
     y: 505,
     labelX: 300,
-    labelY: 546,
+    labelY: 538,
     textAnchor: 'middle',
     bottleneck: 'AI chỉ dừng ở nhóm nhỏ thử nghiệm, không lan tỏa ra phòng ban, thiếu cơ chế thúc đẩy áp dụng.',
     benchmark: 'Kế hoạch mở rộng có lộ trình, đo lường tỷ lệ áp dụng thực tế và nhân rộng use-case theo P&L.',
@@ -72,12 +72,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 3,
     slug: 'mo-hinh-van-hanh',
-    name: 'OPERATING MODEL',
+    name: 'Vận hành',
     english: 'Mô Hình Vận Hành & SOP',
     x: 115,
     y: 410,
-    labelX: 82,
-    labelY: 412,
+    labelX: 88,
+    labelY: 414,
     textAnchor: 'end',
     bottleneck: 'Dùng AI vào quy trình cũ lỗi thời, sinh thêm việc rà soát thay vì tăng tốc.',
     benchmark: 'Tái cấu trúc SOP và phân định vai trò Người - AI rõ ràng, loại bỏ lãng phí tác vụ.',
@@ -85,12 +85,12 @@ const PILLARS: PillarNode[] = [
   {
     id: 2,
     slug: 'nang-luc-doi-ngu',
-    name: 'TALENT',
+    name: 'Con người',
     english: 'Nhân Tài & Năng Lực',
     x: 115,
     y: 200,
-    labelX: 82,
-    labelY: 195,
+    labelX: 88,
+    labelY: 204,
     textAnchor: 'end',
     bottleneck: 'Nhân sự chỉ dừng ở mức thử prompt cơ bản, thiếu năng lực tích hợp vào luồng việc.',
     benchmark: 'Đào tạo phân tầng năng lực thực chiến, đo bằng sản lượng công việc hoàn thành thực tế.',
@@ -100,11 +100,13 @@ const PILLARS: PillarNode[] = [
 interface SixPillarsDiagnosticRadarProps {
   onSelectPillar?: (slug: string) => void;
   activePillarId?: number;
+  showInsightCard?: boolean;
 }
 
 export function SixPillarsDiagnosticRadar({
   onSelectPillar,
   activePillarId = 1,
+  showInsightCard = false,
 }: SixPillarsDiagnosticRadarProps) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const currentActiveId = hoveredId ?? activePillarId;
@@ -258,27 +260,15 @@ export function SixPillarsDiagnosticRadar({
           {/* Core Labels */}
           <text
             x="0"
-            y="-3"
+            y="4"
             textAnchor="middle"
             fill="#17151A"
-            fontSize="10"
+            fontSize="10.5"
             fontFamily="monospace"
             fontWeight="700"
             letterSpacing="0.08em"
           >
             SUNEXT
-          </text>
-          <text
-            x="0"
-            y="10"
-            textAnchor="middle"
-            fill="#7000FF"
-            fontSize="7.5"
-            fontFamily="sans-serif"
-            fontWeight="700"
-            letterSpacing="0.06em"
-          >
-            DIAGNOSIS
           </text>
         </g>
 
@@ -315,7 +305,7 @@ export function SixPillarsDiagnosticRadar({
               <circle
                 cx={pillar.x}
                 cy={pillar.y}
-                r={isActive ? 14 : 10}
+                r={isActive ? 13 : 9.5}
                 fill={isActive ? '#EA580C' : '#FFFFFF'}
                 stroke={isActive ? '#EA580C' : '#7000FF'}
                 strokeWidth={isActive ? 2 : 1.2}
@@ -327,7 +317,7 @@ export function SixPillarsDiagnosticRadar({
               <circle
                 cx={pillar.x}
                 cy={pillar.y}
-                r={isActive ? 4.5 : 3}
+                r={isActive ? 4 : 2.5}
                 fill={isActive ? '#FFFFFF' : '#7000FF'}
               />
 
@@ -337,62 +327,54 @@ export function SixPillarsDiagnosticRadar({
                 y={pillar.labelY}
                 textAnchor={pillar.textAnchor}
                 fill={isActive ? '#EA580C' : '#17151A'}
-                fontSize="11.5"
-                fontFamily="monospace"
-                fontWeight="700"
-                letterSpacing="0.06em"
+                fontSize="12.5"
+                fontFamily="sans-serif"
+                fontWeight={isActive ? '600' : '400'}
                 className="transition-colors duration-200"
               >
                 {pillar.name}
-              </text>
-
-              {/* Vietnamese Subtitle */}
-              <text
-                x={pillar.labelX}
-                y={pillar.labelY + 13}
-                textAnchor={pillar.textAnchor}
-                fill={isActive ? '#17151A' : '#747474'}
-                fontSize="9.5"
-                fontFamily="sans-serif"
-                fontWeight="500"
-                className="transition-colors duration-200"
-              >
-                {pillar.english}
               </text>
             </g>
           );
         })}
       </svg>
 
-      {/* 6. Active Diagnostic Bottom Banner (Editorial Glassmorphism) */}
-      <div className="mt-3 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E8E8E8] shadow-xs transition-all duration-300">
-        <div className="flex items-center justify-between gap-2 mb-1.5 pb-1.5 border-b border-black/5">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
-            <span className="text-xs font-mono font-bold text-[#17151A] tracking-wider">
-              {currentPillar.name} · {currentPillar.english}
-            </span>
-          </div>
-          <button
-            type="button"
-            onClick={() => handlePillarClick(currentPillar)}
-            className="text-[11px] font-medium text-[#7000FF] hover:text-[#581C87] transition-colors cursor-pointer"
-          >
-            Xem phân tích ↓
-          </button>
-        </div>
-
-        <div className="space-y-1 text-xs">
-          <p className="text-[#626262]">
-            <strong className="text-[#17151A] font-medium">Điểm nghẽn thường gặp:</strong>{' '}
-            {currentPillar.bottleneck}
-          </p>
-          <p className="text-[#059669]">
-            <strong className="font-medium">Giải pháp chuẩn hóa:</strong>{' '}
-            {currentPillar.benchmark}
-          </p>
-        </div>
+      {/* Subtitle Reference Below Graphic */}
+      <div className="text-center mt-3 text-xs text-[#8E8E8A] font-light">
+        Tham chiếu McKinsey Rewired
       </div>
+
+      {/* Optional Diagnostic Bottom Banner (Hidden in hero by default) */}
+      {showInsightCard && (
+        <div className="mt-3 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E8E8E8] shadow-xs transition-all duration-300">
+          <div className="flex items-center justify-between gap-2 mb-1.5 pb-1.5 border-b border-black/5">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
+              <span className="text-xs font-mono font-bold text-[#17151A] tracking-wider">
+                {currentPillar.name}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => handlePillarClick(currentPillar)}
+              className="text-[11px] font-medium text-[#7000FF] hover:text-[#581C87] transition-colors cursor-pointer"
+            >
+              Xem phân tích ↓
+            </button>
+          </div>
+
+          <div className="space-y-1 text-xs">
+            <p className="text-[#626262]">
+              <strong className="text-[#17151A] font-medium">Điểm nghẽn thường gặp:</strong>{' '}
+              {currentPillar.bottleneck}
+            </p>
+            <p className="text-[#059669]">
+              <strong className="font-medium">Giải pháp chuẩn hóa:</strong>{' '}
+              {currentPillar.benchmark}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

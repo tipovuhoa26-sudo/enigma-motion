@@ -82,8 +82,8 @@ export default function AiTransformationHubPage() {
       <Header activeSection="service" />
 
       <main className="flex-1 flex flex-col w-full max-w-[1280px] mx-auto px-6 md:px-12 py-12 lg:py-16">
-        {/* Top Breadcrumb & Master Tag */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-black/5">
+        {/* Top Breadcrumb */}
+        <div className="mb-10 pb-6 border-b border-black/5">
           <nav className="flex items-center gap-2 text-xs text-[#6E6E6E]">
             <Link href="/" className="hover:text-[#111111] transition-colors">
               Trang chủ
@@ -91,71 +91,37 @@ export default function AiTransformationHubPage() {
             <span>/</span>
             <span className="text-[#111111] font-medium">Phương pháp luận</span>
           </nav>
-
-          <div className="flex items-center gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF5FF] border border-[#EDE9FE] text-[11px] font-semibold text-[#7000FF] font-mono">
-              <Layers className="w-3 h-3 text-[#7000FF]" />
-              SUNEXT METHOD ARCHITECTURE
-            </span>
-            <span className="text-xs text-[#6E6E6E] hidden sm:inline">•</span>
-            <span className="text-xs font-mono text-[#6E6E6E] hidden sm:inline">
-              Vận Hành → Kết Quả → Tự Chủ
-            </span>
-          </div>
         </div>
 
-        {/* HERO SECTION: The Core Question & BCG 10-20-70 Rule */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-24 lg:mb-32 pb-16 border-b border-black/5">
+        {/* HERO SECTION: Xác định điểm nghẽn trước khi triển khai AI */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 lg:mb-28 pb-16 border-b border-black/5">
           <div className="lg:col-span-7 space-y-6">
-            <div>
-              <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
-                01 DISCOVER · CHẨN ĐOÁN NĂNG LỰC TỔ CHỨC
-              </span>
-              <span className="text-xs text-[#747474] font-medium block mt-2">
-                Biết chính xác điểm nghẽn trước khi đầu tư phần mềm
-              </span>
-            </div>
+            <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
+              PHƯƠNG PHÁP SUNEXT
+            </span>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#17151A] leading-[1.12]">
-              Xác định năng lực đang cản AI tạo giá trị.
+              Xác định điểm nghẽn<br />trước khi triển khai AI.
             </h1>
 
-            <p className="text-base sm:text-lg text-[#626262] leading-relaxed font-light max-w-2xl">
-              <strong>6 Năng Lực Tổ Chức (tham chiếu McKinsey Rewired)</strong> được kích hoạt linh hoạt để tìm ra nút thắt P&amp;L trọng yếu, <em>không phải quy trình tuần tự</em>. Sunext chẩn đoán đúng điểm nghẽn rồi mới thiết kế giải pháp can thiệp.
+            <p className="text-base sm:text-lg text-[#626262] leading-relaxed font-light max-w-xl">
+              Đánh giá 6 năng lực tổ chức để xác định điểm cần ưu tiên trước khi thiết kế giải pháp.
             </p>
 
-            {/* Supporting Research Perspective: BCG 10-20-70 */}
-            <div className="pt-4 border-t border-black/5">
-              <p className="text-xs text-[#747474] leading-relaxed font-light">
-                <strong className="font-mono text-[11px] uppercase tracking-wider text-[#8A8A8A] font-semibold block sm:inline mr-2">
-                  Góc nhìn nghiên cứu:
-                </strong>
-                Nguyên lý 10–20–70 của BCG nhấn mạnh phần lớn nỗ lực chuyển đổi nằm ở con người và quy trình (<strong className="text-[#7000FF] font-semibold font-mono">70%</strong>), nền tảng công nghệ &amp; dữ liệu (<strong className="text-[#17151A] font-semibold font-mono">20%</strong>), thay vì thuật toán đơn thuần (<strong className="text-[#17151A] font-semibold font-mono">10%</strong>).
-              </p>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            {/* Single Action Button */}
+            <div className="pt-2">
               <Link href="/danh-gia-san-sang-ai">
-                <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold px-5 py-2.5">
-                  <ClipboardCheck className="w-4 h-4 mr-1.5" />
-                  <span>Đo lường với 12 câu hỏi</span>
+                <Button variant="orange" size="md" className="rounded-xl text-xs font-semibold px-6 py-3 cursor-pointer">
+                  <span>Đánh giá sẵn sàng AI</span>
+                  <ArrowUpRight className="w-4 h-4 ml-1.5" />
                 </Button>
               </Link>
-
-              <a
-                href="#master-narrative"
-                className="text-xs font-medium text-[#17151A] hover:text-[#7000FF] transition-colors inline-flex items-center gap-1.5"
-              >
-                <span>Xem phương pháp xuyên suốt</span>
-                <ChevronRight className="w-3.5 h-3.5" />
-              </a>
             </div>
           </div>
 
           {/* Right Column: SixPillarsDiagnosticRadar Visual */}
           <div className="lg:col-span-5 flex justify-center">
-            <SixPillarsDiagnosticRadar />
+            <SixPillarsDiagnosticRadar showInsightCard={false} />
           </div>
         </section>
 

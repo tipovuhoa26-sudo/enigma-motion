@@ -60,8 +60,8 @@ interface InnerKnowledgeSeed {
 
 const INNER_KNOWLEDGE_SEEDS: InnerKnowledgeSeed[] = (() => {
   const seeds: InnerKnowledgeSeed[] = [];
-  for (let i = 1; i <= 24; i++) {
-    const r = 72 + i * 5.4;
+  for (let i = 1; i <= 12; i++) {
+    const r = 76 + i * 10.5;
     const a = i * GOLDEN_ANGLE_RAD;
     seeds.push({
       id: `seed-${i}`,
@@ -73,13 +73,11 @@ const INNER_KNOWLEDGE_SEEDS: InnerKnowledgeSeed[] = (() => {
   return seeds;
 })();
 
-// Spiral connection pairs between inner seeds to form twin parastichy arcs
+// Spiral connection pairs between inner seeds
 const INNER_SPIRAL_EDGES = [
-  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7],
-  [7, 8], [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15],
-  [15, 16], [16, 17], [17, 18], [18, 19], [19, 20], [20, 21], [21, 22], [22, 23],
-  [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8], [6, 9], [7, 10],
-  [8, 11], [9, 12], [10, 13], [11, 14], [12, 15], [13, 16], [14, 17],
+  [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6],
+  [6, 7], [7, 8], [8, 9], [9, 10], [10, 11],
+  [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8],
 ];
 
 // Helper to calculate smooth Bézier curve bowing along sunflower spiral
@@ -229,18 +227,13 @@ const DOMAINS: DomainCluster[] = [
 const DOMAIN_MAP = new Map(DOMAINS.map((d) => [d.id, d]));
 
 const RAW_CROSS_LINKS = [
-  { id: 'cl-bank-gov', sourceDomain: 'banking', targetDomain: 'governance', label: 'Rủi ro & Kiểm định' },
-  { id: 'cl-re-sales', sourceDomain: 'real-estate', targetDomain: 'sales', label: 'Lead & Chốt cọc' },
-  { id: 'cl-hr-tech', sourceDomain: 'hr', targetDomain: 'tech', label: 'Wiki & Tri thức số' },
-  { id: 'cl-mfg-tech', sourceDomain: 'manufacturing', targetDomain: 'tech', label: 'Dữ liệu vận hành' },
-  { id: 'cl-mfg-gov', sourceDomain: 'manufacturing', targetDomain: 'governance', label: 'Chuẩn hóa SOP' },
-  { id: 'cl-bank-tech', sourceDomain: 'banking', targetDomain: 'tech', label: 'Tích hợp tài chính' },
-  { id: 'cl-sales-tech', sourceDomain: 'sales', targetDomain: 'tech', label: 'Dữ liệu chuyển đổi' },
-  { id: 'cl-bank-re', sourceDomain: 'banking', targetDomain: 'real-estate', label: 'Định giá & Tín dụng BĐS' },
-  { id: 'cl-hr-gov', sourceDomain: 'hr', targetDomain: 'governance', label: 'Phân quyền & Tự chủ' },
-  { id: 'cl-sales-gov', sourceDomain: 'sales', targetDomain: 'governance', label: 'Chính sách & Tuân thủ' },
-  { id: 'cl-mfg-sales', sourceDomain: 'manufacturing', targetDomain: 'sales', label: 'Dự báo & Chuyền sản xuất' },
-  { id: 'cl-hr-mfg', sourceDomain: 'hr', targetDomain: 'manufacturing', label: 'SOP & An toàn chuyền' },
+  { id: 'cl-bank-re', sourceDomain: 'banking', targetDomain: 'real-estate', label: 'Tài chính & BĐS' },
+  { id: 'cl-re-sales', sourceDomain: 'real-estate', targetDomain: 'sales', label: 'BĐS & Tăng trưởng' },
+  { id: 'cl-sales-gov', sourceDomain: 'sales', targetDomain: 'governance', label: 'Tăng trưởng & Quản trị' },
+  { id: 'cl-gov-tech', sourceDomain: 'governance', targetDomain: 'tech', label: 'Quản trị & Công nghệ' },
+  { id: 'cl-tech-mfg', sourceDomain: 'tech', targetDomain: 'manufacturing', label: 'Công nghệ & Sản xuất' },
+  { id: 'cl-mfg-hr', sourceDomain: 'manufacturing', targetDomain: 'hr', label: 'Sản xuất & Con người' },
+  { id: 'cl-hr-bank', sourceDomain: 'hr', targetDomain: 'banking', label: 'Con người & Tài chính' },
 ];
 
 const OBSIDIAN_CROSS_LINKS: CrossLink[] = RAW_CROSS_LINKS.map((item) => {

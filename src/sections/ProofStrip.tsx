@@ -35,13 +35,13 @@ export function ProofStrip() {
 
           <div className="flex items-center gap-2 text-xs sm:text-[13px] font-mono text-[#17151A]">
             <span className="font-semibold text-[#EA580C]">40+</span>
-            <span className="text-[#6E6E6E]">engagements</span>
+            <span className="text-[#6E6E6E]">dự án triển khai</span>
             <span className="text-[#D5D3CC]">·</span>
             <span className="font-semibold text-[#7000FF]">8</span>
-            <span className="text-[#6E6E6E]">case studies</span>
+            <span className="text-[#6E6E6E]">nghiên cứu điển hình</span>
             <span className="text-[#D5D3CC]">·</span>
             <span className="font-semibold text-[#17151A]">45</span>
-            <span className="text-[#6E6E6E]">organizations</span>
+            <span className="text-[#6E6E6E]">tổ chức</span>
           </div>
         </div>
 
