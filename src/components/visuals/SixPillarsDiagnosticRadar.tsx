@@ -129,14 +129,14 @@ export function SixPillarsDiagnosticRadar({
         <defs>
           {/* Radial aura for central Sunext core */}
           <radialGradient id="pillar-core-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.14" />
-            <stop offset="60%" stopColor="#7000FF" stopOpacity="0.04" />
-            <stop offset="100%" stopColor="#7000FF" stopOpacity="0" />
+            <stop offset="0%" stopColor="#581C87" stopOpacity="0.14" />
+            <stop offset="60%" stopColor="#581C87" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="#581C87" stopOpacity="0" />
           </radialGradient>
 
           {/* Active spoke laser gradient */}
           <linearGradient id="pillar-laser-beam" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#581C87" stopOpacity="0.3" />
             <stop offset="60%" stopColor="#A855F7" stopOpacity="1" />
             <stop offset="100%" stopColor="#EA580C" stopOpacity="1" />
           </linearGradient>
@@ -170,7 +170,7 @@ export function SixPillarsDiagnosticRadar({
                 y1={centerY}
                 x2={pillar.x}
                 y2={pillar.y}
-                stroke={isActive ? 'url(#pillar-laser-beam)' : '#7000FF'}
+                stroke={isActive ? 'url(#pillar-laser-beam)' : '#581C87'}
                 strokeWidth={isActive ? 2.4 : 1}
                 strokeDasharray={isActive ? 'none' : '2 3'}
                 opacity={isActive ? 1 : 0.2}
@@ -254,7 +254,7 @@ export function SixPillarsDiagnosticRadar({
         <g transform={`translate(${centerX}, ${centerY})`} className="select-none pointer-events-none">
           {/* Faint Outer Ring */}
           <circle cx="0" cy="0" r="38" fill="#FFFFFF" stroke="#0A0A0A" strokeWidth="1.8" />
-          <circle cx="0" cy="0" r="8" fill="#7000FF" />
+          <circle cx="0" cy="0" r="8" fill="#581C87" />
           <text
             x="0"
             y="4"

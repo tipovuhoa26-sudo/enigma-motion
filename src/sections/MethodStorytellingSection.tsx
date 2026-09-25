@@ -73,14 +73,14 @@ export function MethodStorytellingSection() {
     <section
       ref={containerRef}
       id="method"
-      className="relative h-[195vh] sm:h-[210vh] bg-[#F8F8F6] border-b border-[#E7E7E5]"
+      className="relative h-[195vh] sm:h-[210vh] bg-[#FAF8F5] border-b border-[#EAE6DF]"
     >
       {/* Sticky Pinned Screen Viewport - Single Clean Control */}
       <div className="sticky top-[72px] h-[calc(100vh-72px)] w-full flex flex-col justify-between overflow-hidden px-6 md:px-12 py-5 sm:py-7">
         <div className="max-w-[1280px] w-full mx-auto flex-1 flex flex-col justify-between">
           
           {/* Top Progress Track: ONLY 01 ───── 02 ───── 03 */}
-          <div className="w-full pb-4 sm:pb-5 border-b border-[#E7E7E5] flex items-center justify-between">
+          <div className="w-full pb-4 sm:pb-5 border-b border-[#EAE6DF] flex items-center justify-between">
             <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#747474]">
               NGUYÊN TẮC THIẾT KẾ
             </span>
@@ -108,9 +108,9 @@ export function MethodStorytellingSection() {
             <div className="lg:col-span-5 relative flex flex-col justify-center">
               <div className={`${animClass} flex flex-col justify-between`}>
                 <div>
-                  {/* Headline */}
-                  <div className="min-h-[80px] sm:min-h-[96px] flex items-start">
-                    <h2 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.02]">
+                  {/* Headline (Principle Scale: refined and subordinate to Manifesto & Chapter scales) */}
+                  <div className="min-h-[72px] sm:min-h-[84px] flex items-start">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-light tracking-tight text-[#0A0A0A] leading-[1.15]">
                       {displayedStep === 0 && (
                         <>
                           Quy trình trước<br />công cụ.
@@ -130,7 +130,7 @@ export function MethodStorytellingSection() {
                   </div>
 
                   {/* Supporting Copy */}
-                  <div className="mt-5 min-h-[50px]">
+                  <div className="mt-4 min-h-[50px]">
                     <p className="text-base text-[#515151] font-normal leading-relaxed max-w-[400px]">
                       {displayedStep === 0 && (
                         <>

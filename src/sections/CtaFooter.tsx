@@ -28,7 +28,7 @@ export function CtaFooter() {
     <section
       id="transfer"
       ref={sectionRef}
-      className="relative w-full bg-[#0A0A0A] text-white overflow-hidden text-center scroll-mt-20 border-t border-[#1C1829]"
+      className="relative w-full bg-[#100E17] text-white overflow-hidden text-center scroll-mt-20 border-t border-[#1F1C2B]"
       aria-label="Chuyển giao tự chủ & Bắt đầu hợp tác"
       data-cta-footer
     >

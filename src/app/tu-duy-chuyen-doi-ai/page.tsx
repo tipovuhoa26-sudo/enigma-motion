@@ -96,7 +96,7 @@ export default function AiTransformationHubPage() {
         {/* HERO SECTION: Xác định điểm nghẽn trước khi triển khai AI */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20 lg:mb-28 pb-16 border-b border-black/5">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
+            <span className="text-[11px] uppercase tracking-widest text-[#581C87] font-semibold block font-mono">
               PHƯƠNG PHÁP SUNEXT
             </span>
 
@@ -128,7 +128,7 @@ export default function AiTransformationHubPage() {
         {/* MASTER ARCHITECTURE: PHƯƠNG PHÁP XUYÊN SUỐT CỦA SUNEXT */}
         <section id="master-narrative" className="mb-28 lg:mb-36 scroll-mt-24">
           <div className="mb-12 max-w-3xl">
-            <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono mb-2">
+            <span className="text-[11px] uppercase tracking-widest text-[#581C87] font-semibold block font-mono mb-2">
               MỘT XƯƠNG SỐNG DUY NHẤT
             </span>
             <div className="flex items-center gap-2 mb-3">
@@ -153,11 +153,11 @@ export default function AiTransformationHubPage() {
           {/* Guardrails Banner across the bottom */}
           <div className="mt-8 p-4 rounded-2xl bg-white/70 backdrop-blur-xs border border-black/10 flex flex-wrap items-center justify-between gap-4 text-xs font-mono text-[#515151]">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-[#581C87] shrink-0" />
               <span>GUARDRAIL XUYÊN SUỐT:</span>
               <span className="text-[#17151A] font-semibold">Zero Data Retention (ZDR) · Human-in-the-loop (HITL) · Private VPC</span>
             </div>
-            <Link href="/phap-ly-bao-mat" className="text-[#7000FF] font-semibold hover:underline inline-flex items-center gap-1">
+            <Link href="/phap-ly-bao-mat" className="text-[#581C87] font-semibold hover:underline inline-flex items-center gap-1">
               <span>Khung 3 Tầng Bảo Mật</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
@@ -167,7 +167,7 @@ export default function AiTransformationHubPage() {
         {/* SECTION: 6 NĂNG LỰC TỔ CHỨC — THAM CHIẾU MCKINSEY REWIRED */}
         <section id="cac-tru-cot" className="mb-28 lg:mb-40 scroll-mt-24">
           <div className="max-w-2xl mb-20">
-            <span className="text-[11px] uppercase tracking-widest text-[#7000FF] font-semibold block font-mono">
+            <span className="text-[11px] uppercase tracking-widest text-[#581C87] font-semibold block font-mono">
               6 NĂNG LỰC TỔ CHỨC · THAM CHIẾU MCKINSEY REWIRED
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#17151A] tracking-tight mt-4 leading-[1.12]">
@@ -185,8 +185,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">01</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">01</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       CHIẾN LƯỢC · BUSINESS-LED STRATEGY
                     </span>
                   </div>
@@ -198,7 +198,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/chien-luoc-so"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết trụ cột 01</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -222,8 +222,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8 lg:order-2">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">02</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">02</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       NHÂN TÀI &amp; NĂNG LỰC · TALENT &amp; SKILLS
                     </span>
                   </div>
@@ -235,7 +235,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/nguoi-tai-cong-nghe"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết năng lực 02</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -244,7 +244,7 @@ export default function AiTransformationHubPage() {
 
                 {/* Evidence: 5 Talent Levels Matrix + Metric */}
                 <div className="lg:col-span-4 lg:order-1 pt-2 space-y-3 font-mono">
-                  <span className="text-4xl sm:text-5xl font-light text-[#7000FF] block leading-none">
+                  <span className="text-4xl sm:text-5xl font-light text-[#581C87] block leading-none">
                     600+
                   </span>
                   <span className="text-xs text-[#747474] font-sans font-light block leading-snug">
@@ -254,11 +254,11 @@ export default function AiTransformationHubPage() {
                   <div className="p-3.5 rounded-xl bg-white/80 border border-black/10 space-y-1.5 text-[10px]">
                     <div className="flex items-center justify-between text-[#17151A]">
                       <span>BẬC 1–2: Prompting &amp; Tác nghiệp</span>
-                      <span className="text-emerald-700 font-bold">100% Phổ cập</span>
+                      <span className="text-[#581C87] font-bold">100% Phổ cập</span>
                     </div>
                     <div className="flex items-center justify-between text-[#17151A]">
                       <span>BẬC 3–4: SOP Human-in-the-loop</span>
-                      <span className="text-[#7000FF] font-bold">Nòng cốt</span>
+                      <span className="text-[#581C87] font-bold">Nòng cốt</span>
                     </div>
                     <div className="flex items-center justify-between text-[#17151A]">
                       <span>BẬC 5: AI Center of Excellence</span>
@@ -274,8 +274,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
                 <div className="lg:col-span-6">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">03</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">03</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       MÔ HÌNH VẬN HÀNH &amp; SOP · OPERATING MODEL
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/mo-hinh-van-hanh"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết năng lực 03</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -305,7 +305,7 @@ export default function AiTransformationHubPage() {
                         Tốc độ chu kỳ SOP &amp; xử lý hồ sơ nghiệp vụ
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200 font-semibold shrink-0">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#0A0A0A] bg-[#EA580C]/10 px-2.5 py-1 rounded border border-[#EA580C]/20 font-semibold shrink-0">
                       Kiểm tra nguồn &amp; phê duyệt
                     </span>
                   </div>
@@ -331,12 +331,12 @@ export default function AiTransformationHubPage() {
 
                     {/* Step 2: Custom Agent RAG */}
                     <div className="flex items-center gap-3 text-xs text-neutral-300">
-                      <div className="w-6 h-6 rounded-full bg-purple-950 border border-[#7000FF] flex items-center justify-center text-[10px] text-[#C084FC] shrink-0">02</div>
+                      <div className="w-6 h-6 rounded-full bg-purple-950 border border-[#581C87] flex items-center justify-center text-[10px] text-[#C084FC] shrink-0">02</div>
                       <div className="flex-1">
                         <span className="text-[#C084FC] font-semibold">Custom AI Agent &amp; RAG Vector Bus</span>
                         <div className="text-[10px] text-neutral-400 font-sans">Soạn thảo văn bản, đối chiếu quy chuẩn, tính toán bước đầu</div>
                       </div>
-                      <span className="text-[10px] text-emerald-400 shrink-0 font-mono">&lt; 3 giây</span>
+                      <span className="text-[10px] text-[#EA580C] shrink-0 font-mono">&lt; 3 giây</span>
                     </div>
 
                     <div className="w-0.5 h-2.5 bg-neutral-800 ml-3" />
@@ -358,12 +358,12 @@ export default function AiTransformationHubPage() {
 
                     {/* Step 4: Dispatch & Tamper-proof Log */}
                     <div className="flex items-center gap-3 text-xs text-neutral-300">
-                      <div className="w-6 h-6 rounded-full bg-emerald-950 border border-emerald-500 flex items-center justify-center text-[10px] text-emerald-400 shrink-0">04</div>
+                      <div className="w-6 h-6 rounded-full bg-[#181524] border border-[#EA580C] flex items-center justify-center text-[10px] text-[#EA580C] shrink-0">04</div>
                       <div className="flex-1">
-                        <span className="text-emerald-300 font-semibold">Ban Hành &amp; Lưu Vết Audit Log Bất Biến</span>
+                        <span className="text-[#FED7AA] font-semibold">Ban Hành &amp; Lưu Vết Audit Log Bất Biến</span>
                         <div className="text-[10px] text-neutral-400 font-sans">Đồng bộ sang core banking / ERP / DMS có chứng thư số</div>
                       </div>
-                      <span className="text-[10px] text-emerald-400 shrink-0 font-mono">Verified</span>
+                      <span className="text-[10px] text-[#EA580C] shrink-0 font-mono">Verified</span>
                     </div>
                   </div>
                 </div>
@@ -375,8 +375,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8 lg:order-2">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">04</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">04</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       NỀN TẢNG CÔNG NGHỆ · TECHNOLOGY PLATFORM
                     </span>
                   </div>
@@ -388,7 +388,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/ha-tang-cong-nghe"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết năng lực 04</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -397,7 +397,7 @@ export default function AiTransformationHubPage() {
 
                 {/* Evidence: Security Architecture Stack + 24/7 Metric */}
                 <div className="lg:col-span-4 lg:order-1 pt-2 space-y-3 font-mono">
-                  <span className="text-4xl sm:text-5xl font-light text-[#7000FF] block leading-none">
+                  <span className="text-4xl sm:text-5xl font-light text-[#581C87] block leading-none">
                     24/7
                   </span>
                   <span className="text-xs text-[#747474] font-sans font-light block leading-snug">
@@ -408,7 +408,7 @@ export default function AiTransformationHubPage() {
                     <div className="px-2.5 py-1 rounded bg-black/5 text-[#17151A] font-semibold">
                       🔒 Zero Data Retention (ZDR)
                     </div>
-                    <div className="px-2.5 py-1 rounded bg-[#FAF5FF] border border-[#EDE9FE] text-[#7000FF] font-semibold">
+                    <div className="px-2.5 py-1 rounded bg-[#FAF5FF] border border-[#EDE9FE] text-[#581C87] font-semibold">
                       ⚡ Private VPC / On-Premise Mesh
                     </div>
                     <div className="px-2.5 py-1 rounded bg-black/5 text-[#515151]">
@@ -424,8 +424,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">05</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">05</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       KIẾN TRÚC DỮ LIỆU · DATA ARCHITECTURE
                     </span>
                   </div>
@@ -437,7 +437,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/du-lieu-doanh-nghiep"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết năng lực 05</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -472,8 +472,8 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 <div className="lg:col-span-8 lg:order-2">
                   <div className="flex items-baseline gap-3 mb-4">
-                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#7000FF]">06</span>
-                    <span className="text-xs font-mono font-bold tracking-widest text-[#7000FF] uppercase">
+                    <span className="font-mono text-3xl sm:text-4xl font-light text-[#581C87]">06</span>
+                    <span className="text-xs font-mono font-bold tracking-widest text-[#581C87] uppercase">
                       ÁP DỤNG &amp; MỞ RỘNG · ADOPTION &amp; SCALE
                     </span>
                   </div>
@@ -485,7 +485,7 @@ export default function AiTransformationHubPage() {
                   </p>
                   <Link
                     href="/tu-duy-chuyen-doi-ai/do-luong-mo-rong"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                   >
                     <span>Xem chi tiết năng lực 06</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -502,20 +502,20 @@ export default function AiTransformationHubPage() {
                   </span>
                   {/* Mini Adoption Checklist */}
                   <div className="p-3.5 rounded-xl bg-white/80 border border-black/10 space-y-1.5 text-[10px] text-[#17151A]">
-                    <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                    <div className="flex items-center gap-1.5 text-[#0A0A0A] font-semibold">
+                      <CheckCircle2 className="w-3 h-3 text-[#581C87]" />
                       <span>Đo lường tỷ lệ áp dụng theo tuần (DAU/MAU)</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                    <div className="flex items-center gap-1.5 text-[#0A0A0A] font-semibold">
+                      <CheckCircle2 className="w-3 h-3 text-[#581C87]" />
                       <span>Lộ trình nhân rộng use-case liên phòng ban</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                    <div className="flex items-center gap-1.5 text-[#0A0A0A] font-semibold">
+                      <CheckCircle2 className="w-3 h-3 text-[#581C87]" />
                       <span>Chính sách khuyến khích &amp; đào tạo liên tục</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-emerald-800 font-semibold">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-700" />
+                    <div className="flex items-center gap-1.5 text-[#0A0A0A] font-semibold">
+                      <CheckCircle2 className="w-3 h-3 text-[#581C87]" />
                       <span>Đánh giá tác động P&amp;L định kỳ</span>
                     </div>
                   </div>
@@ -528,7 +528,7 @@ export default function AiTransformationHubPage() {
         {/* SECTION: 3 DOANH NGHIỆP ĐÃ LÀM ĐÚNG (Open Editorial Spread) */}
         <section className="mb-28 lg:mb-36 pt-16 border-t border-[#E7E7E5]">
           <div className="max-w-3xl mb-12">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#7000FF] font-semibold block mb-2">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#581C87] font-semibold block mb-2">
               DỮ LIỆU KIỂM CHỨNG TẠI HIỆN TRƯỜNG
             </span>
             <h2 className="text-3xl sm:text-4xl font-light text-[#17151A] tracking-tight leading-snug">
@@ -564,7 +564,7 @@ export default function AiTransformationHubPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 <div className="lg:col-span-7 space-y-4">
                   <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="text-[#7000FF] font-semibold">{current.tag}</span>
+                    <span className="text-[#581C87] font-semibold">{current.tag}</span>
                     <span>·</span>
                     <span className="text-[#6E6E6E]">{current.industry}</span>
                     <span>·</span>
@@ -582,7 +582,7 @@ export default function AiTransformationHubPage() {
                   <div className="pt-4 flex flex-wrap items-center gap-6 text-xs font-mono">
                     <Link
                       href={current.link}
-                      className="inline-flex items-center gap-1.5 font-semibold text-[#17151A] hover:text-[#7000FF] transition-colors"
+                      className="inline-flex items-center gap-1.5 font-semibold text-[#17151A] hover:text-[#581C87] transition-colors"
                     >
                       <span>Hồ sơ kỹ thuật Case Study</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
@@ -614,7 +614,7 @@ export default function AiTransformationHubPage() {
         {/* EXTERNAL MATURITY REFERENCE: MCKINSEY 2026 THREE HORIZONS */}
         <section className="mb-14 p-6 sm:p-8 rounded-3xl bg-white/70 border border-black/10 backdrop-blur-xs text-xs text-[#525252] space-y-4 font-sans">
           <div className="flex items-center justify-between flex-wrap gap-2 pb-3 border-b border-black/5">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-[#7000FF] font-semibold">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#581C87] font-semibold">
               THAM CHIẾU MỨC ĐỘ BIẾN ĐỔI TỔ CHỨC · MCKINSEY 2026 THREE HORIZONS
             </span>
             <span className="text-[10.5px] font-mono text-[#747474]">Góc nhìn tổ chức độc lập với độ sâu công nghệ</span>
@@ -634,7 +634,7 @@ export default function AiTransformationHubPage() {
               </span>
             </div>
             <div className="p-4 rounded-2xl bg-purple-50/80 border border-purple-200/70">
-              <span className="font-bold text-[#7000FF] text-xs block mb-1">03 · Reinvention</span>
+              <span className="font-bold text-[#581C87] text-xs block mb-1">03 · Reinvention</span>
               <span className="text-[#581C87] font-sans text-xs leading-relaxed block">
                 Thiết kế lại toàn bộ vai trò và mô hình vận hành với AI ở lõi.
               </span>

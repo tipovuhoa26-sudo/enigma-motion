@@ -20,7 +20,7 @@ export function ProofStrip() {
   return (
     <section
       id="proof-strip"
-      className="w-full py-8 sm:py-10 px-6 md:px-12 border-b border-[#E7E7E5] bg-[#FBFBFA] relative z-20"
+      className="w-full py-8 sm:py-10 px-6 md:px-12 border-b border-[#EAE6DF] bg-[#FAF8F5] relative z-20"
       aria-label="Social Proof & Enterprise Engagements"
     >
       <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-6">
@@ -37,7 +37,7 @@ export function ProofStrip() {
             <span className="font-bold text-[#EA580C]">8</span>
             <span className="text-[#52525B]">case studies</span>
             <span className="text-[#A1A1AA]">·</span>
-            <span className="font-bold text-[#7000FF]">40+</span>
+            <span className="font-bold text-[#581C87]">40+</span>
             <span className="text-[#52525B]">engagements</span>
             <span className="text-[#A1A1AA]">·</span>
             <span className="font-bold text-[#0A0A0A]">45</span>

@@ -6,8 +6,7 @@ import { Hero } from '@/sections/Hero';
 import { ProofStrip } from '@/sections/ProofStrip';
 import { MethodStorytellingSection } from '@/sections/MethodStorytellingSection';
 import { FourGatesProgressSection } from '@/sections/FourGatesProgressSection';
-import { PhotographicInterruptionSection } from '@/sections/PhotographicInterruptionSection';
-import { CasesSection } from '@/sections/CasesSection';
+import { ProofSection } from '@/sections/ProofSection';
 import { CtaFooter } from '@/sections/CtaFooter';
 import { Footer } from '@/sections/Footer';
 
@@ -17,25 +16,20 @@ export default function HomePage() {
       <Header />
 
       <main className="flex-1 flex flex-col w-full">
-        {/* 01. HERO: Statement + Living Sun System (Scale +28%, Optical Gravity, Mini-Story 0s-7s) */}
+        {/* CHAPTER 1 — HERO + TRUST: Khởi đầu từ mạng tri thức & Xác thực uy tín */}
         <Hero autoPlayIntro={true} />
-
-        {/* 02. PROOF STRIP: Quiet Trust (40+ engagements · 8 case studies · 45 orgs + Monochrome Logos) */}
         <ProofStrip />
 
-        {/* 03. METHOD: 3 Principles with Varied Geometry & Syntax (Process -67% ➔ Data Fan ➔ KPI Timeline) */}
+        {/* CHAPTER 2 — METHOD: 3 Nguyên lý trên một canvas liên tục */}
         <MethodStorytellingSection />
 
-        {/* 04. DELIVERY: Dark Cinematic System (Discover G1 ➔ Build G2 ➔ Operate G3 ➔ Transfer G4) */}
+        {/* CHAPTER 3 — CONTROL: Stage-Gate kiểm soát rủi ro trước khi mở rộng */}
         <FourGatesProgressSection />
 
-        {/* 05. EARLY PHOTOGRAPHIC INTERRUPTION: Từ Hệ Thống Đến Hiện Trường (Vinhomes Unboxed 75vw) */}
-        <PhotographicInterruptionSection />
+        {/* CHAPTER 4 — PROOF: Thực tế triển khai — Từ hệ thống đến hiện trường (Một Story) */}
+        <ProofSection />
 
-        {/* 06. CASE STUDIES: In-depth Transformation Evidence */}
-        <CasesSection />
-
-        {/* 07. CLOSURE: Tự Chủ Bàn Giao ➔ Bình Minh Chân Trời (Continuous Dark Chapter) */}
+        {/* CHAPTER 5 — AUTONOMY / SUN: Tự chủ bàn giao ➔ Nguồn sáng bình minh */}
         <CtaFooter />
       </main>
 
