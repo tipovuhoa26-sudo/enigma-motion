@@ -6,7 +6,6 @@ interface PillarNode {
   id: number;
   slug: string;
   name: string;
-  english: string;
   x: number;
   y: number;
   labelX: number;
@@ -20,12 +19,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 1,
     slug: 'chien-luoc-so',
-    name: 'Chiến lược',
-    english: 'Chiến Lược & Giá Trị',
+    name: 'CHIẾN LƯỢC',
     x: 300,
-    y: 110,
+    y: 95,
     labelX: 300,
-    labelY: 75,
+    labelY: 58,
     textAnchor: 'middle',
     bottleneck: 'AI chạy thử nghiệm ngẫu nhiên, không đo lường được tác động P&L thực tế.',
     benchmark: 'Xác định 1–2 miền nghiệp vụ có đòn bẩy kinh tế cao nhất trước khi đầu tư.',
@@ -33,12 +31,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 4,
     slug: 'nen-tang-cong-nghe',
-    name: 'Công nghệ',
-    english: 'Nền Tảng & Tích Hợp',
+    name: 'CÔNG NGHỆ',
     x: 485,
-    y: 200,
-    labelX: 512,
-    labelY: 204,
+    y: 190,
+    labelX: 515,
+    labelY: 195,
     textAnchor: 'start',
     bottleneck: 'Tool mua rời rạc, không kết nối API hai chiều với hệ thống lõi (CRM, ERP, ATS).',
     benchmark: 'Xây dựng Private AI Vector Mesh bảo mật, tích hợp luồng việc tự động.',
@@ -46,12 +43,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 5,
     slug: 'kien-truc-du-lieu',
-    name: 'Dữ liệu',
-    english: 'Kiến Trúc Dữ Liệu',
+    name: 'DỮ LIỆU',
     x: 485,
     y: 410,
-    labelX: 512,
-    labelY: 414,
+    labelX: 515,
+    labelY: 415,
     textAnchor: 'start',
     bottleneck: 'Dữ liệu phân tán, nhiều dị bản, rò rỉ khi đẩy vào mô hình công cộng.',
     benchmark: 'Single Source of Truth, phân quyền bảo mật cấp enterprise và RAG nội bộ.',
@@ -59,12 +55,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 6,
     slug: 'mo-rong-quy-mo',
-    name: 'Áp dụng & mở rộng',
-    english: 'Áp Dụng & Mở Rộng',
+    name: 'ÁP DỤNG & MỞ RỘNG',
     x: 300,
     y: 505,
     labelX: 300,
-    labelY: 538,
+    labelY: 545,
     textAnchor: 'middle',
     bottleneck: 'AI chỉ dừng ở nhóm nhỏ thử nghiệm, không lan tỏa ra phòng ban, thiếu cơ chế thúc đẩy áp dụng.',
     benchmark: 'Kế hoạch mở rộng có lộ trình, đo lường tỷ lệ áp dụng thực tế và nhân rộng use-case theo P&L.',
@@ -72,12 +67,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 3,
     slug: 'mo-hinh-van-hanh',
-    name: 'Vận hành',
-    english: 'Mô Hình Vận Hành & SOP',
+    name: 'VẬN HÀNH',
     x: 115,
     y: 410,
-    labelX: 88,
-    labelY: 414,
+    labelX: 85,
+    labelY: 415,
     textAnchor: 'end',
     bottleneck: 'Dùng AI vào quy trình cũ lỗi thời, sinh thêm việc rà soát thay vì tăng tốc.',
     benchmark: 'Tái cấu trúc SOP và phân định vai trò Người - AI rõ ràng, loại bỏ lãng phí tác vụ.',
@@ -85,12 +79,11 @@ const PILLARS: PillarNode[] = [
   {
     id: 2,
     slug: 'nang-luc-doi-ngu',
-    name: 'Con người',
-    english: 'Nhân Tài & Năng Lực',
+    name: 'CON NGƯỜI',
     x: 115,
-    y: 200,
-    labelX: 88,
-    labelY: 204,
+    y: 190,
+    labelX: 85,
+    labelY: 195,
     textAnchor: 'end',
     bottleneck: 'Nhân sự chỉ dừng ở mức thử prompt cơ bản, thiếu năng lực tích hợp vào luồng việc.',
     benchmark: 'Đào tạo phân tầng năng lực thực chiến, đo bằng sản lượng công việc hoàn thành thực tế.',
@@ -113,7 +106,7 @@ export function SixPillarsDiagnosticRadar({
   const currentPillar = PILLARS.find((p) => p.id === currentActiveId) || PILLARS[0];
 
   const centerX = 300;
-  const centerY = 305;
+  const centerY = 300;
 
   const handlePillarClick = (p: PillarNode) => {
     if (onSelectPillar) {
@@ -131,54 +124,40 @@ export function SixPillarsDiagnosticRadar({
       <svg
         viewBox="0 0 600 600"
         className="w-full h-auto overflow-visible"
-        aria-label="6-Pillar Capability Diagnosis Map"
+        aria-label="6 Trụ Cột Năng Lực Tổ Chức — Node & Connection Topology"
       >
         <defs>
           {/* Radial aura for central Sunext core */}
-          <radialGradient id="sunext-core-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.18" />
-            <stop offset="60%" stopColor="#7000FF" stopOpacity="0.05" />
+          <radialGradient id="pillar-core-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.14" />
+            <stop offset="60%" stopColor="#7000FF" stopOpacity="0.04" />
             <stop offset="100%" stopColor="#7000FF" stopOpacity="0" />
           </radialGradient>
 
           {/* Active spoke laser gradient */}
-          <linearGradient id="active-spoke-laser" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#7000FF" stopOpacity="0.9" />
+          <linearGradient id="pillar-laser-beam" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.3" />
+            <stop offset="60%" stopColor="#A855F7" stopOpacity="1" />
             <stop offset="100%" stopColor="#EA580C" stopOpacity="1" />
           </linearGradient>
-
-          {/* Radar area fill */}
-          <radialGradient id="radar-web-gradient" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#7000FF" stopOpacity="0.10" />
-            <stop offset="85%" stopColor="#7000FF" stopOpacity="0.02" />
-            <stop offset="100%" stopColor="#7000FF" stopOpacity="0" />
-          </radialGradient>
         </defs>
 
         {/* 1. Atmospheric Ambient Aura */}
-        <circle cx={centerX} cy={centerY} r="260" fill="url(#sunext-core-glow)" />
+        <circle cx={centerX} cy={centerY} r="250" fill="url(#pillar-core-glow)" />
 
-        {/* 2. Concentric Hexagonal Maturity Rings */}
-        {[0.35, 0.65, 1.0].map((scale, i) => {
-          const points = PILLARS.map((p) => {
-            const px = centerX + (p.x - centerX) * scale;
-            const py = centerY + (p.y - centerY) * scale;
-            return `${px},${py}`;
-          }).join(' ');
+        {/* 2. Perimeter Structural Connection Polygon (The Shared Knowledge Ring) */}
+        <polygon
+          points={PILLARS.map((p) => `${p.x},${p.y}`).join(' ')}
+          fill="none"
+          stroke="#E2E8F0"
+          strokeWidth="1.2"
+          strokeDasharray="4 4"
+        />
 
-          return (
-            <polygon
-              key={`ring-${i}`}
-              points={points}
-              fill={i === 2 ? 'url(#radar-web-gradient)' : 'none'}
-              stroke="#7000FF"
-              strokeWidth={i === 2 ? '1' : '0.7'}
-              strokeDasharray={i === 2 ? 'none' : '3 4'}
-              opacity={i === 2 ? 0.25 : 0.12}
-            />
-          );
-        })}
+        {/* Cross Diagonal Inter-Pillar Connections */}
+        <line x1={PILLARS[0].x} y1={PILLARS[0].y} x2={PILLARS[3].x} y2={PILLARS[3].y} stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 4" opacity="0.6" />
+        <line x1={PILLARS[1].x} y1={PILLARS[1].y} x2={PILLARS[4].x} y2={PILLARS[4].y} stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 4" opacity="0.6" />
+        <line x1={PILLARS[2].x} y1={PILLARS[2].y} x2={PILLARS[5].x} y2={PILLARS[5].y} stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 4" opacity="0.6" />
 
         {/* 3. Radial Spoke Lines from Central Sunext to 6 Pillars */}
         {PILLARS.map((pillar) => {
@@ -191,28 +170,28 @@ export function SixPillarsDiagnosticRadar({
                 y1={centerY}
                 x2={pillar.x}
                 y2={pillar.y}
-                stroke={isActive ? 'url(#active-spoke-laser)' : '#7000FF'}
-                strokeWidth={isActive ? 2.4 : 0.9}
+                stroke={isActive ? 'url(#pillar-laser-beam)' : '#7000FF'}
+                strokeWidth={isActive ? 2.4 : 1}
                 strokeDasharray={isActive ? 'none' : '2 3'}
-                opacity={isActive ? 1 : 0.15}
+                opacity={isActive ? 1 : 0.2}
                 className="transition-all duration-300"
               />
 
               {/* Traveling Pulse Along Active Spoke */}
               {isActive && (
-                <circle r="3.5" fill="#EA580C" filter="drop-shadow(0 0 6px #EA580C)">
+                <circle r="3" fill="#EA580C">
                   <animate
                     attributeName="cx"
-                    from={centerX}
-                    to={pillar.x}
-                    dur="1.6s"
+                    from={pillar.x}
+                    to={centerX}
+                    dur="1.8s"
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="cy"
-                    from={centerY}
-                    to={pillar.y}
-                    dur="1.6s"
+                    from={pillar.y}
+                    to={centerY}
+                    dur="1.8s"
                     repeatCount="indefinite"
                   />
                 </circle>
@@ -221,158 +200,92 @@ export function SixPillarsDiagnosticRadar({
           );
         })}
 
-        {/* 4. Central Sunext Diagnosis Core (Index Node) */}
-        <g transform={`translate(${centerX}, ${centerY})`}>
-          {/* Subtle Outer Halo Ring */}
-          <circle
-            cx="0"
-            cy="0"
-            r="46"
-            fill="none"
-            stroke="#7000FF"
-            strokeWidth="1"
-            strokeDasharray="3 3"
-            opacity="0.3"
-          />
-
-          {/* Main White Core Circle */}
-          <circle
-            cx="0"
-            cy="0"
-            r="40"
-            fill="#FFFFFF"
-            stroke="#7000FF"
-            strokeWidth="1.8"
-            filter="drop-shadow(0 4px 14px rgba(112,0,255,0.12))"
-          />
-
-          {/* Inner Accent Ring */}
-          <circle
-            cx="0"
-            cy="0"
-            r="32"
-            fill="#FAF5FF"
-            stroke="#EDE9FE"
-            strokeWidth="1"
-            opacity="0.9"
-          />
-
-          {/* Core Labels */}
-          <text
-            x="0"
-            y="4"
-            textAnchor="middle"
-            fill="#17151A"
-            fontSize="10.5"
-            fontFamily="monospace"
-            fontWeight="700"
-            letterSpacing="0.08em"
-          >
-            SUNEXT
-          </text>
-        </g>
-
-        {/* 5. 6 Outer Pillar Nodes */}
+        {/* 4. 6 Pillar Nodes (Identical Grammar to Hero & Transfer) */}
         {PILLARS.map((pillar) => {
           const isActive = pillar.id === currentActiveId;
 
           return (
             <g
               key={`node-${pillar.id}`}
-              className="cursor-pointer transition-all duration-200"
+              className="cursor-pointer group"
               onMouseEnter={() => setHoveredId(pillar.id)}
               onMouseLeave={() => setHoveredId(null)}
               onClick={() => handlePillarClick(pillar)}
             >
-              {/* Invisible touch/hover target */}
-              <circle cx={pillar.x} cy={pillar.y} r="28" fill="transparent" />
-
-              {/* Node Outer Halo on Active */}
-              {isActive && (
-                <circle
-                  cx={pillar.x}
-                  cy={pillar.y}
-                  r="20"
-                  fill="#FFF7ED"
-                  stroke="#EA580C"
-                  strokeWidth="1.2"
-                  strokeDasharray="2 2"
-                  className="animate-spin-slow"
-                />
-              )}
-
-              {/* Main Node Circle */}
+              {/* Outer Ring */}
               <circle
                 cx={pillar.x}
                 cy={pillar.y}
-                r={isActive ? 13 : 9.5}
-                fill={isActive ? '#EA580C' : '#FFFFFF'}
-                stroke={isActive ? '#EA580C' : '#7000FF'}
-                strokeWidth={isActive ? 2 : 1.2}
-                filter={isActive ? 'drop-shadow(0 2px 8px rgba(234,88,12,0.35))' : 'none'}
+                r={isActive ? 20 : 16}
+                fill="#FFFFFF"
+                stroke={isActive ? '#EA580C' : '#0A0A0A'}
+                strokeWidth={isActive ? 2.5 : 1.5}
                 className="transition-all duration-300"
               />
 
-              {/* Center Dot */}
+              {/* Inner Dot */}
               <circle
                 cx={pillar.x}
                 cy={pillar.y}
-                r={isActive ? 4 : 2.5}
-                fill={isActive ? '#FFFFFF' : '#7000FF'}
+                r={isActive ? 6 : 4}
+                fill={isActive ? '#EA580C' : '#0A0A0A'}
+                className="transition-all duration-300"
               />
 
-              {/* Text Label: Pillar Name */}
+              {/* Pillar Label */}
               <text
                 x={pillar.labelX}
                 y={pillar.labelY}
                 textAnchor={pillar.textAnchor}
-                fill={isActive ? '#EA580C' : '#17151A'}
-                fontSize="12.5"
-                fontFamily="sans-serif"
-                fontWeight={isActive ? '600' : '400'}
-                className="transition-colors duration-200"
+                fill={isActive ? '#EA580C' : '#0A0A0A'}
+                fontSize="11.5"
+                fontFamily="monospace"
+                fontWeight="700"
+                letterSpacing="0.06em"
+                className="transition-colors duration-200 select-none"
               >
                 {pillar.name}
               </text>
             </g>
           );
         })}
+
+        {/* 5. Central Sunext Monogram Core (The Origin of Diagnostic) */}
+        <g transform={`translate(${centerX}, ${centerY})`} className="select-none pointer-events-none">
+          {/* Faint Outer Ring */}
+          <circle cx="0" cy="0" r="38" fill="#FFFFFF" stroke="#0A0A0A" strokeWidth="1.8" />
+          <circle cx="0" cy="0" r="8" fill="#7000FF" />
+          <text
+            x="0"
+            y="4"
+            textAnchor="middle"
+            fill="#0A0A0A"
+            fontSize="10"
+            fontFamily="monospace"
+            fontWeight="800"
+            letterSpacing="0.12em"
+          >
+            SUNEXT
+          </text>
+        </g>
       </svg>
 
-      {/* Subtitle Reference Below Graphic */}
-      <div className="text-center mt-3 text-xs text-[#8E8E8A] font-light">
-        Tham chiếu McKinsey Rewired
+      {/* Shared Reference Benchmark Caption */}
+      <div className="mt-4 text-center">
+        <span className="text-xs font-mono text-[#747474] tracking-wide">
+          Tham chiếu McKinsey Rewired · 6 Trụ cột năng lực tổ chức
+        </span>
       </div>
 
-      {/* Optional Diagnostic Bottom Banner (Hidden in hero by default) */}
+      {/* Optional Insight Card (Preserved if explicitly enabled) */}
       {showInsightCard && (
-        <div className="mt-3 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E8E8E8] shadow-xs transition-all duration-300">
-          <div className="flex items-center justify-between gap-2 mb-1.5 pb-1.5 border-b border-black/5">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#EA580C] animate-pulse" />
-              <span className="text-xs font-mono font-bold text-[#17151A] tracking-wider">
-                {currentPillar.name}
-              </span>
-            </div>
-            <button
-              type="button"
-              onClick={() => handlePillarClick(currentPillar)}
-              className="text-[11px] font-medium text-[#7000FF] hover:text-[#581C87] transition-colors cursor-pointer"
-            >
-              Xem phân tích ↓
-            </button>
+        <div className="mt-6 p-5 rounded-2xl bg-white border border-[#E7E7E5] shadow-xs">
+          <div className="text-xs font-mono font-semibold uppercase tracking-wider text-[#EA580C] mb-1">
+            {currentPillar.name}
           </div>
-
-          <div className="space-y-1 text-xs">
-            <p className="text-[#626262]">
-              <strong className="text-[#17151A] font-medium">Điểm nghẽn thường gặp:</strong>{' '}
-              {currentPillar.bottleneck}
-            </p>
-            <p className="text-[#059669]">
-              <strong className="font-medium">Giải pháp chuẩn hóa:</strong>{' '}
-              {currentPillar.benchmark}
-            </p>
-          </div>
+          <p className="text-xs text-[#52525B] leading-relaxed">
+            {currentPillar.bottleneck}
+          </p>
         </div>
       )}
     </div>

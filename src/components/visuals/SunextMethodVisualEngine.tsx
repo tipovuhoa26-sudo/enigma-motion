@@ -242,19 +242,29 @@ export function SunextMethodVisualEngine() {
                 );
               })}
 
-              {/* Radial Benchmark Rings */}
-              <circle cx="480" cy="190" r="140" stroke="#334155" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.4" />
-              <circle cx="480" cy="190" r="95" stroke="#475569" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.5" />
-              <circle cx="480" cy="190" r="50" stroke="#64748B" strokeWidth="0.8" opacity="0.6" />
+              {/* Perimeter Knowledge Network Connections */}
+              <polygon
+                points="480,70 630,130 630,250 480,310 330,250 330,130"
+                fill="none"
+                stroke="#6366F1"
+                strokeWidth="1"
+                strokeDasharray="3 3"
+                opacity="0.5"
+              />
 
-              {/* 6 Axes: Strategy, Talent, Operating Model, Technology, Data, Adoption & Scale */}
+              {/* Cross Connections */}
+              <line x1="480" y1="70" x2="480" y2="310" stroke="#475569" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.4" />
+              <line x1="330" y1="130" x2="630" y2="250" stroke="#475569" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.4" />
+              <line x1="330" y1="250" x2="630" y2="130" stroke="#475569" strokeWidth="0.8" strokeDasharray="2 4" opacity="0.4" />
+
+              {/* 6 Capability Nodes in Shared Grammar */}
               {[
-                { label: 'STRATEGY (Roadmap)', x: 480, y: 40, score: 'Mức 2/4' },
-                { label: 'TALENT (Skills)', x: 640, y: 110, score: 'Mức 1/4' },
-                { label: 'OPERATING MODEL (SOP)', x: 640, y: 250, score: 'Mức 2/4' },
-                { label: 'TECHNOLOGY (VPC)', x: 480, y: 310, score: 'Mức 3/4' },
-                { label: 'DATA (Single Source)', x: 320, y: 250, score: 'Điểm nghẽn (1/4)' },
-                { label: 'ADOPTION & SCALE', x: 320, y: 110, score: 'Mức 2/4' },
+                { label: 'CHIẾN LƯỢC', x: 480, y: 70, condition: 'Mục tiêu P&L' },
+                { label: 'CÔNG NGHỆ', x: 630, y: 130, condition: 'Private VPC & API' },
+                { label: 'DỮ LIỆU', x: 630, y: 250, condition: 'Single Source of Truth' },
+                { label: 'ÁP DỤNG & MỞ RỘNG', x: 480, y: 310, condition: 'Nhân rộng phòng ban' },
+                { label: 'VẬN HÀNH', x: 330, y: 250, condition: 'SOP & Vai trò Người-AI' },
+                { label: 'CON NGƯỜI', x: 330, y: 130, condition: 'Đào tạo thực chiến' },
               ].map((axis, i) => (
                 <g key={`diag-axis-${i}`}>
                   <line
@@ -264,14 +274,15 @@ export function SunextMethodVisualEngine() {
                     y2={axis.y}
                     stroke="#7000FF"
                     strokeWidth="1.2"
-                    opacity="0.6"
+                    opacity="0.7"
                   />
-                  <circle cx={axis.x} cy={axis.y} r="6" fill="#1E1B4B" stroke="#A855F7" strokeWidth="2" />
+                  <circle cx={axis.x} cy={axis.y} r="8" fill="#18181B" stroke="#A855F7" strokeWidth="2" />
+                  <circle cx={axis.x} cy={axis.y} r="3" fill="#FFFFFF" />
                   <text
                     x={axis.x}
-                    y={axis.y > 190 ? axis.y + 18 : axis.y - 12}
+                    y={axis.y > 190 ? axis.y + 20 : axis.y - 14}
                     textAnchor="middle"
-                    fill="#F8FAFC"
+                    fill="#FFFFFF"
                     fontSize="11"
                     fontFamily="monospace"
                     fontWeight="700"
@@ -281,43 +292,34 @@ export function SunextMethodVisualEngine() {
                   </text>
                   <text
                     x={axis.x}
-                    y={axis.y > 190 ? axis.y + 30 : axis.y - 24}
+                    y={axis.y > 190 ? axis.y + 32 : axis.y - 25}
                     textAnchor="middle"
-                    fill={axis.score.startsWith('Điểm nghẽn') ? '#EA580C' : '#38BDF8'}
+                    fill="#94A3B8"
                     fontSize="9.5"
-                    fontFamily="monospace"
-                    fontWeight="600"
+                    fontFamily="sans-serif"
                   >
-                    {axis.score}
+                    {axis.condition}
                   </text>
                 </g>
               ))}
 
-              {/* Enterprise Radar Polygon (Diagnostic Shape) */}
-              <polygon
-                points="480,72 610,125 585,225 480,275 375,225 365,120"
-                fill="rgba(112,0,255,0.22)"
-                stroke="#C084FC"
-                strokeWidth="2.0"
-              />
-
               {/* Center Core Scanner */}
-              <circle cx="480" cy="190" r="16" fill="#0F172A" stroke="#EA580C" strokeWidth="2" />
+              <circle cx="480" cy="190" r="22" fill="#18181B" stroke="#EA580C" strokeWidth="2" />
               <circle cx="480" cy="190" r="7" fill="#EA580C" />
-              <text x="480" y="194" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="bold">SUN</text>
+              <text x="480" y="193" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontFamily="monospace" fontWeight="bold">SUNEXT</text>
 
               {/* Gate 1 Checkpoint Badge */}
               <g transform="translate(730, 30)">
-                <rect x="0" y="0" width="200" height="30" rx="6" fill="#1E1B4B" stroke="#7000FF" strokeWidth="1" />
-                <circle cx="16" cy="15" r="4" fill="#10B981" />
-                <text x="28" y="19" fill="#E2E8F0" fontSize="9.5" fontFamily="monospace" fontWeight="700">
-                  GATE 1 · USE-CASE &amp; SCOPE
+                <rect x="0" y="0" width="190" height="28" rx="6" fill="#1E1B4B" stroke="#7000FF" strokeWidth="1" />
+                <circle cx="14" cy="14" r="3.5" fill="#10B981" />
+                <text x="24" y="18" fill="#E2E8F0" fontSize="9.5" fontFamily="monospace" fontWeight="700">
+                  CỔNG 1 · BÀI TOÁN &amp; PHẠM VI
                 </text>
               </g>
 
               {/* Header Metaphor annotation */}
-              <text x="480" y="380" textAnchor="middle" fill="#94A3B8" fontSize="10" fontFamily="sans-serif">
-                Mạng lưới chuyên môn hội tụ về 6 năng lực tổ chức · Tham chiếu McKinsey Rewired
+              <text x="480" y="360" textAnchor="middle" fill="#94A3B8" fontSize="10" fontFamily="sans-serif">
+                Mạng lưới 6 trụ cột năng lực tổ chức · Tham chiếu McKinsey Rewired
               </text>
             </g>
           )}

@@ -45,10 +45,10 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
       className="relative w-full min-h-[calc(100vh-80px)] px-6 md:px-12 py-12 lg:py-16 flex flex-col justify-center overflow-hidden sunext-atmospheric-canvas"
       data-motion="hero"
     >
-      <div className="max-w-[1280px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-16 items-center relative z-10 my-auto">
+      <div className="max-w-[1536px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-10 items-center relative z-10 my-auto">
         
         {/* Left Column: 1 Bold Statement + 1 Focused Lead Sentence + 2 Clean CTAs */}
-        <div data-hero-left className="lg:col-span-7 xl:col-span-6 flex flex-col justify-center max-w-[620px] z-10">
+        <div data-hero-left className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center max-w-[560px] z-10">
           
           {/* Display XL Editorial H1 (Optically Balanced 3-Line Cadence) */}
           <h1
@@ -98,10 +98,10 @@ export function Hero({ autoPlayIntro = true }: HeroProps) {
           </div>
         </div>
 
-        {/* Right Column: Living Atmospheric Sun & Orbit System (Dominant 50% Canvas Presence) */}
+        {/* Right Column: Living Atmospheric Sun & Orbit System (Dominant Field Presence) */}
         <div
           ref={visualRef}
-          className="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end min-h-[500px] md:min-h-[580px] lg:min-h-[660px] xl:min-h-[740px] overflow-visible w-full"
+          className="lg:col-span-7 xl:col-span-7 relative flex items-center justify-center lg:justify-end min-h-[540px] md:min-h-[620px] lg:min-h-[720px] xl:min-h-[820px] overflow-visible w-full lg:-mr-6 xl:-mr-12"
           data-hero-visual
         >
           <AiTransformationNetwork />

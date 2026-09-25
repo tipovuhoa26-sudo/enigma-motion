@@ -60,8 +60,8 @@ interface InnerKnowledgeSeed {
 
 const INNER_KNOWLEDGE_SEEDS: InnerKnowledgeSeed[] = (() => {
   const seeds: InnerKnowledgeSeed[] = [];
-  for (let i = 1; i <= 12; i++) {
-    const r = 76 + i * 10.5;
+  for (let i = 1; i <= 20; i++) {
+    const r = 70 + i * 11;
     const a = i * GOLDEN_ANGLE_RAD;
     seeds.push({
       id: `seed-${i}`,
@@ -73,11 +73,14 @@ const INNER_KNOWLEDGE_SEEDS: InnerKnowledgeSeed[] = (() => {
   return seeds;
 })();
 
-// Spiral connection pairs between inner seeds
+// Spiral connection pairs between inner seeds - rich authentic Obsidian mesh
 const INNER_SPIRAL_EDGES = [
   [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6],
-  [6, 7], [7, 8], [8, 9], [9, 10], [10, 11],
+  [6, 7], [7, 8], [8, 9], [9, 10], [10, 11], [11, 12],
+  [12, 13], [13, 14], [14, 15], [15, 16], [16, 17], [17, 18], [18, 19],
   [0, 3], [1, 4], [2, 5], [3, 6], [4, 7], [5, 8],
+  [6, 9], [7, 10], [8, 11], [9, 12], [10, 13], [11, 14],
+  [12, 15], [13, 16], [14, 17], [15, 18], [16, 19]
 ];
 
 // Helper to calculate smooth Bézier curve bowing along sunflower spiral
@@ -234,6 +237,9 @@ const RAW_CROSS_LINKS = [
   { id: 'cl-tech-mfg', sourceDomain: 'tech', targetDomain: 'manufacturing', label: 'Công nghệ & Sản xuất' },
   { id: 'cl-mfg-hr', sourceDomain: 'manufacturing', targetDomain: 'hr', label: 'Sản xuất & Con người' },
   { id: 'cl-hr-bank', sourceDomain: 'hr', targetDomain: 'banking', label: 'Con người & Tài chính' },
+  { id: 'cl-bank-tech', sourceDomain: 'banking', targetDomain: 'tech', label: 'Tài chính & Công nghệ' },
+  { id: 'cl-sales-hr', sourceDomain: 'sales', targetDomain: 'hr', label: 'Tăng trưởng & Con người' },
+  { id: 'cl-re-gov', sourceDomain: 'real-estate', targetDomain: 'governance', label: 'BĐS & Quản trị' },
 ];
 
 const OBSIDIAN_CROSS_LINKS: CrossLink[] = RAW_CROSS_LINKS.map((item) => {
@@ -334,7 +340,7 @@ export function AiTransformationNetwork() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[720px] lg:max-w-[800px] xl:max-w-[860px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
+      className="relative w-full max-w-[820px] lg:max-w-[940px] xl:max-w-[1040px] aspect-square flex items-center justify-center select-none font-sans overflow-visible ml-auto"
       aria-label="Sunext Sunflower Knowledge Topology — Visual Signature"
     >
       {/* 1. Warm Radiant Energy Atmosphere (Depth Zone Behind Graph) */}
