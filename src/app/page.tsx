@@ -8,7 +8,6 @@ import { MethodStorytellingSection } from '@/sections/MethodStorytellingSection'
 import { FourGatesProgressSection } from '@/sections/FourGatesProgressSection';
 import { PhotographicInterruptionSection } from '@/sections/PhotographicInterruptionSection';
 import { CasesSection } from '@/sections/CasesSection';
-import { ClientSovereigntySection } from '@/sections/ClientSovereigntySection';
 import { CtaFooter } from '@/sections/CtaFooter';
 import { Footer } from '@/sections/Footer';
 
@@ -36,10 +35,7 @@ export default function HomePage() {
         {/* 06. CASE STUDIES: In-depth Transformation Evidence */}
         <CasesSection />
 
-        {/* 07. TRANSFER: Client Sovereignty Climax (Sunext Shifts Outward ➔ Client Team Becomes Radiant Core) */}
-        <ClientSovereigntySection />
-
-        {/* 08. CTA: Pure Horizon Sun · One Statement · One Action */}
+        {/* 07. CLOSURE: Tự Chủ Bàn Giao ➔ Bình Minh Chân Trời (Continuous Dark Chapter) */}
         <CtaFooter />
       </main>
 
